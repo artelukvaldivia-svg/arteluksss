@@ -9,6 +9,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
+    /* Ajuste responsivo general para móviles */
+@media (max-width: 768px) {
+  body {
+    padding: 0 18px; /* margen lateral para todo el contenido */
+  }
+
+  section, .lead, p {
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+
+  h2, h3 {
+    margin-top: 1.8rem;
+  }
+}
+
     /* ===== RESPONSIVE FIX PACK (sin cambiar HTML) ===== */
 :root{ --navH:64px }
 .section{ scroll-margin-top: calc(var(--navH) + 12px) }
@@ -722,7 +738,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',
   const id=a.getAttribute('href'); 
   if(id.length>1){
     e.preventDefault(); 
-    document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'start'})
+    document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'start'});
   }
 }));
 
@@ -737,7 +753,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',
     }
   }
   function mouse(){
-    document.documentElement.classList.remove('outline');
+    html.classList.remove('outline');
     window.removeEventListener('mousedown',mouse);
     window.addEventListener('keydown',firstTab);
   }
@@ -778,46 +794,68 @@ document.querySelectorAll('.open-desc').forEach(btn=>btn.addEventListener('click
 }));
 
 /* toast helper */
-const toast=(t)=>{
+const toast=(t,color="#055c23")=>{
   const el=document.createElement('div'); 
   el.className='toast'; 
   el.textContent=t; 
-  document.body.appendChild(el); 
-  setTimeout(()=>el.classList.add('show'));
-  setTimeout(()=>{el.classList.remove('show'); el.remove();},2500);
+  el.style.position='fixed';
+  el.style.bottom='30px';
+  el.style.left='50%';
+  el.style.transform='translateX(-50%)';
+  el.style.background=color==='error'?'#ffdddd':'#e6f7e6';
+  el.style.color=color==='error'?'#900':'#055c23';
+  el.style.padding='12px 20px';
+  el.style.borderRadius='10px';
+  el.style.boxShadow='0 3px 10px rgba(0,0,0,.1)';
+  el.style.zIndex='9999';
+  el.style.transition='opacity .5s';
+  el.style.opacity='0';
+  document.body.appendChild(el);
+  requestAnimationFrame(()=>el.style.opacity='1');
+  setTimeout(()=>{el.style.opacity='0'; setTimeout(()=>el.remove(),500)},3000);
 };
 
 /* formulario -> webhook n8n */
 document.getElementById('wlForm').addEventListener('submit',async e=>{
   e.preventDefault();
+  const form=e.target;
   const data={
-    nombre:document.getElementById('nombre').value.trim(),
-    email:document.getElementById('email').value.trim(),
-    telefono:document.getElementById('tel').value.trim(),
-    servicio:document.getElementById('servicio').value,
-    mensaje:document.getElementById('msg').value.trim()
+    nombre:form.querySelector('#nombre').value.trim(),
+    email:form.querySelector('#email').value.trim(),
+    telefono:form.querySelector('#tel').value.trim(),
+    servicio:form.querySelector('#servicio').value,
+    mensaje:form.querySelector('#msg').value.trim()
   };
 
   try{
-    await fetch("https://n8n-n8n.bvil2a.easypanel.host/webhook/c3fb1dec-70bd-4865-8907-e09871ba5344",{
+    await fetch("https://n8n-n8n.bvil2a.easypanel.host/webhook/6da016d5-e0e8-452f-97d2-a46e0dc26d12",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify(data),
       keepalive:true
     });
+
+    // limpiar formulario
+    form.reset();
+    localStorage.setItem('arteluk_last_form', JSON.stringify(data));
+    navigator.clipboard?.writeText(`Nueva consulta Arteluk
+Nombre: ${data.nombre}
+Email: ${data.email}
+Teléfono: ${data.telefono}
+Servicio: ${data.servicio}
+Mensaje: ${data.mensaje}`);
+
+    // mensaje éxito
+    toast('✅ ¡Formulario enviado con éxito!');
   }catch(err){
     console.error("Webhook error:", err);
+    toast('❌ Error al enviar. Intenta nuevamente.','error');
   }
-
-  const text=`Nueva consulta Arteluk\nNombre: ${data.nombre}\nEmail: ${data.email}\nTeléfono: ${data.telefono}\nServicio: ${data.servicio}\nMensaje: ${data.mensaje}`;
-  navigator.clipboard?.writeText(text);
-  localStorage.setItem('arteluk_last_form', JSON.stringify(data));
-  toast('¡Formulario enviado! Copiado al portapapeles ✅');
-  e.target.reset();
 });
 </script>
 </body>
 </html>
+
 
 
 
