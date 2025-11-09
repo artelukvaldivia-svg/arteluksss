@@ -9,6 +9,64 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
+    /* ======== Ajustes responsive para el header ======== */
+@media (max-width: 768px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #1e293b;
+    cursor: pointer;
+  }
+
+  .nav-toggle:focus {
+    outline: none;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cta-buttons a {
+    width: 80%;
+    text-align: center;
+  }
+
+  body {
+    padding-top: 70px; /* evita que el header tape el contenido */
+  }
+}
+
     /* Ajuste responsivo general para móviles */
 @media (max-width: 768px) {
   body {
@@ -852,9 +910,22 @@ Mensaje: ${data.mensaje}`);
     toast('❌ Error al enviar. Intenta nuevamente.','error');
   }
 });
+  <!-- menú responsive -->
+<script>
+const toggleBtn = document.createElement("button");
+toggleBtn.className = "nav-toggle";
+toggleBtn.innerHTML = "☰";
+document.querySelector("nav .container").appendChild(toggleBtn);
+
+toggleBtn.addEventListener("click", () => {
+  document.querySelector(".actions").classList.toggle("active");
+});
+</script>
+
 </script>
 </body>
 </html>
+
 
 
 
