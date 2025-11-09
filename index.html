@@ -608,7 +608,7 @@ document.getElementById('wlForm').addEventListener('submit',async e=>{
     mensaje:f.querySelector('#msg').value.trim()
   };
   try{
-    await fetch("https://n8n-n8n.bvil2a.easypanel.host/webhook/6da016d5-e0e8-452f-97d2-a46e0dc26d12",{
+    await fetch("https://n8n-n8n.bvil2a.easypanel.host/webhook/c3fb1dec-70bd-4865-8907-e09871ba5344",{
       method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(data), keepalive:true
     });
     f.reset();
@@ -628,5 +628,6 @@ Mensaje: ${data.mensaje}`);
 </script>
 </body>
 </html>
+
 
 
