@@ -9,6 +9,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
+    /* Ajuste responsivo general para móviles */
+@media (max-width: 768px) {
+  body {
+    padding: 0 18px; /* margen lateral para todo el contenido */
+  }
+
+  section, .lead, p {
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+
+  h2, h3 {
+    margin-top: 1.8rem;
+  }
+}
+
   /* ===== BASE ===== */
   :root{
     --ink:#0f172a; --muted:#5f6b7a; --line:#dfeaf7; --paper:#ffffff;
@@ -612,3 +628,4 @@ Mensaje: ${data.mensaje}`);
 </script>
 </body>
 </html>
+
