@@ -9,22 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* Ajuste responsivo general para móviles */
-@media (max-width: 768px) {
-  body {
-    padding: 0 18px; /* margen lateral para todo el contenido */
-  }
-
-  section, .lead, p {
-    line-height: 1.6;
-    margin-bottom: 1.2rem;
-  }
-
-  h2, h3 {
-    margin-top: 1.8rem;
-  }
-}
-
   /* ===== BASE ===== */
   :root{
     --ink:#0f172a; --muted:#5f6b7a; --line:#dfeaf7; --paper:#ffffff;
@@ -384,7 +368,7 @@
     <div class="reveal" style="margin-bottom:12px">
       <div class="mono">FORMULARIO</div>
       <h2>Reserva o consulta — respondemos al instante</h2>
-      <p class="lead">Completa el formulario. Te contactamos apenas lo recibamos . Dirección: <strong>Picarte 407, Valdivia</strong>.</p>
+      <p class="lead">Completa el formulario. Te contactamos apenas lo recibamos (sin WhatsApp ni correo público). Dirección: <strong>Picarte 407, Valdivia</strong>.</p>
     </div>
     <form class="form reveal" id="wlForm">
       <div class="row">
@@ -595,39 +579,74 @@ const toast=(t,color="#055c23")=>{
     transition:'opacity .5s',opacity:'0'}); document.body.appendChild(el);
   requestAnimationFrame(()=>el.style.opacity='1'); setTimeout(()=>{el.style.opacity='0'; setTimeout(()=>el.remove(),500)},3000);
 };
-
 /* formulario -> webhook n8n */
-document.getElementById('wlForm').addEventListener('submit',async e=>{
-  e.preventDefault();
-  const f=e.target;
-  const data={
-    nombre:f.querySelector('#nombre').value.trim(),
-    email:f.querySelector('#email').value.trim(),
-    telefono:f.querySelector('#tel').value.trim(),
-    servicio:f.querySelector('#servicio').value,
-    mensaje:f.querySelector('#msg').value.trim()
-  };
-  try{
-    await fetch("https://n8n-n8n.bvil2a.easypanel.host/webhook/c3fb1dec-70bd-4865-8907-e09871ba5344",{
-      method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(data), keepalive:true
+(function () {
+  const ready = (fn)=> document.readyState!=='loading' ? fn() : document.addEventListener('DOMContentLoaded', fn);
+
+  ready(() => {
+    const form = document.getElementById('wlForm');
+    if (!form) return;
+
+    function toast(msg, type='ok'){
+      const el = document.createElement('div');
+      el.textContent = msg;
+      el.style.cssText = `
+        position:fixed;left:50%;bottom:26px;transform:translateX(-50%);
+        padding:12px 18px;border-radius:10px;z-index:9999;
+        background:${type==='ok'?'#e7fff0':'#ffeaea'};
+        color:${type==='ok'?'#065f46':'#a00000'};
+        box-shadow:0 6px 16px rgba(0,0,0,.12);opacity:0;transition:.25s`;
+      document.body.appendChild(el);
+      requestAnimationFrame(()=> el.style.opacity = 1);
+      setTimeout(()=>{ el.style.opacity = 0; setTimeout(()=>el.remove(), 300); }, 2800);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const btn = form.querySelector('button[type="submit"]');
+      const original = btn ? btn.innerHTML : '';
+      if (btn) { btn.disabled = true; btn.innerHTML = 'Enviando…'; }
+
+      const data = {
+        nombre  : (form.querySelector('#nombre')  ?.value || '').trim(),
+        email   : (form.querySelector('#email')   ?.value || '').trim(),
+        telefono: (form.querySelector('#tel')     ?.value || '').trim(),
+        servicio: (form.querySelector('#servicio')?.value || ''),
+        mensaje : (form.querySelector('#msg')     ?.value || '').trim()
+      };
+
+      const controller = new AbortController();
+      const t = setTimeout(()=>controller.abort(), 10000);
+
+      try{
+        const res = await fetch(
+          "https://n8n-n8n.bvil2a.easypanel.host/webhook/c3fb1dec-70bd-4865-8907-e09871ba5344",
+          {
+            method:"POST",
+            headers:{ "Content-Type":"application/json" },
+            body: JSON.stringify(data),
+            keepalive:true,
+            signal: controller.signal
+          }
+        );
+        if(!res.ok) throw new Error('HTTP '+res.status);
+
+        // éxito: limpiar y avisar
+        form.reset();
+        localStorage.removeItem('arteluk_last_form');
+        toast('✅ ¡Formulario enviado con éxito!', 'ok');
+
+      }catch(err){
+        console.error('Webhook error:', err);
+        toast('❌ Error al enviar. Intenta nuevamente.', 'error');
+      }finally{
+        clearTimeout(t);
+        if (btn) { btn.disabled = false; btn.innerHTML = original; }
+      }
     });
-    f.reset();
-    localStorage.setItem('arteluk_last_form', JSON.stringify(data));
-    navigator.clipboard?.writeText(`Nueva consulta Arteluk
-Nombre: ${data.nombre}
-Email: ${data.email}
-Teléfono: ${data.telefono}
-Servicio: ${data.servicio}
-Mensaje: ${data.mensaje}`);
-    toast('✅ ¡Formulario enviado con éxito!');
-  }catch(err){
-    console.error("Webhook error:", err);
-    toast('❌ Error al enviar. Intenta nuevamente.','error');
-  }
-});
+  });
+})();
 </script>
 </body>
 </html>
-
-
-
