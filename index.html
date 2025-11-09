@@ -20,40 +20,59 @@
   }
 
   /* tablet y móvil */
-  @media (max-width: 880px){
-    :root{ --navH:58px }
+ @media (max-width: 880px){
+  :root{ --navH:58px }
 
-    .container{ padding: 0 16px; }
-    .section{ padding: 56px 0; }
+  .container{ padding: 0 16px; }
+  .section{ padding: 56px 0; }
 
-    /* navbar móvil con dropdown */
-    nav{ position: sticky; top: 0; z-index: 30; }
-    .navbar{ position: relative; align-items: center; gap:10px; }
-    .nav-toggle{ display:block; position:absolute; right:16px; top:12px; background:none; border:none; font-size:28px; color:#1e293b; cursor:pointer }
-    .actions{
-      display:none; position:absolute; left:0; right:0; top:100%;
-      background:#fff; border-bottom:1px solid #dfeaf7;
-      box-shadow:0 10px 24px rgba(15,23,42,.10);
-      padding:12px 16px; gap:8px; flex-direction:column; align-items:stretch;
-    }
-    .actions.active{ display:flex; }
-    a.nav{ padding:12px 14px; display:block }
-    .btn.primary{ width:100%; justify-content:center; }
-
-    /* layouts */
-    .split{ display:grid; grid-template-columns:1fr; gap:18px; }
-    .grid{ display:grid; grid-template-columns:1fr; gap:18px; }
-    .team{ display:grid; grid-template-columns:1fr; gap:14px; }
-    .gallery{ display:grid; grid-template-columns:1fr; gap:10px; }
-
-    /* formulario */
-    .form{ padding:28px; }
-    .form .row{ display:grid; grid-template-columns:1fr; gap:16px; }
-    .form textarea, .form button{ grid-column:auto; }
-
-    /* tipografía/lectura */
-    .lead{ max-width:none; }
+  /* navbar + dropdown */
+  nav{ position: sticky; top: 0; z-index: 30; }
+  .navbar{ position: relative; align-items:center; gap:10px; }
+  .nav-toggle{
+    display:block; position:absolute; right:16px; top:12px;
+    background:none; border:none; font-size:28px; color:#1e293b; cursor:pointer;
   }
+
+  /* panel desplegable (slide-down) */
+  .actions{
+    position:absolute; left:0; right:0; top:100%;
+    background:#fff; border-bottom:1px solid #dfeaf7;
+    box-shadow:0 10px 24px rgba(15,23,42,.10);
+    padding:10px 16px 14px;
+    display:block; overflow:hidden;
+    max-height:0; opacity:0; transform:translateY(-6px);
+    transition:max-height .35s ease, opacity .25s ease, transform .25s ease;
+    pointer-events:none;
+  }
+  .actions.active{
+    max-height:360px; opacity:1; transform:translateY(0);
+    pointer-events:auto;
+  }
+  .actions a.nav{ display:block; padding:14px 12px; font-size:18px; border-radius:12px; }
+  .actions a.nav:hover{ background:#f1f7ff; border:1px solid #cfe3ff; }
+  .actions .btn.primary{ width:100%; justify-content:center; margin-top:8px; }
+
+  /* overlay */
+  .nav-backdrop{ display:none; position:fixed; inset:0; z-index:29;
+    background:rgba(2,6,23,.35); backdrop-filter:blur(2px); }
+  .nav-backdrop.show{ display:block; }
+  body.nav-open{ overflow:hidden; }
+
+  /* layouts */
+  .split{ display:grid; grid-template-columns:1fr; gap:18px; }
+  .grid{ display:grid; grid-template-columns:1fr; gap:18px; }
+  .team{ display:grid; grid-template-columns:1fr; gap:14px; }
+  .gallery{ display:grid; grid-template-columns:1fr; gap:10px; }
+
+  /* formulario */
+  .form{ padding:28px; }
+  .form .row{ display:grid; grid-template-columns:1fr; gap:16px; }
+  .form textarea, .form button{ grid-column:auto; }
+
+  /* texto */
+  .lead{ max-width:none; }
+}
 
   /* laptops medianos: 2 columnas en servicios */
   @media (min-width: 881px) and (max-width: 1100px){
@@ -264,6 +283,9 @@
 
 <!-- NAV -->
 <nav>
+<!-- backdrop del menú móvil -->
+<div id="navBackdrop" class="nav-backdrop"></div>
+
   <div class="container navbar">
     <div class="brand">Arteluk <span style="color:#7b94ad">· Arte & Arteterapia</span></div>
 
@@ -622,46 +644,49 @@
 </template>
 
 <script>
-/* menú responsive */
+/* menú responsive (dropdown) */
 const navToggle = document.getElementById('navToggle');
 const navActions = document.getElementById('navActions');
-navToggle.addEventListener('click', ()=> navActions.classList.toggle('active'));
+const navBackdrop = document.getElementById('navBackdrop');
+
+function openMenu(){
+  navActions.classList.add('active');
+  navBackdrop.classList.add('show');
+  document.body.classList.add('nav-open');
+  navToggle.textContent = '✕';
+  navToggle.setAttribute('aria-expanded','true');
+}
+function closeMenu(){
+  navActions.classList.remove('active');
+  navBackdrop.classList.remove('show');
+  document.body.classList.remove('nav-open');
+  navToggle.textContent = '☰';
+  navToggle.setAttribute('aria-expanded','false');
+}
+navToggle.addEventListener('click', ()=>{
+  navActions.classList.contains('active') ? closeMenu() : openMenu();
+});
+navBackdrop.addEventListener('click', closeMenu);
+window.addEventListener('scroll', closeMenu);
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeMenu(); });
+document.querySelectorAll('#navActions a').forEach(a=>a.addEventListener('click', closeMenu));
 
 /* scroll suave */
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
   const id=a.getAttribute('href'); 
-  if(id.length>1){
-    e.preventDefault(); 
-    document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'start'});
-    navActions.classList.remove('active'); // cerrar menú en móvil al navegar
-  }
+  if(id.length>1){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'start'}); }
 }));
 
-/* focus-outline sólo con teclado */
+/* focus-outline con teclado */
 (function(){
   const html=document.documentElement;
-  function firstTab(e){
-    if(e.key==='Tab'){
-      html.classList.add('outline');
-      window.removeEventListener('keydown',firstTab);
-      window.addEventListener('mousedown',mouse);
-    }
-  }
-  function mouse(){
-    html.classList.remove('outline');
-    window.removeEventListener('mousedown',mouse);
-    window.addEventListener('keydown',firstTab);
-  }
+  function firstTab(e){ if(e.key==='Tab'){ html.classList.add('outline'); window.removeEventListener('keydown',firstTab); window.addEventListener('mousedown',mouse); } }
+  function mouse(){ html.classList.remove('outline'); window.removeEventListener('mousedown',mouse); window.addEventListener('keydown',firstTab); }
   window.addEventListener('keydown',firstTab);
 }());
 
 /* revelar on scroll */
-const io=new IntersectionObserver((entries)=>entries.forEach(en=>{
-  if(en.isIntersecting){
-    en.target.classList.add('in');
-    io.unobserve(en.target);
-  }
-}),{threshold:.12});
+const io=new IntersectionObserver((entries)=>entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 /* CTA -> form */
@@ -673,65 +698,40 @@ document.querySelectorAll('.to-form').forEach(b=>b.addEventListener('click',e=>{
 }));
 
 /* modal */
-const modal=document.getElementById('modal'),
-      mTitle=document.getElementById('mTitle'),
-      mBody=document.getElementById('mBody');
+const modal=document.getElementById('modal'), mTitle=document.getElementById('mTitle'), mBody=document.getElementById('mBody');
 document.getElementById('mClose').onclick=()=>modal.close();
 document.querySelectorAll('.open-desc').forEach(btn=>btn.addEventListener('click',()=>{
-  const id=btn.getAttribute('data-content'),
-        title=btn.getAttribute('data-title'); 
-  const tpl=document.getElementById(id);
-  if(!tpl) return; 
-  mTitle.textContent=title; 
-  mBody.innerHTML=""; 
-  mBody.appendChild(tpl.content.cloneNode(true)); 
-  modal.showModal();
+  const id=btn.getAttribute('data-content'), title=btn.getAttribute('data-title'); 
+  const tpl=document.getElementById(id); if(!tpl) return; 
+  mTitle.textContent=title; mBody.innerHTML=""; mBody.appendChild(tpl.content.cloneNode(true)); modal.showModal();
 }));
 
-/* toast helper */
+/* toast */
 const toast=(t,color="#055c23")=>{
-  const el=document.createElement('div'); 
-  el.className='toast'; 
-  el.textContent=t; 
-  el.style.position='fixed';
-  el.style.bottom='30px';
-  el.style.left='50%';
-  el.style.transform='translateX(-50%)';
-  el.style.background=color==='error'?'#ffdddd':'#e6f7e6';
-  el.style.color=color==='error'?'#900':'#055c23';
-  el.style.padding='12px 20px';
-  el.style.borderRadius='10px';
-  el.style.boxShadow='0 3px 10px rgba(0,0,0,.1)';
-  el.style.zIndex='9999';
-  el.style.transition='opacity .5s';
-  el.style.opacity='0';
-  document.body.appendChild(el);
-  requestAnimationFrame(()=>el.style.opacity='1');
-  setTimeout(()=>{el.style.opacity='0'; setTimeout(()=>el.remove(),500)},3000);
+  const el=document.createElement('div'); el.className='toast'; el.textContent=t; 
+  Object.assign(el.style,{position:'fixed',bottom:'30px',left:'50%',transform:'translateX(-50%)',
+    background:color==='error'?'#ffdddd':'#e6f7e6',color:color==='error'?'#900':'#055c23',
+    padding:'12px 20px',borderRadius:'10px',boxShadow:'0 3px 10px rgba(0,0,0,.1)',zIndex:'9999',
+    transition:'opacity .5s',opacity:'0'}); document.body.appendChild(el);
+  requestAnimationFrame(()=>el.style.opacity='1'); setTimeout(()=>{el.style.opacity='0'; setTimeout(()=>el.remove(),500)},3000);
 };
 
-/* formulario -> webhook n8n */
+/* formulario -> webhook n8n (igual que antes) */
 document.getElementById('wlForm').addEventListener('submit',async e=>{
   e.preventDefault();
-  const form=e.target;
+  const f=e.target;
   const data={
-    nombre:form.querySelector('#nombre').value.trim(),
-    email:form.querySelector('#email').value.trim(),
-    telefono:form.querySelector('#tel').value.trim(),
-    servicio:form.querySelector('#servicio').value,
-    mensaje:form.querySelector('#msg').value.trim()
+    nombre:f.querySelector('#nombre').value.trim(),
+    email:f.querySelector('#email').value.trim(),
+    telefono:f.querySelector('#tel').value.trim(),
+    servicio:f.querySelector('#servicio').value,
+    mensaje:f.querySelector('#msg').value.trim()
   };
-
   try{
     await fetch("https://n8n-n8n.bvil2a.easypanel.host/webhook/6da016d5-e0e8-452f-97d2-a46e0dc26d12",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(data),
-      keepalive:true
+      method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(data), keepalive:true
     });
-
-    // limpiar formulario
-    form.reset();
+    f.reset();
     localStorage.setItem('arteluk_last_form', JSON.stringify(data));
     navigator.clipboard?.writeText(`Nueva consulta Arteluk
 Nombre: ${data.nombre}
@@ -739,8 +739,6 @@ Email: ${data.email}
 Teléfono: ${data.telefono}
 Servicio: ${data.servicio}
 Mensaje: ${data.mensaje}`);
-
-    // mensaje éxito
     toast('✅ ¡Formulario enviado con éxito!');
   }catch(err){
     console.error("Webhook error:", err);
@@ -750,3 +748,4 @@ Mensaje: ${data.mensaje}`);
 </script>
 </body>
 </html>
+
