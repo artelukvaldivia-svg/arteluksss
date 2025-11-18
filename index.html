@@ -689,9 +689,19 @@ document.querySelectorAll('.open-desc').forEach(btn=>btn.addEventListener('click
         if(!res.ok) throw new Error('HTTP '+res.status);
 
         // éxito: limpiar y avisar
-        form.reset();
-        localStorage.setItem('arteluk_last_send', String(Date.now()));
-        toastForm('✅ ¡Formulario enviado con éxito!', 'ok');
+       // éxito: limpiar y avisar
+form.reset();
+localStorage.setItem('arteluk_last_send', String(Date.now()));
+toastForm('✅ ¡Formulario enviado con éxito!', 'ok');
+
+// ---- Meta Pixel: marcar Lead cuando el formulario se envía bien ----
+if (typeof fbq === 'function') {
+  fbq('track', 'Lead', {
+    content_name: 'Formulario Arteluk',
+    value: 0,
+    currency: 'CLP'
+  });
+}
 
       }catch(err){
         console.error('Webhook error:', err);
@@ -707,3 +717,4 @@ document.querySelectorAll('.open-desc').forEach(btn=>btn.addEventListener('click
 </script>
 </body>
 </html>
+
