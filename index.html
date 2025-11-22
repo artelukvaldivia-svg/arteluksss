@@ -52,7 +52,15 @@
       --navH:64px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.65 Poppins,system-ui}
+    html,body{
+      margin:0;
+      font:15.5px/1.65 Poppins,system-ui;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 0% 0%, #e0f2fe 0, #eff6ff 35%),
+        radial-gradient(circle at 100% 100%, #fee2e2 0, #e0f2fe 40%),
+        #eaf5ff;
+    }
     img{max-width:100%;display:block}
     .container{max-width:1140px;margin:auto;padding:0 18px}
     h1,h2{font-family:"Playfair Display",serif;letter-spacing:.2px;margin:0 0 8px}
@@ -60,37 +68,205 @@
     h2{font-size:clamp(24px,3.8vw,36px)}
     .lead{color:var(--muted);max-width:920px}
     .mono{letter-spacing:.22em;text-transform:uppercase;color:#7fa2c9;font-size:.82rem}
-    .section{padding:68px 0; scroll-margin-top: calc(var(--navH) + 12px);}
-    .reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease, transform .5s ease}
+    .section{padding:68px 0; scroll-margin-top: calc(var(--navH) + 12px);position:relative;z-index:1;}
+
+    /* Animación de aparición */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease, transform .6s ease}
     .reveal.in{opacity:1;transform:none}
 
+    /* --------- LISTAS DE PUNTOS ELEGANTES (antes las “pastillas”) --------- */
+    .text-intro{max-width:720px}
+
+    .pill-list{
+      margin:10px 0 6px;
+      padding-left:0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+    .pill-list li{
+      position:relative;
+      padding-left:18px;
+      font-size:.94rem;
+      color:var(--muted);
+    }
+    .pill-list li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0.6em;
+      width:7px;
+      height:7px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--brand),var(--brand2));
+      transform:translateY(-50%);
+    }
+    .hero-badges{
+      margin-top:8px;
+    }
+    .hero-badges li{
+      color:#0f172a;
+      font-weight:500;
+    }
+
+    /* BOTONES */
+    .btn{
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:12px 20px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:600;
+      text-decoration:none;
+      cursor:pointer;
+      transition:
+        transform .18s ease,
+        box-shadow .2s ease,
+        background-position .3s ease,
+        border-color .2s ease,
+        color .2s ease;
+      background-size:200% 100%;
+      overflow:hidden;
+    }
+    .btn.primary{
+      color:#fff;
+      background-image:linear-gradient(90deg,var(--brand),var(--brand2));
+      box-shadow:0 14px 25px rgba(37,99,235,.25);
+    }
+    .btn.primary:hover{
+      transform:translateY(-2px) scale(1.01);
+      box-shadow:0 18px 32px rgba(37,99,235,.32);
+      background-position:100% 0;
+    }
+    .btn.primary:active{
+      transform:translateY(0) scale(.97);
+      box-shadow:0 6px 14px rgba(37,99,235,.3);
+    }
+    .btn.ghost{
+      background:rgba(255,255,255,.92);
+      border:1px solid #cbd5f5;
+      color:#1f2937;
+    }
+    .btn.ghost:hover{
+      border-color:#93c5fd;
+      box-shadow:0 10px 20px rgba(148,163,184,.25);
+      transform:translateY(-2px);
+    }
+    .btn.ghost:active{
+      transform:translateY(0) scale(.98);
+      box-shadow:0 4px 10px rgba(148,163,184,.3);
+    }
+
+    .link-button{
+      border:none;
+      background:none;
+      padding:0;
+      margin-top:10px;
+      font:inherit;
+      color:#2563eb;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      position:relative;
+    }
+    .link-button::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-2px;
+      width:0;
+      height:2px;
+      border-radius:999px;
+      background:linear-gradient(90deg,#2563eb,#0ea5e9);
+      transition:width .25s ease;
+    }
+    .link-button:hover::after{
+      width:100%;
+    }
+
     /* nav */
-    nav{position:sticky;top:0;z-index:30;background:#ffffffcc;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    nav{position:sticky;top:0;z-index:30;background:#ffffffd9;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
     .navbar{height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative}
     .brand{font-weight:700}
     .actions{display:flex;align-items:center;gap:10px}
     a.nav{color:#2f5279;text-decoration:none;padding:10px 12px;border-radius:10px}
     a.nav:hover{background:#f1f7ff;border:1px solid #cfe3ff}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;border:1px solid transparent;font-weight:600;text-decoration:none;cursor:pointer;transition:.2s transform,.25s box-shadow}
-    .btn.primary{color:#fff;background:linear-gradient(90deg,var(--brand),var(--brand2))}
-    .btn.primary:hover{transform:translateY(-2px);box-shadow:0 12px 22px rgba(37,99,235,.18)}
-    .btn.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
     .nav-toggle{display:none;background:none;border:none;font-size:28px;line-height:1;padding:6px 10px;cursor:pointer;color:#1e293b}
 
-    /* aurora fondo */
-    .aurora{position:fixed;inset:0;z-index:-1;pointer-events:none;filter:blur(70px);opacity:.5}
+    /* aurora fondo (más suave) */
+    .aurora{position:fixed;inset:0;z-index:0;pointer-events:none;filter:blur(70px);opacity:.35}
     .aurora::before,.aurora::after{content:"";position:absolute;inset:0;background:
-      radial-gradient(600px 300px at 8% 12%, #a5d8ff66, transparent 60%),
-      radial-gradient(520px 260px at 92% 8%, #c7d2fe66, transparent 60%),
-      radial-gradient(440px 240px at 70% 85%, #93c5fd66, transparent 60%),
-      radial-gradient(420px 240px at 16% 90%, #bae6fd66, transparent 60%)}
-    .aurora::after{animation:float 12s ease-in-out infinite alternate}
-    @keyframes float{to{transform:translateY(-20px)}}
+      radial-gradient(600px 300px at 8% 12%, #a5d8ff70, transparent 60%),
+      radial-gradient(520px 260px at 92% 8%, #c7d2fe70, transparent 60%),
+      radial-gradient(440px 240px at 70% 85%, #f9a8d470, transparent 60%),
+      radial-gradient(420px 240px at 16% 90%, #bae6fd70, transparent 60%)}
+    .aurora::after{animation:float 14s ease-in-out infinite alternate}
+    @keyframes float{to{transform:translateY(-24px)}}
 
     /* layouts */
     .split{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
     @media (max-width:980px){.split{grid-template-columns:1fr}}
-    .photo{border-radius:22px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+
+    /* HERO NUEVO */
+    .hero-block{
+      align-items:center;
+    }
+    .hero-eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.85);
+      border:1px solid #dbeafe;
+      color:#1f2937;
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      margin-bottom:10px;
+    }
+    .hero-title{
+      margin-bottom:8px;
+    }
+    .hero-sub{
+      margin-bottom:12px;
+    }
+    .hero-ctas{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+      align-items:center;
+    }
+    .hero-note{
+      font-size:.85rem;
+      color:#64748b;
+    }
+
+    .hero-photo{
+      position:relative;
+    }
+    .hero-photo::before{
+      content:"";
+      position:absolute;
+      inset:-3px;
+      border-radius:26px;
+      background:linear-gradient(145deg,#38bdf8,#6366f1,#f97316);
+      opacity:.75;
+      z-index:-1;
+      filter:blur(2px);
+    }
+    .photo{
+      border-radius:22px;
+      overflow:hidden;
+      background:#fff;
+      border:1px solid #e0ecff;
+      box-shadow:0 18px 45px rgba(15,23,42,.22);
+    }
     .photo .media{aspect-ratio:5/4}
     .photo img{width:100%;height:100%;object-fit:cover}
 
@@ -98,7 +274,7 @@
     @media (max-width:1100px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media (max-width:720px){.grid{grid-template-columns:1fr}}
     .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;transition:transform .28s ease, box-shadow .28s}
-    .card:hover{transform:translateY(-6px) rotate(.15deg)}
+    .card:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 20px 40px rgba(15,23,42,.24);}
     .card .media{aspect-ratio:16/10;background:var(--bg2)}
     .card .body{padding:16px 16px 18px}
     .card h3{margin:2px 0 6px} .card p{margin:0;color:var(--muted)}
@@ -132,12 +308,12 @@
     .tile{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
     .tile .media{aspect-ratio:4/3}
 
-    /* modal */
-    dialog{border:none;border-radius:20px;max-width:760px;width:calc(100% - 28px);box-shadow:0 20px 60px rgba(0,0,0,.25);padding:0}
-    dialog::backdrop{background:rgba(0,18,51,.55)}
-    .modal-head{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:#fff}
-    .modal-body{padding:16px 18px;background:#fff;max-height:70vh;overflow:auto}
-    .close{border:none;background:#eef4ff;border-radius:10px;padding:8px 12px;cursor:pointer}
+    /* modal genérico (planes + historia) */
+    dialog{border:none;border-radius:22px;max-width:760px;width:calc(100% - 28px);box-shadow:0 22px 65px rgba(15,23,42,.45);padding:0;background:linear-gradient(145deg,#f9fafb,#eff6ff);}
+    dialog::backdrop{background:rgba(15,23,42,.55);backdrop-filter:blur(3px);}
+    .modal-head{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:#ffffffee}
+    .modal-body{padding:18px 20px 20px;background:#f9fbff;max-height:70vh;overflow:auto}
+    .close{border:none;background:#eef4ff;border-radius:999px;padding:8px 14px;cursor:pointer;font-weight:600;color:#1e293b;}
 
     /* footer */
     footer{border-top:1px solid var(--line);margin-top:60px;background:#fff}
@@ -175,7 +351,7 @@
       body.nav-open{ overflow:hidden; }
 
       /* grids a 1 col */
-      .split{ grid-template-columns:1fr; gap:18px; }
+      .split{ grid-template-columns:1fr; gap:24px; }
       .grid{ grid-template-columns:1fr; gap:18px; }
       .team{ grid-template-columns:1fr; gap:14px; }
       .gallery{ grid-template-columns:1fr; gap:10px; }
@@ -208,44 +384,45 @@
 </nav>
 <div id="navBackdrop" class="nav-backdrop"></div>
 
-<!-- HERO / HISTORIA -->
+<!-- HERO NUEVO -->
 <div class="container section reveal">
-  <section class="split">
+  <section class="split hero-block">
     <div>
-      <div class="mono">NUESTRA HISTORIA</div>
-      <h1>Trayectoria de Arteluk.</h1>
-      <p class="lead">
-        Soy Mary Quinteros, artista visual, arteterapeuta, psicóloga infantil y
-        adolescente, e ingeniera en administración de empresas. Mi formación incluye
-        una doble Máster en Coaching e Inteligencia Emocional, así como estudios en
-        musicoterapia, lo que me permite integrar arte, emoción y desarrollo personal
-        en cada proyecto que realizo.
-        
-        Mi experiencia profesional ha transitado entre el mundo de la administración y
-        la contabilidad —donde aprendí el valor del orden y la estrategia— y el universo
-        del arte, donde descubrí mi verdadera pasión: acompañar a niños, adolescentes
-        y adultos en el descubrimiento de su mundo interior a través del arte.
-        
-        En mi práctica artística, combino óleo, técnicas mixtas, espátula y proyecciones
-        visuales, transformando el proceso creativo en un espacio de autoconocimiento
-        y expresión emocional. Como fundadora de Arteluk, una academia de artes y
-        espacio de arteterapia, he diseñado clases, talleres y programas de coaching
-        artístico que invitan a explorar emociones y a utilizar la creatividad como
-        herramienta de bienestar y transformación.
-        
-        He participado en exposiciones colectivas y desarrollado programas de arte y
-        autocuidado para instituciones educativas y equipos de trabajo, promoviendo
-        espacios de encuentro, reflexión y crecimiento personal. Cada obra que creo y
-        cada taller que facilito buscan abrir un diálogo con el espectador o participante,
-        convirtiendo el arte en un puente entre la emoción y la sanación.
-      </p>
-      <div style="display:flex;gap:10px;margin-top:8px">
-        <a class="btn primary" href="#servicios">Ver servicios</a>
-        <a class="btn ghost" href="#galeria">Ver galería</a>
+      <div class="hero-eyebrow">
+        <span>Valdivia</span> · <span>Arte & Arteterapia</span>
       </div>
+      <h1 class="hero-title">Arte, emoción y bienestar para niños, jóvenes y adultos.</h1>
+      <p class="lead hero-sub text-intro">
+        En Arteluk acompañamos procesos emocionales a través del arte. Un espacio
+        seguro donde tus hijos pueden expresarse, regular sus emociones y reconectar
+        con su creatividad, mientras tú tienes la tranquilidad de dejarlos en buenas manos.
+      </p>
+
+      <ul class="pill-list hero-badges">
+        <li>+10 años de experiencia en arteterapia y educación.</li>
+        <li>Metodología propia con foco en emociones y autoestima.</li>
+        <li>Grupos pequeños y acompañamiento cercano.</li>
+        <li>Ubicación céntrica en Valdivia.</li>
+      </ul>
+
+      <div class="hero-ctas">
+        <a class="btn primary" href="#servicios">Ver talleres disponibles</a>
+        <a class="btn ghost" href="#contacto">Ir al formulario</a>
+        <span class="hero-note">Respuesta rápida por WhatsApp después del formulario.</span>
+      </div>
+
+      <button class="link-button open-story"
+              data-title="Trayectoria de Arteluk"
+              data-content="historia-larga">
+        Leer historia completa
+        <span>⟶</span>
+      </button>
     </div>
-    <aside class="photo">
-      <div class="media"><img src="img/Foto de portada.JPG" alt="Equipo y alumnos de Arteluk"></div>
+
+    <aside class="photo hero-photo">
+      <div class="media">
+        <img src="img/Foto de portada.JPG" alt="Equipo y alumnos de Arteluk">
+      </div>
     </aside>
   </section>
 </div>
@@ -254,18 +431,26 @@
 <div class="container section reveal">
   <section class="split">
     <div>
-      <div class="mono">¿QUE NOS ESTA PASANDO?</div>
-      <h1>Epidemia de salud mental</h1>
-      <p class="lead">
-        ¿Cuántas veces has sentido que tu energía ya no es la misma? Que tu vitalidad se te escapa... Lo atribuyes a tu edad o al
-        cansancio, a las largas jornadas de trabajo. En Arteluk queremos contarte un secreto. El secreto mejor guardado de esta
-        sociedad. Una sociedad que nos quiere —a nosotros y a nuestros hijos— sumidos en el consumismo, conectados a pantallas,
-        vendiéndonos dopamina barata (placeres instantáneos) como si fuera felicidad. Pero eso no es la verdadera felicidad.
+      <div class="mono">¿QUÉ NOS ESTÁ PASANDO?</div>
+      <h2>Epidemia de salud mental</h2>
+      <p class="lead text-intro">
+        ¿Cuántas veces has sentido que tu energía ya no es la misma? Que tu
+        vitalidad se escapa. Lo atribuimos a la edad o al cansancio, pero en el
+        fondo estamos viviendo una <strong>crisis de salud mental</strong> que
+        afecta a niños, jóvenes y adultos.
       </p>
+
+      <ul class="pill-list">
+        <li>Más pantallas y menos conexión real con otros.</li>
+        <li>Placeres rápidos que no se transforman en felicidad duradera.</li>
+        <li>1 de cada 3 jóvenes en Chile con problemas emocionales.</li>
+      </ul>
+
       <p class="lead">
-        Hoy vivimos una crisis de salud mental, no solo en Chile sino en el mundo. 1 de cada 3 jóvenes en nuestro país sufre problemas
-        emocionales. Y sí, esto también nos afecta a los adultos. Estamos apagados, cansados, desconectados. Por eso en Arteluk creemos
-        que es urgente volver a lo esencial: expresarnos, sentirnos, escucharnos.
+        En Arteluk creemos que es urgente volver a lo esencial:
+        <strong>expresarnos, sentirnos y escucharnos</strong>. El arte es nuestro
+        puente para bajar la velocidad, mirarnos hacia adentro y recuperar la
+        alegría por las cosas simples.
       </p>
     </div>
     <aside class="photo">
@@ -280,13 +465,27 @@
 <div class="container section reveal">
   <section class="split">
     <div>
-      <div class="mono">Metodologia unica y aprobada de Arteluk</div>
-      <h1>Metodología única de Arteluk</h1>
+      <div class="mono">METODOLOGÍA ÚNICA Y PROBADA</div>
+      <h2>Metodología Arteluk.</h2>
+      <p class="lead text-intro">
+        Nuestra metodología ha sido probada con más de 30 niños y perfeccionada
+        durante más de 10 años. Desde las primeras clases vemos cambios en la
+        <strong>expresión emocional, la ansiedad, el estrés y la seguridad
+        personal</strong>.
+      </p>
+
+      <ul class="pill-list">
+        <li>4 clases al mes, con estructura clara y repetible.</li>
+        <li>Acompañamiento emocional constante y respetuoso.</li>
+        <li>Ambiente seguro donde se valida lo que cada uno siente.</li>
+        <li>Trabajo en valores y autoestima a través de proyectos artísticos.</li>
+      </ul>
+
       <p class="lead">
-        Con nuestra metodología probada en más de 30 niños y perfeccionada durante más de 10 años, hemos visto notables mejoras desde las primeras clases en problemas de salud emocional (ansiedad, estres, 
-        introversion emocional) Con nuestro metodo unico de 4 clases al mes, logramos que nuestros alumnos vuelvan a expresarse , que se escuchen a ellos mismos, que sientan
-        esas ganas y alegria de disfrutar los pequeños momentos que nos hacen felices, no buscamos artistas perfectos, nunca eh creido en la palabra perfeccion, pero si buscamos la exelencia en todos 
-        nuestras acciones, exelencia en valores como la amistad, honestidad, valentia y la generosidad, te invitamos a ser parte de la familia arteluk
+        No buscamos artistas perfectos, sino personas que se sientan orgullosas
+        de su proceso. Cada sesión integra exploración de materiales, momentos
+        de conversación guiada, trabajo en valores y un cierre con sensación de
+        logro y pertenencia.
       </p>
     </div>
     <aside class="photo">
@@ -397,8 +596,8 @@
       <p class="lead">Acompañamiento humano y artístico en cada sesión.</p>
     </div>
     <div class="team">
-      <figure class="tile reveal"><div class="media"><img src="img/equipo.jpg" alt="Maite Caro"></div></figure>
-      <figure class="tile reveal"><div class="media"><img src="img/equipo (2).jpg" alt="Paula Barros"></div></figure>
+      <figure class="tile reveal"><div class="media"><img src="img/equipo.jpg" alt="Equipo Arteluk"></div></figure>
+      <figure class="tile reveal"><div class="media"><img src="img/equipo (2).jpg" alt="Equipo Arteluk"></div></figure>
     </div>
     <div class="bio-grid">
       <div class="bio reveal">
@@ -419,7 +618,7 @@
     <div class="reveal" style="margin-bottom:12px">
       <div class="mono">FORMULARIO</div>
       <h2>Reserva o consulta — respondemos al instante</h2>
-      <p class="lead">Completa el formulario. Te contactamos apenas lo recibamos . Dirección: <strong>Picarte 407, Valdivia</strong>.</p>
+      <p class="lead">Completa el formulario. Te contactamos apenas lo recibamos. Dirección: <strong>Picarte 407, Valdivia</strong>.</p>
     </div>
     <form class="form reveal" id="wlForm">
       <div class="row single">
@@ -448,7 +647,7 @@
   </div>
 </section>
 
-<!-- GALERÍA (sin repetir las usadas arriba) -->
+<!-- GALERÍA -->
 <section id="galeria" class="section" style="padding-top:40px">
   <div class="container">
     <div class="reveal" style="margin-bottom:12px">
@@ -481,9 +680,53 @@
   </div>
 </footer>
 
-<!-- MODAL + DESCRIPCIONES -->
-<dialog id="modal"><div class="modal-head"><strong id="mTitle">Detalle</strong><button class="close" id="mClose">Cerrar</button></div><div class="modal-body" id="mBody"></div></dialog>
+<!-- MODAL -->
+<dialog id="modal">
+  <div class="modal-head">
+    <strong id="mTitle">Detalle</strong>
+    <button class="close" id="mClose">Cerrar</button>
+  </div>
+  <div class="modal-body" id="mBody"></div>
+</dialog>
 
+<!-- HISTORIA COMPLETA -->
+<template id="historia-larga">
+  <p>
+    Soy Mary Quinteros, artista visual, arteterapeuta, psicóloga infantil
+    y adolescente, e ingeniera en administración de empresas. Mi formación
+    incluye un doble Máster en Coaching e Inteligencia Emocional, así como
+    estudios en musicoterapia, lo que me permite integrar arte, emoción y
+    desarrollo personal en cada proyecto que realizo.
+  </p>
+  <p>
+    Mi experiencia profesional ha transitado entre el mundo de la
+    administración y la contabilidad —donde aprendí el valor del orden y
+    la estrategia— y el universo del arte, donde descubrí mi verdadera
+    pasión: acompañar a niños, adolescentes y adultos en el descubrimiento
+    de su mundo interior a través del arte.
+  </p>
+  <p>
+    En mi práctica artística, combino óleo, técnicas mixtas, espátula y
+    proyecciones visuales, transformando el proceso creativo en un espacio
+    de autoconocimiento y expresión emocional.
+  </p>
+  <p>
+    Como fundadora de Arteluk, una academia de artes y espacio de
+    arteterapia, he diseñado clases, talleres y programas de coaching
+    artístico que invitan a explorar emociones y a utilizar la creatividad
+    como herramienta de bienestar y transformación.
+  </p>
+  <p>
+    He participado en exposiciones colectivas y desarrollado programas de
+    arte y autocuidado para instituciones educativas y equipos de trabajo,
+    promoviendo espacios de encuentro, reflexión y crecimiento personal.
+    Cada obra que creo y cada taller que facilito buscan abrir un diálogo
+    con el espectador o participante, convirtiendo el arte en un puente
+    entre la emoción y la sanación.
+  </p>
+</template>
+
+<!-- PLANES -->
 <template id="desc-basico">
   <p><strong>🎨 PLAN SOLO PINTURA – $60.000 + matrícula $15.000</strong></p>
   <p>🕓 4 clases de 1 hr (1 vez por semana)</p>
@@ -533,7 +776,7 @@
 
 <template id="desc-trimestral">
   <p><strong>PREMIUM TRIMESTRAL – $270.000 (10% dcto.)</strong></p>
-  <p>Mismo contenido del Premium por 3 meses, Perfecto si tu hijo o hija es una apasionado del arte y necesita un espacio para salir a reculicir todos sus talentos, con este plan adquieres todos los beneficios actuales y proximos que ofreceremos en arteluk y una consideracion especial para proximos proyectos × 3.</p>
+  <p>El mismo contenido del Premium por 3 meses. Perfecto si tu hijo o hija es un apasionado del arte y necesita un espacio para desplegar todos sus talentos. Con este plan adquieres todos los beneficios actuales y próximos que ofreceremos en Arteluk y una consideración especial para futuros proyectos × 3.</p>
 </template>
 
 <template id="desc-tea">
@@ -556,7 +799,7 @@
 
 <template id="desc-dia">
   <p><strong>PLAN POR UN DÍA – $20.000</strong></p>
-  <p>Vive la experiencia Arteluk en una clase: conoce el espacio, metodología y nuestro acompañamiento arteterapéutico. si decides continuar con nuestras clases y metodologia de arteluk se te descontaran los 20 mil pesos del valor total de nuestros talleres profecionales .</p>
+  <p>Vive la experiencia Arteluk en una clase: conoce el espacio, la metodología y nuestro acompañamiento arteterapéutico. Si decides continuar con nuestras clases y metodología, se descuentan los $20.000 del valor total de los talleres profesionales.</p>
 </template>
 
 <script>
@@ -611,14 +854,38 @@ document.querySelectorAll('.to-form').forEach(b=>b.addEventListener('click',e=>{
   document.getElementById('contacto').scrollIntoView({behavior:'smooth'});
 }));
 
-/* modal */
-const modal=document.getElementById('modal'), mTitle=document.getElementById('mTitle'), mBody=document.getElementById('mBody');
-document.getElementById('mClose').onclick=()=>modal.close();
-document.querySelectorAll('.open-desc').forEach(btn=>btn.addEventListener('click',()=>{
-  const id=btn.getAttribute('data-content'), title=btn.getAttribute('data-title'); 
-  const tpl=document.getElementById(id); if(!tpl) return; 
-  mTitle.textContent=title; mBody.innerHTML=""; mBody.appendChild(tpl.content.cloneNode(true)); modal.showModal();
-}));
+/* modal (planes + historia) */
+const modal=document.getElementById('modal'),
+      mTitle=document.getElementById('mTitle'),
+      mBody=document.getElementById('mBody'),
+      mClose=document.getElementById('mClose');
+
+mClose.onclick=()=>modal.close();
+
+function openTemplateModal(btn){
+  const id = btn.getAttribute('data-content');
+  const title = btn.getAttribute('data-title') || btn.textContent.trim();
+  const tpl = document.getElementById(id);
+  if(!tpl) return;
+  mTitle.textContent = title;
+  mBody.innerHTML = "";
+  mBody.appendChild(tpl.content.cloneNode(true));
+  modal.showModal();
+}
+
+document.querySelectorAll('.open-desc').forEach(btn=>{
+  btn.addEventListener('click', ()=>openTemplateModal(btn));
+});
+document.querySelectorAll('.open-story').forEach(btn=>{
+  btn.addEventListener('click', ()=>openTemplateModal(btn));
+});
+
+/* cerrar modal con ESC */
+document.addEventListener('keydown', e=>{
+  if(e.key === 'Escape' && typeof modal.close === 'function'){
+    try{ modal.close(); }catch(_){}
+  }
+});
 
 /* formulario -> webhook n8n con anti-doble envío */
 (function () {
@@ -688,20 +955,18 @@ document.querySelectorAll('.open-desc').forEach(btn=>btn.addEventListener('click
         );
         if(!res.ok) throw new Error('HTTP '+res.status);
 
-        // éxito: limpiar y avisar
-       // éxito: limpiar y avisar
-form.reset();
-localStorage.setItem('arteluk_last_send', String(Date.now()));
-toastForm('✅ ¡Formulario enviado con éxito!', 'ok');
+        form.reset();
+        localStorage.setItem('arteluk_last_send', String(Date.now()));
+        toastForm('✅ ¡Formulario enviado con éxito!', 'ok');
 
-// ---- Meta Pixel: marcar Lead cuando el formulario se envía bien ----
-if (typeof fbq === 'function') {
-  fbq('track', 'Lead', {
-    content_name: 'Formulario Arteluk',
-    value: 0,
-    currency: 'CLP'
-  });
-}
+        // Meta Pixel: marcar Lead cuando el formulario se envía bien
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead', {
+            content_name: 'Formulario Arteluk',
+            value: 0,
+            currency: 'CLP'
+          });
+        }
 
       }catch(err){
         console.error('Webhook error:', err);
@@ -717,4 +982,5 @@ if (typeof fbq === 'function') {
 </script>
 </body>
 </html>
+
 
