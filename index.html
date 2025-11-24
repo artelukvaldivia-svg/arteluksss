@@ -14,7 +14,6 @@
   <meta name="theme-color" content="#2563eb">
 
   <!-- (Opcional) Vista previa bonita al compartir el link -->
-  <!-- Cambia TU-DOMINIO por tu dominio real, por ejemplo https://arteluk.cl -->
   <meta property="og:title" content="Arteluk — Arte & Arteterapia en Valdivia">
   <meta property="og:description" content="Academia de arte y arteterapia en Valdivia. Talleres para niños, jóvenes y adultos.">
   <meta property="og:image" content="https://www.arteluk.cl/img/android-chrome-512x512.png">
@@ -69,9 +68,10 @@
       margin:0;
       font:15.5px/1.65 Poppins,system-ui;
       color:var(--ink);
+      /* Fondo general azul suave */
       background:
         radial-gradient(circle at 0% 0%, #e0f2fe 0, #eff6ff 35%),
-        radial-gradient(circle at 100% 100%, #fee2e2 0, #e0f2fe 40%),
+        radial-gradient(circle at 100% 100%, #bfdbfe 0, #e0f2fe 40%),
         #eaf5ff;
     }
     img{max-width:100%;display:block}
@@ -87,7 +87,7 @@
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease, transform .6s ease}
     .reveal.in{opacity:1;transform:none}
 
-    /* --------- LISTAS DE PUNTOS ELEGANTES (antes las “pastillas”) --------- */
+    /* --------- LISTAS DE PUNTOS ELEGANTES --------- */
     .text-intro{max-width:720px}
 
     .pill-list{
@@ -210,19 +210,133 @@
     a.nav:hover{background:#f1f7ff;border:1px solid #cfe3ff}
     .nav-toggle{display:none;background:none;border:none;font-size:28px;line-height:1;padding:6px 10px;cursor:pointer;color:#1e293b}
 
-    /* aurora fondo (más suave) */
-    .aurora{position:fixed;inset:0;z-index:0;pointer-events:none;filter:blur(70px);opacity:.35}
-    .aurora::before,.aurora::after{content:"";position:absolute;inset:0;background:
-      radial-gradient(600px 300px at 8% 12%, #a5d8ff70, transparent 60%),
-      radial-gradient(520px 260px at 92% 8%, #c7d2fe70, transparent 60%),
-      radial-gradient(440px 240px at 70% 85%, #f9a8d470, transparent 60%),
-      radial-gradient(420px 240px at 16% 90%, #bae6fd70, transparent 60%)}
-    .aurora::after{animation:float 14s ease-in-out infinite alternate}
-    @keyframes float{to{transform:translateY(-24px)}}
+    /* aurora fondo azul global */
+    .aurora{
+      position:fixed;inset:0;z-index:0;pointer-events:none;
+      filter:blur(70px);opacity:.4;
+    }
+    .aurora::before,.aurora::after{
+      content:"";position:absolute;inset:0;
+      background:
+        radial-gradient(600px 320px at 8% 12%, #bfdbfe80, transparent 60%),
+        radial-gradient(520px 260px at 92% 8%, #a5b4fc80, transparent 60%),
+        radial-gradient(440px 240px at 70% 85%, #0ea5e980, transparent 60%),
+        radial-gradient(420px 240px at 16% 90%, #bae6fd80, transparent 60%);
+    }
+    .aurora::after{
+      animation:float 18s ease-in-out infinite alternate;
+    }
+    @keyframes float{
+      to{transform:translateY(-24px);}
+    }
 
     /* layouts */
     .split{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
     @media (max-width:980px){.split{grid-template-columns:1fr}}
+
+    /* ===== PANTALLA DE INICIO (formato bonito + fondo 1 azul) ===== */
+    .intro-screen{
+      position:fixed;
+      inset:0;
+      z-index:40;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      background:
+        radial-gradient(circle at top, #e0f2ff 0, #eff6ff 45%, #bfdbfe 100%);
+      transition:opacity .6s ease, visibility .6s ease;
+    }
+    .intro-screen.hide{
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+    }
+    .intro-inner{
+      max-width:680px;
+      width:100%;
+      border-radius:28px;
+      background:rgba(255,255,255,.96);
+      box-shadow:0 22px 60px rgba(15,23,42,.3);
+      border:1px solid rgba(191,219,254,.9);
+      padding:26px 26px 30px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .intro-inner::before{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background:
+        radial-gradient(300px 260px at 0% 0%, #bfdbfe60, transparent 70%),
+        radial-gradient(320px 260px at 100% 100%, #93c5fd60, transparent 70%);
+      opacity:.8;
+      filter:blur(40px);
+      z-index:-1;
+      animation:introGlow 20s ease-in-out infinite alternate;
+    }
+    @keyframes introGlow{
+      0%{transform:translate3d(0,0,0) scale(1);}
+      100%{transform:translate3d(20px,-12px,0) scale(1.05);}
+    }
+    .intro-logo{
+      font-family:"Playfair Display",serif;
+      font-size:30px;
+      letter-spacing:.3px;
+      margin-bottom:4px;
+    }
+    .intro-tag{
+      margin:0;
+      color:#2563eb;
+      font-size:.84rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+    .intro-line{
+      margin:14px 0 18px;
+      color:#4b5563;
+      font-size:.97rem;
+    }
+    .intro-actions{
+      display:flex;
+      justify-content:center;
+      margin-top:8px;
+    }
+    .intro-note{
+      margin-top:10px;
+      font-size:.82rem;
+      color:#64748b;
+    }
+
+    /* HERO 3D: globos azules sutiles detrás */
+    .hero-shell{
+      position:relative;
+      z-index:1;
+      overflow:hidden;
+    }
+    .hero-bg-blue{
+      position:absolute;
+      inset:-20%;
+      z-index:0;
+      filter:blur(65px);
+      opacity:.95;
+      background:
+        radial-gradient(620px 380px at 0% 0%,   #bfdbfecc, transparent 60%),
+        radial-gradient(640px 400px at 100% 10%, #93c5fdcc, transparent 60%),
+        radial-gradient(640px 420px at 10% 100%, #38bdf8cc, transparent 65%),
+        radial-gradient(660px 420px at 90% 100%, #0ea5e9cc, transparent 65%);
+      animation:heroFloatBlue 26s ease-in-out infinite alternate;
+    }
+    .hero-shell .container{
+      position:relative;
+      z-index:1;
+    }
+    @keyframes heroFloatBlue{
+      0%  {transform:translate3d(0,0,0) scale(1);}
+      50% {transform:translate3d(-24px,-18px,0) scale(1.03);}
+      100%{transform:translate3d(18px,22px,0) scale(1.05);}
+    }
 
     /* HERO NUEVO */
     .hero-block{
@@ -234,7 +348,7 @@
       gap:6px;
       padding:4px 10px;
       border-radius:999px;
-      background:rgba(255,255,255,0.85);
+      background:rgba(255,255,255,0.9);
       border:1px solid #dbeafe;
       color:#1f2937;
       font-size:.78rem;
@@ -381,6 +495,22 @@
 <body>
 <div class="aurora"></div>
 
+<!-- PANTALLA DE INICIO (overlay) -->
+<div class="intro-screen" id="introScreen" aria-label="Pantalla de bienvenida Arteluk">
+  <div class="intro-inner">
+    <div class="intro-logo">Arteluk</div>
+    <p class="intro-tag">Arte & Arteterapia · Valdivia</p>
+    <p class="intro-line">
+      Espacio seguro donde niños, jóvenes y adultos pueden expresar lo que sienten a través del arte
+      y encontrar un lugar de contención emocional.
+    </p>
+    <div class="intro-actions">
+      <button class="btn primary" id="introEnter">Entrar al sitio</button>
+    </div>
+    <p class="intro-note">O desliza hacia abajo para continuar</p>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav>
   <div class="container navbar">
@@ -397,48 +527,52 @@
 </nav>
 <div id="navBackdrop" class="nav-backdrop"></div>
 
-<!-- HERO NUEVO -->
-<div class="container section reveal">
-  <section class="split hero-block">
-    <div>
-      <div class="hero-eyebrow">
-        <span>Valdivia</span> · <span>Arte & Arteterapia</span>
+<!-- HERO con globos azules 3D -->
+<header class="hero-shell">
+  <div class="hero-bg-blue"></div>
+
+  <div class="container section reveal">
+    <section class="split hero-block">
+      <div>
+        <div class="hero-eyebrow">
+          <span>Valdivia</span> · <span>Arte & Arteterapia</span>
+        </div>
+        <h1 class="hero-title">Arte, emoción y bienestar para niños, jóvenes y adultos.</h1>
+        <p class="lead hero-sub text-intro">
+          En Arteluk acompañamos procesos emocionales a través del arte. Un espacio
+          seguro donde tus hijos pueden expresarse, regular sus emociones y reconectar
+          con su creatividad, mientras tú tienes la tranquilidad de dejarlos en buenas manos.
+        </p>
+
+        <ul class="pill-list hero-badges">
+          <li>+10 años de experiencia en arteterapia y educación.</li>
+          <li>Metodología propia con foco en emociones y autoestima.</li>
+          <li>Grupos pequeños y acompañamiento cercano.</li>
+          <li>Ubicación céntrica en Valdivia.</li>
+        </ul>
+
+        <div class="hero-ctas">
+          <a class="btn primary" href="#servicios">Ver talleres disponibles</a>
+          <a class="btn ghost" href="#contacto">Ir al formulario</a>
+          <span class="hero-note">Respuesta rápida por WhatsApp después del formulario.</span>
+        </div>
+
+        <button class="link-button open-story"
+                data-title="Trayectoria de Arteluk"
+                data-content="historia-larga">
+          Leer historia completa
+          <span>⟶</span>
+        </button>
       </div>
-      <h1 class="hero-title">Arte, emoción y bienestar para niños, jóvenes y adultos.</h1>
-      <p class="lead hero-sub text-intro">
-        En Arteluk acompañamos procesos emocionales a través del arte. Un espacio
-        seguro donde tus hijos pueden expresarse, regular sus emociones y reconectar
-        con su creatividad, mientras tú tienes la tranquilidad de dejarlos en buenas manos.
-      </p>
 
-      <ul class="pill-list hero-badges">
-        <li>+10 años de experiencia en arteterapia y educación.</li>
-        <li>Metodología propia con foco en emociones y autoestima.</li>
-        <li>Grupos pequeños y acompañamiento cercano.</li>
-        <li>Ubicación céntrica en Valdivia.</li>
-      </ul>
-
-      <div class="hero-ctas">
-        <a class="btn primary" href="#servicios">Ver talleres disponibles</a>
-        <a class="btn ghost" href="#contacto">Ir al formulario</a>
-        <span class="hero-note">Respuesta rápida por WhatsApp después del formulario.</span>
-      </div>
-
-      <button class="link-button open-story"
-              data-title="Trayectoria de Arteluk"
-              data-content="historia-larga">
-        Leer historia completa
-        <span>⟶</span>
-      </button>
-    </div>
-
-    <aside class="photo hero-photo">
-      <div class="media">
-        <img src="img/Foto de portada.JPG" alt="Equipo y alumnos de Arteluk">
-      </div>
-    </aside>
-  </section>
-</div>
+      <aside class="photo hero-photo">
+        <div class="media">
+          <img src="img/Foto de portada.JPG" alt="Equipo y alumnos de Arteluk">
+        </div>
+      </aside>
+    </section>
+  </div>
+</header>
 
 <!-- EPIDEMIA -->
 <div class="container section reveal">
@@ -802,7 +936,7 @@
   4) Obra personal y cierre creativo — proyecto final con libertad expresiva.</p>
   <p>🎒 Materiales: block 180 g, lápices HB/2B/4B/6B, carboncillo, difumino, goma moldeable, fieltros/telas táctiles, pinturas y pinceles.</p>
   <p>💖 Beneficios: motricidad fina, autoconfianza, concentración y tolerancia a la frustración, creatividad y observación, adaptación sensorial individual.</p>
-  <p>📚 Metodología: acompañamiento emocional y pedagógico, feedback semanal con fotos, materiales profesionales, ambiente seguro sin sobrestimulación. 🏛️ Salón: Oki Canva Studio.</p>
+  <p>📚 Metodología: acompañamiento emocional y pedagógico, feedback semanal con fotos, materiales profesionales, ambiente seguro sin sobreestimulación. 🏛️ Salón: Oki Canva Studio.</p>
 </template>
 
 <template id="desc-adultos">
@@ -816,6 +950,31 @@
 </template>
 
 <script>
+/* PANTALLA DE INICIO: cierre con botón o scroll, 1 vez por sesión */
+const introScreen = document.getElementById('introScreen');
+const introEnter  = document.getElementById('introEnter');
+
+if (introScreen){
+  const hideIntro = () => {
+    if (introScreen.classList.contains('hide')) return;
+    introScreen.classList.add('hide');
+    try{ sessionStorage.setItem('arteluk_intro_seen','1'); }catch(_){}
+  };
+
+  // Si ya se vio en esta sesión, no mostrar
+  try{
+    if (sessionStorage.getItem('arteluk_intro_seen') === '1') {
+      introScreen.classList.add('hide');
+    }
+  }catch(_){}
+
+  if (introEnter) introEnter.addEventListener('click', hideIntro);
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) hideIntro();
+  }, {passive:true});
+}
+
 /* menú responsive (dropdown) */
 const navToggle = document.getElementById('navToggle');
 const navActions = document.getElementById('navActions');
@@ -995,6 +1154,7 @@ document.addEventListener('keydown', e=>{
 </script>
 </body>
 </html>
+
 
 
 
