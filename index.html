@@ -56,8 +56,10 @@
       --radius:18px; --shadow:0 10px 28px rgba(15,23,42,.10);
       --navH:64px;
 
-      /* ===== DORADO VERANO (solo para los 2 planes nuevos) ===== */
-      --sun1:#f59e0b; --sun2:#fbbf24; --sun3:#fde68a;
+      /* verano (dorado) */
+      --sun1:#f59e0b;
+      --sun2:#fbbf24;
+      --sun3:#fde68a;
     }
     *{box-sizing:border-box}
     html,body{
@@ -149,23 +151,6 @@
       transform:translateY(0) scale(.97);
       box-shadow:0 6px 14px rgba(37,99,235,.3);
     }
-
-    /* ===== BOTÓN DORADO (solo nuevos planes vacaciones) ===== */
-    .btn.summer{
-      color:#3b2f05;
-      background-image:linear-gradient(90deg,var(--sun2),var(--sun1));
-      box-shadow:0 14px 25px rgba(245,158,11,.25);
-    }
-    .btn.summer:hover{
-      transform:translateY(-2px) scale(1.01);
-      box-shadow:0 18px 32px rgba(245,158,11,.30);
-      background-position:100% 0;
-    }
-    .btn.summer:active{
-      transform:translateY(0) scale(.97);
-      box-shadow:0 6px 14px rgba(245,158,11,.30);
-    }
-
     .btn.ghost{
       background:rgba(255,255,255,.92);
       border:1px solid #cbd5f5;
@@ -179,6 +164,22 @@
     .btn.ghost:active{
       transform:translateY(0) scale(.98);
       box-shadow:0 4px 10px rgba(148,163,184,.3);
+    }
+
+    /* botones verano (dorado) */
+    .btn.summer{
+      color:#3b2f05;
+      background-image:linear-gradient(90deg,var(--sun1),var(--sun2));
+      box-shadow:0 14px 25px rgba(245,158,11,.22);
+    }
+    .btn.summer:hover{
+      transform:translateY(-2px) scale(1.01);
+      box-shadow:0 18px 32px rgba(245,158,11,.28);
+      background-position:100% 0;
+    }
+    .btn.summer:active{
+      transform:translateY(0) scale(.97);
+      box-shadow:0 6px 14px rgba(245,158,11,.26);
     }
 
     .link-button{
@@ -476,19 +477,27 @@
     .card .cta{margin-top:auto;padding:14px 16px;display:flex;gap:8px;flex-wrap:wrap}
     .card .cta .btn{min-width:160px;justify-content:center}
 
-    /* ===== CARD DORADA (solo planes vacaciones) ===== */
-    .card.summer{
-      border-color: rgba(245,158,11,.40);
-      background: linear-gradient(180deg, rgba(255,251,235,.96), #ffffff 55%);
-    }
-    .card.summer h3{ color:#92400e; }
+    /* verano (dorado) */
+    .card.summer{ border-color: rgba(245,158,11,.22); }
     .badge.summer{
-      background: rgba(255,251,235,.95);
-      border-color: rgba(245,158,11,.28);
-      color:#92400e;
+      background:rgba(255,247,237,.92);
+      border:1px solid rgba(245,158,11,.22);
+      color:#7c2d12;
     }
-    .card.summer:hover{
-      box-shadow:0 22px 45px rgba(245,158,11,.20), 0 20px 40px rgba(15,23,42,.20);
+    .rec-badge{
+      position:absolute;
+      top:12px;
+      left:12px;
+      z-index:2;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.02em;
+      color:#3b2f05;
+      background:linear-gradient(90deg,var(--sun3),var(--sun2));
+      border:1px solid rgba(245,158,11,.25);
+      box-shadow:0 10px 22px rgba(245,158,11,.18);
     }
 
     /* equipo */
@@ -843,11 +852,11 @@
         </div>
       </article>
 
-      <!-- ===== NUEVOS PLANES VERANO (DORADOS) ===== -->
+      <!-- NUEVO: Taller de Vacaciones Básico (verano / dorado) -->
       <article class="card summer reveal">
         <div class="media"><img src="img/WhatsApp Image 2025-12-15 at 8.33.32 AM.jpeg" alt="Taller de Vacaciones Básico"></div>
         <div class="body">
-          <h3>☀️ Taller de Vacaciones Básico  $50.000</h3>
+          <h3>☀️ Taller de Vacaciones Básico — $50.000</h3>
           <p>Por semana · 3 clases/semana de 1 hora.</p>
           <div class="meta">
             <span class="badge summer">Por semana</span>
@@ -861,10 +870,14 @@
         </div>
       </article>
 
+      <!-- NUEVO: Taller de Vacaciones Premium (verano / dorado + recomendado) -->
       <article class="card summer reveal">
-        <div class="media"><img src="img/WhatsApp Image 2025-12-15 at 12.22.38 PM.jpeg" alt="Taller de Vacaciones Premium"></div>
+        <div class="media" style="position:relative;">
+          <span class="rec-badge">⭐ Recomendado</span>
+          <img src="img/WhatsApp Image 2025-12-15 at 12.22.38 PM.jpeg" alt="Taller de Vacaciones Premium">
+        </div>
         <div class="body">
-          <h3>🌞 Taller de Vacaciones Premium  $65.000</h3>
+          <h3>🌞 Taller de Vacaciones Premium — $70.000</h3>
           <p>Por semana · 3 clases/semana de 2 horas.</p>
           <div class="meta">
             <span class="badge summer">Por semana</span>
@@ -877,7 +890,6 @@
           <button class="btn ghost open-desc" data-title="Taller de Vacaciones Premium — Detalles" data-content="desc-vac-premium">Leer más</button>
         </div>
       </article>
-      <!-- ===== FIN NUEVOS PLANES VERANO ===== -->
 
     </div>
   </div>
@@ -931,8 +943,6 @@
             <option>Plan Trimestral — $270.000</option>
             <option>Taller para Adultos — $60.000</option>
             <option>Plan por un día — $20.000</option>
-
-            <!-- NUEVOS PLANES VERANO -->
             <option>Taller de Vacaciones Básico — $50.000</option>
             <option>Taller de Vacaciones Premium — $70.000</option>
           </select>
@@ -1102,57 +1112,20 @@
   <p>Vive la experiencia Arteluk en una clase: conoce el espacio, la metodología y nuestro acompañamiento arteterapéutico. Si decides continuar con nuestras clases y metodología, se descuentan los $20.000 del valor total de los talleres profesionales.</p>
 </template>
 
-<!-- ===== NUEVAS DESCRIPCIONES (EDITABLES) ===== -->
+<!-- NUEVOS: Vacaciones (placeholder editable) -->
 <template id="desc-vac-basico">
-  <p><strong>☀️ TALLER DE VACACIONES BÁSICO — $50.000 (por semana)</strong></p>
+  <p><strong>☀️ TALLER DE VACACIONES BÁSICO — $50.000 (POR SEMANA)</strong></p>
   <p>📅 3 clases por semana · 🕓 1 hora por clase.</p>
-  <p>🎨 <strong>Enfoque:</strong> creatividad, técnica y disfrute en formato intensivo de verano.</p>
-  <p>✨ <strong>Incluye (editable):</strong></p>
-  <ul>
-    <li>✔️ Actividades artísticas variadas (pintura / dibujo / mixto)</li>
-    <li>✔️ Proyectos cortos para ver resultados rápidos</li>
-    <li>✔️ Acompañamiento cercano</li>
-  </ul>
-  <p>💛 <strong>Ideal para:</strong> mantener rutina creativa en vacaciones y aprovechar el verano.</p>
+  <p>🎨 Enfoque: creatividad, juego y expresión emocional a través del arte.</p>
+  <p>✅ (Edita aquí luego) Materiales / edades / cupos / horarios / beneficios.</p>
 </template>
 
-  <article class="card summer reveal">
-  <div class="media" style="position:relative;">
-    <!-- Badge recomendado -->
-    <span style="
-      position:absolute;
-      top:12px;
-      left:12px;
-      z-index:2;
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:.82rem;
-      font-weight:800;
-      letter-spacing:.02em;
-      color:#3b2f05;
-      background:linear-gradient(90deg,var(--sun3),var(--sun2));
-      border:1px solid rgba(245,158,11,.25);
-      box-shadow:0 10px 22px rgba(245,158,11,.18);
-    ">⭐ Recomendado</span>
-
-    <img src="img/WhatsApp Image 2025-12-15 at 12.22.38 PM.jpeg" alt="Taller de Vacaciones Premium">
-  </div>
-
-  <div class="body">
-    <h3>🌞 Taller de Vacaciones Premium — $70.000</h3>
-    <p>Por semana · 3 clases/semana de 2 horas.</p>
-    <div class="meta">
-      <span class="badge summer">Por semana</span>
-      <span class="badge summer">3 clases/semana</span>
-      <span class="badge summer">2 horas</span>
-    </div>
-  </div>
-
-  <div class="cta">
-    <a class="btn summer to-form" data-value="Taller de Vacaciones Premium — $70.000">Reservar cupo</a>
-    <button class="btn ghost open-desc" data-title="Taller de Vacaciones Premium — Detalles" data-content="desc-vac-premium">Leer más</button>
-  </div>
-</article>
+<template id="desc-vac-premium">
+  <p><strong>🌞 TALLER DE VACACIONES PREMIUM — $70.000 (POR SEMANA)</strong></p>
+  <p>📅 3 clases por semana · 🕓 2 horas por clase.</p>
+  <p>🎨 Enfoque: experiencia más completa, más tiempo de acompañamiento y proyectos.</p>
+  <p>✅ (Edita aquí luego) Materiales / edades / cupos / horarios / beneficios.</p>
+</template>
 
 <script>
 /* PANTALLA DE INICIO: cierre con botón o scroll, 1 vez por sesión */
@@ -1357,5 +1330,3 @@ document.addEventListener('keydown', e=>{
 </script>
 </body>
 </html>
-
-
