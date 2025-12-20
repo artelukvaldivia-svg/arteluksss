@@ -56,10 +56,11 @@
       --radius:18px; --shadow:0 10px 28px rgba(15,23,42,.10);
       --navH:64px;
 
-      /* verano (dorado) */
-      --sun1:#f59e0b;
-      --sun2:#fbbf24;
-      --sun3:#fde68a;
+      /* dorado/verano */
+      --gold1:#fbbf24;   /* amber-400 */
+      --gold2:#f59e0b;   /* amber-500 */
+      --gold3:#d97706;   /* amber-600 */
+      --goldSoft:#fff7ed;
     }
     *{box-sizing:border-box}
     html,body{
@@ -164,22 +165,6 @@
     .btn.ghost:active{
       transform:translateY(0) scale(.98);
       box-shadow:0 4px 10px rgba(148,163,184,.3);
-    }
-
-    /* botones verano (dorado) */
-    .btn.summer{
-      color:#3b2f05;
-      background-image:linear-gradient(90deg,var(--sun1),var(--sun2));
-      box-shadow:0 14px 25px rgba(245,158,11,.22);
-    }
-    .btn.summer:hover{
-      transform:translateY(-2px) scale(1.01);
-      box-shadow:0 18px 32px rgba(245,158,11,.28);
-      background-position:100% 0;
-    }
-    .btn.summer:active{
-      transform:translateY(0) scale(.97);
-      box-shadow:0 6px 14px rgba(245,158,11,.26);
     }
 
     .link-button{
@@ -467,7 +452,7 @@
     .grid{display:grid;gap:22px;grid-template-columns:repeat(3,minmax(0,1fr))}
     @media (max-width:1100px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media (max-width:720px){.grid{grid-template-columns:1fr}}
-    .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;transition:transform .28s ease, box-shadow .28s}
+    .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;transition:transform .28s ease, box-shadow .28s; position:relative;}
     .card:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 20px 40px rgba(15,23,42,.24);}
     .card .media{aspect-ratio:16/10;background:var(--bg2)}
     .card .body{padding:16px 16px 18px}
@@ -477,27 +462,40 @@
     .card .cta{margin-top:auto;padding:14px 16px;display:flex;gap:8px;flex-wrap:wrap}
     .card .cta .btn{min-width:160px;justify-content:center}
 
-    /* verano (dorado) */
-    .card.summer{ border-color: rgba(245,158,11,.22); }
-    .badge.summer{
-      background:rgba(255,247,237,.92);
-      border:1px solid rgba(245,158,11,.22);
+    /* ===== TARJETAS VERANO (dorado) ===== */
+    .card.summer{
+      border:1px solid rgba(245,158,11,.35);
+      box-shadow:0 10px 28px rgba(245,158,11,.10);
+      background:linear-gradient(180deg, rgba(255,247,237,.65), rgba(255,255,255,.95));
+    }
+    .card.summer:hover{
+      box-shadow:0 22px 44px rgba(245,158,11,.22);
+    }
+    .badge.gold{
+      background:rgba(255,247,237,.95);
+      border:1px solid rgba(245,158,11,.35);
       color:#7c2d12;
     }
-    .rec-badge{
+    .badge.rec{
+      background:linear-gradient(90deg,var(--gold1),var(--gold2));
+      border:1px solid rgba(217,119,6,.55);
+      color:#1f2937;
+      font-weight:800;
+    }
+    .recommended-pill{
       position:absolute;
       top:12px;
-      left:12px;
-      z-index:2;
-      padding:6px 10px;
+      right:12px;
+      padding:8px 10px;
       border-radius:999px;
-      font-size:.82rem;
-      font-weight:800;
-      letter-spacing:.02em;
-      color:#3b2f05;
-      background:linear-gradient(90deg,var(--sun3),var(--sun2));
-      border:1px solid rgba(245,158,11,.25);
-      box-shadow:0 10px 22px rgba(245,158,11,.18);
+      background:linear-gradient(90deg,var(--gold1),var(--gold2));
+      border:1px solid rgba(217,119,6,.55);
+      color:#1f2937;
+      font-weight:900;
+      font-size:.78rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      box-shadow:0 14px 28px rgba(245,158,11,.22);
     }
 
     /* equipo */
@@ -611,7 +609,7 @@
       <a class="nav" href="#equipo">Equipo</a>
       <a class="nav" href="#contacto">Formulario</a>
       <a class="nav" href="#galeria">Galería</a>
-      <a class="btn primary" href="#contacto">Inscribe a tu hijo/a</a>
+      <a class="btn primary track-contact" href="#contacto" data-contact-name="CTA Nav - Inscribe a tu hijo/a">Inscribe a tu hijo/a</a>
     </div>
   </div>
 </nav>
@@ -643,7 +641,7 @@
 
         <div class="hero-ctas">
           <a class="btn primary" href="#servicios">Ver talleres disponibles</a>
-          <a class="btn ghost" href="#contacto">Ir al formulario</a>
+          <a class="btn ghost track-contact" href="#contacto" data-contact-name="CTA Hero - Ir al formulario">Ir al formulario</a>
           <span class="hero-note">Respuesta rápida por WhatsApp después del formulario.</span>
         </div>
 
@@ -659,18 +657,16 @@
       <aside class="video-shell" aria-label="Video de presentación">
         <div class="video-card">
           <div class="video-aspect">
-           <a class="video-link"
-   href="https://youtu.be/8abquRuhvCA?si=7RjFK1e86uXS9k66"
-   target="_blank"
-   rel="noopener"
-   aria-label="Reproducir video en YouTube"
-   onclick="if(typeof fbq==='function'){fbq('trackCustom','VideoClick',{video_id:'bqWS5BFccpI'});}">
-
+            <a class="video-link"
+               href="https://www.youtube.com/watch?v=8abquRuhvCA"
+               target="_blank"
+               rel="noopener"
+               aria-label="Reproducir video en YouTube">
 
               <img class="video-thumb"
-                   src="https://i.ytimg.com/vi/bqWS5BFccpI/maxresdefault.jpg"
-                   alt="Conoce Arteluk en 60 segundos"
-                   onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/bqWS5BFccpI/hqdefault.jpg';">
+                   src="https://i.ytimg.com/vi/8abquRuhvCA/maxresdefault.jpg"
+                   alt="Conoce Arteluk"
+                   onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/8abquRuhvCA/hqdefault.jpg';">
 
               <div class="video-center">
                 <div class="play-circle" aria-hidden="true">
@@ -686,10 +682,10 @@
 
           <div class="video-meta">
             <div class="meta-left">
-              <strong>Conoce Arteluk en 60 segundos</strong>
-              <small>Video oficial · <a href="https://youtu.be/8abquRuhvCA?si=7RjFK1e86uXS9k66" target="_blank" rel="noopener">Ver en YouTube</a></small>
+              <strong>Conoce Arteluk</strong>
+              <small>Video oficial · <a class="video-youtube-link" href="https://www.youtube.com/watch?v=8abquRuhvCA" target="_blank" rel="noopener">Ver en YouTube</a></small>
             </div>
-            <a class="btn ghost" href="#contacto">Agendar</a>
+            <a class="btn ghost track-contact" href="#contacto" data-contact-name="CTA Video - Agendar">Agendar</a>
           </div>
         </div>
       </aside>
@@ -776,6 +772,44 @@
     </div>
 
     <div class="grid">
+
+      <!-- ===== NUEVOS: TALLERES DE VERANO (DORADO) ===== -->
+      <article class="card reveal summer">
+        <div class="media"><img src="img/WhatsApp Image 2025-12-15 at 8.33.32 AM.jpeg" alt="Taller de Vacaciones Básico"></div>
+        <div class="body">
+          <h3>🌼 Taller de Vacaciones Básico — $50.000</h3>
+          <p>3 clases por semana · 1 hr · Lunes, Miércoles y Viernes.</p>
+          <div class="meta">
+            <span class="badge gold">Verano</span>
+            <span class="badge gold">15:30–16:30</span>
+            <span class="badge gold">Materiales incluidos</span>
+          </div>
+        </div>
+        <div class="cta">
+          <a class="btn primary to-form" data-value="Taller de Vacaciones Básico — $50.000">Reservar cupo</a>
+          <button class="btn ghost open-desc" data-title="Taller de Vacaciones Básico — Detalles" data-content="desc-verano-basico">Leer más</button>
+        </div>
+      </article>
+
+      <article class="card reveal summer" id="veranoPremiumCard">
+        <div class="recommended-pill">Recomendado</div>
+        <div class="media"><img src="img/WhatsApp Image 2025-12-15 at 12.22.38 PM.jpeg" alt="Taller de Vacaciones Premium"></div>
+        <div class="body">
+          <h3>👑 Taller de Vacaciones Premium — $70.000</h3>
+          <p>3 clases por semana · 2 hrs · Martes, Jueves y Sábado.</p>
+          <div class="meta">
+            <span class="badge rec">Recomendado</span>
+            <span class="badge gold">15:00–17:00</span>
+            <span class="badge gold">Materiales incluidos</span>
+          </div>
+        </div>
+        <div class="cta">
+          <a class="btn primary to-form" data-value="Taller de Vacaciones Premium — $70.000">Reservar cupo</a>
+          <button class="btn ghost open-desc" data-title="Taller de Vacaciones Premium — Detalles" data-content="desc-verano-premium">Leer más</button>
+        </div>
+      </article>
+      <!-- ===== FIN NUEVOS ===== -->
+
       <article class="card reveal">
         <div class="media"><img src="img/Fondo para curso de basico.jpg" alt="Taller de Artes"></div>
         <div class="body">
@@ -854,47 +888,6 @@
         </div>
       </article>
 
-      <!-- VERANO: Básico -->
-      <article class="card summer reveal">
-        <div class="media"><img src="img/WhatsApp Image 2025-12-15 at 8.33.32 AM.jpeg" alt="Plan Básico Verano"></div>
-        <div class="body">
-          <h3>🌼 Plan Básico Verano — $45.000</h3>
-          <p>Lunes · Miércoles · Viernes · 15:30–16:30</p>
-          <div class="meta">
-            <span class="badge summer">pago semanal</span>
-            <span class="badge summer">3 días</span>
-            <span class="badge summer">1 hora</span>
-            <span class="badge summer">Mary Quinteros</span>
-          </div>
-        </div>
-        <div class="cta">
-          <a class="btn summer to-form" data-value="Taller de Vacaciones Básico — $45.000">Reservar cupo</a>
-          <button class="btn ghost open-desc" data-title="🌈 Talleres de Verano — Plan Básico" data-content="desc-vac-basico">Leer más</button>
-        </div>
-      </article>
-
-      <!-- VERANO: Premium (Recomendado) -->
-      <article class="card summer reveal">
-        <div class="media" style="position:relative;">
-          <span class="rec-badge">⭐ Recomendado</span>
-          <img src="img/WhatsApp Image 2025-12-15 at 12.22.38 PM.jpeg" alt="Plan Premium Verano">
-        </div>
-        <div class="body">
-          <h3>👑 Plan Premium Verano — $60.000</h3>
-          <p>Martes · Jueves · Sábado · 15:00–17:00</p>
-          <div class="meta">
-            <span class="badge summer">pago semanal</span>
-            <span class="badge summer">3 días</span>
-            <span class="badge summer">2 horas</span>
-            <span class="badge summer">Ivanya Sierra</span>
-          </div>
-        </div>
-        <div class="cta">
-          <a class="btn summer to-form" data-value="Taller de Vacaciones Premium — $60.000">Reservar cupo</a>
-          <button class="btn ghost open-desc" data-title="🌈 Talleres de Verano — Plan Premium" data-content="desc-vac-premium">Leer más</button>
-        </div>
-      </article>
-
     </div>
   </div>
 </section>
@@ -941,14 +934,18 @@
         <div><label for="servicio">Servicio de interés</label>
           <select id="servicio" required>
             <option value="" disabled selected>Selecciona una opción</option>
+
+            <!-- nuevos -->
+            <option>Taller de Vacaciones Básico — $50.000</option>
+            <option>Taller de Vacaciones Premium — $70.000</option>
+
+            <!-- existentes -->
             <option>Taller de Artes — $60.000</option>
             <option>Taller de Artes Premium — $100.000</option>
             <option>Taller TEA — $60.000</option>
             <option>Plan Trimestral — $270.000</option>
             <option>Taller para Adultos — $60.000</option>
             <option>Plan por un día — $20.000</option>
-            <option>Taller de Vacaciones Básico — $50.000</option>
-            <option>Taller de Vacaciones Premium — $70.000</option>
           </select>
         </div>
       </div>
@@ -1040,7 +1037,59 @@
   </p>
 </template>
 
-<!-- PLANES -->
+<!-- ===== NUEVOS: VERANO ===== -->
+<template id="desc-verano-basico">
+  <p><strong>🌼 PLAN BÁSICO VERANO — Mary Quinteros — $50.000</strong></p>
+  <p>Crear · Jugar · Expresarse · Disfrutar</p>
+  <p>🕒 <strong>Horario:</strong> 15:30 a 16:30 hrs</p>
+  <p>📅 <strong>Modalidad:</strong> 3 días por semana — <strong>Lunes, Miércoles y Viernes</strong></p>
+  <p>🎨 <strong>Arte, juego y exploración creativa</strong></p>
+
+  <p><strong>✨ Experiencias y Técnicas Artísticas:</strong></p>
+  <ul>
+    <li>🌸 <strong>Acuarela divertida y expresiva:</strong> colores, flores, juegos con el agua y libertad creativa.</li>
+    <li>✏️ <strong>Dibujo creativo:</strong> línea, forma, imaginación y confianza al dibujar.</li>
+    <li>🎨 <strong>Pintura acrílica lúdica:</strong> color, texturas y expresión libre sobre bastidor.</li>
+  </ul>
+
+  <p>💛 Ideal para disfrutar el arte, soltarse, crear sin miedo y pasarlo bien este verano.</p>
+
+  <p><strong>💖 Incluye:</strong></p>
+  <ul>
+    <li>🎨 Materiales incluidos</li>
+    <li>📸 Registro fotográfico del proceso</li>
+    <li>🌈 Ambiente cuidado, creativo y entretenido</li>
+    <li>🧠 Acompañamiento con enfoque expresivo</li>
+  </ul>
+</template>
+
+<template id="desc-verano-premium">
+  <p><strong>👑 PLAN PREMIUM VERANO — Ivanya Sierra — $70.000</strong></p>
+  <p>Crear · Jugar · Expresarse · Disfrutar</p>
+  <p>🕒 <strong>Horario:</strong> 15:00 a 17:00 hrs</p>
+  <p>📅 <strong>Modalidad:</strong> 3 días por semana — <strong>Martes, Jueves y Sábado</strong></p>
+  <p>🎭 <strong>Arte + experiencia creativa avanzada</strong></p>
+
+  <p><strong>✨ Experiencias y Técnicas Artísticas:</strong></p>
+  <ul>
+    <li>🌿 <strong>Acuarela botánica creativa:</strong> observación, detalle, técnica y conexión con la naturaleza.</li>
+    <li>🎭 <strong>Teatro creativo & confección de máscaras:</strong> juego escénico, identidad, emoción y expresión corporal.</li>
+    <li>🏺 <strong>Porcelana artística – “Tesoros de Verano”:</strong> modelado, terminaciones y creación de piezas únicas para llevar a casa.</li>
+  </ul>
+
+  <p>💎 Una experiencia premium para explorar, crear y vivir el arte de forma profunda, entretenida y memorable.</p>
+
+  <p><strong>💖 Incluye:</strong></p>
+  <ul>
+    <li>🎨 Materiales incluidos</li>
+    <li>📸 Registro fotográfico del proceso</li>
+    <li>🌈 Ambiente cuidado, creativo y entretenido</li>
+    <li>🧠 Acompañamiento con enfoque expresivo</li>
+  </ul>
+</template>
+<!-- ===== FIN NUEVOS ===== -->
+
+<!-- PLANES EXISTENTES -->
 <template id="desc-basico">
   <p><strong>🎨 PLAN SOLO PINTURA – $60.000 + matrícula $15.000</strong></p>
   <p>🕓 4 clases de 1 hr (1 vez por semana)</p>
@@ -1061,7 +1110,7 @@
 </template>
 
 <template id="desc-premium">
-  <p><strong>👑 PLAN PREMIUM ARTE MIXTO – $120.000 + matrícula $15.000</strong></p>
+  <p><strong>👑 PLAN PREMIUM ARTE MIXTO – $100.000 + matrícula $15.000</strong></p>
   <p>🕓 4 clases de 2 hrs (1 por semana).</p>
   <p>📍 Incluye estacionamiento + acceso a zona cowork y sala de espera.</p>
   <p>🎨 <strong>Actividades artísticas y terapéuticas:</strong></p>
@@ -1116,66 +1165,23 @@
   <p>Vive la experiencia Arteluk en una clase: conoce el espacio, la metodología y nuestro acompañamiento arteterapéutico. Si decides continuar con nuestras clases y metodología, se descuentan los $20.000 del valor total de los talleres profesionales.</p>
 </template>
 
-<!-- VERANO: INFO REAL -->
-<template id="desc-vac-basico">
-  <p style="margin-top:0"><strong>🌈 Talleres de Verano Arteluk</strong></p>
-  <p style="margin:6px 0 10px;color:#475569"><em>Crear · Jugar · Expresarse · Disfrutar</em></p>
-
-  <p>Este verano en Arteluk los niños y niñas viven el arte como una experiencia entretenida, creativa y significativa, donde cada día es una nueva aventura artística ✨</p>
-
-  <hr style="border:none;border-top:1px solid #dbeafe;margin:14px 0">
-
-  <p><strong>🌼 PLAN BÁSICO VERANO — Mary Quinteros</strong></p>
-  <p>🎨 Arte, juego y exploración creativa</p>
-
-  <ul style="margin:10px 0 0">
-    <li><strong>🕒 Horario:</strong> 15:30 a 16:30 hrs</li>
-    <li><strong>📅 Días:</strong> Lunes · Miércoles · Viernes</li>
-    <li><strong>✅ Modalidad:</strong> 3 días</li>
-  </ul>
-
-  <p style="margin:12px 0 6px"><strong>✨ Experiencias y Técnicas Artísticas:</strong></p>
-  <ul>
-    <li><strong>🌸 Acuarela divertida y expresiva</strong> — colores, flores, juegos con el agua y libertad creativa.</li>
-    <li><strong>✏️ Dibujo creativo</strong> — línea, forma, imaginación y confianza al dibujar.</li>
-    <li><strong>🎨 Pintura acrílica lúdica</strong> — color, texturas y expresión libre sobre bastidor.</li>
-  </ul>
-
-  <p><strong>💛 Ideal para:</strong> disfrutar el arte, soltarse, crear sin miedo y pasarlo bien este verano.</p>
-
-  <p style="margin:10px 0 0"><strong>💖 Incluye:</strong> 🎨 materiales · 📸 registro fotográfico · 🌈 ambiente cuidado · 🧠 acompañamiento expresivo</p>
-</template>
-
-<template id="desc-vac-premium">
-  <p style="margin-top:0"><strong>🌈 Talleres de Verano Arteluk</strong></p>
-  <p style="margin:6px 0 10px;color:#475569"><em>Crear · Jugar · Expresarse · Disfrutar</em></p>
-
-  <p>Este verano en Arteluk los niños y niñas viven el arte como una experiencia entretenida, creativa y significativa, donde cada día es una nueva aventura artística ✨</p>
-
-  <hr style="border:none;border-top:1px solid #dbeafe;margin:14px 0">
-
-  <p><strong>👑 PLAN PREMIUM VERANO — Ivanya Sierra</strong></p>
-  <p>🎭 Arte + experiencia creativa avanzada</p>
-
-  <ul style="margin:10px 0 0">
-    <li><strong>🕒 Horario:</strong> 15:00 a 17:00 hrs</li>
-    <li><strong>📅 Días:</strong> Martes · Jueves · Sábado</li>
-    <li><strong>✅ Modalidad:</strong> 3 días</li>
-  </ul>
-
-  <p style="margin:12px 0 6px"><strong>✨ Experiencias y Técnicas Artísticas:</strong></p>
-  <ul>
-    <li><strong>🌿 Acuarela botánica creativa</strong> — observación, detalle, técnica y conexión con la naturaleza.</li>
-    <li><strong>🎭 Teatro creativo & confección de máscaras</strong> — juego escénico, identidad, emoción y expresión corporal.</li>
-    <li><strong>🏺 Porcelana artística – “Tesoros de Verano”</strong> — modelado, terminaciones y creación de piezas únicas para llevar a casa.</li>
-  </ul>
-
-  <p><strong>💎 Una experiencia premium:</strong> para explorar, crear y vivir el arte de forma profunda, entretenida y memorable.</p>
-
-  <p style="margin:10px 0 0"><strong>💖 Incluye:</strong> 🎨 materiales · 📸 registro fotográfico · 🌈 ambiente cuidado · 🧠 acompañamiento expresivo</p>
-</template>
-
 <script>
+/* ===== Helpers Pixel ===== */
+function trackSafe(eventName, params){
+  try{
+    if(typeof fbq === 'function'){
+      fbq('track', eventName, params || {});
+    }
+  }catch(_){}
+}
+function trackCustomSafe(eventName, params){
+  try{
+    if(typeof fbq === 'function'){
+      fbq('trackCustom', eventName, params || {});
+    }
+  }catch(_){}
+}
+
 /* PANTALLA DE INICIO: cierre con botón o scroll, 1 vez por sesión */
 const introScreen = document.getElementById('introScreen');
 const introEnter  = document.getElementById('introEnter');
@@ -1243,13 +1249,25 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',
 const io=new IntersectionObserver((entries)=>entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-/* CTA -> form */
+/* CTA -> form (y Contact event) */
 document.querySelectorAll('.to-form').forEach(b=>b.addEventListener('click',e=>{
   const v=e.currentTarget.getAttribute('data-value')||'';
   const sel=document.getElementById('servicio');
   [...sel.options].forEach(o=>{ if(o.textContent===v) sel.value=o.textContent; });
+
+  // Contact intent
+  trackSafe('Contact', { content_name: v || 'CTA Reservar cupo', content_category: 'Servicios' });
+
   document.getElementById('contacto').scrollIntoView({behavior:'smooth'});
 }));
+
+/* Track Contact para CTAs que llevan al formulario */
+document.querySelectorAll('.track-contact').forEach(el=>{
+  el.addEventListener('click', (e)=>{
+    const name = el.getAttribute('data-contact-name') || el.textContent.trim() || 'CTA Contacto';
+    trackSafe('Contact', { content_name: name, content_category: 'Contacto' });
+  });
+});
 
 /* modal (planes + historia) */
 const modal=document.getElementById('modal'),
@@ -1268,6 +1286,11 @@ function openTemplateModal(btn){
   mBody.innerHTML = "";
   mBody.appendChild(tpl.content.cloneNode(true));
   modal.showModal();
+
+  // ViewContent SOLO para "Leer más" de planes (open-desc)
+  if(btn.classList.contains('open-desc')){
+    trackSafe('ViewContent', { content_name: title, content_category: 'Planes' });
+  }
 }
 
 document.querySelectorAll('.open-desc').forEach(btn=>{
@@ -1283,6 +1306,36 @@ document.addEventListener('keydown', e=>{
     try{ modal.close(); }catch(_){}
   }
 });
+
+/* ===== VideoClick robusto (asegura que alcance a trackear antes de abrir YouTube) ===== */
+(function(){
+  const YT_URL = "https://www.youtube.com/watch?v=8abquRuhvCA";
+  const VIDEO_ID = "8abquRuhvCA";
+
+  function trackVideoClick(){
+    trackCustomSafe('VideoClick', { video_id: VIDEO_ID, video_url: YT_URL });
+  }
+
+  // Click en el overlay principal del video
+  const main = document.querySelector('.video-link');
+  if(main){
+    main.addEventListener('click', (e)=>{
+      e.preventDefault();
+      trackVideoClick();
+      setTimeout(()=> window.open(YT_URL, '_blank', 'noopener,noreferrer'), 200);
+    });
+  }
+
+  // Click en "Ver en YouTube" dentro del meta
+  const metaLink = document.querySelector('.video-youtube-link');
+  if(metaLink){
+    metaLink.addEventListener('click', (e)=>{
+      e.preventDefault();
+      trackVideoClick();
+      setTimeout(()=> window.open(YT_URL, '_blank', 'noopener,noreferrer'), 200);
+    });
+  }
+})();
 
 /* formulario -> webhook n8n con anti-doble envío */
 (function () {
@@ -1356,13 +1409,13 @@ document.addEventListener('keydown', e=>{
         localStorage.setItem('arteluk_last_send', String(Date.now()));
         toastForm('✅ ¡Formulario enviado con éxito!', 'ok');
 
-        if (typeof fbq === 'function') {
-          fbq('track', 'Lead', {
-            content_name: 'Formulario Arteluk',
-            value: 0,
-            currency: 'CLP'
-          });
-        }
+        // Lead mejorado (incluye servicio)
+        trackSafe('Lead', {
+          content_name: data.servicio || 'Formulario Arteluk',
+          content_category: 'Formulario',
+          value: 0,
+          currency: 'CLP'
+        });
 
       }catch(err){
         console.error('Webhook error:', err);
