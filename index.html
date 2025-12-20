@@ -290,20 +290,12 @@
     .intro-note{margin-top:10px;font-size:.82rem;color:#64748b;}
 
     /* HERO 3D: globos azules sutiles detrás */
-    .hero-shell{ position:relative; z-index:1; overflow:hidden; }
-
-    /* ✅ FIX: Suaviza el corte entre HERO y la siguiente sección */
-    .hero-shell::after{
-      content:"";
-      position:absolute;
-      left:0; right:0;
-      bottom:-1px;
-      height:140px;
-      z-index:0;
-      pointer-events:none;
-      background:linear-gradient(to bottom, rgba(234,245,255,0) 0%, var(--bg) 100%);
+    .hero-shell{
+      position:relative;
+      z-index:1;
+      /* FIX LINEA: QUITAMOS overflow:hidden (cortaba el blur y dejaba “corte”) */
+      /* overflow:hidden; */
     }
-
     .hero-bg-blue{
       position:absolute; inset:-20%; z-index:0;
       filter:blur(65px); opacity:.95;
@@ -788,7 +780,10 @@
 
       <!-- ===== NUEVOS: TALLERES DE VERANO (DORADO) ===== -->
       <article class="card reveal summer">
-        <div class="media"><img src="img/WhatsApp Image 2025-12-15 at 12.22.38 PM.jpeg" alt="Taller de Vacaciones Premiumimg/WhatsApp Image 2025-12-15 at 8.33.32 AM.jpeg" alt="Taller de Vacaciones Básico"></div>
+        <!-- FIX IMG roto -->
+        <div class="media">
+          <img src="img/WhatsApp Image 2025-12-15 at 12.22.38 PM.jpeg" alt="Taller de Vacaciones Básico">
+        </div>
         <div class="body">
           <h3>🌼 Taller de Vacaciones Básico — $45.000</h3>
           <p>3 clases por semana · 1 hr · Lunes, Miércoles y Viernes.</p>
@@ -844,7 +839,7 @@
           <div class="meta"><span class="badge">Mensual</span><span class="badge">+ matrícula $15.000</span></div>
         </div>
         <div class="cta">
-          <!-- ✅ FIX: data-value debe calzar con el <select> -->
+          <!-- FIX precio para que calce con el select -->
           <a class="btn primary to-form" data-value="Taller de Artes Premium — $120.000">Reservar cupo</a>
           <button class="btn ghost open-desc" data-title="Plan Premium Arte Mixto — Detalles" data-content="desc-premium">Leer más</button>
         </div>
@@ -951,7 +946,7 @@
 
             <!-- nuevos -->
             <option>Taller de Vacaciones Básico — $45.000</option>
-            <!-- ✅ FIX: 65.000 para calzar con botones -->
+            <!-- FIX: 65k -->
             <option>Taller de Vacaciones Premium — $65.000</option>
 
             <!-- existentes -->
