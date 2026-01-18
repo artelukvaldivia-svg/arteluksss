@@ -89,14 +89,12 @@
       contain-intrinsic-size: 900px;
     }
 
-    /* ===== PERF / ACCESIBILIDAD ===== */
     @media (prefers-reduced-motion: reduce){
       *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
     }
     body.perf *{ animation:none !important; }
     body.perf nav{ backdrop-filter:none !important; }
 
-    /* ===== Fondo “bonito” sin blur caro ===== */
     .fx-bg{
       position:fixed; inset:0; z-index:0; pointer-events:none;
       opacity:.55;
@@ -107,14 +105,11 @@
         radial-gradient(420px 240px at 16% 90%, rgba(186,230,253,.45), transparent 60%);
       transform: translateZ(0);
     }
-    /* en perf mode lo bajamos más */
     body.perf .fx-bg{ opacity:.25; }
 
-    /* Reveal (liviano) */
     .reveal{ opacity:0; transform:translateY(18px); transition:opacity .5s ease, transform .5s ease; }
     .reveal.in{ opacity:1; transform:none; }
 
-    /* --------- LISTAS --------- */
     .text-intro{ max-width:720px; }
     .pill-list{
       margin:10px 0 6px;
@@ -142,7 +137,6 @@
     .hero-badges{ margin-top:8px; }
     .hero-badges li{ color:#0f172a; font-weight:500; }
 
-    /* BOTONES */
     .btn{
       position:relative;
       display:inline-flex;
@@ -202,7 +196,6 @@
     }
     .link-button:hover::after{ width:100%; }
 
-    /* nav */
     nav{
       position:sticky; top:0; z-index:30;
       background:#ffffffee;
@@ -220,11 +213,9 @@
     a.nav:hover{ background:#f1f7ff; border:1px solid #cfe3ff; }
     .nav-toggle{ display:none; background:none; border:none; font-size:28px; line-height:1; padding:6px 10px; cursor:pointer; color:#1e293b; }
 
-    /* layouts */
     .split{ display:grid; grid-template-columns:1.1fr .9fr; gap:32px; align-items:center; }
     @media (max-width:980px){ .split{ grid-template-columns:1fr; } }
 
-    /* ===== PANTALLA INICIO ===== */
     .intro-screen{
       position:fixed;
       inset:0;
@@ -254,7 +245,6 @@
     .intro-actions{ display:flex; justify-content:center; margin-top:8px; }
     .intro-note{ margin-top:10px; font-size:.82rem; color:#64748b; }
 
-    /* HERO */
     .hero-shell{ position:relative; z-index:1; }
     .hero-eyebrow{
       display:inline-flex;
@@ -273,7 +263,6 @@
     .hero-ctas{ display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; align-items:center; }
     .hero-note{ font-size:.85rem; color:#64748b; }
 
-    /* VIDEO CARD */
     .video-shell{
       position:relative;
       border-radius:26px;
@@ -333,7 +322,6 @@
     .video-meta .meta-left a:hover{ text-decoration:underline; }
     .video-meta .btn{ padding:10px 16px; font-weight:800; }
 
-    /* tarjetas / grids */
     .grid{ display:grid; gap:22px; grid-template-columns:repeat(3,minmax(0,1fr)); }
     @media (max-width:1100px){ .grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media (max-width:720px){ .grid{ grid-template-columns:1fr; } }
@@ -362,7 +350,6 @@
     .card .cta{ margin-top:auto; padding:14px 16px; display:flex; gap:8px; flex-wrap:wrap; }
     .card .cta .btn{ min-width:160px; justify-content:center; }
 
-    /* verano (dorado) */
     .card.summer{
       border:1px solid rgba(245,158,11,.35);
       box-shadow:0 10px 28px rgba(245,158,11,.10);
@@ -389,7 +376,6 @@
       box-shadow:0 14px 28px rgba(245,158,11,.18);
     }
 
-    /* equipo / galería */
     .team{ display:grid; gap:18px; grid-template-columns:repeat(2,1fr); }
     @media (max-width:720px){ .team{ grid-template-columns:1fr; } }
     .tile{ background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); overflow:hidden; }
@@ -400,7 +386,6 @@
     @media (max-width:980px){ .bio-grid{ grid-template-columns:1fr; } }
     .bio{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px; }
 
-    /* formulario */
     .form{
       background:#fff;
       border-radius:14px;
@@ -433,12 +418,10 @@
     .form textarea{ min-height:120px; resize:vertical; }
     .form .btn.primary{ height:42px; }
 
-    /* galería */
     .gallery{ display:grid; gap:12px; grid-template-columns:repeat(3,1fr); }
     @media (max-width:980px){ .gallery{ grid-template-columns:repeat(2,1fr); } }
     @media (max-width:640px){ .gallery{ grid-template-columns:1fr; } }
 
-    /* modal */
     dialog{
       border:none; border-radius:22px;
       max-width:760px; width:calc(100% - 28px);
@@ -460,11 +443,9 @@
       cursor:pointer; font-weight:700; color:#1e293b;
     }
 
-    /* footer */
     footer{ border-top:1px solid var(--line); margin-top:60px; background:#fff; }
     .foot{ padding:22px 0; color:#6b7c8f; display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:space-between; }
 
-    /* ===== MÓVIL ===== */
     @media (max-width:880px){
       :root{ --navH:58px; }
       .container{ padding:0 16px; }
@@ -528,7 +509,8 @@
         <a class="nav" href="#servicios">Servicios</a>
         <a class="nav" href="#equipo">Equipo</a>
         <a class="nav" href="#contacto">Formulario</a>
-        <a class="nav" href="#galeria">Galería</a>
+        <!-- ✅ CAMBIO: Galería -> Exposiciones -->
+        <a class="nav" href="#galeria">Exposiciones</a>
         <a class="btn primary track-contact" href="#contacto" data-contact-name="CTA Nav - Inscribe a tu hijo/a">Inscribe a tu hijo/a</a>
       </div>
     </div>
@@ -581,7 +563,6 @@
                   rel="noopener"
                   aria-label="Reproducir video en YouTube">
 
-                  <!-- thumbnail más liviano -->
                   <img class="video-thumb"
                     src="https://i.ytimg.com/vi/8abquRuhvCA/hqdefault.jpg"
                     alt="Conoce Arteluk"
@@ -623,15 +604,15 @@
           <h2>Epidemia de salud mental</h2>
           <p class="lead text-intro">
             ¿Cuántas veces has sentido que tu energía ya no es la misma? Que tu
-            vitalidad se escapa. Lo atribuimos a la edad o al cansancio, pero en el
-            fondo estamos viviendo una <strong>crisis de salud mental</strong> que
+            vitalidad se escapa. Lo atribuimos al cansancio, pero en el
+            fondo estamos viviendo una <strong>crisis emocional</strong> que
             afecta a niños, jóvenes y adultos.
           </p>
 
           <ul class="pill-list">
-            <li>Cada vez más pantallas y menos conexión real con otros.</li>
-            <li>Placeres rápidos que no se transforman en felicidad duradera.</li>
-            <li>1 de cada 3 jóvenes en Chile con problemas emocionales.</li>
+            <li>Más pantallas y menos conexión real con otros.</li>
+            <li>Placeres rápidos que no se transforman en bienestar duradero.</li>
+            <li>Ansiedad, estrés y desregulación emocional cada vez más comunes.</li>
           </ul>
 
           <p class="lead">
@@ -759,7 +740,6 @@
             </div>
           </article>
 
-          <!-- ✅ FIX: cierres correctos -->
           <article class="card reveal">
             <div class="media">
               <img src="img/Fondo para clases premium.jpg" alt="Taller de Artes Premium"
@@ -780,7 +760,6 @@
             </div>
           </article>
 
-          <!-- ✅ FIX: cierres correctos -->
           <article class="card reveal">
             <div class="media">
               <img src="img/Fondo para clases de dibujo.jpg" alt="Taller de Dibujo para niños con TEA"
@@ -820,7 +799,6 @@
             </div>
           </article>
 
-          <!-- ✅ FIX: cierres correctos -->
           <article class="card reveal">
             <div class="media">
               <img src="img/fondo para curso adulto.jpg" alt="Taller para Adultos"
@@ -955,24 +933,81 @@
       </div>
     </section>
 
-    <!-- GALERÍA -->
-    <section id="galeria" class="section" style="padding-top:40px" aria-label="Galería">
+    <!-- ✅ CAMBIO: GALERÍA -> EXPOSICIONES -->
+    <section id="galeria" class="section" style="padding-top:40px" aria-label="Exposiciones">
       <div class="container">
         <div class="reveal" style="margin-bottom:12px">
-          <div class="mono">GALERÍA</div>
-          <h2>Proceso, comunidad y alegría</h2>
-          <p class="lead">Un vistazo a nuestras sesiones.</p>
+          <div class="mono">EXPOSICIONES</div>
+          <h2>Eventos realizados en Arteluk</h2>
+          <p class="lead">
+            En Arteluk no solo hacemos clases: abrimos el proceso al mundo.
+            Realizamos <strong>2 a 3 exposiciones al año</strong> para que niños y adultos vivan la experiencia real
+            de <strong>mostrar su obra</strong>, ganar seguridad, sentir orgullo y pertenecer a una comunidad artística.
+          </p>
         </div>
-        <div class="gallery">
-          <figure class="tile reveal"><div class="media"><img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="" loading="lazy" decoding="async"></div></figure>
-          <figure class="tile reveal"><div class="media"><img src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg" alt="" loading="lazy" decoding="async"></div></figure>
-          <figure class="tile reveal"><div class="media"><img src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg" alt="" loading="lazy" decoding="async"></div></figure>
-          <figure class="tile reveal"><div class="media"><img src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg" alt="" loading="lazy" decoding="async"></div></figure>
-          <figure class="tile reveal"><div class="media"><img src="img/WhatsApp Image 2025-11-04 at 10.07.32 AM.jpeg" alt="" loading="lazy" decoding="async"></div></figure>
-          <figure class="tile reveal"><div class="media"><img src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" alt="" loading="lazy" decoding="async"></div></figure>
-          <figure class="tile reveal"><div class="media"><img src="img/IMG_2948.jpg" alt="" loading="lazy" decoding="async"></div></figure>
-          <figure class="tile reveal"><div class="media"><img src="img/IMG_3633.jpg" alt="" loading="lazy" decoding="async"></div></figure>
+
+        <!-- ✅ NUEVAS FOTOS: Exposision 1-6 -->
+        <div class="gallery" aria-label="Fotos de exposiciones">
+          <figure class="tile reveal"><div class="media"><img src="img/Exposision1.jpg" alt="Exposición Arteluk 1" loading="lazy" decoding="async"></div></figure>
+          <figure class="tile reveal"><div class="media"><img src="img/Exposision2.jpg" alt="Exposición Arteluk 2" loading="lazy" decoding="async"></div></figure>
+          <figure class="tile reveal"><div class="media"><img src="img/Exposision3.jpg" alt="Exposición Arteluk 3" loading="lazy" decoding="async"></div></figure>
+          <figure class="tile reveal"><div class="media"><img src="img/Exposision4.jpg" alt="Exposición Arteluk 4" loading="lazy" decoding="async"></div></figure>
+          <figure class="tile reveal"><div class="media"><img src="img/Exposision5.jpg" alt="Exposición Arteluk 5" loading="lazy" decoding="async"></div></figure>
+          <figure class="tile reveal"><div class="media"><img src="img/Exposision6.jpg" alt="Exposición Arteluk 6" loading="lazy" decoding="async"></div></figure>
         </div>
+
+        <!-- ✅ TEXTO PERSUASIVO + RESUMEN DE EVENTOS -->
+        <div class="bio-grid" style="margin-top:16px">
+          <div class="bio reveal">
+            <h3 style="margin:0 0 4px">Biblioteca Municipal de Valdivia</h3>
+            <p style="margin:0;color:var(--muted)">
+              Exposición infantil por <strong>15 días</strong>: pinturas y acuarelas. Además, clases de pintura en el salón de la biblioteca.
+              Un espacio real para que los niños se vean como artistas de verdad.
+            </p>
+          </div>
+
+          <div class="bio reveal">
+            <h3 style="margin:0 0 4px">Universidad Santo Tomás + Galería de Arte</h3>
+            <p style="margin:0;color:var(--muted)">
+              Exposición de <strong>Mary Quinteros</strong> por <strong>1 mes y medio</strong>, y también muestra con obras de los niños.
+              Experiencia completa: obra, público, confianza y orgullo.
+            </p>
+          </div>
+
+          <div class="bio reveal">
+            <h3 style="margin:0 0 4px">Espacio Fluvial</h3>
+            <p style="margin:0;color:var(--muted)">
+              Exposición de obra de Mary Quinteros con <strong>cóctel</strong> y participación abierta a la ciudadanía.
+              Arte vivido como encuentro: comunidad, conversación y emoción.
+            </p>
+          </div>
+
+          <div class="bio reveal">
+            <h3 style="margin:0 0 4px">Café Moro — Exposición Equina en Óleo</h3>
+            <p style="margin:0;color:var(--muted)">
+              Exposición pública por <strong>15 días</strong> con temática equina.
+              Los niños presentaron sus caballos en óleo: técnica + narrativa + valentía para exponer.
+            </p>
+          </div>
+
+          <div class="bio reveal">
+            <h3 style="margin:0 0 4px">Mall Paseo Valdivia — Exposición Colectiva</h3>
+            <p style="margin:0;color:var(--muted)">
+              Participación en exposición colectiva junto a artistas invitados, incluyendo <strong>Sofía Banter</strong>.
+              Arte en un lugar masivo: visibilidad real y presencia profesional.
+            </p>
+          </div>
+
+          <div class="bio reveal">
+            <h3 style="margin:0 0 4px">Almacén Fluvial + Barco Neptuno</h3>
+            <p style="margin:0;color:var(--muted)">
+              Exposición colectiva de Mary Quinteros en Almacén Fluvial.
+              Y en Barco Neptuno: exposición infantil de arteterapia en acrílicos <strong>“El vuelo de Alaska”</strong>.
+              Dos hitos que muestran lo que somos: proceso + comunidad + propósito.
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -983,7 +1018,8 @@
           <a class="nav" href="#servicios">Servicios</a>
           <a class="nav" href="#equipo">Equipo</a>
           <a class="nav" href="#contacto">Formulario</a>
-          <a class="nav" href="#galeria">Galería</a>
+          <!-- ✅ CAMBIO: Galería -> Exposiciones -->
+          <a class="nav" href="#galeria">Exposiciones</a>
         </div>
       </div>
     </footer>
@@ -1057,26 +1093,56 @@
       </ul>
     </template>
 
+    <!-- ✅ ACTUALIZADO: VERANO PREMIUM con tu Día 1/2/3 -->
     <template id="desc-verano-premium">
       <p><strong>👑 PLAN PREMIUM VERANO — Ivanya Sierra — $65.000</strong></p>
-      <p>En estos talleres de veranos tus hijos podran explorar distintas artes, <strong>cada dia terminaran un proyecto distinto:</strong> con tecnicas unicas, sesiones de 2 horas</p>
+      <p>
+        Una experiencia premium de verano para explorar técnicas reales con guía cercana.
+        <strong>Cada día se llevan una obra terminada</strong> (sí, terminada de verdad 😌).
+      </p>
+
       <p>🕒 <strong>Horario:</strong> 15:00 a 17:00 hrs</p>
       <p>📅 <strong>Modalidad:</strong> 3 días por semana — <strong>Martes, Jueves y Sábado</strong></p>
       <p>🎭 <strong>Arte + experiencia creativa avanzada</strong></p>
-      <p><strong>✨ Experiencias y Técnicas Artísticas:</strong></p>
+
+      <hr style="border:none;border-top:1px solid #dfeaf7;margin:14px 0">
+
+      <p><strong>🌿 Día 1 — Acuarela Botánica (Obra terminada)</strong></p>
+      <p>Los niños realizan una acuarela botánica en formato A4, aprendiendo control real del agua y del color.</p>
       <ul>
-        <li>🌿 <strong>Día 1: Acuarela botánica creativa:</strong> realizaran una acuarela botanica completa, aprendiendo tecnicas basicas de acuarela aplicadas a un proyecto final</li>
-        <li>🎭 <strong>Día 2: Dibujo creativo & proporciones y observación en lápiz grafito:</strong> coordinación mano y ojo.</li>
-        <li>🏺 <strong>Día 3: Porcelana artística – “Tesoros de Verano”:</strong> modelado, terminaciones y creación de piezas únicas.</li>
+        <li><strong>Aprenden:</strong> técnicas básicas y medias, capas, transparencias, degradados, observación botánica.</li>
+        <li><strong>Materiales:</strong> acuarelas profesionales, papel 300 gr, pinceles profesionales.</li>
+        <li><strong>Formato:</strong> A4 · ✔️ se llevan su acuarela terminada el mismo día.</li>
       </ul>
-      <p>💎 Una experiencia premium para explorar, crear y vivir el arte de forma profunda y memorable.</p>
+
+      <p><strong>🎨 Día 2 — Pintura Acrílica en Lienzo (Obra terminada)</strong></p>
+      <p>Pintura acrílica en bastidor 20 × 50 cm, con guía paso a paso para lograr un resultado potente.</p>
+      <ul>
+        <li><strong>Aprenden:</strong> uso del acrílico, capas, difuminado, pintura figurativa guiada.</li>
+        <li><strong>Materiales:</strong> bastidor 20×50, acrílicos, pinceles especiales para difuminado y acrílico.</li>
+        <li>✔️ obra terminada y lista para llevar.</li>
+      </ul>
+
+      <p><strong>✏️ Día 3 — Dibujo en Vivo (Experiencia + obra)</strong></p>
+      <p>Sesión enfocada en base artística y observación real: dibujar mirando, entendiendo y mejorando rápido.</p>
+      <ul>
+        <li>Ejercicios guiados de dibujo + trabajo con grafito.</li>
+        <li>Introducción a luz y sombra con carboncillo.</li>
+        <li><strong>Resultado:</strong> dibujo final hecho en la sesión · ✔️ se lo llevan a casa.</li>
+      </ul>
+
       <p><strong>💖 Incluye:</strong></p>
       <ul>
-        <li>🎨 Materiales incluidos</li>
+        <li>🎨 Materiales incluidos (calidad profesional)</li>
         <li>📸 Registro fotográfico del proceso</li>
         <li>🌈 Ambiente cuidado, creativo y entretenido</li>
-        <li>🧠 Acompañamiento con enfoque expresivo</li>
+        <li>🧠 Acompañamiento cercano (grupos con atención real)</li>
       </ul>
+
+      <p style="margin-bottom:0">
+        💎 <strong>Ideal si tu hijo/a ama el arte</strong> y quieres que viva un verano con propósito:
+        crear, aprender técnica y salir orgulloso/a con sus obras.
+      </p>
     </template>
 
     <!-- PLANES EXISTENTES -->
@@ -1156,7 +1222,6 @@
   </main>
 
   <script>
-    /* ===== Helpers Pixel ===== */
     function trackSafe(eventName, params){
       try{ if(typeof fbq === 'function') fbq('track', eventName, params || {}); }catch(_){}
     }
@@ -1164,7 +1229,6 @@
       try{ if(typeof fbq === 'function') fbq('trackCustom', eventName, params || {}); }catch(_){}
     }
 
-    /* ===== Perf auto: si el FPS cae, activa body.perf ===== */
     (function autoPerf(){
       const url = new URL(location.href);
       if(url.searchParams.get('perf') === '1'){
@@ -1184,7 +1248,6 @@
       requestAnimationFrame(tick);
     })();
 
-    /* PANTALLA DE INICIO */
     (function intro(){
       const introScreen = document.getElementById('introScreen');
       const introEnter  = document.getElementById('introEnter');
@@ -1204,7 +1267,6 @@
       window.addEventListener('scroll', () => { if (window.scrollY > 40) hideIntro(); }, {passive:true});
     })();
 
-    /* menú responsive */
     (function navMenu(){
       const navToggle = document.getElementById('navToggle');
       const navActions = document.getElementById('navActions');
@@ -1232,7 +1294,6 @@
       document.querySelectorAll('#navActions a').forEach(a=>a.addEventListener('click', closeMenu));
     })();
 
-    /* reveal on scroll (se apaga con reduce motion) */
     (function reveal(){
       const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if(reduce){
@@ -1250,7 +1311,6 @@
       document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     })();
 
-    /* CTA -> form */
     document.querySelectorAll('.to-form').forEach(b=>b.addEventListener('click',(e)=>{
       const v = e.currentTarget.getAttribute('data-value') || '';
       const sel = document.getElementById('servicio');
@@ -1261,7 +1321,6 @@
       document.getElementById('contacto')?.scrollIntoView({behavior:'smooth', block:'start'});
     }));
 
-    /* Track Contact */
     document.querySelectorAll('.track-contact').forEach(el=>{
       el.addEventListener('click', ()=>{
         const name = el.getAttribute('data-contact-name') || el.textContent.trim() || 'CTA Contacto';
@@ -1269,7 +1328,6 @@
       });
     });
 
-    /* modal */
     (function modal(){
       const modal = document.getElementById('modal');
       const mTitle = document.getElementById('mTitle');
@@ -1308,7 +1366,6 @@
       });
     })();
 
-    /* VideoClick robusto */
     (function videoClick(){
       const YT_URL = "https://www.youtube.com/watch?v=8abquRuhvCA";
       const VIDEO_ID = "8abquRuhvCA";
@@ -1336,7 +1393,6 @@
       }
     })();
 
-    /* formulario -> webhook n8n con anti-doble envío */
     (function formWebhook(){
       const form = document.getElementById('wlForm');
       if(!form) return;
@@ -1432,4 +1488,3 @@
   </script>
 </body>
 </html>
-
