@@ -533,17 +533,19 @@
       .form .row{ grid-template-columns:1fr; gap:16px; }
     }
 
-    /* ============================================
-       EXPOSICIONES: SLIDER CON FLECHAS Y FRAMES
+        /* ============================================
+       EXPOSICIONES: SLIDER PREMIUM
        ============================================ */
 
     .expo-slider{
       position:relative;
-      background:rgba(255,255,255,.80);
-      border:1px solid var(--line);
-      border-radius:22px;
-      box-shadow:0 10px 28px rgba(15,23,42,.10);
+      background:#f9fafb;
+      border:1px solid #e5e7eb;
+      border-radius:24px;
+      box-shadow:0 20px 45px rgba(15,23,42,.14);
       overflow:hidden;
+      max-width:1080px;
+      margin:0 auto;
     }
 
     .expo-slider-head{
@@ -551,19 +553,28 @@
       align-items:center;
       justify-content:space-between;
       gap:12px;
-      padding:14px 14px 10px;
-      border-bottom:1px solid rgba(223,234,247,.9);
-      background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.70));
+      padding:14px 18px 12px;
+      border-bottom:1px solid #e5e7eb;
+      background:linear-gradient(135deg,#fefce8,#f9fafb);
     }
 
     .expo-title-mini{
       display:flex;
       flex-direction:column;
-      gap:2px;
-      line-height:1.2;
+      gap:4px;
+      line-height:1.3;
     }
-    .expo-title-mini strong{ font-size:14px; }
-    .expo-title-mini small{ color:var(--muted); font-size:12px; }
+    .expo-title-mini strong{
+      font-size:.78rem;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:#6b7280;
+    }
+    .expo-title-mini small{
+      font-size:.95rem;
+      color:#111827;
+      font-weight:600;
+    }
 
     .expo-controls{
       display:flex;
@@ -572,76 +583,81 @@
     }
 
     .expo-btn{
-      width:42px; height:42px;
+      width:40px; height:40px;
       border-radius:999px;
-      border:1px solid rgba(147,197,253,.65);
-      background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(239,246,255,.95));
-      box-shadow:0 8px 18px rgba(37,99,235,.10);
+      border:1px solid rgba(217,119,6,.55);
+      background:linear-gradient(135deg,#facc15,#eab308,#b45309);
+      box-shadow:0 10px 24px rgba(180,83,9,.35);
       cursor:pointer;
       font-weight:900;
-      color:#1e3a8a;
+      color:#111827;
       transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
     }
-    .expo-btn:hover{ transform:translateY(-1px); box-shadow:0 12px 22px rgba(37,99,235,.16); }
-    .expo-btn:active{ transform:translateY(0) scale(.97); }
-    .expo-btn:disabled{ opacity:.45; cursor:not-allowed; box-shadow:none; }
+    .expo-btn:hover{
+      transform:translateY(-1px);
+      box-shadow:0 14px 30px rgba(180,83,9,.45);
+    }
+    .expo-btn:active{
+      transform:translateY(0) scale(.96);
+      box-shadow:0 10px 22px rgba(180,83,9,.35);
+    }
+    .expo-btn:disabled{
+      opacity:.45;
+      cursor:not-allowed;
+      box-shadow:none;
+    }
 
     .expo-track{
       display:flex;
-      gap:16px;
-      padding:14px;
+      gap:0;
+      padding:0;
       overflow-x:auto;
       scroll-snap-type:x mandatory;
       scroll-behavior:smooth;
       -webkit-overflow-scrolling:touch;
     }
-    .expo-track::-webkit-scrollbar{ height:10px; }
+    .expo-track::-webkit-scrollbar{ height:8px; }
     .expo-track::-webkit-scrollbar-thumb{
-      background:rgba(37,99,235,.18);
+      background:rgba(107,114,128,.45);
       border-radius:999px;
     }
 
     .expo-slide{
       scroll-snap-align:start;
-      flex:0 0 92%;
-      background:rgba(255,255,255,.94);
-      border:1px solid rgba(223,234,247,.95);
-      border-radius:18px;
-      box-shadow:0 10px 26px rgba(15,23,42,.10);
-      overflow:hidden;
+      flex:0 0 100%;
+      max-width:100%;
+      background:#ffffff;
+      border-top:1px solid #e5e7eb;
       display:grid;
-      grid-template-columns: 1.05fr 1.25fr;
-      min-height:320px;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
+      min-height:330px;
     }
     @media (max-width:980px){
-      .expo-slide{ grid-template-columns:1fr; }
+      .expo-slide{
+        grid-template-columns:1fr;
+      }
     }
 
     .frame{
       position:relative;
-      padding:10px;
-      background:
-        linear-gradient(145deg, rgba(14,165,233,.20), rgba(99,102,241,.16)) padding-box,
-        linear-gradient(145deg, #38bdf8, #6366f1, #0ea5e9) border-box;
-      border:2px solid transparent;
+      padding:18px;
+      background:radial-gradient(circle at top,#f9fafb,#f3f4f6);
+      border-right:1px solid #e5e7eb;
     }
-    .frame.sunset{
-      background:
-        linear-gradient(145deg, rgba(251,191,36,.20), rgba(244,114,182,.14)) padding-box,
-        linear-gradient(145deg, #fbbf24, #fb7185, #60a5fa) border-box;
-    }
-    .frame.mint{
-      background:
-        linear-gradient(145deg, rgba(34,197,94,.16), rgba(14,165,233,.16)) padding-box,
-        linear-gradient(145deg, #22c55e, #0ea5e9, #6366f1) border-box;
+    .frame::before{
+      content:"";
+      position:absolute;
+      inset:10px 18px auto;
+      height:2px;
+      border-radius:999px;
+      background:linear-gradient(90deg,#facc15,#eab308,#a16207);
     }
 
     .expo-media{
-      aspect-ratio:4/3;
-      border-radius:14px;
+      border-radius:18px;
       overflow:hidden;
-      background:#eaf5ff;
-      box-shadow:0 10px 20px rgba(15,23,42,.10);
+      background:#0b1120;
+      box-shadow:0 18px 38px rgba(15,23,42,.35);
     }
     .expo-media img{
       width:100%;
@@ -651,10 +667,10 @@
     }
 
     .expo-info{
-      padding:14px 14px 16px;
+      padding:22px 22px 18px;
       display:flex;
       flex-direction:column;
-      gap:10px;
+      gap:12px;
     }
 
     .expo-kicker{
@@ -662,48 +678,71 @@
       align-self:flex-start;
       gap:8px;
       align-items:center;
-      padding:6px 10px;
+      padding:6px 12px;
       border-radius:999px;
-      background:rgba(37,99,235,.08);
-      border:1px solid rgba(147,197,253,.45);
-      color:#1e3a8a;
-      font-weight:900;
-      font-size:12px;
-      letter-spacing:.10em;
+      background:rgba(234,179,8,.08);
+      border:1px solid rgba(234,179,8,.55);
+      color:#92400e;
+      font-weight:800;
+      font-size:.78rem;
+      letter-spacing:.16em;
       text-transform:uppercase;
     }
-    .expo-info h3{ margin:0; font-size:1.08rem; }
-    .expo-info p{ margin:0; color:var(--muted); }
+    .expo-info h3{
+      margin:0;
+      font-size:1.15rem;
+    }
+    .expo-info p{
+      margin:0;
+      color:#4b5563;
+      font-size:.97rem;
+    }
 
     .expo-details{
       margin:0;
       padding-left:18px;
-      color:#334155;
+      color:#374151;
       font-size:.94rem;
     }
     .expo-details li{ margin:6px 0; }
 
-    .expo-strip{
+    .expo-tags{
       display:flex;
       gap:8px;
-      overflow-x:auto;
-      padding:10px 14px 14px;
-      border-top:1px solid rgba(223,234,247,.9);
-      background:rgba(246,251,255,.96);
+      flex-wrap:wrap;
+      margin-top:4px;
     }
-    .expo-strip::-webkit-scrollbar{ height:8px; }
+    .tag{
+      background:#f9fafb;
+      border:1px solid #e5e7eb;
+      color:#111827;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:.84rem;
+      font-weight:600;
+    }
+
+    .expo-strip{
+      display:flex;
+      gap:10px;
+      overflow-x:auto;
+      padding:14px 18px 16px;
+      border-top:1px solid #e5e7eb;
+      background:#f9fafb;
+    }
+    .expo-strip::-webkit-scrollbar{ height:6px; }
     .expo-strip::-webkit-scrollbar-thumb{
-      background:rgba(37,99,235,.18);
+      background:rgba(156,163,175,.65);
       border-radius:999px;
     }
     .expo-thumb{
-      flex:0 0 120px;
+      flex:0 0 130px;
       aspect-ratio:4/3;
-      border-radius:12px;
+      border-radius:14px;
       overflow:hidden;
-      border:1px solid rgba(203,213,225,.7);
-      box-shadow:0 8px 16px rgba(15,23,42,.08);
-      background:#eaf5ff;
+      border:1px solid #e5e7eb;
+      box-shadow:0 10px 24px rgba(15,23,42,.18);
+      background:#f3f4f6;
     }
     .expo-thumb img{
       width:100%;
@@ -711,6 +750,7 @@
       object-fit:cover;
       display:block;
     }
+
   </style>
 </head>
 
@@ -1170,10 +1210,10 @@
         </div>
 
         <div class="expo-slider reveal" data-slider="expo">
-          <div class="expo-slider-head">
-            <div class="expo-title-mini">
-              <strong>Desliza o usa las flechas</strong>
-              <small>Exposición 01, 02, 03… · Foto + información completa</small>
+        <div class="expo-title-mini">
+  <strong>EXPOSICIONES ARTELUK</strong>
+  <small>Colección de momentos: barco, biblioteca, cafés y galerías</small>
+</div>
             </div>
             <div class="expo-controls">
               <button class="expo-btn" type="button" data-expo-prev aria-label="Anterior">‹</button>
@@ -1951,3 +1991,4 @@
   </script>
 </body>
 </html>
+
