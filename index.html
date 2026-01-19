@@ -791,6 +791,354 @@
   font-size:.86rem;
   font-weight:800;
 }
+/* =========================
+   INTRO HORIZONTAL PRO
+   ========================= */
+
+#intro-pro{
+  --ink:#071322;
+  --muted:#4f6176;
+  --line:rgba(7,19,34,.10);
+
+  /* aqua metálico */
+  --a1:#8df6ff;
+  --a2:#39dbe8;
+  --a3:#0b7aa8;
+
+  --glass:rgba(255,255,255,.78);
+  --glass2:rgba(245,248,252,.74);
+
+  --shadow:0 22px 70px rgba(7,19,34,.12);
+
+  position:relative;
+  height:100vh;
+  min-height:720px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:stretch;
+}
+
+#intro-pro .introH-bg{
+  position:absolute;
+  inset:-60px;
+  background:
+    radial-gradient(900px 520px at 14% 14%, rgba(141,246,255,.26), transparent 60%),
+    radial-gradient(820px 520px at 86% 18%, rgba(165,110,255,.18), transparent 62%),
+    radial-gradient(760px 520px at 38% 92%, rgba(255,180,120,.14), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.70), rgba(245,248,252,.72));
+  filter:saturate(1.05);
+  z-index:0;
+}
+
+#intro-pro .introH-top{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding-top:14px;
+  padding-bottom:10px;
+}
+
+#intro-pro .introH-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(57,219,232,.25);
+  background:rgba(255,255,255,.66);
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(7,19,34,.72);
+  backdrop-filter: blur(10px);
+}
+
+#intro-pro .introH-nav{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+#intro-pro .introH-progress{
+  font-weight:900;
+  font-size:12px;
+  color:rgba(7,19,34,.80);
+}
+
+#intro-pro .introH-controls{ display:flex; gap:10px; }
+
+#intro-pro .introH-btn{
+  width:42px; height:42px;
+  border-radius:999px;
+  border:1px solid rgba(57,219,232,.40);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.92), rgba(141,246,255,.18)),
+    linear-gradient(180deg, rgba(255,255,255,.86), rgba(245,248,252,.82));
+  box-shadow:0 14px 32px rgba(7,19,34,.10);
+  cursor:pointer;
+  font-weight:900;
+  color:var(--ink);
+  transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+}
+#intro-pro .introH-btn:hover{ transform:translateY(-1px); box-shadow:0 18px 40px rgba(7,19,34,.12); }
+#intro-pro .introH-btn:active{ transform:translateY(0) scale(.98); }
+#intro-pro .introH-btn:disabled{ opacity:.45; cursor:not-allowed; box-shadow:none; }
+
+/* track horizontal */
+#intro-pro .introH-track{
+  position:relative;
+  z-index:2;
+  flex:1;
+  display:flex;
+  overflow-x:auto;
+  overflow-y:hidden;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
+  padding:14px 0 18px;
+}
+#intro-pro .introH-track::-webkit-scrollbar{ height:10px; }
+#intro-pro .introH-track::-webkit-scrollbar-thumb{
+  background:rgba(7,19,34,.14);
+  border-radius:999px;
+}
+
+/* panel = 1 pantalla */
+#intro-pro .introH-panel{
+  flex:0 0 100%;
+  scroll-snap-align:start;
+  display:flex;
+  align-items:center;
+}
+
+/* inner (tamaño “promedio”, no gigante) */
+#intro-pro .introH-inner{
+  width:min(1080px, 92vw);
+  margin:0 auto;
+  background:linear-gradient(180deg, var(--glass), var(--glass2));
+  border:1px solid rgba(57,219,232,.18);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  padding:22px;
+  display:grid;
+  grid-template-columns: 1.12fr .88fr;
+  gap:26px;
+  backdrop-filter: blur(12px);
+}
+
+@media (max-width:980px){
+  #intro-pro{ min-height:760px; }
+  #intro-pro .introH-inner{
+    grid-template-columns:1fr;
+    padding:18px;
+  }
+}
+
+/* textos */
+#intro-pro .introH-h1{
+  margin:0 0 10px;
+  font-family:"Playfair Display",serif;
+  font-size:clamp(30px, 3.2vw, 48px);
+  line-height:1.08;
+  color:var(--ink);
+  letter-spacing:.2px;
+}
+
+#intro-pro .introH-h2{
+  margin:0 0 8px;
+  font-family:"Playfair Display",serif;
+  font-size:clamp(24px, 2.5vw, 36px);
+  line-height:1.12;
+  color:var(--ink);
+}
+
+#intro-pro .introH-lead{
+  margin:0 0 12px;
+  color:var(--muted);
+  font-size:1.02rem;
+}
+
+#intro-pro .introH-kicker{
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(7,19,34,.62);
+  margin-bottom:8px;
+}
+
+#intro-pro .introH-bullets{
+  margin:0 0 14px;
+  padding-left:18px;
+  color:rgba(7,19,34,.86);
+}
+#intro-pro .introH-bullets li{ margin:6px 0; }
+
+#intro-pro .introH-note{
+  margin:0;
+  color:rgba(7,19,34,.72);
+}
+
+/* CTAs */
+#intro-pro .introH-cta{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:14px 0 10px;
+}
+#intro-pro .introH-ctaPrimary,
+#intro-pro .introH-ctaGhost{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:44px;
+  padding:0 16px;
+  border-radius:999px;
+  font-weight:900;
+  text-decoration:none;
+  transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+#intro-pro .introH-ctaPrimary{
+  color:#06121f;
+  border:1px solid rgba(57,219,232,.40);
+  background:linear-gradient(135deg, rgba(141,246,255,.80), rgba(57,219,232,.55));
+  box-shadow:0 16px 34px rgba(7,19,34,.12);
+}
+#intro-pro .introH-ctaPrimary:hover{ transform:translateY(-1px); filter:saturate(1.05); }
+
+#intro-pro .introH-ctaGhost{
+  color:var(--ink);
+  border:1px solid rgba(7,19,34,.10);
+  background:rgba(255,255,255,.70);
+  box-shadow:0 12px 26px rgba(7,19,34,.08);
+}
+#intro-pro .introH-ctaGhost:hover{ transform:translateY(-1px); }
+
+#intro-pro .introH-micro{
+  font-size:.92rem;
+  color:rgba(7,19,34,.60);
+}
+#intro-pro .introH-micro a{ color:rgba(11,122,168,.92); text-decoration:none; }
+#intro-pro .introH-micro a:hover{ text-decoration:underline; }
+
+/* media */
+#intro-pro .introH-media{ min-height:420px; display:flex; }
+@media (max-width:980px){ #intro-pro .introH-media{ min-height:320px; } }
+
+/* frame para fotos (simétrico) */
+#intro-pro .introH-frame{
+  flex:1;
+  border-radius:22px;
+  overflow:hidden;
+  background:rgba(7,19,34,.04);
+  border:1px solid rgba(57,219,232,.18);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.60), 0 18px 40px rgba(7,19,34,.10);
+}
+#intro-pro .introH-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* card video */
+#intro-pro .introH-card{
+  flex:1;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid rgba(57,219,232,.20);
+  background:rgba(255,255,255,.70);
+  box-shadow:0 18px 44px rgba(7,19,34,.12);
+  text-decoration:none;
+  color:inherit;
+  display:flex;
+  flex-direction:column;
+}
+
+#intro-pro .introH-cardMedia{
+  position:relative;
+  flex:1;
+  background:#0b1422;
+}
+#intro-pro .introH-cardMedia img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:saturate(1.02) contrast(1.02);
+}
+
+#intro-pro .introH-play{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:18px;
+  background:linear-gradient(180deg, transparent, rgba(7,19,34,.38));
+}
+#intro-pro .introH-playIcon{
+  width:54px; height:54px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.24);
+  border:1px solid rgba(255,255,255,.30);
+  color:#fff;
+  font-weight:900;
+  backdrop-filter: blur(8px);
+}
+#intro-pro .introH-playText{
+  color:#fff;
+  text-shadow:0 10px 26px rgba(0,0,0,.35);
+}
+#intro-pro .introH-playText strong{ display:block; font-size:14px; }
+#intro-pro .introH-playText span{ display:block; font-size:12px; opacity:.92; }
+
+#intro-pro .introH-cardBottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px 14px;
+  border-top:1px solid rgba(7,19,34,.08);
+}
+#intro-pro .introH-cardTitle{ font-weight:900; color:var(--ink); }
+#intro-pro .introH-cardSub{ font-size:12px; color:rgba(7,19,34,.62); }
+
+#intro-pro .introH-chip{
+  padding:8px 12px;
+  border-radius:999px;
+  font-weight:900;
+  border:1px solid rgba(57,219,232,.35);
+  background:rgba(141,246,255,.18);
+  color:var(--ink);
+}
+
+/* hint */
+#intro-pro .introH-hint{
+  position:absolute;
+  left:50%;
+  bottom:10px;
+  transform:translateX(-50%);
+  font-size:12px;
+  color:rgba(7,19,34,.50);
+  background:rgba(255,255,255,.55);
+  border:1px solid rgba(7,19,34,.08);
+  padding:8px 12px;
+  border-radius:999px;
+  backdrop-filter: blur(10px);
+  z-index:3;
+}
+
+@media (prefers-reduced-motion: reduce){
+  #intro-pro .introH-track{ scroll-behavior:auto; }
+}
 
   </style>
 </head>
@@ -839,143 +1187,150 @@
             <div class="hero-eyebrow">
               <span>Valdivia</span> · <span>Arte & Arteterapia</span>
             </div>
-            <h1 class="hero-title">Arte, emoción y bienestar para niños, jóvenes y adultos.</h1>
-            <p class="lead hero-sub text-intro">
-              En Arteluk acompañamos procesos emocionales a través del arte. Un espacio
-              seguro donde tus hijos pueden expresarse, regular sus emociones y reconectar
-              con su creatividad, mientras tú tienes la tranquilidad de dejarlos en buenas manos.
-            </p>
+           <!-- INTRO HORIZONTAL (reemplaza tus 3 secciones por esto) -->
+<section id="intro-pro" class="introH">
+  <div class="introH-bg" aria-hidden="true"></div>
 
-            <ul class="pill-list hero-badges">
-              <li>+10 años de experiencia en arteterapia y educación.</li>
-              <li>Metodología propia con foco en emociones y autoestima.</li>
-              <li>Grupos pequeños y acompañamiento cercano.</li>
-              <li>Ubicación céntrica en Valdivia.</li>
-            </ul>
+  <div class="introH-top container">
+    <div class="introH-badge">VALDIVIA · ARTE & ARTETERAPIA</div>
 
-            <div class="hero-ctas">
-              <a class="btn primary" href="#servicios">Ver talleres disponibles</a>
-              <a class="btn ghost track-contact" href="#contacto" data-contact-name="CTA Hero - Ir al formulario">Ir al formulario</a>
-              <span class="hero-note">Respuesta rápida por WhatsApp después del formulario.</span>
-            </div>
-
-            <button class="link-button open-story" type="button"
-              data-title="Trayectoria de Arteluk"
-              data-content="historia-larga">
-              Leer historia completa <span aria-hidden="true">⟶</span>
-            </button>
-          </div>
-
-          <!-- VIDEO -->
-          <aside class="video-shell" aria-label="Video de presentación">
-            <div class="video-card">
-              <div class="video-aspect">
-                <a class="video-link"
-                  href="https://www.youtube.com/watch?v=8abquRuhvCA"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="Reproducir video en YouTube">
-
-                  <img class="video-thumb"
-                    src="https://i.ytimg.com/vi/8abquRuhvCA/hqdefault.jpg"
-                    alt="Conoce Arteluk"
-                    decoding="async"
-                    loading="eager">
-
-                  <div class="video-center">
-                    <div class="play-circle" aria-hidden="true">
-                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path d="M9 7.5v9l8-4.5-8-4.5z" fill="white"/>
-                      </svg>
-                    </div>
-                    <div class="video-title">Reproducir video</div>
-                    <div class="video-sub">Clic y listo · también puedes verlo en YouTube</div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="video-meta">
-                <div class="meta-left">
-                  <strong>Conoce Arteluk</strong>
-                  <small>Video oficial ·
-                    <a class="video-youtube-link" href="https://www.youtube.com/watch?v=8abquRuhvCA" target="_blank" rel="noopener">Ver en YouTube</a>
-                  </small>
-                </div>
-                <a class="btn ghost track-contact" href="#contacto" data-contact-name="CTA Video - Agendar">Agendar</a>
-              </div>
-            </div>
-          </aside>
-        </section>
+    <div class="introH-nav">
+      <div class="introH-progress" id="introHProgress">01 / 03</div>
+      <div class="introH-controls">
+        <button class="introH-btn" type="button" data-intro-prev aria-label="Anterior">‹</button>
+        <button class="introH-btn" type="button" data-intro-next aria-label="Siguiente">›</button>
       </div>
-    </header>
+    </div>
+  </div>
 
-    <!-- EPIDEMIA -->
-    <div class="container section reveal">
-      <section class="split" aria-label="Contexto salud mental">
-        <div>
-          <div class="mono">¿QUÉ NOS ESTÁ PASANDO?</div>
-          <h2>Epidemia de salud mental</h2>
-          <p class="lead text-intro">
-            ¿Cuántas veces has sentido que tu energía ya no es la misma? Que tu
-            vitalidad se escapa. Lo atribuimos a la edad o al cansancio, pero en el
-            fondo estamos viviendo una <strong>crisis de salud mental</strong> que
-            afecta a niños, jóvenes y adultos.
+  <div class="introH-track" id="introHTrack">
+    <!-- PANEL 1 -->
+    <article class="introH-panel" data-intro-panel>
+      <div class="introH-inner container">
+        <div class="introH-text">
+          <h1 class="introH-h1">Arte, emoción y bienestar para niños, jóvenes y adultos.</h1>
+
+          <p class="introH-lead">
+            En Arteluk acompañamos procesos emocionales a través del arte.
+            Un espacio seguro donde tus hijos pueden expresarse, regular sus emociones y reconectar con su creatividad.
           </p>
 
-          <ul class="pill-list">
-            <li>Cada vez más pantallas y menos conexión real con otros.</li>
-            <li>Placeres rápidos que no se transforman en bienestar duradero.</li>
-            <li>Ansiedad, estrés y desregulación emocional cada vez más comunes.</li>
+          <ul class="introH-bullets">
+            <li>+10 años de experiencia en arteterapia y educación.</li>
+            <li>Metodología propia con foco en emociones y autoestima.</li>
+            <li>Grupos pequeños y acompañamiento cercano.</li>
+            <li>Ubicación céntrica en Valdivia.</li>
           </ul>
 
-          <p class="lead">
-            En Arteluk creemos que es urgente volver a lo esencial:
-            <strong>expresarnos, sentirnos y escucharnos</strong>. El arte es nuestro
-            puente para bajar la velocidad, mirarnos hacia adentro y recuperar la
-            alegría por las cosas simples.
-          </p>
-        </div>
-        <aside class="photo">
-          <div class="media marco-cuadro">
-            <img src="img/IMG_5035.jpg" alt="Proceso creativo en Arteluk" loading="lazy" decoding="async">
+          <div class="introH-cta">
+            <a class="introH-ctaPrimary" href="#talleres">Ver talleres disponibles</a>
+            <a class="introH-ctaGhost" href="#formulario">Ir al formulario</a>
           </div>
-        </aside>
-      </section>
-    </div>
 
-    <!-- METODOLOGÍA -->
-    <div class="container section reveal">
-      <section class="split" aria-label="Metodología">
-        <div>
-          <div class="mono">METODOLOGÍA ÚNICA Y PROBADA</div>
-          <h2>Metodología Arteluk.</h2>
-          <p class="lead text-intro">
-            Nuestra metodología ha sido probada con más de 30 niños y perfeccionada
-            durante más de 10 años. Desde las primeras clases vemos cambios en la
-            <strong>expresión emocional, la ansiedad, el estrés y la seguridad
-            personal</strong>.
+          <div class="introH-micro">
+            Respuesta rápida por WhatsApp después del formulario.
+            <a href="#equipo">Leer historia completa →</a>
+          </div>
+        </div>
+
+        <div class="introH-media">
+          <!-- Card video (cambia links/imagenes a los tuyos) -->
+          <a class="introH-card" href="https://www.youtube.com/" target="_blank" rel="noreferrer">
+            <div class="introH-cardMedia">
+              <img src="img/tu-thumbnail-video.jpg" alt="Conoce Arteluk" loading="lazy" decoding="async">
+              <div class="introH-play">
+                <div class="introH-playIcon">▶</div>
+                <div class="introH-playText">
+                  <strong>Reproducir video</strong>
+                  <span>Clic y listo · también puedes verlo en YouTube</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="introH-cardBottom">
+              <div>
+                <div class="introH-cardTitle">Conoce Arteluk</div>
+                <div class="introH-cardSub">Video oficial · Ver en YouTube</div>
+              </div>
+              <div class="introH-chip">Agendar</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- PANEL 2 -->
+    <article class="introH-panel" data-intro-panel>
+      <div class="introH-inner container">
+        <div class="introH-text">
+          <div class="introH-kicker">¿QUÉ NOS ESTÁ PASANDO?</div>
+          <h2 class="introH-h2">Epidemia de salud mental</h2>
+
+          <p class="introH-lead">
+            ¿Cuántas veces has sentido que tu energía ya no es la misma?
+            No es “solo cansancio”: hay una crisis emocional que afecta a niños, jóvenes y adultos.
           </p>
 
-          <ul class="pill-list">
-            <li>4 clases al mes, con estructura clara y amorosa.</li>
-            <li>Acompañamiento emocional, con clases divertidas y enriquecedoras.</li>
-            <li>Ambiente seguro con comprensión real de lo que cada uno siente.</li>
-            <li>Trabajo en autoestima y seguridad a través de proyectos artísticos.</li>
+          <ul class="introH-bullets">
+            <li>Cada vez más pantallas y menos conexión real.</li>
+            <li>Placeres rápidos que no se transforman en bienestar.</li>
+            <li>Ansiedad, estrés y desregulación emocional más comunes.</li>
           </ul>
 
-          <p class="lead">
-            No buscamos artistas perfectos, sino personas orgullosas de su proceso.
-            Cada sesión integra exploración de materiales, conversación guiada,
-            trabajo en valores y un cierre con sensación de logro y pertenencia.
+          <p class="introH-note">
+            Volver a lo esencial: expresarnos, sentirnos y escucharnos.
+            El arte baja la velocidad y nos devuelve calma.
           </p>
         </div>
-        <aside class="photo">
-          <div class="media marco-cuadro">
-            <img src="img/IMG_6131.jpg" alt="Metodología en Arteluk" loading="lazy" decoding="async">
+
+        <div class="introH-media">
+          <div class="introH-frame">
+            <img src="img/tu-foto-salud-mental.jpg" alt="Niña pintando en Arteluk" loading="lazy" decoding="async">
           </div>
-        </aside>
-      </section>
-    </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PANEL 3 -->
+    <article class="introH-panel" data-intro-panel>
+      <div class="introH-inner container">
+        <div class="introH-text">
+          <div class="introH-kicker">METODOLOGÍA ÚNICA Y PROBADA</div>
+          <h2 class="introH-h2">Metodología Arteluk</h2>
+
+          <p class="introH-lead">
+            Probada con niños y perfeccionada por años.
+            Cambios reales en expresión emocional, ansiedad, estrés y seguridad personal.
+          </p>
+
+          <ul class="introH-bullets">
+            <li>4 clases al mes, estructura clara y amorosa.</li>
+            <li>Acompañamiento emocional con clases divertidas.</li>
+            <li>Ambiente seguro con comprensión real.</li>
+            <li>Trabajo en autoestima mediante proyectos artísticos.</li>
+          </ul>
+
+          <p class="introH-note">
+            No buscamos “artistas perfectos”.
+            Buscamos personas orgullosas de su proceso.
+          </p>
+        </div>
+
+        <div class="introH-media">
+          <div class="introH-frame">
+            <img src="img/tu-foto-metodologia.jpg" alt="Niña pintando un caballo en Arteluk" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- hint -->
+  <div class="introH-hint" aria-hidden="true">
+    Scroll ↓ para deslizar → · Shift+rueda también sirve
+  </div>
+</section>
+
 
     <!-- SERVICIOS -->
     <section id="servicios" class="section" aria-label="Servicios y planes">
@@ -1944,8 +2299,77 @@
 })();
 
   </script>
+ /* =========================
+   Intro Horizontal: wheel -> scrollLeft
+   ========================= */
+(function introHorizontal(){
+  const section = document.getElementById('intro-pro');
+  const track = document.getElementById('introHTrack');
+  if(!section || !track) return;
+
+  const prev = document.querySelector('[data-intro-prev]');
+  const next = document.querySelector('[data-intro-next]');
+  const progress = document.getElementById('introHProgress');
+  const panels = Array.from(track.querySelectorAll('[data-intro-panel]'));
+
+  function panelStep(){
+    const first = panels[0];
+    return first ? first.getBoundingClientRect().width : track.clientWidth;
+  }
+
+  function updateProgress(){
+    if(!progress || panels.length === 0) return;
+    const left = track.scrollLeft;
+    let bestIdx = 0;
+    let best = Infinity;
+
+    panels.forEach((p, i)=>{
+      const d = Math.abs(p.offsetLeft - left);
+      if(d < best){ best = d; bestIdx = i; }
+    });
+
+    progress.textContent = `${String(bestIdx+1).padStart(2,'0')} / ${String(panels.length).padStart(2,'0')}`;
+    if(prev) prev.disabled = track.scrollLeft <= 4;
+    if(next) next.disabled = (track.scrollLeft + track.clientWidth) >= (track.scrollWidth - 4);
+  }
+
+  if(prev) prev.addEventListener('click', ()=> track.scrollBy({ left: -panelStep(), behavior:'smooth' }));
+  if(next) next.addEventListener('click', ()=> track.scrollBy({ left:  panelStep(), behavior:'smooth' }));
+  track.addEventListener('scroll', updateProgress, { passive:true });
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
+
+  function inViewportEnough(){
+    const r = section.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    const visible = Math.min(vh, r.bottom) - Math.max(0, r.top);
+    return visible / vh > 0.65;   // sección “dominando” la pantalla
+  }
+
+  function wheelToHorizontal(e){
+    if(!inViewportEnough()) return;
+
+    const atStart = track.scrollLeft <= 0;
+    const atEnd = (track.scrollLeft + track.clientWidth) >= (track.scrollWidth - 1);
+
+    // trackpads: usa el eje más fuerte
+    const primary = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+
+    // si ya llegaste al inicio/fin, deja scrollear la página normal
+    if((primary < 0 && atStart) || (primary > 0 && atEnd)) return;
+
+    // “secuestra” el scroll vertical y lo convierte en horizontal
+    e.preventDefault();
+    track.scrollLeft += primary;
+  }
+
+  // importante: passive:false para poder preventDefault
+  window.addEventListener('wheel', wheelToHorizontal, { passive:false });
+})();
+           
 </body>
 </html>
+
 
 
 
