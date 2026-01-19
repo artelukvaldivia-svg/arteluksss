@@ -533,263 +533,264 @@
       .form .row{ grid-template-columns:1fr; gap:16px; }
     }
 
-        /* ============================================
-   EXPOSICIONES (PREMIUM) — simétrico, sin vacíos
-   ============================================ */
+      /* ==============================
+   EXPOSICIONES — AQUA METÁLICO (PREMIUM)
+   Scopeado para NO romper el resto
+   ============================== */
 
-/* Mini override premium global (sin fondos “colorines”) */
 :root{
-  --ink:#0b1220;
-  --muted:#5b6574;
-  --line:rgba(15,23,42,.10);
-  --paper:#ffffff;
-  --bg:#faf9f6;
-  --bg2:#ffffff;
+  --expo-ink:#08131f;
+  --expo-muted:#536274;
+  --expo-line:rgba(8,19,31,.10);
 
-  --brand:#0b1220;      /* navy */
-  --brand2:#d4af37;     /* gold */
-  --gold1:#f7e7b6;
-  --gold2:#d4af37;
-  --gold3:#8a6b18;
+  /* aqua metálico */
+  --expo-aqua1:#7ff0ff;
+  --expo-aqua2:#2fd3e6;
+  --expo-aqua3:#0b7aa8;
 
-  --shadow:0 16px 44px rgba(15,23,42,.10);
+  /* “metal” */
+  --expo-metal1:rgba(255,255,255,.92);
+  --expo-metal2:rgba(245,248,252,.88);
+
+  --expo-shadow:0 18px 52px rgba(8,19,31,.12);
 }
 
-/* Fondo más premium */
-body{
+#exposiciones .expo-wrap{
+  /* fondo multicolor suave */
   background:
-    radial-gradient(900px 520px at 12% 10%, rgba(212,175,55,.10), transparent 60%),
-    radial-gradient(800px 520px at 88% 20%, rgba(11,27,58,.10), transparent 60%),
-    linear-gradient(180deg, #faf9f6 0%, #ffffff 46%, #f6f7fb 100%);
+    radial-gradient(800px 420px at 12% 12%, rgba(127,240,255,.18), transparent 60%),
+    radial-gradient(760px 420px at 88% 18%, rgba(171,120,255,.16), transparent 60%),
+    radial-gradient(720px 420px at 40% 92%, rgba(255,192,120,.12), transparent 58%),
+    linear-gradient(180deg, rgba(255,255,255,.65), rgba(245,248,252,.65));
+  border-radius:22px;
+  padding:18px;
+  border:1px solid rgba(8,19,31,.06);
 }
 
-/* Baja la intensidad del fx-bg (si lo quieres mantener) */
-.fx-bg{ opacity:.10; }
-
-/* Botón primary más “joyería” */
-.btn.primary{
-  color:#0b1220;
-  background-image:linear-gradient(135deg,var(--gold1),var(--gold2),var(--gold1));
-  border:1px solid rgba(138,107,24,.28);
-  box-shadow:0 16px 34px rgba(212,175,55,.18);
-}
-.btn.primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 20px 44px rgba(212,175,55,.22);
-  background-position:100% 0;
-}
-.btn.ghost{
-  background:rgba(255,255,255,.92);
-  border:1px solid rgba(212,175,55,.28);
-  color:#0b1220;
-}
-.btn.ghost:hover{
-  border-color:rgba(212,175,55,.50);
-  box-shadow:0 12px 26px rgba(15,23,42,.10);
-}
-
-/* Slider */
-.expo-slider{
-  max-width:1100px;
+/* contenedor “tamaño promedio” */
+#exposiciones .expo-slider{
+  max-width:980px;         /* <-- tamaño promedio */
   margin:0 auto;
-  background:rgba(255,255,255,.92);
-  border:1px solid rgba(212,175,55,.22);
-  border-radius:24px;
-  box-shadow:0 20px 60px rgba(15,23,42,.10);
+  background:linear-gradient(180deg, var(--expo-metal1), var(--expo-metal2));
+  border:1px solid rgba(47,211,230,.22);
+  border-radius:22px;
+  box-shadow:var(--expo-shadow);
   overflow:hidden;
 }
 
-.expo-top{
+/* header */
+#exposiciones .expo-top{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:12px;
   padding:14px 16px;
-  background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(250,249,246,.92));
-  border-bottom:1px solid rgba(15,23,42,.08);
+  border-bottom:1px solid rgba(8,19,31,.08);
+  background:
+    linear-gradient(90deg,
+      rgba(127,240,255,.10),
+      rgba(255,255,255,.85) 40%,
+      rgba(171,120,255,.08)
+    );
 }
 
-.expo-top-left{
+#exposiciones .expo-top-left{
   display:flex;
   flex-direction:column;
   gap:4px;
-  line-height:1.1;
+  line-height:1.15;
 }
 
-.expo-mini{
+#exposiciones .expo-mini{
   font-size:12px;
   letter-spacing:.18em;
   text-transform:uppercase;
-  color:rgba(11,27,58,.70);
+  color:rgba(8,19,31,.62);
 }
 
-.expo-progress{
+#exposiciones .expo-progress{
   font-weight:900;
   font-size:12px;
-  color:rgba(11,27,58,.90);
+  color:rgba(8,19,31,.90);
 }
 
-.expo-controls{ display:flex; gap:10px; align-items:center; }
+/* botones metálicos aqua */
+#exposiciones .expo-controls{ display:flex; gap:10px; align-items:center; }
 
-.expo-btn{
-  width:44px; height:44px;
+#exposiciones .expo-btn{
+  width:42px; height:42px;
   border-radius:999px;
-  border:1px solid rgba(212,175,55,.55);
-  background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,245,238,.98));
-  box-shadow:0 10px 22px rgba(15,23,42,.10);
+  border:1px solid rgba(47,211,230,.45);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.95), rgba(127,240,255,.20)),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(245,248,252,.90));
+  box-shadow:0 12px 26px rgba(8,19,31,.10);
   cursor:pointer;
   font-weight:900;
-  color:#0b1220;
+  color:var(--expo-ink);
   transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
 }
-.expo-btn:hover{ transform:translateY(-1px); box-shadow:0 14px 30px rgba(15,23,42,.12); }
-.expo-btn:active{ transform:translateY(0) scale(.98); }
-.expo-btn:disabled{ opacity:.45; cursor:not-allowed; box-shadow:none; }
+#exposiciones .expo-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 16px 34px rgba(8,19,31,.12);
+}
+#exposiciones .expo-btn:active{ transform:translateY(0) scale(.98); }
+#exposiciones .expo-btn:disabled{ opacity:.45; cursor:not-allowed; box-shadow:none; }
 
-.expo-track{
+/* track */
+#exposiciones .expo-track{
   display:flex;
-  gap:16px;
-  padding:16px;
+  gap:14px;
+  padding:14px;
   overflow-x:auto;
   scroll-snap-type:x mandatory;
   scroll-behavior:smooth;
   -webkit-overflow-scrolling:touch;
-  background:linear-gradient(180deg, rgba(250,249,246,.70), rgba(255,255,255,.92));
 }
-.expo-track::-webkit-scrollbar{ height:10px; }
-.expo-track::-webkit-scrollbar-thumb{
-  background:rgba(15,23,42,.12);
+#exposiciones .expo-track::-webkit-scrollbar{ height:10px; }
+#exposiciones .expo-track::-webkit-scrollbar-thumb{
+  background:rgba(8,19,31,.14);
   border-radius:999px;
 }
 
-/* Slide: 2 columnas simétricas + la FOTO se estira para no dejar “cuadro vacío” */
-.expo-slide{
+/* slide simétrico, no gigante */
+#exposiciones .expo-slide{
   scroll-snap-align:start;
   flex:0 0 100%;
   display:grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap:16px;
-  padding:16px;
-  background:#fff;
-  border:1px solid rgba(15,23,42,.08);
-  border-radius:20px;
-  box-shadow:0 16px 42px rgba(15,23,42,.10);
+  grid-template-columns: 1.2fr 1fr;
+  gap:14px;
+  padding:14px;
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(8,19,31,.08);
+  border-radius:18px;
+  box-shadow:0 14px 36px rgba(8,19,31,.10);
 }
 
+/* responsive */
 @media (max-width:980px){
-  .expo-slide{ grid-template-columns:1fr; }
+  #exposiciones .expo-slide{ grid-template-columns:1fr; }
 }
 
-.expo-left{
+/* columna izquierda: evita “cuadro sobrando” */
+#exposiciones .expo-left{
   display:flex;
   flex-direction:column;
-  height:100%;
-  min-height:520px;
+  min-height:420px;     /* <-- más bajo que antes */
 }
 @media (max-width:980px){
-  .expo-left{ min-height:auto; }
+  #exposiciones .expo-left{ min-height:auto; }
 }
 
-/* Media se estira */
-.expo-media{
+/* imagen se estira para calzar altura */
+#exposiciones .expo-media{
   flex:1;
-  border-radius:18px;
+  border-radius:16px;
   overflow:hidden;
-  background:#f3f2ee;
-  border:1px solid rgba(212,175,55,.22);
+  background:rgba(8,19,31,.04);
+  border:1px solid rgba(47,211,230,.18);
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.55);
 }
-.expo-media img{
+#exposiciones .expo-media img{
   width:100%;
   height:100%;
   object-fit:cover;
   display:block;
 }
 
-/* Tira de thumbnails premium */
-.expo-strip{
-  margin-top:12px;
+/* thumbs (si no quieres thumbs, te lo saco en 1 línea) */
+#exposiciones .expo-strip{
+  margin-top:10px;
   display:flex;
   gap:10px;
   overflow-x:auto;
   padding:10px;
-  border-radius:16px;
-  border:1px solid rgba(15,23,42,.06);
-  background:rgba(250,249,246,.90);
-}
-.expo-strip::-webkit-scrollbar{ height:8px; }
-.expo-strip::-webkit-scrollbar-thumb{ background:rgba(15,23,42,.12); border-radius:999px; }
-
-.expo-thumb{
-  flex:0 0 112px;
-  aspect-ratio:4/3;
   border-radius:14px;
-  overflow:hidden;
-  border:1px solid rgba(212,175,55,.18);
-  box-shadow:0 10px 20px rgba(15,23,42,.10);
-  background:#f3f2ee;
+  border:1px solid rgba(8,19,31,.06);
+  background:
+    linear-gradient(90deg,
+      rgba(127,240,255,.08),
+      rgba(255,255,255,.80),
+      rgba(171,120,255,.06)
+    );
 }
-.expo-thumb img{
+#exposiciones .expo-strip::-webkit-scrollbar{ height:8px; }
+#exposiciones .expo-strip::-webkit-scrollbar-thumb{ background:rgba(8,19,31,.14); border-radius:999px; }
+
+#exposiciones .expo-thumb{
+  flex:0 0 106px;
+  aspect-ratio:4/3;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid rgba(47,211,230,.16);
+  box-shadow:0 10px 20px rgba(8,19,31,.10);
+  background:rgba(8,19,31,.04);
+}
+#exposiciones .expo-thumb img{
   width:100%;
   height:100%;
   object-fit:cover;
   display:block;
 }
 
-/* Info */
-.expo-info{
+/* info */
+#exposiciones .expo-info{
   display:flex;
   flex-direction:column;
   gap:10px;
   padding-top:2px;
 }
 
-.expo-kicker{
+#exposiciones .expo-kicker{
   display:inline-flex;
   align-self:flex-start;
   padding:6px 10px;
   border-radius:999px;
-  border:1px solid rgba(212,175,55,.35);
-  background:rgba(212,175,55,.10);
-  color:#0b1220;
+  border:1px solid rgba(47,211,230,.40);
+  background:rgba(127,240,255,.16);
+  color:var(--expo-ink);
   font-weight:900;
   font-size:12px;
   letter-spacing:.10em;
   text-transform:uppercase;
 }
 
-.expo-info h3{
+#exposiciones .expo-info h3{
   margin:0;
   font-family:"Playfair Display",serif;
-  font-size:1.18rem;
+  font-size:1.16rem;
   letter-spacing:.2px;
+  color:var(--expo-ink);
 }
-.expo-info p{ margin:0; color:var(--muted); }
+#exposiciones .expo-info p{
+  margin:0;
+  color:var(--expo-muted);
+  font-size:.97rem;
+}
 
-.expo-details{
+#exposiciones .expo-details{
   margin:0;
   padding-left:18px;
-  color:#334155;
+  color:rgba(8,19,31,.86);
   font-size:.95rem;
 }
-.expo-details li{ margin:6px 0; }
+#exposiciones .expo-details li{ margin:6px 0; }
 
-.expo-tags{
+#exposiciones .expo-tags{
   display:flex;
   gap:8px;
   flex-wrap:wrap;
   margin-top:6px;
 }
-.tag{
-  background:rgba(11,27,58,.04);
-  border:1px solid rgba(212,175,55,.20);
-  color:#0b1220;
+#exposiciones .tag{
+  background:rgba(8,19,31,.04);
+  border:1px solid rgba(47,211,230,.18);
+  color:var(--expo-ink);
   padding:6px 10px;
   border-radius:999px;
-  font-size:.88rem;
+  font-size:.86rem;
   font-weight:800;
 }
-
 
   </style>
 </head>
@@ -1238,7 +1239,8 @@ body{
 
     <!-- EXPOSICIONES -->
  <!-- EXPOSICIONES -->
-<section id="exposiciones" class="section" style="padding-top:40px" aria-label="Exposiciones">
+<!-- EXPOSICIONES -->
+<section id="exposiciones" class="section" aria-label="Exposiciones">
   <div class="container">
     <div class="reveal" style="margin-bottom:12px">
       <div class="mono">EXPOSICIONES</div>
@@ -1246,281 +1248,260 @@ body{
       <p class="lead">
         En Arteluk no solo hacemos clases: abrimos el proceso al mundo.
         Realizamos <strong>2 a 3 exposiciones al año</strong> para que niños y adultos vivan la experiencia real de
-        <strong>mostrar su obra</strong>, ganar seguridad, sentir orgullo y pertenecer a una comunidad artística.
+        <strong>mostrar su obra</strong>, ganar seguridad y pertenecer a una comunidad artística.
       </p>
     </div>
 
-    <div class="expo-slider reveal" data-slider="expo">
-      <div class="expo-top">
-        <div class="expo-top-left">
-          <div class="expo-mini">Colección de momentos · barco, biblioteca, cafés y galerías</div>
-          <div class="expo-progress" id="expoProgress">01 / 08</div>
+    <div class="expo-wrap reveal">
+      <div class="expo-slider" data-slider="expo">
+        <div class="expo-top">
+          <div class="expo-top-left">
+            <div class="expo-mini">Colección de momentos · barco, biblioteca, cafés y galerías</div>
+            <div class="expo-progress" id="expoProgress">01 / 08</div>
+          </div>
+
+          <div class="expo-controls">
+            <button class="expo-btn" type="button" data-expo-prev aria-label="Anterior">‹</button>
+            <button class="expo-btn" type="button" data-expo-next aria-label="Siguiente">›</button>
+          </div>
         </div>
 
-        <div class="expo-controls">
-          <button class="expo-btn" type="button" data-expo-prev aria-label="Anterior">‹</button>
-          <button class="expo-btn" type="button" data-expo-next aria-label="Siguiente">›</button>
+        <div class="expo-track" id="expoTrack">
+          <!-- EXPO 01 -->
+          <article class="expo-slide">
+            <div class="expo-left">
+              <div class="expo-media">
+                <img src="img/Exposision1.jpg" alt="Barco Neptuno - Exposición final Arteluk" loading="lazy" decoding="async">
+              </div>
+
+              <div class="expo-strip" aria-label="Galería Barco Neptuno">
+                <div class="expo-thumb"><img src="img/Exposision1.jpg" alt="Barco Neptuno 1" loading="lazy" decoding="async"></div>
+                <div class="expo-thumb"><img src="img/Exposision2.jpg" alt="Barco Neptuno 2" loading="lazy" decoding="async"></div>
+                <div class="expo-thumb"><img src="img/Exposision3.jpg" alt="Barco Neptuno 3" loading="lazy" decoding="async"></div>
+                <div class="expo-thumb"><img src="img/Exposision4.jpg" alt="Barco Neptuno 4" loading="lazy" decoding="async"></div>
+                <div class="expo-thumb"><img src="img/Exposision5.jpg" alt="Barco Neptuno 5" loading="lazy" decoding="async"></div>
+                <div class="expo-thumb"><img src="img/Exposision6.jpg" alt="Barco Neptuno 6" loading="lazy" decoding="async"></div>
+              </div>
+            </div>
+
+            <div class="expo-info">
+              <div class="expo-kicker">Exposición 01</div>
+              <h3>Barco Neptuno — “El Vuelo de Alaska”</h3>
+              <p>
+                Exposición final de arteterapia y acrílicos.
+                Un cierre donde los niños muestran su proceso, su valentía y su crecimiento.
+              </p>
+
+              <ul class="expo-details">
+                <li><strong>Contexto:</strong> Cierre anual de Arteluk</li>
+                <li><strong>Obras:</strong> Acrílicos y procesos de arteterapia</li>
+                <li><strong>Experiencia:</strong> Mostrar la obra en un entorno real</li>
+              </ul>
+
+              <div class="expo-tags">
+                <span class="tag">Arteterapia</span>
+                <span class="tag">Acrílico</span>
+                <span class="tag">Cierre anual</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- EXPO 02 -->
+          <article class="expo-slide">
+            <div class="expo-left">
+              <div class="expo-media">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Biblioteca Municipal de Valdivia" loading="lazy" decoding="async">
+              </div>
+              <div class="expo-strip" aria-hidden="true" style="display:none"></div>
+            </div>
+
+            <div class="expo-info">
+              <div class="expo-kicker">Exposición 02</div>
+              <h3>Biblioteca Municipal de Valdivia</h3>
+              <p>Exposición infantil por 15 días: pinturas y acuarelas. Además, clases abiertas a la comunidad.</p>
+
+              <ul class="expo-details">
+                <li><strong>Duración:</strong> 15 días</li>
+                <li><strong>Obras:</strong> Pintura + acuarela</li>
+                <li><strong>Plus:</strong> Actividad comunitaria</li>
+              </ul>
+
+              <div class="expo-tags">
+                <span class="tag">15 días</span>
+                <span class="tag">Niños</span>
+                <span class="tag">Comunidad</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- EXPO 03 -->
+          <article class="expo-slide">
+            <div class="expo-left">
+              <div class="expo-media">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg" alt="Universidad Santo Tomás + Galería de Arte" loading="lazy" decoding="async">
+              </div>
+              <div class="expo-strip" aria-hidden="true" style="display:none"></div>
+            </div>
+
+            <div class="expo-info">
+              <div class="expo-kicker">Exposición 03</div>
+              <h3>Universidad Santo Tomás + Galería de Arte</h3>
+              <p>Exposición de Mary Quinteros por 1 mes y medio. Luego, exposición infantil posterior.</p>
+
+              <ul class="expo-details">
+                <li><strong>Duración:</strong> 1 mes y medio</li>
+                <li><strong>Artista:</strong> Mary Quinteros</li>
+                <li><strong>Continuidad:</strong> Exposición infantil</li>
+              </ul>
+
+              <div class="expo-tags">
+                <span class="tag">Galería</span>
+                <span class="tag">Mary Quinteros</span>
+                <span class="tag">Niños</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- EXPO 04 -->
+          <article class="expo-slide">
+            <div class="expo-left">
+              <div class="expo-media">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg" alt="Espacio Fluvial" loading="lazy" decoding="async">
+              </div>
+              <div class="expo-strip" aria-hidden="true" style="display:none"></div>
+            </div>
+
+            <div class="expo-info">
+              <div class="expo-kicker">Exposición 04</div>
+              <h3>Espacio Fluvial</h3>
+              <p>Exposición con cóctel y convocatoria abierta. Arte como encuentro y comunidad.</p>
+
+              <ul class="expo-details">
+                <li><strong>Formato:</strong> Evento cultural</li>
+                <li><strong>Enfoque:</strong> Comunidad + conversación</li>
+                <li><strong>Ambiente:</strong> Identidad Valdivia</li>
+              </ul>
+
+              <div class="expo-tags">
+                <span class="tag">Cultura</span>
+                <span class="tag">Encuentro</span>
+                <span class="tag">Valdivia</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- EXPO 05 -->
+          <article class="expo-slide">
+            <div class="expo-left">
+              <div class="expo-media">
+                <img src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg" alt="Café Moro" loading="lazy" decoding="async">
+              </div>
+              <div class="expo-strip" aria-hidden="true" style="display:none"></div>
+            </div>
+
+            <div class="expo-info">
+              <div class="expo-kicker">Exposición 05</div>
+              <h3>Café Moro</h3>
+              <p>Exposición equina en óleo. Muestra abierta al público por 15 días.</p>
+
+              <ul class="expo-details">
+                <li><strong>Duración:</strong> 15 días</li>
+                <li><strong>Técnica:</strong> Óleo</li>
+                <li><strong>Temática:</strong> Equina</li>
+              </ul>
+
+              <div class="expo-tags">
+                <span class="tag">Óleo</span>
+                <span class="tag">15 días</span>
+                <span class="tag">Exposición</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- EXPO 06 -->
+          <article class="expo-slide">
+            <div class="expo-left">
+              <div class="expo-media">
+                <img src="img/IMG_2948.jpg" alt="Exposición colectiva en centro comercial" loading="lazy" decoding="async">
+              </div>
+              <div class="expo-strip" aria-hidden="true" style="display:none"></div>
+            </div>
+
+            <div class="expo-info">
+              <div class="expo-kicker">Exposición 06</div>
+              <h3>Exposición colectiva</h3>
+              <p>Participación junto a otros artistas. Instancia clave para redes y visibilidad.</p>
+
+              <ul class="expo-details">
+                <li><strong>Formato:</strong> Colectiva</li>
+                <li><strong>Objetivo:</strong> Redes y visibilidad</li>
+                <li><strong>Experiencia:</strong> Vitrina real</li>
+              </ul>
+
+              <div class="expo-tags">
+                <span class="tag">Colectiva</span>
+                <span class="tag">Redes</span>
+                <span class="tag">Visibilidad</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- EXPO 07 -->
+          <article class="expo-slide">
+            <div class="expo-left">
+              <div class="expo-media">
+                <img src="img/IMG_3633.jpg" alt="Almacén Fluvial" loading="lazy" decoding="async">
+              </div>
+              <div class="expo-strip" aria-hidden="true" style="display:none"></div>
+            </div>
+
+            <div class="expo-info">
+              <div class="expo-kicker">Exposición 07</div>
+              <h3>Almacén Fluvial</h3>
+              <p>Exposición colectiva con participación de Mary Quinteros. Conexión con comunidad local.</p>
+
+              <ul class="expo-details">
+                <li><strong>Formato:</strong> Colectiva</li>
+                <li><strong>Participación:</strong> Mary Quinteros</li>
+                <li><strong>Contexto:</strong> Comunidad</li>
+              </ul>
+
+              <div class="expo-tags">
+                <span class="tag">Mary Quinteros</span>
+                <span class="tag">Valdivia</span>
+                <span class="tag">Colectiva</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- EXPO 08 -->
+          <article class="expo-slide">
+            <div class="expo-left">
+              <div class="expo-media">
+                <img src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" alt="Momentos Arteluk" loading="lazy" decoding="async">
+              </div>
+              <div class="expo-strip" aria-hidden="true" style="display:none"></div>
+            </div>
+
+            <div class="expo-info">
+              <div class="expo-kicker">Exposición 08</div>
+              <h3>Momentos Arteluk — proceso y comunidad</h3>
+              <p>Registro de exposiciones y encuentros. Obra, familia y comunidad compartiendo el proceso creativo.</p>
+
+              <ul class="expo-details">
+                <li><strong>Enfoque:</strong> Procesos y comunidad</li>
+                <li><strong>Participan:</strong> Niños, familias y equipo</li>
+                <li><strong>Intención:</strong> Arte como vínculo</li>
+              </ul>
+
+              <div class="expo-tags">
+                <span class="tag">Proceso</span>
+                <span class="tag">Comunidad</span>
+                <span class="tag">Arteterapia</span>
+              </div>
+            </div>
+          </article>
         </div>
-      </div>
-
-      <div class="expo-track" id="expoTrack">
-        <!-- EXPO 01 -->
-        <article class="expo-slide">
-          <div class="expo-left">
-            <div class="expo-media">
-              <img src="img/Exposision1.jpg" alt="Barco Neptuno - Exposición final Arteluk" loading="lazy" decoding="async">
-            </div>
-
-            <div class="expo-strip" aria-label="Galería Barco Neptuno">
-              <div class="expo-thumb"><img src="img/Exposision1.jpg" alt="Barco Neptuno 1" loading="lazy" decoding="async"></div>
-              <div class="expo-thumb"><img src="img/Exposision2.jpg" alt="Barco Neptuno 2" loading="lazy" decoding="async"></div>
-              <div class="expo-thumb"><img src="img/Exposision3.jpg" alt="Barco Neptuno 3" loading="lazy" decoding="async"></div>
-              <div class="expo-thumb"><img src="img/Exposision4.jpg" alt="Barco Neptuno 4" loading="lazy" decoding="async"></div>
-              <div class="expo-thumb"><img src="img/Exposision5.jpg" alt="Barco Neptuno 5" loading="lazy" decoding="async"></div>
-              <div class="expo-thumb"><img src="img/Exposision6.jpg" alt="Barco Neptuno 6" loading="lazy" decoding="async"></div>
-              <div class="expo-thumb"><img src="img/WhatsApp Image 2025-11-04 at 10.07.32 AM.jpeg" alt="Barco Neptuno extra 1" loading="lazy" decoding="async"></div>
-              <div class="expo-thumb"><img src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" alt="Barco Neptuno extra 2" loading="lazy" decoding="async"></div>
-            </div>
-          </div>
-
-          <div class="expo-info">
-            <div class="expo-kicker">Exposición 01</div>
-            <h3>Barco Neptuno — “El Vuelo de Alaska”</h3>
-            <p>
-              Exposición final de arteterapia y acrílicos llamada <strong>“El Vuelo de Alaska”</strong>.
-              Un cierre emotivo donde los niños muestran su proceso, su valentía y su crecimiento a bordo del Barco Neptuno.
-            </p>
-
-            <ul class="expo-details">
-              <li><strong>Contexto:</strong> Cierre anual de Arteluk</li>
-              <li><strong>Obras:</strong> Acrílicos y procesos de arteterapia</li>
-              <li><strong>Experiencia:</strong> Mostrar la obra en un entorno real y simbólico</li>
-            </ul>
-
-            <div class="expo-tags">
-              <span class="tag">Arteterapia</span>
-              <span class="tag">Acrílico</span>
-              <span class="tag">Cierre anual</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- EXPO 02 -->
-        <article class="expo-slide">
-          <div class="expo-left">
-            <div class="expo-media">
-              <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Exposición Biblioteca Municipal de Valdivia" loading="lazy" decoding="async">
-            </div>
-            <div class="expo-strip" aria-hidden="true" style="display:none"></div>
-          </div>
-
-          <div class="expo-info">
-            <div class="expo-kicker">Exposición 02</div>
-            <h3>Biblioteca Municipal de Valdivia</h3>
-            <p>
-              Exposición infantil por <strong>15 días</strong>: pinturas y acuarelas de los niños.
-              Además, realizamos clases de pintura en el salón de la Biblioteca, abiertas a la comunidad.
-            </p>
-
-            <ul class="expo-details">
-              <li><strong>Duración:</strong> 15 días</li>
-              <li><strong>Obras:</strong> Pintura y acuarela</li>
-              <li><strong>Plus:</strong> Actividad comunitaria abierta</li>
-            </ul>
-
-            <div class="expo-tags">
-              <span class="tag">15 días</span>
-              <span class="tag">Niños</span>
-              <span class="tag">Pintura + acuarela</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- EXPO 03 -->
-        <article class="expo-slide">
-          <div class="expo-left">
-            <div class="expo-media">
-              <img src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg" alt="Universidad Santo Tomás + Galería de Arte" loading="lazy" decoding="async">
-            </div>
-            <div class="expo-strip" aria-hidden="true" style="display:none"></div>
-          </div>
-
-          <div class="expo-info">
-            <div class="expo-kicker">Exposición 03</div>
-            <h3>Universidad Santo Tomás + Galería de Arte</h3>
-            <p>
-              Exposición de <strong>Mary Quinteros</strong> por <strong>1 mes y medio</strong>.
-              Luego, los niños también expusieron sus pinturas, viviendo una experiencia real de galería.
-            </p>
-
-            <ul class="expo-details">
-              <li><strong>Duración:</strong> 1 mes y medio</li>
-              <li><strong>Artista:</strong> Mary Quinteros</li>
-              <li><strong>Continuidad:</strong> Exposición infantil posterior</li>
-            </ul>
-
-            <div class="expo-tags">
-              <span class="tag">1 mes y medio</span>
-              <span class="tag">Mary Quinteros</span>
-              <span class="tag">Exposición infantil</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- EXPO 04 -->
-        <article class="expo-slide">
-          <div class="expo-left">
-            <div class="expo-media">
-              <img src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg" alt="Espacio Fluvial" loading="lazy" decoding="async">
-            </div>
-            <div class="expo-strip" aria-hidden="true" style="display:none"></div>
-          </div>
-
-          <div class="expo-info">
-            <div class="expo-kicker">Exposición 04</div>
-            <h3>Espacio Fluvial</h3>
-            <p>
-              Exposición de obra de Mary Quinteros con <strong>cóctel</strong> y convocatoria abierta.
-              Arte como encuentro, conversación y comunidad.
-            </p>
-
-            <ul class="expo-details">
-              <li><strong>Formato:</strong> Evento cultural abierto</li>
-              <li><strong>Enfoque:</strong> Comunidad + conversación</li>
-              <li><strong>Ambiente:</strong> Espacio fluvial de Valdivia</li>
-            </ul>
-
-            <div class="expo-tags">
-              <span class="tag">Cultura</span>
-              <span class="tag">Cóctel</span>
-              <span class="tag">Ciudadanía</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- EXPO 05 -->
-        <article class="expo-slide">
-          <div class="expo-left">
-            <div class="expo-media">
-              <img src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg" alt="Café Moro" loading="lazy" decoding="async">
-            </div>
-            <div class="expo-strip" aria-hidden="true" style="display:none"></div>
-          </div>
-
-          <div class="expo-info">
-            <div class="expo-kicker">Exposición 05</div>
-            <h3>Café Moro</h3>
-            <p>
-              Exposición equina en óleo donde los niños presentaron sus caballos en bastidor.
-              Muestra abierta al público por <strong>15 días</strong>.
-            </p>
-
-            <ul class="expo-details">
-              <li><strong>Duración:</strong> 15 días</li>
-              <li><strong>Técnica:</strong> Óleo</li>
-              <li><strong>Temática:</strong> Exposición equina</li>
-            </ul>
-
-            <div class="expo-tags">
-              <span class="tag">15 días</span>
-              <span class="tag">Óleo</span>
-              <span class="tag">Exposición equina</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- EXPO 06 -->
-        <article class="expo-slide">
-          <div class="expo-left">
-            <div class="expo-media">
-              <img src="img/IMG_2948.jpg" alt="Exposición colectiva en centro comercial" loading="lazy" decoding="async">
-            </div>
-            <div class="expo-strip" aria-hidden="true" style="display:none"></div>
-          </div>
-
-          <div class="expo-info">
-            <div class="expo-kicker">Exposición 06</div>
-            <h3>Exposición colectiva en centro comercial</h3>
-            <p>
-              Participación en una exposición colectiva junto a otros artistas.
-              Instancia clave para ampliar redes, visibilidad y experiencia expositiva.
-            </p>
-
-            <ul class="expo-details">
-              <li><strong>Formato:</strong> Colectiva</li>
-              <li><strong>Objetivo:</strong> Redes y visibilidad</li>
-              <li><strong>Experiencia:</strong> Vitrina real para las obras</li>
-            </ul>
-
-            <div class="expo-tags">
-              <span class="tag">Colectiva</span>
-              <span class="tag">Redes</span>
-              <span class="tag">Visibilidad</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- EXPO 07 -->
-        <article class="expo-slide">
-          <div class="expo-left">
-            <div class="expo-media">
-              <img src="img/IMG_3633.jpg" alt="Almacén Fluvial" loading="lazy" decoding="async">
-            </div>
-            <div class="expo-strip" aria-hidden="true" style="display:none"></div>
-          </div>
-
-          <div class="expo-info">
-            <div class="expo-kicker">Exposición 07</div>
-            <h3>Almacén Fluvial</h3>
-            <p>
-              Exposición colectiva con participación de Mary Quinteros.
-              Un espacio con identidad local, perfecto para conectar arte y comunidad valdiviana.
-            </p>
-
-            <ul class="expo-details">
-              <li><strong>Formato:</strong> Colectiva</li>
-              <li><strong>Participación:</strong> Mary Quinteros</li>
-              <li><strong>Contexto:</strong> Comunidad local</li>
-            </ul>
-
-            <div class="expo-tags">
-              <span class="tag">Colectiva</span>
-              <span class="tag">Mary Quinteros</span>
-              <span class="tag">Valdivia</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- EXPO 08 -->
-        <article class="expo-slide">
-          <div class="expo-left">
-            <div class="expo-media">
-              <img src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" alt="Momentos Arteluk" loading="lazy" decoding="async">
-            </div>
-            <div class="expo-strip" aria-hidden="true" style="display:none"></div>
-          </div>
-
-          <div class="expo-info">
-            <div class="expo-kicker">Exposición 08</div>
-            <h3>Momentos Arteluk — Comunidad y proceso</h3>
-            <p>
-              Registro de distintos momentos de exposiciones y encuentros artísticos.
-              Obra, familia y comunidad compartiendo el proceso creativo.
-            </p>
-
-            <ul class="expo-details">
-              <li><strong>Enfoque:</strong> Procesos y comunidad</li>
-              <li><strong>Participan:</strong> Niños, familias y equipo</li>
-              <li><strong>Intención:</strong> Arte como vínculo y acompañamiento</li>
-            </ul>
-
-            <div class="expo-tags">
-              <span class="tag">Comunidad</span>
-              <span class="tag">Proceso</span>
-              <span class="tag">Arteterapia</span>
-            </div>
-          </div>
-        </article>
       </div>
     </div>
   </div>
@@ -1911,100 +1892,7 @@ body{
     })();
 
     /* formulario -> webhook n8n con anti-doble envío */
-    (function formWebhook(){
-      const form = document.getElementById('wlForm');
-      if(!form) return;
-
-      let sending = false;
-
-      function toastForm(msg, type='ok'){
-        const el = document.createElement('div');
-        el.textContent = msg;
-        el.style.cssText = `
-          position:fixed;left:50%;bottom:26px;transform:translateX(-50%);
-          padding:12px 18px;border-radius:10px;z-index:9999;
-          background:${type==='ok'?'#e7fff0':'#ffeaea'};
-          color:${type==='ok'?'#065f46':'#a00000'};
-          box-shadow:0 6px 16px rgba(0,0,0,.12);
-          opacity:0;transition:.25s`;
-        document.body.appendChild(el);
-        requestAnimationFrame(()=> el.style.opacity = 1);
-        setTimeout(()=>{ el.style.opacity = 0; setTimeout(()=>el.remove(), 300); }, 2800);
-      }
-
-      form.addEventListener('submit', async (e)=>{
-        e.preventDefault();
-
-        if(sending){
-          toastForm('Ya recibimos tu mensaje, espera unos segundos.','ok');
-          return;
-        }
-
-        const last = Number(localStorage.getItem('arteluk_last_send') || 0);
-        const now  = Date.now();
-        if(now - last < 15000){
-          toastForm('Ya recibimos tu formulario hace un momento.','ok');
-          return;
-        }
-
-        const nombre = (form.querySelector('#nombre')?.value || '').trim();
-        const servicio = (form.querySelector('#servicio')?.value || '');
-        if(!nombre || !servicio){
-          toastForm('Completa tu nombre y selecciona un servicio.','error');
-          return;
-        }
-
-        sending = true;
-        const btn = form.querySelector('button[type="submit"]');
-        const original = btn ? btn.innerHTML : '';
-        if(btn){ btn.disabled = true; btn.innerHTML = 'Enviando…'; }
-
-        const data = {
-          nombre: nombre,
-          telefono: (form.querySelector('#tel')?.value || '').trim(),
-          servicio: servicio,
-          mensaje: (form.querySelector('#msg')?.value || '').trim()
-        };
-
-        const controller = new AbortController();
-        const t = setTimeout(()=>controller.abort(), 10000);
-
-        try{
-          const res = await fetch(
-            "https://arteluk-n8n.bvil2a.easypanel.host/webhook/afb70f27-dd2d-4853-9270-3faf35ddcd5e",
-            {
-              method:"POST",
-              headers:{ "Content-Type":"application/json" },
-              body: JSON.stringify(data),
-              keepalive:true,
-              signal: controller.signal
-            }
-          );
-          if(!res.ok) throw new Error('HTTP '+res.status);
-
-          form.reset();
-          localStorage.setItem('arteluk_last_send', String(Date.now()));
-          toastForm('✅ ¡Formulario enviado con éxito!', 'ok');
-
-          trackSafe('Lead', {
-            content_name: data.servicio || 'Formulario Arteluk',
-            content_category: 'Formulario',
-            value: 0,
-            currency: 'CLP'
-          });
-
-        }catch(err){
-          console.error('Webhook error:', err);
-          toastForm('❌ Error al enviar. Intenta nuevamente.', 'error');
-        }finally{
-          clearTimeout(t);
-          if(btn){ btn.disabled = false; btn.innerHTML = original; }
-          sending = false;
-        }
-      });
-    })();
-
-    /* ===== Exposiciones Slider (flechas) ===== */
+    /* ===== Exposiciones Slider (flechas + contador) ===== */
 (function expoSlider(){
   const track = document.getElementById('expoTrack');
   if(!track) return;
@@ -2034,10 +1922,12 @@ body{
     const left = track.scrollLeft;
     let bestIdx = 0;
     let best = Infinity;
+
     slides.forEach((s, i)=>{
       const d = Math.abs(s.offsetLeft - left);
       if(d < best){ best = d; bestIdx = i; }
     });
+
     const a = String(bestIdx + 1).padStart(2,'0');
     const b = String(slides.length).padStart(2,'0');
     progress.textContent = `${a} / ${b}`;
@@ -2051,10 +1941,12 @@ body{
 
   updateButtons();
   updateProgress();
-    })();
+})();
+
   </script>
 </body>
 </html>
+
 
 
 
