@@ -161,7 +161,7 @@
     .fx-bg{
       position:fixed;
       inset:0;
-      z-index:0;
+      z-index:-2;
       pointer-events:none;
       opacity:.55;
       background:
@@ -1673,7 +1673,7 @@
                   <ul class="pill-list">
                     <li>Cada vez más pantallas y menos conexión real con otros.</li>
                     <li>Placeres rápidos que no se transforman en bienestar duradero.</li>
-                    <li>Ansiedad, estrés y desregulación emocional cada vez más comunes.</li>
+                    <li>1 de cada 3 jóvenes en Chile con problemas emocionales.</li>
                   </ul>
                   <p class="lead">
                     En Arteluk creemos que es urgente volver a lo esencial:
@@ -2989,6 +2989,8 @@
 
       slider.addEventListener('mouseleave', resetTimer);
 
+      // Init visible state (anti pantalla en blanco por transform heredado / ejecución parcial)
+      goTo(0, {auto:true});
       resetTimer();
     })();
 
@@ -3023,6 +3025,65 @@
       window.addEventListener('resize', updateButtons);
       updateButtons();
     })();
-  </script>
+  
+    /* ✅ Fix rutas de imágenes en hosting (Linux es case-sensitive)
+       - Intenta variantes si el src falla: .jpg/.JPG/.jpeg y path en minúsculas
+       - NO afecta imágenes externas (http/https)
+    */
+    (function imageSrcFallback(){
+      const exts = ['jpg','JPG','jpeg','JPEG','png','PNG','webp','WEBP'];
+      const isExternal = (s)=> /^https?:\/\//i.test(s) || /^data:/i.test(s) || /^blob:/i.test(s);
+      const uniq = (arr)=> Array.from(new Set(arr));
+
+      document.querySelectorAll('img').forEach(img=>{
+        const orig = img.getAttribute('src');
+        if(!orig || isExternal(orig)) return;
+
+        // Genera variantes seguras
+        const variants = [];
+        const encoded = encodeURI(orig);
+        if(encoded !== orig) variants.push(encoded);
+
+        // Lowercase del path (excepto protocolo)
+        const lowerAll = orig.split('/').map((p, i)=> i===0 ? p : p.toLowerCase()).join('/');
+        if(lowerAll !== orig) variants.push(lowerAll);
+
+        // Cambios de extensión
+        const m = orig.match(/^(.*)\.([a-zA-Z0-9]+)$/);
+        if(m){
+          const base = m[1];
+          exts.forEach(e=>{
+            const v1 = `${base}.${e}`;
+            const v2 = `${base.toLowerCase()}.${e}`;
+            if(v1 !== orig) variants.push(v1);
+            if(v2 !== orig) variants.push(v2);
+            // encoded variantes (por espacios / paréntesis)
+            variants.push(encodeURI(v1));
+            variants.push(encodeURI(v2));
+          });
+        }
+
+        const tries = uniq(variants).filter(v => v && v !== orig);
+        if(!tries.length) return;
+
+        let idx = 0;
+        img.addEventListener('error', ()=>{
+          if(idx >= tries.length) return;
+          const next = tries[idx++];
+          // evita loop por src igual
+          if(next && img.src !== next) img.src = next;
+        });
+      });
+    })();
+
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
