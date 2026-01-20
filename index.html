@@ -3122,10 +3122,33 @@
         });
       });
     })();
+/* ===== Exposiciones: cambio de foto al hacer click en miniaturas ===== */
+(function expoThumbSwap(){
+  document.querySelectorAll('.expo-slide').forEach(slide=>{
+    const main = slide.querySelector('.expo-main');
+    if(!main) return;
+
+    const thumbs = Array.from(slide.querySelectorAll('[data-expo-thumb]'));
+    if(!thumbs.length) return;
+
+    thumbs.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const src = btn.getAttribute('data-src');
+        const alt = btn.getAttribute('data-alt') || main.alt || '';
+        if(src){
+          main.src = src;
+          if(alt) main.alt = alt;
+        }
+        thumbs.forEach(b=> b.classList.toggle('is-active', b === btn));
+      });
+    });
+  });
+})();
 
 </script>
 </body>
 </html>
+
 
 
 
