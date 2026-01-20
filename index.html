@@ -3009,16 +3009,8 @@
       index = (index + 1) % slides.length;
       applyTransform(false);
       setActiveDot(index);
-    const AUTO_MS = 5000;
+    }, 5000);
 
-function resetTimer(){
-  if(timer) clearInterval(timer);
-  timer = setInterval(()=> {
-    index = (index + 1) % slides.length;
-    applyTransform(false);
-    setActiveDot(index);
-  }, AUTO_MS);
-}
 
 
   function goTo(i, opts){
@@ -3153,6 +3145,7 @@ function resetTimer(){
 </script>
 </body>
 </html>
+
 
 
 
