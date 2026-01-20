@@ -1153,59 +1153,113 @@
 }
 
 @media (max-width:880px){
+.hero-slider{
+  --heroSlides: 3; /* fallback */
+  position:relative;
+  height:calc(100vh - var(--navH));
+  min-height:620px;
+  overflow:hidden;
+}
+
+/* mejor en móviles con barras del navegador (no se vuelve loco) */
+@supports (height: 100svh){
+  .hero-slider{ height:calc(100svh - var(--navH)); }
+}
+
+/* OJO: NO height:auto acá, eso te genera “stretch” raro entre slides */
+@media (max-width:880px){
   .hero-slider{
-    height:auto;
     min-height:calc(100vh - var(--navH));
   }
 }
 
-.hero-track{
-  display:flex;
-  height:100%;
-  width:calc(var(--heroSlides) * 100%);
-  transform:translate3d(0,0,0);
-  transition:transform .6s cubic-bezier(.33,.7,.2,1);
-  will-change:transform;
-}
-
-/* ✅ CLAVE: cada slide = 1/heroSlides del track => 1 pantalla */
 .hero-slide{
   flex:0 0 calc(100% / var(--heroSlides));
   height:100%;
   display:flex;
-  align-items:center;
+  align-items:stretch; /* clave para que el layout no quede “colgando” */
 }
 
 .hero-slide-inner{
   width:100%;
-  padding:38px 0 30px;
+  height:100%;
+  padding:42px 0 76px;   /* + aire y deja espacio real a los dots */
+  display:flex;
+  align-items:center;     /* centra el contenido “pro” */
 }
 
 @media (max-width:880px){
   .hero-slide-inner{
-    padding:30px 0 32px;
+    padding:28px 0 86px;  /* móvil: más aire abajo, sin que se pegue todo */
   }
+
+  /* tipografías más “leíbles” y menos “zoom” */
+  .hero-slide h1{ font-size:clamp(26px,7vw,40px); }
+  .hero-slide h2{ font-size:clamp(22px,6.2vw,32px); }
+  .hero-slide .lead{ font-size:1rem; line-height:1.75; }
+  .hero-slide .pill-list li{ font-size:.98rem; line-height:1.6; }
 }
 
-.hero-slide h1{
-  font-size:clamp(32px,4.6vw,50px);
+/* detalle pro: balancea títulos (si el browser no lo soporta, no pasa nada) */
+.hero-title, .hero-slide h2{ text-wrap:balance; }
+/* panel premium SOLO para slides con texto + foto */
+.hero-panel{
+  height:100%;
+  background:rgba(255,255,255,.74);
+  border:1px solid rgba(224,236,255,.95);
+  border-radius:28px;
+  box-shadow:0 22px 60px rgba(15,23,42,.14);
+  padding:clamp(16px,2.2vw,26px);
+  gap:clamp(16px,2vw,28px);
+  align-items:stretch; /* hace que ambas columnas calcen perfecto */
 }
 
-.hero-slide h2{
-  font-size:clamp(26px,3.4vw,40px);
-}
-
-/* nav slider */
-.hero-controls{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:18px;
-  padding:0 18px;
+/* centra verticalmente el texto (solo el div del texto) */
+.hero-panel > div{
   display:flex;
-  align-items:center;
-  justify-content:space-between;
+  flex-direction:column;
+  justify-content:center;
+}
+
+/* fuerza que la columna de foto LLENE alto */
+.hero-panel .photo{
+  display:flex;
+}
+.hero-panel .photo .marco-cuadro{
+  width:100%;
+  height:100%;
+}
+.hero-panel .photo .marco-cuadro img{
+  width:100%;
+  height:100%;
+  object-fit:cover; /* cero deformación */
+}
+
+/* detalle pro en la foto (sutil, sin cargar el diseño) */
+.hero-panel .marco-cuadro{
+  position:relative;
+}
+.hero-panel .marco-cuadro::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.22));
   pointer-events:none;
+}
+.hero-panel .marco-cuadro::after{
+  content:"Foto real · Arteluk";
+  position:absolute;
+  left:12px;
+  bottom:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.82);
+  border:1px solid rgba(15,23,42,.12);
+  color:#0f172a;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
 }
 
 @media (max-width:880px){
@@ -3013,8 +3067,17 @@
       index = (index + 1) % slides.length;
       applyTransform(false);
       setActiveDot(index);
-    }, 7000);
-  }
+    const AUTO_MS = 5000;
+
+function resetTimer(){
+  if(timer) clearInterval(timer);
+  timer = setInterval(()=> {
+    index = (index + 1) % slides.length;
+    applyTransform(false);
+    setActiveDot(index);
+  }, AUTO_MS);
+}
+
 
   function goTo(i, opts){
     const auto = opts && opts.auto;
@@ -3148,6 +3211,7 @@
 </script>
 </body>
 </html>
+
 
 
 
