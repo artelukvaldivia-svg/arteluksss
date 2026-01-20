@@ -1550,6 +1550,47 @@
   font-size:.86rem;
   font-weight:800;
 }
+/* =========================
+   FIX overflow móvil (rápido)
+   ========================= */
+
+/* 1) Permitir cortes de palabras / URLs */
+h1,h2,h3,p,li,a,span,strong,small{
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+
+/* 2) Flex: permitir que los hijos se encojan y el texto haga wrap */
+.navbar > * ,
+.video-meta > * ,
+.hero-ctas > *{
+  min-width:0;
+}
+
+/* Brand largo: que no reviente el nav */
+.brand{
+  min-width:0;
+  max-width:calc(100% - 56px); /* deja espacio al botón ☰ */
+  line-height:1.15;
+}
+
+/* 3) Botones: NO forzar una sola línea en móvil */
+@media (max-width:520px){
+  .btn{ white-space:normal; }
+  .hero-ctas .btn{
+    width:100%;
+    justify-content:center;
+  }
+}
+
+/* 4) iPhone: evitar auto-zoom en inputs */
+@media (max-width:880px){
+  .form input,
+  .form select,
+  .form textarea{
+    font-size:16px;
+  }
+}
 
   </style>
 </head>
@@ -3150,6 +3191,7 @@
 </script>
 </body>
 </html>
+
 
 
 
