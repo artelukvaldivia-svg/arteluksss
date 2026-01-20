@@ -1177,14 +1177,10 @@ e<!DOCTYPE html>
 }
 
 .hero-slide-inner{
-  padding:38px 18px 30px !important; /* vuelve el padding lateral */
+  width:100%;
+  padding:38px 0 30px;   /* <- aquí mataste el padding lateral */
 }
 
-@media (max-width:880px){
-  .hero-slide-inner{
-    padding:30px 16px 32px !important;
-  }
-}
 
 .hero-slide h1{
   font-size:clamp(32px,4.6vw,50px);
@@ -3182,6 +3178,7 @@ h1,h2,h3,p,li,a,span,strong,small{
 </script>
 </body>
 </html>
+
 
 
 
