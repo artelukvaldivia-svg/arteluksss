@@ -1121,154 +1121,162 @@
     /* ============================================
        HERO SLIDER FULL PANTALLA (3 SECCIONES)
        ============================================ */
-    .hero-shell{
-      position:relative;
-      z-index:1;
-      margin:0;
-      padding:0;
-    }
+   /* ============================================
+   HERO SLIDER FULL PANTALLA (3 SECCIONES)
+   FIX: cada slide = 1 pantalla (no 300%)
+   ============================================ */
+.hero-shell{
+  position:relative;
+  z-index:1;
+  margin:0;
+  padding:0;
+}
 
-    .hero-bg{
-      position:absolute;
-      inset:0;
-      z-index:-1;
-      background:
-        radial-gradient(700px 420px at 12% 10%, rgba(148,233,255,.65), transparent 60%),
-        radial-gradient(780px 460px at 90% 16%, rgba(129,140,248,.45), transparent 60%),
-        radial-gradient(720px 420px at 18% 100%, rgba(45,212,191,.35), transparent 60%),
-        linear-gradient(180deg, #eff6ff, #e0f2fe);
-    }
+.hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(700px 420px at 12% 10%, rgba(148,233,255,.65), transparent 60%),
+    radial-gradient(780px 460px at 90% 16%, rgba(129,140,248,.45), transparent 60%),
+    radial-gradient(720px 420px at 18% 100%, rgba(45,212,191,.35), transparent 60%),
+    linear-gradient(180deg, #eff6ff, #e0f2fe);
+}
 
-    .hero-slider{
-      position:relative;
-      height:calc(100vh - var(--navH));
-      min-height:620px;
-      overflow:hidden;
-    }
+/* ✅ variable de cantidad de slides (JS la setea) */
+.hero-slider{
+  --heroSlides: 3; /* fallback */
+  position:relative;
+  height:calc(100vh - var(--navH));
+  min-height:620px;
+  overflow:hidden;
+}
 
-    @media (max-width:880px){
-      .hero-slider{
-        height:auto;
-        min-height:calc(100vh - var(--navH));
-      }
-    }
+@media (max-width:880px){
+  .hero-slider{
+    height:auto;
+    min-height:calc(100vh - var(--navH));
+  }
+}
 
-    .hero-track{
-      display:flex;
-      height:100%;
-      width:300%;
-      transform:translateX(0);
-      transition:transform .6s cubic-bezier(.33,.7,.2,1);
-    }
+.hero-track{
+  display:flex;
+  height:100%;
+  width:calc(var(--heroSlides) * 100%);
+  transform:translate3d(0,0,0);
+  transition:transform .6s cubic-bezier(.33,.7,.2,1);
+  will-change:transform;
+}
 
-    .hero-slide{
-      flex:0 0 100%;
-      height:100%;
-      display:flex;
-      align-items:center;
-    }
+/* ✅ CLAVE: cada slide = 1/heroSlides del track => 1 pantalla */
+.hero-slide{
+  flex:0 0 calc(100% / var(--heroSlides));
+  height:100%;
+  display:flex;
+  align-items:center;
+}
 
-    .hero-slide-inner{
-      width:100%;
-      padding:38px 0 30px;
-    }
+.hero-slide-inner{
+  width:100%;
+  padding:38px 0 30px;
+}
 
-    @media (max-width:880px){
-      .hero-slide-inner{
-        padding:30px 0 32px;
-      }
-    }
+@media (max-width:880px){
+  .hero-slide-inner{
+    padding:30px 0 32px;
+  }
+}
 
-    .hero-slide h1{
-      font-size:clamp(32px,4.6vw,50px);
-    }
+.hero-slide h1{
+  font-size:clamp(32px,4.6vw,50px);
+}
 
-    .hero-slide h2{
-      font-size:clamp(26px,3.4vw,40px);
-    }
+.hero-slide h2{
+  font-size:clamp(26px,3.4vw,40px);
+}
 
-    /* nav slider */
-    .hero-controls{
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:18px;
-      padding:0 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      pointer-events:none;
-    }
+/* nav slider */
+.hero-controls{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:18px;
+  padding:0 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  pointer-events:none;
+}
 
-    @media (max-width:880px){
-      .hero-controls{
-        bottom:14px;
-      }
-    }
+@media (max-width:880px){
+  .hero-controls{
+    bottom:14px;
+  }
+}
 
-    .hero-dots{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      pointer-events:auto;
-    }
+.hero-dots{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  pointer-events:auto;
+}
 
-    .hero-dot{
-      width:9px;
-      height:9px;
-      border-radius:999px;
-      border:1px solid rgba(15,23,42,.38);
-      background:rgba(255,255,255,.55);
-      box-shadow:0 8px 18px rgba(15,23,42,.20);
-      padding:0;
-      cursor:pointer;
-      transition:.2s ease;
-    }
+.hero-dot{
+  width:9px;
+  height:9px;
+  border-radius:999px;
+  border:1px solid rgba(15,23,42,.38);
+  background:rgba(255,255,255,.55);
+  box-shadow:0 8px 18px rgba(15,23,42,.20);
+  padding:0;
+  cursor:pointer;
+  transition:.2s ease;
+}
 
-    .hero-dot.active{
-      width:26px;
-      background:linear-gradient(90deg,#38bdf8,#0ea5e9);
-      border-color:rgba(15,23,42,.55);
-    }
+.hero-dot.active{
+  width:26px;
+  background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+  border-color:rgba(15,23,42,.55);
+}
 
-    .hero-arrows{
-      display:flex;
-      gap:8px;
-      pointer-events:auto;
-    }
+.hero-arrows{
+  display:flex;
+  gap:8px;
+  pointer-events:auto;
+}
 
-    .hero-arrow{
-      width:40px;
-      height:40px;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,.70);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.96), rgba(241,245,249,.95));
-      box-shadow:0 10px 22px rgba(15,23,42,.16);
-      cursor:pointer;
-      font-weight:900;
-      color:#0f172a;
-      padding:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      transition:transform .16s ease, box-shadow .16s ease, opacity .16s ease;
-    }
+.hero-arrow{
+  width:40px;
+  height:40px;
+  border-radius:999px;
+  border:1px solid rgba(148,163,184,.70);
+  background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(241,245,249,.95));
+  box-shadow:0 10px 22px rgba(15,23,42,.16);
+  cursor:pointer;
+  font-weight:900;
+  color:#0f172a;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform .16s ease, box-shadow .16s ease, opacity .16s ease;
+}
 
-    .hero-arrow:hover{
-      transform:translateY(-1px);
-      box-shadow:0 14px 28px rgba(15,23,42,.22);
-    }
+.hero-arrow:hover{
+  transform:translateY(-1px);
+  box-shadow:0 14px 28px rgba(15,23,42,.22);
+}
 
-    .hero-arrow:active{
-      transform:translateY(0) scale(.97);
-    }
+.hero-arrow:active{
+  transform:translateY(0) scale(.97);
+}
 
-    .hero-arrow:disabled{
-      opacity:.45;
-      box-shadow:none;
-      cursor:not-allowed;
-    }
+.hero-arrow:disabled{
+  opacity:.45;
+  box-shadow:none;
+  cursor:not-allowed;
+}
+
 
     /* ============================================
        EXPOSICIONES: SLIDER
@@ -2934,65 +2942,75 @@
       });
     })();
 
-    /* ===== HERO SLIDER AUTO + FLECHAS + DOTS ===== */
-    (function heroSlider(){
-      const slider = document.querySelector('.hero-slider');
-      if(!slider) return;
-      const track = slider.querySelector('.hero-track');
-      const slides = Array.from(slider.querySelectorAll('.hero-slide'));
-      const dots = Array.from(slider.querySelectorAll('[data-hero-dot]'));
-      const prev = slider.querySelector('[data-hero-prev]');
-      const next = slider.querySelector('[data-hero-next]');
-      if(!track || slides.length === 0) return;
+    /* ===== HERO SLIDER AUTO + FLECHAS + DOTS (FIX) ===== */
+(function heroSlider(){
+  const slider = document.querySelector('.hero-slider');
+  if(!slider) return;
 
-      let index = 0;
-      let timer;
+  const track = slider.querySelector('.hero-track');
+  const slides = Array.from(slider.querySelectorAll('.hero-slide'));
+  const dots = Array.from(slider.querySelectorAll('[data-hero-dot]'));
+  const prev = slider.querySelector('[data-hero-prev]');
+  const next = slider.querySelector('[data-hero-next]');
+  if(!track || slides.length === 0) return;
 
-      track.style.width = `${slides.length * 100}%`;
+  // ✅ fija el cálculo correcto
+  slider.style.setProperty('--heroSlides', slides.length);
+  const step = 100 / slides.length;
 
-      function setActiveDot(i){
-        dots.forEach((d,idx)=> d.classList.toggle('active', idx===i));
-      }
+  let index = 0;
+  let timer = null;
 
-      function goTo(i, opts){
-        const auto = opts && opts.auto;
-        const total = slides.length;
-        index = (i + total) % total;
-        track.style.transform = `translateX(-${index*100}%)`;
-        setActiveDot(index);
-        if(!auto) resetTimer();
-      }
+  function setActiveDot(i){
+    dots.forEach((d,idx)=> d.classList.toggle('active', idx===i));
+  }
 
-      function nextSlide(auto=false){
-        goTo(index+1, {auto});
-      }
+  function applyTransform(noAnim=false){
+    const t = `translate3d(-${index * step}%,0,0)`;
+    if(noAnim){
+      const old = track.style.transition;
+      track.style.transition = 'none';
+      track.style.transform = t;
+      track.getBoundingClientRect(); // fuerza layout
+      track.style.transition = old || '';
+    }else{
+      track.style.transform = t;
+    }
+  }
 
-      function prevSlide(){
-        goTo(index-1);
-      }
+  function resetTimer(){
+    if(timer) clearInterval(timer);
+    timer = setInterval(()=> {
+      index = (index + 1) % slides.length;
+      applyTransform(false);
+      setActiveDot(index);
+    }, 7000);
+  }
 
-      function resetTimer(){
-        if(timer) clearInterval(timer);
-        timer = setInterval(()=> nextSlide(true), 7000);
-      }
+  function goTo(i, opts){
+    const auto = opts && opts.auto;
+    const total = slides.length;
+    index = (i + total) % total;
+    applyTransform(false);
+    setActiveDot(index);
+    if(!auto) resetTimer();
+  }
 
-      if(prev) prev.addEventListener('click', ()=> prevSlide());
-      if(next) next.addEventListener('click', ()=> nextSlide());
+  prev && prev.addEventListener('click', ()=> goTo(index - 1));
+  next && next.addEventListener('click', ()=> goTo(index + 1));
 
-      dots.forEach((d,idx)=>{
-        d.addEventListener('click', ()=> goTo(idx));
-      });
+  dots.forEach((d,idx)=> d.addEventListener('click', ()=> goTo(idx)));
 
-      slider.addEventListener('mouseenter', ()=>{
-        if(timer) clearInterval(timer);
-      });
+  slider.addEventListener('mouseenter', ()=> { if(timer) clearInterval(timer); });
+  slider.addEventListener('mouseleave', resetTimer);
 
-      slider.addEventListener('mouseleave', resetTimer);
+  // ✅ init a prueba de “se ve entremedio”
+  index = 0;
+  setActiveDot(0);
+  applyTransform(true);
+  resetTimer();
+})();
 
-      // Init visible state (anti pantalla en blanco por transform heredado / ejecución parcial)
-      goTo(0, {auto:true});
-      resetTimer();
-    })();
 
     /* ===== Exposiciones Slider (flechas) ===== */
     (function expoSlider(){
@@ -3079,4 +3097,5 @@
 </script>
 </body>
 </html>
+
 
