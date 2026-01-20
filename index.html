@@ -176,14 +176,19 @@
       opacity:.25;
     }
 
-    /* Reveal (liviano) */
-    .reveal{
+    /* ✅ REVEAL: anti “pantalla en blanco”
+       - Por defecto NO oculta nada
+       - Solo oculta si el JS de reveal alcanzó a correr y marcó .js-reveal
+    */
+    .reveal{ }
+
+    .js-reveal{
       opacity:0;
       transform:translateY(18px);
       transition:opacity .5s ease, transform .5s ease;
     }
 
-    .reveal.in{
+    .js-reveal.in{
       opacity:1;
       transform:none;
     }
@@ -1679,7 +1684,7 @@
                 </div>
                 <aside class="photo">
                   <div class="media marco-cuadro">
-                    <img src="IMG/IMG_5035.jpg"
+                    <img src="img/IMG_5035.jpg"
                          alt="Proceso creativo en Arteluk"
                          loading="lazy" decoding="async">
                   </div>
@@ -1715,7 +1720,7 @@
                 </div>
                 <aside class="photo">
                   <div class="media marco-cuadro">
-                    <img src="IMG/IMG_6131.jpg"
+                    <img src="img/IMG_6131.jpg"
                          alt="Metodología en Arteluk"
                          loading="lazy" decoding="async">
                   </div>
@@ -1755,7 +1760,7 @@
           <!-- VERANO -->
           <article class="card reveal summer">
             <div class="media">
-              <img src="IMG/WhatsApp Image 2025-12-15 at 12.22.38 PM.jpeg"
+              <img src="img/WhatsApp Image 2025-12-15 at 12.22.38 PM.jpeg"
                    alt="Taller de Vacaciones Básico"
                    loading="lazy" decoding="async">
             </div>
@@ -1784,7 +1789,7 @@
           <article class="card reveal summer" id="veranoPremiumCard">
             <div class="recommended-pill">Recomendado</div>
             <div class="media">
-              <img src="IMG/WhatsApp Image 2025-12-15 at 8.33.32 AM.jpeg"
+              <img src="img/WhatsApp Image 2025-12-15 at 8.33.32 AM.jpeg"
                    alt="Taller de Vacaciones Premium"
                    loading="lazy" decoding="async">
             </div>
@@ -1813,7 +1818,7 @@
           <!-- EXISTENTES -->
           <article class="card reveal">
             <div class="media">
-              <img src="IMG/Fondo para curso de basico.jpg"
+              <img src="img/Fondo para curso de basico.jpg"
                    alt="Taller de Artes" loading="lazy" decoding="async">
             </div>
             <div class="body">
@@ -1840,7 +1845,7 @@
 
           <article class="card reveal">
             <div class="media">
-              <img src="IMG/Fondo para clases premium.jpg"
+              <img src="img/Fondo para clases premium.jpg"
                    alt="Taller de Artes Premium"
                    loading="lazy" decoding="async">
             </div>
@@ -1868,7 +1873,7 @@
 
           <article class="card reveal">
             <div class="media">
-              <img src="IMG/Fondo para clases de dibujo.jpg"
+              <img src="img/Fondo para clases de dibujo.jpg"
                    alt="Taller de Dibujo para niños con TEA"
                    loading="lazy" decoding="async">
             </div>
@@ -1896,7 +1901,7 @@
 
           <article class="card reveal">
             <div class="media">
-              <img src="IMG/WhatsApp Image 2025-11-04 at 10.07.50 AM.jpeg"
+              <img src="img/WhatsApp Image 2025-11-04 at 10.07.50 AM.jpeg"
                    alt="Plan Trimestral"
                    loading="lazy" decoding="async">
             </div>
@@ -1923,7 +1928,7 @@
 
           <article class="card reveal">
             <div class="media">
-              <img src="IMG/fondo para curso adulto.jpg"
+              <img src="img/fondo para curso adulto.jpg"
                    alt="Taller para Adultos"
                    loading="lazy" decoding="async">
             </div>
@@ -1951,7 +1956,7 @@
 
           <article class="card reveal">
             <div class="media">
-              <img src="IMG/IMG_5557.jpg"
+              <img src="img/IMG_5557.jpg"
                    alt="Plan por un día"
                    loading="lazy" decoding="async">
             </div>
@@ -1991,14 +1996,14 @@
         <div class="team">
           <figure class="tile reveal">
             <div class="media marco-cuadro">
-              <img src="IMG/profesora.jpg"
+              <img src="img/profesora.jpg"
                    alt="Equipo Arteluk" loading="lazy" decoding="async">
             </div>
           </figure>
 
           <figure class="tile reveal">
             <div class="media marco-cuadro">
-              <img src="IMG/equipo (2).jpg"
+              <img src="img/equipo (2).jpg"
                    alt="Equipo Arteluk" loading="lazy" decoding="async">
             </div>
           </figure>
@@ -2119,7 +2124,7 @@
             <article class="expo-slide">
               <div class="frame mint">
                 <div class="expo-media">
-                  <img src="IMG/Exposision1.jpg"
+                  <img src="img/Exposision1.jpg"
                        alt="Barco Neptuno - Exposición final Arteluk"
                        loading="lazy" decoding="async">
                 </div>
@@ -2185,7 +2190,7 @@
             <article class="expo-slide">
               <div class="frame sunset">
                 <div class="expo-media">
-                  <img src="IMG/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
+                  <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
                        alt="Exposición Biblioteca Municipal de Valdivia"
                        loading="lazy" decoding="async">
                 </div>
@@ -2214,7 +2219,7 @@
             <article class="expo-slide">
               <div class="frame">
                 <div class="expo-media">
-                  <img src="IMG/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg"
+                  <img src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg"
                        alt="Universidad Santo Tomás + Galería de Arte"
                        loading="lazy" decoding="async">
                 </div>
@@ -2243,7 +2248,7 @@
             <article class="expo-slide">
               <div class="frame mint">
                 <div class="expo-media">
-                  <img src="IMG/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg"
+                  <img src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg"
                        alt="Espacio Fluvial"
                        loading="lazy" decoding="async">
                 </div>
@@ -2272,7 +2277,7 @@
             <article class="expo-slide">
               <div class="frame sunset">
                 <div class="expo-media">
-                  <img src="IMG/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg"
+                  <img src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg"
                        alt="Café Moro"
                        loading="lazy" decoding="async">
                 </div>
@@ -2301,7 +2306,7 @@
             <article class="expo-slide">
               <div class="frame">
                 <div class="expo-media">
-                  <img src="IMG/IMG_2948.jpg"
+                  <img src="img/IMG_2948.jpg"
                        alt="Exposición colectiva en centro comercial"
                        loading="lazy" decoding="async">
                 </div>
@@ -2694,14 +2699,19 @@
       );
     })();
 
-    /* reveal on scroll (se apaga con reduce motion) */
+    /* ✅ reveal on scroll (anti pantalla en blanco)
+       - Marca .js-reveal SOLO si este bloque realmente ejecuta
+       - Si algo rompe antes, nada se oculta por CSS
+    */
     (function reveal(){
       const reduce = window.matchMedia &&
         window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+      const els = document.querySelectorAll('.reveal');
+      els.forEach(el => el.classList.add('js-reveal'));
+
       if(reduce){
-        document.querySelectorAll('.reveal')
-          .forEach(el=>el.classList.add('in'));
+        els.forEach(el=>el.classList.add('in'));
         return;
       }
 
@@ -2714,7 +2724,7 @@
         });
       }, {threshold:.12});
 
-      document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+      els.forEach(el=>io.observe(el));
     })();
 
     /* CTA -> form */
