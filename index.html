@@ -1,3017 +1,770 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es-CL">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <title>Arteluk — Arte & Arteterapia en Valdivia</title>
-  <meta name="description" content="Academia de arte y arteterapia en Valdivia. Talleres para niños, jóvenes y adultos. Dirección: Picarte 407." />
-  <link rel="canonical" href="https://www.arteluk.cl/" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="img/android-chrome-192x192.png">
-  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-  <meta name="theme-color" content="#2563eb">
-
-  <!-- OpenGraph -->
-  <meta property="og:title" content="Arteluk — Arte & Arteterapia en Valdivia">
-  <meta property="og:description" content="Academia de arte y arteterapia en Valdivia. Talleres para niños, jóvenes y adultos.">
-  <meta property="og:image" content="https://www.arteluk.cl/img/android-chrome-512x512.png">
-  <meta property="og:url" content="https://www.arteluk.cl/">
-  <meta property="og:type" content="website">
-
-  <!-- Meta Pixel Code -->
-  <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
-  <script>
-    !function(f,b,e,v,n,t,s) {
-      if(f.fbq)return;
-      n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];
-      t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)
-    }(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1611426433185367');
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=1611426433185367&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
+  <title>Arteluk — Arte & Arteterapia</title>
+  <meta name="description" content="Academia de arte y arteterapia en Valdivia. Talleres para niños, jóvenes y adultos." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
 
   <style>
     :root{
+      --bg0:#f6fbff;
+      --bg1:#edf7ff;
       --ink:#0f172a;
-      --muted:#5f6b7a;
-      --line:#dfeaf7;
-      --paper:#ffffff;
-      --bg:#eaf5ff;
-      --bg2:#f6fbff;
-      --brand:#2563eb;
-      --brand2:#0ea5e9;
-      --radius:18px;
-      --shadow:0 10px 28px rgba(15,23,42,.10);
-      --navH:64px;
-      --gold1:#fbbf24;
-      --gold2:#f59e0b;
-      --gold3:#d97706;
-      --goldSoft:#fff7ed;
+      --muted:#475569;
+      --card:#ffffff;
+      --stroke:rgba(15,23,42,.10);
+      --shadow: 0 14px 40px rgba(2,6,23,.10);
+      --radius: 18px;
+      --max: 1120px;
+      --brand1:#2563eb;
+      --brand2:#06b6d4;
     }
-
-    *{ box-sizing:border-box }
-
-    html,body{
-      margin:0;
-      padding:0;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
     body{
-      font:15.5px/1.65 Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans";
       color:var(--ink);
       background:
-        radial-gradient(circle at 0% 0%, #e0f2fe 0, #eff6ff 35%),
-        radial-gradient(circle at 100% 100%, #bfdbfe 0, #e0f2fe 40%),
-        #eaf5ff;
-      overflow-x:hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
+        radial-gradient(900px 420px at 85% 10%, rgba(37,99,235,.22), transparent 60%),
+        radial-gradient(900px 420px at 15% 95%, rgba(6,182,212,.20), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
     }
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
 
-    img{
-      max-width:100%;
-      display:block;
+    /* layout */
+    .container{ width: min(var(--max), calc(100% - 32px)); margin:0 auto; }
+
+    /* topbar */
+    .topbar{
+      position: sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.72);
+      border-bottom: 1px solid var(--stroke);
     }
-
-    .container{
-      max-width:1140px;
-      margin:auto;
-      padding:0 18px;
+    .topbar .row{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 12px 0;
+      gap: 14px;
     }
-
-    h1,h2{
-      font-family:"Playfair Display",serif;
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:800;
       letter-spacing:.2px;
-      margin:0 0 8px;
     }
-
-    h1{
-      font-size:clamp(34px,5.6vw,54px);
+    .dot{
+      width:12px;height:12px;border-radius:99px;
+      background: linear-gradient(135deg, var(--brand1), var(--brand2));
+      box-shadow: 0 8px 20px rgba(37,99,235,.25);
     }
-
-    h2{
-      font-size:clamp(24px,3.8vw,36px);
+    .nav{
+      display:flex; gap:18px; align-items:center;
+      color: var(--muted);
+      font-weight:600;
+      font-size: 14px;
     }
+    .nav a{ padding:8px 10px; border-radius:12px; }
+    .nav a:hover{ background: rgba(15,23,42,.04); color: var(--ink); }
 
-    .lead{
-      color:var(--muted);
-      max-width:920px;
-    }
-
-    .mono{
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      color:#7fa2c9;
-      font-size:.82rem;
-    }
-
-    .section{
-      padding:68px 0;
-      scroll-margin-top: calc(var(--navH) + 12px);
-      position:relative;
-      z-index:1;
-      content-visibility:auto;
-      contain-intrinsic-size: 900px;
-    }
-
-    /* ===== PERF / ACCESIBILIDAD ===== */
-    @media (prefers-reduced-motion: reduce){
-      *{
-        animation:none !important;
-        transition:none !important;
-        scroll-behavior:auto !important;
-      }
-    }
-
-    body.perf *{
-      animation:none !important;
-    }
-
-    body.perf nav{
-      backdrop-filter:none !important;
-    }
-
-    /* ===== Fondo “bonito” sin blur caro ===== */
-    .fx-bg{
-      position:fixed;
-      inset:0;
-      z-index:0;
-      pointer-events:none;
-      opacity:.55;
-      background:
-        radial-gradient(560px 320px at 8% 12%, rgba(191,219,254,.55), transparent 60%),
-        radial-gradient(520px 260px at 92% 8%, rgba(165,180,252,.40), transparent 60%),
-        radial-gradient(440px 240px at 70% 85%, rgba(14,165,233,.35), transparent 60%),
-        radial-gradient(420px 240px at 16% 90%, rgba(186,230,253,.45), transparent 60%);
-      transform: translateZ(0);
-    }
-
-    body.perf .fx-bg{
-      opacity:.25;
-    }
-
-    /* Reveal (liviano) */
-    .reveal{
-      opacity:0;
-      transform:translateY(18px);
-      transition:opacity .5s ease, transform .5s ease;
-    }
-
-    .reveal.in{
-      opacity:1;
-      transform:none;
-    }
-
-    /* --------- LISTAS --------- */
-    .text-intro{
-      max-width:720px;
-    }
-
-    .pill-list{
-      margin:10px 0 6px;
-      padding-left:0;
-      list-style:none;
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-    }
-
-    .pill-list li{
-      position:relative;
-      padding-left:18px;
-      font-size:.94rem;
-      color:var(--muted);
-    }
-
-    .pill-list li::before{
-      content:"";
-      position:absolute;
-      left:0;
-      top:0.62em;
-      width:7px;
-      height:7px;
-      border-radius:999px;
-      background:linear-gradient(135deg,var(--brand),var(--brand2));
-      transform:translateY(-50%);
-    }
-
-    .hero-badges{
-      margin-top:8px;
-    }
-
-    .hero-badges li{
-      color:#0f172a;
-      font-weight:500;
-    }
-
-    /* BOTONES */
+    .ctaRow{ display:flex; gap:10px; align-items:center; }
     .btn{
-      position:relative;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:12px 20px;
-      border-radius:999px;
-      border:1px solid transparent;
-      font-weight:700;
-      text-decoration:none;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.8);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight:800;
+      font-size:14px;
       cursor:pointer;
-      transition:
-        transform .16s ease,
-        box-shadow .18s ease,
-        background-position .25s ease,
-        border-color .18s ease;
-      background-size:200% 100%;
-      overflow:hidden;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      display:inline-flex; align-items:center; gap:8px;
       user-select:none;
       white-space:nowrap;
-      font-family:inherit;
     }
-
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(2,6,23,.10); }
     .btn.primary{
-      color:#fff;
-      background-image:linear-gradient(90deg,var(--brand),var(--brand2));
-      box-shadow:0 14px 25px rgba(37,99,235,.22);
+      border-color: rgba(37,99,235,.22);
+      background: linear-gradient(135deg, rgba(37,99,235,.95), rgba(6,182,212,.92));
+      color:white;
     }
 
-    .btn.primary:hover{
-      transform:translateY(-2px);
-      box-shadow:0 18px 32px rgba(37,99,235,.28);
-      background-position:100% 0;
+    /* hero */
+    .hero{
+      padding: 22px 0 12px;
     }
-
-    .btn.primary:active{
-      transform:translateY(0) scale(.98);
-    }
-
-    .btn.ghost{
-      background:rgba(255,255,255,.92);
-      border:1px solid #cbd5f5;
-      color:#1f2937;
-    }
-
-    .btn.ghost:hover{
-      border-color:#93c5fd;
-      box-shadow:0 10px 20px rgba(148,163,184,.22);
-      transform:translateY(-2px);
-    }
-
-    .btn:focus-visible{
-      outline:3px solid rgba(37,99,235,.35);
-      outline-offset:3px;
-    }
-
-    .link-button{
-      border:none;
-      background:none;
-      padding:0;
-      margin-top:10px;
-      font:inherit;
-      color:#2563eb;
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      position:relative;
-    }
-
-    .link-button::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-2px;
-      width:0;
-      height:2px;
-      border-radius:999px;
-      background:linear-gradient(90deg,#2563eb,#0ea5e9);
-      transition:width .25s ease;
-    }
-
-    .link-button:hover::after{
-      width:100%;
-    }
-
-    /* nav */
-    nav{
-      position:sticky;
-      top:0;
-      z-index:30;
-      background:#ffffffee;
-      border-bottom:1px solid var(--line);
-    }
-
-    @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))){
-      nav{
-        background:#ffffffd9;
-        backdrop-filter:blur(10px);
-        -webkit-backdrop-filter:blur(10px);
-      }
-
-      body.perf nav{
-        backdrop-filter:none !important;
-        -webkit-backdrop-filter:none !important;
-      }
-    }
-
-    .navbar{
-      height:64px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      position:relative;
-    }
-
-    .brand{
-      font-weight:800;
-      color:var(--ink);
-      text-decoration:none;
-    }
-
-    .brand span{
-      color:#7b94ad;
-      font-weight:600;
-    }
-
-    .actions{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-
-    a.nav{
-      color:#2f5279;
-      text-decoration:none;
-      padding:10px 12px;
-      border-radius:10px;
-    }
-
-    a.nav:hover{
-      background:#f1f7ff;
-      border:1px solid #cfe3ff;
-    }
-
-    .nav-toggle{
-      display:none;
-      background:none;
-      border:none;
-      font-size:28px;
-      line-height:1;
-      padding:6px 10px;
-      cursor:pointer;
-      color:#1e293b;
-    }
-
-    /* layouts */
-    .split{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:32px;
-      align-items:center;
-    }
-
-    @media (max-width:980px){
-      .split{
-        grid-template-columns:1fr;
-      }
-    }
-
-    /* ===== PANTALLA INICIO ===== */
-    .intro-screen{
-      position:fixed;
-      inset:0;
-      z-index:40;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
+    .heroCard{
+      position: relative;
+      overflow:hidden;
+      border: 1px solid var(--stroke);
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
       background:
-        radial-gradient(circle at top, #e0f2ff 0, #eff6ff 45%, #bfdbfe 100%);
-      transition:opacity .45s ease, visibility .45s ease;
+        radial-gradient(800px 360px at 75% 15%, rgba(37,99,235,.18), transparent 60%),
+        radial-gradient(800px 360px at 15% 90%, rgba(6,182,212,.18), transparent 60%),
+        rgba(255,255,255,.65);
+      min-height: clamp(520px, 62vh, 720px);
     }
 
-    .intro-screen.hide{
-      opacity:0;
-      visibility:hidden;
+    /* slider layers */
+    .slides{
+      position:absolute; inset:0;
+      display:block;
       pointer-events:none;
     }
-
-    .intro-inner{
-      max-width:680px;
-      width:100%;
-      border-radius:28px;
-      background:rgba(255,255,255,.96);
-      box-shadow:0 22px 60px rgba(15,23,42,.22);
-      border:1px solid rgba(191,219,254,.9);
-      padding:26px 26px 30px;
-      text-align:center;
-      position:relative;
-      overflow:hidden;
+    .slide{
+      position:absolute; inset:0;
+      opacity:0;
+      transition: opacity .6s ease;
     }
-
-    .intro-logo{
-      font-family:"Playfair Display",serif;
-      font-size:30px;
-      margin-bottom:4px;
+    .slide.isActive{ opacity:1; }
+    .slide img{
+      width:100%; height:100%;
+      object-fit: cover;
+      filter: saturate(1.05) contrast(1.02);
+      transform: scale(1.01);
     }
-
-    .intro-tag{
-      margin:0;
-      color:#2563eb;
-      font-size:.84rem;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-    }
-
-    .intro-line{
-      margin:14px 0 18px;
-      color:#4b5563;
-      font-size:.97rem;
-    }
-
-    .intro-actions{
-      display:flex;
-      justify-content:center;
-      margin-top:8px;
-    }
-
-    .intro-note{
-      margin-top:10px;
-      font-size:.82rem;
-      color:#64748b;
-    }
-
-    /* HERO (contenido) */
-    .hero-eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:4px 10px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.92);
-      border:1px solid #dbeafe;
-      color:#1f2937;
-      font-size:.78rem;
-      text-transform:uppercase;
-      letter-spacing:.16em;
-      margin-bottom:10px;
-    }
-
-    .hero-ctas{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:16px;
-      align-items:center;
-    }
-
-    .hero-note{
-      font-size:.85rem;
-      color:#64748b;
-    }
-
-    /* VIDEO CARD */
-    .video-shell{
-      position:relative;
-      border-radius:26px;
-      padding:3px;
-      background:linear-gradient(145deg,#38bdf8,#6366f1,#0ea5e9);
-      box-shadow:0 22px 55px rgba(15,23,42,.18);
-    }
-
-    .video-card{
-      border-radius:22px;
-      overflow:hidden;
-      background:rgba(255,255,255,.92);
-      border:1px solid rgba(224,236,255,.9);
-    }
-
-    .video-aspect{
-      position:relative;
-      aspect-ratio:16/9;
-      background:#0b1220;
-      overflow:hidden;
-    }
-
-    .video-link{
-      position:absolute;
-      inset:0;
-      display:block;
-      text-decoration:none;
-      color:#fff;
-      cursor:pointer;
-    }
-
-    .video-thumb{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transform:scale(1.02);
-    }
-
-    .video-link::after{
-      content:"";
-      position:absolute;
-      inset:0;
+    .overlay{
+      position:absolute; inset:0;
       background:
-        linear-gradient(180deg, rgba(2,6,23,.10), rgba(2,6,23,.55)),
-        radial-gradient(520px 260px at 28% 18%, rgba(56,189,248,.18), transparent 60%),
-        radial-gradient(520px 260px at 86% 72%, rgba(99,102,241,.16), transparent 60%);
+        linear-gradient(90deg, rgba(255,255,255,.88) 0%, rgba(255,255,255,.70) 36%, rgba(255,255,255,.25) 70%, rgba(255,255,255,.08) 100%),
+        linear-gradient(180deg, rgba(255,255,255,.00), rgba(2,6,23,.08));
     }
 
-    .video-center{
-      position:absolute;
-      inset:0;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      z-index:2;
-      text-shadow:0 16px 32px rgba(0,0,0,.35);
-      padding:18px;
-      text-align:center;
-    }
-
-    .play-circle{
-      width:78px;
-      height:78px;
-      border-radius:999px;
+    .heroInner{
+      position: relative;
+      height: 100%;
       display:grid;
-      place-items:center;
-      background:rgba(255,255,255,.14);
-      border:1px solid rgba(255,255,255,.28);
-      box-shadow:0 18px 36px rgba(0,0,0,.20);
-      transition:transform .16s ease;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+      padding: clamp(18px, 3.2vw, 34px);
+      align-items: end;
+    }
+    .heroCopy{
+      align-self: center;
+      max-width: 620px;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 7px 10px;
+      border: 1px solid rgba(37,99,235,.18);
+      background: rgba(255,255,255,.72);
+      border-radius: 999px;
+      font-weight:800;
+      font-size: 12px;
+      color: rgba(37,99,235,.95);
+    }
+    h1{
+      margin: 12px 0 10px;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.05;
+      letter-spacing: -0.6px;
+    }
+    .lead{
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: clamp(15px, 1.6vw, 18px);
+      line-height: 1.45;
+    }
+    .heroActions{ display:flex; gap:10px; flex-wrap:wrap; }
+
+    .heroMeta{
+      align-self: end;
+      display:grid;
+      gap: 10px;
+      justify-items: end;
+    }
+    .miniCard{
+      width: min(420px, 100%);
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.74);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      color: var(--muted);
+      box-shadow: 0 10px 30px rgba(2,6,23,.08);
+    }
+    .miniCard b{ color: var(--ink); }
+    .miniGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      width: min(420px, 100%);
+    }
+    .pill{
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      background: rgba(255,255,255,.70);
+      padding: 10px 12px;
+      font-weight:700;
+      font-size: 13px;
+      color: var(--muted);
     }
 
-    .video-link:hover .play-circle{
-      transform:scale(1.06);
-    }
-
-    .video-title{
-      font-weight:900;
-      letter-spacing:.02em;
-    }
-
-    .video-sub{
-      font-size:12px;
-      opacity:.86;
-    }
-
-    .video-meta{
+    /* slider controls */
+    .sliderUI{
+      position:absolute;
+      inset: auto 16px 16px 16px;
       display:flex;
-      justify-content:space-between;
       align-items:center;
-      gap:10px;
-      padding:12px 14px;
-      background:#ffffff;
-      border-top:1px solid rgba(224,236,255,.9);
+      justify-content:space-between;
+      gap: 12px;
+      z-index: 5;
     }
-
-    .video-meta .meta-left{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-      line-height:1.2;
+    .dots{
+      display:flex; gap:8px; align-items:center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.70);
     }
-
-    .video-meta .meta-left strong{
-      font-size:13px;
+    .dotBtn{
+      width: 10px; height:10px;
+      border-radius:99px;
+      border: 1px solid rgba(15,23,42,.20);
+      background: rgba(15,23,42,.12);
+      cursor:pointer;
+      padding:0;
     }
-
-    .video-meta .meta-left small{
-      color:#64748b;
-      font-size:12px;
+    .dotBtn.isActive{
+      background: linear-gradient(135deg, var(--brand1), var(--brand2));
+      border-color: rgba(37,99,235,.35);
+      transform: scale(1.08);
     }
-
-    .video-meta .meta-left a{
-      color:#2563eb;
-      text-decoration:none;
-      font-weight:800;
+    .arrows{
+      display:flex; gap:8px; align-items:center;
     }
-
-    .video-meta .meta-left a:hover{
-      text-decoration:underline;
+    .iconBtn{
+      width: 38px; height:38px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.72);
+      cursor:pointer;
+      display:grid; place-items:center;
+      font-weight:900;
+      color: var(--ink);
+      user-select:none;
     }
+    .iconBtn:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(2,6,23,.10); }
 
-    .video-meta .btn{
-      padding:10px 16px;
-      font-weight:800;
+    /* sections */
+    section{ padding: 34px 0; }
+    .sectionHead{
+      display:flex; align-items:end; justify-content:space-between; gap:12px;
+      margin-bottom: 14px;
     }
+    .sectionHead h2{
+      margin:0;
+      font-size: 26px;
+      letter-spacing: -0.4px;
+    }
+    .sectionHead p{ margin:0; color: var(--muted); max-width: 60ch; }
 
-    /* tarjetas / grids */
     .grid{
       display:grid;
-      gap:22px;
-      grid-template-columns:repeat(3,minmax(0,1fr));
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
     }
-
-    @media (max-width:1100px){
-      .grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
-    }
-
-    @media (max-width:720px){
-      .grid{
-        grid-template-columns:1fr;
-      }
-    }
-
     .card{
-      background:var(--paper);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
+      grid-column: span 4;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.78);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: 0 10px 28px rgba(2,6,23,.06);
+    }
+    .card h3{ margin:0 0 8px; }
+    .card p{ margin:0; color: var(--muted); line-height:1.45; }
+
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .photo{
+      grid-column: span 4;
+      border-radius: var(--radius);
       overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      transition:transform .22s ease, box-shadow .22s ease;
-      position:relative;
-      transform: translateZ(0);
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.70);
+      box-shadow: 0 10px 26px rgba(2,6,23,.06);
+      position: relative;
+      min-height: 220px;
     }
-
-    .card:hover{
-      transform:translateY(-5px);
-      box-shadow:0 20px 40px rgba(15,23,42,.18);
+    .photo img{
+      width:100%; height:100%;
+      object-fit: cover;
+      transform: scale(1.01);
     }
-
-    body.perf .card:hover{
-      transform:none;
-      box-shadow:var(--shadow);
-    }
-
-    .card .media{
-      aspect-ratio:16/10;
-      background:var(--bg2);
-      overflow:hidden;
-    }
-
-    .card .body{
-      padding:16px 16px 18px;
-    }
-
-    .card h3{
-      margin:2px 0 6px;
-    }
-
-    .card p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .card .meta{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin:10px 0 12px;
-    }
-
-    .badge{
-      background:#eef6ff;
-      border:1px solid #d7e6f7;
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:.9rem;
-      color:#204a7a;
-    }
-
-    .card .cta{
-      margin-top:auto;
-      padding:14px 16px;
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-    }
-
-    .card .cta .btn{
-      min-width:160px;
-      justify-content:center;
-    }
-
-    /* verano (dorado) */
-    .card.summer{
-      border:1px solid rgba(245,158,11,.35);
-      box-shadow:0 10px 28px rgba(245,158,11,.10);
-      background:linear-gradient(180deg, rgba(255,247,237,.65), rgba(255,255,255,.95));
-    }
-
-    .card.summer:hover{
-      box-shadow:0 22px 44px rgba(245,158,11,.18);
-    }
-
-    .badge.gold{
-      background:rgba(255,247,237,.95);
-      border:1px solid rgba(245,158,11,.35);
-      color:#7c2d12;
-    }
-
-    .badge.rec{
-      background:linear-gradient(90deg,var(--gold1),var(--gold2));
-      border:1px solid rgba(217,119,6,.55);
-      color:#1f2937;
-      font-weight:900;
-    }
-
-    .recommended-pill{
+    .photo .cap{
       position:absolute;
-      top:12px;
-      right:12px;
-      padding:8px 10px;
-      border-radius:999px;
-      background:linear-gradient(90deg,var(--gold1),var(--gold2));
-      border:1px solid rgba(217,119,6,.55);
-      color:#1f2937;
-      font-weight:900;
-      font-size:.78rem;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      box-shadow:0 14px 28px rgba(245,158,11,.18);
-    }
-
-    /* equipo / exposiciones */
-    .team{
-      display:grid;
-      gap:18px;
-      grid-template-columns:repeat(2,1fr);
-    }
-
-    @media (max-width:720px){
-      .team{
-        grid-template-columns:1fr;
-      }
-    }
-
-    .tile{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:16px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-
-    .tile .media{
-      aspect-ratio:4/3;
-      overflow:hidden;
-    }
-
-    .media > img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    .bio-grid{
-      display:grid;
-      gap:14px;
-      grid-template-columns:repeat(2,1fr);
-      margin-top:14px;
-    }
-
-    @media (max-width:980px){
-      .bio-grid{
-        grid-template-columns:1fr;
-      }
-    }
-
-    .bio{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:14px;
-    }
-
-    /* formulario */
-    .form{
-      background:#fff;
-      border-radius:14px;
-      padding:40px;
-      max-width:900px;
-      margin:0 auto;
-      box-shadow:0 12px 35px rgba(0,0,0,.08);
-      border:1px solid #e0e6f0;
-    }
-
-    .form .row{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:20px;
-      margin-bottom:20px;
-    }
-
-    .form .row.single{
-      grid-template-columns:1fr;
-    }
-
-    .form label{
+      inset: auto 10px 10px 10px;
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--stroke);
+      border-radius: 14px;
+      padding: 8px 10px;
+      color: var(--muted);
       font-weight:700;
-      color:#1c2740;
-      display:block;
-      margin-bottom:6px;
+      font-size: 13px;
+      backdrop-filter: blur(8px);
     }
 
-    .form input,
-    .form select,
-    .form textarea{
+    /* form */
+    .formWrap{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    form{
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.78);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: 0 10px 28px rgba(2,6,23,.06);
+    }
+    label{ display:block; font-weight:800; font-size: 13px; margin: 10px 0 6px; }
+    input, textarea, select{
       width:100%;
-      padding:14px 16px;
-      border:1px solid #d3dae5;
-      border-radius:10px;
-      background:#f8faff;
-      color:#1e293b;
-      font-size:15px;
-      font-family:inherit;
-      transition:.18s;
-    }
-
-    .form input:focus,
-    .form select:focus,
-    .form textarea:focus{
-      border-color:#60a5fa;
-      background:#fff;
-      box-shadow:0 0 0 4px rgba(96,165,250,.22);
+      padding: 11px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(15,23,42,.14);
+      background: rgba(255,255,255,.92);
+      font: inherit;
       outline:none;
     }
+    input:focus, textarea:focus, select:focus{ border-color: rgba(37,99,235,.45); box-shadow: 0 0 0 4px rgba(37,99,235,.12); }
+    textarea{ min-height: 120px; resize: vertical; }
+    .hint{ margin-top:10px; color: var(--muted); font-size: 13px; }
+    .small{ font-size: 12px; color: var(--muted); }
 
-    .form textarea{
-      min-height:120px;
-      resize:vertical;
-    }
-
-    .form .btn.primary{
-      height:42px;
-    }
-
-    /* exposiciones (estilos antiguos, se mantienen por compatibilidad) */
-    .expo-gallery{
-      display:grid;
-      gap:12px;
-      grid-template-columns:repeat(3,1fr);
-    }
-
-    @media (max-width:980px){
-      .expo-gallery{
-        grid-template-columns:repeat(2,1fr);
-      }
-    }
-
-    @media (max-width:640px){
-      .expo-gallery{
-        grid-template-columns:1fr;
-      }
-    }
-
-    .expo-cards{
-      display:grid;
-      gap:18px;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      margin-top:18px;
-    }
-
-    @media (max-width:980px){
-      .expo-cards{
-        grid-template-columns:1fr;
-      }
-    }
-
-    .expo-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      box-shadow:var(--shadow);
-      padding:16px 16px 18px;
-    }
-
-    .expo-card h3{
-      margin:0 0 6px;
-      font-size:1.05rem;
-    }
-
-    .expo-card p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .expo-tags{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin-top:10px;
-    }
-
-    .tag{
-      background:#f1f7ff;
-      border:1px solid #cfe3ff;
-      color:#1f3a66;
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:.88rem;
-      font-weight:700;
-    }
-
-    /* ✅ MARCO BONITO PARA FOTOS (galería + fotos grandes) */
-    .marco-cuadro{
-      border-radius:22px;
-      border:8px solid #ffffff;
-      box-shadow:0 18px 40px rgba(15,23,42,.18);
-      overflow:hidden;
-      background:#ffffff;
-    }
-
-    .marco-cuadro img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    /* modal */
-    dialog{
-      border:none;
-      border-radius:22px;
-      max-width:760px;
-      width:calc(100% - 28px);
-      box-shadow:0 22px 65px rgba(15,23,42,.35);
-      padding:0;
-      background:linear-gradient(145deg,#f9fafb,#eff6ff);
-    }
-
-    dialog::backdrop{
-      background:rgba(15,23,42,.55);
-    }
-
-    .modal-head{
-      padding:16px 20px;
-      border-bottom:1px solid var(--line);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:#ffffffee;
-    }
-
-    .modal-body{
-      padding:18px 20px 20px;
-      background:#f9fbff;
-      max-height:70vh;
-      overflow:auto;
-    }
-
-    .close{
-      border:none;
-      background:#eef4ff;
-      border-radius:999px;
-      padding:8px 14px;
-      cursor:pointer;
-      font-weight:700;
-      color:#1e293b;
-    }
-
-    /* footer */
     footer{
-      border-top:1px solid var(--line);
-      margin-top:60px;
-      background:#fff;
+      border-top: 1px solid var(--stroke);
+      background: rgba(255,255,255,.55);
+      padding: 22px 0;
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    .foot{
-      padding:22px 0;
-      color:#6b7c8f;
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
+    /* responsive */
+    @media (max-width: 980px){
+      .heroInner{ grid-template-columns: 1fr; }
+      .heroMeta{ justify-items: start; }
+      .miniCard, .miniGrid{ width: 100%; }
+      .card{ grid-column: span 6; }
+      .photo{ grid-column: span 6; }
+      .formWrap{ grid-template-columns: 1fr; }
+      .nav{ display:none; }
     }
-
-    /* ===== MÓVIL ===== */
-    @media (max-width:880px){
-      :root{
-        --navH:58px;
-      }
-
-      .container{
-        padding:0 16px;
-      }
-
-      .section{
-        padding:56px 0;
-      }
-
-      .nav-toggle{
-        display:block;
-        position:absolute;
-        right:16px;
-        top:12px;
-      }
-
-      .actions{
-        position:absolute;
-        left:0;
-        right:0;
-        top:100%;
-        background:#fff;
-        border-bottom:1px solid var(--line);
-        box-shadow:0 10px 24px rgba(15,23,42,.10);
-        padding:10px 16px 14px;
-        display:block;
-        max-height:0;
-        opacity:0;
-        transform:translateY(-6px);
-        transition:max-height .28s ease, opacity .18s ease, transform .18s ease;
-        pointer-events:none;
-        overflow:hidden;
-      }
-
-      .actions.active{
-        max-height:420px;
-        opacity:1;
-        transform:translateY(0);
-        pointer-events:auto;
-      }
-
-      .actions a.nav{
-        display:block;
-        padding:14px 12px;
-        font-size:18px;
-        border-radius:12px;
-      }
-
-      .actions .btn.primary{
-        width:100%;
-        justify-content:center;
-        margin-top:8px;
-      }
-
-      .nav-backdrop{
-        display:none;
-        position:fixed;
-        inset:0;
-        z-index:29;
-        background:rgba(2,6,23,.35);
-      }
-
-      .nav-backdrop.show{
-        display:block;
-      }
-
-      body.nav-open{
-        overflow:hidden;
-      }
-
-      .grid{
-        grid-template-columns:1fr;
-        gap:18px;
-      }
-
-      .team{
-        grid-template-columns:1fr;
-        gap:14px;
-      }
-
-      .expo-gallery{
-        grid-template-columns:1fr;
-        gap:10px;
-      }
-
-      .form{
-        padding:28px;
-      }
-
-      .form .row{
-        grid-template-columns:1fr;
-        gap:16px;
-      }
-    }
-
-    /* ============================================
-       HERO SLIDER FULL PANTALLA (3 SECCIONES)
-       ============================================ */
-    .hero-shell{
-      position:relative;
-      z-index:1;
-      margin:0;
-      padding:0;
-    }
-
-    .hero-bg{
-      position:absolute;
-      inset:0;
-      z-index:-1;
-      background:
-        radial-gradient(700px 420px at 12% 10%, rgba(148,233,255,.65), transparent 60%),
-        radial-gradient(780px 460px at 90% 16%, rgba(129,140,248,.45), transparent 60%),
-        radial-gradient(720px 420px at 18% 100%, rgba(45,212,191,.35), transparent 60%),
-        linear-gradient(180deg, #eff6ff, #e0f2fe);
-    }
-
-    .hero-slider{
-      position:relative;
-      height:calc(100vh - var(--navH));
-      min-height:620px;
-      overflow:hidden;
-    }
-
-    @media (max-width:880px){
-      .hero-slider{
-        height:auto;
-        min-height:calc(100vh - var(--navH));
-      }
-    }
-
-    .hero-track{
-      display:flex;
-      height:100%;
-      width:300%;
-      transform:translateX(0);
-      transition:transform .6s cubic-bezier(.33,.7,.2,1);
-    }
-
-    .hero-slide{
-      flex:0 0 100%;
-      height:100%;
-      display:flex;
-      align-items:center;
-    }
-
-    .hero-slide-inner{
-      width:100%;
-      padding:38px 0 30px;
-    }
-
-    @media (max-width:880px){
-      .hero-slide-inner{
-        padding:30px 0 32px;
-      }
-    }
-
-    .hero-slide h1{
-      font-size:clamp(32px,4.6vw,50px);
-    }
-
-    .hero-slide h2{
-      font-size:clamp(26px,3.4vw,40px);
-    }
-
-    /* nav slider */
-    .hero-controls{
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:18px;
-      padding:0 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      pointer-events:none;
-    }
-
-    @media (max-width:880px){
-      .hero-controls{
-        bottom:14px;
-      }
-    }
-
-    .hero-dots{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      pointer-events:auto;
-    }
-
-    .hero-dot{
-      width:9px;
-      height:9px;
-      border-radius:999px;
-      border:1px solid rgba(15,23,42,.38);
-      background:rgba(255,255,255,.55);
-      box-shadow:0 8px 18px rgba(15,23,42,.20);
-      padding:0;
-      cursor:pointer;
-      transition:.2s ease;
-    }
-
-    .hero-dot.active{
-      width:26px;
-      background:linear-gradient(90deg,#38bdf8,#0ea5e9);
-      border-color:rgba(15,23,42,.55);
-    }
-
-    .hero-arrows{
-      display:flex;
-      gap:8px;
-      pointer-events:auto;
-    }
-
-    .hero-arrow{
-      width:40px;
-      height:40px;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,.70);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.96), rgba(241,245,249,.95));
-      box-shadow:0 10px 22px rgba(15,23,42,.16);
-      cursor:pointer;
-      font-weight:900;
-      color:#0f172a;
-      padding:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      transition:transform .16s ease, box-shadow .16s ease, opacity .16s ease;
-    }
-
-    .hero-arrow:hover{
-      transform:translateY(-1px);
-      box-shadow:0 14px 28px rgba(15,23,42,.22);
-    }
-
-    .hero-arrow:active{
-      transform:translateY(0) scale(.97);
-    }
-
-    .hero-arrow:disabled{
-      opacity:.45;
-      box-shadow:none;
-      cursor:not-allowed;
-    }
-
-    /* ============================================
-       EXPOSICIONES: SLIDER
-       ============================================ */
-    .expo-slider{
-      position:relative;
-      background:rgba(255,255,255,.90);
-      border:1px solid var(--line);
-      border-radius:22px;
-      box-shadow:0 10px 28px rgba(15,23,42,.10);
-      overflow:hidden;
-    }
-
-    .expo-slider-head{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:14px 14px 10px;
-      border-bottom:1px solid rgba(223,234,247,.9);
-      background:linear-gradient(
-        180deg,
-        rgba(255,255,255,.96),
-        rgba(255,255,255,.80)
-      );
-    }
-
-    .expo-title-mini{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-      line-height:1.2;
-    }
-
-    .expo-title-mini strong{
-      font-size:14px;
-    }
-
-    .expo-title-mini small{
-      color:var(--muted);
-      font-size:12px;
-    }
-
-    .expo-controls{
-      display:flex;
-      gap:8px;
-      align-items:center;
-    }
-
-    .expo-btn{
-      width:42px;
-      height:42px;
-      border-radius:999px;
-      border:1px solid rgba(147,197,253,.65);
-      background:
-        linear-gradient(180deg,
-          rgba(255,255,255,.96),
-          rgba(239,246,255,.95));
-      box-shadow:0 8px 18px rgba(37,99,235,.10);
-      cursor:pointer;
-      font-weight:900;
-      color:#1e3a8a;
-      transition:transform .15s ease,
-                 box-shadow .15s ease,
-                 opacity .15s ease;
-    }
-
-    .expo-btn:hover{
-      transform:translateY(-1px);
-      box-shadow:0 12px 22px rgba(37,99,235,.16);
-    }
-
-    .expo-btn:active{
-      transform:translateY(0) scale(.97);
-    }
-
-    .expo-btn:disabled{
-      opacity:.45;
-      cursor:not-allowed;
-      box-shadow:none;
-    }
-
-    .expo-track{
-      display:flex;
-      gap:16px;
-      padding:14px;
-      overflow-x:auto;
-      scroll-snap-type:x mandatory;
-      scroll-behavior:smooth;
-      -webkit-overflow-scrolling:touch;
-    }
-
-    .expo-track::-webkit-scrollbar{
-      height:10px;
-    }
-
-    .expo-track::-webkit-scrollbar-thumb{
-      background:rgba(37,99,235,.18);
-      border-radius:999px;
-    }
-
-    .expo-slide{
-      scroll-snap-align:start;
-      flex:0 0 92%;
-      background:rgba(255,255,255,.96);
-      border:1px solid rgba(223,234,247,.95);
-      border-radius:18px;
-      box-shadow:0 10px 26px rgba(15,23,42,.10);
-      overflow:hidden;
-      display:grid;
-      grid-template-columns: 1.05fr 1.25fr;
-      min-height:290px;
-    }
-
-    @media (max-width:980px){
-      .expo-slide{
-        grid-template-columns:1fr;
-      }
-    }
-
-    .frame{
-      position:relative;
-      padding:10px;
-      background:
-        linear-gradient(145deg,
-          rgba(14,165,233,.18),
-          rgba(99,102,241,.16)) padding-box,
-        linear-gradient(145deg,
-          #38bdf8,
-          #0ea5e9,
-          #6366f1) border-box;
-      border:2px solid transparent;
-    }
-
-    .frame.sunset{
-      background:
-        linear-gradient(145deg,
-          rgba(251,191,36,.20),
-          rgba(244,114,182,.18)) padding-box,
-        linear-gradient(145deg,
-          #fbbf24,
-          #fb7185,
-          #38bdf8) border-box;
-    }
-
-    .frame.mint{
-      background:
-        linear-gradient(145deg,
-          rgba(34,197,94,.18),
-          rgba(14,165,233,.16)) padding-box,
-        linear-gradient(145deg,
-          #22c55e,
-          #0ea5e9,
-          #6366f1) border-box;
-    }
-
-    .expo-media{
-      aspect-ratio:4/3;
-      border-radius:14px;
-      overflow:hidden;
-      background:#eaf5ff;
-      box-shadow:0 10px 20px rgba(15,23,42,.10);
-    }
-
-    .expo-media img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    .expo-info{
-      padding:14px 14px 16px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-
-    .expo-kicker{
-      display:inline-flex;
-      align-self:flex-start;
-      gap:8px;
-      align-items:center;
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(37,99,235,.08);
-      border:1px solid rgba(147,197,253,.45);
-      color:#1e3a8a;
-      font-weight:900;
-      font-size:12px;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-    }
-
-    .expo-info h3{
-      margin:0;
-      font-size:1.08rem;
-    }
-
-    .expo-info p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .expo-details{
-      margin:0;
-      padding-left:18px;
-      color:#334155;
-      font-size:.94rem;
-    }
-
-    .expo-details li{
-      margin:6px 0;
-    }
-
-    .expo-strip{
-      display:flex;
-      gap:8px;
-      overflow-x:auto;
-      padding:10px 14px 14px;
-      border-top:1px solid rgba(223,234,247,.9);
-      background:rgba(246,251,255,.96);
-    }
-
-    .expo-strip::-webkit-scrollbar{
-      height:8px;
-    }
-
-    .expo-strip::-webkit-scrollbar-thumb{
-      background:rgba(37,99,235,.18);
-      border-radius:999px;
-    }
-
-    .expo-thumb{
-      flex:0 0 120px;
-      aspect-ratio:4/3;
-      border-radius:12px;
-      overflow:hidden;
-      border:1px solid rgba(203,213,225,.7);
-      box-shadow:0 8px 16px rgba(15,23,42,.08);
-      background:#eaf5ff;
-    }
-
-    .expo-thumb img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
+    @media (max-width: 640px){
+      .card{ grid-column: span 12; }
+      .photo{ grid-column: span 12; }
     }
   </style>
 </head>
 
 <body>
-  <div class="fx-bg" aria-hidden="true"></div>
 
-  <!-- PANTALLA DE INICIO -->
-  <div class="intro-screen" id="introScreen" aria-label="Pantalla de bienvenida Arteluk">
-    <div class="intro-inner">
-      <div class="intro-logo">Arteluk</div>
-      <p class="intro-tag">Arte & Arteterapia · Valdivia</p>
-      <p class="intro-line">
-        Espacio seguro donde niños, jóvenes y adultos pueden expresar lo que sienten
-        a través del arte y encontrar un lugar de contención emocional.
-      </p>
-      <div class="intro-actions">
-        <button class="btn primary" id="introEnter" type="button">Entrar al sitio</button>
-      </div>
-      <p class="intro-note">O desliza hacia abajo para continuar</p>
-    </div>
-  </div>
-
-  <!-- NAV -->
-  <nav>
-    <div class="container navbar">
-      <a class="brand" href="#top" aria-label="Ir al inicio">
-        Arteluk <span>· Arte & Arteterapia</span>
-      </a>
-
-      <button class="nav-toggle" id="navToggle"
-              aria-label="Abrir menú" aria-expanded="false" type="button">☰</button>
-
-      <div class="actions" id="navActions">
-        <a class="nav" href="#servicios">Servicios</a>
-        <a class="nav" href="#equipo">Equipo</a>
-        <a class="nav" href="#contacto">Formulario</a>
-        <a class="nav" href="#exposiciones">Exposiciones</a>
-        <a class="btn primary track-contact" href="#contacto"
-           data-contact-name="CTA Nav - Inscribe a tu hijo/a">
-          Inscribe a tu hijo/a
+  <!-- TOPBAR -->
+  <header class="topbar" aria-label="Barra superior">
+    <div class="container">
+      <div class="row">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">
+          <span class="dot" aria-hidden="true"></span>
+          Arteluk <span style="color:var(--muted);font-weight:700">— Arte & Arteterapia</span>
         </a>
+
+        <nav class="nav" aria-label="Navegación">
+          <a href="#servicios">Servicios</a>
+          <a href="#equipo">Equipo</a>
+          <a href="#formulario">Formulario</a>
+          <a href="#exposiciones">Exposiciones</a>
+        </nav>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="#formulario">Inscribe a tu hijo/a</a>
+        </div>
       </div>
     </div>
-  </nav>
-  <div id="navBackdrop" class="nav-backdrop" aria-hidden="true"></div>
+  </header>
 
-  <main id="top">
-    <!-- HERO SLIDER (3 SECCIONES FUSIONADAS) -->
-    <header class="hero-shell" aria-label="Presentación Arteluk">
-      <div class="hero-bg" aria-hidden="true"></div>
+  <!-- HERO -->
+  <main id="inicio" class="hero">
+    <div class="container">
+      <div class="heroCard" aria-label="Portada con imágenes y llamado a la acción">
 
-      <div class="hero-slider">
-        <div class="hero-track" id="heroTrack">
-          <!-- SLIDE 1: HERO + VIDEO -->
-          <section class="hero-slide" aria-label="Intro Arteluk">
-            <div class="container hero-slide-inner">
-              <section class="split hero-block" aria-label="Presentación Arteluk">
-                <div>
-                  <div class="hero-eyebrow">
-                    <span>Valdivia</span> · <span>Arte & Arteterapia</span>
-                  </div>
-                  <h1 class="hero-title">
-                    Arte, emoción y bienestar para niños, jóvenes y adultos.
-                  </h1>
-                  <p class="lead hero-sub text-intro">
-                    En Arteluk acompañamos procesos emocionales a través del arte.
-                    Un espacio seguro donde tus hijos pueden expresarse, regular sus emociones
-                    y reconectar con su creatividad, mientras tú tienes la tranquilidad
-                    de dejarlos en buenas manos.
-                  </p>
-                  <ul class="pill-list hero-badges">
-                    <li>+10 años de experiencia en arteterapia y educación.</li>
-                    <li>Metodología propia con foco en emociones y autoestima.</li>
-                    <li>Grupos pequeños y acompañamiento cercano.</li>
-                    <li>Ubicación céntrica en Valdivia.</li>
-                  </ul>
-                  <div class="hero-ctas">
-                    <a class="btn primary" href="#servicios">Ver talleres disponibles</a>
-                    <a class="btn ghost track-contact" href="#contacto"
-                       data-contact-name="CTA Hero - Ir al formulario">
-                      Ir al formulario
-                    </a>
-                    <span class="hero-note">
-                      Respuesta rápida por WhatsApp después del formulario.
-                    </span>
-                  </div>
-                  <button class="link-button open-story" type="button"
-                          data-title="Trayectoria de Arteluk" data-content="historia-larga">
-                    Leer historia completa <span aria-hidden="true">⟶</span>
-                  </button>
-                </div>
+        <div class="slides" aria-hidden="true" id="slides"></div>
+        <div class="overlay" aria-hidden="true"></div>
 
-                <aside class="video-shell" aria-label="Video de presentación">
-                  <div class="video-card">
-                    <div class="video-aspect">
-                      <a class="video-link"
-                         href="https://www.youtube.com/watch?v=8abquRuhvCA"
-                         target="_blank" rel="noopener"
-                         aria-label="Reproducir video en YouTube">
-                        <img class="video-thumb"
-                             src="https://i.ytimg.com/vi/8abquRuhvCA/hqdefault.jpg"
-                             alt="Conoce Arteluk" decoding="async" loading="eager">
-                        <div class="video-center">
-                          <div class="play-circle" aria-hidden="true">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                              <path d="M9 7.5v9l8-4.5-8-4.5z" fill="white"/>
-                            </svg>
-                          </div>
-                          <div class="video-title">Reproducir video</div>
-                          <div class="video-sub">
-                            Clic y listo · también puedes verlo en YouTube
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="video-meta">
-                      <div class="meta-left">
-                        <strong>Conoce Arteluk</strong>
-                        <small>
-                          Video oficial ·
-                          <a class="video-youtube-link"
-                             href="https://www.youtube.com/watch?v=8abquRuhvCA"
-                             target="_blank" rel="noopener">
-                            Ver en YouTube
-                          </a>
-                        </small>
-                      </div>
-                      <a class="btn ghost track-contact" href="#contacto"
-                         data-contact-name="CTA Video - Agendar">
-                        Agendar
-                      </a>
-                    </div>
-                  </div>
-                </aside>
-              </section>
-            </div>
-          </section>
-
-          <!-- SLIDE 2: EPIDEMIA -->
-          <section class="hero-slide" aria-label="Contexto salud mental">
-            <div class="container hero-slide-inner">
-              <section class="split" aria-label="Contexto salud mental">
-                <div>
-                  <div class="mono">¿QUÉ NOS ESTÁ PASANDO?</div>
-                  <h2>Epidemia de salud mental</h2>
-                  <p class="lead text-intro">
-                    ¿Cuántas veces has sentido que tu energía ya no es la misma?
-                    Que tu vitalidad se escapa. Lo atribuimos a la edad o al cansancio,
-                    pero en el fondo estamos viviendo una
-                    <strong>crisis de salud mental</strong>
-                    que afecta a niños, jóvenes y adultos.
-                  </p>
-                  <ul class="pill-list">
-                    <li>Cada vez más pantallas y menos conexión real con otros.</li>
-                    <li>Placeres rápidos que no se transforman en bienestar duradero.</li>
-                    <li>Ansiedad, estrés y desregulación emocional cada vez más comunes.</li>
-                  </ul>
-                  <p class="lead">
-                    En Arteluk creemos que es urgente volver a lo esencial:
-                    <strong>expresarnos, sentirnos y escucharnos</strong>.
-                    El arte es nuestro puente para bajar la velocidad, mirarnos hacia adentro
-                    y recuperar la alegría por las cosas simples.
-                  </p>
-                </div>
-                <aside class="photo">
-                  <div class="media marco-cuadro">
-                    <img src="IMG/IMG_5035.jpg"
-                         alt="Proceso creativo en Arteluk"
-                         loading="lazy" decoding="async">
-                  </div>
-                </aside>
-              </section>
-            </div>
-          </section>
-
-          <!-- SLIDE 3: METODOLOGÍA -->
-          <section class="hero-slide" aria-label="Metodología Arteluk">
-            <div class="container hero-slide-inner">
-              <section class="split" aria-label="Metodología">
-                <div>
-                  <div class="mono">METODOLOGÍA ÚNICA Y PROBADA</div>
-                  <h2>Metodología Arteluk.</h2>
-                  <p class="lead text-intro">
-                    Nuestra metodología ha sido probada con más de 30 niños
-                    y perfeccionada durante más de 10 años. Desde las primeras clases vemos cambios
-                    en la <strong>expresión emocional, la ansiedad, el estrés
-                    y la seguridad personal</strong>.
-                  </p>
-                  <ul class="pill-list">
-                    <li>4 clases al mes, con estructura clara y amorosa.</li>
-                    <li>Acompañamiento emocional, con clases divertidas y enriquecedoras.</li>
-                    <li>Ambiente seguro con comprensión real de lo que cada uno siente.</li>
-                    <li>Trabajo en autoestima y seguridad a través de proyectos artísticos.</li>
-                  </ul>
-                  <p class="lead">
-                    No buscamos artistas perfectos, sino personas orgullosas de su proceso.
-                    Cada sesión integra exploración de materiales, conversación guiada,
-                    trabajo en valores y un cierre con sensación de logro y pertenencia.
-                  </p>
-                </div>
-                <aside class="photo">
-                  <div class="media marco-cuadro">
-                    <img src="IMG/IMG_6131.jpg"
-                         alt="Metodología en Arteluk"
-                         loading="lazy" decoding="async">
-                  </div>
-                </aside>
-              </section>
-            </div>
-          </section>
-        </div>
-
-        <!-- controles slider -->
-        <div class="hero-controls" aria-hidden="false">
-          <div class="hero-dots" aria-label="Cambiar slide">
-            <button class="hero-dot active" type="button" data-hero-dot aria-label="Intro"></button>
-            <button class="hero-dot" type="button" data-hero-dot aria-label="Epidemia de salud mental"></button>
-            <button class="hero-dot" type="button" data-hero-dot aria-label="Metodología Arteluk"></button>
-          </div>
-          <div class="hero-arrows">
-            <button class="hero-arrow" type="button" data-hero-prev aria-label="Anterior">‹</button>
-            <button class="hero-arrow" type="button" data-hero-next aria-label="Siguiente">›</button>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- SERVICIOS -->
-    <section id="servicios" class="section" aria-label="Servicios y planes">
-      <div class="container">
-        <div class="reveal" style="margin-bottom:16px">
-          <div class="mono">TALLERES · CURSOS · PLANES</div>
-          <h2>Elige tu experiencia</h2>
-          <p class="lead">
-            Planes de niños con matrícula $15.000. Planes de vacaciones no pagan matrícula.
-          </p>
-        </div>
-
-        <div class="grid">
-          <!-- VERANO -->
-          <article class="card reveal summer">
-            <div class="media">
-              <img src="IMG/WhatsApp Image 2025-12-15 at 12.22.38 PM.jpeg"
-                   alt="Taller de Vacaciones Básico"
-                   loading="lazy" decoding="async">
-            </div>
-            <div class="body">
-              <h3>🌼 Taller de Vacaciones Básico — $45.000</h3>
-              <p>3 clases por semana · 1 hr · Lunes, Miércoles y Viernes.</p>
-              <div class="meta">
-                <span class="badge gold">3 clases por semana de 1 hora</span>
-                <span class="badge gold">15:30–16:30</span>
-                <span class="badge gold">pago semanal</span>
-              </div>
-            </div>
-            <div class="cta">
-              <button class="btn primary to-form" type="button"
-                      data-value="Taller de Vacaciones Básico — $45.000">
-                Reservar cupo
-              </button>
-              <button class="btn ghost open-desc" type="button"
-                      data-title="Taller de Vacaciones Básico — Detalles"
-                      data-content="desc-verano-basico">
-                Leer más
-              </button>
-            </div>
-          </article>
-
-          <article class="card reveal summer" id="veranoPremiumCard">
-            <div class="recommended-pill">Recomendado</div>
-            <div class="media">
-              <img src="IMG/WhatsApp Image 2025-12-15 at 8.33.32 AM.jpeg"
-                   alt="Taller de Vacaciones Premium"
-                   loading="lazy" decoding="async">
-            </div>
-            <div class="body">
-              <h3>👑 Taller de Vacaciones Premium — $65.000</h3>
-              <p>3 clases por semana · 2 hrs · Martes, Jueves y Sábado.</p>
-              <div class="meta">
-                <span class="badge rec">3 clases por semana de dos horas</span>
-                <span class="badge gold">15:00–17:00</span>
-                <span class="badge gold">pago semanal</span>
-              </div>
-            </div>
-            <div class="cta">
-              <button class="btn primary to-form" type="button"
-                      data-value="Taller de Vacaciones Premium — $65.000">
-                Reservar cupo
-              </button>
-              <button class="btn ghost open-desc" type="button"
-                      data-title="Taller de Vacaciones Premium — Detalles"
-                      data-content="desc-verano-premium">
-                Leer más
-              </button>
-            </div>
-          </article>
-
-          <!-- EXISTENTES -->
-          <article class="card reveal">
-            <div class="media">
-              <img src="IMG/Fondo para curso de basico.jpg"
-                   alt="Taller de Artes" loading="lazy" decoding="async">
-            </div>
-            <div class="body">
-              <h3>Taller de Artes — $60.000</h3>
-              <p>4 clases de 1 hr. Materiales base incluidos.</p>
-              <div class="meta">
-                <span class="badge">Mensual</span>
-                <span class="badge">+ matrícula $15.000</span>
-                <span class="badge">18:30-19:30</span>
-              </div>
-            </div>
-            <div class="cta">
-              <button class="btn primary to-form" type="button"
-                      data-value="Taller de Artes — $60.000">
-                Reservar cupo
-              </button>
-              <button class="btn ghost open-desc" type="button"
-                      data-title="Plan Solo Pintura — Detalles"
-                      data-content="desc-basico">
-                Leer más
-              </button>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="media">
-              <img src="IMG/Fondo para clases premium.jpg"
-                   alt="Taller de Artes Premium"
-                   loading="lazy" decoding="async">
-            </div>
-            <div class="body">
-              <h3>👑 Taller de Artes Premium — $120.000</h3>
-              <p>4 clases de 2 hrs. Zona cowork + sala de espera.</p>
-              <div class="meta">
-                <span class="badge">Mensual</span>
-                <span class="badge">+ matrícula $15.000</span>
-                <span class="badge">17:30-19:30</span>
-              </div>
-            </div>
-            <div class="cta">
-              <button class="btn primary to-form" type="button"
-                      data-value="Taller de Artes Premium — $120.000">
-                Reservar cupo
-              </button>
-              <button class="btn ghost open-desc" type="button"
-                      data-title="Plan Premium Arte Mixto — Detalles"
-                      data-content="desc-premium">
-                Leer más
-              </button>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="media">
-              <img src="IMG/Fondo para clases de dibujo.jpg"
-                   alt="Taller de Dibujo para niños con TEA"
-                   loading="lazy" decoding="async">
-            </div>
-            <div class="body">
-              <h3>Taller de dibujo para niños con TEA — $60.000</h3>
-              <p>Grupos pequeños, rutinas claras y material sensorial.</p>
-              <div class="meta">
-                <span class="badge">Mensual</span>
-                <span class="badge">+ matrícula $15.000</span>
-                <span class="badge">17:30-18:30</span>
-              </div>
-            </div>
-            <div class="cta">
-              <button class="btn primary to-form" type="button"
-                      data-value="Taller TEA — $60.000">
-                Reservar cupo
-              </button>
-              <button class="btn ghost open-desc" type="button"
-                      data-title="Taller TEA — Programa"
-                      data-content="desc-tea">
-                Leer más
-              </button>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="media">
-              <img src="IMG/WhatsApp Image 2025-11-04 at 10.07.50 AM.jpeg"
-                   alt="Plan Trimestral"
-                   loading="lazy" decoding="async">
-            </div>
-            <div class="body">
-              <h3>Plan Trimestral — $270.000</h3>
-              <p>Premium por 3 meses con 10% dcto. (pago anticipado).</p>
-              <div class="meta">
-                <span class="badge">3 meses</span>
-                <span class="badge">Ahorro 10%</span>
-              </div>
-            </div>
-            <div class="cta">
-              <button class="btn primary to-form" type="button"
-                      data-value="Plan Trimestral — $270.000">
-                Reservar cupo
-              </button>
-              <button class="btn ghost open-desc" type="button"
-                      data-title="Plan Trimestral — Detalles"
-                      data-content="desc-trimestral">
-                Leer más
-              </button>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="media">
-              <img src="IMG/fondo para curso adulto.jpg"
-                   alt="Taller para Adultos"
-                   loading="lazy" decoding="async">
-            </div>
-            <div class="body">
-              <h3>Taller para Adultos — $60.000</h3>
-              <p>De cero a obra terminada. Técnica y disfrute.</p>
-              <div class="meta">
-                <span class="badge">Mensual</span>
-                <span class="badge">+ matrícula $15.000</span>
-                <span class="badge">17:30-19:30</span>
-              </div>
-            </div>
-            <div class="cta">
-              <button class="btn primary to-form" type="button"
-                      data-value="Taller para Adultos — $60.000">
-                Reservar cupo
-              </button>
-              <button class="btn ghost open-desc" type="button"
-                      data-title="Taller para Adultos — Detalles"
-                      data-content="desc-adultos">
-                Leer más
-              </button>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="media">
-              <img src="IMG/IMG_5557.jpg"
-                   alt="Plan por un día"
-                   loading="lazy" decoding="async">
-            </div>
-            <div class="body">
-              <h3>Plan por un día — $20.000</h3>
-              <p>Vive la experiencia Arteluk en una clase única.</p>
-              <div class="meta">
-                <span class="badge">1 sesión</span>
-                <span class="badge">Sin matrícula</span>
-              </div>
-            </div>
-            <div class="cta">
-              <button class="btn primary to-form" type="button"
-                      data-value="Plan por un día — $20.000">
-                Reservar cupo
-              </button>
-              <button class="btn ghost open-desc" type="button"
-                      data-title="Plan por un día — Detalles"
-                      data-content="desc-dia">
-                Leer más
-              </button>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- EQUIPO -->
-    <section id="equipo" class="section" style="padding-top:40px" aria-label="Equipo">
-      <div class="container">
-        <div class="reveal" style="margin-bottom:12px">
-          <div class="mono">EQUIPO</div>
-          <h2>Personas que hacen hogar</h2>
-          <p class="lead">Acompañamiento humano y artístico en cada sesión.</p>
-        </div>
-
-        <div class="team">
-          <figure class="tile reveal">
-            <div class="media marco-cuadro">
-              <img src="IMG/profesora.jpg"
-                   alt="Equipo Arteluk" loading="lazy" decoding="async">
-            </div>
-          </figure>
-
-          <figure class="tile reveal">
-            <div class="media marco-cuadro">
-              <img src="IMG/equipo (2).jpg"
-                   alt="Equipo Arteluk" loading="lazy" decoding="async">
-            </div>
-          </figure>
-        </div>
-
-        <div class="bio-grid">
-          <div class="bio reveal">
-            <h3 style="margin:0 0 4px">Ivanya Sierra</h3>
-            <p style="margin:0;color:var(--muted)">
-              Artista visual y docente, licenciada en Arte y Profesora de Artes Visuales
-              por la Universidad Católica de Chile. Especializada en gestión cultural,
-              inclusión de personas con discapacidad y trabajo comunitario. Cuenta con
-              seis años de experiencia como docente y tallerista, enseñando técnicas
-              artísticas de forma empática y personalizada a niños, jóvenes y adultos
-              mayores. Actualmente desarrolla su obra en acuarela y acrílico, centrada
-              en la flora, fauna y retratos de la vida cotidiana.
+        <div class="heroInner">
+          <div class="heroCopy">
+            <div class="kicker">🎨 Clases + Arteterapia</div>
+            <h1>Un espacio donde el arte calma, ordena y potencia.</h1>
+            <p class="lead">
+              Talleres para niños/as, jóvenes y adultos. Técnica + acompañamiento + un lugar seguro para crear.
             </p>
+
+            <div class="heroActions">
+              <a class="btn primary" href="#formulario">Quiero inscribir</a>
+              <a class="btn" href="#servicios">Ver servicios</a>
+            </div>
+
+            <p class="hint">Si las fotos no cargan, igual deberías ver todo el contenido (este diseño no queda “en blanco”).</p>
           </div>
 
-          <div class="bio reveal">
-            <h3 style="margin:0 0 4px">Paula Barros</h3>
-            <p style="margin:0;color:var(--muted)">
-              Estudiante de Artes Musicales y Sonoras (UACh). Fortaleza en canto;
-              explora piano y guitarra. Interés por pintura y visuales; afinidad con
-              niños. Arte como medio de expresión y crecimiento.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+          <div class="heroMeta" aria-label="Info rápida">
+            <div class="miniCard">
+              <b>📍 Valdivia</b><br>
+              Galería Cristal (locales 24 y 25)
+            </div>
 
-    <!-- FORMULARIO -->
-    <section id="contacto" class="section" style="padding-top:24px" aria-label="Formulario de contacto">
-      <div class="container">
-        <div class="reveal" style="margin-bottom:12px">
-          <div class="mono">FORMULARIO</div>
-          <h2>Reserva o consulta — respondemos al instante</h2>
-          <p class="lead">
-            Completa el formulario. Te contactamos apenas lo recibamos.
-            Dirección: <strong>Picarte 407, Valdivia</strong>.
-          </p>
-        </div>
-
-        <form class="form reveal" id="wlForm" novalidate>
-          <div class="row single">
-            <div>
-              <label for="nombre">Nombre y apellido</label>
-              <input id="nombre" name="nombre" required autocomplete="name" />
+            <div class="miniGrid">
+              <div class="pill">🧒 Niños/as (9–13)</div>
+              <div class="pill">🖌️ Óleo & técnicas</div>
+              <div class="pill">🧠 Arteterapia</div>
+              <div class="pill">🗓️ Cupos limitados</div>
             </div>
           </div>
-
-          <div class="row">
-            <div>
-              <label for="tel">Teléfono</label>
-              <input id="tel" name="telefono" inputmode="tel" autocomplete="tel"
-                     placeholder="+56 9 ..." />
-            </div>
-            <div>
-              <label for="servicio">Servicio de interés</label>
-              <select id="servicio" name="servicio" required>
-                <option value="" disabled selected>Selecciona una opción</option>
-                <option>Taller de Vacaciones Básico — $45.000</option>
-                <option>Taller de Vacaciones Premium — $65.000</option>
-                <option>Taller de Artes — $60.000</option>
-                <option>Taller de Artes Premium — $120.000</option>
-                <option>Taller TEA — $60.000</option>
-                <option>Plan Trimestral — $270.000</option>
-                <option>Taller para Adultos — $60.000</option>
-                <option>Plan por un día — $20.000</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label for="msg">Mensaje</label>
-            <textarea id="msg" name="mensaje"
-                      placeholder="Horarios, edad del alumno/a, dudas…"></textarea>
-          </div>
-
-          <div style="display:flex;gap:10px;align-items:center;margin-top:14px;flex-wrap:wrap">
-            <button class="btn primary" type="submit">Enviar</button>
-            <span style="color:#6b7c8f;font-size:.92rem">Picarte 407, Valdivia</span>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- EXPOSICIONES -->
-    <section id="exposiciones" class="section" style="padding-top:40px" aria-label="Exposiciones">
-      <div class="container">
-        <div class="reveal" style="margin-bottom:12px">
-          <div class="mono">EXPOSICIONES</div>
-          <h2>Eventos realizados en Arteluk</h2>
-          <p class="lead">
-            En Arteluk no solo hacemos clases: abrimos el proceso al mundo.
-            Realizamos <strong>2 a 3 exposiciones al año</strong> para que niños y adultos
-            vivan la experiencia real de <strong>mostrar su obra</strong>, ganar seguridad,
-            sentir orgullo y pertenecer a una comunidad artística.
-          </p>
         </div>
 
-        <div class="expo-slider reveal" data-slider="expo">
-          <div class="expo-slider-head">
-            <div class="expo-title-mini">
-              <strong>Desliza o usa las flechas</strong>
-              <small>Exposición 01, 02, 03… · Foto + información completa</small>
-            </div>
-            <div class="expo-controls">
-              <button class="expo-btn" type="button"
-                      data-expo-prev aria-label="Anterior">‹</button>
-              <button class="expo-btn" type="button"
-                      data-expo-next aria-label="Siguiente">›</button>
-            </div>
-          </div>
-
-          <div class="expo-track" id="expoTrack">
-            <!-- EXPO 01 -->
-            <article class="expo-slide">
-              <div class="frame mint">
-                <div class="expo-media">
-                  <img src="IMG/Exposision1.jpg"
-                       alt="Barco Neptuno - Exposición final Arteluk"
-                       loading="lazy" decoding="async">
-                </div>
-                <div class="expo-strip" aria-label="Galería Barco Neptuno">
-                  <div class="expo-thumb">
-                    <img src="img/Exposision1.jpg" alt="Barco Neptuno 1"
-                         loading="lazy" decoding="async">
-                  </div>
-                  <div class="expo-thumb">
-                    <img src="img/Exposision2.jpg" alt="Barco Neptuno 2"
-                         loading="lazy" decoding="async">
-                  </div>
-                  <div class="expo-thumb">
-                    <img src="img/Exposision3.jpg" alt="Barco Neptuno 3"
-                         loading="lazy" decoding="async">
-                  </div>
-                  <div class="expo-thumb">
-                    <img src="img/Exposision4.jpg" alt="Barco Neptuno 4"
-                         loading="lazy" decoding="async">
-                  </div>
-                  <div class="expo-thumb">
-                    <img src="img/Exposision5.jpg" alt="Barco Neptuno 5"
-                         loading="lazy" decoding="async">
-                  </div>
-                  <div class="expo-thumb">
-                    <img src="img/Exposision6.jpg" alt="Barco Neptuno 6"
-                         loading="lazy" decoding="async">
-                  </div>
-                  <div class="expo-thumb">
-                    <img src="img/WhatsApp Image 2025-11-04 at 10.07.32 AM.jpeg"
-                         alt="Barco Neptuno extra 1"
-                         loading="lazy" decoding="async">
-                  </div>
-                  <div class="expo-thumb">
-                    <img src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg"
-                         alt="Barco Neptuno extra 2"
-                         loading="lazy" decoding="async">
-                  </div>
-                </div>
-              </div>
-              <div class="expo-info">
-                <div class="expo-kicker">Exposición 01</div>
-                <h3>Barco Neptuno — “El Vuelo de Alaska”</h3>
-                <p>
-                  Exposición final de arteterapia y acrílicos llamada
-                  <strong>“El Vuelo de Alaska”</strong>. Un cierre emotivo donde los niños
-                  muestran su proceso, su valentía y su crecimiento a bordo del Barco Neptuno.
-                </p>
-                <ul class="expo-details">
-                  <li><strong>Contexto:</strong> Cierre anual de Arteluk</li>
-                  <li><strong>Obras:</strong> Acrílicos y procesos de arteterapia</li>
-                  <li><strong>Experiencia:</strong> Mostrar la obra en un entorno real y simbólico (el río y la ciudad)</li>
-                </ul>
-                <div class="expo-tags">
-                  <span class="tag">Arteterapia</span>
-                  <span class="tag">Acrílico</span>
-                  <span class="tag">Cierre anual</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- EXPO 02 -->
-            <article class="expo-slide">
-              <div class="frame sunset">
-                <div class="expo-media">
-                  <img src="IMG/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
-                       alt="Exposición Biblioteca Municipal de Valdivia"
-                       loading="lazy" decoding="async">
-                </div>
-              </div>
-              <div class="expo-info">
-                <div class="expo-kicker">Exposición 02</div>
-                <h3>Biblioteca Municipal de Valdivia</h3>
-                <p>
-                  Exposición infantil por <strong>15 días</strong>: pinturas y acuarelas de los niños.
-                  Además, realizamos clases de pintura en el salón de la Biblioteca, abiertas a la comunidad.
-                </p>
-                <ul class="expo-details">
-                  <li><strong>Duración:</strong> 15 días</li>
-                  <li><strong>Obras:</strong> Pintura y acuarela</li>
-                  <li><strong>Plus:</strong> Actividad comunitaria abierta</li>
-                </ul>
-                <div class="expo-tags">
-                  <span class="tag">15 días</span>
-                  <span class="tag">Niños</span>
-                  <span class="tag">Pintura + acuarela</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- EXPO 03 -->
-            <article class="expo-slide">
-              <div class="frame">
-                <div class="expo-media">
-                  <img src="IMG/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg"
-                       alt="Universidad Santo Tomás + Galería de Arte"
-                       loading="lazy" decoding="async">
-                </div>
-              </div>
-              <div class="expo-info">
-                <div class="expo-kicker">Exposición 03</div>
-                <h3>Universidad Santo Tomás + Galería de Arte</h3>
-                <p>
-                  Exposición de <strong>Mary Quinteros</strong> por <strong>1 mes y medio</strong>.
-                  Luego, los niños también expusieron sus pinturas, viviendo una experiencia real de galería.
-                </p>
-                <ul class="expo-details">
-                  <li><strong>Duración:</strong> 1 mes y medio</li>
-                  <li><strong>Artista:</strong> Mary Quinteros</li>
-                  <li><strong>Continuidad:</strong> Exposición infantil posterior</li>
-                </ul>
-                <div class="expo-tags">
-                  <span class="tag">1 mes y medio</span>
-                  <span class="tag">Mary Quinteros</span>
-                  <span class="tag">Exposición infantil</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- EXPO 04 -->
-            <article class="expo-slide">
-              <div class="frame mint">
-                <div class="expo-media">
-                  <img src="IMG/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg"
-                       alt="Espacio Fluvial"
-                       loading="lazy" decoding="async">
-                </div>
-              </div>
-              <div class="expo-info">
-                <div class="expo-kicker">Exposición 04</div>
-                <h3>Espacio Fluvial</h3>
-                <p>
-                  Exposición de obra de Mary Quinteros con <strong>cóctel</strong> y convocatoria abierta
-                  a la ciudadanía. Arte como encuentro, conversación y comunidad.
-                </p>
-                <ul class="expo-details">
-                  <li><strong>Formato:</strong> Evento cultural abierto</li>
-                  <li><strong>Enfoque:</strong> Comunidad + conversación</li>
-                  <li><strong>Ambiente:</strong> Espacio fluvial de Valdivia</li>
-                </ul>
-                <div class="expo-tags">
-                  <span class="tag">Cultura</span>
-                  <span class="tag">Cóctel</span>
-                  <span class="tag">Ciudadanía</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- EXPO 05 -->
-            <article class="expo-slide">
-              <div class="frame sunset">
-                <div class="expo-media">
-                  <img src="IMG/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg"
-                       alt="Café Moro"
-                       loading="lazy" decoding="async">
-                </div>
-              </div>
-              <div class="expo-info">
-                <div class="expo-kicker">Exposición 05</div>
-                <h3>Café Moro</h3>
-                <p>
-                  Exposición equina en óleo donde los niños presentaron sus caballos en bastidor.
-                  Muestra abierta al público por <strong>15 días</strong> en un espacio vivo y cotidiano.
-                </p>
-                <ul class="expo-details">
-                  <li><strong>Duración:</strong> 15 días</li>
-                  <li><strong>Técnica:</strong> Óleo</li>
-                  <li><strong>Temática:</strong> Exposición equina</li>
-                </ul>
-                <div class="expo-tags">
-                  <span class="tag">15 días</span>
-                  <span class="tag">Óleo</span>
-                  <span class="tag">Exposición equina</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- EXPO 06 -->
-            <article class="expo-slide">
-              <div class="frame">
-                <div class="expo-media">
-                  <img src="IMG/IMG_2948.jpg"
-                       alt="Exposición colectiva en centro comercial"
-                       loading="lazy" decoding="async">
-                </div>
-              </div>
-              <div class="expo-info">
-                <div class="expo-kicker">Exposición 06</div>
-                <h3>Exposición colectiva en centro comercial</h3>
-                <p>
-                  Participación en una exposición colectiva junto a otros artistas.
-                  Una instancia clave para ampliar redes, visibilidad y experiencia expositiva.
-                </p>
-                <ul class="expo-details">
-                  <li><strong>Formato:</strong> Colectiva</li>
-                  <li><strong>Objetivo:</strong> Redes y visibilidad</li>
-                  <li><strong>Experiencia:</strong> Vitrina real para las obras</li>
-                </ul>
-                <div class="expo-tags">
-                  <span class="tag">Colectiva</span>
-                  <span class="tag">Redes</span>
-                  <span class="tag">Visibilidad</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- EXPO 07 -->
-            <article class="expo-slide">
-              <div class="frame mint">
-                <div class="expo-media">
-                  <img src="img/IMG_3633.jpg"
-                       alt="Almacén Fluvial"
-                       loading="lazy" decoding="async">
-                </div>
-              </div>
-              <div class="expo-info">
-                <div class="expo-kicker">Exposición 07</div>
-                <h3>Almacén Fluvial</h3>
-                <p>
-                  Exposición colectiva con participación de Mary Quinteros.
-                  Un espacio con identidad local, perfecto para conectar arte y comunidad valdiviana.
-                </p>
-                <ul class="expo-details">
-                  <li><strong>Formato:</strong> Colectiva</li>
-                  <li><strong>Participación:</strong> Mary Quinteros</li>
-                  <li><strong>Contexto:</strong> Comunidad local</li>
-                </ul>
-                <div class="expo-tags">
-                  <span class="tag">Colectiva</span>
-                  <span class="tag">Mary Quinteros</span>
-                  <span class="tag">Valdivia</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- EXPO 08 -->
-            <article class="expo-slide">
-              <div class="frame sunset">
-                <div class="expo-media">
-                  <img src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg"
-                       alt="Momentos Arteluk"
-                       loading="lazy" decoding="async">
-                </div>
-              </div>
-              <div class="expo-info">
-                <div class="expo-kicker">Exposición 08</div>
-                <h3>Momentos Arteluk — Comunidad y proceso</h3>
-                <p>
-                  Registro de distintos momentos de exposiciones y encuentros artísticos de Arteluk.
-                  Obra, familia y comunidad compartiendo el proceso creativo.
-                </p>
-                <ul class="expo-details">
-                  <li><strong>Enfoque:</strong> Procesos y comunidad</li>
-                  <li><strong>Quiénes participan:</strong> Niños, familias y equipo</li>
-                  <li><strong>Intención:</strong> Mostrar que el arte también es vínculo y acompañamiento</li>
-                </ul>
-                <div class="expo-tags">
-                  <span class="tag">Comunidad</span>
-                  <span class="tag">Proceso</span>
-                  <span class="tag">Arteterapia</span>
-                </div>
-              </div>
-            </article>
+        <!-- slider UI -->
+        <div class="sliderUI" aria-label="Controles del slider">
+          <div class="dots" id="dots" aria-label="Puntos del slider"></div>
+          <div class="arrows">
+            <button class="iconBtn" type="button" id="prev" aria-label="Anterior">‹</button>
+            <button class="iconBtn" type="button" id="next" aria-label="Siguiente">›</button>
           </div>
         </div>
+
       </div>
-    </section>
-
-    <footer>
-      <div class="container foot">
-        <div>© Arteluk — Picarte 407, Valdivia</div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="nav" href="#servicios">Servicios</a>
-          <a class="nav" href="#equipo">Equipo</a>
-          <a class="nav" href="#contacto">Formulario</a>
-          <a class="nav" href="#exposiciones">Exposiciones</a>
-        </div>
-      </div>
-    </footer>
-
-    <!-- MODAL -->
-    <dialog id="modal" aria-label="Detalle">
-      <div class="modal-head">
-        <strong id="mTitle">Detalle</strong>
-        <button class="close" id="mClose" type="button">Cerrar</button>
-      </div>
-      <div class="modal-body" id="mBody"></div>
-    </dialog>
-
-    <!-- HISTORIA COMPLETA -->
-    <template id="historia-larga">
-      <p>
-        Soy Mary Quinteros, artista visual, arteterapeuta, psicóloga infantil y adolescente,
-        e ingeniera en administración de empresas. Mi formación incluye un doble Máster en
-        Coaching e Inteligencia Emocional, así como estudios en musicoterapia, lo que me permite
-        integrar arte, emoción y desarrollo personal en cada proyecto que realizo.
-      </p>
-      <p>
-        Mi experiencia profesional ha transitado entre el mundo de la administración y la contabilidad
-        —donde aprendí el valor del orden y la estrategia— y el universo del arte, donde descubrí mi
-        verdadera pasión: acompañar a niños, adolescentes y adultos en el descubrimiento de su mundo
-        interior a través del arte.
-      </p>
-      <p>
-        En mi práctica artística, combino óleo, técnicas mixtas, espátula y proyecciones visuales,
-        transformando el proceso creativo en un espacio de autoconocimiento y expresión emocional.
-      </p>
-      <p>
-        Como fundadora de Arteluk, una academia de artes y espacio de arteterapia, he diseñado clases,
-        talleres y programas de coaching artístico que invitan a explorar emociones y a utilizar la
-        creatividad como herramienta de bienestar y transformación.
-      </p>
-      <p>
-        He participado en exposiciones colectivas y desarrollado programas de arte y autocuidado para
-        instituciones educativas y equipos de trabajo, promoviendo espacios de encuentro, reflexión y
-        crecimiento personal. Cada obra que creo y cada taller que facilito buscan abrir un diálogo con
-        el espectador o participante, convirtiendo el arte en un puente entre la emoción y la sanación.
-      </p>
-    </template>
-
-    <!-- VERANO -->
-    <template id="desc-verano-basico">
-      <p><strong>🌼 PLAN BÁSICO VERANO — Mary Quinteros — $45.000</strong></p>
-      <p>Crear · Jugar · Expresarse · Disfrutar</p>
-      <p>🕒 <strong>Horario:</strong> 15:30 a 16:30 hrs</p>
-      <p>📅 <strong>Modalidad:</strong> 3 días por semana — <strong>Lunes, Miércoles y Viernes</strong></p>
-      <p>🎨 <strong>Arte, juego y exploración creativa</strong></p>
-      <p><strong>✨ Experiencias y Técnicas Artísticas:</strong></p>
-      <ul>
-        <li>🌸 <strong>Acuarela divertida y expresiva:</strong> colores, flores, juegos con el agua y libertad creativa.</li>
-        <li>✏️ <strong>Dibujo creativo:</strong> línea, forma, imaginación y confianza al dibujar.</li>
-        <li>🎨 <strong>Pintura acrílica lúdica:</strong> color, texturas y expresión libre sobre bastidor.</li>
-      </ul>
-      <p>💛 Ideal para disfrutar el arte, soltarse, crear sin miedo y pasarlo bien este verano.</p>
-      <p><strong>💖 Incluye:</strong></p>
-      <ul>
-        <li>🎨 Materiales incluidos</li>
-        <li>📸 Registro fotográfico del proceso</li>
-        <li>🌈 Ambiente cuidado, creativo y entretenido</li>
-        <li>🧠 Acompañamiento con enfoque expresivo</li>
-      </ul>
-    </template>
-
-    <!-- PREMIUM -->
-    <template id="desc-verano-premium">
-      <p><strong>👑 PLAN PREMIUM VERANO — Ivanya Sierra — $65.000</strong></p>
-      <p>
-        Taller intensivo para niños que quieren <strong>crear de verdad</strong>:
-        cada día se van con una obra terminada y una experiencia distinta.
-        Sesiones de <strong>2 horas</strong>, con materiales de nivel profesional.
-      </p>
-      <p>🕒 <strong>Horario:</strong> 15:00 a 17:00 hrs</p>
-      <p>📅 <strong>Modalidad:</strong> 3 días por semana —
-        <strong>Martes, Jueves y Sábado</strong></p>
-      <p><strong>✨ Día 1 — Acuarela Botánica (Obra terminada)</strong></p>
-      <ul>
-        <li>🌿 Técnicas básicas y medias de acuarela</li>
-        <li>💧 Uso del agua, control del color, transparencias y degradados</li>
-        <li>🍃 Observación de formas botánicas</li>
-        <li>🖼️ <strong>Formato:</strong> A4 · se llevan su acuarela el mismo día</li>
-        <li>🎨 <strong>Materiales:</strong> acuarelas + papel 300g + pinceles profesionales</li>
-      </ul>
-      <p><strong>🎨 Día 2 — Pintura Acrílica en Lienzo (Obra terminada)</strong></p>
-      <ul>
-        <li>🖌️ Uso del acrílico, capas y técnicas de difuminado</li>
-        <li>🧩 Pintura figurativa guiada</li>
-        <li>🖼️ Bastidor <strong>20 × 50 cm</strong> · obra lista para llevar</li>
-        <li>🎨 <strong>Materiales:</strong> bastidor + acrílicos + pinceles especiales</li>
-      </ul>
-      <p><strong>✏️ Día 3 — Dibujo en Vivo (Experiencia + obra)</strong></p>
-      <ul>
-        <li>👁️ Observación real: coordinación ojo-mano y base artística</li>
-        <li>✏️ Ejercicios guiados con lápiz grafito</li>
-        <li>🌗 Introducción a luz y sombra con carboncillo</li>
-        <li>📄 Dibujo final realizado en la sesión · se lo llevan a casa</li>
-      </ul>
-      <p>💎 Una experiencia premium para explorar, crear y vivir el arte de forma profunda y memorable.</p>
-      <p><strong>💖 Incluye:</strong></p>
-      <ul>
-        <li>🎨 Materiales incluidos</li>
-        <li>📸 Registro fotográfico del proceso</li>
-        <li>🌈 Ambiente cuidado, creativo y entretenido</li>
-        <li>🧠 Acompañamiento con enfoque expresivo</li>
-      </ul>
-    </template>
-
-    <!-- PLANES EXISTENTES -->
-    <template id="desc-basico">
-      <p><strong>🎨 PLAN SOLO PINTURA – $60.000 + matrícula $15.000</strong></p>
-      <p>🕓 4 clases de 1 hr (1 vez por semana)</p>
-      <p>📍 Incluye estacionamiento y sala de espera cómoda y ambientada para acompañantes.</p>
-      <p>🎨 <strong>Actividades:</strong></p>
-      <ul>
-        <li>✔️ Pintura en bastidor profesional 50×50</li>
-        <li>✔️ Mezcla de color, técnica acrílica y composición básica</li>
-        <li>✔️ Materiales incluidos</li>
-        <li>✔️ Acompañamiento personalizado según nivel y ritmo del alumno</li>
-      </ul>
-      <p>🏛️ <strong>Salón:</strong> Oki Canva Studio</p>
-      <p>💖 <strong>Beneficios:</strong></p>
-      <ul>
-        <li>📷 Feedback semanal + registro fotográfico de avances</li>
-        <li>🧠 Enfoque arteterapéutico: pintura como medio de expresión emocional</li>
-      </ul>
-    </template>
-
-    <template id="desc-premium">
-      <p><strong>👑 PLAN PREMIUM ARTE MIXTO – $120.000 + matrícula $15.000</strong></p>
-      <p>🕓 4 clases de 2 hrs (1 por semana).</p>
-      <p>📍 Incluye estacionamiento + acceso a zona cowork y sala de espera.</p>
-      <p>🎨 <strong>Actividades artísticas y terapéuticas:</strong></p>
-      <ul>
-        <li>✔️ Pintura en bastidor profesional</li>
-        <li>✔️ Manualidades creativas</li>
-        <li>✔️ Yesoterapia artística</li>
-        <li>✔️ Telar y fieltro</li>
-        <li>✔️ Arteterapia guiada con enfoque emocional</li>
-      </ul>
-      <p>🏛️ <strong>Salones Arteluk:</strong></p>
-      <ul>
-        <li>Oki Canva Studio (pintura)</li>
-        <li>Creative Threads (manualidades)</li>
-        <li>Sculp Lab (yeso y escultura)</li>
-        <li>TAA (terapia asistida con aves)</li>
-        <li>Salón Flúor (efectos visuales)</li>
-      </ul>
-      <p>💖 <strong>Beneficios:</strong></p>
-      <ul>
-        <li>📷 Feedback semanal + registro fotográfico</li>
-        <li>🧠 Enfoque arteterapéutico individual</li>
-        <li>🎭 Exposición de arte al cierre del ciclo anual</li>
-      </ul>
-    </template>
-
-    <template id="desc-trimestral">
-      <p><strong>PREMIUM TRIMESTRAL – $270.000 (10% dcto.)</strong></p>
-      <p>
-        El mismo contenido del Premium por 3 meses. Perfecto si tu hijo o hija es
-        un apasionado del arte y necesita un espacio para desplegar sus talentos.
-      </p>
-    </template>
-
-    <template id="desc-tea">
-      <p><strong>TALLER DE DIBUJO PARA NIÑOS CON TEA – $60.000 + matrícula $15.000</strong></p>
-      <p>
-        🕓 4 clases de 1 hora (1/semana) · 👧🏽 5 a 12 años · 👥 Máximo 4 niños ·
-        📍 Presencial en Arteluk.
-      </p>
-      <p>
-        🎨 Programa por clase:<br>
-        1) Exploración y primeros trazos.<br>
-        2) Sombreado, volumen y texturas.<br>
-        3) Composición y expresión emocional.<br>
-        4) Obra personal y cierre creativo.
-      </p>
-      <p>
-        💖 Beneficios: motricidad fina, autoconfianza, concentración,
-        creatividad y observación.
-      </p>
-    </template>
-
-    <template id="desc-adultos">
-      <p><strong>TALLER PARA ADULTOS – $60.000</strong></p>
-      <p>
-        Óleo y dibujo desde lo básico hasta obra terminada. Técnica, disfrute y comunidad.
-        Todos los niveles.
-      </p>
-    </template>
-
-    <template id="desc-dia">
-      <p><strong>PLAN POR UN DÍA – $20.000</strong></p>
-      <p>
-        Vive la experiencia Arteluk en una clase. Si decides continuar, se descuentan
-        los $20.000 del valor total de los talleres profesionales.
-      </p>
-    </template>
+    </div>
   </main>
 
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="container">
+      <div class="sectionHead">
+        <div>
+          <h2>Servicios</h2>
+          <p>Opciones típicas. Puedes ajustar textos sin tocar la lógica de fotos.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>🎨 Talleres para niños/as</h3>
+          <p>Creatividad guiada, técnica gradual, confianza y expresión.</p>
+        </article>
+        <article class="card">
+          <h3>🧠 Arteterapia</h3>
+          <p>Procesos con enfoque emocional, arte como herramienta terapéutica.</p>
+        </article>
+        <article class="card">
+          <h3>🖌️ Óleo para adultos</h3>
+          <p>Desde básico a premium. Progreso real, paso a paso.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section id="equipo">
+    <div class="container">
+      <div class="sectionHead">
+        <div>
+          <h2>Equipo</h2>
+          <p>Presentación simple (para que el layout no dependa de imágenes).</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card" style="grid-column: span 6;">
+          <h3>Mary — Dirección</h3>
+          <p>Arteterapia y formación artística. Experiencia en acompañamiento y técnica.</p>
+        </article>
+        <article class="card" style="grid-column: span 6;">
+          <h3>Arteluk</h3>
+          <p>Enfoque humano, ambiente seguro, aprendizaje real (sin humo).</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPOSICIONES -->
+  <section id="exposiciones">
+    <div class="container">
+      <div class="sectionHead">
+        <div>
+          <h2>Exposiciones</h2>
+          <p>Estas fotos intentan cargar desde <b>img/</b>. Si no existen, cae a placeholder.</p>
+        </div>
+      </div>
+
+      <div class="gallery" id="expoGallery">
+        <!-- se llena por JS -->
+      </div>
+
+      <p class="hint">
+        Tip rápido: en servidor Linux, <b>Exposision1.jpg</b> es distinto a <b>exposision1.jpg</b>.
+      </p>
+    </div>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section id="formulario">
+    <div class="container">
+      <div class="sectionHead">
+        <div>
+          <h2>Formulario</h2>
+          <p>Esto arma un WhatsApp con el mensaje. Cambia el número en el JS.</p>
+        </div>
+      </div>
+
+      <div class="formWrap">
+        <form id="leadForm" novalidate>
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre" required />
+
+          <label for="telefono">Teléfono (Chile)</label>
+          <input id="telefono" name="telefono" inputmode="tel" placeholder="+56 9 1234 5678" required />
+
+          <label for="servicio">Interés</label>
+          <select id="servicio" name="servicio" required>
+            <option value="" selected disabled>Selecciona una opción</option>
+            <option>Taller niños/as</option>
+            <option>Arteterapia</option>
+            <option>Óleo adultos</option>
+            <option>Otro</option>
+          </select>
+
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos edad, disponibilidad, objetivo, etc."></textarea>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button class="btn primary" type="submit">Enviar por WhatsApp</button>
+            <a class="btn" href="#inicio">Volver arriba</a>
+          </div>
+
+          <p class="small">No guarda datos en servidor. Solo abre WhatsApp con el texto listo.</p>
+        </form>
+
+        <div class="card">
+          <h3>Checklist para que NO se rompan las fotos</h3>
+          <p style="margin:0; color:var(--muted); line-height:1.55">
+            • Carpeta <b>img</b> en minúsculas<br>
+            • Rutas siempre <b>img/archivo.jpg</b><br>
+            • Nombres sin espacios ni paréntesis (ideal)<br>
+            • Extensión consistente: .jpg vs .jpeg vs .png<br>
+            • Revisar F12 → Network → status 404
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+        <div><b>Arteluk</b> — Arte & Arteterapia</div>
+        <div>© <span id="y"></span> · Valdivia, Chile</div>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    /* ===== Helpers Pixel ===== */
-    function trackSafe(eventName, params){
-      try{
-        if(typeof fbq === 'function') fbq('track', eventName, params || {});
-      }catch(_){}
+    // ==========
+    // CONFIG: CAMBIA SOLO ESTO
+    // ==========
+    const WHATSAPP_PHONE = "569XXXXXXXX"; // <-- CAMBIA AQUI (formato internacional sin +)
+    const SLIDER_FILES = [
+      "img/hero-1.jpg",
+      "img/hero-2.jpg",
+      "img/hero-3.jpg"
+    ];
+
+    // Exposiciones: pon aquí tus nombres reales (respeta mayúsculas/minúsculas exactas)
+    const EXPO_FILES = [
+      { src: "img/Exposision1.jpg", cap: "Exposición 1" },
+      { src: "img/Exposision2.jpg", cap: "Exposición 2" },
+      { src: "img/Exposision3.jpg", cap: "Exposición 3" },
+      { src: "img/Exposision4.jpg", cap: "Exposición 4" },
+      { src: "img/Exposision5.jpg", cap: "Exposición 5" },
+      { src: "img/Exposision6.jpg", cap: "Exposición 6" },
+    ];
+
+    // Placeholder (data-url) si falta una foto
+    const PLACEHOLDER = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(`
+      <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#eaf4ff"/>
+            <stop offset="1" stop-color="#d8f7fb"/>
+          </linearGradient>
+        </defs>
+        <rect width="1200" height="800" fill="url(#g)"/>
+        <text x="50%" y="48%" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="44" fill="#0f172a">
+          Foto no encontrada
+        </text>
+        <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="22" fill="#475569">
+          Revisa carpeta "img/" + nombre exacto del archivo (case-sensitive)
+        </text>
+      </svg>
+    `);
+
+    // ==========
+    // Helpers
+    // ==========
+    const $ = (q, el=document) => el.querySelector(q);
+    const $$ = (q, el=document) => Array.from(el.querySelectorAll(q));
+
+    function preloadOK(src){
+      return new Promise((resolve) => {
+        const im = new Image();
+        im.onload = () => resolve({src, ok:true});
+        im.onerror = () => resolve({src, ok:false});
+        im.src = src;
+      });
     }
 
-    function trackCustomSafe(eventName, params){
-      try{
-        if(typeof fbq === 'function') fbq('trackCustom', eventName, params || {});
-      }catch(_){}
-    }
+    // ==========
+    // Slider: nunca deja la portada en blanco
+    // ==========
+    (async function initSlider(){
+      const slidesEl = $("#slides");
+      const dotsEl = $("#dots");
+      const prevBtn = $("#prev");
+      const nextBtn = $("#next");
 
-    /* ===== Perf auto: si el FPS cae, activa body.perf ===== */
-    (function autoPerf(){
-      const url = new URL(location.href);
-      if(url.searchParams.get('perf') === '1'){
-        document.body.classList.add('perf');
-        return;
-      }
-      let frames = 0, start = performance.now();
-      function tick(now){
-        frames++;
-        if(now - start < 1400){
-          requestAnimationFrame(tick);
-          return;
-        }
-        const fps = frames * 1000 / (now - start);
-        if(fps < 45) document.body.classList.add('perf');
-      }
-      requestAnimationFrame(tick);
-    })();
+      const checks = await Promise.all(SLIDER_FILES.map(preloadOK));
+      const valid = checks.filter(x => x.ok).map(x => x.src);
 
-    /* PANTALLA DE INICIO */
-    (function intro(){
-      const introScreen = document.getElementById('introScreen');
-      const introEnter = document.getElementById('introEnter');
-      if(!introScreen) return;
-
-      const hideIntro = () => {
-        if (introScreen.classList.contains('hide')) return;
-        introScreen.classList.add('hide');
-        try{
-          sessionStorage.setItem('arteluk_intro_seen','1');
-        }catch(_){}
-      };
-
-      try{
-        if (sessionStorage.getItem('arteluk_intro_seen') === '1')
-          introScreen.classList.add('hide');
-      }catch(_){}
-
-      if (introEnter) introEnter.addEventListener('click', hideIntro);
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 40) hideIntro();
-      }, {passive:true});
-    })();
-
-    /* menú responsive */
-    (function navMenu(){
-      const navToggle = document.getElementById('navToggle');
-      const navActions = document.getElementById('navActions');
-      const navBackdrop = document.getElementById('navBackdrop');
-      if(!navToggle || !navActions || !navBackdrop) return;
-
-      function openMenu(){
-        navActions.classList.add('active');
-        navBackdrop.classList.add('show');
-        document.body.classList.add('nav-open');
-        navToggle.textContent = '✕';
-        navToggle.setAttribute('aria-expanded','true');
+      if(valid.length === 0){
+        console.warn("[Arteluk] Slider: ninguna imagen encontrada. Usando fondo base.");
+        // Igual dejamos un slide con placeholder para que se note si quieres
+        valid.push(PLACEHOLDER);
+      } else {
+        checks.filter(x => !x.ok).forEach(x => console.warn("[Arteluk] Falta:", x.src));
       }
 
-      function closeMenu(){
-        navActions.classList.remove('active');
-        navBackdrop.classList.remove('show');
-        document.body.classList.remove('nav-open');
-        navToggle.textContent = '☰';
-        navToggle.setAttribute('aria-expanded','false');
+      // render slides
+      slidesEl.innerHTML = valid.map((src, i) => `
+        <div class="slide ${i===0 ? "isActive":""}" data-i="${i}">
+          <img src="${src}" alt="" loading="${i===0 ? "eager":"lazy"}">
+        </div>
+      `).join("");
+
+      // render dots
+      dotsEl.innerHTML = valid.map((_, i) => `
+        <button class="dotBtn ${i===0 ? "isActive":""}" type="button" aria-label="Ir a slide ${i+1}" data-i="${i}"></button>
+      `).join("");
+
+      const slides = $$(".slide", slidesEl);
+      const dots = $$(".dotBtn", dotsEl);
+      let idx = 0;
+      let timer = null;
+
+      function go(n){
+        idx = (n + slides.length) % slides.length;
+        slides.forEach((s, i) => s.classList.toggle("isActive", i===idx));
+        dots.forEach((d, i) => d.classList.toggle("isActive", i===idx));
       }
 
-      navToggle.addEventListener('click', ()=>{
-        navActions.classList.contains('active') ? closeMenu() : openMenu();
+      function start(){
+        stop();
+        timer = setInterval(() => go(idx + 1), 6000);
+      }
+      function stop(){
+        if(timer) clearInterval(timer);
+        timer = null;
+      }
+
+      prevBtn.addEventListener("click", () => { go(idx - 1); start(); });
+      nextBtn.addEventListener("click", () => { go(idx + 1); start(); });
+      dotsEl.addEventListener("click", (e) => {
+        const b = e.target.closest("button[data-i]");
+        if(!b) return;
+        go(parseInt(b.dataset.i, 10));
+        start();
       });
 
-      navBackdrop.addEventListener('click', closeMenu);
-      document.addEventListener('keydown', e=>{
-        if(e.key==='Escape') closeMenu();
-      });
+      // pause on hover (desktop)
+      const heroCard = $(".heroCard");
+      heroCard.addEventListener("mouseenter", stop);
+      heroCard.addEventListener("mouseleave", start);
 
-      document.querySelectorAll('#navActions a').forEach(a=>
-        a.addEventListener('click', closeMenu)
-      );
+      start();
     })();
 
-    /* reveal on scroll (se apaga con reduce motion) */
-    (function reveal(){
-      const reduce = window.matchMedia &&
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      if(reduce){
-        document.querySelectorAll('.reveal')
-          .forEach(el=>el.classList.add('in'));
-        return;
-      }
-
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(en=>{
-          if(en.isIntersecting){
-            en.target.classList.add('in');
-            io.unobserve(en.target);
-          }
-        });
-      }, {threshold:.12});
-
-      document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    // ==========
+    // Exposiciones gallery: fallback si falta
+    // ==========
+    (function initExpo(){
+      const g = $("#expoGallery");
+      g.innerHTML = EXPO_FILES.map(item => `
+        <figure class="photo">
+          <img src="${item.src}" alt="${item.cap}"
+               loading="lazy"
+               onerror="this.onerror=null;console.warn('[Arteluk] Falta:', '${item.src}');this.src='${PLACEHOLDER}'">
+          <figcaption class="cap">${item.cap}</figcaption>
+        </figure>
+      `).join("");
     })();
 
-    /* CTA -> form */
-    document.querySelectorAll('.to-form').forEach(b =>
-      b.addEventListener('click',(e)=>{
-        const v = e.currentTarget.getAttribute('data-value') || '';
-        const sel = document.getElementById('servicio');
-        if(sel){
-          [...sel.options].forEach(o=>{
-            if(o.textContent === v) sel.value = o.textContent;
-          });
-        }
-        trackSafe('Contact', {
-          content_name: v || 'CTA Reservar cupo',
-          content_category: 'Servicios'
-        });
-        document.getElementById('contacto')
-          ?.scrollIntoView({behavior:'smooth', block:'start'});
-      })
-    );
+    // ==========
+    // Form -> WhatsApp
+    // ==========
+    (function initForm(){
+      const form = $("#leadForm");
+      const y = $("#y");
+      y.textContent = new Date().getFullYear();
 
-    /* Track Contact */
-    document.querySelectorAll('.track-contact').forEach(el=>{
-      el.addEventListener('click', ()=>{
-        const name = el.getAttribute('data-contact-name') ||
-          el.textContent.trim() || 'CTA Contacto';
-        trackSafe('Contact', {
-          content_name: name,
-          content_category: 'Contacto'
-        });
-      });
-    });
-
-    /* modal */
-    (function modal(){
-      const modal = document.getElementById('modal');
-      const mTitle = document.getElementById('mTitle');
-      const mBody = document.getElementById('mBody');
-      const mClose = document.getElementById('mClose');
-      if(!modal || !mTitle || !mBody || !mClose) return;
-
-      mClose.addEventListener('click', ()=> {
-        try{ modal.close(); }
-        catch(_){ modal.removeAttribute('open'); }
-      });
-
-      function openTemplateModal(btn){
-        const id = btn.getAttribute('data-content');
-        const title = btn.getAttribute('data-title') ||
-          btn.textContent.trim();
-        const tpl = document.getElementById(id);
-        if(!tpl) return;
-
-        mTitle.textContent = title;
-        mBody.innerHTML = "";
-        mBody.appendChild(tpl.content.cloneNode(true));
-
-        if(typeof modal.showModal === 'function') modal.showModal();
-        else modal.setAttribute('open','');
-
-        if(btn.classList.contains('open-desc')){
-          trackSafe('ViewContent', {
-            content_name: title,
-            content_category: 'Planes'
-          });
-        }
+      function cleanPhone(v){
+        return (v || "").replace(/[^\d+]/g, "").replace(/^00/, "+");
+      }
+      function isChilePhone(v){
+        const p = cleanPhone(v).replace(/\+/g,"");
+        // acepta: 569XXXXXXXX o 56 9 XXXXXXXX
+        return /^56?9\d{8}$/.test(p) || /^569\d{8}$/.test(p);
       }
 
-      document.querySelectorAll('.open-desc, .open-story').forEach(btn=>{
-        btn.addEventListener('click', ()=>openTemplateModal(btn));
-      });
-
-      document.addEventListener('keydown', e=>{
-        if(e.key === 'Escape'){
-          try{ modal.close(); }
-          catch(_){ modal.removeAttribute('open'); }
-        }
-      });
-    })();
-
-    /* VideoClick robusto */
-    (function videoClick(){
-      const YT_URL = "https://www.youtube.com/watch?v=8abquRuhvCA";
-      const VIDEO_ID = "8abquRuhvCA";
-
-      function trackVideoClick(){
-        trackCustomSafe('VideoClick', {
-          video_id: VIDEO_ID,
-          video_url: YT_URL
-        });
-      }
-
-      const main = document.querySelector('.video-link');
-      if(main){
-        main.addEventListener('click', (e)=>{
-          e.preventDefault();
-          trackVideoClick();
-          setTimeout(()=> window.open(YT_URL, '_blank', 'noopener,noreferrer'), 180);
-        });
-      }
-
-      const metaLink = document.querySelector('.video-youtube-link');
-      if(metaLink){
-        metaLink.addEventListener('click', (e)=>{
-          e.preventDefault();
-          trackVideoClick();
-          setTimeout(()=> window.open(YT_URL, '_blank', 'noopener,noreferrer'), 180);
-        });
-      }
-    })();
-
-    /* formulario -> webhook n8n con anti-doble envío */
-    (function formWebhook(){
-      const form = document.getElementById('wlForm');
-      if(!form) return;
-      let sending = false;
-
-      function toastForm(msg, type='ok'){
-        const el = document.createElement('div');
-        el.textContent = msg;
-        el.style.cssText =
-          "position:fixed;left:50%;bottom:26px;transform:translateX(-50%);" +
-          "padding:12px 18px;border-radius:10px;z-index:9999;" +
-          `background:${type==='ok'?'#e7fff0':'#ffeaea'};` +
-          `color:${type==='ok'?'#065f46':'#a00000'};` +
-          "box-shadow:0 6px 16px rgba(0,0,0,.12);opacity:0;transition:.25s;";
-        document.body.appendChild(el);
-        requestAnimationFrame(()=> el.style.opacity = 1);
-        setTimeout(()=>{
-          el.style.opacity = 0;
-          setTimeout(()=>el.remove(), 300);
-        }, 2800);
-      }
-
-      form.addEventListener('submit', async (e)=>{
+      form.addEventListener("submit", (e) => {
         e.preventDefault();
-        if(sending){
-          toastForm('Ya recibimos tu mensaje, espera unos segundos.','ok');
+
+        const nombre = ($("#nombre").value || "").trim();
+        const tel = ($("#telefono").value || "").trim();
+        const servicio = ($("#servicio").value || "").trim();
+        const msg = ($("#mensaje").value || "").trim();
+
+        if(!nombre){
+          alert("Falta tu nombre.");
+          $("#nombre").focus();
+          return;
+        }
+        if(!tel || !isChilePhone(tel)){
+          alert("Teléfono inválido. Usa formato tipo +56 9 1234 5678.");
+          $("#telefono").focus();
+          return;
+        }
+        if(!servicio){
+          alert("Selecciona un interés.");
+          $("#servicio").focus();
+          return;
+        }
+        if(WHATSAPP_PHONE.includes("X")){
+          alert("Falta configurar el número de WhatsApp en el código (WHATSAPP_PHONE).");
           return;
         }
 
-        const last = Number(localStorage.getItem('arteluk_last_send') || 0);
-        const now = Date.now();
-        if(now - last < 15000){
-          toastForm('Ya recibimos tu formulario hace un momento.','ok');
-          return;
-        }
+        const text =
+`Hola! Soy ${nombre}.
+Quiero info de: ${servicio}.
+Teléfono: ${tel}
+${msg ? ("Mensaje: " + msg) : ""}`.trim();
 
-        const nombre = (form.querySelector('#nombre')?.value || '').trim();
-        const servicio = (form.querySelector('#servicio')?.value || '');
-        if(!nombre || !servicio){
-          toastForm('Completa tu nombre y selecciona un servicio.','error');
-          return;
-        }
-
-        sending = true;
-        const btn = form.querySelector('button[type="submit"]');
-        const original = btn ? btn.innerHTML : '';
-        if(btn){
-          btn.disabled = true;
-          btn.innerHTML = 'Enviando…';
-        }
-
-        const data = {
-          nombre: nombre,
-          telefono: (form.querySelector('#tel')?.value || '').trim(),
-          servicio: servicio,
-          mensaje: (form.querySelector('#msg')?.value || '').trim()
-        };
-
-        const controller = new AbortController();
-        const t = setTimeout(()=>controller.abort(), 10000);
-
-        try{
-          const res = await fetch(
-            "https://arteluk-n8n.bvil2a.easypanel.host/webhook/afb70f27-dd2d-4853-9270-3faf35ddcd5e",
-            {
-              method:"POST",
-              headers:{ "Content-Type":"application/json" },
-              body: JSON.stringify(data),
-              keepalive:true,
-              signal: controller.signal
-            }
-          );
-          if(!res.ok) throw new Error('HTTP '+res.status);
-
-          form.reset();
-          localStorage.setItem('arteluk_last_send', String(Date.now()));
-          toastForm('✅ ¡Formulario enviado con éxito!', 'ok');
-          trackSafe('Lead', {
-            content_name: data.servicio || 'Formulario Arteluk',
-            content_category: 'Formulario',
-            value: 0,
-            currency: 'CLP'
-          });
-        }catch(err){
-          console.error('Webhook error:', err);
-          toastForm('❌ Error al enviar. Intenta nuevamente.', 'error');
-        }finally{
-          clearTimeout(t);
-          if(btn){
-            btn.disabled = false;
-            btn.innerHTML = original;
-          }
-          sending = false;
-        }
+        const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
+        window.open(url, "_blank", "noopener,noreferrer");
       });
-    })();
-
-    /* ===== HERO SLIDER AUTO + FLECHAS + DOTS ===== */
-    (function heroSlider(){
-      const slider = document.querySelector('.hero-slider');
-      if(!slider) return;
-      const track = slider.querySelector('.hero-track');
-      const slides = Array.from(slider.querySelectorAll('.hero-slide'));
-      const dots = Array.from(slider.querySelectorAll('[data-hero-dot]'));
-      const prev = slider.querySelector('[data-hero-prev]');
-      const next = slider.querySelector('[data-hero-next]');
-      if(!track || slides.length === 0) return;
-
-      let index = 0;
-      let timer;
-
-      track.style.width = `${slides.length * 100}%`;
-
-      function setActiveDot(i){
-        dots.forEach((d,idx)=> d.classList.toggle('active', idx===i));
-      }
-
-      function goTo(i, opts){
-        const auto = opts && opts.auto;
-        const total = slides.length;
-        index = (i + total) % total;
-        track.style.transform = `translateX(-${index*100}%)`;
-        setActiveDot(index);
-        if(!auto) resetTimer();
-      }
-
-      function nextSlide(auto=false){
-        goTo(index+1, {auto});
-      }
-
-      function prevSlide(){
-        goTo(index-1);
-      }
-
-      function resetTimer(){
-        if(timer) clearInterval(timer);
-        timer = setInterval(()=> nextSlide(true), 7000);
-      }
-
-      if(prev) prev.addEventListener('click', ()=> prevSlide());
-      if(next) next.addEventListener('click', ()=> nextSlide());
-
-      dots.forEach((d,idx)=>{
-        d.addEventListener('click', ()=> goTo(idx));
-      });
-
-      slider.addEventListener('mouseenter', ()=>{
-        if(timer) clearInterval(timer);
-      });
-
-      slider.addEventListener('mouseleave', resetTimer);
-
-      resetTimer();
-    })();
-
-    /* ===== Exposiciones Slider (flechas) ===== */
-    (function expoSlider(){
-      const track = document.getElementById('expoTrack');
-      if(!track) return;
-      const prev = document.querySelector('[data-expo-prev]');
-      const next = document.querySelector('[data-expo-next]');
-      if(!prev || !next) return;
-
-      function slideAmount(){
-        return Math.max(320, Math.floor(track.clientWidth * 0.92));
-      }
-
-      function updateButtons(){
-        const atStart = track.scrollLeft <= 4;
-        const atEnd = (track.scrollLeft + track.clientWidth) >= (track.scrollWidth - 4);
-        prev.disabled = atStart;
-        next.disabled = atEnd;
-      }
-
-      prev.addEventListener('click', ()=>{
-        track.scrollBy({ left: -slideAmount(), behavior:'smooth' });
-      });
-
-      next.addEventListener('click', ()=>{
-        track.scrollBy({ left: slideAmount(), behavior:'smooth' });
-      });
-
-      track.addEventListener('scroll', ()=> updateButtons(), { passive:true });
-      window.addEventListener('resize', updateButtons);
-      updateButtons();
     })();
   </script>
 </body>
