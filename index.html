@@ -1202,65 +1202,7 @@
 
 /* detalle pro: balancea títulos (si el browser no lo soporta, no pasa nada) */
 .hero-title, .hero-slide h2{ text-wrap:balance; }
-/* panel premium SOLO para slides con texto + foto */
-.hero-panel{
-  height:100%;
-  background:rgba(255,255,255,.74);
-  border:1px solid rgba(224,236,255,.95);
-  border-radius:28px;
-  box-shadow:0 22px 60px rgba(15,23,42,.14);
-  padding:clamp(16px,2.2vw,26px);
-  gap:clamp(16px,2vw,28px);
-  align-items:stretch; /* hace que ambas columnas calcen perfecto */
-}
 
-/* centra verticalmente el texto (solo el div del texto) */
-.hero-panel > div{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-/* fuerza que la columna de foto LLENE alto */
-.hero-panel .photo{
-  display:flex;
-}
-.hero-panel .photo .marco-cuadro{
-  width:100%;
-  height:100%;
-}
-.hero-panel .photo .marco-cuadro img{
-  width:100%;
-  height:100%;
-  object-fit:cover; /* cero deformación */
-}
-
-/* detalle pro en la foto (sutil, sin cargar el diseño) */
-.hero-panel .marco-cuadro{
-  position:relative;
-}
-.hero-panel .marco-cuadro::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.22));
-  pointer-events:none;
-}
-.hero-panel .marco-cuadro::after{
-  content:"Foto real · Arteluk";
-  position:absolute;
-  left:12px;
-  bottom:12px;
-  padding:6px 10px;
-  border-radius:999px;
-  background:rgba(255,255,255,.82);
-  border:1px solid rgba(15,23,42,.12);
-  color:#0f172a;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
 
 @media (max-width:880px){
   .hero-controls{
@@ -3211,6 +3153,7 @@ function resetTimer(){
 </script>
 </body>
 </html>
+
 
 
 
