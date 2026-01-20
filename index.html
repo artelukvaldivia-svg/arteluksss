@@ -1177,15 +1177,20 @@
 }
 
 .hero-slide-inner{
-  width:100%;
-  padding:38px 0 30px;
+  padding:38px 18px 30px !important; /* vuelve el padding lateral */
 }
 
 @media (max-width:880px){
   .hero-slide-inner{
-    padding:30px 0 32px;
+    padding:30px 16px 32px !important;
   }
 }
+
+.container{
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+}
+
 
 .hero-slide h1{
   font-size:clamp(32px,4.6vw,50px);
@@ -3191,6 +3196,7 @@ h1,h2,h3,p,li,a,span,strong,small{
 </script>
 </body>
 </html>
+
 
 
 
