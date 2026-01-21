@@ -1581,6 +1581,30 @@ h1,h2,h3,p,li,a,span,strong,small{
     font-size:16px;
   }
 }
+/* EXPO video tipo Reel: mostrar completo, sin recortar */
+.expo-photo.reel-letterbox{
+  background:#000;
+}
+
+/* IMPORTANTE: si tu CSS general usa object-fit:cover, esto lo pisa */
+.expo-photo.reel-letterbox .expo-main-video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:#000;
+  display:block;
+}
+
+/* Si estás en modo video, no mostrar la imagen fallback */
+.expo-photo.show-video .expo-main-img{
+  display:none;
+}
+
+/* Placeholders invisibles pero ocupando espacio (simetría) */
+.expo-thumb.is-placeholder{
+  visibility:hidden;
+  pointer-events:none;
+}
 
   </style>
 </head>
@@ -2230,21 +2254,24 @@ h1,h2,h3,p,li,a,span,strong,small{
         <!-- EXPO 02 (si no tienes 6 fotos, se repite la misma para mantener simetría) -->
         <article class="expo-item">
           <div class="expo-media">
-          <div class="expo-photo is-video show-video">
-  <!-- Imagen fallback (cuando elijan miniaturas de fotos) -->
+         <div class="expo-photo is-video show-video reel-letterbox">
+  <!-- Video principal (se ve completo tipo Reel + barras laterales) -->
+  <video class="expo-main expo-main-video"
+         controls
+         playsinline
+         preload="metadata"
+         poster="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg">
+    <source src="img/exposision-biblioteca.mp4" type="video/mp4">
+  </video>
+
+  <!-- Fallback imagen (por si el video falla). Queda oculto en modo video -->
   <img class="expo-main expo-main-img"
        src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
        alt="Biblioteca Municipal de Valdivia"
        loading="lazy" decoding="async">
-
-  <!-- Video principal -->
-  <video class="expo-main expo-main-video"
-       controls loop playsinline preload="metadata"
-       poster="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg">
-  <source src="img/exposision-biblioteca.mp4" type="video/mp4">
-</video>
 </div>
-              <div class="expo-thumbs" aria-label="Galería Biblioteca Municipal">
+
+<div class="expo-thumbs" aria-label="Galería Biblioteca Municipal">
   <!-- VIDEO (activo) -->
   <button class="expo-thumb is-active" type="button"
           data-expo-thumb
@@ -2253,36 +2280,24 @@ h1,h2,h3,p,li,a,span,strong,small{
     <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Video" loading="lazy" decoding="async">
   </button>
 
-  <!-- FOTOS -->
-  <button class="expo-thumb" type="button" data-expo-thumb
-          data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
-          data-alt="Biblioteca 1">
-    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 1" loading="lazy" decoding="async">
+  <!-- PLACEHOLDERS invisibles (mantienen simetría sin fotos) -->
+  <button class="expo-thumb is-placeholder" type="button" disabled aria-hidden="true" tabindex="-1">
+    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="" loading="lazy" decoding="async">
   </button>
+  <button class="expo-thumb is-placeholder" type="button" disabled aria-hidden="true" tabindex="-1">
+    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="" loading="lazy" decoding="async">
+  </button>
+  <button class="expo-thumb is-placeholder" type="button" disabled aria-hidden="true" tabindex="-1">
+    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="" loading="lazy" decoding="async">
+  </button>
+  <button class="expo-thumb is-placeholder" type="button" disabled aria-hidden="true" tabindex="-1">
+    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="" loading="lazy" decoding="async">
+  </button>
+  <button class="expo-thumb is-placeholder" type="button" disabled aria-hidden="true" tabindex="-1">
+    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="" loading="lazy" decoding="async">
+  </button>
+</div>
 
-  <button class="expo-thumb" type="button" data-expo-thumb
-          data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
-          data-alt="Biblioteca 2">
-    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 2" loading="lazy" decoding="async">
-  </button>
-
-  <button class="expo-thumb" type="button" data-expo-thumb
-          data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
-          data-alt="Biblioteca 3">
-    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 3" loading="lazy" decoding="async">
-  </button>
-
-  <button class="expo-thumb" type="button" data-expo-thumb
-          data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
-          data-alt="Biblioteca 4">
-    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 4" loading="lazy" decoding="async">
-  </button>
-
-  <button class="expo-thumb" type="button" data-expo-thumb
-          data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
-          data-alt="Biblioteca 5">
-    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 5" loading="lazy" decoding="async">
-  </button>
 </div>
 
           </div>
@@ -3381,6 +3396,7 @@ h1,h2,h3,p,li,a,span,strong,small{
 </script>
 </body>
 </html>
+
 
 
 
