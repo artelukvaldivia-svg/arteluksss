@@ -1374,23 +1374,30 @@
   }
 }
 
+/* ===== Expo media: cuadrado y sin deformaciones (img + video) ===== */
 .expo-photo{
-  border-radius:18px;
-  overflow:hidden;
-  background:#e9eef7;
-  border:1px solid rgba(15,23,42,.10);
-  box-shadow:0 12px 28px rgba(15,23,42,.12);
-  aspect-ratio:4/3;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #000;
 }
 
-.expo-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transform:scale(1.01);
+.expo-photo .expo-main{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* clave para que no se vea “raro” */
 }
 
+/* Por si tu CSS anterior solo apuntaba a img */
+.expo-photo img.expo-main,
+.expo-photo video.expo-main{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 /* thumbs: mismo alto/anchos siempre */
 .expo-thumbs{
   margin-top:12px;
@@ -2212,7 +2219,15 @@ h1,h2,h3,p,li,a,span,strong,small{
           <div class="expo-media">
             <div class="expo-photo">
             <video class="expo-main" controls preload="metadata" playsinline>
-            <img class="expo-main" src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Biblioteca Municipal de Valdivia" loading="lazy" decoding="async">
+            <video class="expo-main"
+       autoplay
+       muted
+       loop
+       playsinline
+       preload="metadata"
+       aria-label="Biblioteca Municipal de Valdivia">
+  <source src="/img/exposision-biblioteca.mp4" type="video/mp4">
+</video>
             </div>
 
             <div class="expo-thumbs" aria-label="Galería Biblioteca Municipal">
@@ -3289,6 +3304,7 @@ h1,h2,h3,p,li,a,span,strong,small{
 </script>
 </body>
 </html>
+
 
 
 
