@@ -1150,6 +1150,10 @@
   height:calc(100vh - var(--navH));
   min-height:620px;
   overflow:hidden;
+
+    touch-action: pan-y;
+  -webkit-user-select: none;
+
 }
 
 @media (max-width:880px){
@@ -3005,7 +3009,7 @@ h1,h2,h3,p,li,a,span,strong,small{
       });
     })();
 
-    /* ===== HERO SLIDER AUTO + FLECHAS + DOTS (FIX) ===== */
+  /* ===== HERO SLIDER (AUTO + FLECHAS + DOTS + SWIPE + PAUSA) ===== */
 (function heroSlider(){
   const slider = document.querySelector('.hero-slider');
   if(!slider) return;
@@ -3017,12 +3021,17 @@ h1,h2,h3,p,li,a,span,strong,small{
   const next = slider.querySelector('[data-hero-next]');
   if(!track || slides.length === 0) return;
 
-  // ✅ fija el cálculo correcto
+  // Ajustes
+  const AUTOPLAY_MS = 7000;      // cada cuánto cambia solo
+  const PAUSE_MS = 20000;        // cuánto se queda quieto después de tocar/deslizar
+  const SWIPE_PX = 40;           // mínimo de arrastre para considerarlo swipe
+
   slider.style.setProperty('--heroSlides', slides.length);
   const step = 100 / slides.length;
 
   let index = 0;
   let timer = null;
+  let resumeT = null;
 
   function setActiveDot(i){
     dots.forEach((d,idx)=> d.classList.toggle('active', idx===i));
@@ -3034,45 +3043,97 @@ h1,h2,h3,p,li,a,span,strong,small{
       const old = track.style.transition;
       track.style.transition = 'none';
       track.style.transform = t;
-      track.getBoundingClientRect(); // fuerza layout
+      track.getBoundingClientRect();
       track.style.transition = old || '';
     }else{
       track.style.transform = t;
     }
   }
 
-  function resetTimer(){
-    if(timer) clearInterval(timer);
+  function stopAuto(){
+    if(timer){ clearInterval(timer); timer = null; }
+  }
+
+  function startAuto(){
+    stopAuto();
+    if(slides.length <= 1) return;
     timer = setInterval(()=> {
       index = (index + 1) % slides.length;
       applyTransform(false);
       setActiveDot(index);
-    }, 5000);
+    }, AUTOPLAY_MS);
   }
 
-  function goTo(i, opts){
-    const auto = opts && opts.auto;
+  function pauseForRead(ms = PAUSE_MS){
+    stopAuto();
+    if(resumeT) clearTimeout(resumeT);
+    resumeT = setTimeout(()=> startAuto(), ms);
+  }
+
+  function goTo(i, {user=true} = {}){
     const total = slides.length;
     index = (i + total) % total;
     applyTransform(false);
     setActiveDot(index);
-    if(!auto) resetTimer();
+    if(user) pauseForRead(PAUSE_MS);
   }
 
-  prev && prev.addEventListener('click', ()=> goTo(index - 1));
-  next && next.addEventListener('click', ()=> goTo(index + 1));
+  // Flechas/dots = pausa para leer
+  prev && prev.addEventListener('click', ()=> goTo(index - 1, {user:true}));
+  next && next.addEventListener('click', ()=> goTo(index + 1, {user:true}));
+  dots.forEach((d,idx)=> d.addEventListener('click', ()=> goTo(idx, {user:true})));
 
-  dots.forEach((d,idx)=> d.addEventListener('click', ()=> goTo(idx)));
+  // Desktop: hover pausa / sale reanuda
+  slider.addEventListener('mouseenter', ()=> stopAuto());
+  slider.addEventListener('mouseleave', ()=> startAuto());
 
-  slider.addEventListener('mouseenter', ()=> { if(timer) clearInterval(timer); });
-  slider.addEventListener('mouseleave', resetTimer);
+  // ✅ SWIPE (Pointer + fallback Touch)
+  let sx=0, sy=0;
 
-  // ✅ init a prueba de “se ve entremedio”
+  function onStart(x,y){
+    sx=x; sy=y;
+    pauseForRead(PAUSE_MS); // apenas toca: queda quieto para leer
+  }
+
+  function onEnd(x,y){
+    const dx = x - sx;
+    const dy = y - sy;
+
+    // si fue más horizontal que vertical + supera umbral -> swipe
+    if(Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_PX){
+      dx > 0 ? goTo(index - 1, {user:true}) : goTo(index + 1, {user:true});
+    }
+  }
+
+  // Pointer (moderno)
+  slider.addEventListener('pointerdown', (e)=>{
+    onStart(e.clientX, e.clientY);
+  }, {passive:true});
+
+  slider.addEventListener('pointerup', (e)=>{
+    onEnd(e.clientX, e.clientY);
+  }, {passive:true});
+
+  // Touch fallback (iPhone por si acaso)
+  slider.addEventListener('touchstart', (e)=>{
+    const t = e.touches && e.touches[0];
+    if(!t) return;
+    onStart(t.clientX, t.clientY);
+  }, {passive:true});
+
+  slider.addEventListener('touchend', (e)=>{
+    const t = e.changedTouches && e.changedTouches[0];
+    if(!t) return;
+    onEnd(t.clientX, t.clientY);
+  }, {passive:true});
+
+  // Init “a prueba de entremedio”
   index = 0;
   setActiveDot(0);
   applyTransform(true);
-  resetTimer();
+  startAuto();
 })();
+
 
 
     /* ===== Exposiciones Slider (flechas) ===== */
@@ -3182,6 +3243,7 @@ h1,h2,h3,p,li,a,span,strong,small{
 </script>
 </body>
 </html>
+
 
 
 
