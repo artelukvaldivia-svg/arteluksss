@@ -2086,62 +2086,73 @@ h1,h2,h3,p,li,a,span,strong,small{
     </section>
 
     <!-- EQUIPO -->
-    
-<section id="equipo" class="equipoPro">
-  <div class="equipoPro__wrap">
-    <p class="equipoPro__kicker">EQUIPO</p>
-    <h2 class="equipoPro__title">Personas que hacen hogar</h2>
-    <p class="equipoPro__sub">Acompañamiento humano y artístico en cada sesión.</p>
+<section id="equipo" class="teamPro">
+  <div class="teamPro__wrap">
+    <p class="teamPro__kicker">EQUIPO</p>
+    <h2 class="teamPro__title">Personas que hacen hogar</h2>
+    <p class="teamPro__sub">Acompañamiento humano y artístico en cada sesión.</p>
 
-    <div class="equipoPro__grid">
+    <div class="teamPro__grid">
 
-      <!-- Card 1 -->
-      <article class="equipoPro__card">
-        <!-- IMPORTANTÍSIMO: pon aquí el src REAL que tenías antes (carpeta img en minúscula) -->
-        <img class="equipoPro__photo" src="img/profesora.jpg" alt="Ivanya Sierra" loading="lazy" decoding="async">
+      <!-- CARD 1 -->
+      <article class="teamCard">
+        <div class="teamCard__media">
+          <!-- ✅ reemplaza SOLO el src por el tuyo real -->
+          <img src="img/REEMPLAZA-ESTO.jpg" alt="Ivanya Sierra" loading="lazy" decoding="async">
+          <div class="teamCard__fade"></div>
+        </div>
 
-        <div class="equipoPro__body">
-          <div class="equipoPro__top">
-            <h3 class="equipoPro__name">Ivanya Sierra</h3>
-            <span class="equipoPro__role">Artista visual • Docente</span>
+        <div class="teamCard__body">
+          <div class="teamCard__head">
+            <h3 class="teamCard__name">Ivanya Sierra</h3>
+            <span class="teamCard__pill">Artista visual • Docente</span>
           </div>
 
-          <ul class="equipoPro__bullets">
+          <ul class="teamCard__list">
             <li>Licenciada en Arte + Profesora de Artes Visuales (UC)</li>
             <li>Inclusión, discapacidad, trabajo comunitario</li>
             <li>Acuarela y acrílico (flora, fauna, retratos)</li>
           </ul>
 
-          <details class="equipoPro__details">
-            <summary>Ver bio</summary>
+          <details class="teamCard__details">
+            <summary>
+              <span>Ver bio</span>
+              <span class="teamCard__chev" aria-hidden="true"></span>
+            </summary>
             <p>
               Artista visual y docente, licenciada en Arte y Profesora de Artes Visuales por la Universidad Católica de Chile.
               Especializada en gestión cultural e inclusión de personas con discapacidad y trabajo comunitario.
-              Experiencia como docente y tallerista con enfoque empático y personalizado. Obra en acuarela y acrílico.
+              Enfoque empático y personalizado; obra en acuarela y acrílico.
             </p>
           </details>
         </div>
       </article>
 
-      <!-- Card 2 -->
-      <article class="equipoPro__card">
-        <!-- IMPORTANTÍSIMO: pon aquí el src REAL que tenías antes -->
-        <img class="equipoPro__photo" src="img/equipo (2).jpg" alt="Paula Barros" loading="lazy" decoding="async">
+      <!-- CARD 2 -->
+      <article class="teamCard">
+        <div class="teamCard__media">
+          <!-- ✅ reemplaza SOLO el src por el tuyo real -->
+          <img src="img/REEMPLAZA-ESTO-2.jpg" alt="Paula Barros" loading="lazy" decoding="async">
+          <div class="teamCard__fade"></div>
+        </div>
 
-        <div class="equipoPro__body">
-          <div class="equipoPro__top">
-            <h3 class="equipoPro__name">Paula Barros</h3>
-            <span class="equipoPro__role">Artes Musicales y Sonoras (UACh)</span>
+        <div class="teamCard__body">
+          <div class="teamCard__head">
+            <h3 class="teamCard__name">Paula Barros</h3>
+            <span class="teamCard__pill">Artes Musicales y Sonoras (UACh)</span>
           </div>
 
-          <ul class="equipoPro__bullets">
+          <ul class="teamCard__list">
             <li>Fortaleza en canto; explora piano y guitarra</li>
             <li>Interés por pintura y artes visuales</li>
             <li>Muy buena afinidad con niños</li>
           </ul>
 
-          <details class="equipoPro__details">
-            <summary>Ver bio</summary>
+          <details class="teamCard__details">
+            <summary>
+              <span>Ver bio</span>
+              <span class="teamCard__chev" aria-hidden="true"></span>
+            </summary>
             <p>
               Estudiante de Artes Musicales y Sonoras (UACh). Fortalezas en canto; explora piano y guitarra.
               Interés por pintura y artes visuales; afinidad con niños. Arte como medio de expresión y crecimiento.
@@ -2154,111 +2165,177 @@ h1,h2,h3,p,li,a,span,strong,small{
   </div>
 
   <style>
-    /* ===== Equipo PRO (scoped, no pelea con tu CSS global) ===== */
-    #equipo.equipoPro{ padding: 48px 0; }
-    #equipo .equipoPro__wrap{ max-width: 980px; margin: 0 auto; padding: 0 18px; }
+    /* ===== TEAM PRO (scoped) ===== */
+    #equipo.teamPro{ padding: 52px 0; }
+    #equipo .teamPro__wrap{ max-width: 1040px; margin: 0 auto; padding: 0 18px; }
 
-    #equipo .equipoPro__kicker{
-      letter-spacing: .14em; font-weight: 800; font-size: .72rem;
-      opacity: .7; margin: 0 0 .35rem;
+    #equipo .teamPro__kicker{
+      margin: 0 0 .35rem;
+      letter-spacing: .14em;
+      font-weight: 800;
+      font-size: .72rem;
+      opacity: .7;
     }
-    #equipo .equipoPro__title{ margin: 0; }
-    #equipo .equipoPro__sub{ margin: .35rem 0 1.2rem; opacity: .75; }
+    #equipo .teamPro__title{ margin: 0; }
+    #equipo .teamPro__sub{ margin: .45rem 0 1.4rem; opacity: .78; }
 
-    #equipo .equipoPro__grid{
+    #equipo .teamPro__grid{
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
-      align-items: start;
+      align-items: stretch;
     }
-    @media (max-width: 900px){
-      #equipo .equipoPro__grid{ grid-template-columns: 1fr; }
+    @media (max-width: 920px){
+      #equipo .teamPro__grid{ grid-template-columns: 1fr; }
     }
 
-    #equipo .equipoPro__card{
-      display: flex;
-      gap: 14px;
-      background: rgba(255,255,255,.82);
+    /* CARD */
+    #equipo .teamCard{
+      background: rgba(255,255,255,.86);
       border: 1px solid rgba(0,0,0,.06);
-      border-radius: 18px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+      border-radius: 20px;
+      box-shadow: 0 14px 34px rgba(0,0,0,.10);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    /* MEDIA */
+    #equipo .teamCard__media{
+      position: relative;
+      width: 100%;
+      height: 220px;
       overflow: hidden;
     }
-
-    #equipo .equipoPro__photo{
-      width: 180px;
-      min-width: 180px;
-      height: 170px;
+    @media (max-width: 920px){
+      #equipo .teamCard__media{ height: 240px; }
+    }
+    #equipo .teamCard__media img{
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       display: block;
+      transform: scale(1.01);
+    }
+    #equipo .teamCard__fade{
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 70px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.85));
+      pointer-events: none;
     }
 
-    #equipo .equipoPro__body{ padding: 14px 14px 12px; flex: 1; }
+    /* BODY */
+    #equipo .teamCard__body{
+      padding: 14px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
 
-    #equipo .equipoPro__top{ display:flex; flex-wrap:wrap; gap:8px 10px; align-items:center; }
-    #equipo .equipoPro__name{ margin: 0; font-size: 1.05rem; }
-    #equipo .equipoPro__role{
-      font-size: .82rem; opacity: .8;
-      border: 1px solid rgba(0,0,0,.08);
+    #equipo .teamCard__head{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #equipo .teamCard__name{
+      margin: 0;
+      font-size: 1.06rem;
+      font-weight: 800;
+    }
+    #equipo .teamCard__pill{
+      font-size: .82rem;
+      opacity: .85;
+      padding: 7px 10px;
       border-radius: 999px;
-      padding: 6px 10px;
-      background: rgba(255,255,255,.55);
+      border: 1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.65);
+      white-space: nowrap;
     }
 
-    #equipo .equipoPro__bullets{
-      margin: 10px 0 10px;
+    /* LIST */
+    #equipo .teamCard__list{
+      margin: 0;
       padding: 0;
       list-style: none;
       opacity: .9;
+      line-height: 1.28rem;
+      font-size: .95rem;
     }
-    #equipo .equipoPro__bullets li{
+    #equipo .teamCard__list li{
       margin: 7px 0;
-      line-height: 1.25rem;
       padding-left: 14px;
       position: relative;
     }
-    #equipo .equipoPro__bullets li::before{
+    #equipo .teamCard__list li::before{
       content: "•";
       position: absolute;
       left: 0;
-      opacity: .7;
+      opacity: .65;
     }
 
-    #equipo .equipoPro__details{
-      margin-top: 8px;
+    /* DETAILS / CTA */
+    #equipo .teamCard__details{
+      margin-top: auto;
       border-top: 1px solid rgba(0,0,0,.06);
       padding-top: 10px;
     }
-    #equipo .equipoPro__details summary{
+    #equipo .teamCard__details summary{
       cursor: pointer;
-      font-weight: 800;
       user-select: none;
       list-style: none;
-      display:flex;
-      align-items:center;
+      display: inline-flex;
+      align-items: center;
       justify-content: space-between;
       gap: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.7);
+      font-weight: 800;
+      width: fit-content;
     }
-    #equipo .equipoPro__details summary::-webkit-details-marker{ display:none; }
-    #equipo .equipoPro__details summary::after{ content:"▾"; opacity:.7; }
-    #equipo .equipoPro__details[open] summary::after{ content:"▴"; }
+    #equipo .teamCard__details summary::-webkit-details-marker{ display:none; }
 
-    #equipo .equipoPro__details p{
+    #equipo .teamCard__chev{
+      width: 10px; height: 10px;
+      display: inline-block;
+      border-right: 2px solid rgba(0,0,0,.55);
+      border-bottom: 2px solid rgba(0,0,0,.55);
+      transform: rotate(45deg);
+      margin-top: -2px;
+    }
+    #equipo .teamCard__details[open] .teamCard__chev{
+      transform: rotate(-135deg);
+      margin-top: 2px;
+    }
+
+    #equipo .teamCard__details p{
       margin: 10px 0 0;
       opacity: .85;
-      line-height: 1.35rem;
-    }
-
-    @media (max-width: 900px){
-      #equipo .equipoPro__card{ flex-direction: column; }
-      #equipo .equipoPro__photo{
-        width: 100%;
-        min-width: 0;
-        height: 220px;
-      }
+      line-height: 1.38rem;
     }
   </style>
+
+  <script>
+    // Pro: que solo una bio esté abierta a la vez
+    (() => {
+      const root = document.querySelector('#equipo.teamPro');
+      if (!root) return;
+      const all = [...root.querySelectorAll('details.teamCard__details')];
+      all.forEach(d => {
+        d.addEventListener('toggle', () => {
+          if (d.open) all.forEach(o => { if (o !== d) o.open = false; });
+        });
+      });
+    })();
+  </script>
 </section>
+
 
 
     <!-- FORMULARIO -->
@@ -3421,6 +3498,7 @@ h1,h2,h3,p,li,a,span,strong,small{
 </script>
 </body>
 </html>
+
 
 
 
