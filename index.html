@@ -2230,7 +2230,7 @@ h1,h2,h3,p,li,a,span,strong,small{
         <!-- EXPO 02 (si no tienes 6 fotos, se repite la misma para mantener simetría) -->
         <article class="expo-item">
           <div class="expo-media">
-           <div class="expo-photo is-video">
+          <div class="expo-photo is-video show-video">
   <!-- Imagen fallback (cuando elijan miniaturas de fotos) -->
   <img class="expo-main expo-main-img"
        src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
@@ -2239,45 +2239,52 @@ h1,h2,h3,p,li,a,span,strong,small{
 
   <!-- Video principal -->
   <video class="expo-main expo-main-video"
-         autoplay muted loop playsinline preload="metadata"
-         poster="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg">
-    <source src="img/exposision-biblioteca.mp4" type="video/mp4">
-  </video>
+       controls loop playsinline preload="metadata"
+       poster="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg">
+  <source src="img/exposision-biblioteca.mp4" type="video/mp4">
+</video>
+</div>
+              <div class="expo-thumbs" aria-label="Galería Biblioteca Municipal">
+  <!-- VIDEO (activo) -->
+  <button class="expo-thumb is-active" type="button"
+          data-expo-thumb
+          data-src="img/exposision-biblioteca.mp4"
+          data-alt="Biblioteca Municipal de Valdivia (video)">
+    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Video" loading="lazy" decoding="async">
+  </button>
+
+  <!-- FOTOS -->
+  <button class="expo-thumb" type="button" data-expo-thumb
+          data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
+          data-alt="Biblioteca 1">
+    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 1" loading="lazy" decoding="async">
+  </button>
+
+  <button class="expo-thumb" type="button" data-expo-thumb
+          data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
+          data-alt="Biblioteca 2">
+    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 2" loading="lazy" decoding="async">
+  </button>
+
+  <button class="expo-thumb" type="button" data-expo-thumb
+          data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
+          data-alt="Biblioteca 3">
+    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 3" loading="lazy" decoding="async">
+  </button>
+
+  <button class="expo-thumb" type="button" data-expo-thumb
+          data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
+          data-alt="Biblioteca 4">
+    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 4" loading="lazy" decoding="async">
+  </button>
+
+  <button class="expo-thumb" type="button" data-expo-thumb
+          data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
+          data-alt="Biblioteca 5">
+    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 5" loading="lazy" decoding="async">
+  </button>
 </div>
 
-            <div class="expo-thumbs" aria-label="Galería Biblioteca Municipal">
-              <button class="expo-thumb" type="button"
-        data-expo-thumb
-        data-src="img/exposision-biblioteca.mp4"
-        data-alt="Biblioteca Municipal de Valdivia (video)">
-  <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Video" loading="lazy" decoding="async">
-              </button>
-             <button class="expo-thumb is-active" type="button"
-        data-expo-thumb
-        data-src="img/exposision-biblioteca.mp4"
-        data-alt="Biblioteca Municipal de Valdivia (video)">
-  <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Video" loading="lazy" decoding="async">
-</button>
-
-<button class="expo-thumb" type="button" data-expo-thumb
-        data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
-        data-alt="Biblioteca 1">
-  <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 1" loading="lazy" decoding="async">
-</button>
-
-              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" data-alt="Biblioteca 3">
-                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 3" loading="lazy" decoding="async">
-              </button>
-              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" data-alt="Biblioteca 4">
-                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 4" loading="lazy" decoding="async">
-              </button>
-              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" data-alt="Biblioteca 5">
-                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 5" loading="lazy" decoding="async">
-              </button>
-              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" data-alt="Biblioteca 6">
-                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 6" loading="lazy" decoding="async">
-              </button>
-            </div>
           </div>
 
           <div class="expo-info">
@@ -3310,28 +3317,68 @@ h1,h2,h3,p,li,a,span,strong,small{
 /* ===== Exposiciones: cambio de foto al hacer click en miniaturas ===== */
 (function expoThumbSwap(){
   document.querySelectorAll('.expo-item').forEach(item=>{
-    const main = item.querySelector('.expo-main');
-    if(!main) return;
+    const photoWrap = item.querySelector('.expo-photo');
+    const imgEl = item.querySelector('.expo-main-img') || item.querySelector('img.expo-main');
+    const videoEl = item.querySelector('.expo-main-video') || item.querySelector('video.expo-main');
 
     const thumbs = Array.from(item.querySelectorAll('[data-expo-thumb]'));
+    if(thumbs.length === 0) return;
+
+    function setVideoSource(v, src){
+      if(!v) return;
+      const source = v.querySelector('source');
+      if(source){
+        source.src = src;
+      }else{
+        v.src = src;
+      }
+      v.load();
+    }
+
     thumbs.forEach(btn=>{
       btn.addEventListener('click', ()=>{
-        const src = btn.getAttribute('data-src');
-        const alt = btn.getAttribute('data-alt') || main.alt || '';
-        if(src){
-          main.src = src;
-          if(alt) main.alt = alt;
-        }
+        const src = btn.getAttribute('data-src') || '';
+        const alt = btn.getAttribute('data-alt') || '';
+
+        const isVideo = /\.mp4(\?|#|$)/i.test(src);
+
+        // activar miniatura
         thumbs.forEach(b=> b.classList.toggle('is-active', b === btn));
+
+        // si este item no tiene video, solo cambia imagen
+        if(!photoWrap || !photoWrap.classList.contains('is-video')){
+          if(imgEl && src) imgEl.src = src;
+          if(imgEl && alt) imgEl.alt = alt;
+          return;
+        }
+
+        if(isVideo){
+          // mostrar video
+          photoWrap.classList.add('show-video');
+          if(videoEl){
+            setVideoSource(videoEl, src);
+            // intentar reproducir (click = gesto de usuario)
+            videoEl.play().catch(()=>{});
+          }
+        }else{
+          // mostrar imagen
+          photoWrap.classList.remove('show-video');
+          if(videoEl){
+            videoEl.pause();
+            try{ videoEl.currentTime = 0; }catch(_){}
+          }
+          if(imgEl && src) imgEl.src = src;
+          if(imgEl && alt) imgEl.alt = alt;
+        }
       });
     });
   });
 })();
 
-
 </script>
 </body>
 </html>
+
 
 
 
