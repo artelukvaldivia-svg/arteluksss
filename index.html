@@ -2319,6 +2319,51 @@ h1,h2,h3,p,li,a,span,strong,small{
       opacity: .85;
       line-height: 1.38rem;
     }
+    /* ===============================
+   GLOBAL FIX: fondo + overflow + snap
+   PÉGALO AL FINAL DEL CSS
+================================ */
+:root{
+  --page-bg:
+    radial-gradient(1100px 520px at 8% 10%, rgba(56,189,248,.22), transparent 60%),
+    radial-gradient(900px 620px at 92% 8%, rgba(167,139,250,.20), transparent 55%),
+    radial-gradient(900px 620px at 18% 92%, rgba(34,211,238,.16), transparent 55%),
+    linear-gradient(180deg, #eef7ff 0%, #eaf4ff 40%, #eef7ff 100%);
+
+  --card-bg: rgba(255,255,255,.84);
+  --card-brd: rgba(15,23,42,.10);
+  --txt: #0f172a;
+  --muted: rgba(15,23,42,.68);
+
+  --header-h: 72px; /* AJUSTA si tu topbar es más alto/bajo */
+}
+
+/* fondo continuo */
+html, body{ background: var(--page-bg); }
+body{ color: var(--txt); }
+
+/* mata el “se corre pa’ la derecha” */
+html, body{ overflow-x: clip; }
+body{ overflow-x: hidden; }
+img, video, iframe, svg{ max-width:100%; height:auto; display:block; }
+*{ min-width:0; }
+
+/* si alguna sección mete fondo propio → lo apagamos */
+section{ background: transparent !important; }
+
+/* scroll que te “lleva al próximo punto” */
+html{
+  scroll-padding-top: calc(var(--header-h) + 12px);
+  scroll-snap-type: y proximity; /* PC: menos cargante */
+}
+@media (pointer: coarse){
+  html{ scroll-snap-type: y mandatory; } /* móvil: más “salto” */
+}
+.snap{
+  scroll-snap-align: start;
+  scroll-margin-top: calc(var(--header-h) + 12px);
+}
+
   </style>
 
   <script>
@@ -3497,6 +3542,7 @@ h1,h2,h3,p,li,a,span,strong,small{
 </script>
 </body>
 </html>
+
 
 
 
