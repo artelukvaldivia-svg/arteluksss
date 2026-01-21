@@ -1375,6 +1375,19 @@
 }
 
 /* ===== Expo media: cuadrado y sin deformaciones (img + video) ===== */
+    /* ✅ FIX VIDEO: IMG + VIDEO “encima” (no apilados) */
+.expo-photo.is-video{ position:relative; }
+
+.expo-photo.is-video .expo-main-img,
+.expo-photo.is-video .expo-main-video{
+  position:absolute;
+  inset:0;
+}
+
+/* ✅ Por defecto: mostrar video, ocultar imagen fallback */
+.expo-photo.is-video .expo-main-img{ display:none; }
+.expo-photo.is-video .expo-main-video{ display:block; }
+
 .expo-photo{
   aspect-ratio: 1 / 1;
   width: 100%;
@@ -2226,10 +2239,12 @@ h1,h2,h3,p,li,a,span,strong,small{
 
   <!-- Video principal -->
   <video class="expo-main expo-main-video"
-         autoplay muted loop playsinline preload="metadata">
+         autoplay muted loop playsinline preload="metadata"
+         poster="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg">
     <source src="img/exposision-biblioteca.mp4" type="video/mp4">
   </video>
-</div> 
+</div>
+
             <div class="expo-thumbs" aria-label="Galería Biblioteca Municipal">
               <button class="expo-thumb" type="button"
         data-expo-thumb
@@ -2237,12 +2252,19 @@ h1,h2,h3,p,li,a,span,strong,small{
         data-alt="Biblioteca Municipal de Valdivia (video)">
   <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Video" loading="lazy" decoding="async">
               </button>
-              <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" data-alt="Biblioteca 1">
-                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 1" loading="lazy" decoding="async">
-              </button>
-              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" data-alt="Biblioteca 2">
-                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 2" loading="lazy" decoding="async">
-              </button>
+             <button class="expo-thumb is-active" type="button"
+        data-expo-thumb
+        data-src="img/exposision-biblioteca.mp4"
+        data-alt="Biblioteca Municipal de Valdivia (video)">
+  <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Video" loading="lazy" decoding="async">
+</button>
+
+<button class="expo-thumb" type="button" data-expo-thumb
+        data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
+        data-alt="Biblioteca 1">
+  <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 1" loading="lazy" decoding="async">
+</button>
+
               <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" data-alt="Biblioteca 3">
                 <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 3" loading="lazy" decoding="async">
               </button>
@@ -3310,6 +3332,7 @@ h1,h2,h3,p,li,a,span,strong,small{
 </script>
 </body>
 </html>
+
 
 
 
