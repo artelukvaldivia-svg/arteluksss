@@ -1286,10 +1286,8 @@
 
 
 /* =========================================================
-   EXPOSICIONES (PREMIUM / MONOCROMO / SIN MULTICOLOR)
-   Reemplaza el bloque viejo completo por este
+   EXPOSICIONES — LISTA VERTICAL SIMÉTRICA (8 BLOQUES)
 ========================================================= */
-
 :root{
   --expo-ink:#0b1220;
   --expo-muted:#5b677a;
@@ -1297,15 +1295,11 @@
   --expo-soft:#f7f9fc;
   --expo-paper:#ffffff;
   --expo-shadow:0 18px 50px rgba(15,23,42,.12);
-
-  /* acento premium (muy sutil) */
   --expo-accent:#c8a45d;   /* dorado suave */
-  --expo-accent2:#2563eb;  /* azul marca, mínimo */
 }
 
 /* caja contenedora */
-.expo-slider{
-  position:relative;
+.expo-wrap{
   background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
   border:1px solid var(--expo-border);
   border-radius:24px;
@@ -1314,11 +1308,7 @@
 }
 
 /* head */
-.expo-slider-head{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap:14px;
+.expo-wrap-head{
   padding:18px 18px 14px;
   border-bottom:1px solid rgba(15,23,42,.08);
   background:
@@ -1326,75 +1316,29 @@
     radial-gradient(620px 240px at 92% 10%, rgba(37,99,235,.08), transparent 60%),
     #fff;
 }
-
-.expo-title-mini{
-  display:flex;
-  flex-direction:column;
-  gap:4px;
-  line-height:1.2;
-}
-
-.expo-title-mini strong{
+.expo-wrap-head strong{
   font-family:"Playfair Display",serif;
   font-size:16px;
   letter-spacing:.2px;
   color:var(--expo-ink);
 }
-
-.expo-title-mini small{
+.expo-wrap-head small{
+  display:block;
+  margin-top:4px;
   color:var(--expo-muted);
   font-size:12.5px;
 }
 
-/* botones flecha */
-.expo-controls{
+/* lista vertical */
+.expo-stack{
   display:flex;
-  gap:10px;
-  align-items:center;
-}
-
-.expo-btn{
-  width:44px;
-  height:44px;
-  border-radius:999px;
-  border:1px solid rgba(15,23,42,.16);
-  background:linear-gradient(180deg,#fff,#f4f6fb);
-  box-shadow:0 10px 22px rgba(15,23,42,.10);
-  cursor:pointer;
-  font-weight:900;
-  color:#0f172a;
-  transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
-}
-
-.expo-btn:hover{
-  transform:translateY(-1px);
-  box-shadow:0 14px 28px rgba(15,23,42,.14);
-}
-
-.expo-btn:active{ transform:translateY(0) scale(.98); }
-.expo-btn:disabled{ opacity:.45; cursor:not-allowed; box-shadow:none; }
-
-/* track */
-.expo-track{
-  display:flex;
+  flex-direction:column;
   gap:18px;
   padding:18px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;
-  -webkit-overflow-scrolling:touch;
 }
 
-.expo-track::-webkit-scrollbar{ height:10px; }
-.expo-track::-webkit-scrollbar-thumb{
-  background:rgba(15,23,42,.16);
-  border-radius:999px;
-}
-
-/* slide card */
-.expo-slide{
-  scroll-snap-align:start;
-  flex:0 0 86%;
+/* item: MISMO FORMATO PARA LAS 8 */
+.expo-item{
   background:var(--expo-paper);
   border:1px solid rgba(15,23,42,.10);
   border-radius:22px;
@@ -1403,13 +1347,12 @@
 
   display:grid;
   grid-template-columns:1.25fr 1fr;
-  min-height:340px;
+  min-height:360px; /* simetría visual */
 }
 
 @media (max-width:980px){
-  .expo-slide{
+  .expo-item{
     grid-template-columns:1fr;
-    flex-basis:92%;
     min-height:auto;
   }
 }
@@ -1425,7 +1368,10 @@
 }
 
 @media (max-width:980px){
-  .expo-media{ border-right:none; border-bottom:1px solid rgba(15,23,42,.06); }
+  .expo-media{
+    border-right:none;
+    border-bottom:1px solid rgba(15,23,42,.06);
+  }
 }
 
 .expo-photo{
@@ -1445,7 +1391,7 @@
   transform:scale(1.01);
 }
 
-/* thumbs */
+/* thumbs: mismo alto/anchos siempre */
 .expo-thumbs{
   margin-top:12px;
   display:flex;
@@ -1477,9 +1423,9 @@
   height:100%;
   object-fit:cover;
   display:block;
-  filter:saturate(.88) contrast(1.02);
-  transition:transform .18s ease, filter .18s ease, opacity .18s ease;
   opacity:.85;
+  transition:transform .18s ease, opacity .18s ease, filter .18s ease;
+  filter:saturate(.9) contrast(1.02);
 }
 
 .expo-thumb:hover img{
@@ -1537,10 +1483,9 @@
   color:#263244;
   font-size:.95rem;
 }
-
 .expo-details li{ margin:6px 0; }
 
-/* tags (sobrias) */
+/* tags sobrios */
 .expo-tags{
   display:flex;
   gap:8px;
@@ -1557,6 +1502,24 @@
   font-size:.86rem;
   font-weight:800;
 }
+
+/* botones: simetría */
+.expo-cta{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+.expo-cta .btn{
+  min-width:160px;
+  justify-content:center;
+}
+@media (max-width:520px){
+  .expo-cta .btn{
+    width:100%;
+  }
+}
+
 /* =========================
    FIX overflow móvil (rápido)
    ========================= */
@@ -2186,28 +2149,19 @@ h1,h2,h3,p,li,a,span,strong,small{
       </p>
     </div>
 
-    <div class="expo-slider reveal" data-slider="expo">
-      <div class="expo-slider-head">
-        <div class="expo-title-mini">
-          <strong>Galería de exposiciones</strong>
-          <small>Desliza o usa flechas · cada tarjeta trae historia + fotos</small>
-        </div>
-
-        <div class="expo-controls">
-          <button class="expo-btn" type="button" data-expo-prev aria-label="Anterior">‹</button>
-          <button class="expo-btn" type="button" data-expo-next aria-label="Siguiente">›</button>
-        </div>
+    <div class="expo-wrap reveal">
+      <div class="expo-wrap-head">
+        <strong>Galería de exposiciones</strong>
+        <small>8 exposiciones · todas con fotos + texto · ordenadas hacia abajo</small>
       </div>
 
-      <div class="expo-track" id="expoTrack">
+      <div class="expo-stack">
+
         <!-- EXPO 01 -->
-        <article class="expo-slide">
+        <article class="expo-item">
           <div class="expo-media">
             <div class="expo-photo">
-              <img class="expo-main"
-                   src="img/Exposision1.jpg"
-                   alt="Barco Neptuno - Exposición final Arteluk"
-                   loading="lazy" decoding="async">
+              <img class="expo-main" src="img/Exposision1.jpg" alt="Barco Neptuno - El Vuelo de Alaska" loading="lazy" decoding="async">
             </div>
 
             <div class="expo-thumbs" aria-label="Galería Barco Neptuno">
@@ -2238,25 +2192,47 @@ h1,h2,h3,p,li,a,span,strong,small{
             <p>
               Exposición final de arteterapia y acrílicos llamada <strong>“El Vuelo de Alaska”</strong>.
               Un cierre emotivo donde los niños muestran su proceso, su valentía y su crecimiento.
-              Realizamos este Evento de 4 horas abordo del barco neptuno, navegando el hermoso rio de valdivia
-              sin duda una experiencia inolvidable
+              Realizamos este evento de 4 horas a bordo del barco Neptuno, navegando el hermoso río de Valdivia.
             </p>
-            </ul>
+
             <div class="expo-tags">
               <span class="tag">Arteterapia</span>
               <span class="tag">Cierre anual</span>
             </div>
+
+            <div class="expo-cta">
+              <button class="btn ghost expo-open" type="button">Ver foto en grande</button>
+              <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 01 - Quiero info">Quiero info</a>
+            </div>
           </div>
         </article>
 
-        <!-- EXPO 02 -->
-        <article class="expo-slide">
+        <!-- EXPO 02 (si no tienes 6 fotos, se repite la misma para mantener simetría) -->
+        <article class="expo-item">
           <div class="expo-media">
             <div class="expo-photo">
-              <img class="expo-main"
-                   src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
-                   alt="Exposición Biblioteca Municipal de Valdivia"
-                   loading="lazy" decoding="async">
+              <img class="expo-main" src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Biblioteca Municipal de Valdivia" loading="lazy" decoding="async">
+            </div>
+
+            <div class="expo-thumbs" aria-label="Galería Biblioteca Municipal">
+              <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" data-alt="Biblioteca 1">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 1" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" data-alt="Biblioteca 2">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 2" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" data-alt="Biblioteca 3">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 3" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" data-alt="Biblioteca 4">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 4" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" data-alt="Biblioteca 5">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 5" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" data-alt="Biblioteca 6">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 6" loading="lazy" decoding="async">
+              </button>
             </div>
           </div>
 
@@ -2272,22 +2248,46 @@ h1,h2,h3,p,li,a,span,strong,small{
               <li><strong>Obras:</strong> Pintura y acuarela</li>
               <li><strong>Plus:</strong> Actividad comunitaria abierta</li>
             </ul>
+
             <div class="expo-tags">
               <span class="tag">Comunidad</span>
               <span class="tag">Niños</span>
               <span class="tag">Pintura + acuarela</span>
             </div>
+
+            <div class="expo-cta">
+              <button class="btn ghost expo-open" type="button">Ver foto en grande</button>
+              <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 02 - Quiero info">Quiero info</a>
+            </div>
           </div>
         </article>
 
         <!-- EXPO 03 -->
-        <article class="expo-slide">
+        <article class="expo-item">
           <div class="expo-media">
             <div class="expo-photo">
-              <img class="expo-main"
-                   src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg"
-                   alt="Universidad Santo Tomás + Galería de Arte"
-                   loading="lazy" decoding="async">
+              <img class="expo-main" src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg" alt="Universidad Santo Tomás + Galería de Arte" loading="lazy" decoding="async">
+            </div>
+
+            <div class="expo-thumbs" aria-label="Galería Universidad Santo Tomás">
+              <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg" data-alt="UST 1">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg" alt="Miniatura 1" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg" data-alt="UST 2">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg" alt="Miniatura 2" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg" data-alt="UST 3">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg" alt="Miniatura 3" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg" data-alt="UST 4">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg" alt="Miniatura 4" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg" data-alt="UST 5">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg" alt="Miniatura 5" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg" data-alt="UST 6">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.11.53 PM.jpeg" alt="Miniatura 6" loading="lazy" decoding="async">
+              </button>
             </div>
           </div>
 
@@ -2303,22 +2303,46 @@ h1,h2,h3,p,li,a,span,strong,small{
               <li><strong>Artista:</strong> Mary Quinteros</li>
               <li><strong>Continuidad:</strong> Exposición infantil posterior</li>
             </ul>
+
             <div class="expo-tags">
               <span class="tag">Galería</span>
               <span class="tag">Mary Quinteros</span>
               <span class="tag">Exposición infantil</span>
             </div>
+
+            <div class="expo-cta">
+              <button class="btn ghost expo-open" type="button">Ver foto en grande</button>
+              <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 03 - Quiero info">Quiero info</a>
+            </div>
           </div>
         </article>
 
         <!-- EXPO 04 -->
-        <article class="expo-slide">
+        <article class="expo-item">
           <div class="expo-media">
             <div class="expo-photo">
-              <img class="expo-main"
-                   src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg"
-                   alt="Espacio Fluvial"
-                   loading="lazy" decoding="async">
+              <img class="expo-main" src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg" alt="Espacio Fluvial" loading="lazy" decoding="async">
+            </div>
+
+            <div class="expo-thumbs" aria-label="Galería Espacio Fluvial">
+              <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg" data-alt="Fluvial 1">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg" alt="Miniatura 1" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg" data-alt="Fluvial 2">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg" alt="Miniatura 2" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg" data-alt="Fluvial 3">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg" alt="Miniatura 3" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg" data-alt="Fluvial 4">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg" alt="Miniatura 4" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg" data-alt="Fluvial 5">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg" alt="Miniatura 5" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg" data-alt="Fluvial 6">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.13.09 PM.jpeg" alt="Miniatura 6" loading="lazy" decoding="async">
+              </button>
             </div>
           </div>
 
@@ -2334,22 +2358,46 @@ h1,h2,h3,p,li,a,span,strong,small{
               <li><strong>Enfoque:</strong> Comunidad + conversación</li>
               <li><strong>Ambiente:</strong> Espacio fluvial de Valdivia</li>
             </ul>
+
             <div class="expo-tags">
               <span class="tag">Cultura</span>
               <span class="tag">Cóctel</span>
               <span class="tag">Ciudadanía</span>
             </div>
+
+            <div class="expo-cta">
+              <button class="btn ghost expo-open" type="button">Ver foto en grande</button>
+              <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 04 - Quiero info">Quiero info</a>
+            </div>
           </div>
         </article>
 
         <!-- EXPO 05 -->
-        <article class="expo-slide">
+        <article class="expo-item">
           <div class="expo-media">
             <div class="expo-photo">
-              <img class="expo-main"
-                   src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg"
-                   alt="Café Moro"
-                   loading="lazy" decoding="async">
+              <img class="expo-main" src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg" alt="Café Moro" loading="lazy" decoding="async">
+            </div>
+
+            <div class="expo-thumbs" aria-label="Galería Café Moro">
+              <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg" data-alt="Moro 1">
+                <img src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg" alt="Miniatura 1" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg" data-alt="Moro 2">
+                <img src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg" alt="Miniatura 2" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg" data-alt="Moro 3">
+                <img src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg" alt="Miniatura 3" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg" data-alt="Moro 4">
+                <img src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg" alt="Miniatura 4" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg" data-alt="Moro 5">
+                <img src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg" alt="Miniatura 5" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg" data-alt="Moro 6">
+                <img src="img/WhatsApp Image 2025-11-04 at 10.07.23 AM.jpeg" alt="Miniatura 6" loading="lazy" decoding="async">
+              </button>
             </div>
           </div>
 
@@ -2365,22 +2413,46 @@ h1,h2,h3,p,li,a,span,strong,small{
               <li><strong>Técnica:</strong> Óleo</li>
               <li><strong>Temática:</strong> Exposición equina</li>
             </ul>
+
             <div class="expo-tags">
               <span class="tag">Óleo</span>
               <span class="tag">15 días</span>
               <span class="tag">Muestra abierta</span>
             </div>
+
+            <div class="expo-cta">
+              <button class="btn ghost expo-open" type="button">Ver foto en grande</button>
+              <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 05 - Quiero info">Quiero info</a>
+            </div>
           </div>
         </article>
 
         <!-- EXPO 06 -->
-        <article class="expo-slide">
+        <article class="expo-item">
           <div class="expo-media">
             <div class="expo-photo">
-              <img class="expo-main"
-                   src="img/IMG_2948.jpg"
-                   alt="Exposición colectiva en centro comercial"
-                   loading="lazy" decoding="async">
+              <img class="expo-main" src="img/IMG_2948.jpg" alt="Exposición colectiva en centro comercial" loading="lazy" decoding="async">
+            </div>
+
+            <div class="expo-thumbs" aria-label="Galería Colectiva Centro Comercial">
+              <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/IMG_2948.jpg" data-alt="Colectiva 1">
+                <img src="img/IMG_2948.jpg" alt="Miniatura 1" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/IMG_2948.jpg" data-alt="Colectiva 2">
+                <img src="img/IMG_2948.jpg" alt="Miniatura 2" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/IMG_2948.jpg" data-alt="Colectiva 3">
+                <img src="img/IMG_2948.jpg" alt="Miniatura 3" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/IMG_2948.jpg" data-alt="Colectiva 4">
+                <img src="img/IMG_2948.jpg" alt="Miniatura 4" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/IMG_2948.jpg" data-alt="Colectiva 5">
+                <img src="img/IMG_2948.jpg" alt="Miniatura 5" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/IMG_2948.jpg" data-alt="Colectiva 6">
+                <img src="img/IMG_2948.jpg" alt="Miniatura 6" loading="lazy" decoding="async">
+              </button>
             </div>
           </div>
 
@@ -2396,22 +2468,46 @@ h1,h2,h3,p,li,a,span,strong,small{
               <li><strong>Objetivo:</strong> Redes y visibilidad</li>
               <li><strong>Experiencia:</strong> Vitrina real para las obras</li>
             </ul>
+
             <div class="expo-tags">
               <span class="tag">Colectiva</span>
               <span class="tag">Redes</span>
               <span class="tag">Visibilidad</span>
             </div>
+
+            <div class="expo-cta">
+              <button class="btn ghost expo-open" type="button">Ver foto en grande</button>
+              <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 06 - Quiero info">Quiero info</a>
+            </div>
           </div>
         </article>
 
         <!-- EXPO 07 -->
-        <article class="expo-slide">
+        <article class="expo-item">
           <div class="expo-media">
             <div class="expo-photo">
-              <img class="expo-main"
-                   src="img/IMG_3633.jpg"
-                   alt="Almacén Fluvial"
-                   loading="lazy" decoding="async">
+              <img class="expo-main" src="img/IMG_3633.jpg" alt="Almacén Fluvial" loading="lazy" decoding="async">
+            </div>
+
+            <div class="expo-thumbs" aria-label="Galería Almacén Fluvial">
+              <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/IMG_3633.jpg" data-alt="Almacén 1">
+                <img src="img/IMG_3633.jpg" alt="Miniatura 1" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/IMG_3633.jpg" data-alt="Almacén 2">
+                <img src="img/IMG_3633.jpg" alt="Miniatura 2" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/IMG_3633.jpg" data-alt="Almacén 3">
+                <img src="img/IMG_3633.jpg" alt="Miniatura 3" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/IMG_3633.jpg" data-alt="Almacén 4">
+                <img src="img/IMG_3633.jpg" alt="Miniatura 4" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/IMG_3633.jpg" data-alt="Almacén 5">
+                <img src="img/IMG_3633.jpg" alt="Miniatura 5" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/IMG_3633.jpg" data-alt="Almacén 6">
+                <img src="img/IMG_3633.jpg" alt="Miniatura 6" loading="lazy" decoding="async">
+              </button>
             </div>
           </div>
 
@@ -2427,22 +2523,46 @@ h1,h2,h3,p,li,a,span,strong,small{
               <li><strong>Participación:</strong> Mary Quinteros</li>
               <li><strong>Contexto:</strong> Comunidad local</li>
             </ul>
+
             <div class="expo-tags">
               <span class="tag">Colectiva</span>
               <span class="tag">Mary Quinteros</span>
               <span class="tag">Valdivia</span>
             </div>
+
+            <div class="expo-cta">
+              <button class="btn ghost expo-open" type="button">Ver foto en grande</button>
+              <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 07 - Quiero info">Quiero info</a>
+            </div>
           </div>
         </article>
 
         <!-- EXPO 08 -->
-        <article class="expo-slide">
+        <article class="expo-item">
           <div class="expo-media">
             <div class="expo-photo">
-              <img class="expo-main"
-                   src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg"
-                   alt="Momentos Arteluk"
-                   loading="lazy" decoding="async">
+              <img class="expo-main" src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" alt="Momentos Arteluk — Comunidad y proceso" loading="lazy" decoding="async">
+            </div>
+
+            <div class="expo-thumbs" aria-label="Galería Momentos Arteluk">
+              <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" data-alt="Momentos 1">
+                <img src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" alt="Miniatura 1" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" data-alt="Momentos 2">
+                <img src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" alt="Miniatura 2" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" data-alt="Momentos 3">
+                <img src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" alt="Miniatura 3" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" data-alt="Momentos 4">
+                <img src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" alt="Miniatura 4" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" data-alt="Momentos 5">
+                <img src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" alt="Miniatura 5" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" data-alt="Momentos 6">
+                <img src="img/WhatsApp Image 2025-11-04 at 10.08.29 AM.jpeg" alt="Miniatura 6" loading="lazy" decoding="async">
+              </button>
             </div>
           </div>
 
@@ -2458,18 +2578,24 @@ h1,h2,h3,p,li,a,span,strong,small{
               <li><strong>Participan:</strong> Niños, familias y equipo</li>
               <li><strong>Intención:</strong> Arte como vínculo y acompañamiento</li>
             </ul>
+
             <div class="expo-tags">
               <span class="tag">Comunidad</span>
               <span class="tag">Proceso</span>
               <span class="tag">Arteterapia</span>
             </div>
+
+            <div class="expo-cta">
+              <button class="btn ghost expo-open" type="button">Ver foto en grande</button>
+              <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 08 - Quiero info">Quiero info</a>
+            </div>
           </div>
         </article>
+
       </div>
     </div>
   </div>
 </section>
-
 
     <footer>
       <div class="container foot">
@@ -3137,98 +3263,13 @@ h1,h2,h3,p,li,a,span,strong,small{
   startAuto();
 })();
 
-
-
-    /* ===== Exposiciones Slider (flechas) ===== */
-    (function expoSlider(){
-      const track = document.getElementById('expoTrack');
-      if(!track) return;
-      const prev = document.querySelector('[data-expo-prev]');
-      const next = document.querySelector('[data-expo-next]');
-      if(!prev || !next) return;
-
-      function slideAmount(){
-        return Math.max(320, Math.floor(track.clientWidth * 0.92));
-      }
-
-      function updateButtons(){
-        const atStart = track.scrollLeft <= 4;
-        const atEnd = (track.scrollLeft + track.clientWidth) >= (track.scrollWidth - 4);
-        prev.disabled = atStart;
-        next.disabled = atEnd;
-      }
-
-      prev.addEventListener('click', ()=>{
-        track.scrollBy({ left: -slideAmount(), behavior:'smooth' });
-      });
-
-      next.addEventListener('click', ()=>{
-        track.scrollBy({ left: slideAmount(), behavior:'smooth' });
-      });
-
-      track.addEventListener('scroll', ()=> updateButtons(), { passive:true });
-      window.addEventListener('resize', updateButtons);
-      updateButtons();
-    })();
-  
-    /* ✅ Fix rutas de imágenes en hosting (Linux es case-sensitive)
-       - Intenta variantes si el src falla: .jpg/.JPG/.jpeg y path en minúsculas
-       - NO afecta imágenes externas (http/https)
-    */
-    (function imageSrcFallback(){
-      const exts = ['jpg','JPG','jpeg','JPEG','png','PNG','webp','WEBP'];
-      const isExternal = (s)=> /^https?:\/\//i.test(s) || /^data:/i.test(s) || /^blob:/i.test(s);
-      const uniq = (arr)=> Array.from(new Set(arr));
-
-      document.querySelectorAll('img').forEach(img=>{
-        const orig = img.getAttribute('src');
-        if(!orig || isExternal(orig)) return;
-
-        // Genera variantes seguras
-        const variants = [];
-        const encoded = encodeURI(orig);
-        if(encoded !== orig) variants.push(encoded);
-
-        // Lowercase del path (excepto protocolo)
-        const lowerAll = orig.split('/').map((p, i)=> i===0 ? p : p.toLowerCase()).join('/');
-        if(lowerAll !== orig) variants.push(lowerAll);
-
-        // Cambios de extensión
-        const m = orig.match(/^(.*)\.([a-zA-Z0-9]+)$/);
-        if(m){
-          const base = m[1];
-          exts.forEach(e=>{
-            const v1 = `${base}.${e}`;
-            const v2 = `${base.toLowerCase()}.${e}`;
-            if(v1 !== orig) variants.push(v1);
-            if(v2 !== orig) variants.push(v2);
-            // encoded variantes (por espacios / paréntesis)
-            variants.push(encodeURI(v1));
-            variants.push(encodeURI(v2));
-          });
-        }
-
-        const tries = uniq(variants).filter(v => v && v !== orig);
-        if(!tries.length) return;
-
-        let idx = 0;
-        img.addEventListener('error', ()=>{
-          if(idx >= tries.length) return;
-          const next = tries[idx++];
-          // evita loop por src igual
-          if(next && img.src !== next) img.src = next;
-        });
-      });
-    })();
 /* ===== Exposiciones: cambio de foto al hacer click en miniaturas ===== */
 (function expoThumbSwap(){
-  document.querySelectorAll('.expo-slide').forEach(slide=>{
-    const main = slide.querySelector('.expo-main');
+  document.querySelectorAll('.expo-item').forEach(item=>{
+    const main = item.querySelector('.expo-main');
     if(!main) return;
 
-    const thumbs = Array.from(slide.querySelectorAll('[data-expo-thumb]'));
-    if(!thumbs.length) return;
-
+    const thumbs = Array.from(item.querySelectorAll('[data-expo-thumb]'));
     thumbs.forEach(btn=>{
       btn.addEventListener('click', ()=>{
         const src = btn.getAttribute('data-src');
@@ -3243,9 +3284,11 @@ h1,h2,h3,p,li,a,span,strong,small{
   });
 })();
 
+
 </script>
 </body>
 </html>
+
 
 
 
