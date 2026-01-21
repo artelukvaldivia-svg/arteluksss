@@ -2086,65 +2086,61 @@ h1,h2,h3,p,li,a,span,strong,small{
     </section>
 
     <!-- EQUIPO -->
-    <section id="equipo" class="section team">
-  <div class="container">
-    <p class="kicker">EQUIPO</p>
-    <h2 class="team-title">Personas que hacen hogar</h2>
-    <p class="team-sub">Acompañamiento humano y artístico en cada sesión.</p>
+    
+<section id="equipo" class="equipoPro">
+  <div class="equipoPro__wrap">
+    <p class="equipoPro__kicker">EQUIPO</p>
+    <h2 class="equipoPro__title">Personas que hacen hogar</h2>
+    <p class="equipoPro__sub">Acompañamiento humano y artístico en cada sesión.</p>
 
-    <div class="team-grid">
+    <div class="equipoPro__grid">
 
-      <!-- Persona 1 -->
-      <article class="team-card">
-        <!-- OJO: aquí pon TU src actual (el mismo que ya usas) -->
-        <img class="team-photo" src="img/REEMPLAZA-ESTO.jpg" alt="Ivanya Sierra" loading="lazy" decoding="async">
+      <!-- Card 1 -->
+      <article class="equipoPro__card">
+        <!-- IMPORTANTÍSIMO: pon aquí el src REAL que tenías antes (carpeta img en minúscula) -->
+        <img class="equipoPro__photo" src="img/profesora.jpg" alt="Ivanya Sierra" loading="lazy" decoding="async">
 
-        <div class="team-body">
-          <div class="team-head">
-            <div>
-              <h3 class="team-name">Ivanya Sierra</h3>
-              <p class="team-role">Artista visual • Docente</p>
-            </div>
+        <div class="equipoPro__body">
+          <div class="equipoPro__top">
+            <h3 class="equipoPro__name">Ivanya Sierra</h3>
+            <span class="equipoPro__role">Artista visual • Docente</span>
           </div>
 
-          <ul class="team-highlights">
+          <ul class="equipoPro__bullets">
             <li>Licenciada en Arte + Profesora de Artes Visuales (UC)</li>
             <li>Inclusión, discapacidad, trabajo comunitario</li>
             <li>Acuarela y acrílico (flora, fauna, retratos)</li>
           </ul>
 
-          <details class="team-details">
+          <details class="equipoPro__details">
             <summary>Ver bio</summary>
             <p>
               Artista visual y docente, licenciada en Arte y Profesora de Artes Visuales por la Universidad Católica de Chile.
               Especializada en gestión cultural e inclusión de personas con discapacidad y trabajo comunitario.
-              Cuenta con experiencia como docente y tallerista, enseñando técnicas artísticas de forma empática y personalizada
-              a niños, jóvenes y adultos. Actualmente desarrolla su obra en acuarela y acrílico, centrada en la flora, fauna y retratos de la vida cotidiana.
+              Experiencia como docente y tallerista con enfoque empático y personalizado. Obra en acuarela y acrílico.
             </p>
           </details>
         </div>
       </article>
 
-      <!-- Persona 2 -->
-      <article class="team-card">
-        <!-- OJO: aquí pon TU src actual (el mismo que ya usas) -->
-        <img class="team-photo" src="img/REEMPLAZA-ESTO-2.jpg" alt="Paula Barros" loading="lazy" decoding="async">
+      <!-- Card 2 -->
+      <article class="equipoPro__card">
+        <!-- IMPORTANTÍSIMO: pon aquí el src REAL que tenías antes -->
+        <img class="equipoPro__photo" src="img/equipo (2).jpg" alt="Paula Barros" loading="lazy" decoding="async">
 
-        <div class="team-body">
-          <div class="team-head">
-            <div>
-              <h3 class="team-name">Paula Barros</h3>
-              <p class="team-role">Artes Musicales y Sonoras (UACh)</p>
-            </div>
+        <div class="equipoPro__body">
+          <div class="equipoPro__top">
+            <h3 class="equipoPro__name">Paula Barros</h3>
+            <span class="equipoPro__role">Artes Musicales y Sonoras (UACh)</span>
           </div>
 
-          <ul class="team-highlights">
+          <ul class="equipoPro__bullets">
             <li>Fortaleza en canto; explora piano y guitarra</li>
             <li>Interés por pintura y artes visuales</li>
             <li>Muy buena afinidad con niños</li>
           </ul>
 
-          <details class="team-details">
+          <details class="equipoPro__details">
             <summary>Ver bio</summary>
             <p>
               Estudiante de Artes Musicales y Sonoras (UACh). Fortalezas en canto; explora piano y guitarra.
@@ -2156,6 +2152,112 @@ h1,h2,h3,p,li,a,span,strong,small{
 
     </div>
   </div>
+
+  <style>
+    /* ===== Equipo PRO (scoped, no pelea con tu CSS global) ===== */
+    #equipo.equipoPro{ padding: 48px 0; }
+    #equipo .equipoPro__wrap{ max-width: 980px; margin: 0 auto; padding: 0 18px; }
+
+    #equipo .equipoPro__kicker{
+      letter-spacing: .14em; font-weight: 800; font-size: .72rem;
+      opacity: .7; margin: 0 0 .35rem;
+    }
+    #equipo .equipoPro__title{ margin: 0; }
+    #equipo .equipoPro__sub{ margin: .35rem 0 1.2rem; opacity: .75; }
+
+    #equipo .equipoPro__grid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+    @media (max-width: 900px){
+      #equipo .equipoPro__grid{ grid-template-columns: 1fr; }
+    }
+
+    #equipo .equipoPro__card{
+      display: flex;
+      gap: 14px;
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+      overflow: hidden;
+    }
+
+    #equipo .equipoPro__photo{
+      width: 180px;
+      min-width: 180px;
+      height: 170px;
+      object-fit: cover;
+      display: block;
+    }
+
+    #equipo .equipoPro__body{ padding: 14px 14px 12px; flex: 1; }
+
+    #equipo .equipoPro__top{ display:flex; flex-wrap:wrap; gap:8px 10px; align-items:center; }
+    #equipo .equipoPro__name{ margin: 0; font-size: 1.05rem; }
+    #equipo .equipoPro__role{
+      font-size: .82rem; opacity: .8;
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,.55);
+    }
+
+    #equipo .equipoPro__bullets{
+      margin: 10px 0 10px;
+      padding: 0;
+      list-style: none;
+      opacity: .9;
+    }
+    #equipo .equipoPro__bullets li{
+      margin: 7px 0;
+      line-height: 1.25rem;
+      padding-left: 14px;
+      position: relative;
+    }
+    #equipo .equipoPro__bullets li::before{
+      content: "•";
+      position: absolute;
+      left: 0;
+      opacity: .7;
+    }
+
+    #equipo .equipoPro__details{
+      margin-top: 8px;
+      border-top: 1px solid rgba(0,0,0,.06);
+      padding-top: 10px;
+    }
+    #equipo .equipoPro__details summary{
+      cursor: pointer;
+      font-weight: 800;
+      user-select: none;
+      list-style: none;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    #equipo .equipoPro__details summary::-webkit-details-marker{ display:none; }
+    #equipo .equipoPro__details summary::after{ content:"▾"; opacity:.7; }
+    #equipo .equipoPro__details[open] summary::after{ content:"▴"; }
+
+    #equipo .equipoPro__details p{
+      margin: 10px 0 0;
+      opacity: .85;
+      line-height: 1.35rem;
+    }
+
+    @media (max-width: 900px){
+      #equipo .equipoPro__card{ flex-direction: column; }
+      #equipo .equipoPro__photo{
+        width: 100%;
+        min-width: 0;
+        height: 220px;
+      }
+    }
+  </style>
 </section>
 
 
@@ -3319,6 +3421,7 @@ h1,h2,h3,p,li,a,span,strong,small{
 </script>
 </body>
 </html>
+
 
 
 
