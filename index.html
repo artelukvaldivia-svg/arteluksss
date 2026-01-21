@@ -1364,20 +1364,24 @@
 
 /* panel foto */
 .expo-media{
+  grid-area:media; /* ✅ va a la derecha / abajo según grid-areas */
+
   padding:16px;
   background:
     radial-gradient(560px 220px at 12% 0%, rgba(200,164,93,.10), transparent 60%),
     radial-gradient(520px 220px at 90% 12%, rgba(37,99,235,.07), transparent 60%),
     var(--expo-soft);
-  border-right:1px solid rgba(15,23,42,.06);
+
+  border-left:1px solid rgba(15,23,42,.06);  /* ✅ ahora el separador va al lado izquierdo */
 }
 
 @media (max-width:980px){
   .expo-media{
-    border-right:none;
-    border-bottom:1px solid rgba(15,23,42,.06);
+    border-left:none;
+    border-top:1px solid rgba(15,23,42,.06); /* ✅ en móvil separa arriba del bloque fotos */
   }
 }
+
 
 /* ===== Expo media: cuadrado y sin deformaciones (img + video) ===== */
     /* ✅ FIX VIDEO: IMG + VIDEO “encima” (no apilados) */
@@ -1473,6 +1477,7 @@
 
 /* panel info */
 .expo-info{
+  grid-area:info; /* ✅ texto primero */
   padding:18px 18px 20px;
   display:flex;
   flex-direction:column;
@@ -3291,4 +3296,5 @@ h1,h2,h3,p,li,a,span,strong,small{
 </script>
 </body>
 </html>
+
 
