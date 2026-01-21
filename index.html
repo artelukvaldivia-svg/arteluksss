@@ -1346,16 +1346,21 @@
   overflow:hidden;
 
   display:grid;
-  grid-template-columns:1.25fr 1fr;
-  min-height:360px; /* simetría visual */
+  grid-template-columns:1fr 1.25fr;           /* ✅ texto (izq) | fotos (der) */
+  grid-template-areas:"info media";           /* ✅ orden visual */
+  min-height:360px;                           /* simetría visual */
 }
 
 @media (max-width:980px){
   .expo-item{
     grid-template-columns:1fr;
+    grid-template-areas:
+      "info"
+      "media";                                /* ✅ en móvil: texto arriba, fotos abajo */
     min-height:auto;
   }
 }
+
 
 /* panel foto */
 .expo-media{
@@ -3286,3 +3291,4 @@ h1,h2,h3,p,li,a,span,strong,small{
 </script>
 </body>
 </html>
+
