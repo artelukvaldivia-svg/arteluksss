@@ -1385,8 +1385,14 @@
 }
 
 /* ✅ Por defecto: mostrar video, ocultar imagen fallback */
-.expo-photo.is-video .expo-main-img{ display:none; }
-.expo-photo.is-video .expo-main-video{ display:block; }
+/* Estado base (sin .show-video): muestra imagen fallback */
+.expo-photo.is-video .expo-main-img{ display:block; }
+.expo-photo.is-video .expo-main-video{ display:none; }
+
+/* Estado video: muestra video, oculta imagen */
+.expo-photo.is-video.show-video .expo-main-img{ display:none; }
+.expo-photo.is-video.show-video .expo-main-video{ display:block; }
+
 
 .expo-photo{
   aspect-ratio: 1 / 1;
@@ -1596,9 +1602,6 @@ h1,h2,h3,p,li,a,span,strong,small{
 }
 
 /* Si estás en modo video, no mostrar la imagen fallback */
-.expo-photo.show-video .expo-main-img{
-  display:none;
-}
 
 /* Placeholders invisibles pero ocupando espacio (simetría) */
 .expo-thumb.is-placeholder{
@@ -2251,55 +2254,52 @@ h1,h2,h3,p,li,a,span,strong,small{
           </div>
         </article>
 
-        <!-- EXPO 02 (si no tienes 6 fotos, se repite la misma para mantener simetría) -->
+               <!-- EXPO 02 -->
         <article class="expo-item">
           <div class="expo-media">
-         <div class="expo-photo is-video show-video reel-letterbox">
-  <!-- Video principal (se ve completo tipo Reel + barras laterales) -->
-  <video class="expo-main expo-main-video"
-         controls
-         playsinline
-         preload="metadata"
-         poster="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg">
-    <source src="img/exposision-biblioteca.mp4" type="video/mp4">
-  </video>
+            <div class="expo-photo is-video show-video reel-letterbox">
+              <!-- Video principal (se ve completo tipo Reel + barras) -->
+              <video class="expo-main expo-main-video"
+                     controls
+                     playsinline
+                     preload="metadata"
+                     poster="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg">
+                <source src="img/exposision-biblioteca.mp4" type="video/mp4">
+              </video>
 
-  <!-- Fallback imagen (por si el video falla). Queda oculto en modo video -->
-  <img class="expo-main expo-main-img"
-       src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
-       alt="Biblioteca Municipal de Valdivia"
-       loading="lazy" decoding="async">
-</div>
+              <!-- Fallback imagen (si el video falla) -->
+              <img class="expo-main expo-main-img"
+                   src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
+                   alt="Biblioteca Municipal de Valdivia"
+                   loading="lazy" decoding="async">
+            </div>
 
-<div class="expo-thumbs" aria-label="Galería Biblioteca Municipal">
-  <!-- VIDEO (activo) -->
-  <button class="expo-thumb is-active" type="button"
-          data-expo-thumb
-          data-src="img/exposision-biblioteca.mp4"
-          data-alt="Biblioteca Municipal de Valdivia (video)">
-    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Video" loading="lazy" decoding="async">
-  </button>
+            <div class="expo-thumbs" aria-label="Galería Biblioteca Municipal">
+              <!-- VIDEO (activo) -->
+              <button class="expo-thumb is-active" type="button"
+                      data-expo-thumb
+                      data-src="img/exposision-biblioteca.mp4"
+                      data-alt="Biblioteca Municipal de Valdivia (video)">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Video" loading="lazy" decoding="async">
+              </button>
 
-  <!-- PLACEHOLDERS invisibles (mantienen simetría sin fotos) -->
-  <button class="expo-thumb is-placeholder" type="button" disabled aria-hidden="true" tabindex="-1">
-    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="" loading="lazy" decoding="async">
-  </button>
-  <button class="expo-thumb is-placeholder" type="button" disabled aria-hidden="true" tabindex="-1">
-    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="" loading="lazy" decoding="async">
-  </button>
-  <button class="expo-thumb is-placeholder" type="button" disabled aria-hidden="true" tabindex="-1">
-    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="" loading="lazy" decoding="async">
-  </button>
-  <button class="expo-thumb is-placeholder" type="button" disabled aria-hidden="true" tabindex="-1">
-    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="" loading="lazy" decoding="async">
-  </button>
-  <button class="expo-thumb is-placeholder" type="button" disabled aria-hidden="true" tabindex="-1">
-    <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="" loading="lazy" decoding="async">
-  </button>
-</div>
-
-</div>
-
+              <!-- PLACEHOLDERS invisibles (mantienen simetría) -->
+              <button class="expo-thumb is-placeholder" type="button" disabled aria-hidden="true" tabindex="-1">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb is-placeholder" type="button" disabled aria-hidden="true" tabindex="-1">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb is-placeholder" type="button" disabled aria-hidden="true" tabindex="-1">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb is-placeholder" type="button" disabled aria-hidden="true" tabindex="-1">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="" loading="lazy" decoding="async">
+              </button>
+              <button class="expo-thumb is-placeholder" type="button" disabled aria-hidden="true" tabindex="-1">
+                <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="" loading="lazy" decoding="async">
+              </button>
+            </div>
           </div>
 
           <div class="expo-info">
@@ -2327,6 +2327,7 @@ h1,h2,h3,p,li,a,span,strong,small{
             </div>
           </div>
         </article>
+
 
         <!-- EXPO 03 -->
         <article class="expo-item">
@@ -3396,6 +3397,7 @@ h1,h2,h3,p,li,a,span,strong,small{
 </script>
 </body>
 </html>
+
 
 
 
