@@ -67,7 +67,9 @@
       --gold1:#fbbf24;
       --gold2:#f59e0b;
       --gold3:#d97706;
-      --goldSoft:#fff7ed;
+      --goldSoft:#fff7ed;  
+);
+
     }
 
     *{ box-sizing:border-box }
@@ -136,8 +138,8 @@
       scroll-margin-top: calc(var(--navH) + 12px);
       position:relative;
       z-index:1;
-      content-visibility:auto;
-      contain-intrinsic-size: 900px;
+      content-visibility:visible;
+      contain-intrinsic-size: auto;
     }
 
     /* ===== PERF / ACCESIBILIDAD ===== */
@@ -1147,7 +1149,8 @@
 .hero-slider{
   --heroSlides: 3; /* fallback */
   position:relative;
-  height:calc(100vh - var(--navH));
+  height:calc(100svh - var(--navH));
+  height:calc(100dvh - var(--navH));
   min-height:620px;
   overflow:hidden;
 
@@ -1159,7 +1162,8 @@
 @media (max-width:880px){
   .hero-slider{
     height:auto;
-    min-height:calc(100vh - var(--navH));
+    min-height:calc(100svh - var(--navH));
+    min-height:calc(100dvh - var(--navH));
   }
 }
 
@@ -2225,7 +2229,6 @@ h1,h2,h3,p,li,a,span,strong,small{
               <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Exposision6.jpg" data-alt="Barco Neptuno 6">
                 <img src="img/Exposision6.jpg" alt="Miniatura 6" loading="lazy" decoding="async">
               </button>
-              </button>
             </div>
           </div>
 
@@ -3243,6 +3246,7 @@ h1,h2,h3,p,li,a,span,strong,small{
 </script>
 </body>
 </html>
+
 
 
 
