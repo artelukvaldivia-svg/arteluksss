@@ -2217,20 +2217,26 @@ h1,h2,h3,p,li,a,span,strong,small{
         <!-- EXPO 02 (si no tienes 6 fotos, se repite la misma para mantener simetría) -->
         <article class="expo-item">
           <div class="expo-media">
-            <div class="expo-photo">
-            <video class="expo-main" controls preload="metadata" playsinline>
-            <video class="expo-main"
-       autoplay
-       muted
-       loop
-       playsinline
-       preload="metadata"
-       aria-label="Biblioteca Municipal de Valdivia">
-  <source src="/img/exposision-biblioteca.mp4" type="video/mp4">
-</video>
-            </div>
+           <div class="expo-photo is-video">
+  <!-- Imagen fallback (cuando elijan miniaturas de fotos) -->
+  <img class="expo-main expo-main-img"
+       src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg"
+       alt="Biblioteca Municipal de Valdivia"
+       loading="lazy" decoding="async">
 
+  <!-- Video principal -->
+  <video class="expo-main expo-main-video"
+         autoplay muted loop playsinline preload="metadata">
+    <source src="img/exposision-biblioteca.mp4" type="video/mp4">
+  </video>
+</div> 
             <div class="expo-thumbs" aria-label="Galería Biblioteca Municipal">
+              <button class="expo-thumb" type="button"
+        data-expo-thumb
+        data-src="img/exposision-biblioteca.mp4"
+        data-alt="Biblioteca Municipal de Valdivia (video)">
+  <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Video" loading="lazy" decoding="async">
+              </button>
               <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" data-alt="Biblioteca 1">
                 <img src="img/WhatsApp Image 2025-11-04 at 4.10.22 PM.jpeg" alt="Miniatura 1" loading="lazy" decoding="async">
               </button>
@@ -3304,6 +3310,7 @@ h1,h2,h3,p,li,a,span,strong,small{
 </script>
 </body>
 </html>
+
 
 
 
