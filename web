@@ -2211,7 +2211,10 @@ h1,h2,h3,p,li,a,span,strong,small{
         <article class="expo-item">
           <div class="expo-media">
             <div class="expo-photo">
-              <img class="expo-main" src="img/exposision-biblioteca.mp4" alt="Biblioteca Municipal de Valdivia" loading="lazy" decoding="async">
+            <video class="expo-main" controls preload="metadata" playsinline>
+  <source src="img/exposision-biblioteca.mp4" type="video/mp4">
+  Tu navegador no soporta video.
+           </video>
             </div>
 
             <div class="expo-thumbs" aria-label="Galería Biblioteca Municipal">
@@ -3288,6 +3291,7 @@ h1,h2,h3,p,li,a,span,strong,small{
 </script>
 </body>
 </html>
+
 
 
 
