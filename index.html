@@ -73,6 +73,7 @@
     *{ box-sizing:border-box }
 
     html,body{
+      touch-action: pan-y;
       margin:0;
       padding:0;
     }
@@ -964,12 +965,14 @@ h1.hero-title{ font-family:inherit; margin:0 0 10px; line-height:1.06; }
     }
 
     .modal-body{
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
       padding:18px 20px 20px;
       background:#f9fbff;
       max-height:70vh;
       overflow:auto;
     }
-
+   
     .close{
       border:none;
       background:#eef4ff;
@@ -1124,7 +1127,7 @@ h1.hero-title{ font-family:inherit; margin:0 0 10px; line-height:1.06; }
 
 /* ✅ variable de cantidad de slides (JS la setea) */
 .hero-slider{
-  --heroSlides: 3; /* fallback */
+  --heroSlides: 4; /* fallback */
   position:relative;
   height:calc(100svh - var(--navH));
   height:calc(100dvh - var(--navH));
@@ -1260,7 +1263,14 @@ h1.hero-title{ font-family:inherit; margin:0 0 10px; line-height:1.06; }
   box-shadow:none;
   cursor:not-allowed;
 }
-
+    
+/* ===== LOCK SCROLL CUANDO HAY MODAL (iPhone friendly) ===== */
+body.modal-open{
+  position:fixed;
+  left:0; right:0;
+  width:100%;
+  overflow:hidden;
+}
 
 /* =========================================================
    EXPOSICIONES — LISTA VERTICAL SIMÉTRICA (8 BLOQUES)
@@ -1405,6 +1415,7 @@ h1.hero-title{ font-family:inherit; margin:0 0 10px; line-height:1.06; }
 }
 /* thumbs: mismo alto/anchos siempre */
 .expo-thumbs{
+  touch-action: pan-x;
   margin-top:12px;
   display:flex;
   gap:10px;
@@ -1646,27 +1657,25 @@ h1,h2,h3,p,li,a,span,strong,small{
   <span class="hero-brand">Arteluk</span>
   <span class="hero-bottom">Academia de Arteterapia en Valdivia</span>
 </h1>
-                  <p class="lead hero-sub text-intro">
-                    En Arteluk acompañamos procesos emocionales a través del arte.
-                    Un espacio seguro donde tus hijos pueden expresarse, regular sus emociones
-                    y reconectar con su creatividad, mientras tú tienes la tranquilidad
-                    de dejarlos en buenas manos.
-                  </p>
+                 <p class="lead hero-sub text-intro">
+  Espacio seguro donde niños, jóvenes y adultos pueden expresar lo que sienten
+  a través del arte y encontrar un lugar de contención emocional.
+</p>
+
                   <ul class="pill-list hero-badges">
                     <li>+5 años de experiencia en arteterapia y educación.</li>
                     <li>Metodología propia con foco en emociones y autoestima.</li>
                     <li>Grupos pequeños y acompañamiento cercano.</li>        
                   </ul>
                   <div class="hero-ctas">
-                    <a class="btn primary" href="#servicios">Ver talleres disponibles</a>
-                    <a class="btn ghost track-contact" href="#contacto"
-                       data-contact-name="CTA Hero - Ir al formulario">
-                      Ir al formulario
-                    </a>
-                    <span class="hero-note">
-                      Respuesta rápida por WhatsApp después del formulario.
-                    </span>
-                  </div>
+  <a class="btn gold" href="#exposiciones">
+    ¿Quieres que tu hijo participe en un evento memorable este año?
+  </a>
+  <a class="btn gold" href="#servicios">
+    Conoce nuestros talleres de arte
+  </a>
+  <span class="hero-note">Baja y mira todo lo que hacemos 👇</span>
+</div>
                   <button class="link-button open-story" type="button"
                           data-title="Trayectoria de Arteluk" data-content="historia-larga">
                     Leer historia completa <span aria-hidden="true">⟶</span>
@@ -1792,13 +1801,47 @@ h1,h2,h3,p,li,a,span,strong,small{
             </div>
           </section>
         </div>
+<!-- SLIDE 4: EVENTOS MEMORABLES -->
+<section class="hero-slide" aria-label="Eventos memorables">
+  <div class="container hero-slide-inner">
+    <section class="split" aria-label="Eventos memorables Arteluk">
+      <div>
+        <div class="mono">EVENTOS QUE MARCAN</div>
+        <h2>Experiencias memorables para este año</h2>
+        <p class="lead text-intro">
+          Exposiciones, muestras y actividades donde los niños viven el orgullo real de mostrar su obra,
+          ganar seguridad y sentirse parte de una comunidad.
+        </p>
+
+        <ul class="pill-list">
+          <li>2 a 3 exposiciones al año (niños y adultos).</li>
+          <li>Montajes pensados para fotos y recuerdo.</li>
+          <li>Proceso + emoción + logro (no solo “clase”).</li>
+        </ul>
+
+        <div class="hero-ctas">
+          <a class="btn gold" href="#exposiciones">Ver exposiciones</a>
+          <a class="btn ghost" href="#servicios">Ver talleres</a>
+        </div>
+      </div>
+
+      <aside class="photo">
+        <div class="media marco-cuadro">
+          <img src="img/Exposision1.jpg" alt="Exposiciones Arteluk" loading="lazy" decoding="async">
+        </div>
+      </aside>
+    </section>
+  </div>
+</section>
 
         <!-- controles slider -->
         <div class="hero-controls" aria-hidden="false">
           <div class="hero-dots" aria-label="Cambiar slide">
-            <button class="hero-dot active" type="button" data-hero-dot aria-label="Intro"></button>
-            <button class="hero-dot" type="button" data-hero-dot aria-label="Epidemia de salud mental"></button>
-            <button class="hero-dot" type="button" data-hero-dot aria-label="Metodología Arteluk"></button>
+            <button class="hero-dot active" type="button" data-hero-dot aria-label="Portada"></button>
+<button class="hero-dot" type="button" data-hero-dot aria-label="Epidemia de salud mental"></button>
+<button class="hero-dot" type="button" data-hero-dot aria-label="Metodología Arteluk"></button>
+<button class="hero-dot" type="button" data-hero-dot aria-label="Eventos memorables"></button>
+
           </div>
           <div class="hero-arrows">
             <button class="hero-arrow" type="button" data-hero-prev aria-label="Anterior">‹</button>
@@ -2281,51 +2324,7 @@ h1,h2,h3,p,li,a,span,strong,small{
       opacity: .85;
       line-height: 1.38rem;
     }
-    /* ===============================
-   GLOBAL FIX: fondo + overflow + snap
-   PÉGALO AL FINAL DEL CSS
-================================ */
-:root{
-  --page-bg:
-    radial-gradient(1100px 520px at 8% 10%, rgba(56,189,248,.22), transparent 60%),
-    radial-gradient(900px 620px at 92% 8%, rgba(167,139,250,.20), transparent 55%),
-    radial-gradient(900px 620px at 18% 92%, rgba(34,211,238,.16), transparent 55%),
-    linear-gradient(180deg, #eef7ff 0%, #eaf4ff 40%, #eef7ff 100%);
-
-  --card-bg: rgba(255,255,255,.84);
-  --card-brd: rgba(15,23,42,.10);
-  --txt: #0f172a;
-  --muted: rgba(15,23,42,.68);
-
-  --header-h: 72px; /* AJUSTA si tu topbar es más alto/bajo */
-}
-
-/* fondo continuo */
-html, body{ background: var(--page-bg); }
-body{ color: var(--txt); }
-
-/* mata el “se corre pa’ la derecha” */
-html, body{ overflow-x: clip; }
-body{ overflow-x: hidden; }
-img, video, iframe, svg{ max-width:100%; height:auto; display:block; }
-*{ min-width:0; }
-
-/* si alguna sección mete fondo propio → lo apagamos */
-section{ background: transparent !important; }
-
-/* scroll que te “lleva al próximo punto” */
-html{
-  scroll-padding-top: calc(var(--header-h) + 12px);
-  scroll-snap-type: y proximity; /* PC: menos cargante */
-}
-@media (pointer: coarse){
-  html{ scroll-snap-type: y mandatory; } /* móvil: más “salto” */
-}
-.snap{
-  scroll-snap-align: start;
-  scroll-margin-top: calc(var(--header-h) + 12px);
-}
-
+  
   </style>
 
   <script>
@@ -2342,64 +2341,66 @@ html{
     })();
   </script>
 </section>
+<!-- FORMULARIO (AHORA EN MODAL) -->
+<section id="contacto" class="section" style="display:none" aria-hidden="true"></section>
 
+<dialog id="formModal" aria-label="Formulario de contacto">
+  <div class="modal-head">
+    <strong id="fTitle">Reserva o consulta</strong>
+    <button class="close" id="fClose" type="button">Cerrar</button>
+  </div>
 
+  <div class="modal-body" id="fBody">
+    <div id="formSent" style="display:none">
+      <p style="margin:0 0 8px"><strong>✅ Ya recibimos tu formulario.</strong></p>
+      <p style="margin:0;color:#475569">
+        Si necesitas agregar algo, escríbenos por WhatsApp o vuelve más tarde desde otro dispositivo.
+      </p>
+    </div>
 
-    <!-- FORMULARIO -->
-    <section id="contacto" class="section" style="padding-top:24px" aria-label="Formulario de contacto">
-      <div class="container">
-        <div class="reveal" style="margin-bottom:12px">
-          <div class="mono">FORMULARIO</div>
-          <h2>Reserva o consulta — respondemos al instante</h2>
-          <p class="lead">
-            Completa el formulario. Te contactamos apenas lo recibamos.
-            Dirección: <strong>Picarte 407, Valdivia</strong>.
-          </p>
+    <form class="form" id="wlForm" novalidate>
+      <div class="row single">
+        <div>
+          <label for="nombre">Nombre y apellido</label>
+          <input id="nombre" name="nombre" required autocomplete="name" />
         </div>
-
-        <form class="form reveal" id="wlForm" novalidate>
-          <div class="row single">
-            <div>
-              <label for="nombre">Nombre y apellido</label>
-              <input id="nombre" name="nombre" required autocomplete="name" />
-            </div>
-          </div>
-
-          <div class="row">
-            <div>
-              <label for="tel">Teléfono</label>
-              <input id="tel" name="telefono" inputmode="tel" autocomplete="tel"
-                     placeholder="+56 9 ..." />
-            </div>
-            <div>
-              <label for="servicio">Servicio de interés</label>
-              <select id="servicio" name="servicio" required>
-                <option value="" disabled selected>Selecciona una opción</option>
-                <option>Taller de Vacaciones Básico — $45.000</option>
-                <option>Taller de Vacaciones Premium — $65.000</option>
-                <option>Taller de Artes — $60.000</option>
-                <option>Taller de Artes Premium — $120.000</option>
-                <option>Taller TEA — $60.000</option>
-                <option>Plan Trimestral — $270.000</option>
-                <option>Taller para Adultos — $60.000</option>
-                <option>Plan por un día — $20.000</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label for="msg">Mensaje</label>
-            <textarea id="msg" name="mensaje"
-                      placeholder="Horarios, edad del alumno/a, dudas…"></textarea>
-          </div>
-
-          <div style="display:flex;gap:10px;align-items:center;margin-top:14px;flex-wrap:wrap">
-            <button class="btn primary" type="submit">Enviar</button>
-            <span style="color:#6b7c8f;font-size:.92rem">Picarte 407, Valdivia</span>
-          </div>
-        </form>
       </div>
-    </section>
+
+      <div class="row">
+        <div>
+          <label for="tel">Teléfono</label>
+          <input id="tel" name="telefono" inputmode="tel" autocomplete="tel"
+                 placeholder="+56 9 1234 5678" />
+        </div>
+        <div>
+          <label for="servicio">Servicio de interés</label>
+          <select id="servicio" name="servicio" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option>Taller de Vacaciones Básico — $45.000</option>
+            <option>Taller de Vacaciones Premium — $65.000</option>
+            <option>Taller de Artes — $60.000</option>
+            <option>Taller de Artes Premium — $120.000</option>
+            <option>Taller TEA — $60.000</option>
+            <option>Plan Trimestral — $270.000</option>
+            <option>Taller para Adultos — $60.000</option>
+            <option>Plan por un día — $20.000</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label for="msg">Mensaje</label>
+        <textarea id="msg" name="mensaje"
+                  placeholder="Horarios, edad del alumno/a, dudas…"></textarea>
+      </div>
+
+      <div style="display:flex;gap:10px;align-items:center;margin-top:14px;flex-wrap:wrap">
+        <button class="btn primary" type="submit">Enviar</button>
+        <span style="color:#6b7c8f;font-size:.92rem">Picarte 407, Valdivia</span>
+      </div>
+    </form>
+  </div>
+</dialog>
 
   <!-- EXPOSICIONES (PREMIUM) -->
 <section id="exposiciones" class="section" style="padding-top:40px" aria-label="Exposiciones">
@@ -3083,25 +3084,93 @@ html{
 
       els.forEach(el=>io.observe(el));
     })();
+    /* ===== FORM MODAL (abrir desde Reservar cupo / nav / exposiciones) ===== */
+(function formModalUI(){
+  const dlg = document.getElementById('formModal');
+  const closeBtn = document.getElementById('fClose');
+  const form = document.getElementById('wlForm');
+  const sentBox = document.getElementById('formSent');
 
-    /* CTA -> form */
-    document.querySelectorAll('.to-form').forEach(b =>
-      b.addEventListener('click',(e)=>{
-        const v = e.currentTarget.getAttribute('data-value') || '';
-        const sel = document.getElementById('servicio');
-        if(sel){
-          [...sel.options].forEach(o=>{
-            if(o.textContent === v) sel.value = o.textContent;
-          });
-        }
-        trackSafe('Contact', {
-          content_name: v || 'CTA Reservar cupo',
-          content_category: 'Servicios'
-        });
-        document.getElementById('contacto')
-          ?.scrollIntoView({behavior:'smooth', block:'start'});
-      })
-    );
+  if(!dlg || !closeBtn || !form || !sentBox) return;
+
+  let __scrollY = 0;
+  const lockBody = () => {
+    __scrollY = window.scrollY || 0;
+    document.body.style.top = `-${__scrollY}px`;
+    document.body.classList.add('modal-open');
+  };
+  const unlockBody = () => {
+    document.body.classList.remove('modal-open');
+    document.body.style.top = '';
+    window.scrollTo(0, __scrollY);
+  };
+
+  const showDialog = () => {
+    lockBody();
+    if(typeof dlg.showModal === 'function') dlg.showModal();
+    else dlg.setAttribute('open','');
+  };
+
+  const hideDialog = () => {
+    try{ dlg.close(); }catch(_){ dlg.removeAttribute('open'); }
+    unlockBody();
+  };
+
+  closeBtn.addEventListener('click', hideDialog);
+  dlg.addEventListener('click', (e)=>{
+    if(e.target === dlg) hideDialog(); // click en backdrop
+  });
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape' && dlg.open) hideDialog();
+  });
+
+  function setService(value){
+    const sel = document.getElementById('servicio');
+    if(!sel || !value) return;
+    const opts = Array.from(sel.options);
+    const match = opts.find(o => (o.textContent || '').trim() === value.trim());
+    if(match) sel.value = match.textContent;
+  }
+
+  function refreshSentState(){
+    const already = localStorage.getItem('arteluk_form_sent');
+    if(already){
+      sentBox.style.display = 'block';
+      form.style.display = 'none';
+      return true;
+    }
+    sentBox.style.display = 'none';
+    form.style.display = 'block';
+    return false;
+  }
+
+  window.__openArtelukForm = (prefillValue='') => {
+    refreshSentState();
+    setService(prefillValue);
+    showDialog();
+  };
+
+  // Botones “Reservar cupo”
+  document.querySelectorAll('.to-form').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const v = btn.getAttribute('data-value') || '';
+      try{
+        trackSafe('Contact', { content_name: v || 'Reservar cupo', content_category:'Servicios' });
+      }catch(_){}
+      window.__openArtelukForm(v);
+    });
+  });
+
+  // Cualquier link que apunte a #contacto → abre modal (nav, footer, exposiciones)
+  document.addEventListener('click', (e)=>{
+    const a = e.target.closest('a[href="#contacto"]');
+    if(!a) return;
+    e.preventDefault();
+    const label = a.getAttribute('data-contact-name') || a.textContent.trim() || 'Formulario';
+    try{ trackSafe('Contact', { content_name: label, content_category:'Contacto' }); }catch(_){}
+    window.__openArtelukForm('');
+  });
+})();
 
     /* Track Contact */
     document.querySelectorAll('.track-contact').forEach(el=>{
@@ -3115,52 +3184,94 @@ html{
       });
     });
 
-    /* modal */
-    (function modal(){
-      const modal = document.getElementById('modal');
-      const mTitle = document.getElementById('mTitle');
-      const mBody = document.getElementById('mBody');
-      const mClose = document.getElementById('mClose');
-      if(!modal || !mTitle || !mBody || !mClose) return;
+    /* ===== HERO SLIDER (AUTO + FLECHAS + DOTS + SWIPE + PAUSA) ===== */
+(function heroSlider(){
+  const slider = document.querySelector('.hero-slider');
+  if(!slider) return;
 
-      mClose.addEventListener('click', ()=> {
-        try{ modal.close(); }
-        catch(_){ modal.removeAttribute('open'); }
-      });
+  const track = slider.querySelector('.hero-track');
+  const slides = Array.from(slider.querySelectorAll('.hero-slide'));
+  const dots = Array.from(slider.querySelectorAll('[data-hero-dot]'));
+  const prev = slider.querySelector('[data-hero-prev]');
+  const next = slider.querySelector('[data-hero-next]');
+  if(!track || slides.length === 0) return;
 
-      function openTemplateModal(btn){
-        const id = btn.getAttribute('data-content');
-        const title = btn.getAttribute('data-title') ||
-          btn.textContent.trim();
-        const tpl = document.getElementById(id);
-        if(!tpl) return;
+  const total = slides.length;
+  slider.style.setProperty('--heroSlides', total);
 
-        mTitle.textContent = title;
-        mBody.innerHTML = "";
-        mBody.appendChild(tpl.content.cloneNode(true));
+  let index = 0;
+  const AUTOPLAY_MS = 7000;
+  const PAUSE_MS = 20000;
+  const SWIPE_PX = 40;
+  let pausedUntil = 0;
 
-        if(typeof modal.showModal === 'function') modal.showModal();
-        else modal.setAttribute('open','');
+  function setIndex(i, user=false){
+    index = (i + total) % total;
+    const pct = (100 / total) * index;
+    track.style.transform = `translate3d(-${pct}%,0,0)`;
 
-        if(btn.classList.contains('open-desc')){
-          trackSafe('ViewContent', {
-            content_name: title,
-            content_category: 'Planes'
-          });
-        }
-      }
+    dots.forEach((d, k)=> d.classList.toggle('active', k === index));
 
-      document.querySelectorAll('.open-desc, .open-story').forEach(btn=>{
-        btn.addEventListener('click', ()=>openTemplateModal(btn));
-      });
+    if(prev) prev.disabled = false;
+    if(next) next.disabled = false;
 
-      document.addEventListener('keydown', e=>{
-        if(e.key === 'Escape'){
-          try{ modal.close(); }
-          catch(_){ modal.removeAttribute('open'); }
-        }
-      });
-    })();
+    if(user) pausedUntil = Date.now() + PAUSE_MS;
+  }
+
+  // dots
+  dots.forEach((d, i)=>{
+    d.addEventListener('click', ()=> setIndex(i, true));
+  });
+
+  // arrows
+  if(prev) prev.addEventListener('click', ()=> setIndex(index - 1, true));
+  if(next) next.addEventListener('click', ()=> setIndex(index + 1, true));
+
+  // autoplay
+  setInterval(()=>{
+    if(Date.now() < pausedUntil) return;
+    setIndex(index + 1, false);
+  }, AUTOPLAY_MS);
+
+  // swipe (sin romper scroll vertical)
+  let x0 = 0, y0 = 0, dragging = false;
+
+  slider.addEventListener('touchstart', (e)=>{
+    if(!e.touches || e.touches.length !== 1) return;
+    const t = e.touches[0];
+    x0 = t.clientX; y0 = t.clientY;
+    dragging = true;
+  }, {passive:true});
+
+  slider.addEventListener('touchmove', (e)=>{
+    if(!dragging || !e.touches || e.touches.length !== 1) return;
+    const t = e.touches[0];
+    const dx = t.clientX - x0;
+    const dy = t.clientY - y0;
+
+    // si es más horizontal que vertical, lo tratamos como swipe
+    if(Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10){
+      e.preventDefault();
+    }
+  }, {passive:false});
+
+  slider.addEventListener('touchend', (e)=>{
+    if(!dragging) return;
+    dragging = false;
+
+    const t = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0] : null;
+    if(!t) return;
+
+    const dx = t.clientX - x0;
+    if(Math.abs(dx) < SWIPE_PX) return;
+
+    if(dx < 0) setIndex(index + 1, true);
+    else setIndex(index - 1, true);
+  }, {passive:true});
+
+  // init
+  setIndex(0, false);
+})();
 
     /* VideoClick robusto */
     (function videoClick(){
@@ -3193,103 +3304,150 @@ html{
       }
     })();
 
-    /* formulario -> webhook n8n con anti-doble envío */
-    (function formWebhook(){
-      const form = document.getElementById('wlForm');
-      if(!form) return;
-      let sending = false;
+   /* formulario -> webhook n8n (1 sola vez + validación teléfono Chile) */
+(function formWebhook(){
+  const form = document.getElementById('wlForm');
+  if(!form) return;
 
-      function toastForm(msg, type='ok'){
-        const el = document.createElement('div');
-        el.textContent = msg;
-        el.style.cssText =
-          "position:fixed;left:50%;bottom:26px;transform:translateX(-50%);" +
-          "padding:12px 18px;border-radius:10px;z-index:9999;" +
-          `background:${type==='ok'?'#e7fff0':'#ffeaea'};` +
-          `color:${type==='ok'?'#065f46':'#a00000'};` +
-          "box-shadow:0 6px 16px rgba(0,0,0,.12);opacity:0;transition:.25s;";
-        document.body.appendChild(el);
-        requestAnimationFrame(()=> el.style.opacity = 1);
-        setTimeout(()=>{
-          el.style.opacity = 0;
-          setTimeout(()=>el.remove(), 300);
-        }, 2800);
+  let sending = false;
+
+  function toastForm(msg, type='ok'){
+    const el = document.createElement('div');
+    el.textContent = msg;
+    el.style.cssText =
+      "position:fixed;left:50%;bottom:26px;transform:translateX(-50%);" +
+      "padding:12px 18px;border-radius:10px;z-index:9999;" +
+      `background:${type==='ok'?'#e7fff0':'#ffeaea'};` +
+      `color:${type==='ok'?'#065f46':'#a00000'};` +
+      "box-shadow:0 6px 16px rgba(0,0,0,.12);opacity:0;transition:.25s;";
+    document.body.appendChild(el);
+    requestAnimationFrame(()=> el.style.opacity = 1);
+    setTimeout(()=>{
+      el.style.opacity = 0;
+      setTimeout(()=>el.remove(), 300);
+    }, 2600);
+  }
+
+  function normalizeChilePhone(raw){
+    let d = String(raw||'').replace(/\D/g,'');
+    if(d.startsWith('56')) d = d.slice(2);
+    d = d.replace(/^0+/,''); // por si meten 09...
+    // Caso típico correcto: 9XXXXXXXX (9 dígitos, parte con 9)
+    if(d.length === 9 && d[0] === '9') return `+56${d}`;
+    return null;
+  }
+
+  function phoneErrorHint(raw){
+    let d = String(raw||'').replace(/\D/g,'');
+    if(d.startsWith('56')) d = d.slice(2);
+    d = d.replace(/^0+/,'');
+    if(d.length === 8) return 'Te faltó un dígito. En Chile celular es 9 dígitos: 9 1234 5678.';
+    return 'Teléfono inválido. Formato recomendado: +56 9 1234 5678.';
+  }
+
+  function markSentUI(){
+    const sentBox = document.getElementById('formSent');
+    if(sentBox){
+      sentBox.style.display = 'block';
+      form.style.display = 'none';
+    }
+  }
+
+  // Si ya enviaron antes, ocultar form al cargar
+  if(localStorage.getItem('arteluk_form_sent')){
+    markSentUI();
+  }
+
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+
+    if(localStorage.getItem('arteluk_form_sent')){
+      toastForm('✅ Ya recibimos tu formulario.', 'ok');
+      markSentUI();
+      return;
+    }
+
+    if(sending){
+      toastForm('Ya lo estamos enviando…', 'ok');
+      return;
+    }
+
+    const nombre = (form.querySelector('#nombre')?.value || '').trim();
+    const servicio = (form.querySelector('#servicio')?.value || '').trim();
+    const telRaw = (form.querySelector('#tel')?.value || '').trim();
+
+    if(!nombre || !servicio){
+      toastForm('Completa tu nombre y selecciona un servicio.', 'error');
+      return;
+    }
+
+    const telNorm = normalizeChilePhone(telRaw);
+    if(!telNorm){
+      toastForm(phoneErrorHint(telRaw), 'error');
+      return;
+    }
+
+    sending = true;
+    const btn = form.querySelector('button[type="submit"]');
+    const original = btn ? btn.innerHTML : '';
+    if(btn){
+      btn.disabled = true;
+      btn.innerHTML = 'Enviando…';
+    }
+
+    const data = {
+      nombre,
+      telefono: telNorm,
+      servicio,
+      mensaje: (form.querySelector('#msg')?.value || '').trim()
+    };
+
+    const controller = new AbortController();
+    const t = setTimeout(()=>controller.abort(), 12000);
+
+    try{
+      const res = await fetch(
+        "https://arteluk-n8n.bvil2a.easypanel.host/webhook/afb70f27-dd2d-4853-9270-3faf35ddcd5e",
+        {
+          method:"POST",
+          headers:{ "Content-Type":"application/json" },
+          body: JSON.stringify(data),
+          keepalive:true,
+          signal: controller.signal
+        }
+      );
+      if(!res.ok) throw new Error('HTTP '+res.status);
+
+      localStorage.setItem('arteluk_form_sent', String(Date.now()));
+      form.reset();
+      toastForm('✅ ¡Formulario enviado con éxito!', 'ok');
+
+      try{
+        trackSafe('Lead', {
+          content_name: data.servicio || 'Formulario Arteluk',
+          content_category: 'Formulario',
+          value: 0,
+          currency: 'CLP'
+        });
+      }catch(_){}
+
+      // ocultar form y mostrar “ya enviado”
+      markSentUI();
+
+    }catch(err){
+      console.error('Webhook error:', err);
+      toastForm('❌ Error al enviar. Intenta nuevamente.', 'error');
+      if(btn){
+        btn.disabled = false;
+        btn.innerHTML = original;
       }
+    }finally{
+      clearTimeout(t);
+      sending = false;
+    }
+  });
+})();
 
-      form.addEventListener('submit', async (e)=>{
-        e.preventDefault();
-        if(sending){
-          toastForm('Ya recibimos tu mensaje, espera unos segundos.','ok');
-          return;
-        }
-
-        const last = Number(localStorage.getItem('arteluk_last_send') || 0);
-        const now = Date.now();
-        if(now - last < 15000){
-          toastForm('Ya recibimos tu formulario hace un momento.','ok');
-          return;
-        }
-
-        const nombre = (form.querySelector('#nombre')?.value || '').trim();
-        const servicio = (form.querySelector('#servicio')?.value || '');
-        if(!nombre || !servicio){
-          toastForm('Completa tu nombre y selecciona un servicio.','error');
-          return;
-        }
-
-        sending = true;
-        const btn = form.querySelector('button[type="submit"]');
-        const original = btn ? btn.innerHTML : '';
-        if(btn){
-          btn.disabled = true;
-          btn.innerHTML = 'Enviando…';
-        }
-
-        const data = {
-          nombre: nombre,
-          telefono: (form.querySelector('#tel')?.value || '').trim(),
-          servicio: servicio,
-          mensaje: (form.querySelector('#msg')?.value || '').trim()
-        };
-
-        const controller = new AbortController();
-        const t = setTimeout(()=>controller.abort(), 10000);
-
-        try{
-          const res = await fetch(
-            "https://arteluk-n8n.bvil2a.easypanel.host/webhook/afb70f27-dd2d-4853-9270-3faf35ddcd5e",
-            {
-              method:"POST",
-              headers:{ "Content-Type":"application/json" },
-              body: JSON.stringify(data),
-              keepalive:true,
-              signal: controller.signal
-            }
-          );
-          if(!res.ok) throw new Error('HTTP '+res.status);
-
-          form.reset();
-          localStorage.setItem('arteluk_last_send', String(Date.now()));
-          toastForm('✅ ¡Formulario enviado con éxito!', 'ok');
-          trackSafe('Lead', {
-            content_name: data.servicio || 'Formulario Arteluk',
-            content_category: 'Formulario',
-            value: 0,
-            currency: 'CLP'
-          });
-        }catch(err){
-          console.error('Webhook error:', err);
-          toastForm('❌ Error al enviar. Intenta nuevamente.', 'error');
-        }finally{
-          clearTimeout(t);
-          if(btn){
-            btn.disabled = false;
-            btn.innerHTML = original;
-          }
-          sending = false;
-        }
-      });
-    })();
 
   /* ===== HERO SLIDER (AUTO + FLECHAS + DOTS + SWIPE + PAUSA) ===== */
 (function heroSlider(){
@@ -3478,6 +3636,7 @@ html{
 </script>
 </body>
 </html>
+
 
 
 
