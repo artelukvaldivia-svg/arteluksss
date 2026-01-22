@@ -408,72 +408,49 @@
         grid-template-columns:1fr;
       }
     }
+/* ===== BOTÓN DORADO (elegante) ===== */
+.btn.gold{
+  color:#1f2937;
+  background-image:linear-gradient(90deg,var(--gold1),var(--gold2),var(--gold3));
+  border:1px solid rgba(217,119,6,.55);
+  box-shadow:0 16px 32px rgba(245,158,11,.22);
+}
+.btn.gold:hover{
+  transform:translateY(-2px);
+  box-shadow:0 22px 44px rgba(245,158,11,.28);
+  background-position:100% 0;
+}
+.btn.gold:active{ transform:translateY(0) scale(.98); }
 
-    /* ===== PANTALLA INICIO ===== */
-    .intro-screen{
-      position:fixed;
-      inset:0;
-      z-index:40;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-      background:
-        radial-gradient(circle at top, #e0f2ff 0, #eff6ff 45%, #bfdbfe 100%);
-      transition:opacity .45s ease, visibility .45s ease;
-    }
+/* ===== HERO TITLE MIX (Academia + Arteluk + subtítulo) ===== */
+h1.hero-title{ font-family:inherit; margin:0 0 10px; line-height:1.06; }
+.hero-title .hero-top{
+  display:block;
+  font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-size:.80rem;
+  color:#486b92;
+  margin-bottom:6px;
+}
+.hero-title .hero-brand{
+  display:block;
+  font-family:"Playfair Display",serif;
+  font-weight:800;
+  letter-spacing:.2px;
+  font-size:clamp(40px,6.2vw,64px);
+}
+.hero-title .hero-bottom{
+  display:block;
+  font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  font-weight:600;
+  font-size:clamp(15px,2.2vw,20px);
+  color:var(--muted);
+  margin-top:8px;
+}
 
-    .intro-screen.hide{
-      opacity:0;
-      visibility:hidden;
-      pointer-events:none;
-    }
-
-    .intro-inner{
-      max-width:680px;
-      width:100%;
-      border-radius:28px;
-      background:rgba(255,255,255,.96);
-      box-shadow:0 22px 60px rgba(15,23,42,.22);
-      border:1px solid rgba(191,219,254,.9);
-      padding:26px 26px 30px;
-      text-align:center;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .intro-logo{
-      font-family:"Playfair Display",serif;
-      font-size:30px;
-      margin-bottom:4px;
-    }
-
-    .intro-tag{
-      margin:0;
-      color:#2563eb;
-      font-size:.84rem;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-    }
-
-    .intro-line{
-      margin:14px 0 18px;
-      color:#4b5563;
-      font-size:.97rem;
-    }
-
-    .intro-actions{
-      display:flex;
-      justify-content:center;
-      margin-top:8px;
-    }
-
-    .intro-note{
-      margin-top:10px;
-      font-size:.82rem;
-      color:#64748b;
-    }
-
+   
     /* HERO (contenido) */
     .hero-eyebrow{
       display:inline-flex;
@@ -1625,22 +1602,6 @@ h1,h2,h3,p,li,a,span,strong,small{
 <body>
   <div class="fx-bg" aria-hidden="true"></div>
 
-  <!-- PANTALLA DE INICIO -->
-  <div class="intro-screen" id="introScreen" aria-label="Pantalla de bienvenida Arteluk">
-    <div class="intro-inner">
-      <div class="intro-logo">Arteluk</div>
-      <p class="intro-tag">Arte & Arteterapia · Valdivia</p>
-      <p class="intro-line">
-        Espacio seguro donde niños, jóvenes y adultos pueden expresar lo que sienten
-        a través del arte y encontrar un lugar de contención emocional.
-      </p>
-      <div class="intro-actions">
-        <button class="btn primary" id="introEnter" type="button">Entrar al sitio</button>
-      </div>
-      <p class="intro-note">O desliza hacia abajo para continuar</p>
-    </div>
-  </div>
-
   <!-- NAV -->
   <nav>
     <div class="container navbar">
@@ -1681,8 +1642,10 @@ h1,h2,h3,p,li,a,span,strong,small{
                     <span>Valdivia</span> · <span>Arte & Arteterapia</span>
                   </div>
                   <h1 class="hero-title">
-                    Academia de artes Valdivia
-                  </h1>
+  <span class="hero-top">Academia de Arte</span>
+  <span class="hero-brand">Arteluk</span>
+  <span class="hero-bottom">Academia de Arteterapia en Valdivia</span>
+</h1>
                   <p class="lead hero-sub text-intro">
                     En Arteluk acompañamos procesos emocionales a través del arte.
                     Un espacio seguro donde tus hijos pueden expresarse, regular sus emociones
@@ -3055,31 +3018,7 @@ html{
       requestAnimationFrame(tick);
     })();
 
-    /* PANTALLA DE INICIO */
-    (function intro(){
-      const introScreen = document.getElementById('introScreen');
-      const introEnter = document.getElementById('introEnter');
-      if(!introScreen) return;
-
-      const hideIntro = () => {
-        if (introScreen.classList.contains('hide')) return;
-        introScreen.classList.add('hide');
-        try{
-          sessionStorage.setItem('arteluk_intro_seen','1');
-        }catch(_){}
-      };
-
-      try{
-        if (sessionStorage.getItem('arteluk_intro_seen') === '1')
-          introScreen.classList.add('hide');
-      }catch(_){}
-
-      if (introEnter) introEnter.addEventListener('click', hideIntro);
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 40) hideIntro();
-      }, {passive:true});
-    })();
-
+    
     /* menú responsive */
     (function navMenu(){
       const navToggle = document.getElementById('navToggle');
@@ -3539,6 +3478,7 @@ html{
 </script>
 </body>
 </html>
+
 
 
 
