@@ -1681,7 +1681,7 @@ h1,h2,h3,p,li,a,span,strong,small{
                     <span>Valdivia</span> · <span>Arte & Arteterapia</span>
                   </div>
                   <h1 class="hero-title">
-                    Arte, emoción y bienestar para niños, jóvenes y adultos.
+                    Academia de artes Valdivia
                   </h1>
                   <p class="lead hero-sub text-intro">
                     En Arteluk acompañamos procesos emocionales a través del arte.
@@ -1690,10 +1690,9 @@ h1,h2,h3,p,li,a,span,strong,small{
                     de dejarlos en buenas manos.
                   </p>
                   <ul class="pill-list hero-badges">
-                    <li>+10 años de experiencia en arteterapia y educación.</li>
+                    <li>+5 años de experiencia en arteterapia y educación.</li>
                     <li>Metodología propia con foco en emociones y autoestima.</li>
-                    <li>Grupos pequeños y acompañamiento cercano.</li>
-                    <li>Ubicación céntrica en Valdivia.</li>
+                    <li>Grupos pequeños y acompañamiento cercano.</li>        
                   </ul>
                   <div class="hero-ctas">
                     <a class="btn primary" href="#servicios">Ver talleres disponibles</a>
@@ -3482,8 +3481,10 @@ html{
 (function expoThumbSwap(){
   document.querySelectorAll('.expo-item').forEach(item=>{
     const photoWrap = item.querySelector('.expo-photo');
-    const imgEl = item.querySelector('.expo-main-img') || item.querySelector('img.expo-main');
-    const videoEl = item.querySelector('.expo-main-video') || item.querySelector('video.expo-main');
+
+    // main image/video (según lo que exista en esa expo)
+    const imgEl = item.querySelector('img.expo-main');
+    const videoEl = item.querySelector('video.expo-main');
 
     const thumbs = Array.from(item.querySelectorAll('[data-expo-thumb]'));
     if(thumbs.length === 0) return;
@@ -3496,7 +3497,24 @@ html{
       }else{
         v.src = src;
       }
-      v.load();
+    }
+
+    function showImage(src, alt){
+      if(videoEl){
+        try{ videoEl.pause(); }catch(_){}
+      }
+      if(photoWrap) photoWrap.classList.remove('show-video');
+
+      if(!imgEl) return;
+      imgEl.src = src;
+      if(alt) imgEl.alt = alt;
+    }
+
+    function showVideo(src){
+      if(!videoEl) return;
+      setVideoSource(videoEl, src);
+      videoEl.load();
+      if(photoWrap) photoWrap.classList.add('show-video');
     }
 
     thumbs.forEach(btn=>{
@@ -3504,44 +3522,24 @@ html{
         const src = btn.getAttribute('data-src') || '';
         const alt = btn.getAttribute('data-alt') || '';
 
-        const isVideo = /\.mp4(\?|#|$)/i.test(src);
+        // active UI
+        thumbs.forEach(t=>t.classList.remove('is-active'));
+        btn.classList.add('is-active');
 
-        // activar miniatura
-        thumbs.forEach(b=> b.classList.toggle('is-active', b === btn));
-
-        // si este item no tiene video, solo cambia imagen
-        if(!photoWrap || !photoWrap.classList.contains('is-video')){
-          if(imgEl && src) imgEl.src = src;
-          if(imgEl && alt) imgEl.alt = alt;
-          return;
-        }
-
-        if(isVideo){
-          // mostrar video
-          photoWrap.classList.add('show-video');
-          if(videoEl){
-            setVideoSource(videoEl, src);
-            // intentar reproducir (click = gesto de usuario)
-            videoEl.play().catch(()=>{});
-          }
+        // si algún día metes thumbs de video, igual funciona
+        if(/\.(mp4|webm|ogg)(\?|$)/i.test(src)){
+          showVideo(src);
         }else{
-          // mostrar imagen
-          photoWrap.classList.remove('show-video');
-          if(videoEl){
-            videoEl.pause();
-            try{ videoEl.currentTime = 0; }catch(_){}
-          }
-          if(imgEl && src) imgEl.src = src;
-          if(imgEl && alt) imgEl.alt = alt;
+          showImage(src, alt);
         }
       });
     });
   });
 })();
-
 </script>
 </body>
 </html>
+
 
 
 
