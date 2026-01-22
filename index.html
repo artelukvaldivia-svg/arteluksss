@@ -964,6 +964,20 @@
 
     /* modal */
     dialog{
+      /* ===== MODAL: no mover fondo en móvil ===== */
+body.modal-open{
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  left: 0; right: 0;
+}
+
+.modal-body{
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+}
+
       border:none;
       border-radius:22px;
       max-width:760px;
@@ -1153,6 +1167,7 @@
   height:calc(100dvh - var(--navH));
   min-height:620px;
   overflow:hidden;
+  overscroll-behavior-x: contain;/* evita “rebote” lateral */
 
     touch-action: pan-y;
   -webkit-user-select: none;
@@ -3188,6 +3203,22 @@ html{
         try{ modal.close(); }
         catch(_){ modal.removeAttribute('open'); }
       });
+      // ===== Scroll lock (iPhone fix) =====
+      function lockBody(){
+        if(document.body.classList.contains('modal-open')) return;
+        const y = window.scrollY || 0;
+        document.body.dataset.modalScrollY = String(y);
+        document.body.classList.add('modal-open');
+        document.body.style.top = `-${y}px`;
+      }
+
+      function unlockBody(){
+        const y = parseInt(document.body.dataset.modalScrollY || '0', 10);
+        document.body.classList.remove('modal-open');
+        document.body.style.top = '';
+        document.body.dataset.modalScrollY = '';
+        window.scrollTo(0, y);
+      }
 
       function openTemplateModal(btn){
         const id = btn.getAttribute('data-content');
@@ -3199,6 +3230,8 @@ html{
         mTitle.textContent = title;
         mBody.innerHTML = "";
         mBody.appendChild(tpl.content.cloneNode(true));
+        
+        lockBody();
 
         if(typeof modal.showModal === 'function') modal.showModal();
         else modal.setAttribute('open','');
@@ -3352,22 +3385,24 @@ html{
       });
     })();
 
-  /* ===== HERO SLIDER (AUTO + FLECHAS + DOTS + SWIPE + PAUSA) ===== */
+<script>
+/* ===== HERO SLIDER (AUTO + FLECHAS + DOTS + SWIPE PRO) ===== */
 (function heroSlider(){
   const slider = document.querySelector('.hero-slider');
   if(!slider) return;
 
-  const track = slider.querySelector('.hero-track');
+  const track  = slider.querySelector('.hero-track');
   const slides = Array.from(slider.querySelectorAll('.hero-slide'));
-  const dots = Array.from(slider.querySelectorAll('[data-hero-dot]'));
-  const prev = slider.querySelector('[data-hero-prev]');
-  const next = slider.querySelector('[data-hero-next]');
+  const dots   = Array.from(slider.querySelectorAll('[data-hero-dot]'));
+  const prev   = slider.querySelector('[data-hero-prev]');
+  const next   = slider.querySelector('[data-hero-next]');
   if(!track || slides.length === 0) return;
 
-  // Ajustes
-  const AUTOPLAY_MS = 7000;      // cada cuánto cambia solo
-  const PAUSE_MS = 20000;        // cuánto se queda quieto después de tocar/deslizar
-  const SWIPE_PX = 40;           // mínimo de arrastre para considerarlo swipe
+  // Settings
+  const AUTOPLAY_MS   = 7000;
+  const PAUSE_MS      = 20000;
+  const SWIPE_PX      = 48;   // umbral swipe
+  const AXIS_LOCK_PX  = 10;   // decide si es X o Y
 
   slider.style.setProperty('--heroSlides', slides.length);
   const step = 100 / slides.length;
@@ -3377,7 +3412,7 @@ html{
   let resumeT = null;
 
   function setActiveDot(i){
-    dots.forEach((d,idx)=> d.classList.toggle('active', idx===i));
+    dots.forEach((d,idx)=> d.classList.toggle('active', idx === i));
   }
 
   function applyTransform(noAnim=false){
@@ -3421,121 +3456,101 @@ html{
     if(user) pauseForRead(PAUSE_MS);
   }
 
-  // Flechas/dots = pausa para leer
+  // Flechas/dots
   prev && prev.addEventListener('click', ()=> goTo(index - 1, {user:true}));
   next && next.addEventListener('click', ()=> goTo(index + 1, {user:true}));
   dots.forEach((d,idx)=> d.addEventListener('click', ()=> goTo(idx, {user:true})));
 
-  // Desktop: hover pausa / sale reanuda
+  // Desktop hover pause
   slider.addEventListener('mouseenter', ()=> stopAuto());
   slider.addEventListener('mouseleave', ()=> startAuto());
 
-  // ✅ SWIPE (Pointer + fallback Touch)
-  let sx=0, sy=0;
+  // ✅ SWIPE PRO (pointer events + axis lock + drag preview)
+  let dragging = false;
+  let axis = null;       // 'x' o 'y'
+  let startX = 0;
+  let startY = 0;
+  let pointerId = null;
 
-  function onStart(x,y){
-    sx=x; sy=y;
-    pauseForRead(PAUSE_MS); // apenas toca: queda quieto para leer
+  function onDown(e){
+    if(e.pointerType === 'mouse' && e.button !== 0) return;
+    if(!e.isPrimary) return; // evita multi-touch
+
+    pointerId = e.pointerId;
+    slider.setPointerCapture(pointerId);
+
+    dragging = true;
+    axis = null;
+    startX = e.clientX;
+    startY = e.clientY;
+
+    // pausa inmediata
+    stopAuto();
+    if(resumeT) clearTimeout(resumeT);
+
+    // drag mode (sin anim)
+    track.classList.add('is-dragging');
+    track.style.transition = 'none';
   }
 
-  function onEnd(x,y){
-    const dx = x - sx;
-    const dy = y - sy;
+  function onMove(e){
+    if(!dragging || e.pointerId !== pointerId) return;
 
-    // si fue más horizontal que vertical + supera umbral -> swipe
-    if(Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_PX){
-      dx > 0 ? goTo(index - 1, {user:true}) : goTo(index + 1, {user:true});
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+
+    // decide eje
+    if(!axis){
+      if(Math.abs(dx) < AXIS_LOCK_PX && Math.abs(dy) < AXIS_LOCK_PX) return;
+      axis = (Math.abs(dx) > Math.abs(dy)) ? 'x' : 'y';
+    }
+
+    // si es horizontal, prevenimos scroll y mostramos “drag preview”
+    if(axis === 'x'){
+      e.preventDefault(); // requiere listener passive:false
+      const pct = (dx / slider.clientWidth) * 100;
+      track.style.transform = `translate3d(calc(-${index * step}% + ${pct}%),0,0)`;
+    }else{
+      // vertical: dejamos que el scroll normal viva
+      // (no hacemos preventDefault)
     }
   }
 
-  // Pointer (moderno)
-  slider.addEventListener('pointerdown', (e)=>{
-    onStart(e.clientX, e.clientY);
-  }, {passive:true});
+  function onUp(e){
+    if(!dragging || e.pointerId !== pointerId) return;
 
-  slider.addEventListener('pointerup', (e)=>{
-    onEnd(e.clientX, e.clientY);
-  }, {passive:true});
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
 
-  // Touch fallback (iPhone por si acaso)
-  slider.addEventListener('touchstart', (e)=>{
-    const t = e.touches && e.touches[0];
-    if(!t) return;
-    onStart(t.clientX, t.clientY);
-  }, {passive:true});
+    dragging = false;
+    pointerId = null;
 
-  slider.addEventListener('touchend', (e)=>{
-    const t = e.changedTouches && e.changedTouches[0];
-    if(!t) return;
-    onEnd(t.clientX, t.clientY);
-  }, {passive:true});
+    // restaura transición “bonita”
+    track.classList.remove('is-dragging');
+    track.style.transition = 'transform .6s cubic-bezier(.33,.7,.2,1)';
 
-  // Init “a prueba de entremedio”
-  index = 0;
-  setActiveDot(0);
+    // decide cambio de slide solo si fue swipe horizontal real
+    if(axis === 'x' && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_PX){
+      if(dx < 0) index = (index + 1) % slides.length;           // swipe left => next
+      else       index = (index - 1 + slides.length) % slides.length; // swipe right => prev
+    }
+
+    applyTransform(false);
+    setActiveDot(index);
+    pauseForRead(PAUSE_MS);
+  }
+
+  slider.addEventListener('pointerdown', onDown, {passive:true});
+  slider.addEventListener('pointermove', onMove, {passive:false}); // clave
+  slider.addEventListener('pointerup', onUp, {passive:true});
+  slider.addEventListener('pointercancel', onUp, {passive:true});
+
+  // init
   applyTransform(true);
+  setActiveDot(index);
   startAuto();
-})();
-
-/* ===== Exposiciones: cambio de foto al hacer click en miniaturas ===== */
-(function expoThumbSwap(){
-  document.querySelectorAll('.expo-item').forEach(item=>{
-    const photoWrap = item.querySelector('.expo-photo');
-
-    // main image/video (según lo que exista en esa expo)
-    const imgEl = item.querySelector('img.expo-main');
-    const videoEl = item.querySelector('video.expo-main');
-
-    const thumbs = Array.from(item.querySelectorAll('[data-expo-thumb]'));
-    if(thumbs.length === 0) return;
-
-    function setVideoSource(v, src){
-      if(!v) return;
-      const source = v.querySelector('source');
-      if(source){
-        source.src = src;
-      }else{
-        v.src = src;
-      }
-    }
-
-    function showImage(src, alt){
-      if(videoEl){
-        try{ videoEl.pause(); }catch(_){}
-      }
-      if(photoWrap) photoWrap.classList.remove('show-video');
-
-      if(!imgEl) return;
-      imgEl.src = src;
-      if(alt) imgEl.alt = alt;
-    }
-
-    function showVideo(src){
-      if(!videoEl) return;
-      setVideoSource(videoEl, src);
-      videoEl.load();
-      if(photoWrap) photoWrap.classList.add('show-video');
-    }
-
-    thumbs.forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const src = btn.getAttribute('data-src') || '';
-        const alt = btn.getAttribute('data-alt') || '';
-
-        // active UI
-        thumbs.forEach(t=>t.classList.remove('is-active'));
-        btn.classList.add('is-active');
-
-        // si algún día metes thumbs de video, igual funciona
-        if(/\.(mp4|webm|ogg)(\?|$)/i.test(src)){
-          showVideo(src);
-        }else{
-          showImage(src, alt);
-        }
-      });
-    });
-  });
 })();
 </script>
 </body>
 </html>
+
