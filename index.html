@@ -3284,12 +3284,6 @@ html{
           return;
         }
 
-        const last = Number(localStorage.getItem('arteluk_last_send') || 0);
-        const now = Date.now();
-        if(now - last < 15000){
-          toastForm('Ya recibimos tu formulario hace un momento.','ok');
-          return;
-        }
 
         const nombre = (form.querySelector('#nombre')?.value || '').trim();
         const servicio = (form.querySelector('#servicio')?.value || '');
@@ -3330,7 +3324,6 @@ html{
           if(!res.ok) throw new Error('HTTP '+res.status);
 
           form.reset();
-          localStorage.setItem('arteluk_last_send', String(Date.now()));
           toastForm('✅ ¡Formulario enviado con éxito!', 'ok');
           trackSafe('Lead', {
             content_name: data.servicio || 'Formulario Arteluk',
@@ -3539,3 +3532,4 @@ html{
 </script>
 </body>
 </html>
+
