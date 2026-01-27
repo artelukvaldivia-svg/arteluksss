@@ -3186,78 +3186,78 @@ html{
     });
 
     /* modal */
-    (function modal(){
-            // ✅ Lock scroll (iOS/Android): evita que se mueva el fondo bajo el dialog
-      let __lockY = 0;
-      function lockBodyScroll(){
-        __lockY = window.scrollY || document.documentElement.scrollTop || 0;
-        document.body.classList.add('modal-open');
-        document.body.style.position = 'fixed';
-        document.body.style.top = `-${__lockY}px`;
-        document.body.style.left = '0';
-        document.body.style.right = '0';
-        document.body.style.width = '100%';
-      }
+    /* modal */
+(function modal(){
+  const modal = document.getElementById('modal');
+  const mTitle = document.getElementById('mTitle');
+  const mBody  = document.getElementById('mBody');
+  const mClose = document.getElementById('mClose');
+  if(!modal || !mTitle || !mBody || !mClose) return;
 
-      function unlockBodyScroll(){
-        document.body.classList.remove('modal-open');
-        const y = Math.abs(parseInt(document.body.style.top || '0', 10)) || __lockY || 0;
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.left = '';
-        document.body.style.right = '';
-        document.body.style.width = '';
-        window.scrollTo(0, y);
-      }
+  // ✅ Lock scroll (iOS/Android)
+  let __lockY = 0;
+  function lockBodyScroll(){
+    __lockY = window.scrollY || document.documentElement.scrollTop || 0;
+    document.body.classList.add('modal-open');
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${__lockY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+  }
 
-      // Si el navegador soporta dialog bien, igual aseguramos unlock
-      modal.addEventListener('close', unlockBodyScroll);
-      modal.addEventListener('cancel', (e)=>{ e.preventDefault(); try{ modal.close(); }catch(_){ modal.removeAttribute('open'); } unlockBodyScroll(); });
+  function unlockBodyScroll(){
+    document.body.classList.remove('modal-open');
+    const y = Math.abs(parseInt(document.body.style.top || '0', 10)) || __lockY || 0;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    window.scrollTo(0, y);
+  }
 
-      const modal = document.getElementById('modal');
-      const mTitle = document.getElementById('mTitle');
-      const mBody = document.getElementById('mBody');
-      const mClose = document.getElementById('mClose');
-      if(!modal || !mTitle || !mBody || !mClose) return;
+  modal.addEventListener('close', unlockBodyScroll);
+  modal.addEventListener('cancel', (e)=>{
+    e.preventDefault();
+    try{ modal.close(); }catch(_){ modal.removeAttribute('open'); }
+    unlockBodyScroll();
+  });
 
-      mClose.addEventListener('click', ()=> {
-        try{ modal.close(); }
-        catch(_){ modal.removeAttribute('open'); }
-      });
+  mClose.addEventListener('click', ()=> {
+    try{ modal.close(); } catch(_){ modal.removeAttribute('open'); unlockBodyScroll(); }
+  });
 
-      function openTemplateModal(btn){
-        const id = btn.getAttribute('data-content');
-        const title = btn.getAttribute('data-title') ||
-          btn.textContent.trim();
-        const tpl = document.getElementById(id);
-        if(!tpl) return;
+  function openTemplateModal(btn){
+    const id = btn.getAttribute('data-content');
+    const title = btn.getAttribute('data-title') || btn.textContent.trim();
+    const tpl = document.getElementById(id);
+    if(!tpl) return;
 
-        mTitle.textContent = title;
-        mBody.innerHTML = "";
-        mBody.appendChild(tpl.content.cloneNode(true));
+    mTitle.textContent = title;
+    mBody.innerHTML = "";
+    mBody.appendChild(tpl.content.cloneNode(true));
 
-        if(typeof modal.showModal === 'function') modal.showModal();
-        else modal.setAttribute('open','');
+    lockBodyScroll();
+    if(typeof modal.showModal === 'function') modal.showModal();
+    else modal.setAttribute('open','');
 
-        if(btn.classList.contains('open-desc')){
-          trackSafe('ViewContent', {
-            content_name: title,
-            content_category: 'Planes'
-          });
-        }
-      }
+    if(btn.classList.contains('open-desc')){
+      try{ if(typeof fbq === 'function') fbq('track','ViewContent',{content_name:title,content_category:'Planes'}); }catch(_){}
+    }
+  }
 
-      document.querySelectorAll('.open-desc, .open-story').forEach(btn=>{
-        btn.addEventListener('click', ()=>openTemplateModal(btn));
-      });
+  document.querySelectorAll('.open-desc, .open-story').forEach(btn=>{
+    btn.addEventListener('click', ()=>openTemplateModal(btn));
+  });
 
-      document.addEventListener('keydown', e=>{
-        if(e.key === 'Escape'){
-          try{ modal.close(); }
-          catch(_){ modal.removeAttribute('open'); }
-        }
-      });
-    })();
+  document.addEventListener('keydown', e=>{
+    if(e.key === 'Escape'){
+      try{ modal.close(); }catch(_){ modal.removeAttribute('open'); unlockBodyScroll(); }
+    }
+  });
+})();
+
 
     /* VideoClick robusto */
     (function videoClick(){
@@ -3568,6 +3568,7 @@ html{
 </script>
 </body>
 </html>
+
 
 
 
