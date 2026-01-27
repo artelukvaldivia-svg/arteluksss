@@ -3478,31 +3478,35 @@ html{
   }
 
   // Pointer (moderno)
+   // Pointer (moderno)
   slider.addEventListener('pointerdown', (e)=>{
     onStart(e.clientX, e.clientY);
-  }, {passive:true});
+  }, { passive: true });
 
   slider.addEventListener('pointerup', (e)=>{
     onEnd(e.clientX, e.clientY);
-  }, {passive:true});
+  }, { passive: true });
 
-  // Touch fallback (iPhone por si acaso)
+  slider.addEventListener('pointercancel', (e)=>{
+    onEnd(e.clientX, e.clientY);
+  }, { passive: true });
+
+  // Touch fallback (por si el browser se pone raro con pointer)
   slider.addEventListener('touchstart', (e)=>{
-    const t = e.touches && e.touches[0];
+    const t = e.changedTouches && e.changedTouches[0];
     if(!t) return;
     onStart(t.clientX, t.clientY);
-  }, {passive:true});
+  }, { passive: true });
 
   slider.addEventListener('touchend', (e)=>{
     const t = e.changedTouches && e.changedTouches[0];
     if(!t) return;
     onEnd(t.clientX, t.clientY);
-  }, {passive:true});
+  }, { passive: true });
 
-  // Init “a prueba de entremedio”
-  index = 0;
-  setActiveDot(0);
+  // Init
   applyTransform(true);
+  setActiveDot(index);
   startAuto();
 })();
 
@@ -3568,6 +3572,7 @@ html{
 </script>
 </body>
 </html>
+
 
 
 
