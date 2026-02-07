@@ -1,24 +1,24 @@
 <!DOCTYPE html> 
 <html lang="es-CL">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>Arteluk — Arte & Arteterapia en Valdivia</title>
-  <meta name="description" content="Academia de arte y arteterapia en Valdivia. Talleres para niños, jóvenes y adultos. Dirección: Picarte 407." />
-  <link rel="canonical" href="https://www.arteluk.cl/" />
+  <meta name="description" content="Academia de arte y arteterapia en Valdivia. Talleres para niños, jóvenes y adultos. Dirección: Picarte 407.">
+  <link rel="canonical" href="https://www.arteluk.cl/">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="img/android-chrome-192x192.png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-  <meta name="theme-color" content="#2563eb">
+  <meta name="theme-color" content="#1E40AF">
 
   <!-- OpenGraph -->
   <meta property="og:title" content="Arteluk — Arte & Arteterapia en Valdivia">
@@ -49,1591 +49,1537 @@
     <img height="1" width="1" style="display:none"
          src="https://www.facebook.com/tr?id=1611426433185367&ev=PageView&noscript=1"/>
   </noscript>
-  <!-- End Meta Pixel Code -->
 
   <style>
-    :root{
-      --ink:#0f172a;
-      --muted:#5f6b7a;
-      --line:#dfeaf7;
-      --paper:#ffffff;
-      --bg:#eaf5ff;
-      --bg2:#f6fbff;
-      --brand:#2563eb;
-      --brand2:#0ea5e9;
-      --radius:18px;
-      --shadow:0 10px 28px rgba(15,23,42,.10);
-      --navH:64px;
-      --gold1:#fbbf24;
-      --gold2:#f59e0b;
-      --gold3:#d97706;
-      --goldSoft:#fff7ed; 
+    /* ========================================
+       VARIABLES PROFESIONALES - AZUL
+       ======================================== */
+    :root {
+      /* Azules profesionales */
+      --blue-50: #EFF6FF;
+      --blue-100: #DBEAFE;
+      --blue-200: #BFDBFE;
+      --blue-300: #93C5FD;
+      --blue-400: #60A5FA;
+      --blue-500: #3B82F6;
+      --blue-600: #2563EB;
+      --blue-700: #1D4ED8;
+      --blue-800: #1E40AF;
+      --blue-900: #1E3A8A;
+      
+      /* Grises */
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-300: #D1D5DB;
+      --gray-400: #9CA3AF;
+      --gray-500: #6B7280;
+      --gray-600: #4B5563;
+      --gray-700: #374151;
+      --gray-800: #1F2937;
+      --gray-900: #111827;
+      
+      /* Dorado para verano */
+      --gold-50: #FFFBEB;
+      --gold-100: #FEF3C7;
+      --gold-400: #FBBF24;
+      --gold-500: #F59E0B;
+      --gold-600: #D97706;
+      
+      /* Texto */
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #64748B;
+      
+      /* Fondos */
+      --bg-primary: #FFFFFF;
+      --bg-secondary: var(--gray-50);
+      
+      /* Bordes */
+      --border-light: var(--gray-200);
+      --border-medium: var(--gray-300);
+      
+      /* Espaciado */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      
+      /* Sombras */
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      
+      /* Bordes redondeados */
+      --radius-sm: 0.375rem;
+      --radius: 0.5rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1rem;
+      --radius-xl: 1.5rem;
+      --radius-full: 9999px;
+      
+      /* Layout */
+      --nav-height: 64px;
+      
+      /* Transiciones */
+      --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    *{ box-sizing:border-box }
-
-    html,body{
-      margin:0;
-      padding:0;
+    /* ========================================
+       RESET
+       ======================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    html{
-      scroll-behavior:smooth;
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-height) + var(--space-4));
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    body{
-  font:15.5px/1.65 Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  color:var(--ink);
-
-  /* mismo look del hero, pero global */
-  background:
-    radial-gradient(700px 420px at 12% 10%, rgba(148,233,255,.65), transparent 60%),
-    radial-gradient(780px 460px at 90% 16%, rgba(129,140,248,.45), transparent 60%),
-    radial-gradient(720px 420px at 18% 100%, rgba(45,212,191,.35), transparent 60%),
-    linear-gradient(180deg, #eff6ff, #e0f2fe);
-
-  overflow-x:hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-    img{
-      max-width:100%;
-      display:block;
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: linear-gradient(to bottom, var(--blue-50) 0%, #FFFFFF 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    .container{
-      max-width:1140px;
-      margin:auto;
-      padding:0 18px;
+    /* Fondo azul sutil */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 20% 10%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 40% 90%, rgba(96, 165, 250, 0.05) 0%, transparent 50%);
+      z-index: -1;
+      pointer-events: none;
     }
 
-    h1,h2{
-      font-family:"Playfair Display",serif;
-      letter-spacing:.2px;
-      margin:0 0 8px;
+    img, video {
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
 
-    h1{
-      font-size:clamp(34px,5.6vw,54px);
+    button {
+      font-family: inherit;
+      cursor: pointer;
     }
 
-    h2{
-      font-size:clamp(24px,3.8vw,36px);
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .lead{
-      color:var(--muted);
-      max-width:920px;
+    /* Fix overflow móvil */
+    h1, h2, h3, p, li, a, span, strong, small {
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
 
-    .mono{
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      color:#7fa2c9;
-      font-size:.82rem;
+    /* ========================================
+       CONTAINER
+       ======================================== */
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 var(--space-4);
     }
 
-    .section{
-      padding:68px 0;
-      scroll-margin-top: calc(var(--navH) + 12px);
-      position:relative;
-      z-index:1;
-      content-visibility:visible;
-      contain-intrinsic-size: auto;
-    }
-
-    /* ===== PERF / ACCESIBILIDAD ===== */
-    @media (prefers-reduced-motion: reduce){
-      *{
-        animation:none !important;
-        transition:none !important;
-        scroll-behavior:auto !important;
+    @media (min-width: 640px) {
+      .container {
+        padding: 0 var(--space-6);
       }
     }
 
-    body.perf *{
-      animation:none !important;
+    /* ========================================
+       TIPOGRAFÍA
+       ======================================== */
+    h1, h2, h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-primary);
     }
 
-    body.perf nav{
-      backdrop-filter:none !important;
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-4);
     }
 
-    /* ===== Fondo “bonito” sin blur caro ===== */
-    .fx-bg{
-      position:fixed;
-      inset:0;
-      z-index:-2;
-      pointer-events:none;
-      opacity:.55;
-      background:
-        radial-gradient(560px 320px at 8% 12%, rgba(191,219,254,.55), transparent 60%),
-        radial-gradient(520px 260px at 92% 8%, rgba(165,180,252,.40), transparent 60%),
-        radial-gradient(440px 240px at 70% 85%, rgba(14,165,233,.35), transparent 60%),
-        radial-gradient(420px 240px at 16% 90%, rgba(186,230,253,.45), transparent 60%);
-      transform: translateZ(0);
+    h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-4);
     }
 
-    body.perf .fx-bg{
-      opacity:.25;
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-3);
     }
 
-    /* ✅ REVEAL: anti “pantalla en blanco”
-       - Por defecto NO oculta nada
-       - Solo oculta si el JS de reveal alcanzó a correr y marcó .js-reveal
-    */
-    .reveal{ }
-
-    .js-reveal{
-  opacity:1 !important;
-  transform:none !important;
-  transition:none !important;
-    }
-    .js-reveal.in{
-      opacity:1;
-      transform:none;
+    p {
+      color: var(--text-secondary);
     }
 
-    /* --------- LISTAS --------- */
-    .text-intro{
-      max-width:720px;
+    .lead {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 920px;
     }
 
-    .pill-list{
-      margin:10px 0 6px;
-      padding-left:0;
-      list-style:none;
-      display:flex;
-      flex-direction:column;
-      gap:6px;
+    .mono {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-600);
+      margin-bottom: var(--space-2);
     }
 
-    .pill-list li{
-      position:relative;
-      padding-left:18px;
-      font-size:.94rem;
-      color:var(--muted);
+    .section {
+      padding: var(--space-16) 0;
     }
 
-    .pill-list li::before{
-      content:"";
-      position:absolute;
-      left:0;
-      top:0.62em;
-      width:7px;
-      height:7px;
-      border-radius:999px;
-      background:linear-gradient(135deg,var(--brand),var(--brand2));
-      transform:translateY(-50%);
+    /* ========================================
+       NAVEGACIÓN
+       ======================================== */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-light);
     }
 
-    .hero-badges{
-      margin-top:8px;
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--nav-height);
+      gap: var(--space-4);
     }
 
-    .hero-badges li{
-      color:#0f172a;
-      font-weight:500;
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      flex-shrink: 0;
     }
 
-    /* BOTONES */
-    .btn{
-      position:relative;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:12px 20px;
-      border-radius:999px;
-      border:1px solid transparent;
-      font-weight:700;
-      text-decoration:none;
-      cursor:pointer;
-      transition:
-        transform .16s ease,
-        box-shadow .18s ease,
-        background-position .25s ease,
-        border-color .18s ease;
-      background-size:200% 100%;
-      overflow:hidden;
-      user-select:none;
-      white-space:nowrap;
-      font-family:inherit;
+    .brand span {
+      color: var(--blue-600);
+      font-weight: 600;
     }
 
-    .btn.primary{
-      color:#fff;
-      background-image:linear-gradient(90deg,var(--brand),var(--brand2));
-      box-shadow:0 14px 25px rgba(37,99,235,.22);
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      padding: var(--space-2);
+      font-size: 1.75rem;
+      color: var(--text-primary);
+      cursor: pointer;
     }
 
-    .btn.primary:hover{
-      transform:translateY(-2px);
-      box-shadow:0 18px 32px rgba(37,99,235,.28);
-      background-position:100% 0;
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
     }
 
-    .btn.primary:active{
-      transform:translateY(0) scale(.98);
+    a.nav {
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius);
+      color: var(--text-secondary);
+      font-weight: 500;
+      transition: var(--transition);
     }
 
-    .btn.ghost{
-      background:rgba(255,255,255,.92);
-      border:1px solid #cbd5f5;
-      color:#1f2937;
+    a.nav:hover {
+      background: var(--blue-50);
+      color: var(--blue-700);
     }
 
-    .btn.ghost:hover{
-      border-color:#93c5fd;
-      box-shadow:0 10px 20px rgba(148,163,184,.22);
-      transform:translateY(-2px);
-    }
-
-    .btn:focus-visible{
-      outline:3px solid rgba(37,99,235,.35);
-      outline-offset:3px;
-    }
-
-    .link-button{
-      border:none;
-      background:none;
-      padding:0;
-      margin-top:10px;
-      font:inherit;
-      color:#2563eb;
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      position:relative;
-    }
-
-    .link-button::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-2px;
-      width:0;
-      height:2px;
-      border-radius:999px;
-      background:linear-gradient(90deg,#2563eb,#0ea5e9);
-      transition:width .25s ease;
-    }
-
-    .link-button:hover::after{
-      width:100%;
-    }
-
-    /* nav */
-    nav{
-      position:sticky;
-      top:0;
-      z-index:30;
-      background:#ffffffee;
-      border-bottom:1px solid var(--line);
-    }
-
-    @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))){
-      nav{
-        background:#ffffffd9;
-        backdrop-filter:blur(10px);
-        -webkit-backdrop-filter:blur(10px);
+    @media (max-width: 880px) {
+      .nav-toggle {
+        display: block;
+        position: absolute;
+        right: var(--space-4);
+        top: 50%;
+        transform: translateY(-50%);
       }
 
-      body.perf nav{
-        backdrop-filter:none !important;
-        -webkit-backdrop-filter:none !important;
+      .actions {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        flex-direction: column;
+        background: white;
+        border-bottom: 1px solid var(--border-light);
+        box-shadow: var(--shadow-lg);
+        padding: var(--space-4);
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.2s ease;
+        pointer-events: none;
+      }
+
+      .actions.active {
+        max-height: 500px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .actions a.nav {
+        width: 100%;
+        padding: var(--space-3) var(--space-4);
+        text-align: center;
+      }
+
+      .actions .btn {
+        width: 100%;
+        justify-content: center;
       }
     }
 
-    .navbar{
-      height:64px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      position:relative;
+    .nav-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 49;
+      background: rgba(0, 0, 0, 0.3);
     }
 
-    .brand{
-      font-weight:800;
-      color:var(--ink);
-      text-decoration:none;
+    .nav-backdrop.show {
+      display: block;
     }
 
-    .brand span{
-      color:#7b94ad;
-      font-weight:600;
+    /* ========================================
+       BOTONES
+       ======================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      white-space: nowrap;
+      min-height: 44px;
     }
 
-    .actions{
-      display:flex;
-      align-items:center;
-      gap:10px;
+    .btn.primary {
+      background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+      color: white;
+      box-shadow: var(--shadow-md);
     }
 
-    a.nav{
-      color:#2f5279;
-      text-decoration:none;
-      padding:10px 12px;
-      border-radius:10px;
+    .btn.primary:hover {
+      background: linear-gradient(135deg, var(--blue-700), var(--blue-800));
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-1px);
     }
 
-    a.nav:hover{
-      background:#f1f7ff;
-      border:1px solid #cfe3ff;
+    .btn.ghost {
+      background: white;
+      color: var(--blue-700);
+      border: 1px solid var(--border-medium);
+      box-shadow: var(--shadow-sm);
     }
 
-    .nav-toggle{
-      display:none;
-      background:none;
-      border:none;
-      font-size:28px;
-      line-height:1;
-      padding:6px 10px;
-      cursor:pointer;
-      color:#1e293b;
+    .btn.ghost:hover {
+      background: var(--blue-50);
+      border-color: var(--blue-300);
     }
 
-    /* layouts */
-    .split{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:32px;
-      align-items:center;
+    .btn:focus-visible {
+      outline: 2px solid var(--blue-600);
+      outline-offset: 2px;
     }
 
-    @media (max-width:980px){
-      .split{
-        grid-template-columns:1fr;
+    .link-button {
+      border: none;
+      background: none;
+      padding: 0;
+      margin-top: var(--space-3);
+      font: inherit;
+      color: var(--blue-600);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      position: relative;
+    }
+
+    .link-button::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      border-radius: var(--radius-full);
+      background: linear-gradient(90deg, var(--blue-600), var(--blue-500));
+      transition: width 0.25s ease;
+    }
+
+    .link-button:hover::after {
+      width: 100%;
+    }
+
+    /* ========================================
+       PANTALLA INICIO
+       ======================================== */
+    .intro-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-6);
+      background: radial-gradient(circle at top, var(--blue-100) 0, var(--blue-50) 45%, var(--blue-200) 100%);
+      transition: opacity 0.45s ease, visibility 0.45s ease;
+    }
+
+    .intro-screen.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .intro-inner {
+      max-width: 680px;
+      width: 100%;
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--blue-200);
+      padding: var(--space-8);
+      text-align: center;
+    }
+
+    .intro-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: var(--space-2);
+    }
+
+    .intro-tag {
+      margin: 0;
+      color: var(--blue-600);
+      font-size: 0.875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .intro-line {
+      margin: var(--space-4) 0 var(--space-6);
+      color: var(--text-secondary);
+    }
+
+    .intro-note {
+      margin-top: var(--space-3);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    /* ========================================
+       HERO SLIDER
+       ======================================== */
+    .hero-shell {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-slider {
+      --heroSlides: 3;
+      position: relative;
+      height: calc(100vh - var(--nav-height));
+      min-height: 620px;
+      overflow: hidden;
+      touch-action: pan-y;
+    }
+
+    @media (max-width: 880px) {
+      .hero-slider {
+        height: auto;
+        min-height: calc(100vh - var(--nav-height));
       }
     }
 
-    /* ===== PANTALLA INICIO ===== */
-    .intro-screen{
-      position:fixed;
-      inset:0;
-      z-index:40;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-      background:
-        radial-gradient(circle at top, #e0f2ff 0, #eff6ff 45%, #bfdbfe 100%);
-      transition:opacity .45s ease, visibility .45s ease;
+    .hero-track {
+      display: flex;
+      height: 100%;
+      width: calc(var(--heroSlides) * 100%);
+      transform: translate3d(0, 0, 0);
+      transition: transform 0.6s cubic-bezier(0.33, 0.7, 0.2, 1);
+      will-change: transform;
     }
 
-    .intro-screen.hide{
-      opacity:0;
-      visibility:hidden;
-      pointer-events:none;
+    .hero-track.dragging {
+      transition: none !important;
     }
 
-    .intro-inner{
-      max-width:680px;
-      width:100%;
-      border-radius:28px;
-      background:rgba(255,255,255,.96);
-      box-shadow:0 22px 60px rgba(15,23,42,.22);
-      border:1px solid rgba(191,219,254,.9);
-      padding:26px 26px 30px;
-      text-align:center;
-      position:relative;
-      overflow:hidden;
+    .hero-slide {
+      flex: 0 0 calc(100% / var(--heroSlides));
+      height: 100%;
+      display: flex;
+      align-items: center;
     }
 
-    .intro-logo{
-      font-family:"Playfair Display",serif;
-      font-size:30px;
-      margin-bottom:4px;
+    .hero-slide-inner {
+      padding: var(--space-8) var(--space-4);
     }
 
-    .intro-tag{
-      margin:0;
-      color:#2563eb;
-      font-size:.84rem;
-      letter-spacing:.18em;
-      text-transform:uppercase;
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--blue-200);
+      color: var(--text-primary);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: var(--space-3);
     }
 
-    .intro-line{
-      margin:14px 0 18px;
-      color:#4b5563;
-      font-size:.97rem;
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-top: var(--space-6);
+      align-items: center;
     }
 
-    .intro-actions{
-      display:flex;
-      justify-content:center;
-      margin-top:8px;
+    .hero-note {
+      font-size: 0.875rem;
+      color: var(--text-muted);
     }
 
-    .intro-note{
-      margin-top:10px;
-      font-size:.82rem;
-      color:#64748b;
-    }
-
-    /* HERO (contenido) */
-    .hero-eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:4px 10px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.92);
-      border:1px solid #dbeafe;
-      color:#1f2937;
-      font-size:.78rem;
-      text-transform:uppercase;
-      letter-spacing:.16em;
-      margin-bottom:10px;
-    }
-
-    .hero-ctas{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:16px;
-      align-items:center;
-    }
-
-    .hero-note{
-      font-size:.85rem;
-      color:#64748b;
-    }
-
-    /* VIDEO CARD */
-    .video-shell{
-      position:relative;
-      border-radius:26px;
-      padding:3px;
-      background:linear-gradient(145deg,#38bdf8,#6366f1,#0ea5e9);
-      box-shadow:0 22px 55px rgba(15,23,42,.18);
-    }
-
-    .video-card{
-      border-radius:22px;
-      overflow:hidden;
-      background:rgba(255,255,255,.92);
-      border:1px solid rgba(224,236,255,.9);
-    }
-
-    .video-aspect{
-      position:relative;
-      aspect-ratio:16/9;
-      background:#0b1220;
-      overflow:hidden;
-    }
-
-    .video-link{
-      position:absolute;
-      inset:0;
-      display:block;
-      text-decoration:none;
-      color:#fff;
-      cursor:pointer;
-    }
-
-    .video-thumb{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transform:scale(1.02);
-    }
-
-    .video-link::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(180deg, rgba(2,6,23,.10), rgba(2,6,23,.55)),
-        radial-gradient(520px 260px at 28% 18%, rgba(56,189,248,.18), transparent 60%),
-        radial-gradient(520px 260px at 86% 72%, rgba(99,102,241,.16), transparent 60%);
-    }
-
-    .video-center{
-      position:absolute;
-      inset:0;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      z-index:2;
-      text-shadow:0 16px 32px rgba(0,0,0,.35);
-      padding:18px;
-      text-align:center;
-    }
-
-    .play-circle{
-      width:78px;
-      height:78px;
-      border-radius:999px;
-      display:grid;
-      place-items:center;
-      background:rgba(255,255,255,.14);
-      border:1px solid rgba(255,255,255,.28);
-      box-shadow:0 18px 36px rgba(0,0,0,.20);
-      transition:transform .16s ease;
-    }
-
-    .video-link:hover .play-circle{
-      transform:scale(1.06);
-    }
-
-    .video-title{
-      font-weight:900;
-      letter-spacing:.02em;
-    }
-
-    .video-sub{
-      font-size:12px;
-      opacity:.86;
-    }
-
-    .video-meta{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:10px;
-      padding:12px 14px;
-      background:#ffffff;
-      border-top:1px solid rgba(224,236,255,.9);
-    }
-
-    .video-meta .meta-left{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-      line-height:1.2;
-    }
-
-    .video-meta .meta-left strong{
-      font-size:13px;
-    }
-
-    .video-meta .meta-left small{
-      color:#64748b;
-      font-size:12px;
-    }
-
-    .video-meta .meta-left a{
-      color:#2563eb;
-      text-decoration:none;
-      font-weight:800;
-    }
-
-    .video-meta .meta-left a:hover{
-      text-decoration:underline;
-    }
-
-    .video-meta .btn{
-      padding:10px 16px;
-      font-weight:800;
-    }
-
-    /* tarjetas / grids */
-    .grid{
-      display:grid;
-      gap:22px;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-    }
-
-    @media (max-width:1100px){
-      .grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
+    @media (max-width: 640px) {
+      .hero-ctas .btn {
+        width: 100%;
       }
     }
 
-    @media (max-width:720px){
-      .grid{
-        grid-template-columns:1fr;
+    /* Controles slider */
+    .hero-controls {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: var(--space-6);
+      padding: 0 var(--space-6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+
+    .hero-dots {
+      display: flex;
+      gap: var(--space-2);
+      pointer-events: auto;
+    }
+
+    .hero-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(15, 23, 42, 0.38);
+      background: rgba(255, 255, 255, 0.55);
+      box-shadow: var(--shadow-md);
+      padding: 0;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .hero-dot.active {
+      width: 28px;
+      background: linear-gradient(90deg, var(--blue-500), var(--blue-600));
+      border-color: var(--blue-700);
+    }
+
+    .hero-arrows {
+      display: flex;
+      gap: var(--space-2);
+      pointer-events: auto;
+    }
+
+    .hero-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-medium);
+      background: white;
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      font-weight: 900;
+      color: var(--text-primary);
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      font-size: 1.5rem;
+    }
+
+    .hero-arrow:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-arrow:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    /* Split layout */
+    .split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    @media (max-width: 980px) {
+      .split {
+        grid-template-columns: 1fr;
       }
     }
 
-    .card{
-      background:var(--paper);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      transition:transform .22s ease, box-shadow .22s ease;
-      position:relative;
-      transform: translateZ(0);
+    /* Pills list */
+    .pill-list {
+      margin: var(--space-4) 0;
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
     }
 
-    .card:hover{
-      transform:translateY(-5px);
-      box-shadow:0 20px 40px rgba(15,23,42,.18);
+    .pill-list li {
+      position: relative;
+      padding-left: var(--space-5);
+      color: var(--text-secondary);
     }
 
-    body.perf .card:hover{
-      transform:none;
-      box-shadow:var(--shadow);
+    .pill-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-600), var(--blue-500));
     }
 
-    .card .media{
-      aspect-ratio:16/10;
-      background:var(--bg2);
-      overflow:hidden;
+    /* Video Card */
+    .video-shell {
+      position: relative;
+      border-radius: var(--radius-xl);
+      padding: 3px;
+      background: linear-gradient(145deg, var(--blue-500), var(--blue-700));
+      box-shadow: var(--shadow-xl);
     }
 
-    .card .body{
-      padding:16px 16px 18px;
+    .video-card {
+      border-radius: calc(var(--radius-xl) - 3px);
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--blue-100);
     }
 
-    .card h3{
-      margin:2px 0 6px;
+    .video-aspect {
+      position: relative;
+      aspect-ratio: 16/9;
+      background: var(--gray-900);
+      overflow: hidden;
     }
 
-    .card p{
-      margin:0;
-      color:var(--muted);
+    .video-link {
+      position: absolute;
+      inset: 0;
+      display: block;
+      cursor: pointer;
+      color: white;
     }
 
-    .card .meta{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin:10px 0 12px;
+    .video-thumb {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .badge{
-      background:#eef6ff;
-      border:1px solid #d7e6f7;
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:.9rem;
-      color:#204a7a;
+    .video-link::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
     }
 
-    .card .cta{
-      margin-top:auto;
-      padding:14px 16px;
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
+    .video-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      z-index: 2;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      padding: var(--space-6);
+      text-align: center;
     }
 
-    .card .cta .btn{
-      min-width:160px;
-      justify-content:center;
+    .play-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow-xl);
+      transition: var(--transition);
     }
 
-    /* verano (dorado) */
-    .card.summer{
-      border:1px solid rgba(245,158,11,.35);
-      box-shadow:0 10px 28px rgba(245,158,11,.10);
-      background:linear-gradient(180deg, rgba(255,247,237,.65), rgba(255,255,255,.95));
+    .video-link:hover .play-circle {
+      transform: scale(1.1);
     }
 
-    .card.summer:hover{
-      box-shadow:0 22px 44px rgba(245,158,11,.18);
+    .video-title {
+      font-weight: 900;
+      font-size: 1.125rem;
     }
 
-    .badge.gold{
-      background:rgba(255,247,237,.95);
-      border:1px solid rgba(245,158,11,.35);
-      color:#7c2d12;
+    .video-sub {
+      font-size: 0.875rem;
+      opacity: 0.9;
     }
 
-    .badge.rec{
-      background:linear-gradient(90deg,var(--gold1),var(--gold2));
-      border:1px solid rgba(217,119,6,.55);
-      color:#1f2937;
-      font-weight:900;
+    .video-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-4);
+      background: white;
+      border-top: 1px solid var(--border-light);
     }
 
-    .recommended-pill{
-      position:absolute;
-      top:12px;
-      right:12px;
-      padding:8px 10px;
-      border-radius:999px;
-      background:linear-gradient(90deg,var(--gold1),var(--gold2));
-      border:1px solid rgba(217,119,6,.55);
-      color:#1f2937;
-      font-weight:900;
-      font-size:.78rem;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      box-shadow:0 14px 28px rgba(245,158,11,.18);
+    .video-meta .meta-left {
+      flex: 1;
     }
 
-    /* equipo / exposiciones */
-    .team{
-      display:grid;
-      gap:18px;
-      grid-template-columns:repeat(2,1fr);
+    .video-meta .meta-left strong {
+      display: block;
+      font-size: 0.875rem;
+      margin-bottom: var(--space-1);
     }
 
-    @media (max-width:720px){
-      .team{
-        grid-template-columns:1fr;
+    .video-meta .meta-left small {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    .video-meta .meta-left a {
+      color: var(--blue-600);
+      font-weight: 700;
+    }
+
+    .video-meta .meta-left a:hover {
+      text-decoration: underline;
+    }
+
+    /* Marco cuadro */
+    .marco-cuadro {
+      border-radius: var(--radius-xl);
+      border: 8px solid white;
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+      background: white;
+    }
+
+    .marco-cuadro img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ========================================
+       CARDS (SERVICIOS)
+       ======================================== */
+    .grid {
+      display: grid;
+      gap: var(--space-6);
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+
+    @media (max-width: 720px) {
+      .grid {
+        grid-template-columns: 1fr;
       }
     }
 
-    .tile{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:16px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
+    .card {
+      background: white;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
     }
 
-    .tile .media{
-      aspect-ratio:4/3;
-      overflow:hidden;
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
     }
 
-    .media > img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
+    .card .media {
+      aspect-ratio: 16/10;
+      background: var(--gray-100);
+      overflow: hidden;
     }
 
-    .bio-grid{
-      display:grid;
-      gap:14px;
-      grid-template-columns:repeat(2,1fr);
-      margin-top:14px;
+    .card .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    @media (max-width:980px){
-      .bio-grid{
-        grid-template-columns:1fr;
+    .card .body {
+      padding: var(--space-5);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card h3 {
+      margin: 0 0 var(--space-2);
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      margin: 0 0 var(--space-4);
+      color: var(--text-secondary);
+    }
+
+    .card .meta {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+      margin: var(--space-3) 0 var(--space-4);
+    }
+
+    .badge {
+      background: var(--blue-50);
+      border: 1px solid var(--blue-200);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      font-size: 0.875rem;
+      color: var(--blue-800);
+      font-weight: 600;
+    }
+
+    .badge.gold {
+      background: var(--gold-100);
+      border: 1px solid var(--gold-400);
+      color: var(--gold-600);
+    }
+
+    .badge.rec {
+      background: linear-gradient(90deg, var(--gold-400), var(--gold-500));
+      border: 1px solid var(--gold-600);
+      color: white;
+      font-weight: 900;
+    }
+
+    .card .cta {
+      margin-top: auto;
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .card .cta .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* Cards verano */
+    .card.summer {
+      border: 1px solid var(--gold-400);
+      background: linear-gradient(180deg, var(--gold-50), white);
+    }
+
+    .card.summer:hover {
+      box-shadow: 0 20px 40px rgba(245, 158, 11, 0.18);
+    }
+
+    .recommended-pill {
+      position: absolute;
+      top: var(--space-4);
+      right: var(--space-4);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-full);
+      background: linear-gradient(90deg, var(--gold-400), var(--gold-500));
+      border: 1px solid var(--gold-600);
+      color: white;
+      font-weight: 900;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      box-shadow: var(--shadow-md);
+      z-index: 1;
+    }
+
+    /* ========================================
+       EQUIPO
+       ======================================== */
+    .teamPro__wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 var(--space-4);
+    }
+
+    .teamPro__kicker {
+      margin: 0 0 var(--space-2);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-600);
+    }
+
+    .teamPro__title {
+      margin: 0;
+    }
+
+    .teamPro__sub {
+      margin: var(--space-2) 0 var(--space-8);
+      color: var(--text-secondary);
+    }
+
+    .teamPro__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+    }
+
+    @media (max-width: 920px) {
+      .teamPro__grid {
+        grid-template-columns: 1fr;
       }
     }
 
-    .bio{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:14px;
+    .teamCard {
+      background: white;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* formulario */
-    .form{
-      background:#fff;
-      border-radius:14px;
-      padding:40px;
-      max-width:900px;
-      margin:0 auto;
-      box-shadow:0 12px 35px rgba(0,0,0,.08);
-      border:1px solid #e0e6f0;
+    .teamCard__media {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
     }
 
-    .form .row{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:20px;
-      margin-bottom:20px;
+    .teamCard__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .form .row.single{
-      grid-template-columns:1fr;
+    .teamCard__fade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.85));
     }
 
-    .form label{
-      font-weight:700;
-      color:#1c2740;
-      display:block;
-      margin-bottom:6px;
+    .teamCard__body {
+      padding: var(--space-5);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      flex: 1;
+    }
+
+    .teamCard__head {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .teamCard__name {
+      margin: 0;
+      font-size: 1.125rem;
+      font-weight: 800;
+    }
+
+    .teamCard__pill {
+      font-size: 0.75rem;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-light);
+      background: var(--gray-50);
+    }
+
+    .teamCard__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    .teamCard__list li {
+      margin: var(--space-2) 0;
+      padding-left: var(--space-4);
+      position: relative;
+    }
+
+    .teamCard__list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--blue-600);
+    }
+
+    .teamCard__details {
+      margin-top: auto;
+      border-top: 1px solid var(--border-light);
+      padding-top: var(--space-3);
+    }
+
+    .teamCard__details summary {
+      cursor: pointer;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-light);
+      background: var(--gray-50);
+      font-weight: 700;
+      font-size: 0.875rem;
+    }
+
+    .teamCard__details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .teamCard__chev {
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid var(--text-primary);
+      border-bottom: 2px solid var(--text-primary);
+      transform: rotate(45deg);
+      transition: var(--transition);
+    }
+
+    .teamCard__details[open] .teamCard__chev {
+      transform: rotate(-135deg);
+    }
+
+    .teamCard__details p {
+      margin: var(--space-3) 0 0;
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       EXPOSICIONES
+       ======================================== */
+    .expo-wrap {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.92));
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+    }
+
+    .expo-wrap-head {
+      padding: var(--space-6);
+      border-bottom: 1px solid var(--border-light);
+      background: white;
+    }
+
+    .expo-wrap-head strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+
+    .expo-wrap-head small {
+      display: block;
+      margin-top: var(--space-1);
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .expo-stack {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+      padding: var(--space-6);
+    }
+
+    .expo-item {
+      background: white;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      grid-template-areas: "info media";
+      min-height: 360px;
+    }
+
+    @media (max-width: 980px) {
+      .expo-item {
+        grid-template-columns: 1fr;
+        grid-template-areas: "info" "media";
+        min-height: auto;
+      }
+    }
+
+    .expo-media {
+      grid-area: media;
+      padding: var(--space-5);
+      background: var(--gray-50);
+      border-left: 1px solid var(--border-light);
+    }
+
+    @media (max-width: 980px) {
+      .expo-media {
+        border-left: none;
+        border-top: 1px solid var(--border-light);
+      }
+    }
+
+    .expo-photo {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      background: var(--gray-900);
+    }
+
+    .expo-photo img.expo-main,
+    .expo-photo video.expo-main {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Video support */
+    .expo-photo.is-video {
+      position: relative;
+    }
+
+    .expo-photo.is-video .expo-main-img,
+    .expo-photo.is-video .expo-main-video {
+      position: absolute;
+      inset: 0;
+    }
+
+    .expo-photo.is-video .expo-main-img {
+      display: block;
+    }
+
+    .expo-photo.is-video .expo-main-video {
+      display: none;
+    }
+
+    .expo-photo.is-video.show-video .expo-main-img {
+      display: none;
+    }
+
+    .expo-photo.is-video.show-video .expo-main-video {
+      display: block;
+    }
+
+    .expo-photo.reel-letterbox .expo-main-video {
+      object-fit: contain;
+    }
+
+    .expo-thumbs {
+      margin-top: var(--space-4);
+      display: flex;
+      gap: var(--space-3);
+      overflow-x: auto;
+      padding-bottom: var(--space-1);
+    }
+
+    .expo-thumbs::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .expo-thumbs::-webkit-scrollbar-thumb {
+      background: var(--gray-300);
+      border-radius: var(--radius-full);
+    }
+
+    .expo-thumb {
+      flex: 0 0 112px;
+      aspect-ratio: 4/3;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      background: var(--gray-100);
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      padding: 0;
+      transition: var(--transition);
+    }
+
+    .expo-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0.85;
+      transition: var(--transition);
+    }
+
+    .expo-thumb:hover img {
+      opacity: 1;
+      transform: scale(1.04);
+    }
+
+    .expo-thumb.is-active {
+      border-color: var(--blue-500);
+      box-shadow: var(--shadow-md);
+    }
+
+    .expo-thumb.is-active img {
+      opacity: 1;
+    }
+
+    .expo-thumb.is-placeholder {
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .expo-info {
+      grid-area: info;
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .expo-kicker {
+      align-self: flex-start;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      background: var(--gold-100);
+      border: 1px solid var(--gold-400);
+      color: var(--gold-600);
+      font-weight: 900;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .expo-info h3 {
+      margin: 0;
+      font-size: 1.375rem;
+    }
+
+    .expo-info p {
+      margin: 0;
+      color: var(--text-secondary);
+    }
+
+    .expo-details {
+      margin: 0;
+      padding-left: var(--space-5);
+      color: var(--text-secondary);
+    }
+
+    .expo-details li {
+      margin: var(--space-2) 0;
+    }
+
+    .expo-tags {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .tag {
+      background: var(--gray-100);
+      border: 1px solid var(--border-light);
+      color: var(--text-primary);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    .expo-cta {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      margin-top: var(--space-3);
+    }
+
+    .expo-cta .btn {
+      flex: 1;
+      min-width: 160px;
+      justify-content: center;
+    }
+
+    @media (max-width: 520px) {
+      .expo-cta .btn {
+        width: 100%;
+      }
+    }
+
+    /* ========================================
+       FORMULARIO
+       ======================================== */
+    .form {
+      background: white;
+      border-radius: var(--radius-xl);
+      padding: var(--space-10);
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-light);
+    }
+
+    @media (max-width: 640px) {
+      .form {
+        padding: var(--space-6);
+      }
+    }
+
+    .form .row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-5);
+      margin-bottom: var(--space-5);
+    }
+
+    .form .row.single {
+      grid-template-columns: 1fr;
+    }
+
+    @media (max-width: 640px) {
+      .form .row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form label {
+      font-weight: 700;
+      color: var(--text-primary);
+      display: block;
+      margin-bottom: var(--space-2);
+      font-size: 0.875rem;
     }
 
     .form input,
     .form select,
-    .form textarea{
-      width:100%;
-      padding:14px 16px;
-      border:1px solid #d3dae5;
-      border-radius:10px;
-      background:#f8faff;
-      color:#1e293b;
-      font-size:15px;
-      font-family:inherit;
-      transition:.18s;
+    .form textarea {
+      width: 100%;
+      padding: var(--space-3) var(--space-4);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius);
+      background: white;
+      color: var(--text-primary);
+      font-size: 16px; /* Evita zoom en iOS */
+      font-family: inherit;
+      transition: var(--transition);
     }
 
     .form input:focus,
     .form select:focus,
-    .form textarea:focus{
-      border-color:#60a5fa;
-      background:#fff;
-      box-shadow:0 0 0 4px rgba(96,165,250,.22);
-      outline:none;
+    .form textarea:focus {
+      outline: none;
+      border-color: var(--blue-500);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
     }
 
-    .form textarea{
-      min-height:120px;
-      resize:vertical;
+    .form textarea {
+      min-height: 120px;
+      resize: vertical;
     }
 
-    .form .btn.primary{
-      height:42px;
+    /* ========================================
+       MODAL
+       ======================================== */
+    dialog {
+      border: none;
+      border-radius: var(--radius-xl);
+      max-width: 760px;
+      width: calc(100% - var(--space-8));
+      box-shadow: var(--shadow-xl);
+      padding: 0;
+      background: white;
     }
 
-    /* exposiciones (estilos antiguos, se mantienen por compatibilidad) */
-    .expo-gallery{
-      display:grid;
-      gap:12px;
-      grid-template-columns:repeat(3,1fr);
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
     }
 
-    @media (max-width:980px){
-      .expo-gallery{
-        grid-template-columns:repeat(2,1fr);
+    .modal-head {
+      padding: var(--space-6);
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+    }
+
+    .modal-head strong {
+      font-size: 1.25rem;
+    }
+
+    .modal-body {
+      padding: var(--space-6);
+      background: var(--gray-50);
+      max-height: 70vh;
+      overflow: auto;
+    }
+
+    .modal-body ul {
+      list-style-position: inside;
+      margin: var(--space-4) 0;
+    }
+
+    .modal-body li {
+      margin-bottom: var(--space-2);
+      color: var(--text-secondary);
+    }
+
+    .close {
+      border: none;
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      padding: var(--space-2) var(--space-4);
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text-primary);
+      transition: var(--transition);
+    }
+
+    .close:hover {
+      background: var(--gray-200);
+    }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+    footer {
+      border-top: 1px solid var(--border-light);
+      margin-top: var(--space-20);
+      background: white;
+    }
+
+    .foot {
+      padding: var(--space-8) 0;
+      color: var(--text-muted);
+      display: flex;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .foot a {
+      color: var(--text-secondary);
+      transition: var(--transition);
+    }
+
+    .foot a:hover {
+      color: var(--blue-600);
+    }
+
+    /* ========================================
+       UTILIDADES
+       ======================================== */
+    .reveal {
+      opacity: 1;
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
       }
     }
-
-    @media (max-width:640px){
-      .expo-gallery{
-        grid-template-columns:1fr;
-      }
-    }
-
-    .expo-cards{
-      display:grid;
-      gap:18px;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      margin-top:18px;
-    }
-
-    @media (max-width:980px){
-      .expo-cards{
-        grid-template-columns:1fr;
-      }
-    }
-
-    .expo-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      box-shadow:var(--shadow);
-      padding:16px 16px 18px;
-    }
-
-    .expo-card h3{
-      margin:0 0 6px;
-      font-size:1.05rem;
-    }
-
-    .expo-card p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .expo-tags{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin-top:10px;
-    }
-
-    .tag{
-      background:#f1f7ff;
-      border:1px solid #cfe3ff;
-      color:#1f3a66;
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:.88rem;
-      font-weight:700;
-    }
-
-    /* ✅ MARCO BONITO PARA FOTOS (galería + fotos grandes) */
-    .marco-cuadro{
-      border-radius:22px;
-      border:8px solid #ffffff;
-      box-shadow:0 18px 40px rgba(15,23,42,.18);
-      overflow:hidden;
-      background:#ffffff;
-    }
-
-    .marco-cuadro img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    /* modal */
-    dialog{
-      border:none;
-      border-radius:22px;
-      max-width:760px;
-      width:calc(100% - 28px);
-      box-shadow:0 22px 65px rgba(15,23,42,.35);
-      padding:0;
-      background:linear-gradient(145deg,#f9fafb,#eff6ff);
-    }
-
-    dialog::backdrop{
-      background:rgba(15,23,42,.55);
-    }
-
-    .modal-head{
-      padding:16px 20px;
-      border-bottom:1px solid var(--line);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:#ffffffee;
-    }
-
-    .modal-body{
-      padding:18px 20px 20px;
-      background:#f9fbff;
-      max-height:70vh;
-      overflow:auto;
-    }
-
-    .close{
-      border:none;
-      background:#eef4ff;
-      border-radius:999px;
-      padding:8px 14px;
-      cursor:pointer;
-      font-weight:700;
-      color:#1e293b;
-    }
-
-    /* footer */
-    footer{
-      border-top:1px solid var(--line);
-      margin-top:60px;
-      background:#fff;
-    }
-
-    .foot{
-      padding:22px 0;
-      color:#6b7c8f;
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
-    }
-
-    /* ===== MÓVIL ===== */
-    @media (max-width:880px){
-      :root{
-        --navH:58px;
-      }
-
-      .container{
-        padding:0 16px;
-      }
-
-      .section{
-        padding:56px 0;
-      }
-
-      .nav-toggle{
-        display:block;
-        position:absolute;
-        right:16px;
-        top:12px;
-      }
-
-      .actions{
-        position:absolute;
-        left:0;
-        right:0;
-        top:100%;
-        background:#fff;
-        border-bottom:1px solid var(--line);
-        box-shadow:0 10px 24px rgba(15,23,42,.10);
-        padding:10px 16px 14px;
-        display:block;
-        max-height:0;
-        opacity:0;
-        transform:translateY(-6px);
-        transition:max-height .28s ease, opacity .18s ease, transform .18s ease;
-        pointer-events:none;
-        overflow:hidden;
-      }
-
-      .actions.active{
-        max-height:420px;
-        opacity:1;
-        transform:translateY(0);
-        pointer-events:auto;
-      }
-
-      .actions a.nav{
-        display:block;
-        padding:14px 12px;
-        font-size:18px;
-        border-radius:12px;
-      }
-
-      .actions .btn.primary{
-        width:100%;
-        justify-content:center;
-        margin-top:8px;
-      }
-
-      .nav-backdrop{
-        display:none;
-        position:fixed;
-        inset:0;
-        z-index:29;
-        background:rgba(2,6,23,.35);
-      }
-
-      .nav-backdrop.show{
-        display:block;
-      }
-
-      body.nav-open{
-        overflow:hidden;
-      }
-
-      .grid{
-        grid-template-columns:1fr;
-        gap:18px;
-      }
-
-      .team{
-        grid-template-columns:1fr;
-        gap:14px;
-      }
-
-      .expo-gallery{
-        grid-template-columns:1fr;
-        gap:10px;
-      }
-
-      .form{
-        padding:28px;
-      }
-
-      .form .row{
-        grid-template-columns:1fr;
-        gap:16px;
-      }
-    }
-
-    /* ============================================
-       HERO SLIDER FULL PANTALLA (3 SECCIONES)
-       ============================================ */
-   /* ============================================
-   HERO SLIDER FULL PANTALLA (3 SECCIONES)
-   FIX: cada slide = 1 pantalla (no 300%)
-   ============================================ */
-.hero-shell{
-  position:relative;
-  z-index:1;
-  margin:0;
-  padding:0;
-}
-
-.hero-bg{
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  background:
-    radial-gradient(700px 420px at 12% 10%, rgba(148,233,255,.65), transparent 60%),
-    radial-gradient(780px 460px at 90% 16%, rgba(129,140,248,.45), transparent 60%),
-    radial-gradient(720px 420px at 18% 100%, rgba(45,212,191,.35), transparent 60%),
-    linear-gradient(180deg, #eff6ff, #e0f2fe);
-}
-
-/* ✅ variable de cantidad de slides (JS la setea) */
-.hero-slider{
-  --heroSlides: 3; /* fallback */
-  position:relative;
-  height:calc(100svh - var(--navH));
-  height:calc(100dvh - var(--navH));
-  min-height:620px;
-  overflow:hidden;
-
-    touch-action: pan-y;
-  -webkit-user-select: none;
-
-}
-
-@media (max-width:880px){
-  .hero-slider{
-    height:auto;
-    min-height:calc(100svh - var(--navH));
-    min-height:calc(100dvh - var(--navH));
-  }
-}
-
-.hero-track{
-  display:flex;
-  height:100%;
-  width:calc(var(--heroSlides) * 100%);
-  transform:translate3d(0,0,0);
-  transition:transform .6s cubic-bezier(.33,.7,.2,1);
-  will-change:transform;
-}
-
-    /* ✅ HERO: swipe limpio */
-.hero-track.dragging{
-  transition: none !important;
-}
-.hero-slider{
-  overscroll-behavior: contain; /* evita “tirar” el scroll del body */
-}
-
-
-/* ✅ CLAVE: cada slide = 1/heroSlides del track => 1 pantalla */
-.hero-slide{
-  flex:0 0 calc(100% / var(--heroSlides));
-  height:100%;
-  display:flex;
-  align-items:center;
-}
-
-.hero-slide-inner{
-  padding:38px 18px 30px !important; /* vuelve el padding lateral */
-}
-
-@media (max-width:880px){
-  .hero-slide-inner{
-    padding:30px 16px 32px !important;
-  }
-}
-
-.hero-slide h1{
-  font-size:clamp(32px,4.6vw,50px);
-}
-
-.hero-slide h2{
-  font-size:clamp(26px,3.4vw,40px);
-}
-
-/* nav slider */
-.hero-controls{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:18px;
-  padding:0 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  pointer-events:none;
-}
-
-@media (max-width:880px){
-  .hero-controls{
-    bottom:14px;
-  }
-}
-
-.hero-dots{
-  display:flex;
-  gap:8px;
-  align-items:center;
-  pointer-events:auto;
-}
-
-.hero-dot{
-  width:9px;
-  height:9px;
-  border-radius:999px;
-  border:1px solid rgba(15,23,42,.38);
-  background:rgba(255,255,255,.55);
-  box-shadow:0 8px 18px rgba(15,23,42,.20);
-  padding:0;
-  cursor:pointer;
-  transition:.2s ease;
-}
-
-.hero-dot.active{
-  width:26px;
-  background:linear-gradient(90deg,#38bdf8,#0ea5e9);
-  border-color:rgba(15,23,42,.55);
-}
-
-.hero-arrows{
-  display:flex;
-  gap:8px;
-  pointer-events:auto;
-}
-
-.hero-arrow{
-  width:40px;
-  height:40px;
-  border-radius:999px;
-  border:1px solid rgba(148,163,184,.70);
-  background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(241,245,249,.95));
-  box-shadow:0 10px 22px rgba(15,23,42,.16);
-  cursor:pointer;
-  font-weight:900;
-  color:#0f172a;
-  padding:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:transform .16s ease, box-shadow .16s ease, opacity .16s ease;
-}
-
-.hero-arrow:hover{
-  transform:translateY(-1px);
-  box-shadow:0 14px 28px rgba(15,23,42,.22);
-}
-
-.hero-arrow:active{
-  transform:translateY(0) scale(.97);
-}
-
-.hero-arrow:disabled{
-  opacity:.45;
-  box-shadow:none;
-  cursor:not-allowed;
-}
-
-
-/* =========================================================
-   EXPOSICIONES — LISTA VERTICAL SIMÉTRICA (8 BLOQUES)
-========================================================= */
-:root{
-  --expo-ink:#0b1220;
-  --expo-muted:#5b677a;
-  --expo-border:rgba(15,23,42,.10);
-  --expo-soft:#f7f9fc;
-  --expo-paper:#ffffff;
-  --expo-shadow:0 18px 50px rgba(15,23,42,.12);
-  --expo-accent:#c8a45d;   /* dorado suave */
-}
-
-/* caja contenedora */
-.expo-wrap{
-  background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
-  border:1px solid var(--expo-border);
-  border-radius:24px;
-  box-shadow:var(--expo-shadow);
-  overflow:hidden;
-}
-
-/* head */
-.expo-wrap-head{
-  padding:18px 18px 14px;
-  border-bottom:1px solid rgba(15,23,42,.08);
-  background:
-    radial-gradient(680px 240px at 10% 0%, rgba(200,164,93,.10), transparent 60%),
-    radial-gradient(620px 240px at 92% 10%, rgba(37,99,235,.08), transparent 60%),
-    #fff;
-}
-.expo-wrap-head strong{
-  font-family:"Playfair Display",serif;
-  font-size:16px;
-  letter-spacing:.2px;
-  color:var(--expo-ink);
-}
-.expo-wrap-head small{
-  display:block;
-  margin-top:4px;
-  color:var(--expo-muted);
-  font-size:12.5px;
-}
-
-/* lista vertical */
-.expo-stack{
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-  padding:18px;
-}
-
-/* item: MISMO FORMATO PARA LAS 8 */
-.expo-item{
-  background:var(--expo-paper);
-  border:1px solid rgba(15,23,42,.10);
-  border-radius:22px;
-  box-shadow:0 14px 40px rgba(15,23,42,.10);
-  overflow:hidden;
-
-  display:grid;
-  grid-template-columns:1fr 1.25fr;           /* ✅ texto (izq) | fotos (der) */
-  grid-template-areas:"info media";           /* ✅ orden visual */
-  min-height:360px;                           /* simetría visual */
-}
-
-@media (max-width:980px){
-  .expo-item{
-    grid-template-columns:1fr;
-    grid-template-areas:
-      "info"
-      "media";                                /* ✅ en móvil: texto arriba, fotos abajo */
-    min-height:auto;
-  }
-}
-
-
-/* panel foto */
-.expo-media{
-  grid-area:media; /* ✅ va a la derecha / abajo según grid-areas */
-
-  padding:16px;
-  background:
-    radial-gradient(560px 220px at 12% 0%, rgba(200,164,93,.10), transparent 60%),
-    radial-gradient(520px 220px at 90% 12%, rgba(37,99,235,.07), transparent 60%),
-    var(--expo-soft);
-
-  border-left:1px solid rgba(15,23,42,.06);  /* ✅ ahora el separador va al lado izquierdo */
-}
-
-@media (max-width:980px){
-  .expo-media{
-    border-left:none;
-    border-top:1px solid rgba(15,23,42,.06); /* ✅ en móvil separa arriba del bloque fotos */
-  }
-}
-
-
-/* ===== Expo media: cuadrado y sin deformaciones (img + video) ===== */
-    /* ✅ FIX VIDEO: IMG + VIDEO “encima” (no apilados) */
-.expo-photo.is-video{ position:relative; }
-
-.expo-photo.is-video .expo-main-img,
-.expo-photo.is-video .expo-main-video{
-  position:absolute;
-  inset:0;
-}
-
-/* ✅ Por defecto: mostrar video, ocultar imagen fallback */
-/* Estado base (sin .show-video): muestra imagen fallback */
-.expo-photo.is-video .expo-main-img{ display:block; }
-.expo-photo.is-video .expo-main-video{ display:none; }
-
-/* Estado video: muestra video, oculta imagen */
-.expo-photo.is-video.show-video .expo-main-img{ display:none; }
-.expo-photo.is-video.show-video .expo-main-video{ display:block; }
-
-
-.expo-photo{
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 16px;
-  background: #000;
-}
-
-.expo-photo .expo-main{
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover; /* clave para que no se vea “raro” */
-}
-
-/* Por si tu CSS anterior solo apuntaba a img */
-.expo-photo img.expo-main,
-.expo-photo video.expo-main{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-/* thumbs: mismo alto/anchos siempre */
-.expo-thumbs{
-  margin-top:12px;
-  display:flex;
-  gap:10px;
-  overflow-x:auto;
-  padding-bottom:4px;
-}
-
-.expo-thumbs::-webkit-scrollbar{ height:8px; }
-.expo-thumbs::-webkit-scrollbar-thumb{
-  background:rgba(15,23,42,.14);
-  border-radius:999px;
-}
-
-.expo-thumb{
-  flex:0 0 112px;
-  aspect-ratio:4/3;
-  border-radius:14px;
-  overflow:hidden;
-  border:1px solid rgba(15,23,42,.14);
-  background:#eef2f8;
-  box-shadow:0 10px 18px rgba(15,23,42,.08);
-  cursor:pointer;
-  padding:0;
-}
-
-.expo-thumb img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  opacity:.85;
-  transition:transform .18s ease, opacity .18s ease, filter .18s ease;
-  filter:saturate(.9) contrast(1.02);
-}
-
-.expo-thumb:hover img{
-  transform:scale(1.04);
-  opacity:1;
-  filter:saturate(1) contrast(1.05);
-}
-
-.expo-thumb.is-active{
-  border-color:rgba(200,164,93,.85);
-  box-shadow:0 14px 26px rgba(200,164,93,.18);
-}
-.expo-thumb.is-active img{ opacity:1; }
-
-/* panel info */
-.expo-info{
-  grid-area:info; /* ✅ texto primero */
-  padding:18px 18px 20px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-
-.expo-kicker{
-  align-self:flex-start;
-  display:inline-flex;
-  gap:8px;
-  align-items:center;
-  padding:7px 12px;
-  border-radius:999px;
-  background:rgba(200,164,93,.12);
-  border:1px solid rgba(200,164,93,.35);
-  color:#6b4f1b;
-  font-weight:900;
-  font-size:12px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-
-.expo-info h3{
-  margin:0;
-  font-family:"Playfair Display",serif;
-  font-size:22px;
-  letter-spacing:.2px;
-  color:var(--expo-ink);
-}
-
-.expo-info p{
-  margin:0;
-  color:var(--expo-muted);
-}
-
-.expo-details{
-  margin:2px 0 0;
-  padding-left:18px;
-  color:#263244;
-  font-size:.95rem;
-}
-.expo-details li{ margin:6px 0; }
-
-/* tags sobrios */
-.expo-tags{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-top:auto;
-}
-
-.tag{
-  background:#f3f6fb;
-  border:1px solid rgba(15,23,42,.10);
-  color:#22324a;
-  padding:7px 10px;
-  border-radius:999px;
-  font-size:.86rem;
-  font-weight:800;
-}
-
-/* botones: simetría */
-.expo-cta{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:10px;
-}
-.expo-cta .btn{
-  min-width:160px;
-  justify-content:center;
-}
-@media (max-width:520px){
-  .expo-cta .btn{
-    width:100%;
-  }
-}
-
-/* =========================
-   FIX overflow móvil (rápido)
-   ========================= */
-
-/* 1) Permitir cortes de palabras / URLs */
-h1,h2,h3,p,li,a,span,strong,small{
-  overflow-wrap:anywhere;
-  word-break:break-word;
-}
-
-/* 2) Flex: permitir que los hijos se encojan y el texto haga wrap */
-.navbar > * ,
-.video-meta > * ,
-.hero-ctas > *{
-  min-width:0;
-}
-
-/* Brand largo: que no reviente el nav */
-.brand{
-  min-width:0;
-  max-width:calc(100% - 56px); /* deja espacio al botón ☰ */
-  line-height:1.15;
-}
-
-/* 3) Botones: NO forzar una sola línea en móvil */
-@media (max-width:520px){
-  .btn{ white-space:normal; }
-  .hero-ctas .btn{
-    width:100%;
-    justify-content:center;
-  }
-}
-
-/* 4) iPhone: evitar auto-zoom en inputs */
-@media (max-width:880px){
-  .form input,
-  .form select,
-  .form textarea{
-    font-size:16px;
-  }
-}
-/* EXPO video tipo Reel: mostrar completo, sin recortar */
-.expo-photo.reel-letterbox{
-  background:#000;
-}
-
-/* IMPORTANTE: si tu CSS general usa object-fit:cover, esto lo pisa */
-.expo-photo.reel-letterbox .expo-main-video{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  background:#000;
-  display:block;
-}
-
-/* Si estás en modo video, no mostrar la imagen fallback */
-
-/* Placeholders invisibles pero ocupando espacio (simetría) */
-.expo-thumb.is-placeholder{
-  visibility:hidden;
-  pointer-events:none;
-}
-
   </style>
 </head>
 
 <body>
-  <div class="fx-bg" aria-hidden="true"></div>
-
   <!-- PANTALLA DE INICIO -->
   <div class="intro-screen" id="introScreen" aria-label="Pantalla de bienvenida Arteluk">
     <div class="intro-inner">
@@ -1643,7 +1589,7 @@ h1,h2,h3,p,li,a,span,strong,small{
         Espacio seguro donde niños, jóvenes y adultos pueden expresar lo que sienten
         a través del arte y encontrar un lugar de contención emocional.
       </p>
-      <div class="intro-actions">
+      <div>
         <button class="btn primary" id="introEnter" type="button">Entrar al sitio</button>
       </div>
       <p class="intro-note">O desliza hacia abajo para continuar</p>
@@ -1675,10 +1621,8 @@ h1,h2,h3,p,li,a,span,strong,small{
   <div id="navBackdrop" class="nav-backdrop" aria-hidden="true"></div>
 
   <main id="top">
-    <!-- HERO SLIDER (3 SECCIONES FUSIONADAS) -->
+    <!-- HERO SLIDER (3 SECCIONES) -->
     <header class="hero-shell" aria-label="Presentación Arteluk">
-      <div class="hero-bg" aria-hidden="true"></div>
-
       <div class="hero-slider">
         <div class="hero-track" id="heroTrack">
           <!-- SLIDE 1: HERO + VIDEO -->
@@ -1689,16 +1633,14 @@ h1,h2,h3,p,li,a,span,strong,small{
                   <div class="hero-eyebrow">
                     <span>Valdivia</span> · <span>Arte & Arteterapia</span>
                   </div>
-                  <h1 class="hero-title">
-                    Academia de artes Valdivia
-                  </h1>
-                  <p class="lead hero-sub text-intro">
+                  <h1>Academia de artes Valdivia</h1>
+                  <p class="lead">
                     En Arteluk acompañamos procesos emocionales a través del arte.
                     Un espacio seguro donde tus hijos pueden expresarse, regular sus emociones
                     y reconectar con su creatividad, mientras tú tienes la tranquilidad
                     de dejarlos en buenas manos.
                   </p>
-                  <ul class="pill-list hero-badges">
+                  <ul class="pill-list">
                     <li>+5 años de experiencia en arteterapia y educación.</li>
                     <li>Metodología propia con foco en emociones y autoestima.</li>
                     <li>Grupos pequeños y acompañamiento cercano.</li>        
@@ -1728,11 +1670,11 @@ h1,h2,h3,p,li,a,span,strong,small{
                          aria-label="Reproducir video en YouTube">
                         <img class="video-thumb"
                              src="https://i.ytimg.com/vi/8abquRuhvCA/hqdefault.jpg"
-                             alt="Conoce Arteluk" decoding="async" loading="eager">
+                             alt="Conoce Arteluk" loading="eager">
                         <div class="video-center">
                           <div class="play-circle" aria-hidden="true">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                              <path d="M9 7.5v9l8-4.5-8-4.5z" fill="white"/>
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                              <path d="M9 7.5v9l8-4.5-8-4.5z" fill="currentColor"/>
                             </svg>
                           </div>
                           <div class="video-title">Reproducir video</div>
@@ -1772,7 +1714,7 @@ h1,h2,h3,p,li,a,span,strong,small{
                 <div>
                   <div class="mono">¿QUÉ NOS ESTÁ PASANDO?</div>
                   <h2>Epidemia de salud mental</h2>
-                  <p class="lead text-intro">
+                  <p class="lead">
                     ¿Cuántas veces has sentido que tu energía ya no es la misma?
                     Que tu vitalidad se escapa. Lo atribuimos a la edad o al cansancio,
                     pero en el fondo estamos viviendo una
@@ -1795,7 +1737,7 @@ h1,h2,h3,p,li,a,span,strong,small{
                   <div class="media marco-cuadro">
                     <img src="img/IMG_5035.jpg"
                          alt="Proceso creativo en Arteluk"
-                         loading="lazy" decoding="async">
+                         loading="lazy">
                   </div>
                 </aside>
               </section>
@@ -1809,7 +1751,7 @@ h1,h2,h3,p,li,a,span,strong,small{
                 <div>
                   <div class="mono">METODOLOGÍA ÚNICA Y PROBADA</div>
                   <h2>Metodología Arteluk.</h2>
-                  <p class="lead text-intro">
+                  <p class="lead">
                     Nuestra metodología ha sido probada con más de 30 niños
                     y perfeccionada durante más de 10 años. Desde las primeras clases vemos cambios
                     en la <strong>expresión emocional, la ansiedad, el estrés
@@ -1831,7 +1773,7 @@ h1,h2,h3,p,li,a,span,strong,small{
                   <div class="media marco-cuadro">
                     <img src="img/IMG_6131.jpg"
                          alt="Metodología en Arteluk"
-                         loading="lazy" decoding="async">
+                         loading="lazy">
                   </div>
                 </aside>
               </section>
@@ -1840,11 +1782,11 @@ h1,h2,h3,p,li,a,span,strong,small{
         </div>
 
         <!-- controles slider -->
-        <div class="hero-controls" aria-hidden="false">
+        <div class="hero-controls">
           <div class="hero-dots" aria-label="Cambiar slide">
             <button class="hero-dot active" type="button" data-hero-dot aria-label="Intro"></button>
-            <button class="hero-dot" type="button" data-hero-dot aria-label="Epidemia de salud mental"></button>
-            <button class="hero-dot" type="button" data-hero-dot aria-label="Metodología Arteluk"></button>
+            <button class="hero-dot" type="button" data-hero-dot aria-label="Epidemia"></button>
+            <button class="hero-dot" type="button" data-hero-dot aria-label="Metodología"></button>
           </div>
           <div class="hero-arrows">
             <button class="hero-arrow" type="button" data-hero-prev aria-label="Anterior">‹</button>
@@ -1857,29 +1799,29 @@ h1,h2,h3,p,li,a,span,strong,small{
     <!-- SERVICIOS -->
     <section id="servicios" class="section" aria-label="Servicios y planes">
       <div class="container">
-        <div class="reveal" style="margin-bottom:16px">
+        <div style="margin-bottom: var(--space-8); text-align: center;">
           <div class="mono">TALLERES · CURSOS · PLANES</div>
           <h2>Elige tu experiencia</h2>
-          <p class="lead">
+          <p class="lead" style="margin: 0 auto;">
             Planes de niños con matrícula $15.000. Planes de vacaciones no pagan matrícula.
           </p>
         </div>
 
         <div class="grid">
-          <!-- VERANO -->
-          <article class="card reveal summer">
+          <!-- TALLER VERANO BÁSICO -->
+          <article class="card summer">
             <div class="media">
               <img src="img/WhatsApp Image 2025-12-15 at 12.22.38 PM.jpeg"
                    alt="Taller de Vacaciones Básico"
-                   loading="lazy" decoding="async">
+                   loading="lazy">
             </div>
             <div class="body">
               <h3>🌼 Taller de Vacaciones Básico — $45.000</h3>
               <p>3 clases por semana · 1 hr · Lunes, Miércoles y Viernes.</p>
               <div class="meta">
-                <span class="badge gold">3 clases por semana de 1 hora</span>
+                <span class="badge gold">3 clases/semana</span>
                 <span class="badge gold">15:30–16:30</span>
-                <span class="badge gold">pago semanal</span>
+                <span class="badge gold">Pago semanal</span>
               </div>
             </div>
             <div class="cta">
@@ -1895,20 +1837,21 @@ h1,h2,h3,p,li,a,span,strong,small{
             </div>
           </article>
 
-          <article class="card reveal summer" id="veranoPremiumCard">
+          <!-- TALLER VERANO PREMIUM -->
+          <article class="card summer">
             <div class="recommended-pill">Recomendado</div>
             <div class="media">
               <img src="img/WhatsApp Image 2025-12-15 at 8.33.32 AM.jpeg"
                    alt="Taller de Vacaciones Premium"
-                   loading="lazy" decoding="async">
+                   loading="lazy">
             </div>
             <div class="body">
               <h3>👑 Taller de Vacaciones Premium — $65.000</h3>
               <p>3 clases por semana · 2 hrs · Martes, Jueves y Sábado.</p>
               <div class="meta">
-                <span class="badge rec">3 clases por semana de dos horas</span>
+                <span class="badge rec">3 clases/semana 2 hrs</span>
                 <span class="badge gold">15:00–17:00</span>
-                <span class="badge gold">pago semanal</span>
+                <span class="badge gold">Pago semanal</span>
               </div>
             </div>
             <div class="cta">
@@ -1924,11 +1867,11 @@ h1,h2,h3,p,li,a,span,strong,small{
             </div>
           </article>
 
-          <!-- EXISTENTES -->
-          <article class="card reveal">
+          <!-- TALLER DE ARTES -->
+          <article class="card">
             <div class="media">
               <img src="img/Fondo para curso de basico.jpg"
-                   alt="Taller de Artes" loading="lazy" decoding="async">
+                   alt="Taller de Artes" loading="lazy">
             </div>
             <div class="body">
               <h3>Taller de Artes — $60.000</h3>
@@ -1945,18 +1888,19 @@ h1,h2,h3,p,li,a,span,strong,small{
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
-                      data-title="Plan Solo Pintura — Detalles"
+                      data-title="Taller de Artes — Detalles"
                       data-content="desc-basico">
                 Leer más
               </button>
             </div>
           </article>
 
-          <article class="card reveal">
+          <!-- TALLER DE ARTES PREMIUM -->
+          <article class="card">
             <div class="media">
               <img src="img/Fondo para clases premium.jpg"
                    alt="Taller de Artes Premium"
-                   loading="lazy" decoding="async">
+                   loading="lazy">
             </div>
             <div class="body">
               <h3>👑 Taller de Artes Premium — $120.000</h3>
@@ -1973,18 +1917,19 @@ h1,h2,h3,p,li,a,span,strong,small{
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
-                      data-title="Plan Premium Arte Mixto — Detalles"
+                      data-title="Taller de Artes Premium — Detalles"
                       data-content="desc-premium">
                 Leer más
               </button>
             </div>
           </article>
 
-          <article class="card reveal">
+          <!-- TALLER TEA -->
+          <article class="card">
             <div class="media">
               <img src="img/Fondo para clases de dibujo.jpg"
                    alt="Taller de Dibujo para niños con TEA"
-                   loading="lazy" decoding="async">
+                   loading="lazy">
             </div>
             <div class="body">
               <h3>Taller de dibujo para niños con TEA — $60.000</h3>
@@ -2008,11 +1953,12 @@ h1,h2,h3,p,li,a,span,strong,small{
             </div>
           </article>
 
-          <article class="card reveal">
+          <!-- PLAN TRIMESTRAL -->
+          <article class="card">
             <div class="media">
               <img src="img/WhatsApp Image 2025-11-04 at 10.07.50 AM.jpeg"
                    alt="Plan Trimestral"
-                   loading="lazy" decoding="async">
+                   loading="lazy">
             </div>
             <div class="body">
               <h3>Plan Trimestral — $270.000</h3>
@@ -2035,11 +1981,12 @@ h1,h2,h3,p,li,a,span,strong,small{
             </div>
           </article>
 
-          <article class="card reveal">
+          <!-- TALLER ADULTOS -->
+          <article class="card">
             <div class="media">
               <img src="img/fondo para curso adulto.jpg"
                    alt="Taller para Adultos"
-                   loading="lazy" decoding="async">
+                   loading="lazy">
             </div>
             <div class="body">
               <h3>Taller para Adultos — $60.000</h3>
@@ -2063,11 +2010,12 @@ h1,h2,h3,p,li,a,span,strong,small{
             </div>
           </article>
 
-          <article class="card reveal">
+          <!-- PLAN POR UN DÍA -->
+          <article class="card">
             <div class="media">
               <img src="img/IMG_5557.jpg"
                    alt="Plan por un día"
-                   loading="lazy" decoding="async">
+                   loading="lazy">
             </div>
             <div class="body">
               <h3>Plan por un día — $20.000</h3>
@@ -2094,328 +2042,106 @@ h1,h2,h3,p,li,a,span,strong,small{
     </section>
 
     <!-- EQUIPO -->
-<section id="equipo" class="teamPro">
-  <div class="teamPro__wrap">
-    <p class="teamPro__kicker">EQUIPO</p>
-    <h2 class="teamPro__title">Personas que hacen hogar</h2>
-    <p class="teamPro__sub">Acompañamiento humano y artístico en cada sesión.</p>
+    <section id="equipo" class="section teamPro">
+      <div class="teamPro__wrap">
+        <p class="teamPro__kicker">EQUIPO</p>
+        <h2 class="teamPro__title">Personas que hacen hogar</h2>
+        <p class="teamPro__sub">Acompañamiento humano y artístico en cada sesión.</p>
 
-    <div class="teamPro__grid">
+        <div class="teamPro__grid">
+          <!-- CARD 1 -->
+          <article class="teamCard">
+            <div class="teamCard__media">
+              <img src="img/profesora.jpg" alt="Ivanya Sierra" loading="lazy">
+              <div class="teamCard__fade"></div>
+            </div>
 
-      <!-- CARD 1 -->
-      <article class="teamCard">
-        <div class="teamCard__media">
-          <!-- ✅ reemplaza SOLO el src por el tuyo real -->
-          <img src="img/profesora.jpg" alt="Ivanya Sierra" loading="lazy" decoding="async">
-          <div class="teamCard__fade"></div>
+            <div class="teamCard__body">
+              <div class="teamCard__head">
+                <h3 class="teamCard__name">Ivanya Sierra</h3>
+                <span class="teamCard__pill">Artista visual • Docente</span>
+              </div>
+
+              <ul class="teamCard__list">
+                <li>Licenciada en Arte + Profesora de Artes Visuales (UC)</li>
+                <li>Inclusión, discapacidad, trabajo comunitario</li>
+                <li>Acuarela y acrílico (flora, fauna, retratos)</li>
+              </ul>
+
+              <details class="teamCard__details">
+                <summary>
+                  <span>Ver bio</span>
+                  <span class="teamCard__chev" aria-hidden="true"></span>
+                </summary>
+                <p>
+                  Artista visual y docente, licenciada en Arte y Profesora de Artes Visuales por la Universidad Católica de Chile.
+                  Especializada en gestión cultural e inclusión de personas con discapacidad y trabajo comunitario.
+                  Enfoque empático y personalizado; obra en acuarela y acrílico.
+                </p>
+              </details>
+            </div>
+          </article>
+
+          <!-- CARD 2 -->
+          <article class="teamCard">
+            <div class="teamCard__media">
+              <img src="img/equipo (2).jpg" alt="Paula Barros" loading="lazy">
+              <div class="teamCard__fade"></div>
+            </div>
+
+            <div class="teamCard__body">
+              <div class="teamCard__head">
+                <h3 class="teamCard__name">Paula Barros</h3>
+                <span class="teamCard__pill">Artes Musicales y Sonoras (UACh)</span>
+              </div>
+
+              <ul class="teamCard__list">
+                <li>Fortaleza en canto; explora piano y guitarra</li>
+                <li>Interés por pintura y artes visuales</li>
+                <li>Muy buena afinidad con niños</li>
+              </ul>
+
+              <details class="teamCard__details">
+                <summary>
+                  <span>Ver bio</span>
+                  <span class="teamCard__chev" aria-hidden="true"></span>
+                </summary>
+                <p>
+                  Estudiante de Artes Musicales y Sonoras (UACh). Fortalezas en canto; explora piano y guitarra.
+                  Interés por pintura y artes visuales; afinidad con niños. Arte como medio de expresión y crecimiento.
+                </p>
+              </details>
+            </div>
+          </article>
         </div>
-
-        <div class="teamCard__body">
-          <div class="teamCard__head">
-            <h3 class="teamCard__name">Ivanya Sierra</h3>
-            <span class="teamCard__pill">Artista visual • Docente</span>
-          </div>
-
-          <ul class="teamCard__list">
-            <li>Licenciada en Arte + Profesora de Artes Visuales (UC)</li>
-            <li>Inclusión, discapacidad, trabajo comunitario</li>
-            <li>Acuarela y acrílico (flora, fauna, retratos)</li>
-          </ul>
-
-          <details class="teamCard__details">
-            <summary>
-              <span>Ver bio</span>
-              <span class="teamCard__chev" aria-hidden="true"></span>
-            </summary>
-            <p>
-              Artista visual y docente, licenciada en Arte y Profesora de Artes Visuales por la Universidad Católica de Chile.
-              Especializada en gestión cultural e inclusión de personas con discapacidad y trabajo comunitario.
-              Enfoque empático y personalizado; obra en acuarela y acrílico.
-            </p>
-          </details>
-        </div>
-      </article>
-
-      <!-- CARD 2 -->
-      <article class="teamCard">
-        <div class="teamCard__media">
-          <!-- ✅ reemplaza SOLO el src por el tuyo real -->
-          <img src="img/equipo (2).jpg" alt="Paula Barros" loading="lazy" decoding="async">
-          <div class="teamCard__fade"></div>
-        </div>
-
-        <div class="teamCard__body">
-          <div class="teamCard__head">
-            <h3 class="teamCard__name">Paula Barros</h3>
-            <span class="teamCard__pill">Artes Musicales y Sonoras (UACh)</span>
-          </div>
-
-          <ul class="teamCard__list">
-            <li>Fortaleza en canto; explora piano y guitarra</li>
-            <li>Interés por pintura y artes visuales</li>
-            <li>Muy buena afinidad con niños</li>
-          </ul>
-
-          <details class="teamCard__details">
-            <summary>
-              <span>Ver bio</span>
-              <span class="teamCard__chev" aria-hidden="true"></span>
-            </summary>
-            <p>
-              Estudiante de Artes Musicales y Sonoras (UACh). Fortalezas en canto; explora piano y guitarra.
-              Interés por pintura y artes visuales; afinidad con niños. Arte como medio de expresión y crecimiento.
-            </p>
-          </details>
-        </div>
-      </article>
-
-    </div>
-  </div>
-
-  <style>
-    /* ===== TEAM PRO (scoped) ===== */
-    #equipo.teamPro{ padding: 52px 0; }
-    #equipo .teamPro__wrap{ max-width: 1040px; margin: 0 auto; padding: 0 18px; }
-
-    #equipo .teamPro__kicker{
-      margin: 0 0 .35rem;
-      letter-spacing: .14em;
-      font-weight: 800;
-      font-size: .72rem;
-      opacity: .7;
-    }
-    #equipo .teamPro__title{ margin: 0; }
-    #equipo .teamPro__sub{ margin: .45rem 0 1.4rem; opacity: .78; }
-
-    #equipo .teamPro__grid{
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      align-items: stretch;
-    }
-    @media (max-width: 920px){
-      #equipo .teamPro__grid{ grid-template-columns: 1fr; }
-    }
-
-    /* CARD */
-    #equipo .teamCard{
-      background: rgba(255,255,255,.86);
-      border: 1px solid rgba(0,0,0,.06);
-      border-radius: 20px;
-      box-shadow: 0 14px 34px rgba(0,0,0,.10);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-    }
-
-    /* MEDIA */
-    #equipo .teamCard__media{
-      position: relative;
-      width: 100%;
-      height: 220px;
-      overflow: hidden;
-    }
-    @media (max-width: 920px){
-      #equipo .teamCard__media{ height: 240px; }
-    }
-    #equipo .teamCard__media img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transform: scale(1.01);
-    }
-    #equipo .teamCard__fade{
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 70px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.85));
-      pointer-events: none;
-    }
-
-    /* BODY */
-    #equipo .teamCard__body{
-      padding: 14px 16px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      flex: 1;
-    }
-
-    #equipo .teamCard__head{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-    }
-    #equipo .teamCard__name{
-      margin: 0;
-      font-size: 1.06rem;
-      font-weight: 800;
-    }
-    #equipo .teamCard__pill{
-      font-size: .82rem;
-      opacity: .85;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(0,0,0,.08);
-      background: rgba(255,255,255,.65);
-      white-space: nowrap;
-    }
-
-    /* LIST */
-    #equipo .teamCard__list{
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      opacity: .9;
-      line-height: 1.28rem;
-      font-size: .95rem;
-    }
-    #equipo .teamCard__list li{
-      margin: 7px 0;
-      padding-left: 14px;
-      position: relative;
-    }
-    #equipo .teamCard__list li::before{
-      content: "•";
-      position: absolute;
-      left: 0;
-      opacity: .65;
-    }
-
-    /* DETAILS / CTA */
-    #equipo .teamCard__details{
-      margin-top: auto;
-      border-top: 1px solid rgba(0,0,0,.06);
-      padding-top: 10px;
-    }
-    #equipo .teamCard__details summary{
-      cursor: pointer;
-      user-select: none;
-      list-style: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(0,0,0,.08);
-      background: rgba(255,255,255,.7);
-      font-weight: 800;
-      width: fit-content;
-    }
-    #equipo .teamCard__details summary::-webkit-details-marker{ display:none; }
-
-    #equipo .teamCard__chev{
-      width: 10px; height: 10px;
-      display: inline-block;
-      border-right: 2px solid rgba(0,0,0,.55);
-      border-bottom: 2px solid rgba(0,0,0,.55);
-      transform: rotate(45deg);
-      margin-top: -2px;
-    }
-    #equipo .teamCard__details[open] .teamCard__chev{
-      transform: rotate(-135deg);
-      margin-top: 2px;
-    }
-
-    #equipo .teamCard__details p{
-      margin: 10px 0 0;
-      opacity: .85;
-      line-height: 1.38rem;
-    }
-    /* ===============================
-   GLOBAL FIX: fondo + overflow + snap
-   PÉGALO AL FINAL DEL CSS
-================================ */
-:root{
-  --page-bg:
-    radial-gradient(1100px 520px at 8% 10%, rgba(56,189,248,.22), transparent 60%),
-    radial-gradient(900px 620px at 92% 8%, rgba(167,139,250,.20), transparent 55%),
-    radial-gradient(900px 620px at 18% 92%, rgba(34,211,238,.16), transparent 55%),
-    linear-gradient(180deg, #eef7ff 0%, #eaf4ff 40%, #eef7ff 100%);
-
-  --card-bg: rgba(255,255,255,.84);
-  --card-brd: rgba(15,23,42,.10);
-  --txt: #0f172a;
-  --muted: rgba(15,23,42,.68);
-
-  --header-h: 72px; /* AJUSTA si tu topbar es más alto/bajo */
-}
-
-/* fondo continuo */
-html, body{ background: var(--page-bg); }
-body{ color: var(--txt); }
-
-/* mata el “se corre pa’ la derecha” */
-html, body{ overflow-x: clip; }
-body{ overflow-x: hidden; }
-img, video, iframe, svg{ max-width:100%; height:auto; display:block; }
-*{ min-width:0; }
-
-/* si alguna sección mete fondo propio → lo apagamos */
-section{ background: transparent !important; }
-
-/* scroll que te “lleva al próximo punto” */
-html{
-  scroll-padding-top: calc(var(--header-h) + 12px);
-  scroll-snap-type: y proximity; /* PC: menos cargante */
-}
-@media (pointer: coarse){
-  html{ scroll-snap-type: y mandatory; } /* móvil: más “salto” */
-}
-.snap{
-  scroll-snap-align: start;
-  scroll-margin-top: calc(var(--header-h) + 12px);
-}
-
-  </style>
-
-  <script>
-    // Pro: que solo una bio esté abierta a la vez
-    (() => {
-      const root = document.querySelector('#equipo.teamPro');
-      if (!root) return;
-      const all = [...root.querySelectorAll('details.teamCard__details')];
-      all.forEach(d => {
-        d.addEventListener('toggle', () => {
-          if (d.open) all.forEach(o => { if (o !== d) o.open = false; });
-        });
-      });
-    })();
-  </script>
-</section>
-
-
+      </div>
+    </section>
 
     <!-- FORMULARIO -->
-    <section id="contacto" class="section" style="padding-top:24px" aria-label="Formulario de contacto">
+    <section id="contacto" class="section" aria-label="Formulario de contacto">
       <div class="container">
-        <div class="reveal" style="margin-bottom:12px">
+        <div style="margin-bottom: var(--space-8); text-align: center;">
           <div class="mono">FORMULARIO</div>
           <h2>Reserva o consulta — respondemos al instante</h2>
-          <p class="lead">
+          <p class="lead" style="margin: 0 auto;">
             Completa el formulario. Te contactamos apenas lo recibamos.
             Dirección: <strong>Picarte 407, Valdivia</strong>.
           </p>
         </div>
 
-        <form class="form reveal" id="wlForm" novalidate>
+        <form class="form" id="wlForm" novalidate>
           <div class="row single">
             <div>
               <label for="nombre">Nombre y apellido</label>
-              <input id="nombre" name="nombre" required autocomplete="name" />
+              <input id="nombre" name="nombre" required autocomplete="name">
             </div>
           </div>
 
           <div class="row">
             <div>
               <label for="tel">Teléfono</label>
-              <input id="tel" name="telefono" inputmode="tel" autocomplete="tel"
-                     placeholder="+56 9 ..." />
+              <input id="tel" name="telefono" type="tel" autocomplete="tel"
+                     placeholder="+56 9 ...">
             </div>
             <div>
               <label for="servicio">Servicio de interés</label>
@@ -2439,729 +2165,652 @@ html{
                       placeholder="Horarios, edad del alumno/a, dudas…"></textarea>
           </div>
 
-          <div style="display:flex;gap:10px;align-items:center;margin-top:14px;flex-wrap:wrap">
+          <div style="display:flex;gap:var(--space-3);align-items:center;margin-top:var(--space-4);flex-wrap:wrap">
             <button class="btn primary" type="submit">Enviar</button>
-            <span style="color:#6b7c8f;font-size:.92rem">Picarte 407, Valdivia</span>
+            <span style="color:var(--text-muted);font-size:0.875rem">Picarte 407, Valdivia</span>
           </div>
         </form>
       </div>
     </section>
 
-  <!-- EXPOSICIONES (PREMIUM) -->
-<section id="exposiciones" class="section" style="padding-top:40px" aria-label="Exposiciones">
-  <div class="container">
-    <div class="reveal" style="margin-bottom:12px">
-      <div class="mono">EXPOSICIONES</div>
-      <h2>Eventos realizados en Arteluk</h2>
-      <p class="lead">
-        En Arteluk no solo hacemos clases: abrimos el proceso al mundo.
-        Realizamos <strong>2 a 3 exposiciones al año</strong> para que niños y adultos
-        vivan la experiencia real de <strong>mostrar su obra</strong>, ganar seguridad,
-        sentir orgullo y pertenecer a una comunidad artística.
-      </p>
-    </div>
+    <!-- EXPOSICIONES -->
+    <section id="exposiciones" class="section" aria-label="Exposiciones">
+      <div class="container">
+        <div style="margin-bottom: var(--space-8);">
+          <div class="mono">EXPOSICIONES</div>
+          <h2>Eventos realizados en Arteluk</h2>
+          <p class="lead">
+            En Arteluk no solo hacemos clases: abrimos el proceso al mundo.
+            Realizamos <strong>2 a 3 exposiciones al año</strong> para que niños y adultos
+            vivan la experiencia real de <strong>mostrar su obra</strong>, ganar seguridad,
+            sentir orgullo y pertenecer a una comunidad artística.
+          </p>
+        </div>
 
-    <div class="expo-wrap reveal">
-      <div class="expo-wrap-head">
-        <strong>Galería de exposiciones</strong>
-        <small>8 exposiciones · todas con fotos + texto · ordenadas hacia abajo</small>
-      </div>
-
-      <div class="expo-stack">
-
-        <!-- EXPO 01 -->
-        <article class="expo-item">
-          <div class="expo-media">
-            <div class="expo-photo">
-              <img class="expo-main" src="img/Exposision1.jpg" alt="Barco Neptuno - El Vuelo de Alaska" loading="lazy" decoding="async">
-            </div>
-
-            <div class="expo-thumbs" aria-label="Galería Barco Neptuno">
-              <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Exposision1.jpg" data-alt="Barco Neptuno 1">
-                <img src="img/Exposision1.jpg" alt="Miniatura 1" loading="lazy" decoding="async">
-              </button>
-              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Exposision2.jpg" data-alt="Barco Neptuno 2">
-                <img src="img/Exposision2.jpg" alt="Miniatura 2" loading="lazy" decoding="async">
-              </button>
-              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Exposision3.jpg" data-alt="Barco Neptuno 3">
-                <img src="img/Exposision3.jpg" alt="Miniatura 3" loading="lazy" decoding="async">
-              </button>
-              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Exposision4.jpg" data-alt="Barco Neptuno 4">
-                <img src="img/Exposision4.jpg" alt="Miniatura 4" loading="lazy" decoding="async">
-              </button>
-              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Exposision5.jpg" data-alt="Barco Neptuno 5">
-                <img src="img/Exposision5.jpg" alt="Miniatura 5" loading="lazy" decoding="async">
-              </button>
-              <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Exposision6.jpg" data-alt="Barco Neptuno 6">
-                <img src="img/Exposision6.jpg" alt="Miniatura 6" loading="lazy" decoding="async">
-              </button>
-            </div>
+        <div class="expo-wrap">
+          <div class="expo-wrap-head">
+            <strong>Galería de exposiciones</strong>
+            <small>8 exposiciones · todas con fotos + texto</small>
           </div>
 
-          <div class="expo-info">
-            <div class="expo-kicker">Exposición 01</div>
-            <h3>Barco Neptuno — “El Vuelo de Alaska”</h3>
-            <p>
-              Exposición final de arteterapia y acrílicos llamada <strong>“El Vuelo de Alaska”</strong>.
-              Un cierre emotivo donde los niños muestran su proceso, su valentía y su crecimiento.
-              Realizamos este evento de 4 horas a bordo del barco Neptuno, navegando el hermoso río de Valdivia.
-            </p>
+          <div class="expo-stack">
+            <!-- EXPO 01 -->
+            <article class="expo-item">
+              <div class="expo-media">
+                <div class="expo-photo">
+                  <img class="expo-main" src="img/Exposision1.jpg" alt="Barco Neptuno - El Vuelo de Alaska" loading="lazy">
+                </div>
 
-            <div class="expo-tags">
-              <span class="tag">Arteterapia</span>
-              <span class="tag">Cierre anual</span>
-            </div>
+                <div class="expo-thumbs" aria-label="Galería Barco Neptuno">
+                  <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Exposision1.jpg" data-alt="Barco Neptuno 1">
+                    <img src="img/Exposision1.jpg" alt="Miniatura 1" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Exposision2.jpg" data-alt="Barco Neptuno 2">
+                    <img src="img/Exposision2.jpg" alt="Miniatura 2" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Exposision3.jpg" data-alt="Barco Neptuno 3">
+                    <img src="img/Exposision3.jpg" alt="Miniatura 3" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Exposision4.jpg" data-alt="Barco Neptuno 4">
+                    <img src="img/Exposision4.jpg" alt="Miniatura 4" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Exposision5.jpg" data-alt="Barco Neptuno 5">
+                    <img src="img/Exposision5.jpg" alt="Miniatura 5" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Exposision6.jpg" data-alt="Barco Neptuno 6">
+                    <img src="img/Exposision6.jpg" alt="Miniatura 6" loading="lazy">
+                  </button>
+                </div>
+              </div>
 
-            <div class="expo-cta">
-              <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 01 - Quiero info">Quiero info</a>
-            </div>
+              <div class="expo-info">
+                <div class="expo-kicker">Exposición 01</div>
+                <h3>Barco Neptuno — "El Vuelo de Alaska"</h3>
+                <p>
+                  Exposición final de arteterapia y acrílicos llamada <strong>"El Vuelo de Alaska"</strong>.
+                  Un cierre emotivo donde los niños muestran su proceso, su valentía y su crecimiento.
+                  Realizamos este evento de 4 horas a bordo del barco Neptuno, navegando el hermoso río de Valdivia.
+                </p>
+
+                <div class="expo-tags">
+                  <span class="tag">Arteterapia</span>
+                  <span class="tag">Cierre anual</span>
+                </div>
+
+                <div class="expo-cta">
+                  <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 01 - Quiero info">Quiero info</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- EXPO 02 -->
+            <article class="expo-item">
+              <div class="expo-media">
+                <div class="expo-photo">
+                  <img class="expo-main" src="img/Vango1.jpg" alt="Exposición de arte de Van Gogh" loading="lazy">
+                </div>
+
+                <div class="expo-thumbs" aria-label="Galería Van Gogh">
+                  <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Vango1.jpg" data-alt="Van Gogh 1">
+                    <img src="img/Vango1.jpg" alt="Miniatura 1" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Vango2.jpg" data-alt="Van Gogh 2">
+                    <img src="img/Vango2.jpg" alt="Miniatura 2" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Vango3.jpg" data-alt="Van Gogh 3">
+                    <img src="img/Vango3.jpg" alt="Miniatura 3" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Vango4.jpg" data-alt="Van Gogh 4">
+                    <img src="img/Vango4.jpg" alt="Miniatura 4" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Vango5.jpg" data-alt="Van Gogh 5">
+                    <img src="img/Vango5.jpg" alt="Miniatura 5" loading="lazy">
+                  </button>
+                </div>
+              </div>
+
+              <div class="expo-info">
+                <div class="expo-kicker">Exposición 02</div>
+                <h3>Exposición de arte de Van Gogh</h3>
+
+                <p>
+                  Muestra inspirada en Van Gogh, con enfoque visual fuerte y montaje pensado para fotos.
+                  Ideal para difusión y comunidad.
+                </p>
+
+                <ul class="expo-details">
+                  <li><strong>Formato:</strong> Exposición</li>
+                  <li><strong>Estilo:</strong> Inspiración Van Gogh</li>
+                  <li><strong>Objetivo:</strong> Experiencia + difusión</li>
+                </ul>
+
+                <div class="expo-tags">
+                  <span class="tag">Arte</span>
+                  <span class="tag">Exposición</span>
+                  <span class="tag">Van Gogh</span>
+                </div>
+
+                <div class="expo-cta">
+                  <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 02 - Quiero info">Quiero info</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- EXPO 03 -->
+            <article class="expo-item">
+              <div class="expo-media">
+                <div class="expo-photo is-video show-video reel-letterbox">
+                  <video class="expo-main expo-main-video" controls playsinline preload="metadata">
+                    <source src="img/exposision-biblioteca.mp4" type="video/mp4">
+                  </video>
+                </div>
+
+                <div class="expo-thumbs" aria-hidden="true"></div>
+              </div>
+
+              <div class="expo-info">
+                <div class="expo-kicker">Exposición 03</div>
+                <h3>Biblioteca Municipal de Valdivia</h3>
+                <p>
+                  Exposición infantil por <strong>15 días</strong>: pinturas y acuarelas.
+                  Además, clases en el salón de la Biblioteca abiertas a la comunidad.
+                </p>
+
+                <ul class="expo-details">
+                  <li><strong>Obras:</strong> Pintura y acuarela</li>
+                  <li><strong>Plus:</strong> Actividad comunitaria abierta</li>
+                </ul>
+
+                <div class="expo-tags">
+                  <span class="tag">Biblioteca</span>
+                  <span class="tag">Exposición</span>
+                  <span class="tag">Experiencias únicas</span>
+                </div>
+
+                <div class="expo-cta">
+                  <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 03 - Quiero info">Quiero info</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- EXPO 04 -->
+            <article class="expo-item">
+              <div class="expo-media">
+                <div class="expo-photo">
+                  <img class="expo-main" src="img/Santotomas1.jpg" alt="Universidad Santo Tomás" loading="lazy">
+                </div>
+
+                <div class="expo-thumbs" aria-label="Galería Universidad Santo Tomás">
+                  <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Santotomas1.jpg" data-alt="UST 1">
+                    <img src="img/Santotomas1.jpg" alt="UST 1" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Santotomas2.jpg" data-alt="UST 2">
+                    <img src="img/Santotomas2.jpg" alt="UST 2" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Santotomas3.jpg" data-alt="UST 3">
+                    <img src="img/Santotomas3.jpg" alt="UST 3" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Santotomas4.jpg" data-alt="UST 4">
+                    <img src="img/Santotomas4.jpg" alt="UST 4" loading="lazy">
+                  </button>
+                </div>
+              </div>
+
+              <div class="expo-info">
+                <div class="expo-kicker">Exposición 04</div>
+                <h3>Universidad Santo Tomás + Galería de Arte</h3>
+                <p>
+                  Exposición de <strong>Mary Quinteros</strong> por <strong>1 mes y medio</strong>.
+                  En esta exposición la universidad Santo Tomás pudo exponer en sus vitrinas obras únicas de Mary Quinteros, profesora y directora de Arteluk.
+                </p>
+                <ul class="expo-details">
+                  <li><strong>Artista:</strong> Mary Quinteros</li>
+                  <li><strong>Continuidad:</strong> Exposición de artes</li>
+                </ul>
+
+                <div class="expo-tags">
+                  <span class="tag">Galería</span>
+                  <span class="tag">Mary Quinteros</span>
+                </div>
+
+                <div class="expo-cta">
+                  <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 04 - Quiero info">Quiero info</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- EXPO 05 -->
+            <article class="expo-item">
+              <div class="expo-media">
+                <div class="expo-photo">
+                  <img class="expo-main" src="img/Almacenfluvial.jpg" alt="Espacio Fluvial" loading="lazy">
+                </div>
+
+                <div class="expo-thumbs" aria-label="Galería Espacio Fluvial">
+                  <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Almacenfluvial.jpg" data-alt="Espacio Fluvial 1">
+                    <img src="img/Almacenfluvial.jpg" alt="Miniatura 1" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Almacenfluvial1.jpg" data-alt="Espacio Fluvial 2">
+                    <img src="img/Almacenfluvial1.jpg" alt="Miniatura 2" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Almacenfluvial2.jpg" data-alt="Espacio Fluvial 3">
+                    <img src="img/Almacenfluvial2.jpg" alt="Miniatura 3" loading="lazy">
+                  </button>
+                </div>
+              </div>
+
+              <div class="expo-info">
+                <div class="expo-kicker">Exposición 05</div>
+                <h3>Espacio Fluvial</h3>
+                <p>
+                  Exposición de obra de Mary Quinteros con <strong>cóctel</strong> y convocatoria abierta.
+                  Arte como encuentro, conversación y comunidad.
+                </p>
+
+                <ul class="expo-details">
+                  <li><strong>Formato:</strong> Evento cultural abierto</li>
+                  <li><strong>Enfoque:</strong> Comunidad + conversación</li>
+                  <li><strong>Ambiente:</strong> Espacio fluvial de Valdivia</li>
+                </ul>
+
+                <div class="expo-tags">
+                  <span class="tag">Cultura</span>
+                  <span class="tag">Cóctel</span>
+                  <span class="tag">Ciudadanía</span>
+                </div>
+
+                <div class="expo-cta">
+                  <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 05 - Quiero info">Quiero info</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- EXPO 06 -->
+            <article class="expo-item">
+              <div class="expo-media">
+                <div class="expo-photo">
+                  <img class="expo-main" src="img/Cafemoro1.jpg" alt="Café Moro" loading="lazy">
+                </div>
+
+                <div class="expo-thumbs" aria-label="Galería Café Moro">
+                  <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Cafemoro1.jpg" data-alt="Café Moro 1">
+                    <img src="img/Cafemoro1.jpg" alt="Miniatura 1" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Cafemoro2.jpg" data-alt="Café Moro 2">
+                    <img src="img/Cafemoro2.jpg" alt="Miniatura 2" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Cafemoro3.jpg" data-alt="Café Moro 3">
+                    <img src="img/Cafemoro3.jpg" alt="Miniatura 3" loading="lazy">
+                  </button>
+                </div>
+              </div>
+
+              <div class="expo-info">
+                <div class="expo-kicker">Exposición 06</div>
+                <h3>Café Moro</h3>
+
+                <p>
+                  Exposición y muestra en <strong>Café Moro</strong>. Un espacio cálido para ver obra en formato cercano,
+                  con ambiente cafetería y visita abierta.
+                </p>
+
+                <ul class="expo-details">
+                  <li><strong>Formato:</strong> Exposición privada en cafetería</li>
+                  <li><strong>Enfoque:</strong> Arte + experiencia local</li>
+                  <li><strong>Lugar:</strong> Café Moro</li>
+                </ul>
+
+                <div class="expo-tags">
+                  <span class="tag">Café</span>
+                  <span class="tag">Exposición</span>
+                  <span class="tag">Comunidad</span>
+                </div>
+
+                <div class="expo-cta">
+                  <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 06 - Quiero info">Quiero info</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- EXPO 07 -->
+            <article class="expo-item">
+              <div class="expo-media">
+                <div class="expo-photo">
+                  <img class="expo-main" src="img/Expomall.jpg" alt="Mall Nuevo" loading="lazy">
+                </div>
+
+                <div class="expo-thumbs" aria-label="Galería Mall Nuevo">
+                  <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Expomall.jpg" data-alt="Mall Nuevo 1">
+                    <img src="img/Expomall.jpg" alt="Miniatura 1" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/expomall1.jpg" data-alt="Mall Nuevo 2">
+                    <img src="img/expomall1.jpg" alt="Miniatura 2" loading="lazy">
+                  </button>
+                  <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Expomall2.jpg" data-alt="Mall Nuevo 3">
+                    <img src="img/Expomall2.jpg" alt="Miniatura 3" loading="lazy">
+                  </button>
+                </div>
+              </div>
+
+              <div class="expo-info">
+                <div class="expo-kicker">Exposición 07</div>
+                <h3>Mall Nuevo</h3>
+
+                <p>
+                  Muestra y exposición en <strong>Mall Nuevo</strong>, en un espacio de alta circulación.
+                  Arte visible para público amplio, con enfoque en difusión y comunidad.
+                </p>
+
+                <ul class="expo-details">
+                  <li><strong>Formato:</strong> Exposición en el mall nuevo</li>
+                  <li><strong>Enfoque:</strong> Difusión + público general</li>
+                </ul>
+
+                <div class="expo-tags">
+                  <span class="tag">Exposición</span>
+                  <span class="tag">Comunidad</span>
+                  <span class="tag">Ciudad</span>
+                </div>
+
+                <div class="expo-cta">
+                  <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 07 - Quiero info">Quiero info</a>
+                </div>
+              </div>
+            </article>
           </div>
-        </article>
-
-                <!-- EXPO (Van Gogh) -->
-<article class="expo-item">
-  <div class="expo-media">
-    <div class="expo-photo">
-      <img class="expo-main" src="img/Vango1.jpg" alt="Exposición de arte de Van Gogh" loading="lazy" decoding="async">
-    </div>
-
-    <div class="expo-thumbs" aria-label="Galería Van Gogh">
-      <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Vango1.jpg" data-alt="Van Gogh - Foto 1">
-        <img src="img/Vango1.jpg" alt="Miniatura 1" loading="lazy" decoding="async">
-      </button>
-
-      <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Vango2.jpg" data-alt="Van Gogh - Foto 2">
-        <img src="img/Vango2.jpg" alt="Miniatura 2" loading="lazy" decoding="async">
-      </button>
-
-      <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Vango3.jpg" data-alt="Van Gogh - Foto 3">
-        <img src="img/Vango3.jpg" alt="Miniatura 3" loading="lazy" decoding="async">
-      </button>
-
-      <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Vango4.jpg" data-alt="Van Gogh - Foto 4">
-        <img src="img/Vango4.jpg" alt="Miniatura 4" loading="lazy" decoding="async">
-      </button>
-
-      <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Vango5.jpg" data-alt="Van Gogh - Foto 5">
-        <img src="img/Vango5.jpg" alt="Miniatura 5" loading="lazy" decoding="async">
-      </button>
-    </div>
-  </div>
-
-  <div class="expo-info">
-    <div class="expo-kicker">Exposición 02</div>
-    <h3>Exposición de arte de Van Gogh</h3>
-
-    <p>
-      Muestra inspirada en Van Gogh, con enfoque visual fuerte y montaje pensado para fotos.
-      Ideal para difusión y comunidad.
-    </p>
-
-    <ul class="expo-details">
-      <li><strong>Formato:</strong> Exposición</li>
-      <li><strong>Estilo:</strong> Inspiración Van Gogh</li>
-      <li><strong>Objetivo:</strong> Experiencia + difusión</li>
-    </ul>
-
-    <div class="expo-tags">
-      <span class="tag">Arte</span>
-      <span class="tag">Exposición</span>
-      <span class="tag">Van Gogh</span>
-    </div>
-
-    <div class="expo-cta">
-      <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 02 - Van Gogh - Quiero info">Quiero info</a>
-    </div>
-  </div>
-</article>
-
-
-<!-- EXPO 02 -->
-<article class="expo-item">
-  <div class="expo-media">
-    <div class="expo-photo is-video show-video reel-letterbox">
-      <video class="expo-main expo-main-video" controls playsinline preload="metadata">
-        <source src="img/exposision-biblioteca.mp4" type="video/mp4">
-      </video>
-    </div>
-
-    <!-- ✅ placeholder para que tenga misma altura que las otras con thumbs -->
-    <div class="expo-thumbs" aria-hidden="true"></div>
-  </div>
-
-  <div class="expo-info">
-    <div class="expo-kicker">Exposición 03</div>
-    <h3>Biblioteca Municipal de Valdivia</h3>
-    <p>
-      Exposición infantil por <strong>15 días</strong>: pinturas y acuarelas.
-      Además, clases en el salón de la Biblioteca abiertas a la comunidad.
-    </p>
-
-    <ul class="expo-details">
-      <li><strong>Obras:</strong> Pintura y acuarela</li>
-      <li><strong>Plus:</strong> Actividad comunitaria abierta</li>
-    </ul>
-
-    <div class="expo-tags">
-      <span class="tag">Biblioteca </span>
-      <span class="tag">exposicion</span>
-      <span class="tag">experiencias unicas</span>
-    </div>
-
-    <div class="expo-cta">
-      <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 03 - Quiero info">Quiero info</a>
-    </div>
-  </div>
-</article>
-
-        <!-- EXPO 03 -->
-        <article class="expo-item">
-          <div class="expo-media">
-            <div class="expo-photo">
-            <img class="expo-main" src="img/Santotomas1.jpg" alt="Universidad Santo Tomás + Galería de Arte" loading="lazy" decoding="async">
-            </div>
-
-            <div class="expo-thumbs" aria-label="Galería Universidad Santo Tomás">
-              <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Santotomas1.jpg" data-alt="UST 1">
-  <img src="img/Santotomas1.jpg" alt="UST 1" loading="lazy" decoding="async">
-</button>
-
-<button class="expo-thumb" type="button" data-expo-thumb data-src="img/Santotomas2.jpg" data-alt="UST 2">
-  <img src="img/Santotomas2.jpg" alt="UST 2" loading="lazy" decoding="async">
-</button>
-
-<button class="expo-thumb" type="button" data-expo-thumb data-src="img/Santotomas3.jpg" data-alt="UST 3">
-  <img src="img/Santotomas3.jpg" alt="UST 3" loading="lazy" decoding="async">
-</button>
-
-<button class="expo-thumb" type="button" data-expo-thumb data-src="img/Santotomas4.jpg" data-alt="UST 4">
-  <img src="img/Santotomas4.jpg" alt="UST 4" loading="lazy" decoding="async">
-</button>
-            </div>
-          </div>
-
-          <div class="expo-info">
-            <div class="expo-kicker">Exposición 04</div>
-            <h3>Universidad Santo Tomás + Galería de Arte</h3>
-            <p>
-              Exposición de <strong>Mary Quinteros</strong> por <strong>1 mes y medio</strong>.
-              En esta exposicion la universidad Santo tomas pudo exponer en sus bitrinas obras unicas de Mary quinteros, profesora y directora de arteluk
-            </p>
-            <ul class="expo-details">
-              <li><strong>Artista:</strong> Mary Quinteros</li>
-              <li><strong>Continuidad:</strong> Exposición de artes</li>
-            </ul>
-
-            <div class="expo-tags">
-              <span class="tag">Galería</span>
-              <span class="tag">Mary Quinteros</span>
-          
-            </div>
-
-            <div class="expo-cta">
-              <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 03 - Quiero info">Quiero info</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- EXPO 04 -->
-    
-<article class="expo-item">
-  <div class="expo-media">
-    <div class="expo-photo">
-      <img class="expo-main" src="img/Almacenfluvial.jpg" alt="Espacio Fluvial" loading="lazy" decoding="async">
-    </div>
-
-    <div class="expo-thumbs" aria-label="Galería Espacio Fluvial">
-      <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Almacenfluvial.jpg" data-alt="Espacio Fluvial - Foto 1">
-        <img src="img/Almacenfluvial.jpg" alt="Miniatura 1" loading="lazy" decoding="async">
-      </button>
-
-      <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Almacenfluvial1.jpg" data-alt="Espacio Fluvial - Foto 2">
-        <img src="img/Almacenfluvial1.jpg" alt="Miniatura 2" loading="lazy" decoding="async">
-      </button>
-
-      <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Almacenfluvial2.jpg" data-alt="Espacio Fluvial - Foto 3">
-        <img src="img/Almacenfluvial2.jpg" alt="Miniatura 3" loading="lazy" decoding="async">
-      </button>
-    </div>
-  </div>
-
-  <div class="expo-info">
-    <div class="expo-kicker">Exposición 05</div>
-    <h3>Espacio Fluvial</h3>
-    <p>
-      Exposición de obra de Mary Quinteros con <strong>cóctel</strong> y convocatoria abierta.
-      Arte como encuentro, conversación y comunidad.
-    </p>
-
-    <ul class="expo-details">
-      <li><strong>Formato:</strong> Evento cultural abierto</li>
-      <li><strong>Enfoque:</strong> Comunidad + conversación</li>
-      <li><strong>Ambiente:</strong> Espacio fluvial de Valdivia</li>
-    </ul>
-
-    <div class="expo-tags">
-      <span class="tag">Cultura</span>
-      <span class="tag">Cóctel</span>
-      <span class="tag">Ciudadanía</span>
-    </div>
-
-    <div class="expo-cta">
-      <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 05 - Quiero info">Quiero info</a>
-    </div>
-  </div>
-</article>
-
-
-        <!-- EXPO 06 -->
-        
-<article class="expo-item">
-  <div class="expo-media">
-    <div class="expo-photo">
-      <img class="expo-main" src="img/Cafemoro1.jpg" alt="Café Moro" loading="lazy" decoding="async">
-    </div>
-
-    <div class="expo-thumbs" aria-label="Galería Café Moro">
-      <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Cafemoro1.jpg" data-alt="Café Moro - Foto 1">
-        <img src="img/Cafemoro1.jpg" alt="Miniatura 1" loading="lazy" decoding="async">
-      </button>
-
-      <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Cafemoro2.jpg" data-alt="Café Moro - Foto 2">
-        <img src="img/Cafemoro2.jpg" alt="Miniatura 2" loading="lazy" decoding="async">
-      </button>
-
-      <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Cafemoro3.jpg" data-alt="Café Moro - Foto 3">
-        <img src="img/Cafemoro3.jpg" alt="Miniatura 3" loading="lazy" decoding="async">
-      </button>
-    </div>
-  </div>
-
-  <div class="expo-info">
-    <div class="expo-kicker">Exposición 06</div>
-    <h3>Café Moro</h3>
-
-    <p>
-      Exposición y muestra en <strong>Café Moro</strong>. Un espacio cálido para ver obra en formato cercano,
-      con ambiente cafetería y visita abierta.
-    </p>
-
-    <ul class="expo-details">
-      <li><strong>Formato:</strong> Exposicion privada en cafetería</li>
-      <li><strong>Enfoque:</strong> Arte + experiencia local</li>
-      <li><strong>Lugar:</strong> Café Moro</li>
-    </ul>
-
-    <div class="expo-tags">
-      <span class="tag">Café</span>
-      <span class="tag">Exposición</span>
-      <span class="tag">Comunidad</span>
-    </div>
-
-    <div class="expo-cta">
-      <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo - Café Moro - Quiero info">Quiero info</a>
-    </div>
-  </div>
-</article>
-
-
-        <!-- EXPO 07 -->
-       <!-- EXPO (Mall Nuevo) -->
-<article class="expo-item">
-  <div class="expo-media">
-    <div class="expo-photo">
-      <img class="expo-main" src="img/Expomall.jpg" alt="Mall Nuevo" loading="lazy" decoding="async">
-    </div>
-
-    <div class="expo-thumbs" aria-label="Galería Mall Nuevo">
-      <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Expomall.jpg" data-alt="Mall Nuevo - Foto 1">
-        <img src="img/Expomall.jpg" alt="Miniatura 1" loading="lazy" decoding="async">
-      </button>
-
-      <button class="expo-thumb" type="button" data-expo-thumb data-src="img/expomall1.jpg" data-alt="Mall Nuevo - Foto 2">
-        <img src="img/expomall1.jpg" alt="Miniatura 2" loading="lazy" decoding="async">
-      </button>
-
-      <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Expomall2.jpg" data-alt="Mall Nuevo - Foto 3">
-        <img src="img/Expomall2.jpg" alt="Miniatura 3" loading="lazy" decoding="async">
-      </button>
-    </div>
-  </div>
-
-  <div class="expo-info">
-    <div class="expo-kicker">Exposición 07</div>
-    <h3>Mall Nuevo</h3>
-
-    <p>
-      Muestra y exposición en <strong>Mall Nuevo</strong>, en un espacio de alta circulación.
-      Arte visible para público amplio, con enfoque en difusión y comunidad.
-    </p>
-
-    <ul class="expo-details">
-      <li><strong>Formato:</strong> Exposición en el mall nuevol</li>
-      <li><strong>Enfoque:</strong> Difusión + público general</li>
-    </ul>
-
-    <div class="expo-tags">
-      <span class="tag">Exposición</span>
-      <span class="tag">Comunidad</span>
-      <span class="tag">Ciudad</span>
-    </div>
-
-    <div class="expo-cta">
-      <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo - Mall Nuevo - Quiero info">Quiero info</a>
-    </div>
-  </div>
-</article>
-
-      
-      </div>
-    </div>
-  </div>
-</section>
-
-    <footer>
-      <div class="container foot">
-        <div>© Arteluk — Picarte 407, Valdivia</div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="nav" href="#servicios">Servicios</a>
-          <a class="nav" href="#equipo">Equipo</a>
-          <a class="nav" href="#contacto">Formulario</a>
-          <a class="nav" href="#exposiciones">Exposiciones</a>
         </div>
       </div>
-    </footer>
-
-    <!-- MODAL -->
-    <dialog id="modal" aria-label="Detalle">
-      <div class="modal-head">
-        <strong id="mTitle">Detalle</strong>
-        <button class="close" id="mClose" type="button">Cerrar</button>
-      </div>
-      <div class="modal-body" id="mBody"></div>
-    </dialog>
-
-    <!-- HISTORIA COMPLETA -->
-    <template id="historia-larga">
-      <p>
-        Soy Mary Quinteros, artista visual, arteterapeuta, psicóloga infantil y adolescente,
-        e ingeniera en administración de empresas. Mi formación incluye un doble Máster en
-        Coaching e Inteligencia Emocional, así como estudios en musicoterapia, lo que me permite
-        integrar arte, emoción y desarrollo personal en cada proyecto que realizo.
-      </p>
-      <p>
-        Mi experiencia profesional ha transitado entre el mundo de la administración y la contabilidad
-        —donde aprendí el valor del orden y la estrategia— y el universo del arte, donde descubrí mi
-        verdadera pasión: acompañar a niños, adolescentes y adultos en el descubrimiento de su mundo
-        interior a través del arte.
-      </p>
-      <p>
-        En mi práctica artística, combino óleo, técnicas mixtas, espátula y proyecciones visuales,
-        transformando el proceso creativo en un espacio de autoconocimiento y expresión emocional.
-      </p>
-      <p>
-        Como fundadora de Arteluk, una academia de artes y espacio de arteterapia, he diseñado clases,
-        talleres y programas de coaching artístico que invitan a explorar emociones y a utilizar la
-        creatividad como herramienta de bienestar y transformación.
-      </p>
-      <p>
-        He participado en exposiciones colectivas y desarrollado programas de arte y autocuidado para
-        instituciones educativas y equipos de trabajo, promoviendo espacios de encuentro, reflexión y
-        crecimiento personal. Cada obra que creo y cada taller que facilito buscan abrir un diálogo con
-        el espectador o participante, convirtiendo el arte en un puente entre la emoción y la sanación.
-      </p>
-    </template>
-
-    <!-- VERANO -->
-    <template id="desc-verano-basico">
-      <p><strong>🌼 PLAN BÁSICO VERANO — Mary Quinteros — $45.000</strong></p>
-      <p>Crear · Jugar · Expresarse · Disfrutar</p>
-      <p>🕒 <strong>Horario:</strong> 15:30 a 16:30 hrs</p>
-      <p>📅 <strong>Modalidad:</strong> 3 días por semana — <strong>Lunes, Miércoles y Viernes</strong></p>
-      <p>🎨 <strong>Arte, juego y exploración creativa</strong></p>
-      <p><strong>✨ Experiencias y Técnicas Artísticas:</strong></p>
-      <ul>
-        <li>🌸 <strong>Acuarela divertida y expresiva:</strong> colores, flores, juegos con el agua y libertad creativa.</li>
-        <li>✏️ <strong>Dibujo creativo:</strong> línea, forma, imaginación y confianza al dibujar.</li>
-        <li>🎨 <strong>Pintura acrílica lúdica:</strong> color, texturas y expresión libre sobre bastidor.</li>
-      </ul>
-      <p>💛 Ideal para disfrutar el arte, soltarse, crear sin miedo y pasarlo bien este verano.</p>
-      <p><strong>💖 Incluye:</strong></p>
-      <ul>
-        <li>🎨 Materiales incluidos</li>
-        <li>📸 Registro fotográfico del proceso</li>
-        <li>🌈 Ambiente cuidado, creativo y entretenido</li>
-        <li>🧠 Acompañamiento con enfoque expresivo</li>
-      </ul>
-    </template>
-
-    <!-- PREMIUM -->
-    <template id="desc-verano-premium">
-      <p><strong>👑 PLAN PREMIUM VERANO — Ivanya Sierra — $65.000</strong></p>
-      <p>
-        Taller intensivo para niños que quieren <strong>crear de verdad</strong>:
-        cada día se van con una obra terminada y una experiencia distinta.
-        Sesiones de <strong>2 horas</strong>, con materiales de nivel profesional.
-      </p>
-      <p>🕒 <strong>Horario:</strong> 15:00 a 17:00 hrs</p>
-      <p>📅 <strong>Modalidad:</strong> 3 días por semana —
-        <strong>Martes, Jueves y Sábado</strong></p>
-      <p><strong>✨ Día 1 — Acuarela Botánica (Obra terminada)</strong></p>
-      <ul>
-        <li>🌿 Técnicas básicas y medias de acuarela</li>
-        <li>💧 Uso del agua, control del color, transparencias y degradados</li>
-        <li>🍃 Observación de formas botánicas</li>
-        <li>🖼️ <strong>Formato:</strong> A4 · se llevan su acuarela el mismo día</li>
-        <li>🎨 <strong>Materiales:</strong> acuarelas + papel 300g + pinceles profesionales</li>
-      </ul>
-      <p><strong>🎨 Día 2 — Pintura Acrílica en Lienzo (Obra terminada)</strong></p>
-      <ul>
-        <li>🖌️ Uso del acrílico, capas y técnicas de difuminado</li>
-        <li>🧩 Pintura figurativa guiada</li>
-        <li>🖼️ Bastidor <strong>20 × 50 cm</strong> · obra lista para llevar</li>
-        <li>🎨 <strong>Materiales:</strong> bastidor + acrílicos + pinceles especiales</li>
-      </ul>
-      <p><strong>✏️ Día 3 — Dibujo en Vivo (Experiencia + obra)</strong></p>
-      <ul>
-        <li>👁️ Observación real: coordinación ojo-mano y base artística</li>
-        <li>✏️ Ejercicios guiados con lápiz grafito</li>
-        <li>🌗 Introducción a luz y sombra con carboncillo</li>
-        <li>📄 Dibujo final realizado en la sesión · se lo llevan a casa</li>
-      </ul>
-      <p>💎 Una experiencia premium para explorar, crear y vivir el arte de forma profunda y memorable.</p>
-      <p><strong>💖 Incluye:</strong></p>
-      <ul>
-        <li>🎨 Materiales incluidos</li>
-        <li>📸 Registro fotográfico del proceso</li>
-        <li>🌈 Ambiente cuidado, creativo y entretenido</li>
-        <li>🧠 Acompañamiento con enfoque expresivo</li>
-      </ul>
-    </template>
-
-    <!-- PLANES EXISTENTES -->
-    <template id="desc-basico">
-      <p><strong>🎨 PLAN SOLO PINTURA – $60.000 + matrícula $15.000</strong></p>
-      <p>🕓 4 clases de 1 hr (1 vez por semana)</p>
-      <p>📍 Incluye estacionamiento y sala de espera cómoda y ambientada para acompañantes.</p>
-      <p>🎨 <strong>Actividades:</strong></p>
-      <ul>
-        <li>✔️ Pintura en bastidor profesional 50×50</li>
-        <li>✔️ Mezcla de color, técnica acrílica y composición básica</li>
-        <li>✔️ Materiales incluidos</li>
-        <li>✔️ Acompañamiento personalizado según nivel y ritmo del alumno</li>
-      </ul>
-      <p>🏛️ <strong>Salón:</strong> Oki Canva Studio</p>
-      <p>💖 <strong>Beneficios:</strong></p>
-      <ul>
-        <li>📷 Feedback semanal + registro fotográfico de avances</li>
-        <li>🧠 Enfoque arteterapéutico: pintura como medio de expresión emocional</li>
-      </ul>
-    </template>
-
-    <template id="desc-premium">
-      <p><strong>👑 PLAN PREMIUM ARTE MIXTO – $120.000 + matrícula $15.000</strong></p>
-      <p>🕓 4 clases de 2 hrs (1 por semana).</p>
-      <p>📍 Incluye estacionamiento + acceso a zona cowork y sala de espera.</p>
-      <p>🎨 <strong>Actividades artísticas y terapéuticas:</strong></p>
-      <ul>
-        <li>✔️ Pintura en bastidor profesional</li>
-        <li>✔️ Manualidades creativas</li>
-        <li>✔️ Yesoterapia artística</li>
-        <li>✔️ Telar y fieltro</li>
-        <li>✔️ Arteterapia guiada con enfoque emocional</li>
-      </ul>
-      <p>🏛️ <strong>Salones Arteluk:</strong></p>
-      <ul>
-        <li>Oki Canva Studio (pintura)</li>
-        <li>Creative Threads (manualidades)</li>
-        <li>Sculp Lab (yeso y escultura)</li>
-        <li>TAA (terapia asistida con aves)</li>
-        <li>Salón Flúor (efectos visuales)</li>
-      </ul>
-      <p>💖 <strong>Beneficios:</strong></p>
-      <ul>
-        <li>📷 Feedback semanal + registro fotográfico</li>
-        <li>🧠 Enfoque arteterapéutico individual</li>
-        <li>🎭 Exposición de arte al cierre del ciclo anual</li>
-      </ul>
-    </template>
-
-    <template id="desc-trimestral">
-      <p><strong>PREMIUM TRIMESTRAL – $270.000 (10% dcto.)</strong></p>
-      <p>
-        El mismo contenido del Premium por 3 meses. Perfecto si tu hijo o hija es
-        un apasionado del arte y necesita un espacio para desplegar sus talentos.
-      </p>
-    </template>
-
-    <template id="desc-tea">
-      <p><strong>TALLER DE DIBUJO PARA NIÑOS CON TEA – $60.000 + matrícula $15.000</strong></p>
-      <p>
-        🕓 4 clases de 1 hora (1/semana) · 👧🏽 5 a 12 años · 👥 Máximo 4 niños ·
-        📍 Presencial en Arteluk.
-      </p>
-      <p>
-        🎨 Programa por clase:<br>
-        1) Exploración y primeros trazos.<br>
-        2) Sombreado, volumen y texturas.<br>
-        3) Composición y expresión emocional.<br>
-        4) Obra personal y cierre creativo.
-      </p>
-      <p>
-        💖 Beneficios: motricidad fina, autoconfianza, concentración,
-        creatividad y observación.
-      </p>
-    </template>
-
-    <template id="desc-adultos">
-      <p><strong>TALLER PARA ADULTOS – $60.000</strong></p>
-      <p>
-        Óleo y dibujo desde lo básico hasta obra terminada. Técnica, disfrute y comunidad.
-        Todos los niveles.
-      </p>
-    </template>
-
-    <template id="desc-dia">
-      <p><strong>PLAN POR UN DÍA – $20.000</strong></p>
-      <p>
-        Vive la experiencia Arteluk en una clase. Si decides continuar, se descuentan
-        los $20.000 del valor total de los talleres profesionales.
-      </p>
-    </template>
+    </section>
   </main>
 
+  <footer>
+    <div class="container foot">
+      <div>© Arteluk — Picarte 407, Valdivia</div>
+      <div style="display:flex;gap:var(--space-3);flex-wrap:wrap">
+        <a href="#servicios">Servicios</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#contacto">Formulario</a>
+        <a href="#exposiciones">Exposiciones</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <dialog id="modal" aria-label="Detalle">
+    <div class="modal-head">
+      <strong id="mTitle">Detalle</strong>
+      <button class="close" id="mClose" type="button">Cerrar</button>
+    </div>
+    <div class="modal-body" id="mBody"></div>
+  </dialog>
+
+  <!-- TEMPLATES -->
+  <template id="historia-larga">
+    <p>
+      Soy Mary Quinteros, artista visual, arteterapeuta, psicóloga infantil y adolescente,
+      e ingeniera en administración de empresas. Mi formación incluye un doble Máster en
+      Coaching e Inteligencia Emocional, así como estudios en musicoterapia, lo que me permite
+      integrar arte, emoción y desarrollo personal en cada proyecto que realizo.
+    </p>
+    <p>
+      Mi experiencia profesional ha transitado entre el mundo de la administración y la contabilidad
+      —donde aprendí el valor del orden y la estrategia— y el universo del arte, donde descubrí mi
+      verdadera pasión: acompañar a niños, adolescentes y adultos en el descubrimiento de su mundo
+      interior a través del arte.
+    </p>
+    <p>
+      En mi práctica artística, combino óleo, técnicas mixtas, espátula y proyecciones visuales,
+      transformando el proceso creativo en un espacio de autoconocimiento y expresión emocional.
+    </p>
+    <p>
+      Como fundadora de Arteluk, una academia de artes y espacio de arteterapia, he diseñado clases,
+      talleres y programas de coaching artístico que invitan a explorar emociones y a utilizar la
+      creatividad como herramienta de bienestar y transformación.
+    </p>
+    <p>
+      He participado en exposiciones colectivas y desarrollado programas de arte y autocuidado para
+      instituciones educativas y equipos de trabajo, promoviendo espacios de encuentro, reflexión y
+      crecimiento personal. Cada obra que creo y cada taller que facilito buscan abrir un diálogo con
+      el espectador o participante, convirtiendo el arte en un puente entre la emoción y la sanación.
+    </p>
+  </template>
+
+  <template id="desc-verano-basico">
+    <p><strong>🌼 PLAN BÁSICO VERANO — Mary Quinteros — $45.000</strong></p>
+    <p>Crear · Jugar · Expresarse · Disfrutar</p>
+    <p>🕒 <strong>Horario:</strong> 15:30 a 16:30 hrs</p>
+    <p>📅 <strong>Modalidad:</strong> 3 días por semana — <strong>Lunes, Miércoles y Viernes</strong></p>
+    <p>🎨 <strong>Arte, juego y exploración creativa</strong></p>
+    <p><strong>✨ Experiencias y Técnicas Artísticas:</strong></p>
+    <ul>
+      <li>🌸 <strong>Acuarela divertida y expresiva:</strong> colores, flores, juegos con el agua y libertad creativa.</li>
+      <li>✏️ <strong>Dibujo creativo:</strong> línea, forma, imaginación y confianza al dibujar.</li>
+      <li>🎨 <strong>Pintura acrílica lúdica:</strong> color, texturas y expresión libre sobre bastidor.</li>
+    </ul>
+    <p>💛 Ideal para disfrutar el arte, soltarse, crear sin miedo y pasarlo bien este verano.</p>
+    <p><strong>💖 Incluye:</strong></p>
+    <ul>
+      <li>🎨 Materiales incluidos</li>
+      <li>📸 Registro fotográfico del proceso</li>
+      <li>🌈 Ambiente cuidado, creativo y entretenido</li>
+      <li>🧠 Acompañamiento con enfoque expresivo</li>
+    </ul>
+  </template>
+
+  <template id="desc-verano-premium">
+    <p><strong>👑 PLAN PREMIUM VERANO — Ivanya Sierra — $65.000</strong></p>
+    <p>
+      Taller intensivo para niños que quieren <strong>crear de verdad</strong>:
+      cada día se van con una obra terminada y una experiencia distinta.
+      Sesiones de <strong>2 horas</strong>, con materiales de nivel profesional.
+    </p>
+    <p>🕒 <strong>Horario:</strong> 15:00 a 17:00 hrs</p>
+    <p>📅 <strong>Modalidad:</strong> 3 días por semana —
+      <strong>Martes, Jueves y Sábado</strong></p>
+    <p><strong>✨ Día 1 — Acuarela Botánica (Obra terminada)</strong></p>
+    <ul>
+      <li>🌿 Técnicas básicas y medias de acuarela</li>
+      <li>💧 Uso del agua, control del color, transparencias y degradados</li>
+      <li>🍃 Observación de formas botánicas</li>
+      <li>🖼️ <strong>Formato:</strong> A4 · se llevan su acuarela el mismo día</li>
+      <li>🎨 <strong>Materiales:</strong> acuarelas + papel 300g + pinceles profesionales</li>
+    </ul>
+    <p><strong>🎨 Día 2 — Pintura Acrílica en Lienzo (Obra terminada)</strong></p>
+    <ul>
+      <li>🖌️ Uso del acrílico, capas y técnicas de difuminado</li>
+      <li>🧩 Pintura figurativa guiada</li>
+      <li>🖼️ Bastidor <strong>20 × 50 cm</strong> · obra lista para llevar</li>
+      <li>🎨 <strong>Materiales:</strong> bastidor + acrílicos + pinceles especiales</li>
+    </ul>
+    <p><strong>✏️ Día 3 — Dibujo en Vivo (Experiencia + obra)</strong></p>
+    <ul>
+      <li>👁️ Observación real: coordinación ojo-mano y base artística</li>
+      <li>✏️ Ejercicios guiados con lápiz grafito</li>
+      <li>🌗 Introducción a luz y sombra con carboncillo</li>
+      <li>📄 Dibujo final realizado en la sesión · se lo llevan a casa</li>
+    </ul>
+    <p>💎 Una experiencia premium para explorar, crear y vivir el arte de forma profunda y memorable.</p>
+    <p><strong>💖 Incluye:</strong></p>
+    <ul>
+      <li>🎨 Materiales incluidos</li>
+      <li>📸 Registro fotográfico del proceso</li>
+      <li>🌈 Ambiente cuidado, creativo y entretenido</li>
+      <li>🧠 Acompañamiento con enfoque expresivo</li>
+    </ul>
+  </template>
+
+  <template id="desc-basico">
+    <p><strong>🎨 PLAN SOLO PINTURA – $60.000 + matrícula $15.000</strong></p>
+    <p>🕓 4 clases de 1 hr (1 vez por semana)</p>
+    <p>📍 Incluye estacionamiento y sala de espera cómoda y ambientada para acompañantes.</p>
+    <p>🎨 <strong>Actividades:</strong></p>
+    <ul>
+      <li>✔️ Pintura en bastidor profesional 50×50</li>
+      <li>✔️ Mezcla de color, técnica acrílica y composición básica</li>
+      <li>✔️ Materiales incluidos</li>
+      <li>✔️ Acompañamiento personalizado según nivel y ritmo del alumno</li>
+    </ul>
+    <p>🏛️ <strong>Salón:</strong> Oki Canva Studio</p>
+    <p>💖 <strong>Beneficios:</strong></p>
+    <ul>
+      <li>📷 Feedback semanal + registro fotográfico de avances</li>
+      <li>🧠 Enfoque arteterapéutico: pintura como medio de expresión emocional</li>
+    </ul>
+  </template>
+
+  <template id="desc-premium">
+    <p><strong>👑 PLAN PREMIUM ARTE MIXTO – $120.000 + matrícula $15.000</strong></p>
+    <p>🕓 4 clases de 2 hrs (1 por semana).</p>
+    <p>📍 Incluye estacionamiento + acceso a zona cowork y sala de espera.</p>
+    <p>🎨 <strong>Actividades artísticas y terapéuticas:</strong></p>
+    <ul>
+      <li>✔️ Pintura en bastidor profesional</li>
+      <li>✔️ Manualidades creativas</li>
+      <li>✔️ Yesoterapia artística</li>
+      <li>✔️ Telar y fieltro</li>
+      <li>✔️ Arteterapia guiada con enfoque emocional</li>
+    </ul>
+    <p>🏛️ <strong>Salones Arteluk:</strong></p>
+    <ul>
+      <li>Oki Canva Studio (pintura)</li>
+      <li>Creative Threads (manualidades)</li>
+      <li>Sculp Lab (yeso y escultura)</li>
+      <li>TAA (terapia asistida con aves)</li>
+      <li>Salón Flúor (efectos visuales)</li>
+    </ul>
+    <p>💖 <strong>Beneficios:</strong></p>
+    <ul>
+      <li>📷 Feedback semanal + registro fotográfico</li>
+      <li>🧠 Enfoque arteterapéutico individual</li>
+      <li>🎭 Exposición de arte al cierre del ciclo anual</li>
+    </ul>
+  </template>
+
+  <template id="desc-trimestral">
+    <p><strong>PREMIUM TRIMESTRAL – $270.000 (10% dcto.)</strong></p>
+    <p>
+      El mismo contenido del Premium por 3 meses. Perfecto si tu hijo o hija es
+      un apasionado del arte y necesita un espacio para desplegar sus talentos.
+    </p>
+  </template>
+
+  <template id="desc-tea">
+    <p><strong>TALLER DE DIBUJO PARA NIÑOS CON TEA – $60.000 + matrícula $15.000</strong></p>
+    <p>
+      🕓 4 clases de 1 hora (1/semana) · 👧🏽 5 a 12 años · 👥 Máximo 4 niños ·
+      📍 Presencial en Arteluk.
+    </p>
+    <p>
+      🎨 Programa por clase:<br>
+      1) Exploración y primeros trazos.<br>
+      2) Sombreado, volumen y texturas.<br>
+      3) Composición y expresión emocional.<br>
+      4) Obra personal y cierre creativo.
+    </p>
+    <p>
+      💖 Beneficios: motricidad fina, autoconfianza, concentración,
+      creatividad y observación.
+    </p>
+  </template>
+
+  <template id="desc-adultos">
+    <p><strong>TALLER PARA ADULTOS – $60.000</strong></p>
+    <p>
+      Óleo y dibujo desde lo básico hasta obra terminada. Técnica, disfrute y comunidad.
+      Todos los niveles.
+    </p>
+  </template>
+
+  <template id="desc-dia">
+    <p><strong>PLAN POR UN DÍA – $20.000</strong></p>
+    <p>
+      Vive la experiencia Arteluk en una clase. Si decides continuar, se descuentan
+      los $20.000 del valor total de los talleres profesionales.
+    </p>
+  </template>
+
   <script>
-    /* ===== Helpers Pixel ===== */
-    function trackSafe(eventName, params){
-      try{
-        if(typeof fbq === 'function') fbq('track', eventName, params || {});
-      }catch(_){}
+    /* Helpers Pixel */
+    function trackSafe(eventName, params) {
+      try {
+        if (typeof fbq === 'function') fbq('track', eventName, params || {});
+      } catch (_) {}
     }
 
-    function trackCustomSafe(eventName, params){
-      try{
-        if(typeof fbq === 'function') fbq('trackCustom', eventName, params || {});
-      }catch(_){}
+    function trackCustomSafe(eventName, params) {
+      try {
+        if (typeof fbq === 'function') fbq('trackCustom', eventName, params || {});
+      } catch (_) {}
     }
-
-    /* ===== Perf auto: si el FPS cae, activa body.perf ===== */
-    (function autoPerf(){
-      const url = new URL(location.href);
-      if(url.searchParams.get('perf') === '1'){
-        document.body.classList.add('perf');
-        return;
-      }
-      let frames = 0, start = performance.now();
-      function tick(now){
-        frames++;
-        if(now - start < 1400){
-          requestAnimationFrame(tick);
-          return;
-        }
-        const fps = frames * 1000 / (now - start);
-        if(fps < 45) document.body.classList.add('perf');
-      }
-      requestAnimationFrame(tick);
-    })();
 
     /* PANTALLA DE INICIO */
-    (function intro(){
+    (() => {
       const introScreen = document.getElementById('introScreen');
       const introEnter = document.getElementById('introEnter');
-      if(!introScreen) return;
+      if (!introScreen) return;
 
       const hideIntro = () => {
         if (introScreen.classList.contains('hide')) return;
         introScreen.classList.add('hide');
-        try{
-          sessionStorage.setItem('arteluk_intro_seen','1');
-        }catch(_){}
+        try {
+          sessionStorage.setItem('arteluk_intro_seen', '1');
+        } catch (_) {}
       };
 
-      try{
+      try {
         if (sessionStorage.getItem('arteluk_intro_seen') === '1')
           introScreen.classList.add('hide');
-      }catch(_){}
+      } catch (_) {}
 
       if (introEnter) introEnter.addEventListener('click', hideIntro);
       window.addEventListener('scroll', () => {
         if (window.scrollY > 40) hideIntro();
-      }, {passive:true});
+      }, { passive: true });
     })();
 
-    /* menú responsive */
-    (function navMenu(){
+    /* Menú responsive */
+    (() => {
       const navToggle = document.getElementById('navToggle');
       const navActions = document.getElementById('navActions');
       const navBackdrop = document.getElementById('navBackdrop');
-      if(!navToggle || !navActions || !navBackdrop) return;
+      if (!navToggle || !navActions || !navBackdrop) return;
 
-      function openMenu(){
+      function openMenu() {
         navActions.classList.add('active');
         navBackdrop.classList.add('show');
-        document.body.classList.add('nav-open');
         navToggle.textContent = '✕';
-        navToggle.setAttribute('aria-expanded','true');
+        navToggle.setAttribute('aria-expanded', 'true');
       }
 
-      function closeMenu(){
+      function closeMenu() {
         navActions.classList.remove('active');
         navBackdrop.classList.remove('show');
-        document.body.classList.remove('nav-open');
         navToggle.textContent = '☰';
-        navToggle.setAttribute('aria-expanded','false');
+        navToggle.setAttribute('aria-expanded', 'false');
       }
 
-      navToggle.addEventListener('click', ()=>{
+      navToggle.addEventListener('click', () => {
         navActions.classList.contains('active') ? closeMenu() : openMenu();
       });
 
       navBackdrop.addEventListener('click', closeMenu);
-      document.addEventListener('keydown', e=>{
-        if(e.key==='Escape') closeMenu();
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeMenu();
       });
 
-      document.querySelectorAll('#navActions a').forEach(a=>
+      document.querySelectorAll('#navActions a').forEach(a =>
         a.addEventListener('click', closeMenu)
       );
     })();
 
-    /* ✅ reveal on scroll (anti pantalla en blanco)
-       - Marca .js-reveal SOLO si este bloque realmente ejecuta
-       - Si algo rompe antes, nada se oculta por CSS
-    */
-    (function reveal(){
-      const reduce = window.matchMedia &&
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      const els = document.querySelectorAll('.reveal');
-      els.forEach(el => el.classList.add('js-reveal'));
-
-      if(reduce){
-        els.forEach(el=>el.classList.add('in'));
-        return;
-      }
-
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(en=>{
-          if(en.isIntersecting){
-            en.target.classList.add('in');
-            io.unobserve(en.target);
-          }
-        });
-      }, {threshold:.12});
-
-      els.forEach(el=>io.observe(el));
-    })();
-
     /* CTA -> form */
     document.querySelectorAll('.to-form').forEach(b =>
-      b.addEventListener('click',(e)=>{
+      b.addEventListener('click', (e) => {
         const v = e.currentTarget.getAttribute('data-value') || '';
         const sel = document.getElementById('servicio');
-        if(sel){
-          [...sel.options].forEach(o=>{
-            if(o.textContent === v) sel.value = o.textContent;
+        if (sel) {
+          [...sel.options].forEach(o => {
+            if (o.textContent === v) sel.value = o.textContent;
           });
         }
         trackSafe('Contact', {
@@ -3169,13 +2818,13 @@ html{
           content_category: 'Servicios'
         });
         document.getElementById('contacto')
-          ?.scrollIntoView({behavior:'smooth', block:'start'});
+          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       })
     );
 
     /* Track Contact */
-    document.querySelectorAll('.track-contact').forEach(el=>{
-      el.addEventListener('click', ()=>{
+    document.querySelectorAll('.track-contact').forEach(el => {
+      el.addEventListener('click', () => {
         const name = el.getAttribute('data-contact-name') ||
           el.textContent.trim() || 'CTA Contacto';
         trackSafe('Contact', {
@@ -3185,86 +2834,77 @@ html{
       });
     });
 
-    /* modal */
-    /* modal */
-(function modal(){
-  const modal = document.getElementById('modal');
-  const mTitle = document.getElementById('mTitle');
-  const mBody  = document.getElementById('mBody');
-  const mClose = document.getElementById('mClose');
-  if(!modal || !mTitle || !mBody || !mClose) return;
+    /* Modal */
+    (() => {
+      const modal = document.getElementById('modal');
+      const mTitle = document.getElementById('mTitle');
+      const mBody = document.getElementById('mBody');
+      const mClose = document.getElementById('mClose');
+      if (!modal || !mTitle || !mBody || !mClose) return;
 
-  // ✅ Lock scroll (iOS/Android)
-  let __lockY = 0;
-  function lockBodyScroll(){
-    __lockY = window.scrollY || document.documentElement.scrollTop || 0;
-    document.body.classList.add('modal-open');
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${__lockY}px`;
-    document.body.style.left = '0';
-    document.body.style.right = '0';
-    document.body.style.width = '100%';
-  }
+      let __lockY = 0;
+      function lockBodyScroll() {
+        __lockY = window.scrollY || 0;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${__lockY}px`;
+        document.body.style.width = '100%';
+      }
 
-  function unlockBodyScroll(){
-    document.body.classList.remove('modal-open');
-    const y = Math.abs(parseInt(document.body.style.top || '0', 10)) || __lockY || 0;
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.left = '';
-    document.body.style.right = '';
-    document.body.style.width = '';
-    window.scrollTo(0, y);
-  }
+      function unlockBodyScroll() {
+        const y = Math.abs(parseInt(document.body.style.top || '0', 10)) || __lockY || 0;
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, y);
+      }
 
-  modal.addEventListener('close', unlockBodyScroll);
-  modal.addEventListener('cancel', (e)=>{
-    e.preventDefault();
-    try{ modal.close(); }catch(_){ modal.removeAttribute('open'); }
-    unlockBodyScroll();
-  });
+      modal.addEventListener('close', unlockBodyScroll);
+      modal.addEventListener('cancel', (e) => {
+        e.preventDefault();
+        try { modal.close(); } catch (_) { modal.removeAttribute('open'); }
+        unlockBodyScroll();
+      });
 
-  mClose.addEventListener('click', ()=> {
-    try{ modal.close(); } catch(_){ modal.removeAttribute('open'); unlockBodyScroll(); }
-  });
+      mClose.addEventListener('click', () => {
+        try { modal.close(); } catch (_) { modal.removeAttribute('open'); unlockBodyScroll(); }
+      });
 
-  function openTemplateModal(btn){
-    const id = btn.getAttribute('data-content');
-    const title = btn.getAttribute('data-title') || btn.textContent.trim();
-    const tpl = document.getElementById(id);
-    if(!tpl) return;
+      function openTemplateModal(btn) {
+        const id = btn.getAttribute('data-content');
+        const title = btn.getAttribute('data-title') || btn.textContent.trim();
+        const tpl = document.getElementById(id);
+        if (!tpl) return;
 
-    mTitle.textContent = title;
-    mBody.innerHTML = "";
-    mBody.appendChild(tpl.content.cloneNode(true));
+        mTitle.textContent = title;
+        mBody.innerHTML = "";
+        mBody.appendChild(tpl.content.cloneNode(true));
 
-    lockBodyScroll();
-    if(typeof modal.showModal === 'function') modal.showModal();
-    else modal.setAttribute('open','');
+        lockBodyScroll();
+        if (typeof modal.showModal === 'function') modal.showModal();
+        else modal.setAttribute('open', '');
 
-    if(btn.classList.contains('open-desc')){
-      try{ if(typeof fbq === 'function') fbq('track','ViewContent',{content_name:title,content_category:'Planes'}); }catch(_){}
-    }
-  }
+        if (btn.classList.contains('open-desc')) {
+          try { if (typeof fbq === 'function') fbq('track', 'ViewContent', { content_name: title, content_category: 'Planes' }); } catch (_) {}
+        }
+      }
 
-  document.querySelectorAll('.open-desc, .open-story').forEach(btn=>{
-    btn.addEventListener('click', ()=>openTemplateModal(btn));
-  });
+      document.querySelectorAll('.open-desc, .open-story').forEach(btn => {
+        btn.addEventListener('click', () => openTemplateModal(btn));
+      });
 
-  document.addEventListener('keydown', e=>{
-    if(e.key === 'Escape'){
-      try{ modal.close(); }catch(_){ modal.removeAttribute('open'); unlockBodyScroll(); }
-    }
-  });
-})();
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+          try { modal.close(); } catch (_) { modal.removeAttribute('open'); unlockBodyScroll(); }
+        }
+      });
+    })();
 
-
-    /* VideoClick robusto */
-    (function videoClick(){
+    /* Video Click */
+    (() => {
       const YT_URL = "https://www.youtube.com/watch?v=8abquRuhvCA";
       const VIDEO_ID = "8abquRuhvCA";
 
-      function trackVideoClick(){
+      function trackVideoClick() {
         trackCustomSafe('VideoClick', {
           video_id: VIDEO_ID,
           video_url: YT_URL
@@ -3272,66 +2912,65 @@ html{
       }
 
       const main = document.querySelector('.video-link');
-      if(main){
-        main.addEventListener('click', (e)=>{
+      if (main) {
+        main.addEventListener('click', (e) => {
           e.preventDefault();
           trackVideoClick();
-          setTimeout(()=> window.open(YT_URL, '_blank', 'noopener,noreferrer'), 180);
+          setTimeout(() => window.open(YT_URL, '_blank', 'noopener,noreferrer'), 180);
         });
       }
 
       const metaLink = document.querySelector('.video-youtube-link');
-      if(metaLink){
-        metaLink.addEventListener('click', (e)=>{
+      if (metaLink) {
+        metaLink.addEventListener('click', (e) => {
           e.preventDefault();
           trackVideoClick();
-          setTimeout(()=> window.open(YT_URL, '_blank', 'noopener,noreferrer'), 180);
+          setTimeout(() => window.open(YT_URL, '_blank', 'noopener,noreferrer'), 180);
         });
       }
     })();
 
-    /* formulario -> webhook n8n con anti-doble envío */
-    (function formWebhook(){
+    /* Formulario */
+    (() => {
       const form = document.getElementById('wlForm');
-      if(!form) return;
+      if (!form) return;
       let sending = false;
 
-      function toastForm(msg, type='ok'){
+      function toastForm(msg, type = 'ok') {
         const el = document.createElement('div');
         el.textContent = msg;
         el.style.cssText =
           "position:fixed;left:50%;bottom:26px;transform:translateX(-50%);" +
           "padding:12px 18px;border-radius:10px;z-index:9999;" +
-          `background:${type==='ok'?'#e7fff0':'#ffeaea'};` +
-          `color:${type==='ok'?'#065f46':'#a00000'};` +
+          `background:${type === 'ok' ? '#10B981' : '#EF4444'};` +
+          "color:white;" +
           "box-shadow:0 6px 16px rgba(0,0,0,.12);opacity:0;transition:.25s;";
         document.body.appendChild(el);
-        requestAnimationFrame(()=> el.style.opacity = 1);
-        setTimeout(()=>{
+        requestAnimationFrame(() => el.style.opacity = 1);
+        setTimeout(() => {
           el.style.opacity = 0;
-          setTimeout(()=>el.remove(), 300);
+          setTimeout(() => el.remove(), 300);
         }, 2800);
       }
 
-      form.addEventListener('submit', async (e)=>{
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        if(sending){
-          toastForm('Ya recibimos tu mensaje, espera unos segundos.','ok');
+        if (sending) {
+          toastForm('Ya recibimos tu mensaje, espera unos segundos.', 'ok');
           return;
         }
 
-
         const nombre = (form.querySelector('#nombre')?.value || '').trim();
         const servicio = (form.querySelector('#servicio')?.value || '');
-        if(!nombre || !servicio){
-          toastForm('Completa tu nombre y selecciona un servicio.','error');
+        if (!nombre || !servicio) {
+          toastForm('Completa tu nombre y selecciona un servicio.', 'error');
           return;
         }
 
         sending = true;
         const btn = form.querySelector('button[type="submit"]');
         const original = btn ? btn.innerHTML : '';
-        if(btn){
+        if (btn) {
           btn.disabled = true;
           btn.innerHTML = 'Enviando…';
         }
@@ -3344,20 +2983,20 @@ html{
         };
 
         const controller = new AbortController();
-        const t = setTimeout(()=>controller.abort(), 10000);
+        const t = setTimeout(() => controller.abort(), 10000);
 
-        try{
+        try {
           const res = await fetch(
             "https://arteluk-n8n.bvil2a.easypanel.host/webhook/afb70f27-dd2d-4853-9270-3faf35ddcd5e",
             {
-              method:"POST",
-              headers:{ "Content-Type":"application/json" },
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
               body: JSON.stringify(data),
-              keepalive:true,
+              keepalive: true,
               signal: controller.signal
             }
           );
-          if(!res.ok) throw new Error('HTTP '+res.status);
+          if (!res.ok) throw new Error('HTTP ' + res.status);
 
           form.reset();
           toastForm('✅ ¡Formulario enviado con éxito!', 'ok');
@@ -3367,12 +3006,12 @@ html{
             value: 0,
             currency: 'CLP'
           });
-        }catch(err){
+        } catch (err) {
           console.error('Webhook error:', err);
           toastForm('❌ Error al enviar. Intenta nuevamente.', 'error');
-        }finally{
+        } finally {
           clearTimeout(t);
-          if(btn){
+          if (btn) {
             btn.disabled = false;
             btn.innerHTML = original;
           }
@@ -3381,198 +3020,192 @@ html{
       });
     })();
 
-  /* ===== HERO SLIDER (AUTO + FLECHAS + DOTS + SWIPE + PAUSA) ===== */
-(function heroSlider(){
-  const slider = document.querySelector('.hero-slider');
-  if(!slider) return;
+    /* Hero Slider */
+    (() => {
+      const slider = document.querySelector('.hero-slider');
+      if (!slider) return;
 
-  const track = slider.querySelector('.hero-track');
-  const slides = Array.from(slider.querySelectorAll('.hero-slide'));
-  const dots = Array.from(slider.querySelectorAll('[data-hero-dot]'));
-  const prev = slider.querySelector('[data-hero-prev]');
-  const next = slider.querySelector('[data-hero-next]');
-  if(!track || slides.length === 0) return;
+      const track = slider.querySelector('.hero-track');
+      const slides = Array.from(slider.querySelectorAll('.hero-slide'));
+      const dots = Array.from(slider.querySelectorAll('[data-hero-dot]'));
+      const prev = slider.querySelector('[data-hero-prev]');
+      const next = slider.querySelector('[data-hero-next]');
+      if (!track || slides.length === 0) return;
 
-  // Ajustes
-  const AUTOPLAY_MS = 7000;      // cada cuánto cambia solo
-  const PAUSE_MS = 20000;        // cuánto se queda quieto después de tocar/deslizar
-  const SWIPE_PX = 40;           // mínimo de arrastre para considerarlo swipe
+      const AUTOPLAY_MS = 7000;
+      const PAUSE_MS = 20000;
+      const SWIPE_PX = 40;
 
-  slider.style.setProperty('--heroSlides', slides.length);
-  const step = 100 / slides.length;
+      slider.style.setProperty('--heroSlides', slides.length);
+      const step = 100 / slides.length;
 
-  let index = 0;
-  let timer = null;
-  let resumeT = null;
+      let index = 0;
+      let timer = null;
+      let resumeT = null;
 
-  function setActiveDot(i){
-    dots.forEach((d,idx)=> d.classList.toggle('active', idx===i));
-  }
-
-  function applyTransform(noAnim=false){
-    const t = `translate3d(-${index * step}%,0,0)`;
-    if(noAnim){
-      const old = track.style.transition;
-      track.style.transition = 'none';
-      track.style.transform = t;
-      track.getBoundingClientRect();
-      track.style.transition = old || '';
-    }else{
-      track.style.transform = t;
-    }
-  }
-
-  function stopAuto(){
-    if(timer){ clearInterval(timer); timer = null; }
-  }
-
-  function startAuto(){
-    stopAuto();
-    if(slides.length <= 1) return;
-    timer = setInterval(()=> {
-      index = (index + 1) % slides.length;
-      applyTransform(false);
-      setActiveDot(index);
-    }, AUTOPLAY_MS);
-  }
-
-  function pauseForRead(ms = PAUSE_MS){
-    stopAuto();
-    if(resumeT) clearTimeout(resumeT);
-    resumeT = setTimeout(()=> startAuto(), ms);
-  }
-
-  function goTo(i, {user=true} = {}){
-    const total = slides.length;
-    index = (i + total) % total;
-    applyTransform(false);
-    setActiveDot(index);
-    if(user) pauseForRead(PAUSE_MS);
-  }
-
-  // Flechas/dots = pausa para leer
-  prev && prev.addEventListener('click', ()=> goTo(index - 1, {user:true}));
-  next && next.addEventListener('click', ()=> goTo(index + 1, {user:true}));
-  dots.forEach((d,idx)=> d.addEventListener('click', ()=> goTo(idx, {user:true})));
-
-  // Desktop: hover pausa / sale reanuda
-  slider.addEventListener('mouseenter', ()=> stopAuto());
-  slider.addEventListener('mouseleave', ()=> startAuto());
-
-  // ✅ SWIPE (Pointer + fallback Touch)
-  let sx=0, sy=0;
-
-  function onStart(x,y){
-    sx=x; sy=y;
-    pauseForRead(PAUSE_MS); // apenas toca: queda quieto para leer
-  }
-
-  function onEnd(x,y){
-    const dx = x - sx;
-    const dy = y - sy;
-
-    // si fue más horizontal que vertical + supera umbral -> swipe
-    if(Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_PX){
-      dx > 0 ? goTo(index - 1, {user:true}) : goTo(index + 1, {user:true});
-    }
-  }
-
-  // Pointer (moderno)
-   // Pointer (moderno)
-  slider.addEventListener('pointerdown', (e)=>{
-    onStart(e.clientX, e.clientY);
-  }, { passive: true });
-
-  slider.addEventListener('pointerup', (e)=>{
-    onEnd(e.clientX, e.clientY);
-  }, { passive: true });
-
-  slider.addEventListener('pointercancel', (e)=>{
-    onEnd(e.clientX, e.clientY);
-  }, { passive: true });
-
-  // Touch fallback (por si el browser se pone raro con pointer)
-  slider.addEventListener('touchstart', (e)=>{
-    const t = e.changedTouches && e.changedTouches[0];
-    if(!t) return;
-    onStart(t.clientX, t.clientY);
-  }, { passive: true });
-
-  slider.addEventListener('touchend', (e)=>{
-    const t = e.changedTouches && e.changedTouches[0];
-    if(!t) return;
-    onEnd(t.clientX, t.clientY);
-  }, { passive: true });
-
-  // Init
-  applyTransform(true);
-  setActiveDot(index);
-  startAuto();
-})();
-
-/* ===== Exposiciones: cambio de foto al hacer click en miniaturas ===== */
-(function expoThumbSwap(){
-  document.querySelectorAll('.expo-item').forEach(item=>{
-    const photoWrap = item.querySelector('.expo-photo');
-
-    // main image/video (según lo que exista en esa expo)
-    const imgEl = item.querySelector('img.expo-main');
-    const videoEl = item.querySelector('video.expo-main');
-
-    const thumbs = Array.from(item.querySelectorAll('[data-expo-thumb]'));
-    if(thumbs.length === 0) return;
-
-    function setVideoSource(v, src){
-      if(!v) return;
-      const source = v.querySelector('source');
-      if(source){
-        source.src = src;
-      }else{
-        v.src = src;
+      function setActiveDot(i) {
+        dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
       }
-    }
 
-    function showImage(src, alt){
-      if(videoEl){
-        try{ videoEl.pause(); }catch(_){}
-      }
-      if(photoWrap) photoWrap.classList.remove('show-video');
-
-      if(!imgEl) return;
-      imgEl.src = src;
-      if(alt) imgEl.alt = alt;
-    }
-
-    function showVideo(src){
-      if(!videoEl) return;
-      setVideoSource(videoEl, src);
-      videoEl.load();
-      if(photoWrap) photoWrap.classList.add('show-video');
-    }
-
-    thumbs.forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const src = btn.getAttribute('data-src') || '';
-        const alt = btn.getAttribute('data-alt') || '';
-
-        // active UI
-        thumbs.forEach(t=>t.classList.remove('is-active'));
-        btn.classList.add('is-active');
-
-        // si algún día metes thumbs de video, igual funciona
-        if(/\.(mp4|webm|ogg)(\?|$)/i.test(src)){
-          showVideo(src);
-        }else{
-          showImage(src, alt);
+      function applyTransform(noAnim = false) {
+        const t = `translate3d(-${index * step}%,0,0)`;
+        if (noAnim) {
+          const old = track.style.transition;
+          track.style.transition = 'none';
+          track.style.transform = t;
+          track.getBoundingClientRect();
+          track.style.transition = old || '';
+        } else {
+          track.style.transform = t;
         }
+      }
+
+      function stopAuto() {
+        if (timer) { clearInterval(timer); timer = null; }
+      }
+
+      function startAuto() {
+        stopAuto();
+        if (slides.length <= 1) return;
+        timer = setInterval(() => {
+          index = (index + 1) % slides.length;
+          applyTransform(false);
+          setActiveDot(index);
+        }, AUTOPLAY_MS);
+      }
+
+      function pauseForRead(ms = PAUSE_MS) {
+        stopAuto();
+        if (resumeT) clearTimeout(resumeT);
+        resumeT = setTimeout(() => startAuto(), ms);
+      }
+
+      function goTo(i, { user = true } = {}) {
+        const total = slides.length;
+        index = (i + total) % total;
+        applyTransform(false);
+        setActiveDot(index);
+        if (user) pauseForRead(PAUSE_MS);
+      }
+
+      prev && prev.addEventListener('click', () => goTo(index - 1, { user: true }));
+      next && next.addEventListener('click', () => goTo(index + 1, { user: true }));
+      dots.forEach((d, idx) => d.addEventListener('click', () => goTo(idx, { user: true })));
+
+      slider.addEventListener('mouseenter', () => stopAuto());
+      slider.addEventListener('mouseleave', () => startAuto());
+
+      let sx = 0, sy = 0;
+
+      function onStart(x, y) {
+        sx = x; sy = y;
+        pauseForRead(PAUSE_MS);
+      }
+
+      function onEnd(x, y) {
+        const dx = x - sx;
+        const dy = y - sy;
+
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_PX) {
+          dx > 0 ? goTo(index - 1, { user: true }) : goTo(index + 1, { user: true });
+        }
+      }
+
+      slider.addEventListener('pointerdown', (e) => {
+        onStart(e.clientX, e.clientY);
+      }, { passive: true });
+
+      slider.addEventListener('pointerup', (e) => {
+        onEnd(e.clientX, e.clientY);
+      }, { passive: true });
+
+      slider.addEventListener('pointercancel', (e) => {
+        onEnd(e.clientX, e.clientY);
+      }, { passive: true });
+
+      slider.addEventListener('touchstart', (e) => {
+        const t = e.changedTouches && e.changedTouches[0];
+        if (!t) return;
+        onStart(t.clientX, t.clientY);
+      }, { passive: true });
+
+      slider.addEventListener('touchend', (e) => {
+        const t = e.changedTouches && e.changedTouches[0];
+        if (!t) return;
+        onEnd(t.clientX, t.clientY);
+      }, { passive: true });
+
+      applyTransform(true);
+      setActiveDot(index);
+      startAuto();
+    })();
+
+    /* Expo thumb swap */
+    (() => {
+      document.querySelectorAll('.expo-item').forEach(item => {
+        const photoWrap = item.querySelector('.expo-photo');
+        const imgEl = item.querySelector('img.expo-main');
+        const videoEl = item.querySelector('video.expo-main');
+        const thumbs = Array.from(item.querySelectorAll('[data-expo-thumb]'));
+        if (thumbs.length === 0) return;
+
+        function setVideoSource(v, src) {
+          if (!v) return;
+          const source = v.querySelector('source');
+          if (source) {
+            source.src = src;
+          } else {
+            v.src = src;
+          }
+        }
+
+        function showImage(src, alt) {
+          if (videoEl) {
+            try { videoEl.pause(); } catch (_) {}
+          }
+          if (photoWrap) photoWrap.classList.remove('show-video');
+
+          if (!imgEl) return;
+          imgEl.src = src;
+          if (alt) imgEl.alt = alt;
+        }
+
+        function showVideo(src) {
+          if (!videoEl) return;
+          setVideoSource(videoEl, src);
+          videoEl.load();
+          if (photoWrap) photoWrap.classList.add('show-video');
+        }
+
+        thumbs.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const src = btn.getAttribute('data-src') || '';
+            const alt = btn.getAttribute('data-alt') || '';
+
+            thumbs.forEach(t => t.classList.remove('is-active'));
+            btn.classList.add('is-active');
+
+            if (/\.(mp4|webm|ogg)(\?|$)/i.test(src)) {
+              showVideo(src);
+            } else {
+              showImage(src, alt);
+            }
+          });
+        });
       });
-    });
-  });
-})();
-</script>
+    })();
+
+    /* Solo una bio abierta */
+    (() => {
+      const root = document.querySelector('#equipo.teamPro');
+      if (!root) return;
+      const all = [...root.querySelectorAll('details.teamCard__details')];
+      all.forEach(d => {
+        d.addEventListener('toggle', () => {
+          if (d.open) all.forEach(o => { if (o !== d) o.open = false; });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
-
-
-
-
