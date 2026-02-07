@@ -9,10 +9,10 @@
   <meta name="description" content="Academia de arte y arteterapia en Valdivia. Talleres para niños, jóvenes y adultos. Dirección: Picarte 407.">
   <link rel="canonical" href="https://www.arteluk.cl/">
 
-  <!-- Fonts -->
+  <!-- Fonts - NUEVA TIPOGRAFÍA PROFESIONAL -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
@@ -157,7 +157,7 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-size: 16px;
       line-height: 1.6;
       color: var(--text-primary);
@@ -218,34 +218,37 @@
     }
 
     /* ========================================
-       TIPOGRAFÍA
+       TIPOGRAFÍA MEJORADA
        ======================================== */
     h1, h2, h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 700;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 600;
       line-height: 1.2;
       color: var(--text-primary);
+      letter-spacing: -0.01em;
     }
 
     h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      letter-spacing: -0.02em;
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      font-weight: 700;
       margin-bottom: var(--space-4);
     }
 
     h2 {
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      letter-spacing: -0.01em;
+      font-size: clamp(1.875rem, 4vw, 2.75rem);
+      font-weight: 600;
       margin-bottom: var(--space-4);
     }
 
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.625rem;
+      font-weight: 600;
       margin-bottom: var(--space-3);
     }
 
     p {
       color: var(--text-secondary);
+      font-weight: 400;
     }
 
     .lead {
@@ -253,15 +256,17 @@
       line-height: 1.7;
       color: var(--text-secondary);
       max-width: 920px;
+      font-weight: 400;
     }
 
     .mono {
       font-size: 0.75rem;
       font-weight: 800;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--blue-600);
       margin-bottom: var(--space-2);
+      font-family: 'Montserrat', sans-serif;
     }
 
     .section {
@@ -289,11 +294,12 @@
     }
 
     .brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      font-weight: 800;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.375rem;
+      font-weight: 700;
       color: var(--text-primary);
       flex-shrink: 0;
+      letter-spacing: 0.02em;
     }
 
     .brand span {
@@ -321,7 +327,8 @@
       padding: var(--space-2) var(--space-3);
       border-radius: var(--radius);
       color: var(--text-secondary);
-      font-weight: 500;
+      font-weight: 600;
+      font-size: 0.9375rem;
       transition: var(--transition);
     }
 
@@ -403,6 +410,7 @@
       transition: all var(--transition);
       white-space: nowrap;
       min-height: 44px;
+      font-family: 'Montserrat', sans-serif;
     }
 
     .btn.primary {
@@ -446,6 +454,7 @@
       align-items: center;
       gap: var(--space-2);
       position: relative;
+      font-weight: 600;
     }
 
     .link-button::after {
@@ -497,8 +506,9 @@
     }
 
     .intro-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.25rem;
+      font-weight: 700;
       margin-bottom: var(--space-2);
     }
 
@@ -508,6 +518,7 @@
       font-size: 0.875rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
+      font-weight: 700;
     }
 
     .intro-line {
@@ -522,7 +533,7 @@
     }
 
     /* ========================================
-       HERO SLIDER
+       HERO SLIDER - MEJORADO TOUCH
        ======================================== */
     .hero-shell {
       position: relative;
@@ -537,7 +548,7 @@
       height: calc(100vh - var(--nav-height));
       min-height: 620px;
       overflow: hidden;
-      touch-action: pan-y;
+      touch-action: pan-y pinch-zoom;
     }
 
     @media (max-width: 880px) {
@@ -552,7 +563,7 @@
       height: 100%;
       width: calc(var(--heroSlides) * 100%);
       transform: translate3d(0, 0, 0);
-      transition: transform 0.6s cubic-bezier(0.33, 0.7, 0.2, 1);
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       will-change: transform;
     }
 
@@ -584,6 +595,7 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       margin-bottom: var(--space-3);
+      font-weight: 700;
     }
 
     .hero-ctas {
@@ -704,6 +716,7 @@
       position: relative;
       padding-left: var(--space-5);
       color: var(--text-secondary);
+      font-weight: 400;
     }
 
     .pill-list li::before {
@@ -821,6 +834,7 @@
       display: block;
       font-size: 0.875rem;
       margin-bottom: var(--space-1);
+      font-weight: 700;
     }
 
     .video-meta .meta-left small {
@@ -878,7 +892,7 @@
     .session-option {
       padding: var(--space-2) var(--space-5);
       border-radius: var(--radius-full);
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.9375rem;
       cursor: pointer;
       transition: var(--transition);
@@ -914,7 +928,7 @@
       background: linear-gradient(135deg, var(--green-500), var(--green-600));
       color: white;
       border-radius: var(--radius-full);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.875rem;
       box-shadow: var(--shadow-md);
     }
@@ -972,12 +986,19 @@
 
     .card h3 {
       margin: 0 0 var(--space-2);
-      font-size: 1.25rem;
+      font-size: 1.375rem;
     }
 
     .card p {
       margin: 0 0 var(--space-4);
       color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    /* Texto descriptivo de frecuencia */
+    .card-frequency-text {
+      font-weight: 500;
+      color: var(--text-primary);
     }
 
     .card .meta {
@@ -994,7 +1015,7 @@
       border-radius: var(--radius-full);
       font-size: 0.875rem;
       color: var(--blue-800);
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .badge.gold {
@@ -1010,34 +1031,41 @@
       font-weight: 900;
     }
 
+    /* PRECIOS MEJORADOS */
     .price-display {
       display: flex;
       align-items: baseline;
-      gap: var(--space-2);
+      gap: var(--space-3);
       margin: var(--space-4) 0;
       flex-wrap: wrap;
     }
 
     .price-current {
-      font-size: 2rem;
-      font-weight: 900;
+      font-size: 2.25rem;
+      font-weight: 800;
       color: var(--blue-700);
-      font-family: 'Playfair Display', serif;
+      font-family: 'Montserrat', sans-serif;
     }
 
     .price-original {
-      font-size: 1.125rem;
-      color: var(--text-muted);
+      font-size: 1.25rem;
+      color: var(--gray-400);
       text-decoration: line-through;
+      text-decoration-thickness: 2px;
+      text-decoration-color: var(--gray-400);
+      font-weight: 600;
+      opacity: 0.75;
+      font-family: 'Montserrat', sans-serif;
     }
 
     .price-discount {
-      padding: var(--space-1) var(--space-2);
-      background: var(--green-100);
-      color: var(--green-600);
-      border-radius: var(--radius);
+      padding: var(--space-1) var(--space-3);
+      background: linear-gradient(135deg, var(--green-500), var(--green-600));
+      color: white;
+      border-radius: var(--radius-full);
       font-size: 0.875rem;
-      font-weight: 700;
+      font-weight: 800;
+      box-shadow: var(--shadow-sm);
     }
 
     .card .cta {
@@ -1094,7 +1122,7 @@
       margin: 0 0 var(--space-2);
       font-size: 0.75rem;
       font-weight: 800;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--blue-600);
     }
@@ -1170,8 +1198,8 @@
 
     .teamCard__name {
       margin: 0;
-      font-size: 1.125rem;
-      font-weight: 800;
+      font-size: 1.25rem;
+      font-weight: 700;
     }
 
     .teamCard__pill {
@@ -1180,6 +1208,7 @@
       border-radius: var(--radius-full);
       border: 1px solid var(--border-light);
       background: var(--gray-50);
+      font-weight: 600;
     }
 
     .teamCard__list {
@@ -1201,6 +1230,7 @@
       position: absolute;
       left: 0;
       color: var(--blue-600);
+      font-weight: 700;
     }
 
     .teamCard__details {
@@ -1263,9 +1293,10 @@
     }
 
     .expo-wrap-head strong {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.125rem;
       color: var(--text-primary);
+      font-weight: 600;
     }
 
     .expo-wrap-head small {
@@ -1444,7 +1475,7 @@
 
     .expo-info h3 {
       margin: 0;
-      font-size: 1.375rem;
+      font-size: 1.5rem;
     }
 
     .expo-info p {
@@ -1529,7 +1560,7 @@
     .booking-header h3 {
       margin: 0;
       color: white;
-      font-size: 1.25rem;
+      font-size: 1.375rem;
     }
 
     .close-modal {
@@ -1539,7 +1570,7 @@
       border-radius: var(--radius);
       padding: var(--space-2) var(--space-3);
       cursor: pointer;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.875rem;
       transition: var(--transition);
     }
@@ -1613,7 +1644,7 @@
       border: 1px solid var(--blue-200);
       border-radius: var(--radius);
       color: var(--blue-700);
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: var(--space-4);
     }
 
@@ -1624,7 +1655,7 @@
       color: white;
       border: none;
       border-radius: var(--radius);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 1rem;
       cursor: pointer;
       transition: var(--transition);
@@ -1670,7 +1701,8 @@
     }
 
     .modal-head strong {
-      font-size: 1.25rem;
+      font-size: 1.375rem;
+      font-weight: 700;
     }
 
     .modal-body {
@@ -1727,6 +1759,7 @@
     .foot a {
       color: var(--text-secondary);
       transition: var(--transition);
+      font-weight: 600;
     }
 
     .foot a:hover {
@@ -1993,7 +2026,11 @@
 
         <div class="grid">
           <!-- TALLER VERANO BÁSICO -->
-          <article class="card summer" data-price="45000" data-matricula="0">
+          <article class="card summer" 
+                   data-price="45000" 
+                   data-matricula="0"
+                   data-frequency-1="3 clases por semana"
+                   data-frequency-2="6 clases por dos semanas">
             <div class="media">
               <img src="img/WhatsApp Image 2025-12-15 at 12.22.38 PM.jpeg"
                    alt="Taller de Vacaciones Básico"
@@ -2001,9 +2038,9 @@
             </div>
             <div class="body">
               <h3>🌼 Taller de Vacaciones Básico</h3>
-              <p>3 clases por semana · 1 hr · Lunes, Miércoles y Viernes.</p>
+              <p class="card-frequency-text" data-frequency-display>3 clases por semana · 1 hr · Lunes, Miércoles y Viernes.</p>
               <div class="meta">
-                <span class="badge gold">3 clases/semana</span>
+                <span class="badge gold" data-freq-badge>3 clases/semana</span>
                 <span class="badge gold">15:30–16:30</span>
                 <span class="badge gold">Pago semanal</span>
               </div>
@@ -2016,7 +2053,8 @@
             <div class="cta">
               <button class="btn primary open-booking" type="button"
                       data-service="Taller de Vacaciones Básico"
-                      data-price="45000">
+                      data-price="45000"
+                      data-sessions="1">
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
@@ -2028,7 +2066,11 @@
           </article>
 
           <!-- TALLER VERANO PREMIUM -->
-          <article class="card summer" data-price="65000" data-matricula="0">
+          <article class="card summer" 
+                   data-price="65000" 
+                   data-matricula="0"
+                   data-frequency-1="3 clases por semana"
+                   data-frequency-2="6 clases por dos semanas">
             <div class="recommended-pill">Recomendado</div>
             <div class="media">
               <img src="img/WhatsApp Image 2025-12-15 at 8.33.32 AM.jpeg"
@@ -2037,9 +2079,9 @@
             </div>
             <div class="body">
               <h3>👑 Taller de Vacaciones Premium</h3>
-              <p>3 clases por semana · 2 hrs · Martes, Jueves y Sábado.</p>
+              <p class="card-frequency-text" data-frequency-display>3 clases por semana · 2 hrs · Martes, Jueves y Sábado.</p>
               <div class="meta">
-                <span class="badge rec">3 clases/semana 2 hrs</span>
+                <span class="badge rec" data-freq-badge>3 clases/semana 2 hrs</span>
                 <span class="badge gold">15:00–17:00</span>
                 <span class="badge gold">Pago semanal</span>
               </div>
@@ -2052,7 +2094,8 @@
             <div class="cta">
               <button class="btn primary open-booking" type="button"
                       data-service="Taller de Vacaciones Premium"
-                      data-price="65000">
+                      data-price="65000"
+                      data-sessions="1">
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
@@ -2064,16 +2107,20 @@
           </article>
 
           <!-- TALLER DE ARTES -->
-          <article class="card" data-price="60000" data-matricula="15000">
+          <article class="card" 
+                   data-price="60000" 
+                   data-matricula="15000"
+                   data-frequency-1="4 clases al mes"
+                   data-frequency-2="8 clases por dos meses">
             <div class="media">
               <img src="img/Fondo para curso de basico.jpg"
                    alt="Taller de Artes" loading="lazy">
             </div>
             <div class="body">
               <h3>Taller de Artes</h3>
-              <p>4 clases de 1 hr. Materiales base incluidos.</p>
+              <p class="card-frequency-text" data-frequency-display>4 clases de 1 hr. Materiales base incluidos.</p>
               <div class="meta">
-                <span class="badge">Mensual</span>
+                <span class="badge" data-freq-badge>Mensual</span>
                 <span class="badge">+ matrícula $15.000</span>
                 <span class="badge">18:30-19:30</span>
               </div>
@@ -2086,7 +2133,8 @@
             <div class="cta">
               <button class="btn primary open-booking" type="button"
                       data-service="Taller de Artes"
-                      data-price="60000">
+                      data-price="60000"
+                      data-sessions="1">
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
@@ -2098,7 +2146,11 @@
           </article>
 
           <!-- TALLER DE ARTES PREMIUM -->
-          <article class="card" data-price="120000" data-matricula="15000">
+          <article class="card" 
+                   data-price="120000" 
+                   data-matricula="15000"
+                   data-frequency-1="4 clases al mes"
+                   data-frequency-2="8 clases por dos meses">
             <div class="media">
               <img src="img/Fondo para clases premium.jpg"
                    alt="Taller de Artes Premium"
@@ -2106,9 +2158,9 @@
             </div>
             <div class="body">
               <h3>👑 Taller de Artes Premium</h3>
-              <p>4 clases de 2 hrs. Zona cowork + sala de espera.</p>
+              <p class="card-frequency-text" data-frequency-display>4 clases de 2 hrs. Zona cowork + sala de espera.</p>
               <div class="meta">
-                <span class="badge">Mensual</span>
+                <span class="badge" data-freq-badge>Mensual</span>
                 <span class="badge">+ matrícula $15.000</span>
                 <span class="badge">17:30-19:30</span>
               </div>
@@ -2121,7 +2173,8 @@
             <div class="cta">
               <button class="btn primary open-booking" type="button"
                       data-service="Taller de Artes Premium"
-                      data-price="120000">
+                      data-price="120000"
+                      data-sessions="1">
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
@@ -2133,7 +2186,11 @@
           </article>
 
           <!-- TALLER TEA -->
-          <article class="card" data-price="60000" data-matricula="15000">
+          <article class="card" 
+                   data-price="60000" 
+                   data-matricula="15000"
+                   data-frequency-1="4 clases al mes"
+                   data-frequency-2="8 clases por dos meses">
             <div class="media">
               <img src="img/Fondo para clases de dibujo.jpg"
                    alt="Taller de Dibujo para niños con TEA"
@@ -2141,9 +2198,9 @@
             </div>
             <div class="body">
               <h3>Taller de dibujo para niños con TEA</h3>
-              <p>Grupos pequeños, rutinas claras y material sensorial.</p>
+              <p class="card-frequency-text" data-frequency-display>Grupos pequeños, rutinas claras y material sensorial.</p>
               <div class="meta">
-                <span class="badge">Mensual</span>
+                <span class="badge" data-freq-badge>Mensual</span>
                 <span class="badge">+ matrícula $15.000</span>
                 <span class="badge">17:30-18:30</span>
               </div>
@@ -2156,7 +2213,8 @@
             <div class="cta">
               <button class="btn primary open-booking" type="button"
                       data-service="Taller TEA"
-                      data-price="60000">
+                      data-price="60000"
+                      data-sessions="1">
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
@@ -2168,7 +2226,11 @@
           </article>
 
           <!-- PLAN TRIMESTRAL -->
-          <article class="card" data-price="270000" data-matricula="15000">
+          <article class="card" 
+                   data-price="270000" 
+                   data-matricula="15000"
+                   data-frequency-1="3 meses"
+                   data-frequency-2="6 meses">
             <div class="media">
               <img src="img/WhatsApp Image 2025-11-04 at 10.07.50 AM.jpeg"
                    alt="Plan Trimestral"
@@ -2176,9 +2238,9 @@
             </div>
             <div class="body">
               <h3>Plan Trimestral</h3>
-              <p>Premium por 3 meses con 10% dcto. (pago anticipado).</p>
+              <p class="card-frequency-text" data-frequency-display>Premium por 3 meses con 10% dcto. (pago anticipado).</p>
               <div class="meta">
-                <span class="badge">3 meses</span>
+                <span class="badge" data-freq-badge>3 meses</span>
                 <span class="badge">Ahorro 10%</span>
               </div>
               <div class="price-display">
@@ -2190,7 +2252,8 @@
             <div class="cta">
               <button class="btn primary open-booking" type="button"
                       data-service="Plan Trimestral"
-                      data-price="270000">
+                      data-price="270000"
+                      data-sessions="1">
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
@@ -2202,7 +2265,11 @@
           </article>
 
           <!-- TALLER ADULTOS -->
-          <article class="card" data-price="60000" data-matricula="15000">
+          <article class="card" 
+                   data-price="60000" 
+                   data-matricula="15000"
+                   data-frequency-1="4 clases al mes"
+                   data-frequency-2="8 clases por dos meses">
             <div class="media">
               <img src="img/fondo para curso adulto.jpg"
                    alt="Taller para Adultos"
@@ -2210,9 +2277,9 @@
             </div>
             <div class="body">
               <h3>Taller para Adultos</h3>
-              <p>De cero a obra terminada. Técnica y disfrute.</p>
+              <p class="card-frequency-text" data-frequency-display>De cero a obra terminada. Técnica y disfrute.</p>
               <div class="meta">
-                <span class="badge">Mensual</span>
+                <span class="badge" data-freq-badge>Mensual</span>
                 <span class="badge">+ matrícula $15.000</span>
                 <span class="badge">17:30-19:30</span>
               </div>
@@ -2225,7 +2292,8 @@
             <div class="cta">
               <button class="btn primary open-booking" type="button"
                       data-service="Taller para Adultos"
-                      data-price="60000">
+                      data-price="60000"
+                      data-sessions="1">
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
@@ -2237,7 +2305,11 @@
           </article>
 
           <!-- PLAN POR UN DÍA -->
-          <article class="card" data-price="20000" data-matricula="0">
+          <article class="card" 
+                   data-price="20000" 
+                   data-matricula="0"
+                   data-frequency-1="1 sesión"
+                   data-frequency-2="2 sesiones">
             <div class="media">
               <img src="img/IMG_5557.jpg"
                    alt="Plan por un día"
@@ -2245,9 +2317,9 @@
             </div>
             <div class="body">
               <h3>Plan por un día</h3>
-              <p>Vive la experiencia Arteluk en una clase única.</p>
+              <p class="card-frequency-text" data-frequency-display>Vive la experiencia Arteluk en una clase única.</p>
               <div class="meta">
-                <span class="badge">1 sesión</span>
+                <span class="badge" data-freq-badge>1 sesión</span>
                 <span class="badge">Sin matrícula</span>
               </div>
               <div class="price-display">
@@ -2259,7 +2331,8 @@
             <div class="cta">
               <button class="btn primary open-booking" type="button"
                       data-service="Plan por un día"
-                      data-price="20000">
+                      data-price="20000"
+                      data-sessions="1">
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
@@ -3024,7 +3097,7 @@
       );
     })();
 
-    /* TOGGLE DE SESIONES Y ACTUALIZACIÓN DE PRECIOS */
+    /* TOGGLE DE SESIONES Y ACTUALIZACIÓN DE PRECIOS Y TEXTOS */
     (() => {
       const options = document.querySelectorAll('.session-option');
       const slider = document.querySelector('.session-slider');
@@ -3054,6 +3127,47 @@
         cards.forEach(card => {
           const basePrice = parseInt(card.getAttribute('data-price'));
           const matricula = parseInt(card.getAttribute('data-matricula') || '0');
+          
+          // Obtener textos de frecuencia
+          const freq1 = card.getAttribute('data-frequency-1') || '';
+          const freq2 = card.getAttribute('data-frequency-2') || '';
+          const currentFreq = sessions === 1 ? freq1 : freq2;
+          
+          // Actualizar texto descriptivo
+          const freqDisplay = card.querySelector('[data-frequency-display]');
+          if (freqDisplay && currentFreq) {
+            freqDisplay.textContent = currentFreq;
+          }
+          
+          // Actualizar badge de frecuencia
+          const freqBadge = card.querySelector('[data-freq-badge]');
+          if (freqBadge) {
+            if (sessions === 2) {
+              const badgeText = freqBadge.textContent;
+              // Duplicar números en badges
+              if (badgeText.includes('3 clases/semana')) {
+                freqBadge.textContent = '6 clases/dos semanas';
+              } else if (badgeText.includes('Mensual')) {
+                freqBadge.textContent = '2 meses';
+              } else if (badgeText.includes('3 meses')) {
+                freqBadge.textContent = '6 meses';
+              } else if (badgeText.includes('1 sesión')) {
+                freqBadge.textContent = '2 sesiones';
+              }
+            } else {
+              // Restaurar texto original
+              const badgeText = freqBadge.textContent;
+              if (badgeText.includes('6 clases/dos semanas')) {
+                freqBadge.textContent = '3 clases/semana';
+              } else if (badgeText.includes('2 meses')) {
+                freqBadge.textContent = 'Mensual';
+              } else if (badgeText.includes('6 meses')) {
+                freqBadge.textContent = '3 meses';
+              } else if (badgeText.includes('2 sesiones')) {
+                freqBadge.textContent = '1 sesión';
+              }
+            }
+          }
           
           let totalPrice = basePrice * sessions;
           let originalPrice = totalPrice;
@@ -3117,6 +3231,7 @@
       const closeBooking = document.getElementById('closeBooking');
       const bookingForm = document.getElementById('bookingForm');
       const selectedServiceEl = document.getElementById('selectedService');
+      const bookingSessionsSelect = document.getElementById('bookingSessions');
       
       let currentService = '';
       let currentPrice = 0;
@@ -3145,6 +3260,11 @@
           const sessions = parseInt(btn.getAttribute('data-sessions') || '1');
           
           selectedServiceEl.textContent = `${currentService} - $${currentPrice.toLocaleString('es-CL')}`;
+          
+          // Pre-seleccionar el número de sesiones en el formulario
+          if (bookingSessionsSelect) {
+            bookingSessionsSelect.value = sessions.toString();
+          }
           
           lockBodyScroll();
           if (typeof bookingModal.showModal === 'function') {
@@ -3359,7 +3479,7 @@
       }
     })();
 
-    /* Hero Slider */
+    /* Hero Slider - MEJORADO TOUCH HANDLING */
     (() => {
       const slider = document.querySelector('.hero-slider');
       if (!slider) return;
@@ -3373,7 +3493,8 @@
 
       const AUTOPLAY_MS = 7000;
       const PAUSE_MS = 20000;
-      const SWIPE_PX = 40;
+      const SWIPE_THRESHOLD = 50; // pixels mínimos para considerar swipe
+      const VELOCITY_THRESHOLD = 0.3; // velocidad mínima para swipe rápido
 
       slider.style.setProperty('--heroSlides', slides.length);
       const step = 100 / slides.length;
@@ -3381,21 +3502,33 @@
       let index = 0;
       let timer = null;
       let resumeT = null;
+      
+      // Variables para touch mejorado
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchStartTime = 0;
+      let isDragging = false;
+      let currentX = 0;
+      let lastX = 0;
+      let lastTime = 0;
 
       function setActiveDot(i) {
         dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
       }
 
-      function applyTransform(noAnim = false) {
-        const t = `translate3d(-${index * step}%,0,0)`;
+      function applyTransform(translateX = null, noAnim = false) {
+        const baseTranslate = -index * step;
+        const finalTranslate = translateX !== null ? translateX : baseTranslate;
+        const transform = `translate3d(${finalTranslate}%, 0, 0)`;
+        
         if (noAnim) {
           const old = track.style.transition;
           track.style.transition = 'none';
-          track.style.transform = t;
-          track.getBoundingClientRect();
+          track.style.transform = transform;
+          track.getBoundingClientRect(); // force reflow
           track.style.transition = old || '';
         } else {
-          track.style.transform = t;
+          track.style.transform = transform;
         }
       }
 
@@ -3408,7 +3541,7 @@
         if (slides.length <= 1) return;
         timer = setInterval(() => {
           index = (index + 1) % slides.length;
-          applyTransform(false);
+          applyTransform();
           setActiveDot(index);
         }, AUTOPLAY_MS);
       }
@@ -3422,11 +3555,97 @@
       function goTo(i, { user = true } = {}) {
         const total = slides.length;
         index = (i + total) % total;
-        applyTransform(false);
+        isDragging = false;
+        track.classList.remove('dragging');
+        applyTransform();
         setActiveDot(index);
         if (user) pauseForRead(PAUSE_MS);
       }
 
+      function onTouchStart(clientX, clientY) {
+        touchStartX = clientX;
+        touchStartY = clientY;
+        touchStartTime = Date.now();
+        isDragging = true;
+        currentX = clientX;
+        lastX = clientX;
+        lastTime = Date.now();
+        
+        track.classList.add('dragging');
+        pauseForRead(PAUSE_MS);
+      }
+
+      function onTouchMove(clientX, clientY) {
+        if (!isDragging) return;
+        
+        const deltaX = clientX - touchStartX;
+        const deltaY = clientY - touchStartY;
+        
+        // Solo drag horizontal si el movimiento es más horizontal que vertical
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+          currentX = clientX;
+          
+          // Calcular el desplazamiento en porcentaje
+          const containerWidth = slider.offsetWidth;
+          const dragPercent = (deltaX / containerWidth) * 100;
+          const baseTranslate = -index * step;
+          
+          // Aplicar resistencia en los bordes
+          let finalDragPercent = dragPercent;
+          if (index === 0 && deltaX > 0) {
+            finalDragPercent = dragPercent * 0.3;
+          } else if (index === slides.length - 1 && deltaX < 0) {
+            finalDragPercent = dragPercent * 0.3;
+          }
+          
+          applyTransform(baseTranslate + finalDragPercent, true);
+          
+          lastX = clientX;
+          lastTime = Date.now();
+        }
+      }
+
+      function onTouchEnd(clientX, clientY) {
+        if (!isDragging) return;
+        
+        const deltaX = clientX - touchStartX;
+        const deltaY = clientY - touchStartY;
+        const deltaTime = Date.now() - touchStartTime;
+        
+        // Calcular velocidad
+        const timeDiff = Date.now() - lastTime;
+        const velocity = timeDiff > 0 ? (clientX - lastX) / timeDiff : 0;
+        
+        isDragging = false;
+        track.classList.remove('dragging');
+        
+        // Solo actuar si el movimiento fue principalmente horizontal
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+          const containerWidth = slider.offsetWidth;
+          const threshold = containerWidth * 0.2; // 20% del ancho
+          
+          // Determinar si cambiar de slide basado en distancia o velocidad
+          const shouldChangeSlide = 
+            Math.abs(deltaX) > threshold || 
+            Math.abs(velocity) > VELOCITY_THRESHOLD;
+          
+          if (shouldChangeSlide) {
+            if (deltaX > 0 && index > 0) {
+              goTo(index - 1, { user: true });
+            } else if (deltaX < 0 && index < slides.length - 1) {
+              goTo(index + 1, { user: true });
+            } else {
+              applyTransform();
+            }
+          } else {
+            applyTransform();
+          }
+        } else {
+          applyTransform();
+        }
+      }
+
+      // Event listeners para botones
       prev && prev.addEventListener('click', () => goTo(index - 1, { user: true }));
       next && next.addEventListener('click', () => goTo(index + 1, { user: true }));
       dots.forEach((d, idx) => d.addEventListener('click', () => goTo(idx, { user: true })));
@@ -3434,47 +3653,56 @@
       slider.addEventListener('mouseenter', () => stopAuto());
       slider.addEventListener('mouseleave', () => startAuto());
 
-      let sx = 0, sy = 0;
+      // Mouse events (desktop)
+      slider.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        onTouchStart(e.clientX, e.clientY);
+      });
 
-      function onStart(x, y) {
-        sx = x; sy = y;
-        pauseForRead(PAUSE_MS);
-      }
-
-      function onEnd(x, y) {
-        const dx = x - sx;
-        const dy = y - sy;
-
-        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_PX) {
-          dx > 0 ? goTo(index - 1, { user: true }) : goTo(index + 1, { user: true });
+      slider.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+          e.preventDefault();
+          onTouchMove(e.clientX, e.clientY);
         }
-      }
+      });
 
-      slider.addEventListener('pointerdown', (e) => {
-        onStart(e.clientX, e.clientY);
-      }, { passive: true });
+      slider.addEventListener('mouseup', (e) => {
+        onTouchEnd(e.clientX, e.clientY);
+      });
 
-      slider.addEventListener('pointerup', (e) => {
-        onEnd(e.clientX, e.clientY);
-      }, { passive: true });
+      slider.addEventListener('mouseleave', (e) => {
+        if (isDragging) {
+          onTouchEnd(e.clientX, e.clientY);
+        }
+      });
 
-      slider.addEventListener('pointercancel', (e) => {
-        onEnd(e.clientX, e.clientY);
-      }, { passive: true });
-
+      // Touch events (mobile)
       slider.addEventListener('touchstart', (e) => {
-        const t = e.changedTouches && e.changedTouches[0];
-        if (!t) return;
-        onStart(t.clientX, t.clientY);
+        const touch = e.touches[0];
+        if (!touch) return;
+        onTouchStart(touch.clientX, touch.clientY);
+      }, { passive: true });
+
+      slider.addEventListener('touchmove', (e) => {
+        const touch = e.touches[0];
+        if (!touch || !isDragging) return;
+        onTouchMove(touch.clientX, touch.clientY);
       }, { passive: true });
 
       slider.addEventListener('touchend', (e) => {
-        const t = e.changedTouches && e.changedTouches[0];
-        if (!t) return;
-        onEnd(t.clientX, t.clientY);
+        const touch = e.changedTouches[0];
+        if (!touch) return;
+        onTouchEnd(touch.clientX, touch.clientY);
       }, { passive: true });
 
-      applyTransform(true);
+      slider.addEventListener('touchcancel', (e) => {
+        const touch = e.changedTouches[0];
+        if (!touch) return;
+        onTouchEnd(touch.clientX, touch.clientY);
+      }, { passive: true });
+
+      // Inicializar
+      applyTransform(null, true);
       setActiveDot(index);
       startAuto();
     })();
