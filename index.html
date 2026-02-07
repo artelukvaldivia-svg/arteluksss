@@ -1041,7 +1041,7 @@
     }
 
     .price-current {
-      font-size: 2.25rem;
+      font-size: 1.625rem;
       font-weight: 800;
       color: var(--blue-700);
       font-family: 'Montserrat', sans-serif;
@@ -1534,7 +1534,7 @@
        ======================================== */
     .booking-modal {
       border: none;
-      border-radius: var(--radius-xl);
+      border-radius: var(--radius);
       max-width: 600px;
       width: calc(100% - var(--space-8));
       box-shadow: var(--shadow-xl);
@@ -1603,7 +1603,7 @@
       width: 100%;
       padding: var(--space-3) var(--space-4);
       border: 1px solid var(--border-medium);
-      border-radius: var(--radius);
+      border-radius: var(--radius-sm);
       background: white;
       color: var(--text-primary);
       font-size: 16px;
@@ -3702,7 +3702,8 @@
       }, { passive: true });
 
       // Inicializar
-      applyTransform(null, true);
+      applyTransform(0, true);
+      setActiveDot(0);
       setActiveDot(index);
       startAuto();
     })();
@@ -3776,3 +3777,4 @@
   </script>
 </body>
 </html>
+
