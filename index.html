@@ -86,6 +86,12 @@
       --gold-500: #F59E0B;
       --gold-600: #D97706;
       
+      /* Verde para descuento */
+      --green-50: #F0FDF4;
+      --green-100: #DCFCE7;
+      --green-500: #22C55E;
+      --green-600: #16A34A;
+      
       /* Texto */
       --text-primary: #0F172A;
       --text-secondary: #475569;
@@ -848,6 +854,72 @@
     }
 
     /* ========================================
+       TOGGLE DE SESIONES (Estilo Vambe)
+       ======================================== */
+    .session-toggle-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: var(--space-8);
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .session-toggle {
+      display: inline-flex;
+      background: white;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-full);
+      padding: 4px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .session-option {
+      padding: var(--space-2) var(--space-5);
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      cursor: pointer;
+      transition: var(--transition);
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      position: relative;
+      z-index: 1;
+      white-space: nowrap;
+    }
+
+    .session-option.active {
+      color: white;
+    }
+
+    .session-slider {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      height: calc(100% - 8px);
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 0;
+    }
+
+    .discount-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-4);
+      background: linear-gradient(135deg, var(--green-500), var(--green-600));
+      color: white;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.875rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    /* ========================================
        CARDS (SERVICIOS)
        ======================================== */
     .grid {
@@ -936,6 +1008,36 @@
       border: 1px solid var(--gold-600);
       color: white;
       font-weight: 900;
+    }
+
+    .price-display {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-2);
+      margin: var(--space-4) 0;
+      flex-wrap: wrap;
+    }
+
+    .price-current {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--blue-700);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .price-original {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    .price-discount {
+      padding: var(--space-1) var(--space-2);
+      background: var(--green-100);
+      color: var(--green-600);
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      font-weight: 700;
     }
 
     .card .cta {
@@ -1397,74 +1499,147 @@
     }
 
     /* ========================================
-       FORMULARIO
+       FORMULARIO MODAL
        ======================================== */
-    .form {
-      background: white;
+    .booking-modal {
+      border: none;
       border-radius: var(--radius-xl);
-      padding: var(--space-10);
-      max-width: 900px;
-      margin: 0 auto;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--border-light);
+      max-width: 600px;
+      width: calc(100% - var(--space-8));
+      box-shadow: var(--shadow-xl);
+      padding: 0;
+      background: white;
     }
 
-    @media (max-width: 640px) {
-      .form {
-        padding: var(--space-6);
-      }
+    .booking-modal::backdrop {
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
     }
 
-    .form .row {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-5);
+    .booking-header {
+      padding: var(--space-6);
+      border-bottom: 1px solid var(--border-light);
+      background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .booking-header h3 {
+      margin: 0;
+      color: white;
+      font-size: 1.25rem;
+    }
+
+    .close-modal {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      border-radius: var(--radius);
+      padding: var(--space-2) var(--space-3);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: var(--transition);
+    }
+
+    .close-modal:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .booking-body {
+      padding: var(--space-6);
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+
+    .form-group {
       margin-bottom: var(--space-5);
     }
 
-    .form .row.single {
-      grid-template-columns: 1fr;
-    }
-
-    @media (max-width: 640px) {
-      .form .row {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .form label {
+    .form-group label {
+      display: block;
       font-weight: 700;
       color: var(--text-primary);
-      display: block;
       margin-bottom: var(--space-2);
       font-size: 0.875rem;
     }
 
-    .form input,
-    .form select,
-    .form textarea {
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
       width: 100%;
       padding: var(--space-3) var(--space-4);
       border: 1px solid var(--border-medium);
       border-radius: var(--radius);
       background: white;
       color: var(--text-primary);
-      font-size: 16px; /* Evita zoom en iOS */
+      font-size: 16px;
       font-family: inherit;
       transition: var(--transition);
     }
 
-    .form input:focus,
-    .form select:focus,
-    .form textarea:focus {
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
       outline: none;
       border-color: var(--blue-500);
       box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
     }
 
-    .form textarea {
-      min-height: 120px;
+    .form-group textarea {
+      min-height: 100px;
       resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+    }
+
+    @media (max-width: 640px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .service-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: var(--space-3) var(--space-4);
+      background: var(--blue-50);
+      border: 1px solid var(--blue-200);
+      border-radius: var(--radius);
+      color: var(--blue-700);
+      font-weight: 600;
+      margin-bottom: var(--space-4);
+    }
+
+    .submit-booking {
+      width: 100%;
+      padding: var(--space-4);
+      background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow-md);
+    }
+
+    .submit-booking:hover {
+      background: linear-gradient(135deg, var(--blue-700), var(--blue-800));
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-1px);
+    }
+
+    .submit-booking:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
     }
 
     /* ========================================
@@ -1609,11 +1784,9 @@
       <div class="actions" id="navActions">
         <a class="nav" href="#servicios">Servicios</a>
         <a class="nav" href="#equipo">Equipo</a>
-        <a class="nav" href="#contacto">Formulario</a>
         <a class="nav" href="#exposiciones">Exposiciones</a>
-        <a class="btn primary track-contact" href="#contacto"
-           data-contact-name="CTA Nav - Inscribe a tu hijo/a">
-          Inscribe a tu hijo/a
+        <a class="btn primary" href="#servicios">
+          Reservar ahora
         </a>
       </div>
     </div>
@@ -1647,12 +1820,11 @@
                   </ul>
                   <div class="hero-ctas">
                     <a class="btn primary" href="#servicios">Ver talleres disponibles</a>
-                    <a class="btn ghost track-contact" href="#contacto"
-                       data-contact-name="CTA Hero - Ir al formulario">
-                      Ir al formulario
+                    <a class="btn ghost" href="#servicios">
+                      Reservar ahora
                     </a>
                     <span class="hero-note">
-                      Respuesta rápida por WhatsApp después del formulario.
+                      Respuesta rápida por WhatsApp después de reservar.
                     </span>
                   </div>
                   <button class="link-button open-story" type="button"
@@ -1696,9 +1868,8 @@
                           </a>
                         </small>
                       </div>
-                      <a class="btn ghost track-contact" href="#contacto"
-                         data-contact-name="CTA Video - Agendar">
-                        Agendar
+                      <a class="btn ghost" href="#servicios">
+                        Reservar
                       </a>
                     </div>
                   </div>
@@ -1807,26 +1978,45 @@
           </p>
         </div>
 
+        <!-- TOGGLE DE SESIONES -->
+        <div class="session-toggle-wrap">
+          <div class="session-toggle">
+            <button class="session-option active" data-sessions="1">1 Sesión</button>
+            <button class="session-option" data-sessions="2">2 Sesiones</button>
+            <div class="session-slider"></div>
+          </div>
+          <div class="discount-badge" style="opacity: 0; transition: opacity 0.3s;" id="discountBadge">
+            <span>💰</span>
+            <span>10% de descuento</span>
+          </div>
+        </div>
+
         <div class="grid">
           <!-- TALLER VERANO BÁSICO -->
-          <article class="card summer">
+          <article class="card summer" data-price="45000" data-matricula="0">
             <div class="media">
               <img src="img/WhatsApp Image 2025-12-15 at 12.22.38 PM.jpeg"
                    alt="Taller de Vacaciones Básico"
                    loading="lazy">
             </div>
             <div class="body">
-              <h3>🌼 Taller de Vacaciones Básico — $45.000</h3>
+              <h3>🌼 Taller de Vacaciones Básico</h3>
               <p>3 clases por semana · 1 hr · Lunes, Miércoles y Viernes.</p>
               <div class="meta">
                 <span class="badge gold">3 clases/semana</span>
                 <span class="badge gold">15:30–16:30</span>
                 <span class="badge gold">Pago semanal</span>
               </div>
+              <div class="price-display">
+                <div class="price-current" data-price-display>$45.000</div>
+                <div class="price-original" data-price-original style="display: none;">$45.000</div>
+                <div class="price-discount" data-price-discount style="display: none;">-10%</div>
+              </div>
             </div>
             <div class="cta">
-              <button class="btn primary to-form" type="button"
-                      data-value="Taller de Vacaciones Básico — $45.000">
+              <button class="btn primary open-booking" type="button"
+                      data-service="Taller de Vacaciones Básico"
+                      data-price="45000">
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
@@ -1838,7 +2028,7 @@
           </article>
 
           <!-- TALLER VERANO PREMIUM -->
-          <article class="card summer">
+          <article class="card summer" data-price="65000" data-matricula="0">
             <div class="recommended-pill">Recomendado</div>
             <div class="media">
               <img src="img/WhatsApp Image 2025-12-15 at 8.33.32 AM.jpeg"
@@ -1846,17 +2036,23 @@
                    loading="lazy">
             </div>
             <div class="body">
-              <h3>👑 Taller de Vacaciones Premium — $65.000</h3>
+              <h3>👑 Taller de Vacaciones Premium</h3>
               <p>3 clases por semana · 2 hrs · Martes, Jueves y Sábado.</p>
               <div class="meta">
                 <span class="badge rec">3 clases/semana 2 hrs</span>
                 <span class="badge gold">15:00–17:00</span>
                 <span class="badge gold">Pago semanal</span>
               </div>
+              <div class="price-display">
+                <div class="price-current" data-price-display>$65.000</div>
+                <div class="price-original" data-price-original style="display: none;">$65.000</div>
+                <div class="price-discount" data-price-discount style="display: none;">-10%</div>
+              </div>
             </div>
             <div class="cta">
-              <button class="btn primary to-form" type="button"
-                      data-value="Taller de Vacaciones Premium — $65.000">
+              <button class="btn primary open-booking" type="button"
+                      data-service="Taller de Vacaciones Premium"
+                      data-price="65000">
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
@@ -1868,23 +2064,29 @@
           </article>
 
           <!-- TALLER DE ARTES -->
-          <article class="card">
+          <article class="card" data-price="60000" data-matricula="15000">
             <div class="media">
               <img src="img/Fondo para curso de basico.jpg"
                    alt="Taller de Artes" loading="lazy">
             </div>
             <div class="body">
-              <h3>Taller de Artes — $60.000</h3>
+              <h3>Taller de Artes</h3>
               <p>4 clases de 1 hr. Materiales base incluidos.</p>
               <div class="meta">
                 <span class="badge">Mensual</span>
                 <span class="badge">+ matrícula $15.000</span>
                 <span class="badge">18:30-19:30</span>
               </div>
+              <div class="price-display">
+                <div class="price-current" data-price-display>$60.000</div>
+                <div class="price-original" data-price-original style="display: none;">$60.000</div>
+                <div class="price-discount" data-price-discount style="display: none;">-10%</div>
+              </div>
             </div>
             <div class="cta">
-              <button class="btn primary to-form" type="button"
-                      data-value="Taller de Artes — $60.000">
+              <button class="btn primary open-booking" type="button"
+                      data-service="Taller de Artes"
+                      data-price="60000">
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
@@ -1896,24 +2098,30 @@
           </article>
 
           <!-- TALLER DE ARTES PREMIUM -->
-          <article class="card">
+          <article class="card" data-price="120000" data-matricula="15000">
             <div class="media">
               <img src="img/Fondo para clases premium.jpg"
                    alt="Taller de Artes Premium"
                    loading="lazy">
             </div>
             <div class="body">
-              <h3>👑 Taller de Artes Premium — $120.000</h3>
+              <h3>👑 Taller de Artes Premium</h3>
               <p>4 clases de 2 hrs. Zona cowork + sala de espera.</p>
               <div class="meta">
                 <span class="badge">Mensual</span>
                 <span class="badge">+ matrícula $15.000</span>
                 <span class="badge">17:30-19:30</span>
               </div>
+              <div class="price-display">
+                <div class="price-current" data-price-display>$120.000</div>
+                <div class="price-original" data-price-original style="display: none;">$120.000</div>
+                <div class="price-discount" data-price-discount style="display: none;">-10%</div>
+              </div>
             </div>
             <div class="cta">
-              <button class="btn primary to-form" type="button"
-                      data-value="Taller de Artes Premium — $120.000">
+              <button class="btn primary open-booking" type="button"
+                      data-service="Taller de Artes Premium"
+                      data-price="120000">
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
@@ -1925,24 +2133,30 @@
           </article>
 
           <!-- TALLER TEA -->
-          <article class="card">
+          <article class="card" data-price="60000" data-matricula="15000">
             <div class="media">
               <img src="img/Fondo para clases de dibujo.jpg"
                    alt="Taller de Dibujo para niños con TEA"
                    loading="lazy">
             </div>
             <div class="body">
-              <h3>Taller de dibujo para niños con TEA — $60.000</h3>
+              <h3>Taller de dibujo para niños con TEA</h3>
               <p>Grupos pequeños, rutinas claras y material sensorial.</p>
               <div class="meta">
                 <span class="badge">Mensual</span>
                 <span class="badge">+ matrícula $15.000</span>
                 <span class="badge">17:30-18:30</span>
               </div>
+              <div class="price-display">
+                <div class="price-current" data-price-display>$60.000</div>
+                <div class="price-original" data-price-original style="display: none;">$60.000</div>
+                <div class="price-discount" data-price-discount style="display: none;">-10%</div>
+              </div>
             </div>
             <div class="cta">
-              <button class="btn primary to-form" type="button"
-                      data-value="Taller TEA — $60.000">
+              <button class="btn primary open-booking" type="button"
+                      data-service="Taller TEA"
+                      data-price="60000">
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
@@ -1954,23 +2168,29 @@
           </article>
 
           <!-- PLAN TRIMESTRAL -->
-          <article class="card">
+          <article class="card" data-price="270000" data-matricula="15000">
             <div class="media">
               <img src="img/WhatsApp Image 2025-11-04 at 10.07.50 AM.jpeg"
                    alt="Plan Trimestral"
                    loading="lazy">
             </div>
             <div class="body">
-              <h3>Plan Trimestral — $270.000</h3>
+              <h3>Plan Trimestral</h3>
               <p>Premium por 3 meses con 10% dcto. (pago anticipado).</p>
               <div class="meta">
                 <span class="badge">3 meses</span>
                 <span class="badge">Ahorro 10%</span>
               </div>
+              <div class="price-display">
+                <div class="price-current" data-price-display>$270.000</div>
+                <div class="price-original" data-price-original style="display: none;">$270.000</div>
+                <div class="price-discount" data-price-discount style="display: none;">-10%</div>
+              </div>
             </div>
             <div class="cta">
-              <button class="btn primary to-form" type="button"
-                      data-value="Plan Trimestral — $270.000">
+              <button class="btn primary open-booking" type="button"
+                      data-service="Plan Trimestral"
+                      data-price="270000">
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
@@ -1982,24 +2202,30 @@
           </article>
 
           <!-- TALLER ADULTOS -->
-          <article class="card">
+          <article class="card" data-price="60000" data-matricula="15000">
             <div class="media">
               <img src="img/fondo para curso adulto.jpg"
                    alt="Taller para Adultos"
                    loading="lazy">
             </div>
             <div class="body">
-              <h3>Taller para Adultos — $60.000</h3>
+              <h3>Taller para Adultos</h3>
               <p>De cero a obra terminada. Técnica y disfrute.</p>
               <div class="meta">
                 <span class="badge">Mensual</span>
                 <span class="badge">+ matrícula $15.000</span>
                 <span class="badge">17:30-19:30</span>
               </div>
+              <div class="price-display">
+                <div class="price-current" data-price-display>$60.000</div>
+                <div class="price-original" data-price-original style="display: none;">$60.000</div>
+                <div class="price-discount" data-price-discount style="display: none;">-10%</div>
+              </div>
             </div>
             <div class="cta">
-              <button class="btn primary to-form" type="button"
-                      data-value="Taller para Adultos — $60.000">
+              <button class="btn primary open-booking" type="button"
+                      data-service="Taller para Adultos"
+                      data-price="60000">
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
@@ -2011,23 +2237,29 @@
           </article>
 
           <!-- PLAN POR UN DÍA -->
-          <article class="card">
+          <article class="card" data-price="20000" data-matricula="0">
             <div class="media">
               <img src="img/IMG_5557.jpg"
                    alt="Plan por un día"
                    loading="lazy">
             </div>
             <div class="body">
-              <h3>Plan por un día — $20.000</h3>
+              <h3>Plan por un día</h3>
               <p>Vive la experiencia Arteluk en una clase única.</p>
               <div class="meta">
                 <span class="badge">1 sesión</span>
                 <span class="badge">Sin matrícula</span>
               </div>
+              <div class="price-display">
+                <div class="price-current" data-price-display>$20.000</div>
+                <div class="price-original" data-price-original style="display: none;">$20.000</div>
+                <div class="price-discount" data-price-discount style="display: none;">-10%</div>
+              </div>
             </div>
             <div class="cta">
-              <button class="btn primary to-form" type="button"
-                      data-value="Plan por un día — $20.000">
+              <button class="btn primary open-booking" type="button"
+                      data-service="Plan por un día"
+                      data-price="20000">
                 Reservar cupo
               </button>
               <button class="btn ghost open-desc" type="button"
@@ -2117,62 +2349,6 @@
       </div>
     </section>
 
-    <!-- FORMULARIO -->
-    <section id="contacto" class="section" aria-label="Formulario de contacto">
-      <div class="container">
-        <div style="margin-bottom: var(--space-8); text-align: center;">
-          <div class="mono">FORMULARIO</div>
-          <h2>Reserva o consulta — respondemos al instante</h2>
-          <p class="lead" style="margin: 0 auto;">
-            Completa el formulario. Te contactamos apenas lo recibamos.
-            Dirección: <strong>Picarte 407, Valdivia</strong>.
-          </p>
-        </div>
-
-        <form class="form" id="wlForm" novalidate>
-          <div class="row single">
-            <div>
-              <label for="nombre">Nombre y apellido</label>
-              <input id="nombre" name="nombre" required autocomplete="name">
-            </div>
-          </div>
-
-          <div class="row">
-            <div>
-              <label for="tel">Teléfono</label>
-              <input id="tel" name="telefono" type="tel" autocomplete="tel"
-                     placeholder="+56 9 ...">
-            </div>
-            <div>
-              <label for="servicio">Servicio de interés</label>
-              <select id="servicio" name="servicio" required>
-                <option value="" disabled selected>Selecciona una opción</option>
-                <option>Taller de Vacaciones Básico — $45.000</option>
-                <option>Taller de Vacaciones Premium — $65.000</option>
-                <option>Taller de Artes — $60.000</option>
-                <option>Taller de Artes Premium — $120.000</option>
-                <option>Taller TEA — $60.000</option>
-                <option>Plan Trimestral — $270.000</option>
-                <option>Taller para Adultos — $60.000</option>
-                <option>Plan por un día — $20.000</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label for="msg">Mensaje</label>
-            <textarea id="msg" name="mensaje"
-                      placeholder="Horarios, edad del alumno/a, dudas…"></textarea>
-          </div>
-
-          <div style="display:flex;gap:var(--space-3);align-items:center;margin-top:var(--space-4);flex-wrap:wrap">
-            <button class="btn primary" type="submit">Enviar</button>
-            <span style="color:var(--text-muted);font-size:0.875rem">Picarte 407, Valdivia</span>
-          </div>
-        </form>
-      </div>
-    </section>
-
     <!-- EXPOSICIONES -->
     <section id="exposiciones" class="section" aria-label="Exposiciones">
       <div class="container">
@@ -2238,7 +2414,7 @@
                 </div>
 
                 <div class="expo-cta">
-                  <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 01 - Quiero info">Quiero info</a>
+                  <a class="btn primary" href="#servicios">Quiero info</a>
                 </div>
               </div>
             </article>
@@ -2291,7 +2467,7 @@
                 </div>
 
                 <div class="expo-cta">
-                  <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 02 - Quiero info">Quiero info</a>
+                  <a class="btn primary" href="#servicios">Quiero info</a>
                 </div>
               </div>
             </article>
@@ -2328,7 +2504,7 @@
                 </div>
 
                 <div class="expo-cta">
-                  <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 03 - Quiero info">Quiero info</a>
+                  <a class="btn primary" href="#servicios">Quiero info</a>
                 </div>
               </div>
             </article>
@@ -2374,7 +2550,7 @@
                 </div>
 
                 <div class="expo-cta">
-                  <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 04 - Quiero info">Quiero info</a>
+                  <a class="btn primary" href="#servicios">Quiero info</a>
                 </div>
               </div>
             </article>
@@ -2420,7 +2596,7 @@
                 </div>
 
                 <div class="expo-cta">
-                  <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 05 - Quiero info">Quiero info</a>
+                  <a class="btn primary" href="#servicios">Quiero info</a>
                 </div>
               </div>
             </article>
@@ -2467,7 +2643,7 @@
                 </div>
 
                 <div class="expo-cta">
-                  <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 06 - Quiero info">Quiero info</a>
+                  <a class="btn primary" href="#servicios">Quiero info</a>
                 </div>
               </div>
             </article>
@@ -2513,7 +2689,7 @@
                 </div>
 
                 <div class="expo-cta">
-                  <a class="btn primary track-contact" href="#contacto" data-contact-name="Expo 07 - Quiero info">Quiero info</a>
+                  <a class="btn primary" href="#servicios">Quiero info</a>
                 </div>
               </div>
             </article>
@@ -2529,13 +2705,58 @@
       <div style="display:flex;gap:var(--space-3);flex-wrap:wrap">
         <a href="#servicios">Servicios</a>
         <a href="#equipo">Equipo</a>
-        <a href="#contacto">Formulario</a>
         <a href="#exposiciones">Exposiciones</a>
       </div>
     </div>
   </footer>
 
-  <!-- MODAL -->
+  <!-- MODAL DE RESERVA -->
+  <dialog class="booking-modal" id="bookingModal">
+    <div class="booking-header">
+      <h3>Reservar cupo</h3>
+      <button class="close-modal" id="closeBooking">Cerrar</button>
+    </div>
+    <div class="booking-body">
+      <form id="bookingForm" novalidate>
+        <div class="service-badge" id="selectedService">
+          Servicio seleccionado
+        </div>
+
+        <div class="form-group">
+          <label for="bookingName">Nombre y apellido *</label>
+          <input type="text" id="bookingName" name="nombre" required autocomplete="name">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bookingPhone">Teléfono *</label>
+            <input type="tel" id="bookingPhone" name="telefono" required autocomplete="tel" placeholder="+56 9 ...">
+          </div>
+          <div class="form-group">
+            <label for="bookingAge">Edad del niño/a</label>
+            <input type="number" id="bookingAge" name="edad" min="1" max="99" placeholder="Ej: 8">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="bookingSessions">Cantidad de sesiones *</label>
+          <select id="bookingSessions" name="sesiones" required>
+            <option value="1">1 sesión</option>
+            <option value="2">2 sesiones (10% descuento)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="bookingMessage">Mensaje adicional</label>
+          <textarea id="bookingMessage" name="mensaje" placeholder="Horarios, dudas, comentarios..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-booking">Enviar reserva</button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- MODAL DE DETALLES -->
   <dialog id="modal" aria-label="Detalle">
     <div class="modal-head">
       <strong id="mTitle">Detalle</strong>
@@ -2803,38 +3024,246 @@
       );
     })();
 
-    /* CTA -> form */
-    document.querySelectorAll('.to-form').forEach(b =>
-      b.addEventListener('click', (e) => {
-        const v = e.currentTarget.getAttribute('data-value') || '';
-        const sel = document.getElementById('servicio');
-        if (sel) {
-          [...sel.options].forEach(o => {
-            if (o.textContent === v) sel.value = o.textContent;
-          });
-        }
-        trackSafe('Contact', {
-          content_name: v || 'CTA Reservar cupo',
-          content_category: 'Servicios'
-        });
-        document.getElementById('contacto')
-          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      })
-    );
+    /* TOGGLE DE SESIONES Y ACTUALIZACIÓN DE PRECIOS */
+    (() => {
+      const options = document.querySelectorAll('.session-option');
+      const slider = document.querySelector('.session-slider');
+      const discountBadge = document.getElementById('discountBadge');
+      const cards = document.querySelectorAll('.card[data-price]');
+      
+      let currentSessions = 1;
 
-    /* Track Contact */
-    document.querySelectorAll('.track-contact').forEach(el => {
-      el.addEventListener('click', () => {
-        const name = el.getAttribute('data-contact-name') ||
-          el.textContent.trim() || 'CTA Contacto';
-        trackSafe('Contact', {
-          content_name: name,
-          content_category: 'Contacto'
+      function updateSlider(button) {
+        const index = [...options].indexOf(button);
+        const width = button.offsetWidth;
+        const left = button.offsetLeft;
+        
+        slider.style.width = `${width}px`;
+        slider.style.transform = `translateX(${left}px)`;
+      }
+
+      function updatePrices(sessions) {
+        currentSessions = sessions;
+        const hasDiscount = sessions === 2;
+        
+        // Mostrar/ocultar badge de descuento
+        if (discountBadge) {
+          discountBadge.style.opacity = hasDiscount ? '1' : '0';
+        }
+
+        cards.forEach(card => {
+          const basePrice = parseInt(card.getAttribute('data-price'));
+          const matricula = parseInt(card.getAttribute('data-matricula') || '0');
+          
+          let totalPrice = basePrice * sessions;
+          let originalPrice = totalPrice;
+          
+          if (hasDiscount) {
+            totalPrice = Math.round(totalPrice * 0.9); // 10% descuento
+          }
+
+          const currentPriceEl = card.querySelector('[data-price-display]');
+          const originalPriceEl = card.querySelector('[data-price-original]');
+          const discountEl = card.querySelector('[data-price-discount]');
+
+          if (currentPriceEl) {
+            currentPriceEl.textContent = `$${totalPrice.toLocaleString('es-CL')}`;
+          }
+
+          if (hasDiscount && sessions > 1) {
+            if (originalPriceEl) {
+              originalPriceEl.textContent = `$${originalPrice.toLocaleString('es-CL')}`;
+              originalPriceEl.style.display = 'block';
+            }
+            if (discountEl) {
+              discountEl.style.display = 'block';
+            }
+          } else {
+            if (originalPriceEl) originalPriceEl.style.display = 'none';
+            if (discountEl) discountEl.style.display = 'none';
+          }
+
+          // Actualizar el precio en el botón de booking
+          const bookingBtn = card.querySelector('.open-booking');
+          if (bookingBtn) {
+            bookingBtn.setAttribute('data-price', totalPrice);
+            bookingBtn.setAttribute('data-sessions', sessions);
+          }
+        });
+      }
+
+      // Event listeners para los toggles
+      options.forEach(option => {
+        option.addEventListener('click', () => {
+          options.forEach(opt => opt.classList.remove('active'));
+          option.classList.add('active');
+          
+          const sessions = parseInt(option.getAttribute('data-sessions'));
+          updateSlider(option);
+          updatePrices(sessions);
         });
       });
-    });
 
-    /* Modal */
+      // Inicializar
+      if (options[0] && slider) {
+        updateSlider(options[0]);
+        updatePrices(1);
+      }
+    })();
+
+    /* MODAL DE RESERVA */
+    (() => {
+      const bookingModal = document.getElementById('bookingModal');
+      const closeBooking = document.getElementById('closeBooking');
+      const bookingForm = document.getElementById('bookingForm');
+      const selectedServiceEl = document.getElementById('selectedService');
+      
+      let currentService = '';
+      let currentPrice = 0;
+      let __lockY = 0;
+
+      function lockBodyScroll() {
+        __lockY = window.scrollY || 0;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${__lockY}px`;
+        document.body.style.width = '100%';
+      }
+
+      function unlockBodyScroll() {
+        const y = Math.abs(parseInt(document.body.style.top || '0', 10)) || __lockY || 0;
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, y);
+      }
+
+      // Abrir modal de reserva
+      document.querySelectorAll('.open-booking').forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentService = btn.getAttribute('data-service');
+          currentPrice = parseInt(btn.getAttribute('data-price'));
+          const sessions = parseInt(btn.getAttribute('data-sessions') || '1');
+          
+          selectedServiceEl.textContent = `${currentService} - $${currentPrice.toLocaleString('es-CL')}`;
+          
+          lockBodyScroll();
+          if (typeof bookingModal.showModal === 'function') {
+            bookingModal.showModal();
+          } else {
+            bookingModal.setAttribute('open', '');
+          }
+
+          trackSafe('InitiateCheckout', {
+            content_name: currentService,
+            value: currentPrice,
+            currency: 'CLP'
+          });
+        });
+      });
+
+      // Cerrar modal
+      closeBooking.addEventListener('click', () => {
+        try {
+          bookingModal.close();
+        } catch (_) {
+          bookingModal.removeAttribute('open');
+        }
+        unlockBodyScroll();
+      });
+
+      bookingModal.addEventListener('close', unlockBodyScroll);
+      bookingModal.addEventListener('cancel', (e) => {
+        e.preventDefault();
+        try {
+          bookingModal.close();
+        } catch (_) {
+          bookingModal.removeAttribute('open');
+        }
+        unlockBodyScroll();
+      });
+
+      // Enviar formulario
+      let sending = false;
+      bookingForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        if (sending) return;
+
+        const nombre = document.getElementById('bookingName').value.trim();
+        const telefono = document.getElementById('bookingPhone').value.trim();
+        const edad = document.getElementById('bookingAge').value.trim();
+        const sesiones = document.getElementById('bookingSessions').value;
+        const mensaje = document.getElementById('bookingMessage').value.trim();
+
+        if (!nombre || !telefono || !sesiones) {
+          alert('Por favor completa todos los campos obligatorios');
+          return;
+        }
+
+        sending = true;
+        const submitBtn = bookingForm.querySelector('.submit-booking');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Enviando...';
+
+        const data = {
+          servicio: currentService,
+          precio: currentPrice,
+          nombre: nombre,
+          telefono: telefono,
+          edad: edad || 'No especificada',
+          sesiones: sesiones,
+          mensaje: mensaje
+        };
+
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 10000);
+
+        try {
+          const res = await fetch(
+            "https://arteluk-n8n.bvil2a.easypanel.host/webhook/afb70f27-dd2d-4853-9270-3faf35ddcd5e",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+              keepalive: true,
+              signal: controller.signal
+            }
+          );
+
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+
+          bookingForm.reset();
+          
+          trackSafe('Lead', {
+            content_name: currentService,
+            content_category: 'Reserva',
+            value: currentPrice,
+            currency: 'CLP'
+          });
+
+          alert('✅ ¡Reserva enviada con éxito! Te contactaremos pronto por WhatsApp.');
+          
+          try {
+            bookingModal.close();
+          } catch (_) {
+            bookingModal.removeAttribute('open');
+          }
+          unlockBodyScroll();
+
+        } catch (err) {
+          console.error('Error:', err);
+          alert('❌ Error al enviar. Por favor intenta nuevamente.');
+        } finally {
+          clearTimeout(timeout);
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+          sending = false;
+        }
+      });
+    })();
+
+    /* Modal de Detalles */
     (() => {
       const modal = document.getElementById('modal');
       const mTitle = document.getElementById('mTitle');
@@ -2928,96 +3357,6 @@
           setTimeout(() => window.open(YT_URL, '_blank', 'noopener,noreferrer'), 180);
         });
       }
-    })();
-
-    /* Formulario */
-    (() => {
-      const form = document.getElementById('wlForm');
-      if (!form) return;
-      let sending = false;
-
-      function toastForm(msg, type = 'ok') {
-        const el = document.createElement('div');
-        el.textContent = msg;
-        el.style.cssText =
-          "position:fixed;left:50%;bottom:26px;transform:translateX(-50%);" +
-          "padding:12px 18px;border-radius:10px;z-index:9999;" +
-          `background:${type === 'ok' ? '#10B981' : '#EF4444'};` +
-          "color:white;" +
-          "box-shadow:0 6px 16px rgba(0,0,0,.12);opacity:0;transition:.25s;";
-        document.body.appendChild(el);
-        requestAnimationFrame(() => el.style.opacity = 1);
-        setTimeout(() => {
-          el.style.opacity = 0;
-          setTimeout(() => el.remove(), 300);
-        }, 2800);
-      }
-
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        if (sending) {
-          toastForm('Ya recibimos tu mensaje, espera unos segundos.', 'ok');
-          return;
-        }
-
-        const nombre = (form.querySelector('#nombre')?.value || '').trim();
-        const servicio = (form.querySelector('#servicio')?.value || '');
-        if (!nombre || !servicio) {
-          toastForm('Completa tu nombre y selecciona un servicio.', 'error');
-          return;
-        }
-
-        sending = true;
-        const btn = form.querySelector('button[type="submit"]');
-        const original = btn ? btn.innerHTML : '';
-        if (btn) {
-          btn.disabled = true;
-          btn.innerHTML = 'Enviando…';
-        }
-
-        const data = {
-          nombre: nombre,
-          telefono: (form.querySelector('#tel')?.value || '').trim(),
-          servicio: servicio,
-          mensaje: (form.querySelector('#msg')?.value || '').trim()
-        };
-
-        const controller = new AbortController();
-        const t = setTimeout(() => controller.abort(), 10000);
-
-        try {
-          const res = await fetch(
-            "https://arteluk-n8n.bvil2a.easypanel.host/webhook/afb70f27-dd2d-4853-9270-3faf35ddcd5e",
-            {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(data),
-              keepalive: true,
-              signal: controller.signal
-            }
-          );
-          if (!res.ok) throw new Error('HTTP ' + res.status);
-
-          form.reset();
-          toastForm('✅ ¡Formulario enviado con éxito!', 'ok');
-          trackSafe('Lead', {
-            content_name: data.servicio || 'Formulario Arteluk',
-            content_category: 'Formulario',
-            value: 0,
-            currency: 'CLP'
-          });
-        } catch (err) {
-          console.error('Webhook error:', err);
-          toastForm('❌ Error al enviar. Intenta nuevamente.', 'error');
-        } finally {
-          clearTimeout(t);
-          if (btn) {
-            btn.disabled = false;
-            btn.innerHTML = original;
-          }
-          sending = false;
-        }
-      });
     })();
 
     /* Hero Slider */
