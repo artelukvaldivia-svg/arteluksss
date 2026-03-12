@@ -826,7 +826,6 @@
     }
     .category-section:last-child { margin-bottom: 0; }
 
-    /* Header divisor de categoría */
     .category-header {
       display: flex;
       align-items: flex-start;
@@ -845,7 +844,6 @@
       pointer-events: none;
     }
 
-    /* Semanal — dorado */
     .category-header.weekly {
       background: linear-gradient(135deg, var(--gold-50) 0%, #fff8e8 100%);
       border: 1.5px solid var(--gold-400);
@@ -855,7 +853,6 @@
       background: radial-gradient(circle at 80% 50%, var(--gold-400), transparent 70%);
     }
 
-    /* Mensual — azul */
     .category-header.monthly {
       background: linear-gradient(135deg, var(--blue-50) 0%, #f0f7ff 100%);
       border: 1.5px solid var(--blue-300);
@@ -1359,7 +1356,7 @@
   </nav>
   <div id="navBackdrop" class="nav-backdrop" aria-hidden="true"></div>
 
-  <!-- SUB-NAV SECUNDARIA (NUEVA) -->
+  <!-- SUB-NAV SECUNDARIA -->
   <nav class="subnav" aria-label="Navegación de secciones">
     <div class="subnav-inner container">
       <a class="subnav-link weekly" href="#clases-semanales">Clases Semanales</a>
@@ -1746,85 +1743,6 @@
                 <button class="btn ghost open-desc" type="button"
                         data-title="Taller de Artes Premium — Detalles"
                         data-content="desc-premium">
-                  Leer más
-                </button>
-              </div>
-            </article>
-
-            <!-- PLAN TRIMESTRAL -->
-            <article class="card" 
-                     data-price="270000" 
-                     data-matricula="15000"
-                     data-frequency-1="3 meses"
-                     data-frequency-2="6 meses">
-              <div class="media">
-                <img src="img/WhatsApp Image 2025-11-04 at 10.07.50 AM.jpeg"
-                     alt="Plan Trimestral"
-                     loading="lazy" width="640" height="400">
-              </div>
-              <div class="body">
-                <h3>Plan Trimestral</h3>
-                <p class="card-frequency-text" data-frequency-display>Premium por 3 meses con 10% dcto. (pago anticipado).</p>
-                <div class="meta">
-                  <span class="badge" data-freq-badge>3 meses</span>
-                  <span class="badge">Ahorro 10%</span>
-                </div>
-                <div class="price-display">
-                  <div class="price-current" data-price-display>$270.000</div>
-                  <div class="price-original" data-price-original style="display:none;">$270.000</div>
-                  <div class="price-discount" data-price-discount style="display:none;">-10%</div>
-                </div>
-              </div>
-              <div class="cta">
-                <button class="btn primary open-booking" type="button"
-                        data-service="Plan Trimestral"
-                        data-price="270000"
-                        data-sessions="1">
-                  Reservar cupo
-                </button>
-                <button class="btn ghost open-desc" type="button"
-                        data-title="Plan Trimestral — Detalles"
-                        data-content="desc-trimestral">
-                  Leer más
-                </button>
-              </div>
-            </article>
-
-            <!-- TALLER ADULTOS -->
-            <article class="card" 
-                     data-price="60000" 
-                     data-matricula="15000"
-                     data-frequency-1="4 clases al mes"
-                     data-frequency-2="8 clases por dos meses">
-              <div class="media">
-                <img src="img/fondo para curso adulto.jpg"
-                     alt="Taller para Adultos"
-                     loading="lazy" width="640" height="400">
-              </div>
-              <div class="body">
-                <h3>Taller para Adultos</h3>
-                <p class="card-frequency-text" data-frequency-display>De cero a obra terminada. Técnica y disfrute.</p>
-                <div class="meta">
-                  <span class="badge" data-freq-badge>Mensual</span>
-                  <span class="badge">+ matrícula $15.000</span>
-                  <span class="badge">17:30-19:30</span>
-                </div>
-                <div class="price-display">
-                  <div class="price-current" data-price-display>$60.000</div>
-                  <div class="price-original" data-price-original style="display:none;">$60.000</div>
-                  <div class="price-discount" data-price-discount style="display:none;">-10%</div>
-                </div>
-              </div>
-              <div class="cta">
-                <button class="btn primary open-booking" type="button"
-                        data-service="Taller para Adultos"
-                        data-price="60000"
-                        data-sessions="1">
-                  Reservar cupo
-                </button>
-                <button class="btn ghost open-desc" type="button"
-                        data-title="Taller para Adultos — Detalles"
-                        data-content="desc-adultos">
                   Leer más
                 </button>
               </div>
@@ -2417,16 +2335,6 @@
       <li>🧠 Enfoque arteterapéutico individual</li>
       <li>🎭 Exposición de arte al cierre del ciclo anual</li>
     </ul>
-  </template>
-
-  <template id="desc-trimestral">
-    <p><strong>PREMIUM TRIMESTRAL – $270.000 (10% dcto.)</strong></p>
-    <p>El mismo contenido del Premium por 3 meses. Perfecto si tu hijo o hija es un apasionado del arte y necesita un espacio para desplegar sus talentos.</p>
-  </template>
-
-  <template id="desc-adultos">
-    <p><strong>TALLER PARA ADULTOS – $60.000</strong></p>
-    <p>Óleo y dibujo desde lo básico hasta obra terminada. Técnica, disfrute y comunidad. Todos los niveles.</p>
   </template>
 
   <template id="desc-dia">
