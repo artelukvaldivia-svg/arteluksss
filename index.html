@@ -356,17 +356,17 @@
 
     h3 { font-size: 1.625rem; font-weight: 600; margin-bottom: var(--space-3); }
 
-    p { color: var(--text-secondary); font-weight: 400; }
+    p { color: var(--text-secondary); font-weight: 400; line-height: 1.75; }
 
     .lead {
 
-      font-size: 1.125rem;
+      font-size: 1.2rem;
 
-      line-height: 1.7;
+      line-height: 1.8;
 
       color: var(--text-secondary);
 
-      max-width: 920px;
+      max-width: 680px;
 
       font-weight: 400;
 
@@ -482,7 +482,7 @@
 
       color: var(--text-secondary);
 
-      font-weight: 600;
+      font-weight: 700;
 
       font-size: 0.9375rem;
 
@@ -5116,6 +5116,49 @@
     .fab-wa { background: #25d366; }
     @media (max-width: 480px) { .fab-container { bottom: 1rem; right: 1rem; } .fab { width: 50px; height: 50px; } }
   </style>
+
+  <!-- Video popup después de 1 minuto -->
+  <div id="yt-popup" role="dialog" aria-modal="true" aria-label="Conoce nuestro taller" style="display:none; position:fixed; inset:0; z-index:10000; background:rgba(0,0,0,.65); backdrop-filter:blur(4px); align-items:center; justify-content:center; padding:1rem;">
+    <div style="background:#fff; border-radius:16px; max-width:600px; width:100%; box-shadow:0 24px 64px rgba(0,0,0,.4); overflow:hidden; position:relative;">
+      <button id="yt-popup-close" aria-label="Cerrar" style="position:absolute; top:.75rem; right:.75rem; z-index:1; background:rgba(0,0,0,.55); border:none; color:#fff; width:34px; height:34px; border-radius:50%; font-size:1.2rem; cursor:pointer; display:flex; align-items:center; justify-content:center; line-height:1;">✕</button>
+      <div style="padding:1.5rem 1.5rem .75rem;">
+        <p style="margin:0 0 .25rem; font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:#2563eb;">¡Mira nuestro video!</p>
+        <h3 style="margin:0; font-family:'Cormorant Garamond',Georgia,serif; font-size:1.6rem; color:#111;">Conoce nuestro taller en Valdivia</h3>
+      </div>
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
+        <iframe id="yt-popup-iframe" src="" width="100%" height="100%" style="position:absolute; inset:0; border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div style="padding:.75rem 1.5rem 1.25rem; text-align:center;">
+        <a href="https://www.youtube.com/watch?v=8abquRuhvCA" target="_blank" rel="noopener" style="font-size:.875rem; color:#2563eb; font-weight:700; text-decoration:underline;">Ver en YouTube →</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){
+      var shown = false;
+      setTimeout(function(){
+        if(shown) return;
+        shown = true;
+        var popup = document.getElementById('yt-popup');
+        var iframe = document.getElementById('yt-popup-iframe');
+        iframe.src = 'https://www.youtube.com/embed/8abquRuhvCA?autoplay=1&rel=0';
+        popup.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }, 60000);
+      function closePopup(){
+        var popup = document.getElementById('yt-popup');
+        var iframe = document.getElementById('yt-popup-iframe');
+        iframe.src = '';
+        popup.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      document.getElementById('yt-popup-close').addEventListener('click', closePopup);
+      document.getElementById('yt-popup').addEventListener('click', function(e){
+        if(e.target === this) closePopup();
+      });
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closePopup(); });
+    })();
+  </script>
 
 </body>
 
