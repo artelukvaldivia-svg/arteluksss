@@ -1328,41 +1328,6 @@
 
     }
 
-    .video-badge {
-
-      position: absolute;
-
-      bottom: -14px;
-
-      left: -14px;
-
-      z-index: 2;
-
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 0.5rem;
-
-      padding: 0.45rem 0.8rem;
-
-      border-radius: 12px;
-
-      background: white;
-
-      border: 1px solid #FEF3C7;
-
-      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-
-      font-size: 0.75rem;
-
-      font-weight: 700;
-
-      color: var(--text-primary);
-
-    }
-
-    .video-badge-sub { font-weight: 400; color: var(--text-muted); display: block; font-size: 0.68rem; }
 
     .video-card {
 
@@ -1424,7 +1389,7 @@
 
       inset: 0;
 
-      background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+      background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
 
     }
 
@@ -1456,9 +1421,9 @@
 
     .play-circle {
 
-      width: 80px;
+      width: 60px;
 
-      height: 80px;
+      height: 60px;
 
       border-radius: 50%;
 
@@ -1468,15 +1433,21 @@
 
       justify-content: center;
 
-      background: rgba(255,255,255,0.95);
+      background: rgba(255,255,255,0.18);
 
-      box-shadow: var(--shadow-xl);
+      border: 2px solid rgba(255,255,255,0.7);
+
+      backdrop-filter: blur(6px);
+
+      box-shadow: 0 4px 24px rgba(0,0,0,0.35);
 
       transition: var(--transition);
 
+      color: white;
+
     }
 
-    .video-link:hover .play-circle { transform: scale(1.1); }
+    .video-link:hover .play-circle { transform: scale(1.12); background: rgba(255,255,255,0.28); }
 
     .video-title { font-weight: 900; font-size: 1.125rem; }
 
@@ -2742,14 +2713,6 @@
                 </div>
 
                 <aside class="video-shell" aria-label="Video de presentación">
-
-                  <div class="video-badge">
-                    <span style="font-size:1.1rem">🎨</span>
-                    <span>
-                      <span style="color:#D97706">+5 años</span>
-                      <span class="video-badge-sub">en arteterapia</span>
-                    </span>
-                  </div>
 
                   <div class="video-card">
 
