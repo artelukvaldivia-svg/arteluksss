@@ -2490,7 +2490,7 @@
         const timeout = setTimeout(() => controller.abort(), 10000);
         try {
           const res = await fetch(
-            "https://flujos-pruebas-n8n.bvil2a.easypanel.host/webhook_off/718ea89a-6c99-4d7b-b87e-64fb155a32c3z",
+            "https://flujos-pruebas-n8n.bvil2a.easypanel.host/webhook_off/afb70f27-dd2d-4853-9270-3faf35ddcd5e",
             { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data), keepalive: true, signal: controller.signal }
           );
           if (!res.ok) throw new Error('HTTP ' + res.status);
