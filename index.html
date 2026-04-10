@@ -2181,11 +2181,13 @@
 
     }
 
-    .expo-media { grid-area: media; padding: var(--space-5); background: var(--gray-50); border-left: 1px solid var(--border-light); }
+    .expo-media { grid-area: media; padding: var(--space-5); background: var(--gray-50); border-left: 1px solid var(--border-light); display: flex; flex-direction: column; }
 
     @media (max-width: 980px) { .expo-media { border-left: none; border-top: 1px solid var(--border-light); } }
 
-    .expo-photo { aspect-ratio: 1/1; width: 100%; overflow: hidden; border-radius: var(--radius-lg); background: var(--gray-900); }
+    .expo-photo { width: 100%; overflow: hidden; border-radius: var(--radius-lg); background: var(--gray-900); aspect-ratio: 4/3; }
+
+    @media (min-width: 980px) { .expo-photo { flex: 1; aspect-ratio: unset; min-height: 240px; } }
 
     .expo-photo img.expo-main, .expo-photo video.expo-main { width: 100%; height: 100%; object-fit: cover; display: block; }
 
@@ -3621,6 +3623,16 @@
                   Realizamos este evento de 4 horas a bordo del barco Neptuno, navegando el hermoso río de Valdivia.
 
                 </p>
+
+                <ul class="expo-details">
+
+                  <li><strong>Formato:</strong> Exposición en barco</li>
+
+                  <li><strong>Técnica:</strong> Arteterapia y acrílicos</li>
+
+                  <li><strong>Participantes:</strong> Niños y familias</li>
+
+                </ul>
 
                 <div class="expo-tags">
 
