@@ -1,2723 +1,5446 @@
 <!DOCTYPE html> 
+
 <html lang="es-CL">
+
 <head>
+
   <meta charset="utf-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+
+
   <title>Arteluk — Arte & Arteterapia en Valdivia</title>
+
   <meta name="description" content="Academia de arte y arteterapia en Valdivia. Talleres para niños, jóvenes y adultos. Dirección: Picarte 407.">
+
   <link rel="canonical" href="https://www.arteluk.cl/">
 
+
+
   <!-- Fonts -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+
+
   <!-- Favicons -->
+
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+
   <link rel="icon" type="image/png" sizes="192x192" href="img/android-chrome-192x192.png">
+
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
   <meta name="theme-color" content="#1E40AF">
 
+
+
   <!-- OpenGraph -->
+
   <meta property="og:title" content="Arteluk — Arte & Arteterapia en Valdivia">
+
   <meta property="og:description" content="Academia de arte y arteterapia en Valdivia. Talleres para niños, jóvenes y adultos.">
+
   <meta property="og:image" content="https://www.arteluk.cl/img/android-chrome-512x512.png">
+
   <meta property="og:url" content="https://www.arteluk.cl/">
+
   <meta property="og:type" content="website">
 
+
+
   <!-- Meta Pixel Code -->
+
   <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+
   <script>
+
     !function(f,b,e,v,n,t,s) {
+
       if(f.fbq)return;
+
       n=f.fbq=function(){n.callMethod?
+
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+
       if(!f._fbq)f._fbq=n;
+
       n.push=n;n.loaded=!0;n.version='2.0';
+
       n.queue=[];
+
       t=b.createElement(e);t.async=!0;
+
       t.src=v;s=b.getElementsByTagName(e)[0];
+
       s.parentNode.insertBefore(t,s)
+
     }(window, document,'script',
+
       'https://connect.facebook.net/en_US/fbevents.js');
+
     fbq('init', '1611426433185367');
+
     fbq('track', 'PageView');
+
   </script>
+
   <noscript>
+
     <img height="1" width="1" style="display:none"
+
          src="https://www.facebook.com/tr?id=1611426433185367&ev=PageView&noscript=1"/>
+
   </noscript>
 
+
+
   <style>
-    /* ========================================
-       VARIABLES PROFESIONALES - AZUL
-       ======================================== */
-    :root {
-      --blue-50: #EFF6FF;
-      --blue-100: #DBEAFE;
-      --blue-200: #BFDBFE;
-      --blue-300: #93C5FD;
-      --blue-400: #60A5FA;
-      --blue-500: #3B82F6;
-      --blue-600: #2563EB;
-      --blue-700: #1D4ED8;
-      --blue-800: #1E40AF;
-      --blue-900: #1E3A8A;
-      --gray-50: #F9FAFB;
-      --gray-100: #F3F4F6;
-      --gray-200: #E5E7EB;
-      --gray-300: #D1D5DB;
-      --gray-400: #9CA3AF;
-      --gray-500: #6B7280;
-      --gray-600: #4B5563;
-      --gray-700: #374151;
-      --gray-800: #1F2937;
-      --gray-900: #111827;
-      --gold-50: #FFFBEB;
-      --gold-100: #FEF3C7;
-      --gold-400: #FBBF24;
-      --gold-500: #F59E0B;
-      --gold-600: #D97706;
-      --green-50: #F0FDF4;
-      --green-100: #DCFCE7;
-      --green-500: #22C55E;
-      --green-600: #16A34A;
-      --text-primary: #0F172A;
-      --text-secondary: #475569;
-      --text-muted: #64748B;
-      --bg-primary: #FFFFFF;
-      --bg-secondary: var(--gray-50);
-      --border-light: var(--gray-200);
-      --border-medium: var(--gray-300);
-      --space-1: 0.25rem;
-      --space-2: 0.5rem;
-      --space-3: 0.75rem;
-      --space-4: 1rem;
-      --space-5: 1.25rem;
-      --space-6: 1.5rem;
-      --space-8: 2rem;
-      --space-10: 2.5rem;
-      --space-12: 3rem;
-      --space-16: 4rem;
-      --space-20: 5rem;
-      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-      --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-      --radius-sm: 0.375rem;
-      --radius: 0.5rem;
-      --radius-md: 0.75rem;
-      --radius-lg: 1rem;
-      --radius-xl: 1.5rem;
-      --radius-full: 9999px;
-      --nav-height: 64px;
-      --subnav-height: 48px;
-      --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
 
     /* ========================================
-       RESET
+
+       VARIABLES PROFESIONALES - AZUL
+
        ======================================== */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+
+    :root {
+
+      --blue-50: #EFF6FF;
+
+      --blue-100: #DBEAFE;
+
+      --blue-200: #BFDBFE;
+
+      --blue-300: #93C5FD;
+
+      --blue-400: #60A5FA;
+
+      --blue-500: #3B82F6;
+
+      --blue-600: #2563EB;
+
+      --blue-700: #1D4ED8;
+
+      --blue-800: #1E40AF;
+
+      --blue-900: #1E3A8A;
+
+      --gray-50: #F9FAFB;
+
+      --gray-100: #F3F4F6;
+
+      --gray-200: #E5E7EB;
+
+      --gray-300: #D1D5DB;
+
+      --gray-400: #9CA3AF;
+
+      --gray-500: #6B7280;
+
+      --gray-600: #4B5563;
+
+      --gray-700: #374151;
+
+      --gray-800: #1F2937;
+
+      --gray-900: #111827;
+
+      --gold-50: #FFFBEB;
+
+      --gold-100: #FEF3C7;
+
+      --gold-400: #FBBF24;
+
+      --gold-500: #F59E0B;
+
+      --gold-600: #D97706;
+
+      --green-50: #F0FDF4;
+
+      --green-100: #DCFCE7;
+
+      --green-500: #22C55E;
+
+      --green-600: #16A34A;
+
+      --text-primary: #0F172A;
+
+      --text-secondary: #475569;
+
+      --text-muted: #64748B;
+
+      --bg-primary: #FFFFFF;
+
+      --bg-secondary: var(--gray-50);
+
+      --border-light: var(--gray-200);
+
+      --border-medium: var(--gray-300);
+
+      --space-1: 0.25rem;
+
+      --space-2: 0.5rem;
+
+      --space-3: 0.75rem;
+
+      --space-4: 1rem;
+
+      --space-5: 1.25rem;
+
+      --space-6: 1.5rem;
+
+      --space-8: 2rem;
+
+      --space-10: 2.5rem;
+
+      --space-12: 3rem;
+
+      --space-16: 4rem;
+
+      --space-20: 5rem;
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+      --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+      --radius-sm: 0.375rem;
+
+      --radius: 0.5rem;
+
+      --radius-md: 0.75rem;
+
+      --radius-lg: 1rem;
+
+      --radius-xl: 1.5rem;
+
+      --radius-full: 9999px;
+
+      --nav-height: 64px;
+
+      --subnav-height: 48px;
+
+      --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+
     }
+
+
+
+    /* ========================================
+
+       RESET
+
+       ======================================== */
+
+    *, *::before, *::after {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+
 
     html {
+
       scroll-behavior: smooth;
+
       scroll-padding-top: calc(var(--nav-height) + var(--subnav-height) + var(--space-4));
+
       -webkit-font-smoothing: antialiased;
+
       -moz-osx-font-smoothing: grayscale;
+
     }
+
+
 
     body {
+
       font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
       font-size: 16px;
+
       line-height: 1.6;
+
       color: var(--text-primary);
+
       background: linear-gradient(to bottom, var(--blue-50) 0%, #FFFFFF 100%);
+
       min-height: 100vh;
+
       overflow-x: hidden;
+
     }
+
+
 
     body::before {
+
       content: '';
+
       position: fixed;
+
       inset: 0;
+
       background: 
+
         radial-gradient(circle at 20% 10%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+
         radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.06) 0%, transparent 50%),
+
         radial-gradient(circle at 40% 90%, rgba(96, 165, 250, 0.05) 0%, transparent 50%);
+
       z-index: -1;
+
       pointer-events: none;
+
     }
+
+
 
     img, video { max-width: 100%; height: auto; display: block; }
+
     button { font-family: inherit; cursor: pointer; }
+
     a { color: inherit; text-decoration: none; }
+
     h1, h2, h3, p, li, a, span, strong, small {
+
       overflow-wrap: break-word;
+
       word-break: break-word;
+
     }
 
+
+
     /* ========================================
+
        CONTAINER
+
        ======================================== */
+
     .container {
+
       width: 100%;
+
       max-width: 1140px;
+
       margin: 0 auto;
+
       padding: 0 var(--space-4);
-    }
-    @media (min-width: 640px) {
-      .container { padding: 0 var(--space-6); }
+
     }
 
+    @media (min-width: 640px) {
+
+      .container { padding: 0 var(--space-6); }
+
+    }
+
+
+
     /* ========================================
+
        TIPOGRAFÍA
+
        ======================================== */
+
     h1, h2, h3 {
+
       font-family: 'Cormorant Garamond', Georgia, serif;
+
       font-weight: 600;
+
       line-height: 1.2;
+
       color: var(--text-primary);
+
       letter-spacing: -0.01em;
+
     }
+
     h1 { font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight: 700; margin-bottom: var(--space-4); }
+
     h2 { font-size: clamp(1.875rem, 4vw, 2.75rem); font-weight: 600; margin-bottom: var(--space-4); }
+
     h3 { font-size: 1.625rem; font-weight: 600; margin-bottom: var(--space-3); }
+
     p { color: var(--text-secondary); font-weight: 400; }
+
     .lead {
+
       font-size: 1.125rem;
+
       line-height: 1.7;
+
       color: var(--text-secondary);
+
       max-width: 920px;
+
       font-weight: 400;
+
     }
+
     .mono {
+
       font-size: 0.75rem;
+
       font-weight: 800;
+
       letter-spacing: 0.12em;
+
       text-transform: uppercase;
+
       color: var(--blue-600);
+
       margin-bottom: var(--space-2);
+
       font-family: 'Montserrat', sans-serif;
+
     }
+
     .section { padding: var(--space-16) 0; }
 
+
+
     /* ========================================
+
        NAVEGACIÓN PRINCIPAL
+
        ======================================== */
+
     nav.main-nav {
+
       position: sticky;
+
       top: 0;
+
       z-index: 50;
+
       background: rgba(255, 255, 255, 0.95);
+
       backdrop-filter: blur(8px);
+
       border-bottom: 1px solid var(--border-light);
+
     }
+
+
 
     .navbar {
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
       height: var(--nav-height);
+
       gap: var(--space-4);
+
     }
+
+
 
     .brand {
+
       font-family: 'Cormorant Garamond', serif;
+
       font-size: 1.375rem;
+
       font-weight: 700;
+
       color: var(--text-primary);
+
       flex-shrink: 0;
+
       letter-spacing: 0.02em;
+
     }
+
     .brand span { color: var(--blue-600); font-weight: 600; }
 
+
+
     .nav-toggle {
+
       display: none;
+
       background: none;
+
       border: none;
+
       padding: var(--space-2);
+
       font-size: 1.75rem;
+
       color: var(--text-primary);
+
       cursor: pointer;
+
     }
+
+
 
     .actions {
+
       display: flex;
+
       align-items: center;
+
       gap: var(--space-2);
+
     }
+
+
 
     a.nav {
+
       padding: var(--space-2) var(--space-3);
+
       border-radius: var(--radius);
+
       color: var(--text-secondary);
+
       font-weight: 600;
+
       font-size: 0.9375rem;
+
       transition: var(--transition);
+
     }
+
     a.nav:hover { background: var(--blue-50); color: var(--blue-700); }
 
+
+
     @media (max-width: 880px) {
+
       .nav-toggle {
+
         display: block;
+
         position: absolute;
+
         right: var(--space-4);
+
         top: 50%;
+
         transform: translateY(-50%);
+
       }
+
       .actions {
+
         position: absolute;
+
         left: 0;
+
         right: 0;
+
         top: 100%;
+
         flex-direction: column;
+
         background: white;
+
         border-bottom: 1px solid var(--border-light);
+
         box-shadow: var(--shadow-lg);
+
         padding: var(--space-4);
+
         max-height: 0;
+
         opacity: 0;
+
         overflow: hidden;
+
         transition: max-height 0.3s ease, opacity 0.2s ease;
+
         pointer-events: none;
+
       }
+
       .actions.active { max-height: 500px; opacity: 1; pointer-events: auto; }
+
       .actions a.nav { width: 100%; padding: var(--space-3) var(--space-4); text-align: center; }
+
       .actions .btn { width: 100%; justify-content: center; }
+
     }
+
+
 
     .nav-backdrop {
+
       display: none;
+
       position: fixed;
+
       inset: 0;
+
       z-index: 49;
+
       background: rgba(0, 0, 0, 0.3);
+
     }
+
     .nav-backdrop.show { display: block; }
 
+
+
     /* ========================================
+
        BARRA DE NAVEGACIÓN SECUNDARIA (NUEVA)
+
        ======================================== */
+
     .subnav {
+
       position: sticky;
+
       top: var(--nav-height);
+
       z-index: 45;
+
       background: rgba(255, 255, 255, 0.97);
+
       backdrop-filter: blur(8px);
+
       border-bottom: 1px solid var(--blue-100);
+
       box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+
     }
+
+
 
     .subnav-inner {
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       height: var(--subnav-height);
+
       gap: var(--space-2);
+
       overflow-x: auto;
+
       scrollbar-width: none;
+
       -ms-overflow-style: none;
+
       padding: 0 var(--space-4);
+
     }
+
     .subnav-inner::-webkit-scrollbar { display: none; }
 
+
+
     .subnav-link {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: var(--space-2);
+
       padding: var(--space-2) var(--space-4);
+
       border-radius: var(--radius-full);
+
       font-weight: 700;
+
       font-size: 0.8125rem;
+
       letter-spacing: 0.04em;
+
       text-transform: uppercase;
+
       color: var(--text-secondary);
+
       white-space: nowrap;
+
       transition: all var(--transition);
+
       border: 1.5px solid transparent;
+
       position: relative;
+
     }
+
+
 
     .subnav-link::before {
+
       content: '';
+
       display: inline-block;
+
       width: 7px;
+
       height: 7px;
+
       border-radius: 50%;
+
       background: currentColor;
+
       opacity: 0.4;
+
       transition: opacity var(--transition);
+
     }
+
+
 
     .subnav-link:hover {
+
       background: var(--blue-50);
+
       color: var(--blue-700);
+
       border-color: var(--blue-200);
+
     }
+
     .subnav-link:hover::before { opacity: 1; }
 
+
+
     .subnav-link.weekly {
+
       color: var(--gold-600);
+
     }
+
     .subnav-link.weekly::before { background: var(--gold-500); opacity: 0.7; }
+
     .subnav-link.weekly:hover {
+
       background: var(--gold-50);
+
       color: var(--gold-600);
+
       border-color: var(--gold-400);
+
     }
+
     .subnav-link.weekly:hover::before { opacity: 1; }
 
+
+
     .subnav-link.monthly {
+
       color: var(--blue-700);
+
     }
+
     .subnav-link.monthly::before { background: var(--blue-500); opacity: 0.7; }
+
     .subnav-link.monthly:hover {
+
       background: var(--blue-50);
+
       color: var(--blue-800);
+
       border-color: var(--blue-300);
+
     }
+
     .subnav-link.monthly:hover::before { opacity: 1; }
 
+
+
     .subnav-link.expositions {
+
       color: var(--gray-600);
+
     }
+
     .subnav-link.expositions::before { background: var(--gray-500); opacity: 0.7; }
+
     .subnav-link.expositions:hover {
+
       background: var(--gray-100);
+
       color: var(--gray-800);
+
       border-color: var(--gray-300);
+
     }
+
     .subnav-link.expositions:hover::before { opacity: 1; }
 
+
+
     .subnav-divider {
+
       width: 1px;
+
       height: 20px;
+
       background: var(--border-medium);
+
       flex-shrink: 0;
+
     }
+
+
 
     @media (max-width: 600px) {
+
       .subnav-link {
+
         font-size: 0.75rem;
+
         padding: var(--space-2) var(--space-3);
+
       }
+
       .subnav-divider { display: none; }
+
     }
 
+
+
     /* ========================================
+
        BOTONES
+
        ======================================== */
+
     .btn {
+
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
+
       gap: var(--space-2);
+
       padding: var(--space-3) var(--space-6);
+
       border-radius: var(--radius-full);
+
       font-weight: 700;
+
       font-size: 1rem;
+
       border: none;
+
       cursor: pointer;
+
       transition: all var(--transition);
+
       white-space: nowrap;
+
       min-height: 44px;
+
       font-family: 'Montserrat', sans-serif;
+
     }
+
     .btn.primary {
+
       background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+
       color: white;
+
       box-shadow: var(--shadow-md);
+
     }
+
     .btn.primary:hover {
+
       background: linear-gradient(135deg, var(--blue-700), var(--blue-800));
+
       box-shadow: var(--shadow-lg);
+
       transform: translateY(-1px);
+
     }
+
     .btn.ghost {
+
       background: white;
+
       color: var(--blue-700);
+
       border: 1px solid var(--border-medium);
+
       box-shadow: var(--shadow-sm);
+
     }
+
     .btn.ghost:hover { background: var(--blue-50); border-color: var(--blue-300); }
+
     .btn:focus-visible { outline: 2px solid var(--blue-600); outline-offset: 2px; }
 
+
+
     .link-button {
+
       border: none;
+
       background: none;
+
       padding: 0;
+
       margin-top: var(--space-3);
+
       font: inherit;
+
       color: var(--blue-600);
+
       cursor: pointer;
+
       display: inline-flex;
+
       align-items: center;
+
       gap: var(--space-2);
+
       position: relative;
+
       font-weight: 600;
+
     }
+
     .link-button::after {
+
       content: "";
+
       position: absolute;
+
       left: 0;
+
       bottom: -2px;
+
       width: 0;
+
       height: 2px;
+
       border-radius: var(--radius-full);
+
       background: linear-gradient(90deg, var(--blue-600), var(--blue-500));
+
       transition: width 0.25s ease;
+
     }
+
     .link-button:hover::after { width: 100%; }
 
+
+
     /* ========================================
+
        PANTALLA INICIO
+
        ======================================== */
+
     .intro-screen {
+
       position: fixed;
+
       inset: 0;
+
       z-index: 100;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       padding: var(--space-6);
+
       background: radial-gradient(circle at top, var(--blue-100) 0, var(--blue-50) 45%, var(--blue-200) 100%);
+
       transition: opacity 0.45s ease, visibility 0.45s ease;
+
     }
+
     .intro-screen.hide { opacity: 0; visibility: hidden; pointer-events: none; }
 
+
+
     .intro-inner {
+
       max-width: 680px;
+
       width: 100%;
+
       border-radius: var(--radius-xl);
+
       background: rgba(255, 255, 255, 0.96);
+
       box-shadow: var(--shadow-xl);
+
       border: 1px solid var(--blue-200);
+
       padding: var(--space-8);
+
       text-align: center;
+
     }
+
     .intro-logo {
+
       font-family: 'Cormorant Garamond', serif;
+
       font-size: 2.25rem;
+
       font-weight: 700;
+
       margin-bottom: var(--space-2);
+
     }
+
     .intro-tag {
+
       margin: 0;
+
       color: var(--blue-600);
+
       font-size: 0.875rem;
+
       letter-spacing: 0.1em;
+
       text-transform: uppercase;
+
       font-weight: 700;
+
     }
+
     .intro-line { margin: var(--space-4) 0 var(--space-6); color: var(--text-secondary); }
+
     .intro-note { margin-top: var(--space-3); font-size: 0.875rem; color: var(--text-muted); }
 
+
+
     /* ========================================
+
        HERO SLIDER
+
        ======================================== */
+
     .hero-shell { position: relative; z-index: 1; margin: 0; padding: 0; }
 
+
+
     .hero-slider {
+
       --heroSlides: 3;
+
       position: relative;
+
       height: calc(100vh - var(--nav-height) - var(--subnav-height));
+
       min-height: 620px;
+
       overflow: hidden;
+
       touch-action: pan-y pinch-zoom;
+
     }
+
     @media (max-width: 880px) {
+
       .hero-slider {
+
         height: auto;
+
         min-height: calc(100vh - var(--nav-height) - var(--subnav-height));
+
       }
+
     }
+
+
 
     .hero-track {
+
       display: flex;
+
       height: 100%;
+
       width: calc(var(--heroSlides) * 100%);
+
       transform: translate3d(0, 0, 0);
+
       transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
       will-change: transform;
+
     }
+
     .hero-track.dragging { transition: none !important; }
 
+
+
     .hero-slide {
+
       flex: 0 0 calc(100% / var(--heroSlides));
+
       height: 100%;
+
       display: flex;
+
       align-items: center;
+
     }
+
     .hero-slide-inner { padding: var(--space-8) var(--space-4); }
 
+
+
     .hero-eyebrow {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: var(--space-2);
+
       padding: var(--space-1) var(--space-3);
+
       border-radius: var(--radius-full);
+
       background: rgba(255, 255, 255, 0.92);
+
       border: 1px solid var(--blue-200);
+
       color: var(--text-primary);
+
       font-size: 0.75rem;
+
       text-transform: uppercase;
+
       letter-spacing: 0.1em;
+
       margin-bottom: var(--space-3);
+
       font-weight: 700;
+
     }
+
+
 
     .hero-ctas {
+
       display: flex;
+
       flex-wrap: wrap;
+
       gap: var(--space-3);
+
       margin-top: var(--space-6);
+
       align-items: center;
+
     }
+
     .hero-note { font-size: 0.875rem; color: var(--text-muted); }
 
+
+
     @media (max-width: 640px) {
+
       .hero-ctas .btn { width: 100%; }
+
     }
+
+
 
     .hero-controls {
+
       position: absolute;
+
       left: 0;
+
       right: 0;
+
       bottom: var(--space-6);
+
       padding: 0 var(--space-6);
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
       pointer-events: none;
+
     }
+
     .hero-dots { display: flex; gap: var(--space-2); pointer-events: auto; }
+
     .hero-dot {
+
       width: 10px;
+
       height: 10px;
+
       border-radius: var(--radius-full);
+
       border: 1px solid rgba(15, 23, 42, 0.38);
+
       background: rgba(255, 255, 255, 0.55);
+
       box-shadow: var(--shadow-md);
+
       padding: 0;
+
       cursor: pointer;
+
       transition: var(--transition);
+
     }
+
     .hero-dot.active {
+
       width: 28px;
+
       background: linear-gradient(90deg, var(--blue-500), var(--blue-600));
+
       border-color: var(--blue-700);
+
     }
+
     .hero-arrows { display: flex; gap: var(--space-2); pointer-events: auto; }
+
     .hero-arrow {
+
       width: 44px;
+
       height: 44px;
+
       border-radius: var(--radius-full);
+
       border: 1px solid var(--border-medium);
+
       background: white;
+
       box-shadow: var(--shadow-md);
+
       cursor: pointer;
+
       font-weight: 900;
+
       color: var(--text-primary);
+
       padding: 0;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       transition: var(--transition);
+
       font-size: 1.5rem;
+
     }
+
     .hero-arrow:hover { transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+
     .hero-arrow:disabled { opacity: 0.45; cursor: not-allowed; }
 
+
+
     .split {
+
       display: grid;
+
       grid-template-columns: 1.1fr 0.9fr;
+
       gap: var(--space-8);
+
       align-items: center;
+
     }
+
     @media (max-width: 980px) { .split { grid-template-columns: 1fr; } }
 
+
+
     .pill-list {
+
       margin: var(--space-4) 0;
+
       padding-left: 0;
+
       list-style: none;
+
       display: flex;
+
       flex-direction: column;
+
       gap: var(--space-2);
+
     }
+
     .pill-list li {
+
       position: relative;
+
       padding-left: var(--space-5);
+
       color: var(--text-secondary);
+
       font-weight: 400;
+
     }
+
     .pill-list li::before {
+
       content: "";
+
       position: absolute;
+
       left: 0;
+
       top: 0.6em;
+
       width: 6px;
+
       height: 6px;
+
       border-radius: 50%;
+
       background: linear-gradient(135deg, var(--blue-600), var(--blue-500));
+
     }
+
+
 
     .video-shell {
+
       position: relative;
+
       border-radius: var(--radius-xl);
+
       padding: 3px;
+
       background: linear-gradient(145deg, var(--blue-500), var(--blue-700));
+
       box-shadow: var(--shadow-xl);
+
     }
+
     .video-card {
+
       border-radius: calc(var(--radius-xl) - 3px);
+
       overflow: hidden;
+
       background: white;
+
       border: 1px solid var(--blue-100);
+
     }
+
     .video-aspect {
+
       position: relative;
+
       aspect-ratio: 16/9;
+
       background: var(--gray-900);
+
       overflow: hidden;
+
     }
+
     .video-link {
+
       position: absolute;
+
       inset: 0;
+
       display: block;
+
       cursor: pointer;
+
       color: white;
+
     }
+
     .video-thumb {
+
       position: absolute;
+
       inset: 0;
+
       width: 100%;
+
       height: 100%;
+
       object-fit: cover;
+
     }
+
     .video-link::after {
+
       content: "";
+
       position: absolute;
+
       inset: 0;
+
       background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+
     }
+
     .video-center {
+
       position: absolute;
+
       inset: 0;
+
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
+
       justify-content: center;
+
       gap: var(--space-3);
+
       z-index: 2;
+
       text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+
       padding: var(--space-6);
+
       text-align: center;
+
     }
+
     .play-circle {
+
       width: 80px;
+
       height: 80px;
+
       border-radius: 50%;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       background: rgba(255,255,255,0.95);
+
       box-shadow: var(--shadow-xl);
+
       transition: var(--transition);
+
     }
+
     .video-link:hover .play-circle { transform: scale(1.1); }
+
     .video-title { font-weight: 900; font-size: 1.125rem; }
+
     .video-sub { font-size: 0.875rem; opacity: 0.9; }
+
     .video-meta {
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
       gap: var(--space-3);
+
       padding: var(--space-4);
+
       background: white;
+
       border-top: 1px solid var(--border-light);
+
     }
+
     .video-meta .meta-left { flex: 1; }
+
     .video-meta .meta-left strong { display: block; font-size: 0.875rem; margin-bottom: var(--space-1); font-weight: 700; }
+
     .video-meta .meta-left small { color: var(--text-muted); font-size: 0.75rem; }
+
     .video-meta .meta-left a { color: var(--blue-600); font-weight: 700; }
+
     .video-meta .meta-left a:hover { text-decoration: underline; }
 
+
+
     .marco-cuadro {
+
       border-radius: var(--radius-xl);
+
       border: 8px solid white;
+
       box-shadow: var(--shadow-xl);
+
       overflow: hidden;
+
       background: white;
+
     }
+
     .marco-cuadro img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    /* ========================================
-       TOGGLE DE SESIONES
-       ======================================== */
-    .session-toggle-wrap {
-      display: flex;
-      justify-content: center;
-      margin-bottom: var(--space-8);
-      gap: var(--space-4);
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .session-toggle {
-      display: inline-flex;
-      background: white;
-      border: 1px solid var(--border-medium);
-      border-radius: var(--radius-full);
-      padding: 4px;
-      box-shadow: var(--shadow-sm);
-      position: relative;
-    }
-    .session-option {
-      padding: var(--space-2) var(--space-5);
-      border-radius: var(--radius-full);
-      font-weight: 700;
-      font-size: 0.9375rem;
-      cursor: pointer;
-      transition: var(--transition);
-      background: transparent;
-      border: none;
-      color: var(--text-secondary);
-      position: relative;
-      z-index: 1;
-      white-space: nowrap;
-    }
-    .session-option.active { color: white; }
-    .session-slider {
-      position: absolute;
-      top: 4px;
-      left: 4px;
-      height: calc(100% - 8px);
-      border-radius: var(--radius-full);
-      background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
-      box-shadow: var(--shadow-md);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      z-index: 0;
-    }
-    .discount-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      padding: var(--space-2) var(--space-4);
-      background: linear-gradient(135deg, var(--green-500), var(--green-600));
-      color: white;
-      border-radius: var(--radius-full);
-      font-weight: 800;
-      font-size: 0.875rem;
-      box-shadow: var(--shadow-md);
-    }
+
 
     /* ========================================
-       SECCIONES DE CATEGORÍA — SEMANALES / MENSUALES
+
+       TOGGLE DE SESIONES
+
        ======================================== */
-    .category-section {
-      margin-bottom: var(--space-16);
+
+    .session-toggle-wrap {
+
+      display: flex;
+
+      justify-content: center;
+
+      margin-bottom: var(--space-8);
+
+      gap: var(--space-4);
+
+      flex-wrap: wrap;
+
+      align-items: center;
+
     }
+
+    .session-toggle {
+
+      display: inline-flex;
+
+      background: white;
+
+      border: 1px solid var(--border-medium);
+
+      border-radius: var(--radius-full);
+
+      padding: 4px;
+
+      box-shadow: var(--shadow-sm);
+
+      position: relative;
+
+    }
+
+    .session-option {
+
+      padding: var(--space-2) var(--space-5);
+
+      border-radius: var(--radius-full);
+
+      font-weight: 700;
+
+      font-size: 0.9375rem;
+
+      cursor: pointer;
+
+      transition: var(--transition);
+
+      background: transparent;
+
+      border: none;
+
+      color: var(--text-secondary);
+
+      position: relative;
+
+      z-index: 1;
+
+      white-space: nowrap;
+
+    }
+
+    .session-option.active { color: white; }
+
+    .session-slider {
+
+      position: absolute;
+
+      top: 4px;
+
+      left: 4px;
+
+      height: calc(100% - 8px);
+
+      border-radius: var(--radius-full);
+
+      background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+
+      box-shadow: var(--shadow-md);
+
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+      z-index: 0;
+
+    }
+
+    .discount-badge {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: var(--space-2);
+
+      padding: var(--space-2) var(--space-4);
+
+      background: linear-gradient(135deg, var(--green-500), var(--green-600));
+
+      color: white;
+
+      border-radius: var(--radius-full);
+
+      font-weight: 800;
+
+      font-size: 0.875rem;
+
+      box-shadow: var(--shadow-md);
+
+    }
+
+
+
+    /* ========================================
+
+       SECCIONES DE CATEGORÍA — SEMANALES / MENSUALES
+
+       ======================================== */
+
+    .category-section {
+
+      margin-bottom: var(--space-16);
+
+    }
+
     .category-section:last-child { margin-bottom: 0; }
 
+
+
     .category-header {
+
       display: flex;
+
       align-items: flex-start;
+
       gap: var(--space-4);
+
       margin-bottom: var(--space-8);
+
       padding: var(--space-6) var(--space-8);
+
       border-radius: var(--radius-xl);
+
       position: relative;
+
       overflow: hidden;
+
     }
+
     .category-header::before {
+
       content: '';
+
       position: absolute;
+
       inset: 0;
+
       opacity: 0.06;
+
       pointer-events: none;
+
     }
+
+
 
     .category-header.weekly {
+
       background: linear-gradient(135deg, var(--gold-50) 0%, #fff8e8 100%);
+
       border: 1.5px solid var(--gold-400);
+
       box-shadow: 0 4px 24px rgba(245, 158, 11, 0.10);
+
     }
+
     .category-header.weekly::before {
+
       background: radial-gradient(circle at 80% 50%, var(--gold-400), transparent 70%);
+
     }
+
+
 
     .category-header.monthly {
+
       background: linear-gradient(135deg, var(--blue-50) 0%, #f0f7ff 100%);
+
       border: 1.5px solid var(--blue-300);
+
       box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08);
-    }
-    .category-header.monthly::before {
-      background: radial-gradient(circle at 80% 50%, var(--blue-400), transparent 70%);
+
     }
 
+    .category-header.monthly::before {
+
+      background: radial-gradient(circle at 80% 50%, var(--blue-400), transparent 70%);
+
+    }
+
+
+
     .category-icon {
+
       width: 56px;
+
       height: 56px;
+
       border-radius: var(--radius-lg);
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       font-size: 1.75rem;
+
       flex-shrink: 0;
+
       box-shadow: var(--shadow-md);
+
     }
+
     .category-header.weekly .category-icon {
+
       background: linear-gradient(135deg, var(--gold-400), var(--gold-500));
+
     }
+
     .category-header.monthly .category-icon {
+
       background: linear-gradient(135deg, var(--blue-500), var(--blue-700));
+
     }
+
+
 
     .category-header-text { flex: 1; }
 
+
+
     .category-label {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: var(--space-2);
+
       padding: var(--space-1) var(--space-3);
+
       border-radius: var(--radius-full);
+
       font-size: 0.7rem;
+
       font-weight: 900;
+
       letter-spacing: 0.14em;
+
       text-transform: uppercase;
+
       margin-bottom: var(--space-2);
+
     }
+
     .category-header.weekly .category-label {
+
       background: rgba(245, 158, 11, 0.18);
+
       color: var(--gold-600);
+
       border: 1px solid rgba(245, 158, 11, 0.35);
+
     }
+
     .category-header.monthly .category-label {
+
       background: rgba(37, 99, 235, 0.1);
+
       color: var(--blue-700);
+
       border: 1px solid rgba(37, 99, 235, 0.22);
+
     }
+
+
 
     .category-header h3 {
+
       font-size: clamp(1.4rem, 3vw, 2rem);
+
       margin-bottom: var(--space-1);
+
       font-weight: 700;
+
     }
+
     .category-header.weekly h3 { color: #92400e; }
+
     .category-header.monthly h3 { color: var(--blue-800); }
 
+
+
     .category-header p {
+
       margin: 0;
+
       font-size: 0.9375rem;
+
       line-height: 1.5;
+
     }
+
     .category-header.weekly p { color: #a16207; }
+
     .category-header.monthly p { color: var(--blue-700); }
 
+
+
     @media (max-width: 640px) {
+
       .category-header { padding: var(--space-5); }
+
       .category-icon { width: 44px; height: 44px; font-size: 1.375rem; }
+
     }
 
+
+
     /* ========================================
+
        CARDS (SERVICIOS)
+
        ======================================== */
+
     .grid {
+
       display: grid;
+
       gap: var(--space-6);
+
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
     }
+
     @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
 
+
+
     .card {
+
       background: white;
+
       border: 1px solid var(--border-light);
+
       border-radius: var(--radius-lg);
+
       box-shadow: var(--shadow);
+
       overflow: hidden;
+
       display: flex;
+
       flex-direction: column;
+
       transition: var(--transition);
+
       position: relative;
+
     }
+
     .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
     .card .media { aspect-ratio: 16/10; background: var(--gray-100); overflow: hidden; }
+
     .card .media img { width: 100%; height: 100%; object-fit: cover; }
+
     .card .body { padding: var(--space-5); flex: 1; display: flex; flex-direction: column; }
+
     .card h3 { margin: 0 0 var(--space-2); font-size: 1.375rem; }
+
     .card p { margin: 0 0 var(--space-4); color: var(--text-secondary); font-weight: 400; }
+
     .card-frequency-text { font-weight: 500; color: var(--text-primary); }
+
     .card .meta { display: flex; gap: var(--space-2); flex-wrap: wrap; margin: var(--space-3) 0 var(--space-4); }
 
+
+
     .badge {
+
       background: var(--blue-50);
+
       border: 1px solid var(--blue-200);
+
       padding: var(--space-1) var(--space-3);
+
       border-radius: var(--radius-full);
+
       font-size: 0.875rem;
+
       color: var(--blue-800);
+
       font-weight: 700;
+
     }
+
     .badge.gold { background: var(--gold-100); border: 1px solid var(--gold-400); color: var(--gold-600); }
+
     .badge.rec {
+
       background: linear-gradient(90deg, var(--gold-400), var(--gold-500));
+
       border: 1px solid var(--gold-600);
+
       color: white;
+
       font-weight: 900;
+
     }
+
+
 
     .price-display {
+
       display: flex;
+
       align-items: baseline;
+
       gap: var(--space-3);
+
       margin: var(--space-4) 0;
+
       flex-wrap: wrap;
+
     }
+
     .price-current { font-size: 1.625rem; font-weight: 800; color: var(--blue-700); font-family: 'Montserrat', sans-serif; }
+
     .price-original {
+
       font-size: 1.25rem;
+
       color: var(--gray-400);
+
       text-decoration: line-through;
+
       text-decoration-thickness: 2px;
+
       text-decoration-color: var(--gray-400);
+
       font-weight: 600;
+
       opacity: 0.75;
+
       font-family: 'Montserrat', sans-serif;
+
     }
+
     .price-discount {
+
       padding: var(--space-1) var(--space-3);
+
       background: linear-gradient(135deg, var(--green-500), var(--green-600));
+
       color: white;
+
       border-radius: var(--radius-full);
+
       font-size: 0.875rem;
+
       font-weight: 800;
+
       box-shadow: var(--shadow-sm);
+
     }
+
+
 
     .card .cta {
+
       margin-top: auto;
+
       padding-top: var(--space-4);
+
       border-top: 1px solid var(--border-light);
+
       display: flex;
+
       flex-direction: column;
+
       gap: var(--space-2);
+
     }
+
     .card .cta .btn { width: 100%; justify-content: center; }
 
+
+
     .card.summer { border: 1px solid var(--gold-400); background: linear-gradient(180deg, var(--gold-50), white); }
+
     .card.summer:hover { box-shadow: 0 20px 40px rgba(245, 158, 11, 0.18); }
 
+
+
     .recommended-pill {
+
       position: absolute;
+
       top: var(--space-4);
+
       right: var(--space-4);
+
       padding: var(--space-2) var(--space-3);
+
       border-radius: var(--radius-full);
+
       background: linear-gradient(90deg, var(--gold-400), var(--gold-500));
+
       border: 1px solid var(--gold-600);
+
       color: white;
+
       font-weight: 900;
+
       font-size: 0.75rem;
+
       letter-spacing: 0.05em;
+
       text-transform: uppercase;
+
       box-shadow: var(--shadow-md);
+
       z-index: 1;
+
     }
 
+
+
     /* ========================================
+
        EQUIPO
+
        ======================================== */
+
     .teamPro__wrap { max-width: 1040px; margin: 0 auto; padding: 0 var(--space-4); }
+
     .teamPro__kicker { margin: 0 0 var(--space-2); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-600); }
+
     .teamPro__title { margin: 0; }
+
     .teamPro__sub { margin: var(--space-2) 0 var(--space-8); color: var(--text-secondary); }
+
     .teamPro__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+
     @media (max-width: 920px) { .teamPro__grid { grid-template-columns: 1fr; } }
 
+
+
     .teamCard {
+
       background: white;
+
       border: 1px solid var(--border-light);
+
       border-radius: var(--radius-lg);
+
       box-shadow: var(--shadow);
+
       overflow: hidden;
+
       display: flex;
+
       flex-direction: column;
+
     }
+
     .teamCard__media { position: relative; width: 100%; height: 220px; overflow: hidden; }
+
     .teamCard__media img { width: 100%; height: 100%; object-fit: cover; }
+
     .teamCard__fade {
+
       position: absolute;
+
       bottom: 0;
+
       left: 0;
+
       right: 0;
+
       height: 70px;
+
       background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.85));
+
     }
+
     .teamCard__body { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); flex: 1; }
+
     .teamCard__head { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; justify-content: space-between; }
+
     .teamCard__name { margin: 0; font-size: 1.25rem; font-weight: 700; }
+
     .teamCard__pill { font-size: 0.75rem; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); border: 1px solid var(--border-light); background: var(--gray-50); font-weight: 600; }
+
     .teamCard__list { margin: 0; padding: 0; list-style: none; font-size: 0.9375rem; line-height: 1.6; }
+
     .teamCard__list li { margin: var(--space-2) 0; padding-left: var(--space-4); position: relative; }
+
     .teamCard__list li::before { content: "•"; position: absolute; left: 0; color: var(--blue-600); font-weight: 700; }
+
     .teamCard__details { margin-top: auto; border-top: 1px solid var(--border-light); padding-top: var(--space-3); }
+
     .teamCard__details summary {
+
       cursor: pointer;
+
       list-style: none;
+
       display: inline-flex;
+
       align-items: center;
+
       gap: var(--space-2);
+
       padding: var(--space-2) var(--space-4);
+
       border-radius: var(--radius);
+
       border: 1px solid var(--border-light);
+
       background: var(--gray-50);
+
       font-weight: 700;
+
       font-size: 0.875rem;
+
     }
+
     .teamCard__details summary::-webkit-details-marker { display: none; }
+
     .teamCard__chev {
+
       width: 10px;
+
       height: 10px;
+
       border-right: 2px solid var(--text-primary);
+
       border-bottom: 2px solid var(--text-primary);
+
       transform: rotate(45deg);
+
       transition: var(--transition);
+
     }
+
     .teamCard__details[open] .teamCard__chev { transform: rotate(-135deg); }
+
     .teamCard__details p { margin: var(--space-3) 0 0; line-height: 1.6; }
 
+
+
     /* ========================================
+
        EXPOSICIONES
+
        ======================================== */
+
     .expo-wrap {
+
       background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.92));
+
       border: 1px solid var(--border-light);
+
       border-radius: var(--radius-xl);
+
       box-shadow: var(--shadow-xl);
+
       overflow: hidden;
+
     }
+
     .expo-wrap-head { padding: var(--space-6); border-bottom: 1px solid var(--border-light); background: white; }
+
     .expo-wrap-head strong { font-family: 'Cormorant Garamond', serif; font-size: 1.125rem; color: var(--text-primary); font-weight: 600; }
+
     .expo-wrap-head small { display: block; margin-top: var(--space-1); color: var(--text-muted); font-size: 0.875rem; }
+
     .expo-stack { display: flex; flex-direction: column; gap: var(--space-6); padding: var(--space-6); }
 
+
+
     .expo-item {
+
       background: white;
+
       border: 1px solid var(--border-light);
+
       border-radius: var(--radius-lg);
+
       box-shadow: var(--shadow);
+
       overflow: hidden;
+
       display: grid;
+
       grid-template-columns: 1fr 1.25fr;
+
       grid-template-areas: "info media";
+
       min-height: 360px;
+
     }
+
     @media (max-width: 980px) {
+
       .expo-item { grid-template-columns: 1fr; grid-template-areas: "info" "media"; min-height: auto; }
+
     }
+
+
 
     .expo-media { grid-area: media; padding: var(--space-5); background: var(--gray-50); border-left: 1px solid var(--border-light); }
+
     @media (max-width: 980px) { .expo-media { border-left: none; border-top: 1px solid var(--border-light); } }
 
+
+
     .expo-photo { aspect-ratio: 1/1; width: 100%; overflow: hidden; border-radius: var(--radius-lg); background: var(--gray-900); }
+
     .expo-photo img.expo-main, .expo-photo video.expo-main { width: 100%; height: 100%; object-fit: cover; display: block; }
+
     .expo-photo.is-video { position: relative; }
+
     .expo-photo.is-video .expo-main-img, .expo-photo.is-video .expo-main-video { position: absolute; inset: 0; }
+
     .expo-photo.is-video .expo-main-img { display: block; }
+
     .expo-photo.is-video .expo-main-video { display: none; }
+
     .expo-photo.is-video.show-video .expo-main-img { display: none; }
+
     .expo-photo.is-video.show-video .expo-main-video { display: block; }
+
     .expo-photo.reel-letterbox .expo-main-video { object-fit: contain; }
 
+
+
     .expo-thumbs { margin-top: var(--space-4); display: flex; gap: var(--space-3); overflow-x: auto; padding-bottom: var(--space-1); }
+
     .expo-thumbs::-webkit-scrollbar { height: 8px; }
+
     .expo-thumbs::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: var(--radius-full); }
+
     .expo-thumb {
+
       flex: 0 0 112px;
+
       aspect-ratio: 4/3;
+
       border-radius: var(--radius);
+
       overflow: hidden;
+
       border: 1px solid var(--border-light);
+
       background: var(--gray-100);
+
       box-shadow: var(--shadow-sm);
+
       cursor: pointer;
+
       padding: 0;
+
       transition: var(--transition);
+
     }
+
     .expo-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.85; transition: var(--transition); }
+
     .expo-thumb:hover img { opacity: 1; transform: scale(1.04); }
+
     .expo-thumb.is-active { border-color: var(--blue-500); box-shadow: var(--shadow-md); }
+
     .expo-thumb.is-active img { opacity: 1; }
+
     .expo-thumb.is-placeholder { visibility: hidden; pointer-events: none; }
 
+
+
     .expo-info { grid-area: info; padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3); }
+
     .expo-kicker {
+
       align-self: flex-start;
+
       padding: var(--space-1) var(--space-3);
+
       border-radius: var(--radius-full);
+
       background: var(--gold-100);
+
       border: 1px solid var(--gold-400);
+
       color: var(--gold-600);
+
       font-weight: 900;
+
       font-size: 0.75rem;
+
       letter-spacing: 0.1em;
+
       text-transform: uppercase;
+
     }
+
     .expo-info h3 { margin: 0; font-size: 1.5rem; }
+
     .expo-info p { margin: 0; color: var(--text-secondary); }
+
     .expo-details { margin: 0; padding-left: var(--space-5); color: var(--text-secondary); }
+
     .expo-details li { margin: var(--space-2) 0; }
+
     .expo-tags { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-top: auto; }
+
     .tag { background: var(--gray-100); border: 1px solid var(--border-light); color: var(--text-primary); padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 700; }
+
     .expo-cta { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-3); }
+
     .expo-cta .btn { flex: 1; min-width: 160px; justify-content: center; }
+
     @media (max-width: 520px) { .expo-cta .btn { width: 100%; } }
 
+
+
     /* ========================================
+
        MODAL DE RESERVA
+
        ======================================== */
+
     .booking-modal {
+
       border: none;
+
       border-radius: var(--radius);
+
       max-width: 600px;
+
       width: calc(100% - var(--space-8));
+
       box-shadow: var(--shadow-xl);
+
       padding: 0;
+
       background: white;
+
     }
+
     .booking-modal::backdrop { background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); }
+
     .booking-header {
+
       padding: var(--space-6);
+
       border-bottom: 1px solid var(--border-light);
+
       background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+
       color: white;
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
     }
+
     .booking-header h3 { margin: 0; color: white; font-size: 1.375rem; }
+
     .close-modal {
+
       background: rgba(255,255,255,0.2);
+
       border: 1px solid rgba(255,255,255,0.3);
+
       color: white;
+
       border-radius: var(--radius);
+
       padding: var(--space-2) var(--space-3);
+
       cursor: pointer;
+
       font-weight: 700;
+
       font-size: 0.875rem;
+
       transition: var(--transition);
+
     }
+
     .close-modal:hover { background: rgba(255,255,255,0.3); }
+
     .booking-body { padding: var(--space-6); max-height: 70vh; overflow-y: auto; }
+
     .form-group { margin-bottom: var(--space-5); }
+
     .form-group label { display: block; font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-2); font-size: 0.875rem; }
+
     .form-group input, .form-group select, .form-group textarea {
+
       width: 100%;
+
       padding: var(--space-3) var(--space-4);
+
       border: 1px solid var(--border-medium);
+
       border-radius: var(--radius-sm);
+
       background: white;
+
       color: var(--text-primary);
+
       font-size: 16px;
+
       font-family: inherit;
+
       transition: var(--transition);
+
     }
+
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+
       outline: none;
+
       border-color: var(--blue-500);
+
       box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+
     }
+
     .form-group textarea { min-height: 100px; resize: vertical; }
+
     .form-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+
     @media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
+
     .service-badge {
+
       display: inline-flex;
+
       align-items: center;
+
       padding: var(--space-3) var(--space-4);
+
       background: var(--blue-50);
+
       border: 1px solid var(--blue-200);
+
       border-radius: var(--radius);
+
       color: var(--blue-700);
+
       font-weight: 700;
+
       margin-bottom: var(--space-4);
+
     }
+
     .submit-booking {
+
       width: 100%;
+
       padding: var(--space-4);
+
       background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+
       color: white;
+
       border: none;
+
       border-radius: var(--radius);
+
       font-weight: 800;
+
       font-size: 1rem;
+
       cursor: pointer;
+
       transition: var(--transition);
+
       box-shadow: var(--shadow-md);
+
     }
+
     .submit-booking:hover { background: linear-gradient(135deg, var(--blue-700), var(--blue-800)); box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+
     .submit-booking:disabled { opacity: 0.6; cursor: not-allowed; }
 
+
+
     /* ========================================
+
        MODAL
+
        ======================================== */
+
     dialog {
+
       border: none;
+
       border-radius: var(--radius-xl);
+
       max-width: 760px;
+
       width: calc(100% - var(--space-8));
+
       box-shadow: var(--shadow-xl);
+
       padding: 0;
+
       background: white;
+
     }
+
     dialog::backdrop { background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); }
+
     .modal-head { padding: var(--space-6); border-bottom: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: center; background: white; }
+
     .modal-head strong { font-size: 1.375rem; font-weight: 700; }
+
     .modal-body { padding: var(--space-6); background: var(--gray-50); max-height: 70vh; overflow: auto; }
+
     .modal-body ul { list-style-position: inside; margin: var(--space-4) 0; }
+
     .modal-body li { margin-bottom: var(--space-2); color: var(--text-secondary); }
+
     .close { border: none; background: var(--gray-100); border-radius: var(--radius); padding: var(--space-2) var(--space-4); cursor: pointer; font-weight: 700; color: var(--text-primary); transition: var(--transition); }
+
     .close:hover { background: var(--gray-200); }
 
+
+
     /* ========================================
+
        FOOTER
+
        ======================================== */
+
     footer { border-top: 1px solid var(--border-light); margin-top: var(--space-20); background: white; }
+
     .foot {
+
       padding: var(--space-8) 0;
+
       color: var(--text-muted);
+
       display: flex;
+
       gap: var(--space-4);
+
       flex-wrap: wrap;
+
       align-items: center;
+
       justify-content: space-between;
+
     }
+
     .foot a { color: var(--text-secondary); transition: var(--transition); font-weight: 600; }
+
     .foot a:hover { color: var(--blue-600); }
 
+
+
     /* ========================================
+
        UTILIDADES
+
        ======================================== */
+
     .reveal { opacity: 1; }
 
+
+
     @media (prefers-reduced-motion: reduce) {
+
       *, *::before, *::after {
+
         animation-duration: 0.01ms !important;
+
         animation-iteration-count: 1 !important;
+
         transition-duration: 0.01ms !important;
+
         scroll-behavior: auto !important;
+
       }
+
     }
+
   </style>
+
 </head>
 
+
+
 <body>
+
   <!-- PANTALLA DE INICIO -->
+
   <div class="intro-screen" id="introScreen" aria-label="Pantalla de bienvenida Arteluk">
+
     <div class="intro-inner">
+
       <div class="intro-logo">Arteluk</div>
+
       <p class="intro-tag">Arte & Arteterapia · Valdivia</p>
+
       <p class="intro-line">
+
         Espacio seguro donde niños, jóvenes y adultos pueden expresar lo que sienten
+
         a través del arte y encontrar un lugar de contención emocional.
+
       </p>
+
       <div>
+
         <button class="btn primary" id="introEnter" type="button">Entrar al sitio</button>
+
       </div>
+
       <p class="intro-note">O desliza hacia abajo para continuar</p>
+
     </div>
+
   </div>
 
+
+
   <!-- NAV PRINCIPAL -->
+
   <nav class="main-nav">
+
     <div class="container navbar">
+
       <a class="brand" href="#top" aria-label="Ir al inicio">
+
         Arteluk <span>· Arte & Arteterapia</span>
+
       </a>
 
+
+
       <button class="nav-toggle" id="navToggle"
+
               aria-label="Abrir menú" aria-expanded="false" type="button">☰</button>
 
+
+
       <div class="actions" id="navActions">
+
         <a class="nav" href="#servicios">Servicios</a>
+
         <a class="nav" href="#equipo">Equipo</a>
+
         <a class="nav" href="#exposiciones">Exposiciones</a>
+
         <a class="btn primary" href="#servicios">
+
           Reservar ahora
+
         </a>
+
       </div>
+
     </div>
+
   </nav>
+
   <div id="navBackdrop" class="nav-backdrop" aria-hidden="true"></div>
 
+
+
   <!-- SUB-NAV SECUNDARIA -->
+
   <nav class="subnav" aria-label="Navegación de secciones">
+
     <div class="subnav-inner container">
+
       <a class="subnav-link weekly" href="#clases-semanales">Clases Semanales</a>
+
       <div class="subnav-divider" aria-hidden="true"></div>
+
       <a class="subnav-link monthly" href="#clases-mensuales">Clases Mensuales</a>
+
       <div class="subnav-divider" aria-hidden="true"></div>
+
       <a class="subnav-link expositions" href="#exposiciones">Exposiciones</a>
+
     </div>
+
   </nav>
 
+
+
   <main id="top">
+
     <!-- HERO SLIDER -->
+
     <header class="hero-shell" aria-label="Presentación Arteluk">
+
       <div class="hero-slider">
+
         <div class="hero-track" id="heroTrack">
+
           <!-- SLIDE 1 -->
+
           <section class="hero-slide" aria-label="Intro Arteluk">
+
             <div class="container hero-slide-inner">
+
               <section class="split hero-block" aria-label="Presentación Arteluk">
+
                 <div>
+
                   <div class="hero-eyebrow">
+
                     <span>Valdivia</span> · <span>Arte & Arteterapia</span>
+
                   </div>
+
                   <h1>Academia de artes Valdivia</h1>
+
                   <p class="lead">
+
                     En Arteluk acompañamos procesos emocionales a través del arte.
+
                     Un espacio seguro donde tus hijos pueden expresarse, regular sus emociones
+
                     y reconectar con su creatividad, mientras tú tienes la tranquilidad
+
                     de dejarlos en buenas manos.
+
                   </p>
+
                   <ul class="pill-list">
+
                     <li>+5 años de experiencia en arteterapia y educación.</li>
+
                     <li>Metodología propia con foco en emociones y autoestima.</li>
+
                     <li>Grupos pequeños y acompañamiento cercano.</li>        
+
                   </ul>
+
                   <div class="hero-ctas">
+
                     <a class="btn primary" href="#servicios">Ver talleres disponibles</a>
+
                     <a class="btn ghost" href="#servicios">Reservar ahora</a>
+
                     <span class="hero-note">Respuesta rápida por WhatsApp después de reservar.</span>
+
                   </div>
+
                   <button class="link-button open-story" type="button"
+
                           data-title="Trayectoria de Arteluk" data-content="historia-larga">
+
                     Leer historia completa <span aria-hidden="true">⟶</span>
+
                   </button>
+
                 </div>
+
+
 
                 <aside class="video-shell" aria-label="Video de presentación">
+
                   <div class="video-card">
+
                     <div class="video-aspect">
+
                       <a class="video-link"
+
                          href="https://www.youtube.com/watch?v=8abquRuhvCA"
+
                          target="_blank" rel="noopener"
+
                          aria-label="Reproducir video en YouTube">
+
                         <img class="video-thumb"
+
                              src="https://i.ytimg.com/vi/8abquRuhvCA/hqdefault.jpg"
+
                              alt="Conoce Arteluk"
+
                              loading="eager"
+
                              fetchpriority="high"
+
                              width="480" height="360">
+
                         <div class="video-center">
+
                           <div class="play-circle" aria-hidden="true">
+
                             <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+
                               <path d="M9 7.5v9l8-4.5-8-4.5z" fill="currentColor"/>
+
                             </svg>
+
                           </div>
+
                           <div class="video-title">Reproducir video</div>
+
                           <div class="video-sub">Clic y listo · también puedes verlo en YouTube</div>
+
                         </div>
+
                       </a>
+
                     </div>
+
                     <div class="video-meta">
+
                       <div class="meta-left">
+
                         <strong>Conoce Arteluk</strong>
+
                         <small>
+
                           Video oficial ·
+
                           <a class="video-youtube-link"
+
                              href="https://www.youtube.com/watch?v=8abquRuhvCA"
+
                              target="_blank" rel="noopener">Ver en YouTube</a>
+
                         </small>
+
                       </div>
+
                       <a class="btn ghost" href="#servicios">Reservar</a>
+
                     </div>
+
                   </div>
+
                 </aside>
+
               </section>
+
             </div>
+
           </section>
+
+
 
           <!-- SLIDE 2 -->
+
           <section class="hero-slide" aria-label="Contexto salud mental">
+
             <div class="container hero-slide-inner">
+
               <section class="split" aria-label="Contexto salud mental">
+
                 <div>
+
                   <div class="mono">¿QUÉ NOS ESTÁ PASANDO?</div>
+
                   <h2>Epidemia de salud mental</h2>
+
                   <p class="lead">
+
                     ¿Cuántas veces has sentido que tu energía ya no es la misma?
+
                     Que tu vitalidad se escapa. Lo atribuimos a la edad o al cansancio,
+
                     pero en el fondo estamos viviendo una
+
                     <strong>crisis de salud mental</strong>
+
                     que afecta a niños, jóvenes y adultos.
+
                   </p>
+
                   <ul class="pill-list">
+
                     <li>Cada vez más pantallas y menos conexión real con otros.</li>
+
                     <li>Placeres rápidos que no se transforman en bienestar duradero.</li>
+
                     <li>1 de cada 3 jóvenes en Chile con problemas emocionales.</li>
+
                   </ul>
+
                   <p class="lead">
+
                     En Arteluk creemos que es urgente volver a lo esencial:
+
                     <strong>expresarnos, sentirnos y escucharnos</strong>.
+
                     El arte es nuestro puente para bajar la velocidad, mirarnos hacia adentro
+
                     y recuperar la alegría por las cosas simples.
+
                   </p>
+
                 </div>
+
                 <aside class="photo">
+
                   <div class="media marco-cuadro">
+
                     <img src="img/IMG_5035.jpg"
+
                          alt="Proceso creativo en Arteluk"
+
                          loading="lazy" width="600" height="600">
+
                   </div>
+
                 </aside>
+
               </section>
+
             </div>
+
           </section>
+
+
 
           <!-- SLIDE 3 -->
+
           <section class="hero-slide" aria-label="Metodología Arteluk">
+
             <div class="container hero-slide-inner">
+
               <section class="split" aria-label="Metodología">
+
                 <div>
+
                   <div class="mono">METODOLOGÍA ÚNICA Y PROBADA</div>
+
                   <h2>Metodología Arteluk.</h2>
+
                   <p class="lead">
+
                     Nuestra metodología ha sido probada con más de 30 niños
+
                     y perfeccionada durante más de 10 años. Desde las primeras clases vemos cambios
+
                     en la <strong>expresión emocional, la ansiedad, el estrés
+
                     y la seguridad personal</strong>.
+
                   </p>
+
                   <ul class="pill-list">
+
                     <li>4 clases al mes, con estructura clara y amorosa.</li>
+
                     <li>Acompañamiento emocional, con clases divertidas y enriquecedoras.</li>
+
                     <li>Ambiente seguro con comprensión real de lo que cada uno siente.</li>
+
                     <li>Trabajo en autoestima y seguridad a través de proyectos artísticos.</li>
+
                   </ul>
+
                   <p class="lead">
+
                     No buscamos artistas perfectos, sino personas orgullosas de su proceso.
+
                     Cada sesión integra exploración de materiales, conversación guiada,
+
                     trabajo en valores y un cierre con sensación de logro y pertenencia.
+
                   </p>
+
                 </div>
+
                 <aside class="photo">
+
                   <div class="media marco-cuadro">
+
                     <img src="img/IMG_6131.jpg"
+
                          alt="Metodología en Arteluk"
+
                          loading="lazy" width="600" height="600">
+
                   </div>
+
                 </aside>
+
               </section>
+
             </div>
+
           </section>
+
         </div>
+
+
 
         <!-- Controles slider -->
+
         <div class="hero-controls">
+
           <div class="hero-dots" aria-label="Cambiar slide">
+
             <button class="hero-dot active" type="button" data-hero-dot aria-label="Intro"></button>
+
             <button class="hero-dot" type="button" data-hero-dot aria-label="Epidemia"></button>
+
             <button class="hero-dot" type="button" data-hero-dot aria-label="Metodología"></button>
+
           </div>
+
           <div class="hero-arrows">
+
             <button class="hero-arrow" type="button" data-hero-prev aria-label="Anterior">‹</button>
+
             <button class="hero-arrow" type="button" data-hero-next aria-label="Siguiente">›</button>
+
           </div>
+
         </div>
+
       </div>
+
     </header>
 
+
+
     <!-- SERVICIOS -->
+
     <section id="servicios" class="section" aria-label="Servicios y planes">
+
       <div class="container">
+
         <div style="margin-bottom: var(--space-8); text-align: center;">
+
           <div class="mono">TALLERES · CURSOS · PLANES</div>
+
           <h2>Elige tu experiencia</h2>
+
           <p class="lead" style="margin: 0 auto;">
+
             Planes de niños con matrícula $15.000. Planes semanales no pagan matrícula.
+
           </p>
+
         </div>
+
+
 
         <!-- TOGGLE DE SESIONES -->
+
         <div class="session-toggle-wrap">
+
           <div class="session-toggle">
+
             <button class="session-option active" data-sessions="1">1 Sesión</button>
+
             <button class="session-option" data-sessions="2">2 Sesiones</button>
+
             <div class="session-slider"></div>
+
           </div>
+
           <div class="discount-badge" style="opacity: 0; transition: opacity 0.3s;" id="discountBadge">
+
             <span>💰</span>
+
             <span>10% de descuento</span>
+
           </div>
+
         </div>
 
+
+
         <!-- ═══════════════════════════════
+
              CLASES SEMANALES
+
         ════════════════════════════════ -->
+
         <div class="category-section" id="clases-semanales">
+
           <div class="category-header weekly">
+
             <div class="category-icon" aria-hidden="true">🌼</div>
+
             <div class="category-header-text">
+
               <span class="category-label">Semanales</span>
+
               <h3>Clases Semanales</h3>
+
               <p>Talleres intensivos con pago semanal. Ideal para explorar el arte en períodos cortos.</p>
+
             </div>
+
           </div>
 
+
+
           <div class="grid">
+
             <!-- TALLER DE ACUARELA — IVANIA SIERRA -->
+
             <article class="card summer"
+
                      data-price="45000"
+
                      data-matricula="0"
+
                      data-frequency-1="3 clases al mes (Martes)"
+
                      data-frequency-2="6 clases por dos meses">
+
               <div class="media">
+
                 <img src="img/WhatsApp Image 2025-12-15 at 12.22.38 PM.jpeg"
+
                      alt="Taller de Acuarela — Ivania Sierra"
+
                      loading="lazy" width="640" height="400">
+
               </div>
+
               <div class="body">
+
                 <h3>🌸 Taller de Acuarela</h3>
+
                 <p class="card-frequency-text" data-frequency-display>3 clases al mes · 1 hr · Martes 16:00–17:00 · Ivania Sierra.</p>
+
                 <div class="meta">
+
                   <span class="badge gold" data-freq-badge>3 clases/mes</span>
+
                   <span class="badge gold">Martes 16:00–17:00</span>
+
                   <span class="badge gold">Mín. 5 · Máx. 6 niños</span>
+
                 </div>
+
                 <div class="price-display">
+
                   <div class="price-current" data-price-display>$45.000</div>
+
                   <div class="price-original" data-price-original style="display:none;">$45.000</div>
+
                   <div class="price-discount" data-price-discount style="display:none;">-10%</div>
+
                 </div>
+
               </div>
+
               <div class="cta">
+
                 <button class="btn primary open-booking" type="button"
+
                         data-service="Taller de Acuarela — Ivania Sierra"
+
                         data-price="45000"
+
                         data-sessions="1">
+
                   Reservar cupo
+
                 </button>
+
                 <button class="btn ghost open-desc" type="button"
+
                         data-title="Taller de Acuarela — Detalles"
+
                         data-content="desc-acuarela-ivania">
+
                   Leer más
+
                 </button>
+
               </div>
+
             </article>
+
           </div>
+
         </div>
 
+
+
         <!-- ═══════════════════════════════
+
              CLASES MENSUALES
+
         ════════════════════════════════ -->
+
         <div class="category-section" id="clases-mensuales">
+
           <div class="category-header monthly">
+
             <div class="category-icon" aria-hidden="true">🎨</div>
+
             <div class="category-header-text">
+
               <span class="category-label">Mensuales</span>
+
               <h3>Clases Mensuales</h3>
+
               <p>Planes con matrícula $15.000. Acompañamiento continuo, progreso real y comunidad artística.</p>
+
             </div>
+
           </div>
 
+
+
           <div class="grid">
+
             <!-- TALLER DE ARTES -->
+
             <article class="card" 
+
                      data-price="60000" 
+
                      data-matricula="15000"
+
                      data-frequency-1="4 clases al mes"
+
                      data-frequency-2="8 clases por dos meses">
+
               <div class="media">
+
                 <img src="img/Fondo para curso de basico.jpg"
+
                      alt="Taller de Artes" loading="lazy" width="640" height="400">
+
               </div>
+
               <div class="body">
+
                 <h3>Taller de Artes</h3>
+
                 <p class="card-frequency-text" data-frequency-display>4 clases de 1 hr. Materiales base incluidos.</p>
+
                 <div class="meta">
+
                   <span class="badge" data-freq-badge>Mensual</span>
+
                   <span class="badge">+ matrícula $15.000</span>
+
                   <span class="badge">18:30-19:30</span>
+
                 </div>
+
                 <div class="price-display">
+
                   <div class="price-current" data-price-display>$60.000</div>
+
                   <div class="price-original" data-price-original style="display:none;">$60.000</div>
+
                   <div class="price-discount" data-price-discount style="display:none;">-10%</div>
+
                 </div>
+
               </div>
+
               <div class="cta">
+
                 <button class="btn primary open-booking" type="button"
+
                         data-service="Taller de Artes"
+
                         data-price="60000"
+
                         data-sessions="1">
+
                   Reservar cupo
+
                 </button>
+
                 <button class="btn ghost open-desc" type="button"
+
                         data-title="Taller de Artes — Detalles"
+
                         data-content="desc-basico">
+
                   Leer más
+
                 </button>
+
               </div>
+
             </article>
+
+
 
             <!-- TALLER DE ARTES PREMIUM -->
+
             <article class="card" 
+
                      data-price="120000" 
+
                      data-matricula="15000"
+
                      data-frequency-1="4 clases al mes"
+
                      data-frequency-2="8 clases por dos meses">
+
               <div class="media">
+
                 <img src="img/Fondo para clases premium.jpg"
+
                      alt="Taller de Artes Premium"
+
                      loading="lazy" width="640" height="400">
+
               </div>
+
               <div class="body">
+
                 <h3>👑 Taller de Artes Premium</h3>
+
                 <p class="card-frequency-text" data-frequency-display>4 clases de 2 hrs. Zona cowork + sala de espera.</p>
+
                 <div class="meta">
+
                   <span class="badge" data-freq-badge>Mensual</span>
+
                   <span class="badge">+ matrícula $15.000</span>
+
                   <span class="badge">17:30-19:30</span>
+
                 </div>
+
                 <div class="price-display">
+
                   <div class="price-current" data-price-display>$120.000</div>
+
                   <div class="price-original" data-price-original style="display:none;">$120.000</div>
+
                   <div class="price-discount" data-price-discount style="display:none;">-10%</div>
+
                 </div>
+
               </div>
+
               <div class="cta">
+
                 <button class="btn primary open-booking" type="button"
+
                         data-service="Taller de Artes Premium"
+
                         data-price="120000"
+
                         data-sessions="1">
+
                   Reservar cupo
+
                 </button>
+
                 <button class="btn ghost open-desc" type="button"
+
                         data-title="Taller de Artes Premium — Detalles"
+
                         data-content="desc-premium">
+
                   Leer más
+
                 </button>
+
               </div>
+
             </article>
+
+
 
             <!-- PLAN POR UN DÍA -->
+
             <article class="card" 
+
                      data-price="20000" 
+
                      data-matricula="0"
+
                      data-frequency-1="1 sesión"
+
                      data-frequency-2="2 sesiones">
+
               <div class="media">
+
                 <img src="img/IMG_5557.jpg"
+
                      alt="Plan por un día"
+
                      loading="lazy" width="640" height="400">
+
               </div>
+
               <div class="body">
+
                 <h3>Plan por un día</h3>
+
                 <p class="card-frequency-text" data-frequency-display>Vive la experiencia Arteluk en una clase única.</p>
+
                 <div class="meta">
+
                   <span class="badge" data-freq-badge>1 sesión</span>
+
                   <span class="badge">Sin matrícula</span>
+
                 </div>
+
                 <div class="price-display">
+
                   <div class="price-current" data-price-display>$20.000</div>
+
                   <div class="price-original" data-price-original style="display:none;">$20.000</div>
+
                   <div class="price-discount" data-price-discount style="display:none;">-10%</div>
+
                 </div>
+
               </div>
+
               <div class="cta">
+
                 <button class="btn primary open-booking" type="button"
+
                         data-service="Plan por un día"
+
                         data-price="20000"
+
                         data-sessions="1">
+
                   Reservar cupo
+
                 </button>
+
                 <button class="btn ghost open-desc" type="button"
+
                         data-title="Plan por un día — Detalles"
+
                         data-content="desc-dia">
+
                   Leer más
+
                 </button>
+
               </div>
+
             </article>
+
           </div>
+
         </div>
+
         <!-- FIN CATEGORÍAS -->
 
+
+
       </div>
+
     </section>
+
+
 
     <!-- EQUIPO -->
+
     <section id="equipo" class="section teamPro">
+
       <div class="teamPro__wrap">
+
         <p class="teamPro__kicker">EQUIPO</p>
+
         <h2 class="teamPro__title">Personas que hacen hogar</h2>
+
         <p class="teamPro__sub">Acompañamiento humano y artístico en cada sesión.</p>
 
+
+
         <div class="teamPro__grid">
-          <article class="teamCard">
-            <div class="teamCard__media">
-              <img src="img/profesora.jpg" alt="Ivanya Sierra" loading="lazy" width="800" height="220">
-              <div class="teamCard__fade"></div>
-            </div>
-            <div class="teamCard__body">
-              <div class="teamCard__head">
-                <h3 class="teamCard__name">Ivanya Sierra</h3>
-                <span class="teamCard__pill">Artista visual • Docente</span>
-              </div>
-              <ul class="teamCard__list">
-                <li>Licenciada en Arte + Profesora de Artes Visuales (UC)</li>
-                <li>Inclusión, discapacidad, trabajo comunitario</li>
-                <li>Acuarela y acrílico (flora, fauna, retratos)</li>
-              </ul>
-              <details class="teamCard__details">
-                <summary>
-                  <span>Ver bio</span>
-                  <span class="teamCard__chev" aria-hidden="true"></span>
-                </summary>
-                <p>
-                  Artista visual y docente, licenciada en Arte y Profesora de Artes Visuales por la Universidad Católica de Chile.
-                  Especializada en gestión cultural e inclusión de personas con discapacidad y trabajo comunitario.
-                  Enfoque empático y personalizado; obra en acuarela y acrílico.
-                </p>
-              </details>
-            </div>
-          </article>
 
           <article class="teamCard">
+
             <div class="teamCard__media">
-              <img src="img/equipo (2).jpg" alt="Paula Barros" loading="lazy" width="800" height="220">
+
+              <img src="img/profesora.jpg" alt="Ivanya Sierra" loading="lazy" width="800" height="220">
+
               <div class="teamCard__fade"></div>
+
             </div>
+
             <div class="teamCard__body">
+
               <div class="teamCard__head">
-                <h3 class="teamCard__name">Paula Barros</h3>
-                <span class="teamCard__pill">Artes Musicales y Sonoras (UACh)</span>
+
+                <h3 class="teamCard__name">Ivanya Sierra</h3>
+
+                <span class="teamCard__pill">Artista visual • Docente</span>
+
               </div>
+
               <ul class="teamCard__list">
-                <li>Fortaleza en canto; explora piano y guitarra</li>
-                <li>Interés por pintura y artes visuales</li>
-                <li>Muy buena afinidad con niños</li>
+
+                <li>Licenciada en Arte + Profesora de Artes Visuales (UC)</li>
+
+                <li>Inclusión, discapacidad, trabajo comunitario</li>
+
+                <li>Acuarela y acrílico (flora, fauna, retratos)</li>
+
               </ul>
+
               <details class="teamCard__details">
+
                 <summary>
+
                   <span>Ver bio</span>
+
                   <span class="teamCard__chev" aria-hidden="true"></span>
+
                 </summary>
+
                 <p>
-                  Estudiante de Artes Musicales y Sonoras (UACh). Fortalezas en canto; explora piano y guitarra.
-                  Interés por pintura y artes visuales; afinidad con niños. Arte como medio de expresión y crecimiento.
+
+                  Artista visual y docente, licenciada en Arte y Profesora de Artes Visuales por la Universidad Católica de Chile.
+
+                  Especializada en gestión cultural e inclusión de personas con discapacidad y trabajo comunitario.
+
+                  Enfoque empático y personalizado; obra en acuarela y acrílico.
+
                 </p>
+
               </details>
+
             </div>
+
           </article>
+
+
+
+          <article class="teamCard">
+
+            <div class="teamCard__media">
+
+              <img src="img/equipo (2).jpg" alt="Paula Barros" loading="lazy" width="800" height="220">
+
+              <div class="teamCard__fade"></div>
+
+            </div>
+
+            <div class="teamCard__body">
+
+              <div class="teamCard__head">
+
+                <h3 class="teamCard__name">Paula Barros</h3>
+
+                <span class="teamCard__pill">Artes Musicales y Sonoras (UACh)</span>
+
+              </div>
+
+              <ul class="teamCard__list">
+
+                <li>Fortaleza en canto; explora piano y guitarra</li>
+
+                <li>Interés por pintura y artes visuales</li>
+
+                <li>Muy buena afinidad con niños</li>
+
+              </ul>
+
+              <details class="teamCard__details">
+
+                <summary>
+
+                  <span>Ver bio</span>
+
+                  <span class="teamCard__chev" aria-hidden="true"></span>
+
+                </summary>
+
+                <p>
+
+                  Estudiante de Artes Musicales y Sonoras (UACh). Fortalezas en canto; explora piano y guitarra.
+
+                  Interés por pintura y artes visuales; afinidad con niños. Arte como medio de expresión y crecimiento.
+
+                </p>
+
+              </details>
+
+            </div>
+
+          </article>
+
         </div>
+
       </div>
+
     </section>
+
+
 
     <!-- EXPOSICIONES -->
+
     <section id="exposiciones" class="section" aria-label="Exposiciones">
+
       <div class="container">
+
         <div style="margin-bottom: var(--space-8);">
+
           <div class="mono">EXPOSICIONES</div>
+
           <h2>Eventos realizados en Arteluk</h2>
+
           <p class="lead">
+
             En Arteluk no solo hacemos clases: abrimos el proceso al mundo.
+
             Realizamos <strong>2 a 3 exposiciones al año</strong> para que niños y adultos
+
             vivan la experiencia real de <strong>mostrar su obra</strong>, ganar seguridad,
+
             sentir orgullo y pertenecer a una comunidad artística.
+
           </p>
+
         </div>
+
+
 
         <div class="expo-wrap">
+
           <div class="expo-wrap-head">
+
             <strong>Galería de exposiciones</strong>
+
             <small>8 exposiciones · todas con fotos + texto</small>
+
           </div>
+
+
 
           <div class="expo-stack">
+
             <!-- EXPO 01 -->
+
             <article class="expo-item">
+
               <div class="expo-media">
+
                 <div class="expo-photo">
+
                   <img class="expo-main" src="img/Exposision1.jpg" alt="Barco Neptuno - El Vuelo de Alaska" loading="lazy" width="600" height="600">
+
                 </div>
+
                 <div class="expo-thumbs" aria-label="Galería Barco Neptuno">
+
                   <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Exposision1.jpg" data-alt="Barco Neptuno 1">
+
                     <img src="img/Exposision1.jpg" alt="Miniatura 1" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Exposision2.jpg" data-alt="Barco Neptuno 2">
+
                     <img src="img/Exposision2.jpg" alt="Miniatura 2" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Exposision3.jpg" data-alt="Barco Neptuno 3">
+
                     <img src="img/Exposision3.jpg" alt="Miniatura 3" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Exposision4.jpg" data-alt="Barco Neptuno 4">
+
                     <img src="img/Exposision4.jpg" alt="Miniatura 4" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Exposision5.jpg" data-alt="Barco Neptuno 5">
+
                     <img src="img/Exposision5.jpg" alt="Miniatura 5" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Exposision6.jpg" data-alt="Barco Neptuno 6">
+
                     <img src="img/Exposision6.jpg" alt="Miniatura 6" loading="lazy" width="112" height="84">
+
                   </button>
+
                 </div>
+
               </div>
+
               <div class="expo-info">
+
                 <div class="expo-kicker">Exposición 01</div>
+
                 <h3>Barco Neptuno — "El Vuelo de Alaska"</h3>
+
                 <p>
+
                   Exposición final de arteterapia y acrílicos llamada <strong>"El Vuelo de Alaska"</strong>.
+
                   Un cierre emotivo donde los niños muestran su proceso, su valentía y su crecimiento.
+
                   Realizamos este evento de 4 horas a bordo del barco Neptuno, navegando el hermoso río de Valdivia.
+
                 </p>
+
                 <div class="expo-tags">
+
                   <span class="tag">Arteterapia</span>
+
                   <span class="tag">Cierre anual</span>
+
                 </div>
+
                 <div class="expo-cta">
+
                   <a class="btn primary" href="#servicios">Quiero info</a>
+
                 </div>
+
               </div>
+
             </article>
+
+
 
             <!-- EXPO 02 -->
+
             <article class="expo-item">
+
               <div class="expo-media">
+
                 <div class="expo-photo">
+
                   <img class="expo-main" src="img/Vango1.jpg" alt="Exposición de arte de Van Gogh" loading="lazy" width="600" height="600">
+
                 </div>
+
                 <div class="expo-thumbs" aria-label="Galería Van Gogh">
+
                   <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Vango1.jpg" data-alt="Van Gogh 1">
+
                     <img src="img/Vango1.jpg" alt="Miniatura 1" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Vango2.jpg" data-alt="Van Gogh 2">
+
                     <img src="img/Vango2.jpg" alt="Miniatura 2" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Vango3.jpg" data-alt="Van Gogh 3">
+
                     <img src="img/Vango3.jpg" alt="Miniatura 3" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Vango4.jpg" data-alt="Van Gogh 4">
+
                     <img src="img/Vango4.jpg" alt="Miniatura 4" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Vango5.jpg" data-alt="Van Gogh 5">
+
                     <img src="img/Vango5.jpg" alt="Miniatura 5" loading="lazy" width="112" height="84">
+
                   </button>
+
                 </div>
+
               </div>
+
               <div class="expo-info">
+
                 <div class="expo-kicker">Exposición 02</div>
+
                 <h3>Exposición de arte de Van Gogh</h3>
+
                 <p>Muestra inspirada en Van Gogh, con enfoque visual fuerte y montaje pensado para fotos. Ideal para difusión y comunidad.</p>
+
                 <ul class="expo-details">
+
                   <li><strong>Formato:</strong> Exposición</li>
+
                   <li><strong>Estilo:</strong> Inspiración Van Gogh</li>
+
                   <li><strong>Objetivo:</strong> Experiencia + difusión</li>
+
                 </ul>
+
                 <div class="expo-tags">
+
                   <span class="tag">Arte</span>
+
                   <span class="tag">Exposición</span>
+
                   <span class="tag">Van Gogh</span>
+
                 </div>
+
                 <div class="expo-cta">
+
                   <a class="btn primary" href="#servicios">Quiero info</a>
+
                 </div>
+
               </div>
+
             </article>
+
+
 
             <!-- EXPO 03 -->
+
             <article class="expo-item">
+
               <div class="expo-media">
+
                 <div class="expo-photo is-video show-video reel-letterbox">
+
                   <video class="expo-main expo-main-video" controls playsinline preload="none" loading="lazy">
+
                     <source src="img/exposision-biblioteca.mp4" type="video/mp4">
+
                   </video>
+
                 </div>
+
                 <div class="expo-thumbs" aria-hidden="true"></div>
+
               </div>
+
               <div class="expo-info">
+
                 <div class="expo-kicker">Exposición 03</div>
+
                 <h3>Biblioteca Municipal de Valdivia</h3>
+
                 <p>
+
                   Exposición infantil por <strong>15 días</strong>: pinturas y acuarelas.
+
                   Además, clases en el salón de la Biblioteca abiertas a la comunidad.
+
                 </p>
+
                 <ul class="expo-details">
+
                   <li><strong>Obras:</strong> Pintura y acuarela</li>
+
                   <li><strong>Plus:</strong> Actividad comunitaria abierta</li>
+
                 </ul>
+
                 <div class="expo-tags">
+
                   <span class="tag">Biblioteca</span>
+
                   <span class="tag">Exposición</span>
+
                   <span class="tag">Experiencias únicas</span>
+
                 </div>
+
                 <div class="expo-cta">
+
                   <a class="btn primary" href="#servicios">Quiero info</a>
+
                 </div>
+
               </div>
+
             </article>
+
+
 
             <!-- EXPO 04 -->
+
             <article class="expo-item">
+
               <div class="expo-media">
+
                 <div class="expo-photo">
+
                   <img class="expo-main" src="img/Santotomas1.jpg" alt="Universidad Santo Tomás" loading="lazy" width="600" height="600">
+
                 </div>
+
                 <div class="expo-thumbs" aria-label="Galería Universidad Santo Tomás">
+
                   <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Santotomas1.jpg" data-alt="UST 1">
+
                     <img src="img/Santotomas1.jpg" alt="UST 1" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Santotomas2.jpg" data-alt="UST 2">
+
                     <img src="img/Santotomas2.jpg" alt="UST 2" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Santotomas3.jpg" data-alt="UST 3">
+
                     <img src="img/Santotomas3.jpg" alt="UST 3" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Santotomas4.jpg" data-alt="UST 4">
+
                     <img src="img/Santotomas4.jpg" alt="UST 4" loading="lazy" width="112" height="84">
+
                   </button>
+
                 </div>
+
               </div>
+
               <div class="expo-info">
+
                 <div class="expo-kicker">Exposición 04</div>
+
                 <h3>Universidad Santo Tomás + Galería de Arte</h3>
+
                 <p>
+
                   Exposición de <strong>Mary Quinteros</strong> por <strong>1 mes y medio</strong>.
+
                   En esta exposición la universidad Santo Tomás pudo exponer en sus vitrinas obras únicas de Mary Quinteros, profesora y directora de Arteluk.
+
                 </p>
+
                 <ul class="expo-details">
+
                   <li><strong>Artista:</strong> Mary Quinteros</li>
+
                   <li><strong>Continuidad:</strong> Exposición de artes</li>
+
                 </ul>
+
                 <div class="expo-tags">
+
                   <span class="tag">Galería</span>
+
                   <span class="tag">Mary Quinteros</span>
+
                 </div>
+
                 <div class="expo-cta">
+
                   <a class="btn primary" href="#servicios">Quiero info</a>
+
                 </div>
+
               </div>
+
             </article>
+
+
 
             <!-- EXPO 05 -->
+
             <article class="expo-item">
+
               <div class="expo-media">
+
                 <div class="expo-photo">
+
                   <img class="expo-main" src="img/Almacenfluvial.jpg" alt="Espacio Fluvial" loading="lazy" width="600" height="600">
+
                 </div>
+
                 <div class="expo-thumbs" aria-label="Galería Espacio Fluvial">
+
                   <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Almacenfluvial.jpg" data-alt="Espacio Fluvial 1">
+
                     <img src="img/Almacenfluvial.jpg" alt="Miniatura 1" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Almacenfluvial1.jpg" data-alt="Espacio Fluvial 2">
+
                     <img src="img/Almacenfluvial1.jpg" alt="Miniatura 2" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Almacenfluvial2.jpg" data-alt="Espacio Fluvial 3">
+
                     <img src="img/Almacenfluvial2.jpg" alt="Miniatura 3" loading="lazy" width="112" height="84">
+
                   </button>
+
                 </div>
+
               </div>
+
               <div class="expo-info">
+
                 <div class="expo-kicker">Exposición 05</div>
+
                 <h3>Espacio Fluvial</h3>
+
                 <p>Exposición de obra de Mary Quinteros con <strong>cóctel</strong> y convocatoria abierta. Arte como encuentro, conversación y comunidad.</p>
+
                 <ul class="expo-details">
+
                   <li><strong>Formato:</strong> Evento cultural abierto</li>
+
                   <li><strong>Enfoque:</strong> Comunidad + conversación</li>
+
                   <li><strong>Ambiente:</strong> Espacio fluvial de Valdivia</li>
+
                 </ul>
+
                 <div class="expo-tags">
+
                   <span class="tag">Cultura</span>
+
                   <span class="tag">Cóctel</span>
+
                   <span class="tag">Ciudadanía</span>
+
                 </div>
+
                 <div class="expo-cta">
+
                   <a class="btn primary" href="#servicios">Quiero info</a>
+
                 </div>
+
               </div>
+
             </article>
+
+
 
             <!-- EXPO 06 -->
+
             <article class="expo-item">
+
               <div class="expo-media">
+
                 <div class="expo-photo">
+
                   <img class="expo-main" src="img/Cafemoro1.jpg" alt="Café Moro" loading="lazy" width="600" height="600">
+
                 </div>
+
                 <div class="expo-thumbs" aria-label="Galería Café Moro">
+
                   <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Cafemoro1.jpg" data-alt="Café Moro 1">
+
                     <img src="img/Cafemoro1.jpg" alt="Miniatura 1" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Cafemoro2.jpg" data-alt="Café Moro 2">
+
                     <img src="img/Cafemoro2.jpg" alt="Miniatura 2" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Cafemoro3.jpg" data-alt="Café Moro 3">
+
                     <img src="img/Cafemoro3.jpg" alt="Miniatura 3" loading="lazy" width="112" height="84">
+
                   </button>
+
                 </div>
+
               </div>
+
               <div class="expo-info">
+
                 <div class="expo-kicker">Exposición 06</div>
+
                 <h3>Café Moro</h3>
+
                 <p>Exposición y muestra en <strong>Café Moro</strong>. Un espacio cálido para ver obra en formato cercano, con ambiente cafetería y visita abierta.</p>
+
                 <ul class="expo-details">
+
                   <li><strong>Formato:</strong> Exposición privada en cafetería</li>
+
                   <li><strong>Enfoque:</strong> Arte + experiencia local</li>
+
                   <li><strong>Lugar:</strong> Café Moro</li>
+
                 </ul>
+
                 <div class="expo-tags">
+
                   <span class="tag">Café</span>
+
                   <span class="tag">Exposición</span>
+
                   <span class="tag">Comunidad</span>
+
                 </div>
+
                 <div class="expo-cta">
+
                   <a class="btn primary" href="#servicios">Quiero info</a>
+
                 </div>
+
               </div>
+
             </article>
+
+
 
             <!-- EXPO 07 -->
+
             <article class="expo-item">
+
               <div class="expo-media">
+
                 <div class="expo-photo">
+
                   <img class="expo-main" src="img/Expomall.jpg" alt="Mall Nuevo" loading="lazy" width="600" height="600">
+
                 </div>
+
                 <div class="expo-thumbs" aria-label="Galería Mall Nuevo">
+
                   <button class="expo-thumb is-active" type="button" data-expo-thumb data-src="img/Expomall.jpg" data-alt="Mall Nuevo 1">
+
                     <img src="img/Expomall.jpg" alt="Miniatura 1" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/expomall1.jpg" data-alt="Mall Nuevo 2">
+
                     <img src="img/expomall1.jpg" alt="Miniatura 2" loading="lazy" width="112" height="84">
+
                   </button>
+
                   <button class="expo-thumb" type="button" data-expo-thumb data-src="img/Expomall2.jpg" data-alt="Mall Nuevo 3">
+
                     <img src="img/Expomall2.jpg" alt="Miniatura 3" loading="lazy" width="112" height="84">
+
                   </button>
+
                 </div>
+
               </div>
+
               <div class="expo-info">
+
                 <div class="expo-kicker">Exposición 07</div>
+
                 <h3>Mall Nuevo</h3>
+
                 <p>Muestra y exposición en <strong>Mall Nuevo</strong>, en un espacio de alta circulación. Arte visible para público amplio, con enfoque en difusión y comunidad.</p>
+
                 <ul class="expo-details">
+
                   <li><strong>Formato:</strong> Exposición en el mall nuevo</li>
+
                   <li><strong>Enfoque:</strong> Difusión + público general</li>
+
                 </ul>
+
                 <div class="expo-tags">
+
                   <span class="tag">Exposición</span>
+
                   <span class="tag">Comunidad</span>
+
                   <span class="tag">Ciudad</span>
+
                 </div>
+
                 <div class="expo-cta">
+
                   <a class="btn primary" href="#servicios">Quiero info</a>
+
                 </div>
+
               </div>
+
             </article>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
+
+
   <footer>
+
     <div class="container foot">
+
       <div>© Arteluk — Picarte 407, Valdivia</div>
+
       <div style="display:flex;gap:var(--space-3);flex-wrap:wrap">
+
         <a href="#clases-semanales">Clases Semanales</a>
+
         <a href="#clases-mensuales">Clases Mensuales</a>
+
         <a href="#exposiciones">Exposiciones</a>
+
       </div>
+
     </div>
+
   </footer>
 
+
+
   <!-- MODAL DE RESERVA -->
+
   <dialog class="booking-modal" id="bookingModal">
+
     <div class="booking-header">
+
       <h3>Reservar cupo</h3>
+
       <button class="close-modal" id="closeBooking">Cerrar</button>
+
     </div>
+
     <div class="booking-body">
+
       <form id="bookingForm" novalidate>
+
         <div class="service-badge" id="selectedService">Servicio seleccionado</div>
+
         <div class="form-group">
+
           <label for="bookingName">Nombre y apellido *</label>
+
           <input type="text" id="bookingName" name="nombre" required autocomplete="name">
+
         </div>
+
         <div class="form-row">
+
           <div class="form-group">
+
             <label for="bookingPhone">Teléfono *</label>
+
             <input type="tel" id="bookingPhone" name="telefono" required autocomplete="tel" placeholder="+56 9 ...">
+
           </div>
+
           <div class="form-group">
+
             <label for="bookingAge">Edad del niño/a</label>
+
             <input type="number" id="bookingAge" name="edad" min="1" max="99" placeholder="Ej: 8">
+
           </div>
+
         </div>
+
         <div class="form-group">
+
           <label for="bookingSessions">Cantidad de sesiones *</label>
+
           <select id="bookingSessions" name="sesiones" required>
+
             <option value="1">1 sesión</option>
+
             <option value="2">2 sesiones (10% descuento)</option>
+
           </select>
+
         </div>
+
         <div class="form-group">
+
           <label for="bookingMessage">Mensaje adicional</label>
+
           <textarea id="bookingMessage" name="mensaje" placeholder="Horarios, dudas, comentarios..."></textarea>
+
         </div>
+
         <button type="submit" class="submit-booking">Enviar reserva</button>
+
       </form>
+
     </div>
+
   </dialog>
+
+
 
   <!-- MODAL DE DETALLES -->
+
   <dialog id="modal" aria-label="Detalle">
+
     <div class="modal-head">
+
       <strong id="mTitle">Detalle</strong>
+
       <button class="close" id="mClose" type="button">Cerrar</button>
+
     </div>
+
     <div class="modal-body" id="mBody"></div>
+
   </dialog>
 
+
+
   <!-- TEMPLATES -->
+
   <template id="historia-larga">
+
     <p>Soy Mary Quinteros, artista visual, arteterapeuta, psicóloga infantil y adolescente, e ingeniera en administración de empresas. Mi formación incluye un doble Máster en Coaching e Inteligencia Emocional, así como estudios en musicoterapia, lo que me permite integrar arte, emoción y desarrollo personal en cada proyecto que realizo.</p>
+
     <p>Mi experiencia profesional ha transitado entre el mundo de la administración y la contabilidad —donde aprendí el valor del orden y la estrategia— y el universo del arte, donde descubrí mi verdadera pasión: acompañar a niños, adolescentes y adultos en el descubrimiento de su mundo interior a través del arte.</p>
+
     <p>En mi práctica artística, combino óleo, técnicas mixtas, espátula y proyecciones visuales, transformando el proceso creativo en un espacio de autoconocimiento y expresión emocional.</p>
+
     <p>Como fundadora de Arteluk, una academia de artes y espacio de arteterapia, he diseñado clases, talleres y programas de coaching artístico que invitan a explorar emociones y a utilizar la creatividad como herramienta de bienestar y transformación.</p>
+
     <p>He participado en exposiciones colectivas y desarrollado programas de arte y autocuidado para instituciones educativas y equipos de trabajo, promoviendo espacios de encuentro, reflexión y crecimiento personal. Cada obra que creo y cada taller que facilito buscan abrir un diálogo con el espectador o participante, convirtiendo el arte en un puente entre la emoción y la sanación.</p>
+
   </template>
+
+
 
   <!-- TEMPLATE NUEVO: TALLER DE ACUARELA — IVANIA SIERRA -->
+
   <template id="desc-acuarela-ivania">
+
     <p><strong>🌸 TALLER DE ACUARELA — Ivania Sierra — $45.000/mes</strong></p>
+
     <p>Un taller mensual exclusivo de acuarela, diseñado para niños que quieren aprender y crear con una técnica delicada, expresiva y llena de vida.</p>
 
+
+
     <p>🕒 <strong>Horario:</strong> Martes de 16:00 a 17:00 hrs</p>
+
     <p>📅 <strong>Modalidad:</strong> Plan mensual · 3 clases de 1 hora cada una</p>
+
     <p>👩‍🏫 <strong>Profesora:</strong> Ivania Sierra — Artista visual y docente (UC)</p>
+
     <p>👥 <strong>Cupos:</strong> Mínimo 5 niños · Máximo 6 niños (grupo exclusivo)</p>
 
+
+
     <p><strong>✨ Programa del mes — 3 clases:</strong></p>
+
     <ul>
+
       <li>🌿 <strong>Clase 1 — Marcapáginas en acuarela:</strong> Aprenden técnicas básicas de acuarela creando un marcapáginas único y personalizado. Control del agua, mezcla de colores y libertad creativa.</li>
+
       <li>🎨 <strong>Clase 2 — Pintura en vivo con acuarela:</strong> Observación y pintura directa del natural. Coordinación ojo-mano, transparencias y espontaneidad expresiva.</li>
+
       <li>🌸 <strong>Clase 3 — Pintura botánica en acuarela:</strong> Ilustración botánica con detalles de flora. Técnica de capas, degradados y precisión artística.</li>
+
     </ul>
+
+
 
     <p><strong>💖 Incluye:</strong></p>
+
     <ul>
+
       <li>🎨 Materiales profesionales incluidos (acuarelas, papel de calidad, pinceles)</li>
+
       <li>📸 Registro fotográfico del proceso y de cada obra terminada</li>
+
       <li>🌈 Ambiente cuidado, creativo y de grupos reducidos</li>
+
       <li>🧠 Acompañamiento personalizado con enfoque expresivo y emocional</li>
+
     </ul>
+
+
 
     <p>💛 Ideal para niños que quieren explorar el arte de forma íntima, técnica y significativa. Cada clase termina con una obra propia para llevar a casa.</p>
+
   </template>
+
+
 
   <template id="desc-basico">
+
     <p><strong>🎨 PLAN SOLO PINTURA – $60.000 + matrícula $15.000</strong></p>
+
     <p>🕓 4 clases de 1 hr (1 vez por semana)</p>
+
     <p>📍 Incluye estacionamiento y sala de espera cómoda y ambientada para acompañantes.</p>
+
     <p>🎨 <strong>Actividades:</strong></p>
+
     <ul>
+
       <li>✔️ Pintura en bastidor profesional 50×50</li>
+
       <li>✔️ Mezcla de color, técnica acrílica y composición básica</li>
+
       <li>✔️ Materiales incluidos</li>
+
       <li>✔️ Acompañamiento personalizado según nivel y ritmo del alumno</li>
+
     </ul>
+
     <p>🏛️ <strong>Salón:</strong> Oki Canva Studio</p>
+
     <p>💖 <strong>Beneficios:</strong></p>
+
     <ul>
+
       <li>📷 Feedback semanal + registro fotográfico de avances</li>
+
       <li>🧠 Enfoque arteterapéutico: pintura como medio de expresión emocional</li>
+
     </ul>
+
   </template>
+
+
 
   <template id="desc-premium">
+
     <p><strong>👑 PLAN PREMIUM ARTE MIXTO – $120.000 + matrícula $15.000</strong></p>
+
     <p>🕓 4 clases de 2 hrs (1 por semana).</p>
+
     <p>📍 Incluye estacionamiento + acceso a zona cowork y sala de espera.</p>
+
     <p>🎨 <strong>Actividades artísticas y terapéuticas:</strong></p>
+
     <ul>
+
       <li>✔️ Pintura en bastidor profesional</li>
+
       <li>✔️ Manualidades creativas</li>
+
       <li>✔️ Yesoterapia artística</li>
+
       <li>✔️ Telar y fieltro</li>
+
       <li>✔️ Arteterapia guiada con enfoque emocional</li>
+
     </ul>
+
     <p>🏛️ <strong>Salones Arteluk:</strong></p>
+
     <ul>
+
       <li>Oki Canva Studio (pintura)</li>
+
       <li>Creative Threads (manualidades)</li>
+
       <li>Sculp Lab (yeso y escultura)</li>
+
       <li>TAA (terapia asistida con aves)</li>
+
       <li>Salón Flúor (efectos visuales)</li>
+
     </ul>
+
     <p>💖 <strong>Beneficios:</strong></p>
+
     <ul>
+
       <li>📷 Feedback semanal + registro fotográfico</li>
+
       <li>🧠 Enfoque arteterapéutico individual</li>
+
       <li>🎭 Exposición de arte al cierre del ciclo anual</li>
+
     </ul>
+
   </template>
+
+
 
   <template id="desc-dia">
+
     <p><strong>PLAN POR UN DÍA – $20.000</strong></p>
+
     <p>Vive la experiencia Arteluk en una clase. Si decides continuar, se descuentan los $20.000 del valor total de los talleres profesionales.</p>
+
   </template>
 
+
+
   <script>
+
     /* Helpers Pixel */
+
     function trackSafe(eventName, params) {
+
       try { if (typeof fbq === 'function') fbq('track', eventName, params || {}); } catch (_) {}
+
     }
+
     function trackCustomSafe(eventName, params) {
+
       try { if (typeof fbq === 'function') fbq('trackCustom', eventName, params || {}); } catch (_) {}
+
     }
+
+
 
     /* PANTALLA DE INICIO */
+
     (() => {
+
       const introScreen = document.getElementById('introScreen');
+
       const introEnter = document.getElementById('introEnter');
+
       if (!introScreen) return;
+
       const hideIntro = () => {
+
         if (introScreen.classList.contains('hide')) return;
+
         introScreen.classList.add('hide');
+
         try { sessionStorage.setItem('arteluk_intro_seen', '1'); } catch (_) {}
+
       };
+
       try { if (sessionStorage.getItem('arteluk_intro_seen') === '1') introScreen.classList.add('hide'); } catch (_) {}
+
       if (introEnter) introEnter.addEventListener('click', hideIntro);
+
       window.addEventListener('scroll', () => { if (window.scrollY > 40) hideIntro(); }, { passive: true });
+
     })();
+
+
 
     /* Menú responsive */
+
     (() => {
+
       const navToggle = document.getElementById('navToggle');
+
       const navActions = document.getElementById('navActions');
+
       const navBackdrop = document.getElementById('navBackdrop');
+
       if (!navToggle || !navActions || !navBackdrop) return;
+
       function openMenu() {
+
         navActions.classList.add('active');
+
         navBackdrop.classList.add('show');
+
         navToggle.textContent = '✕';
+
         navToggle.setAttribute('aria-expanded', 'true');
+
       }
+
       function closeMenu() {
+
         navActions.classList.remove('active');
+
         navBackdrop.classList.remove('show');
+
         navToggle.textContent = '☰';
+
         navToggle.setAttribute('aria-expanded', 'false');
+
       }
+
       navToggle.addEventListener('click', () => navActions.classList.contains('active') ? closeMenu() : openMenu());
+
       navBackdrop.addEventListener('click', closeMenu);
+
       document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
       document.querySelectorAll('#navActions a').forEach(a => a.addEventListener('click', closeMenu));
+
     })();
+
+
 
     /* Sub-nav active state on scroll */
+
     (() => {
+
       const links = document.querySelectorAll('.subnav-link');
+
       const sections = ['clases-semanales', 'clases-mensuales', 'exposiciones'];
+
       const navH = 64 + 48 + 16;
 
+
+
       function setActive(id) {
+
         links.forEach(l => {
+
           const href = l.getAttribute('href');
+
           l.style.fontWeight = (href === '#' + id) ? '900' : '';
+
           l.style.background = '';
+
         });
+
       }
+
+
 
       const obs = new IntersectionObserver((entries) => {
+
         entries.forEach(e => {
+
           if (e.isIntersecting) setActive(e.target.id);
+
         });
+
       }, { rootMargin: `-${navH}px 0px -50% 0px`, threshold: 0 });
 
+
+
       sections.forEach(id => {
+
         const el = document.getElementById(id);
+
         if (el) obs.observe(el);
+
       });
+
     })();
+
+
 
     /* TOGGLE DE SESIONES */
+
     (() => {
+
       const options = document.querySelectorAll('.session-option');
+
       const slider = document.querySelector('.session-slider');
+
       const discountBadge = document.getElementById('discountBadge');
+
       const cards = document.querySelectorAll('.card[data-price]');
+
       let currentSessions = 1;
 
+
+
       function updateSlider(button) {
+
         slider.style.width = `${button.offsetWidth}px`;
+
         slider.style.transform = `translateX(${button.offsetLeft}px)`;
+
       }
+
+
 
       function updatePrices(sessions) {
+
         currentSessions = sessions;
+
         const hasDiscount = sessions === 2;
+
         if (discountBadge) discountBadge.style.opacity = hasDiscount ? '1' : '0';
 
+
+
         cards.forEach(card => {
+
           const basePrice = parseInt(card.getAttribute('data-price'));
+
           const freq1 = card.getAttribute('data-frequency-1') || '';
+
           const freq2 = card.getAttribute('data-frequency-2') || '';
+
           const currentFreq = sessions === 1 ? freq1 : freq2;
+
           const freqDisplay = card.querySelector('[data-frequency-display]');
+
           if (freqDisplay && currentFreq) freqDisplay.textContent = currentFreq;
 
+
+
           const freqBadge = card.querySelector('[data-freq-badge]');
+
           if (freqBadge) {
+
             if (sessions === 2) {
+
               const t = freqBadge.textContent;
+
               if (t.includes('3 clases/mes')) freqBadge.textContent = '6 clases/dos meses';
+
               else if (t.includes('Mensual')) freqBadge.textContent = '2 meses';
+
               else if (t.includes('3 meses')) freqBadge.textContent = '6 meses';
+
               else if (t.includes('1 sesión')) freqBadge.textContent = '2 sesiones';
+
             } else {
+
               const t = freqBadge.textContent;
+
               if (t.includes('6 clases/dos meses')) freqBadge.textContent = '3 clases/mes';
+
               else if (t.includes('2 meses')) freqBadge.textContent = 'Mensual';
+
               else if (t.includes('6 meses')) freqBadge.textContent = '3 meses';
+
               else if (t.includes('2 sesiones')) freqBadge.textContent = '1 sesión';
+
             }
+
           }
+
+
 
           let totalPrice = basePrice * sessions;
+
           let originalPrice = totalPrice;
+
           if (hasDiscount) totalPrice = Math.round(totalPrice * 0.9);
 
+
+
           const currentPriceEl = card.querySelector('[data-price-display]');
+
           const originalPriceEl = card.querySelector('[data-price-original]');
+
           const discountEl = card.querySelector('[data-price-discount]');
 
+
+
           if (currentPriceEl) currentPriceEl.textContent = `$${totalPrice.toLocaleString('es-CL')}`;
+
           if (hasDiscount && sessions > 1) {
+
             if (originalPriceEl) { originalPriceEl.textContent = `$${originalPrice.toLocaleString('es-CL')}`; originalPriceEl.style.display = 'block'; }
+
             if (discountEl) discountEl.style.display = 'block';
+
           } else {
+
             if (originalPriceEl) originalPriceEl.style.display = 'none';
+
             if (discountEl) discountEl.style.display = 'none';
+
           }
 
+
+
           const bookingBtn = card.querySelector('.open-booking');
+
           if (bookingBtn) { bookingBtn.setAttribute('data-price', totalPrice); bookingBtn.setAttribute('data-sessions', sessions); }
+
         });
+
       }
+
+
 
       options.forEach(option => {
+
         option.addEventListener('click', () => {
+
           options.forEach(opt => opt.classList.remove('active'));
+
           option.classList.add('active');
+
           const sessions = parseInt(option.getAttribute('data-sessions'));
+
           updateSlider(option);
+
           updatePrices(sessions);
+
         });
+
       });
+
+
 
       if (options[0] && slider) { updateSlider(options[0]); updatePrices(1); }
+
     })();
+
+
 
     /* MODAL DE RESERVA */
+
     (() => {
+
       const bookingModal = document.getElementById('bookingModal');
+
       const closeBooking = document.getElementById('closeBooking');
+
       const bookingForm = document.getElementById('bookingForm');
+
       const selectedServiceEl = document.getElementById('selectedService');
+
       const bookingSessionsSelect = document.getElementById('bookingSessions');
+
       let currentService = '', currentPrice = 0, __lockY = 0;
 
+
+
       function lockBodyScroll() {
+
         __lockY = window.scrollY || 0;
+
         document.body.style.position = 'fixed';
+
         document.body.style.top = `-${__lockY}px`;
+
         document.body.style.width = '100%';
+
       }
+
       function unlockBodyScroll() {
+
         const y = Math.abs(parseInt(document.body.style.top || '0', 10)) || __lockY || 0;
+
         document.body.style.position = '';
+
         document.body.style.top = '';
+
         document.body.style.width = '';
+
         window.scrollTo(0, y);
+
       }
+
+
 
       document.querySelectorAll('.open-booking').forEach(btn => {
+
         btn.addEventListener('click', () => {
+
           currentService = btn.getAttribute('data-service');
+
           currentPrice = parseInt(btn.getAttribute('data-price'));
+
           const sessions = parseInt(btn.getAttribute('data-sessions') || '1');
+
           selectedServiceEl.textContent = `${currentService} - $${currentPrice.toLocaleString('es-CL')}`;
+
           if (bookingSessionsSelect) bookingSessionsSelect.value = sessions.toString();
+
           lockBodyScroll();
+
           if (typeof bookingModal.showModal === 'function') bookingModal.showModal();
+
           else bookingModal.setAttribute('open', '');
+
           trackSafe('InitiateCheckout', { content_name: currentService, value: currentPrice, currency: 'CLP' });
+
         });
+
       });
+
+
 
       closeBooking.addEventListener('click', () => {
+
         try { bookingModal.close(); } catch (_) { bookingModal.removeAttribute('open'); }
+
         unlockBodyScroll();
+
       });
+
       bookingModal.addEventListener('close', unlockBodyScroll);
+
       bookingModal.addEventListener('cancel', (e) => {
+
         e.preventDefault();
+
         try { bookingModal.close(); } catch (_) { bookingModal.removeAttribute('open'); }
+
         unlockBodyScroll();
+
       });
+
+
 
       let sending = false;
+
       bookingForm.addEventListener('submit', async (e) => {
+
         e.preventDefault();
+
         if (sending) return;
+
         const nombre = document.getElementById('bookingName').value.trim();
+
         const telefono = document.getElementById('bookingPhone').value.trim();
+
         const edad = document.getElementById('bookingAge').value.trim();
+
         const sesiones = document.getElementById('bookingSessions').value;
+
         const mensaje = document.getElementById('bookingMessage').value.trim();
+
         if (!nombre || !telefono || !sesiones) { alert('Por favor completa todos los campos obligatorios'); return; }
+
         sending = true;
+
         const submitBtn = bookingForm.querySelector('.submit-booking');
+
         const originalText = submitBtn.innerHTML;
+
         submitBtn.disabled = true;
+
         submitBtn.innerHTML = 'Enviando...';
+
         const data = { servicio: currentService, precio: currentPrice, nombre, telefono, edad: edad || 'No especificada', sesiones, mensaje };
+
         const controller = new AbortController();
+
         const timeout = setTimeout(() => controller.abort(), 10000);
+
         try {
+
           const res = await fetch(
-            "https://flujos-pruebas-n8n.bvil2a.easypanel.host/webhook_off/afb70f27-dd2d-4853-9270-3faf35ddcd5e",
+
+            "https://flujos-pruebas-n8n.bvil2a.easypanel.host/webhook/afb70f27-dd2d-4853-9270-3faf35ddcd5e",
+
             { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data), keepalive: true, signal: controller.signal }
+
           );
+
           if (!res.ok) throw new Error('HTTP ' + res.status);
+
           bookingForm.reset();
+
           trackSafe('Lead', { content_name: currentService, content_category: 'Reserva', value: currentPrice, currency: 'CLP' });
+
           alert('✅ ¡Reserva enviada con éxito! Te contactaremos pronto por WhatsApp.');
+
           try { bookingModal.close(); } catch (_) { bookingModal.removeAttribute('open'); }
+
           unlockBodyScroll();
+
         } catch (err) {
+
           console.error('Error:', err);
+
           alert('❌ Error al enviar. Por favor intenta nuevamente.');
+
         } finally {
+
           clearTimeout(timeout);
+
           submitBtn.disabled = false;
+
           submitBtn.innerHTML = originalText;
+
           sending = false;
+
         }
+
       });
+
     })();
+
+
 
     /* Modal de Detalles */
+
     (() => {
+
       const modal = document.getElementById('modal');
+
       const mTitle = document.getElementById('mTitle');
+
       const mBody = document.getElementById('mBody');
+
       const mClose = document.getElementById('mClose');
+
       if (!modal || !mTitle || !mBody || !mClose) return;
+
       let __lockY = 0;
+
       function lockBodyScroll() { __lockY = window.scrollY || 0; document.body.style.position = 'fixed'; document.body.style.top = `-${__lockY}px`; document.body.style.width = '100%'; }
+
       function unlockBodyScroll() { const y = Math.abs(parseInt(document.body.style.top || '0', 10)) || __lockY || 0; document.body.style.position = ''; document.body.style.top = ''; document.body.style.width = ''; window.scrollTo(0, y); }
+
       modal.addEventListener('close', unlockBodyScroll);
+
       modal.addEventListener('cancel', (e) => { e.preventDefault(); try { modal.close(); } catch (_) { modal.removeAttribute('open'); } unlockBodyScroll(); });
+
       mClose.addEventListener('click', () => { try { modal.close(); } catch (_) { modal.removeAttribute('open'); unlockBodyScroll(); } });
+
       function openTemplateModal(btn) {
+
         const id = btn.getAttribute('data-content');
+
         const title = btn.getAttribute('data-title') || btn.textContent.trim();
+
         const tpl = document.getElementById(id);
+
         if (!tpl) return;
+
         mTitle.textContent = title;
+
         mBody.innerHTML = "";
+
         mBody.appendChild(tpl.content.cloneNode(true));
+
         lockBodyScroll();
+
         if (typeof modal.showModal === 'function') modal.showModal();
+
         else modal.setAttribute('open', '');
+
         if (btn.classList.contains('open-desc')) {
+
           try { if (typeof fbq === 'function') fbq('track', 'ViewContent', { content_name: title, content_category: 'Planes' }); } catch (_) {}
+
         }
+
       }
+
       document.querySelectorAll('.open-desc, .open-story').forEach(btn => btn.addEventListener('click', () => openTemplateModal(btn)));
+
       document.addEventListener('keydown', e => { if (e.key === 'Escape') { try { modal.close(); } catch (_) { modal.removeAttribute('open'); unlockBodyScroll(); } } });
+
     })();
+
+
 
     /* Video Click */
+
     (() => {
+
       const YT_URL = "https://www.youtube.com/watch?v=8abquRuhvCA";
+
       const VIDEO_ID = "8abquRuhvCA";
+
       function trackVideoClick() { trackCustomSafe('VideoClick', { video_id: VIDEO_ID, video_url: YT_URL }); }
+
       const main = document.querySelector('.video-link');
+
       if (main) {
+
         main.addEventListener('click', (e) => {
+
           e.preventDefault();
+
           trackVideoClick();
+
           setTimeout(() => window.open(YT_URL, '_blank', 'noopener,noreferrer'), 180);
+
         });
+
       }
+
       const metaLink = document.querySelector('.video-youtube-link');
+
       if (metaLink) {
+
         metaLink.addEventListener('click', (e) => {
+
           e.preventDefault();
+
           trackVideoClick();
+
           setTimeout(() => window.open(YT_URL, '_blank', 'noopener,noreferrer'), 180);
+
         });
+
       }
+
     })();
+
+
 
     /* Hero Slider */
+
     (() => {
+
       const slider = document.querySelector('.hero-slider');
+
       if (!slider) return;
+
       const track = slider.querySelector('.hero-track');
+
       const slides = Array.from(slider.querySelectorAll('.hero-slide'));
+
       const dots = Array.from(slider.querySelectorAll('[data-hero-dot]'));
+
       const prev = slider.querySelector('[data-hero-prev]');
+
       const next = slider.querySelector('[data-hero-next]');
+
       if (!track || slides.length === 0) return;
 
+
+
       const AUTOPLAY_MS = 7000;
+
       const PAUSE_MS = 20000;
+
       slider.style.setProperty('--heroSlides', slides.length);
+
       const step = 100 / slides.length;
+
       let index = 0, timer = null, resumeT = null;
+
       let touchStartX = 0, touchStartY = 0, isDragging = false, lastX = 0, lastTime = 0;
 
+
+
       function setActiveDot(i) { dots.forEach((d, idx) => d.classList.toggle('active', idx === i)); }
+
       function applyTransform(translateX = null, noAnim = false) {
+
         const baseTranslate = -index * step;
+
         const finalTranslate = translateX !== null ? translateX : baseTranslate;
+
         const transform = `translate3d(${finalTranslate}%, 0, 0)`;
+
         if (noAnim) {
+
           const old = track.style.transition;
+
           track.style.transition = 'none';
+
           track.style.transform = transform;
+
           track.getBoundingClientRect();
+
           track.style.transition = old || '';
+
         } else {
+
           track.style.transform = transform;
+
         }
+
       }
+
       function stopAuto() { if (timer) { clearInterval(timer); timer = null; } }
+
       function startAuto() {
+
         stopAuto();
+
         if (slides.length <= 1) return;
+
         timer = setInterval(() => { index = (index + 1) % slides.length; applyTransform(); setActiveDot(index); }, AUTOPLAY_MS);
+
       }
+
       function pauseForRead(ms = PAUSE_MS) { stopAuto(); if (resumeT) clearTimeout(resumeT); resumeT = setTimeout(() => startAuto(), ms); }
+
       function goTo(i, { user = true } = {}) {
+
         const total = slides.length;
+
         index = (i + total) % total;
+
         isDragging = false;
+
         track.classList.remove('dragging');
+
         applyTransform();
+
         setActiveDot(index);
+
         if (user) pauseForRead(PAUSE_MS);
+
       }
+
       function onTouchStart(clientX, clientY) {
+
         touchStartX = clientX; touchStartY = clientY;
+
         isDragging = true; lastX = clientX; lastTime = Date.now();
+
         track.classList.add('dragging');
+
         pauseForRead(PAUSE_MS);
+
       }
+
       function onTouchMove(clientX, clientY) {
+
         if (!isDragging) return;
+
         const deltaX = clientX - touchStartX;
+
         const deltaY = clientY - touchStartY;
+
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
+
           const containerWidth = slider.offsetWidth;
+
           const dragPercent = (deltaX / containerWidth) * 100;
+
           const baseTranslate = -index * step;
+
           let finalDragPercent = dragPercent;
+
           if (index === 0 && deltaX > 0) finalDragPercent = dragPercent * 0.3;
+
           else if (index === slides.length - 1 && deltaX < 0) finalDragPercent = dragPercent * 0.3;
+
           applyTransform(baseTranslate + finalDragPercent, true);
+
           lastX = clientX; lastTime = Date.now();
+
         }
+
       }
+
       function onTouchEnd(clientX, clientY) {
+
         if (!isDragging) return;
+
         const deltaX = clientX - touchStartX;
+
         const deltaY = clientY - touchStartY;
+
         const timeDiff = Date.now() - lastTime;
+
         const velocity = timeDiff > 0 ? (clientX - lastX) / timeDiff : 0;
+
         isDragging = false;
+
         track.classList.remove('dragging');
+
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
+
           const threshold = slider.offsetWidth * 0.2;
+
           const shouldChange = Math.abs(deltaX) > threshold || Math.abs(velocity) > 0.3;
+
           if (shouldChange) {
+
             if (deltaX > 0 && index > 0) goTo(index - 1, { user: true });
+
             else if (deltaX < 0 && index < slides.length - 1) goTo(index + 1, { user: true });
+
             else applyTransform();
+
           } else { applyTransform(); }
+
         } else { applyTransform(); }
+
       }
+
+
 
       prev && prev.addEventListener('click', () => goTo(index - 1, { user: true }));
+
       next && next.addEventListener('click', () => goTo(index + 1, { user: true }));
+
       dots.forEach((d, idx) => d.addEventListener('click', () => goTo(idx, { user: true })));
+
       slider.addEventListener('mouseenter', () => stopAuto());
+
       slider.addEventListener('mouseleave', () => startAuto());
+
       slider.addEventListener('mousedown', (e) => { e.preventDefault(); onTouchStart(e.clientX, e.clientY); });
+
       slider.addEventListener('mousemove', (e) => { if (isDragging) { e.preventDefault(); onTouchMove(e.clientX, e.clientY); } });
+
       slider.addEventListener('mouseup', (e) => { onTouchEnd(e.clientX, e.clientY); });
+
       slider.addEventListener('mouseleave', (e) => { if (isDragging) onTouchEnd(e.clientX, e.clientY); });
+
       slider.addEventListener('touchstart', (e) => { const t = e.touches[0]; if (!t) return; onTouchStart(t.clientX, t.clientY); }, { passive: true });
+
       slider.addEventListener('touchmove', (e) => { const t = e.touches[0]; if (!t || !isDragging) return; onTouchMove(t.clientX, t.clientY); }, { passive: true });
+
       slider.addEventListener('touchend', (e) => { const t = e.changedTouches[0]; if (!t) return; onTouchEnd(t.clientX, t.clientY); }, { passive: true });
+
       slider.addEventListener('touchcancel', (e) => { const t = e.changedTouches[0]; if (!t) return; onTouchEnd(t.clientX, t.clientY); }, { passive: true });
 
+
+
       applyTransform(0, true);
+
       setActiveDot(0);
+
       startAuto();
+
     })();
+
+
 
     /* Expo thumb swap */
+
     (() => {
+
       document.querySelectorAll('.expo-item').forEach(item => {
+
         const photoWrap = item.querySelector('.expo-photo');
+
         const imgEl = item.querySelector('img.expo-main');
+
         const videoEl = item.querySelector('video.expo-main');
+
         const thumbs = Array.from(item.querySelectorAll('[data-expo-thumb]'));
+
         if (thumbs.length === 0) return;
+
         function showImage(src, alt) {
+
           if (videoEl) try { videoEl.pause(); } catch (_) {}
+
           if (photoWrap) photoWrap.classList.remove('show-video');
+
           if (!imgEl) return;
+
           imgEl.src = src;
+
           if (alt) imgEl.alt = alt;
+
         }
+
         function showVideo(src) {
+
           if (!videoEl) return;
+
           const source = videoEl.querySelector('source');
+
           if (source) source.src = src; else videoEl.src = src;
+
           videoEl.load();
+
           if (photoWrap) photoWrap.classList.add('show-video');
+
         }
+
         thumbs.forEach(btn => {
+
           btn.addEventListener('click', () => {
+
             const src = btn.getAttribute('data-src') || '';
+
             const alt = btn.getAttribute('data-alt') || '';
+
             thumbs.forEach(t => t.classList.remove('is-active'));
+
             btn.classList.add('is-active');
+
             if (/\.(mp4|webm|ogg)(\?|$)/i.test(src)) showVideo(src);
+
             else showImage(src, alt);
+
           });
+
         });
+
       });
+
     })();
 
+
+
     /* Solo una bio abierta */
+
     (() => {
+
       const root = document.querySelector('#equipo.teamPro');
+
       if (!root) return;
+
       const all = [...root.querySelectorAll('details.teamCard__details')];
+
       all.forEach(d => {
+
         d.addEventListener('toggle', () => { if (d.open) all.forEach(o => { if (o !== d) o.open = false; }); });
+
       });
+
     })();
+
   </script>
+
 </body>
+
 </html>
+
