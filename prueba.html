@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clase de prueba $19.990 — Arteluk Arte & Arteterapia Valdivia</title>
+  <meta name="description" content="Reserva tu clase de prueba de arte y arteterapia en Valdivia. Martes y Jueves. Solo $19.990. Materiales incluidos.">
+  <link rel="canonical" href="https://www.arteluk.cl/prueba">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1611426433185367');
+    fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1611426433185367&ev=PageView&noscript=1"/></noscript>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',system-ui,sans-serif;background:#fff;color:#111;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button,input{font-family:inherit}
+
+/* VARIABLES */
+:root{
+  --blue:#1D4ED8;--blue-dark:#1E3A8A;--blue-light:#EFF6FF;
+  --green:#25D366;--green-dark:#128C7E;
+  --gray:#F9FAFB;--gray-2:#E5E7EB;--gray-3:#6B7280;
+  --red:#DC2626;--radius:14px;
+  --shadow:0 4px 24px rgba(0,0,0,0.10);
+}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--gray-2);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-weight:800;font-size:1.05rem;color:var(--blue-dark)}
+.nav-logo span{color:var(--blue)}
+.nav-wa{display:inline-flex;align-items:center;gap:7px;background:var(--green);color:#fff;font-weight:700;font-size:0.85rem;padding:9px 16px;border-radius:999px;white-space:nowrap;transition:background 0.2s}
+.nav-wa:hover{background:var(--green-dark)}
+.nav-wa svg{flex-shrink:0}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 100%);padding:40px 20px 0;min-height:auto}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:start}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:999px;padding:5px 12px;font-size:0.75rem;font-weight:700;color:#fff;letter-spacing:0.05em;margin-bottom:16px}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:12px}
+.hero h1 em{font-style:normal;color:#93C5FD}
+.hero-sub{color:rgba(255,255,255,0.85);font-size:1rem;margin-bottom:20px;font-weight:500}
+.hero-bullets{list-style:none;margin-bottom:28px}
+.hero-bullets li{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.9);font-size:0.92rem;padding:5px 0;font-weight:500}
+.hero-bullets li span{font-size:1.1rem}
+
+/* FORM CARD */
+.form-card{background:#fff;border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,0.25);position:relative}
+.form-card-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-size:0.75rem;font-weight:800;padding:5px 14px;border-radius:999px;white-space:nowrap;letter-spacing:0.04em}
+.form-title{font-size:1.1rem;font-weight:800;color:var(--blue-dark);margin-bottom:4px;text-align:center}
+.form-sub{font-size:0.82rem;color:var(--gray-3);text-align:center;margin-bottom:16px}
+.price-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:18px;padding:12px;background:var(--blue-light);border-radius:12px}
+.price-new{font-size:2rem;font-weight:900;color:var(--blue)}
+.price-old{font-size:1rem;color:var(--gray-3);text-decoration:line-through}
+.price-save{font-size:0.72rem;font-weight:700;background:#DCFCE7;color:#166534;padding:3px 8px;border-radius:999px}
+.slots-label{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--gray-3);margin-bottom:8px}
+.slots{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.slot{border:2px solid var(--gray-2);border-radius:12px;padding:10px 8px;font-size:0.82rem;font-weight:700;color:#444;cursor:pointer;background:#fff;text-align:center;transition:all 0.2s;line-height:1.3}
+.slot:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
+.slot.on{border-color:var(--blue);background:var(--blue);color:#fff}
+.form-input{width:100%;border:2px solid var(--gray-2);border-radius:12px;padding:12px 14px;font-size:0.95rem;color:#111;margin-bottom:10px;outline:none;transition:border-color 0.2s}
+.form-input:focus{border-color:var(--blue)}
+.form-input::placeholder{color:#aaa}
+.btn-wa{width:100%;background:linear-gradient(135deg,var(--green),var(--green-dark));color:#fff;border:none;border-radius:14px;padding:16px;font-size:1rem;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:all 0.2s;letter-spacing:0.01em}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,0.35)}
+.form-disclaimer{text-align:center;margin-top:10px;font-size:0.75rem;color:var(--gray-3);display:flex;align-items:center;justify-content:center;gap:5px}
+.urgency-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 1.5s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.6);opacity:0.6}}
+
+/* HERO FOTO (mobile: hidden) */
+.hero-photo-wrap{align-self:end;display:flex;flex-direction:column;gap:0}
+.hero-photo{border-radius:20px 20px 0 0;overflow:hidden;height:380px;position:relative}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-photo-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.6));padding:20px 16px 16px;color:#fff}
+.hero-photo-overlay strong{display:block;font-size:0.9rem;font-weight:700}
+.hero-photo-overlay span{font-size:0.78rem;opacity:.8}
+
+/* STATS BAR */
+.stats{background:#fff;padding:24px 20px;border-bottom:1px solid var(--gray-2)}
+.stats-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-around;gap:16px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-num{font-size:1.8rem;font-weight:900;color:var(--blue);line-height:1}
+.stat-label{font-size:0.75rem;font-weight:600;color:var(--gray-3);margin-top:4px;text-transform:uppercase;letter-spacing:0.05em}
+
+/* SECTIONS */
+.section{padding:56px 20px}
+.section-inner{max-width:1000px;margin:0 auto}
+.section-tag{font-size:0.72rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.section-title{font-size:clamp(1.4rem,3vw,2rem);font-weight:900;margin-bottom:8px;line-height:1.2}
+.section-sub{color:var(--gray-3);font-size:0.95rem;max-width:580px;margin-bottom:36px}
+
+/* DOLOR */
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pain-card{background:var(--gray);border-radius:var(--radius);padding:24px}
+.pain-icon{font-size:2rem;margin-bottom:12px}
+.pain-before{font-size:0.8rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px}
+.pain-after{font-size:0.8rem;font-weight:700;color:#166534;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px}
+.pain-text{font-size:0.9rem;color:#333;font-weight:500}
+.pain-arrow{font-size:1.2rem;color:var(--blue);margin:10px 0;display:block}
+
+/* PASOS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
+.step{text-align:center;padding:24px 16px;position:relative}
+.step-num{width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;font-size:1.2rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.step-title{font-weight:800;font-size:1rem;margin-bottom:8px}
+.step-text{font-size:0.85rem;color:var(--gray-3)}
+.step-arrow{position:absolute;top:24px;right:-16px;font-size:1.4rem;color:var(--gray-2);z-index:1}
+
+/* GALERÍA */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gallery-item{border-radius:12px;overflow:hidden;aspect-ratio:3/4;position:relative}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
+.gallery-item:hover img{transform:scale(1.04)}
+
+/* TESTIMONIOS */
+.testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.testi-card{background:var(--gray);border-radius:var(--radius);padding:24px;position:relative}
+.testi-stars{color:#FBBF24;font-size:1.1rem;margin-bottom:12px}
+.testi-text{font-size:0.92rem;color:#333;font-style:italic;margin-bottom:16px;line-height:1.6}
+.testi-author{font-weight:700;font-size:0.85rem;color:var(--blue-dark)}
+.testi-role{font-size:0.78rem;color:var(--gray-3)}
+
+/* FAQ */
+.faq{max-width:680px;margin:0 auto}
+details{border:1px solid var(--gray-2);border-radius:var(--radius);margin-bottom:10px;overflow:hidden}
+details summary{padding:18px 20px;font-weight:700;font-size:0.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';font-size:1.3rem;font-weight:400;color:var(--blue);flex-shrink:0;transition:transform 0.2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 20px 18px;color:var(--gray-3);font-size:0.9rem;line-height:1.7}
+
+/* FINAL CTA */
+.final-cta{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:64px 20px;text-align:center}
+.final-cta h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;color:#fff;margin-bottom:12px}
+.final-cta p{color:rgba(255,255,255,0.8);margin-bottom:32px;font-size:1rem}
+.btn-final{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;font-weight:800;font-size:1.05rem;padding:18px 32px;border-radius:999px;border:none;cursor:pointer;transition:all 0.2s;box-shadow:0 8px 24px rgba(37,211,102,0.35)}
+.btn-final:hover{transform:translateY(-2px);background:var(--green-dark)}
+.final-chips{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:20px}
+.final-chip{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:0.8rem;font-weight:600;color:#fff}
+
+/* STICKY MOBILE */
+.sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:#fff;border-top:1px solid var(--gray-2);padding:12px 16px;gap:10px;align-items:center;justify-content:space-between;box-shadow:0 -4px 20px rgba(0,0,0,0.1)}
+.sticky-price{line-height:1.2}
+.sticky-price strong{display:block;font-size:1.1rem;font-weight:900;color:var(--blue)}
+.sticky-price span{font-size:0.75rem;color:var(--gray-3)}
+.sticky-btn{background:var(--green);color:#fff;font-weight:800;font-size:0.9rem;padding:12px 20px;border-radius:12px;border:none;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px}
+
+/* FAB WA */
+.fab-wa{position:fixed;bottom:84px;right:20px;z-index:190;width:54px;height:54px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);transition:transform 0.2s;text-decoration:none}
+.fab-wa:hover{transform:scale(1.08)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-photo-wrap{display:none}
+  .pain-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .step-arrow{display:none}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:1fr}
+  .sticky-bar{display:flex}
+  .fab-wa{bottom:90px}
+}
+@media(max-width:480px){
+  .stats-inner{gap:10px}
+  .stat-num{font-size:1.4rem}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Arteluk <span>·</span> Arte & Arteterapia</div>
+  <a class="nav-wa" href="https://wa.me/56963554778" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Escribir por WhatsApp
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <!-- COPY LEFT -->
+    <div style="padding-bottom:40px">
+      <div class="hero-tag">📍 Valdivia · Clases presenciales</div>
+      <h1>Tu hijo/a puede <em>expresarse, crecer</em> y sentirse bien</h1>
+      <p class="hero-sub">Arte y arteterapia para niños desde 5 años — en un espacio seguro y cálido.</p>
+      <ul class="hero-bullets">
+        <li><span>✅</span> Materiales 100% incluidos</li>
+        <li><span>✅</span> Grupos pequeños, atención personalizada</li>
+        <li><span>✅</span> Sin matrícula en la clase de prueba</li>
+        <li><span>✅</span> Martes 17:30 y Jueves 16:00</li>
+      </ul>
+    </div>
+
+    <!-- FORM RIGHT -->
+    <div class="hero-photo-wrap" style="display:block">
+      <div class="form-card">
+        <div class="form-card-badge">🔥 Solo 5 cupos esta semana</div>
+        <p class="form-title">Reserva tu clase de prueba</p>
+        <p class="form-sub">Sin compromiso · Te confirmamos por WhatsApp</p>
+        <div class="price-row">
+          <span class="price-new">$19.990</span>
+          <span class="price-old">$25.000</span>
+          <span class="price-save">Ahorras $5.010</span>
+        </div>
+        <div class="slots-label">Elige tu horario</div>
+        <div class="slots">
+          <button class="slot" data-slot="Martes 17:30 – 19:30" onclick="selectSlot(this)">
+            <strong>Martes</strong><br>17:30 – 19:30
+          </button>
+          <button class="slot" data-slot="Jueves 16:00 – 18:00" onclick="selectSlot(this)">
+            <strong>Jueves</strong><br>16:00 – 18:00
+          </button>
+        </div>
+        <input class="form-input" id="heroName" type="text" placeholder="Nombre del apoderado *" autocomplete="given-name">
+        <input class="form-input" id="heroAge" type="text" placeholder="Edad del alumno *" inputmode="numeric">
+        <button class="btn-wa" onclick="reservar('hero')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Reservar por WhatsApp
+        </button>
+        <p class="form-disclaimer">
+          <span class="urgency-dot"></span>
+          Martes y Jueves · Solo 5 cupos disponibles
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-num">+5</div><div class="stat-label">Años de academia</div></div>
+    <div class="stat"><div class="stat-num">+100</div><div class="stat-label">Alumnos formados</div></div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">Exposiciones reales</div></div>
+    <div class="stat"><div class="stat-num">4–5</div><div class="stat-label">Alumnos por clase</div></div>
+  </div>
+</div>
+
+<!-- DOLOR → SOLUCIÓN -->
+<section class="section" style="background:var(--gray)">
+  <div class="section-inner">
+    <div class="section-tag">Por qué Arteluk</div>
+    <h2 class="section-title">Lo que pasa cuando el arte<br>se hace bien</h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">😰</div>
+        <div class="pain-before">Antes</div>
+        <p class="pain-text">Tu hijo llega a casa ansioso, sin saber cómo expresar lo que siente.</p>
+        <span class="pain-arrow">↓</span>
+        <div class="pain-after">Con Arteluk</div>
+        <p class="pain-text">Aprende a regular sus emociones a través del arte. Llega tranquilo y orgulloso de su obra.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📱</div>
+        <div class="pain-before">Antes</div>
+        <p class="pain-text">Horas frente a pantallas sin crear nada, sin conectar con otros.</p>
+        <span class="pain-arrow">↓</span>
+        <div class="pain-after">Con Arteluk</div>
+        <p class="pain-text">Crea con materiales reales, en grupos pequeños donde se siente visto y acompañado.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">😟</div>
+        <div class="pain-before">Antes</div>
+        <p class="pain-text">No sabes si tu hijo/a tiene talento o si vale la pena invertir en clases de arte.</p>
+        <span class="pain-arrow">↓</span>
+        <div class="pain-after">Con Arteluk</div>
+        <p class="pain-text">Prueba una clase completa por $19.990. Sin matrícula. Sin compromiso. Sin riesgos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-tag">Proceso</div>
+    <h2 class="section-title">3 pasos para empezar</h2>
+    <p class="section-sub">Tan simple como debe ser.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <p class="step-title">Reservas ahora</p>
+        <p class="step-text">Completa el formulario con tu nombre y la edad del alumno. Nosotros te confirmamos por WhatsApp en minutos.</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p class="step-title">Vienes al taller</p>
+        <p class="step-text">Martes 17:30 o Jueves 16:00, en Galería Cristal, Valdivia. Materiales incluidos, no traes nada.</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <p class="step-title">Decides sin presión</p>
+        <p class="step-text">Si te encanta (y nos encantará), te inscribes. Si no, sin problema. Zero compromiso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="section" style="background:var(--gray);padding-top:40px;padding-bottom:40px">
+  <div class="section-inner">
+    <div class="section-tag" style="text-align:center;margin-bottom:20px">Así se vive una clase en Arteluk</div>
+    <div class="gallery">
+      <div class="gallery-item"><img src="img/IMG_6131.jpg" alt="Clase de arte Arteluk" loading="lazy"></div>
+      <div class="gallery-item"><img src="img/IMG_5557.jpg" alt="Alumno pintando" loading="lazy"></div>
+      <div class="gallery-item"><img src="img/IMG_5035.jpg" alt="Taller de arte Valdivia" loading="lazy"></div>
+      <div class="gallery-item"><img src="img/IMG_3633.jpg" alt="Arte y arteterapia" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="section" style="text-align:center">
+  <div class="section-inner">
+    <div class="section-tag">El taller</div>
+    <h2 class="section-title" style="margin-bottom:8px">Mira cómo es una clase real</h2>
+    <p class="section-sub" style="margin:0 auto 28px">30 segundos y vas a entender por qué los niños no quieren salir del taller.</p>
+    <a href="https://www.youtube.com/watch?v=8abquRuhvCA" target="_blank" rel="noopener" onclick="trackPixel('VideoClick')" style="display:inline-flex;align-items:center;gap:12px;background:#FF0000;color:#fff;font-weight:800;font-size:1rem;padding:16px 28px;border-radius:14px;transition:all 0.2s;text-decoration:none;box-shadow:0 6px 20px rgba(255,0,0,0.3)">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Ver el taller en YouTube
+    </a>
+    <p style="margin-top:14px;font-size:0.82rem;color:var(--gray-3)">Video real · Sin edición · Taller en Galería Cristal, Valdivia</p>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="section" style="background:var(--gray)">
+  <div class="section-inner">
+    <div class="section-tag">Familias que ya están con nosotros</div>
+    <h2 class="section-title" style="margin-bottom:28px">Lo que dicen los apoderados</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Mi hija tenía mucha ansiedad y desde que va a Arteluk llegó más tranquila a casa. La profesora Mar es increíble, muy cercana con los niños. Nunca pensé que el arte pudiera hacer tanto."</p>
+        <p class="testi-author">Claudia M.</p>
+        <p class="testi-role">Mamá de alumna de 9 años</p>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Fuimos a la clase de prueba sin saber qué esperar. Mi hijo salió feliz con su obra bajo el brazo y pidió volver la semana siguiente. Llevamos 4 meses y no lo cambiaría por nada."</p>
+        <p class="testi-author">Roberto A.</p>
+        <p class="testi-role">Papá de alumno de 11 años</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-tag" style="text-align:center">Preguntas frecuentes</div>
+    <h2 class="section-title" style="text-align:center;margin-bottom:28px">Resolvemos tus dudas</h2>
+    <div class="faq">
+      <details>
+        <summary>¿Para qué edades son las clases?</summary>
+        <p>Desde los 5 años en adelante. Tenemos grupos para niños (5–12), jóvenes (13–17) y adultos. Cada grupo tiene metodología adaptada a su etapa.</p>
+      </details>
+      <details>
+        <summary>¿Qué incluye la clase de prueba de $19.990?</summary>
+        <p>Una clase completa de 2 horas con la misma experiencia que los alumnos regulares. Materiales 100% incluidos, acompañamiento de Mar y una obra que tu hijo se lleva a casa. Sin matrícula ni compromiso de inscripción.</p>
+      </details>
+      <details>
+        <summary>¿Dónde está el taller?</summary>
+        <p>Estamos en Galería Cristal, Valdivia (locales 24 y 25). Hay estacionamiento disponible y sala de espera para los apoderados que quieran quedarse durante la clase.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa si a mi hijo no le gusta?</summary>
+        <p>No hay problema. La clase de prueba es exactamente para eso: conocer sin comprometerse. Si decides no continuar, no hay ningún cargo adicional ni presión de ningún tipo.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="reservar">
+  <h2>¿Listo para reservar la clase de prueba?</h2>
+  <p>Martes 17:30 · Jueves 16:00 · Solo 5 cupos disponibles</p>
+  <button class="btn-final" onclick="scrollToForm()">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Reservar mi clase de prueba — $19.990
+  </button>
+  <div class="final-chips">
+    <span class="final-chip">✅ Sin matrícula</span>
+    <span class="final-chip">✅ Materiales incluidos</span>
+    <span class="final-chip">✅ Sin compromiso</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="padding:20px;text-align:center;font-size:0.78rem;color:var(--gray-3);border-top:1px solid var(--gray-2)">
+  © 2025 Arteluk · Galería Cristal, Valdivia · <a href="https://www.arteluk.cl" style="color:var(--blue)">Ver sitio completo</a>
+</footer>
+
+<!-- STICKY MOBILE BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-price">
+    <strong>$19.990</strong>
+    <span>Clase de prueba · sin compromiso</span>
+  </div>
+  <button class="sticky-btn" onclick="scrollToForm()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Reservar ahora
+  </button>
+</div>
+
+<!-- FAB WHATSAPP -->
+<a class="fab-wa" href="https://wa.me/56963554778" target="_blank" rel="noopener" aria-label="WhatsApp" onclick="trackPixel('Contact')">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  var selectedSlot = '';
+
+  function selectSlot(btn) {
+    document.querySelectorAll('.slot').forEach(function(s) { s.classList.remove('on'); });
+    btn.classList.add('on');
+    selectedSlot = btn.getAttribute('data-slot');
+    try { fbq('track', 'InitiateCheckout', { content_name: 'Clase Prueba ' + selectedSlot, value: 19990, currency: 'CLP' }); } catch(e) {}
+  }
+
+  function trackPixel(ev) {
+    try { fbq('track', ev); } catch(e) {}
+  }
+
+  function reservar(source) {
+    var nombre = (document.getElementById('heroName').value || '').trim();
+    var edad = (document.getElementById('heroAge').value || '').trim();
+    if (!nombre || !edad) { alert('Por favor ingresa tu nombre y la edad del alumno.'); return; }
+    if (!selectedSlot) { alert('Selecciona un horario: Martes o Jueves.'); return; }
+    var msg =
+      'Hola Arteluk! Quiero reservar una clase de prueba:\n\n' +
+      'Horario: ' + selectedSlot + '\n' +
+      'Precio: $19.990 (oferta mayo)\n\n' +
+      'Nombre apoderado: ' + nombre + '\n' +
+      'Edad del alumno: ' + edad + ' anos\n\n' +
+      'Quedo atento/a a la confirmacion!';
+    try { fbq('track', 'Lead', { content_name: 'Clase Prueba', value: 19990, currency: 'CLP', content_category: source }); } catch(e) {}
+    try { fbq('track', 'Schedule', { content_name: 'Clase Prueba', value: 19990, currency: 'CLP' }); } catch(e) {}
+    window.open('https://wa.me/56963554778?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
+  }
+
+  function scrollToForm() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(function() { var el = document.getElementById('heroName'); if (el) el.focus(); }, 600);
+    try { fbq('track', 'ViewContent', { content_name: 'ScrollToForm' }); } catch(e) {}
+  }
+
+  /* Ocultar sticky bar cuando el form está visible */
+  var heroSection = document.querySelector('.hero');
+  var stickyBar = document.getElementById('stickyBar');
+  if (heroSection && stickyBar && window.IntersectionObserver) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        stickyBar.style.display = e.isIntersecting ? 'none' : '';
+      });
+    }, { threshold: 0.1 });
+    io.observe(heroSection);
+  }
+</script>
+</body>
+</html>
