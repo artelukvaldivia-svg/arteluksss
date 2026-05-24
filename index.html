@@ -1219,6 +1219,64 @@
     .fab-wa { background: #25d366; }
     @media (max-width: 480px) { .fab-container { bottom: 1rem; right: 1rem; } .fab { width: 50px; height: 50px; } }
 
+    /* ========== POPUPS DINÁMICOS ========== */
+    .dyn-popup {
+      position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+      width: 320px; max-width: calc(100vw - 32px);
+      background: white; border-radius: 18px;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08);
+      overflow: hidden; border: 1px solid rgba(0,0,0,0.06);
+      transform: translateY(120%); opacity: 0;
+      transition: transform 0.45s cubic-bezier(.34,1.56,.64,1), opacity 0.35s ease;
+      pointer-events: none;
+    }
+    .dyn-popup.show { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .dyn-popup.hide { transform: translateY(120%); opacity: 0; pointer-events: none; }
+    .dyn-popup-close {
+      position: absolute; top: 10px; right: 12px;
+      background: rgba(0,0,0,0.07); border: none; border-radius: 50%;
+      width: 26px; height: 26px; cursor: pointer; font-size: 14px;
+      display: flex; align-items: center; justify-content: center;
+      color: #555; transition: background 0.2s;
+    }
+    .dyn-popup-close:hover { background: rgba(0,0,0,0.14); }
+
+    /* Popup 1: video */
+    .dyn-video-thumb {
+      position: relative; cursor: pointer; display: block;
+      background: #000; aspect-ratio: 16/9; overflow: hidden;
+    }
+    .dyn-video-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; display: block; }
+    .dyn-play-btn {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    }
+    .dyn-play-btn span {
+      width: 52px; height: 52px; background: rgba(255,255,255,0.92);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      transition: transform 0.2s;
+    }
+    .dyn-video-thumb:hover .dyn-play-btn span { transform: scale(1.1); }
+    .dyn-popup-body { padding: 14px 16px 16px; }
+    .dyn-popup-label { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-600); margin-bottom: 4px; }
+    .dyn-popup-title { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin: 0 0 10px; line-height: 1.3; }
+    .dyn-popup-btns { display: flex; gap: 8px; }
+    .dyn-btn-primary { flex: 1; background: var(--blue-600); color: white; border: none; border-radius: 10px; padding: 9px 10px; font-size: 0.82rem; font-weight: 700; cursor: pointer; font-family: inherit; transition: background 0.2s; }
+    .dyn-btn-primary:hover { background: var(--blue-700); }
+    .dyn-btn-ghost { flex: 1; background: var(--gray-100); color: var(--text-secondary); border: none; border-radius: 10px; padding: 9px 10px; font-size: 0.82rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: background 0.2s; }
+    .dyn-btn-ghost:hover { background: var(--gray-200); }
+
+    /* Popup 2: promo */
+    .dyn-promo-header { background: linear-gradient(135deg, #1D4ED8, #2563EB); padding: 14px 16px 12px; }
+    .dyn-promo-tag { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 4px; }
+    .dyn-promo-title { font-size: 1rem; font-weight: 800; color: white; line-height: 1.25; margin: 0; }
+    .dyn-promo-body { padding: 12px 16px 16px; }
+    .dyn-promo-price { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+    .dyn-promo-new { font-size: 1.8rem; font-weight: 900; color: var(--blue-700); }
+    .dyn-promo-old { font-size: 1rem; color: var(--text-muted); text-decoration: line-through; }
+    .dyn-promo-days { display: flex; gap: 6px; margin-bottom: 12px; }
+    .dyn-day-chip { background: var(--blue-50); color: var(--blue-700); border: 1px solid var(--blue-200); border-radius: 999px; padding: 4px 10px; font-size: 0.78rem; font-weight: 700; }
+
     /* ========== CLASE DE PRUEBA ========== */
     #clase-prueba { background: linear-gradient(135deg, #1E3A8A 0%, #1D4ED8 50%, #2563EB 100%); padding: var(--space-16) 0; }
     .prueba-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-10); align-items: center; }
@@ -2655,12 +2713,8 @@
       if (!slotsGrid || !pruebaSubmit) return;
 
       const slots = [
-        { dia: 'Lunes',     hora: '10:00 – 11:00', libre: true },
-        { dia: 'Lunes',     hora: '17:00 – 18:00', libre: true },
-        { dia: 'Miércoles', hora: '10:00 – 11:00', libre: true },
-        { dia: 'Miércoles', hora: '17:00 – 18:00', libre: true },
-        { dia: 'Sábado',    hora: '10:00 – 11:00', libre: true },
-        { dia: 'Sábado',    hora: '11:00 – 12:00', libre: false },
+        { dia: 'Martes',  hora: '17:30 – 19:30', libre: true },
+        { dia: 'Jueves',  hora: '16:00 – 18:00', libre: true },
       ];
 
       let selectedSlot = null;
@@ -2701,6 +2755,122 @@
 
         window.open(`https://wa.me/56963554778?text=${encodeURIComponent(texto)}`, '_blank', 'noopener,noreferrer');
       });
+    })();
+
+    /* ========================================
+       POPUPS DINÁMICOS
+       ======================================== */
+    (() => {
+      const YT_ID = '8abquRuhvCA';
+      const YT_URL = `https://www.youtube.com/watch?v=${YT_ID}`;
+      const THUMB = `https://img.youtube.com/vi/${YT_ID}/mqdefault.jpg`;
+
+      function makePopup(id, html) {
+        const el = document.createElement('div');
+        el.className = 'dyn-popup';
+        el.id = id;
+        el.innerHTML = html;
+        document.body.appendChild(el);
+        return el;
+      }
+
+      function showPopup(el) {
+        // Oculta el otro si está visible
+        document.querySelectorAll('.dyn-popup').forEach(p => { if (p !== el) hidePopup(p); });
+        requestAnimationFrame(() => { requestAnimationFrame(() => { el.classList.add('show'); el.classList.remove('hide'); }); });
+      }
+
+      function hidePopup(el) {
+        el.classList.remove('show');
+        el.classList.add('hide');
+      }
+
+      /* --- POPUP 1: Video / Metodología (10 segundos) --- */
+      const p1 = makePopup('dynPopup1', `
+        <button class="dyn-popup-close" aria-label="Cerrar">✕</button>
+        <a class="dyn-video-thumb" href="${YT_URL}" target="_blank" rel="noopener" id="dynVideoLink">
+          <img src="${THUMB}" alt="Video Arteluk" loading="lazy">
+          <div class="dyn-play-btn"><span>▶</span></div>
+        </a>
+        <div class="dyn-popup-body">
+          <div class="dyn-popup-label">🎨 Nuestra metodología</div>
+          <p class="dyn-popup-title">¿Quieres saber cómo transformamos el arte en bienestar emocional?</p>
+          <div class="dyn-popup-btns">
+            <button class="dyn-btn-primary" id="dynBtnVideo">Ver video</button>
+            <button class="dyn-btn-ghost" id="dynBtnExpo">Ver exposiciones</button>
+          </div>
+        </div>
+      `);
+
+      p1.querySelector('.dyn-popup-close').addEventListener('click', () => hidePopup(p1));
+      p1.querySelector('#dynVideoLink').addEventListener('click', (e) => {
+        e.preventDefault();
+        trackCustomSafe('VideoClick', { video_id: YT_ID, source: 'popup' });
+        window.open(YT_URL, '_blank', 'noopener,noreferrer');
+        hidePopup(p1);
+      });
+      p1.querySelector('#dynBtnVideo').addEventListener('click', () => {
+        trackCustomSafe('VideoClick', { video_id: YT_ID, source: 'popup_btn' });
+        window.open(YT_URL, '_blank', 'noopener,noreferrer');
+        hidePopup(p1);
+      });
+      p1.querySelector('#dynBtnExpo').addEventListener('click', () => {
+        hidePopup(p1);
+        document.getElementById('exposiciones')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      /* --- POPUP 2: Promo clase de prueba (20 segundos) --- */
+      const p2 = makePopup('dynPopup2', `
+        <button class="dyn-popup-close" aria-label="Cerrar">✕</button>
+        <div class="dyn-promo-header">
+          <div class="dyn-promo-tag">🔥 Promoción especial</div>
+          <p class="dyn-promo-title">Clase de prueba con descuento<br>¡Solo martes y jueves!</p>
+        </div>
+        <div class="dyn-promo-body">
+          <div class="dyn-promo-days">
+            <span class="dyn-day-chip">Martes 17:30</span>
+            <span class="dyn-day-chip">Jueves 16:00</span>
+          </div>
+          <div class="dyn-promo-price">
+            <span class="dyn-promo-new">$19.990</span>
+            <span class="dyn-promo-old">$25.000</span>
+          </div>
+          <button class="dyn-btn-primary" style="width:100%;padding:12px" id="dynBtnPromo">
+            🎨 Reservar mi clase ahora
+          </button>
+        </div>
+      `);
+
+      p2.querySelector('.dyn-popup-close').addEventListener('click', () => hidePopup(p2));
+      p2.querySelector('#dynBtnPromo').addEventListener('click', () => {
+        hidePopup(p2);
+        document.getElementById('clase-prueba')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        trackSafe('ViewContent', { content_name: 'Clase de Prueba', content_category: 'Popup Promo' });
+      });
+
+      /* --- Timers (solo si el usuario no ha hecho scroll mayor a 30%) --- */
+      let p1shown = false, p2shown = false;
+
+      const t1 = setTimeout(() => {
+        if (!p1shown) { p1shown = true; showPopup(p1); trackCustomSafe('PopupVideo', {}); }
+      }, 10000);
+
+      const t2 = setTimeout(() => {
+        if (!p2shown) { p2shown = true; showPopup(p2); trackCustomSafe('PopupPromo', {}); }
+      }, 20000);
+
+      // Cancelar popups si el usuario ya llegó al formulario
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            clearTimeout(t1); clearTimeout(t2);
+            document.querySelectorAll('.dyn-popup').forEach(p => hidePopup(p));
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      const formSection = document.getElementById('clase-prueba');
+      if (formSection) observer.observe(formSection);
     })();
   </script>
 
