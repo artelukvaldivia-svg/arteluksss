@@ -383,20 +383,12 @@ footer{background:#e8fafb;border-top:1px solid rgba(8,145,178,.15);padding:48px 
           <span class="price-old">$30.000</span>
           <span class="price-save">Ahorra $10.010</span>
         </div>
-        <div class="slots-label">📅 Elige tu horario</div>
-        <div class="slots-grid">
-          <button class="slot" data-slot="Martes 17:30–19:30" onclick="selectSlotHero(this)">
-            📅 Martes<br>17:30–19:30
-          </button>
-          <button class="slot" data-slot="Jueves 16:00–18:00" onclick="selectSlotHero(this)">
-            📅 Jueves<br>16:00–18:00
-          </button>
-        </div>
         <input class="form-input" id="heroNombre" type="text" placeholder="Nombre del apoderado *" autocomplete="given-name">
+        <input class="form-input" id="heroAlumno" type="text" placeholder="Nombre del alumno *">
         <input class="form-input" id="heroEdad" type="text" placeholder="Edad del alumno *" inputmode="numeric">
         <button class="btn-wa" onclick="reservarHero()">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Reservar por WhatsApp
+          Enviar formulario para consultar disponibilidad
         </button>
         <div class="urgencia">
           <span class="cupos">Solo 5 cupos disponibles esta semana</span>
@@ -579,7 +571,7 @@ footer{background:#e8fafb;border-top:1px solid rgba(8,145,178,.15);padding:48px 
         <div class="hl-price-old">Antes $30.000</div>
         <button class="hl-btn" onclick="scrollToForm()">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Reservar por WhatsApp
+          Enviar formulario para consultar disponibilidad
         </button>
       </div>
     </div>
@@ -937,20 +929,12 @@ footer{background:#e8fafb;border-top:1px solid rgba(8,145,178,.15);padding:48px 
           <span class="price-new">$19.990</span>
           <span class="price-old">$30.000</span>
         </div>
-        <div class="slots-label">📅 Elige tu horario</div>
-        <div class="slots-grid">
-          <button class="slot" data-slot2="Martes 17:30–19:30" onclick="selectSlotFinal(this)">
-            📅 Martes<br>17:30–19:30
-          </button>
-          <button class="slot" data-slot2="Jueves 16:00–18:00" onclick="selectSlotFinal(this)">
-            📅 Jueves<br>16:00–18:00
-          </button>
-        </div>
         <input class="form-input" id="finalNombre" type="text" placeholder="Nombre del apoderado *" autocomplete="given-name">
+        <input class="form-input" id="finalAlumno" type="text" placeholder="Nombre del alumno *">
         <input class="form-input" id="finalEdad" type="text" placeholder="Edad del alumno *" inputmode="numeric">
         <button class="btn-wa" onclick="reservarFinal()">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Reservar por WhatsApp
+          Enviar formulario para consultar disponibilidad
         </button>
         <p style="text-align:center;margin-top:10px;font-size:.75rem;color:var(--text3)">Respuesta en menos de 1 hora · Picarte 407, Valdivia</p>
       </div>
@@ -1024,23 +1008,17 @@ footer{background:#e8fafb;border-top:1px solid rgba(8,145,178,.15);padding:48px 
 </div>
 
 <script>
-// Estado formularios
-var heroSlot = '';
-var finalSlot = '';
-
-function selectSlotHero(btn) {
-  document.querySelectorAll('#hero .slot').forEach(function(s) { s.classList.remove('on'); });
-  btn.classList.add('on');
-  heroSlot = btn.getAttribute('data-slot');
-  try { fbq('track', 'InitiateCheckout', { content_name: 'Clase Prueba ' + heroSlot, value: 19990, currency: 'CLP' }); } catch(e) {}
-}
-
-function selectSlotFinal(btn) {
-  document.querySelectorAll('#cta-final .slot').forEach(function(s) { s.classList.remove('on'); });
-  btn.classList.add('on');
-  finalSlot = btn.getAttribute('data-slot2');
-  try { fbq('track', 'InitiateCheckout', { content_name: 'Clase Prueba ' + finalSlot, value: 19990, currency: 'CLP' }); } catch(e) {}
-}
+// Ya no se elige horario: la disponibilidad se consulta por WhatsApp.
+// El InitiateCheckout que antes disparaba el boton de horario ahora se manda cuando
+// la persona EMPIEZA a llenar el formulario, para no perder ese escalon del embudo.
+var empezoFormulario = false;
+document.addEventListener('focusin', function(e) {
+  if (empezoFormulario) return;
+  var t = e.target;
+  if (!t || t.className !== 'form-input') return;
+  empezoFormulario = true;
+  try { fbq('track', 'InitiateCheckout', { content_name: 'Clase Prueba', value: 19990, currency: 'CLP' }); } catch(err) {}
+});
 
 function toggleMute() {
   var v = document.getElementById('tallerVideo');
@@ -1050,39 +1028,26 @@ function toggleMute() {
   if (!v.muted) { v.play(); }
 }
 
-function reservarHero() {
-  var nombre = document.getElementById('heroNombre').value.trim();
-  var edad = document.getElementById('heroEdad').value.trim();
-  if (!heroSlot) { alert('Por favor selecciona un horario'); return; }
-  if (!nombre) { alert('Por favor ingresa el nombre del apoderado'); document.getElementById('heroNombre').focus(); return; }
-  if (!edad) { alert('Por favor ingresa la edad del alumno'); document.getElementById('heroEdad').focus(); return; }
-  try { fbq('track', 'Lead', { content_name: 'Clase Prueba', value: 19990, currency: 'CLP' }); } catch(e) {}
+function enviarFormulario(prefijo, etiqueta) {
+  var nombre = document.getElementById(prefijo + 'Nombre').value.trim();
+  var alumno = document.getElementById(prefijo + 'Alumno').value.trim();
+  var edad = document.getElementById(prefijo + 'Edad').value.trim();
+  if (!nombre) { alert('Por favor ingresa el nombre del apoderado'); document.getElementById(prefijo + 'Nombre').focus(); return; }
+  if (!alumno) { alert('Por favor ingresa el nombre del alumno'); document.getElementById(prefijo + 'Alumno').focus(); return; }
+  if (!edad) { alert('Por favor ingresa la edad del alumno'); document.getElementById(prefijo + 'Edad').focus(); return; }
+  try { fbq('track', 'Lead', { content_name: etiqueta, value: 19990, currency: 'CLP' }); } catch(e) {}
   try { fbq('track', 'Schedule'); } catch(e) {}
-  var msg = 'Hola Arteluk! Quiero reservar una clase de prueba:\n\n' +
-    'Horario: ' + heroSlot + '\n' +
-    'Precio clase de prueba: $19.990\n\n' +
+  var msg = 'Hola Arteluk! Quiero consultar disponibilidad para la clase de prueba:\n\n' +
     'Nombre apoderado: ' + nombre + '\n' +
+    'Nombre del alumno: ' + alumno + '\n' +
     'Edad del alumno: ' + edad + ' anos\n\n' +
-    'Quedo atento/a a la confirmacion!';
+    'Precio clase de prueba: $19.990\n\n' +
+    'Quedo atento/a a los horarios disponibles!';
   window.open('https://wa.me/56963554778?text=' + encodeURIComponent(msg), '_blank');
 }
 
-function reservarFinal() {
-  var nombre = document.getElementById('finalNombre').value.trim();
-  var edad = document.getElementById('finalEdad').value.trim();
-  if (!finalSlot) { alert('Por favor selecciona un horario'); return; }
-  if (!nombre) { alert('Por favor ingresa el nombre del apoderado'); document.getElementById('finalNombre').focus(); return; }
-  if (!edad) { alert('Por favor ingresa la edad del alumno'); document.getElementById('finalEdad').focus(); return; }
-  try { fbq('track', 'Lead', { content_name: 'Clase Prueba CTA Final', value: 19990, currency: 'CLP' }); } catch(e) {}
-  try { fbq('track', 'Schedule'); } catch(e) {}
-  var msg = 'Hola Arteluk! Quiero reservar una clase de prueba:\n\n' +
-    'Horario: ' + finalSlot + '\n' +
-    'Precio clase de prueba: $19.990\n\n' +
-    'Nombre apoderado: ' + nombre + '\n' +
-    'Edad del alumno: ' + edad + ' anos\n\n' +
-    'Quedo atento/a a la confirmacion!';
-  window.open('https://wa.me/56963554778?text=' + encodeURIComponent(msg), '_blank');
-}
+function reservarHero() { enviarFormulario('hero', 'Clase Prueba'); }
+function reservarFinal() { enviarFormulario('final', 'Clase Prueba CTA Final'); }
 
 function waServicio(nombre, precio) {
   var msg = 'Hola Arteluk! Me interesa consultar sobre:\n\n' +
