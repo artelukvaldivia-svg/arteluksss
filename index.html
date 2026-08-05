@@ -1060,7 +1060,7 @@ function reservarHero() {
   try { fbq('track', 'Schedule'); } catch(e) {}
   var msg = 'Hola Arteluk! Quiero reservar una clase de prueba:\n\n' +
     'Horario: ' + heroSlot + '\n' +
-    'Precio acordado: $19.990 (oferta mayo)\n\n' +
+    'Precio clase de prueba: $19.990\n\n' +
     'Nombre apoderado: ' + nombre + '\n' +
     'Edad del alumno: ' + edad + ' anos\n\n' +
     'Quedo atento/a a la confirmacion!';
@@ -1077,7 +1077,7 @@ function reservarFinal() {
   try { fbq('track', 'Schedule'); } catch(e) {}
   var msg = 'Hola Arteluk! Quiero reservar una clase de prueba:\n\n' +
     'Horario: ' + finalSlot + '\n' +
-    'Precio acordado: $19.990 (oferta mayo)\n\n' +
+    'Precio clase de prueba: $19.990\n\n' +
     'Nombre apoderado: ' + nombre + '\n' +
     'Edad del alumno: ' + edad + ' anos\n\n' +
     'Quedo atento/a a la confirmacion!';
@@ -1158,6 +1158,20 @@ var navEl = document.querySelector('nav');
 window.addEventListener('scroll', function() {
   navEl.style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(8,145,178,.12)' : '';
 }, { passive: true });
+
+// Avisarle al pixel cuando alguien se va a WhatsApp por CUALQUIER boton.
+// Antes solo se median los dos formularios (horario + nombre + edad), asi que el boton
+// flotante -el camino facil, por donde se va la mayoria- no avisaba nunca y las audiencias
+// 30_Contact / 180_Contact quedaban vacias.
+document.addEventListener('click', function(e) {
+  var a = e.target && e.target.closest
+    ? e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]')
+    : null;
+  if (!a) return;
+  try {
+    fbq('track', 'Contact', { content_name: a.id || a.getAttribute('aria-label') || 'whatsapp' });
+  } catch (err) {}
+}, true);
 </script>
 </body>
 </html>
