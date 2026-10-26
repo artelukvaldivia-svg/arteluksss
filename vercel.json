@@ -4,26 +4,54 @@
     {
       "source": "/",
       "has": [
-        { "type": "header", "key": "accept", "value": ".*text/markdown.*" }
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
       ],
       "destination": "/index.md",
+      "permanent": false
+    },
+    {
+      "source": "/prueba",
+      "destination": "/#agendar",
+      "permanent": false
+    },
+    {
+      "source": "/prueba.html",
+      "destination": "/#agendar",
+      "permanent": false
+    },
+    {
+      "source": "/nueva.html",
+      "destination": "/",
       "permanent": false
     }
   ],
   "rewrites": [
-    { "source": "/index.md", "destination": "/llms.txt" }
+    {
+      "source": "/index.md",
+      "destination": "/llms.txt"
+    }
   ],
   "headers": [
     {
       "source": "/index.md",
       "headers": [
-        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" }
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        }
       ]
     },
     {
       "source": "/llms.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" }
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        }
       ]
     },
     {
