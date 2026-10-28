@@ -1049,6 +1049,20 @@ document.addEventListener('click', function (e) {
   try { fbq('track', 'Contact', { content_name: a.id || a.getAttribute('aria-label') || 'whatsapp' }); } catch (err) {}
 }, true);
 
+// Avisarle al píxel cuando alguien VE de verdad un video (la mitad o más), una vez por video y visita: con eso se arma
+// el público «calientes» de los anuncios de WhatsApp (Lukas, 28-10). El de arriba parte solo y sin sonido: cuenta
+// solo si le activaron el sonido.
+var videosVistos = {};
+document.addEventListener('timeupdate', function (e) {
+  var v = e.target;
+  if (!v || v.tagName !== 'VIDEO' || !v.duration || v.currentTime / v.duration < 0.5) return;
+  if (v.id === 'videoTaller' && v.muted) return;
+  var cual = v.id || (v.getAttribute('src') || '').replace(/^.*\/|\.mp4$/g, '');
+  if (videosVistos[cual]) return;
+  videosVistos[cual] = true;
+  try { fbq('trackCustom', 'VioVideo', { video: cual }); } catch (err) {}
+}, true);
+
 armarCarrusel();
 
 // ---------- Filas que se deslizan: en el computador también se arrastran con el mouse ----------
