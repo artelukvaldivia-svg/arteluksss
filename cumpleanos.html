@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cumpleaños de Arte en Arteluk · Valdivia</title>
+<meta name="description" content="Cumpleaños de arte para niños de 5 a 12 años en Valdivia. Dos horas de juegos y pintura, cada niño se lleva su obra. Sábados de 17:30 a 19:30, $12.000 por niño. Picarte 804.">
+<link rel="canonical" href="https://www.arteluk.cl/cumpleanos">
+<meta property="og:title" content="Cumpleaños de Arte en Arteluk">
+<meta property="og:description" content="Una fiesta de dos horas donde pintar es el juego. Sábados en Valdivia, de 5 a 12 años.">
+<meta property="og:image" content="https://www.arteluk.cl/img/web/clase-tecnica.jpg">
+<meta property="og:url" content="https://www.arteluk.cl/cumpleanos">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta name="theme-color" content="#FFF8EE">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Nunito:wght@600;700;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<!-- Meta Pixel (el mismo de arteluk.cl) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1611426433185367');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Cumpleaños de arte'});
+</script>
+<style>
+  :root { --crema:#FFF8EE; --tinta:#1f2937; --gris:#4b5563; --rosa:#E5397A; --cian:#0891b2; --naranjo:#F2961C; --verde:#0F8A80; --amarillo:#F7C437; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito', system-ui, sans-serif; background: var(--crema); color: var(--tinta); font-size: 18px; line-height: 1.45; }
+  img, video { max-width: 100%; display: block; }
+  .wrap { max-width: 620px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 44px 0; position: relative; }
+  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 900; line-height: 1.02; }
+  h2 { font-size: 34px; margin-bottom: 8px; }
+  .bajada { color: var(--gris); font-weight: 700; margin-bottom: 22px; }
+  .mano { font-family: 'Caveat', cursive; color: var(--verde); font-size: 30px; line-height: 1; }
+
+  /* portada */
+  .hero { padding-top: 26px; overflow: hidden; }
+  .mancha { position: absolute; border-radius: 55% 45% 50% 50%; z-index: -1; }
+  .m1 { width: 260px; height: 230px; background: var(--amarillo); top: -90px; right: -90px; }
+  .m2 { width: 160px; height: 150px; background: var(--rosa); opacity: .85; top: 300px; left: -110px; }
+  .logo { width: 84px; margin: 0 auto 14px; }
+  h1 { font-size: 54px; text-align: center; }
+  h1 .r { color: var(--rosa); } h1 .c { color: var(--cian); } h1 .n { color: var(--naranjo); }
+  .hero .mano { text-align: center; margin-top: 6px; }
+  .lead { text-align: center; font-size: 21px; font-weight: 800; margin: 16px 0 22px; }
+  .chips { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .chip { border-radius: 18px; padding: 14px 8px; text-align: center; color: #fff; }
+  .chip b { display: block; font-family: 'Fraunces', serif; font-size: 27px; line-height: 1; }
+  .chip span { font-size: 15px; font-weight: 800; }
+  .k1 { background: var(--rosa); } .k2 { background: var(--cian); } .k3 { background: var(--naranjo); } .k4 { background: var(--verde); }
+  .fotos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 22px 0; }
+  .fotos img { border-radius: 14px; aspect-ratio: 3/4; object-fit: cover; width: 100%; }
+  .btn { display: block; width: 100%; text-align: center; background: var(--tinta); color: #fff; font-weight: 900; font-size: 20px;
+         border: 0; border-radius: 40px; padding: 17px 20px; text-decoration: none; cursor: pointer; font-family: inherit; }
+  .btn.rosa { background: var(--rosa); }
+  .btn.wa { background: #25D366; }
+  .btn:disabled { opacity: .45; cursor: default; }
+
+  /* la fiesta */
+  .paso { display: grid; grid-template-columns: 74px 1fr; gap: 14px; margin-bottom: 18px; }
+  .paso .t { background: var(--rosa); color: #fff; font-family: 'Fraunces', serif; font-weight: 900; font-size: 21px; border-radius: 12px;
+             text-align: center; padding: 9px 0; height: fit-content; }
+  .paso b { display: block; font-size: 21px; font-weight: 900; line-height: 1.15; }
+  .paso span { color: var(--gris); font-weight: 600; }
+
+  /* Mary */
+  .mary { background: #fff; border-radius: 26px; padding: 22px; box-shadow: 0 6px 30px rgba(0,0,0,.06); }
+  .mary video { border-radius: 16px; width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #ddd; margin-bottom: 16px; }
+  .mary h3 { font-size: 27px; margin-bottom: 6px; }
+  .mary ul { list-style: none; margin-top: 10px; }
+  .mary li { padding-left: 28px; position: relative; margin-bottom: 7px; font-weight: 700; }
+  .mary li::before { content: "✓"; position: absolute; left: 0; color: var(--verde); font-weight: 900; }
+  .numeros { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 18px; text-align: center; }
+  .numeros b { display: block; font-family: 'Fraunces', serif; font-size: 30px; color: var(--rosa); line-height: 1; }
+  .numeros span { font-size: 14px; font-weight: 800; color: var(--gris); }
+
+  /* familias */
+  .testis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .testi { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,.06); }
+  .testi video { aspect-ratio: 9/16; object-fit: cover; width: 100%; background: #eee; }
+  .testi p { font-size: 14px; font-weight: 800; padding: 8px 9px 2px; line-height: 1.25; }
+  .testi small { display: block; font-size: 12px; color: var(--gris); font-weight: 700; padding: 0 9px 10px; }
+  .estrellas { color: var(--amarillo); letter-spacing: 2px; font-size: 22px; text-align: center; margin-top: 14px; }
+
+  /* incluye */
+  .lista { list-style: none; margin-bottom: 20px; }
+  .lista li { padding-left: 30px; position: relative; font-weight: 800; margin-bottom: 8px; }
+  .lista li::before { content: ""; position: absolute; left: 0; top: 6px; width: 17px; height: 17px; border-radius: 50%; background: var(--amarillo); }
+  .lista.fam li::before { background: #06b6d4; }
+  .precios { background: var(--tinta); color: #fff; border-radius: 20px; padding: 18px 22px; }
+  .precios div { display: flex; justify-content: space-between; align-items: baseline; font-weight: 800; margin: 4px 0; }
+  .precios b { font-family: 'Fraunces', serif; font-size: 27px; color: var(--amarillo); }
+  .precios small { display: block; color: #cbd5e1; font-weight: 700; margin-top: 8px; font-size: 15px; }
+
+  /* reserva */
+  .caja { background: #fff; border-radius: 26px; padding: 20px; box-shadow: 0 6px 30px rgba(0,0,0,.07); }
+  .paso-n { font-weight: 900; color: var(--rosa); font-size: 15px; letter-spacing: .5px; text-transform: uppercase; margin-bottom: 6px; }
+  .cal-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .cal-top b { font-family: 'Fraunces', serif; font-size: 24px; text-transform: capitalize; }
+  .cal-top button { width: 44px; height: 44px; border-radius: 50%; border: 2px solid #e5e7eb; background: #fff; font-size: 20px; font-weight: 900; cursor: pointer; }
+  .cal-top button:disabled { opacity: .3; cursor: default; }
+  .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; text-align: center; }
+  .grid .dn { font-size: 13px; font-weight: 900; color: var(--gris); padding-bottom: 4px; }
+  .grid .d { aspect-ratio: 1; display: grid; place-items: center; border-radius: 12px; font-weight: 800; color: #c4c4c4; font-size: 16px; }
+  .grid .d.libre { background: #FDE7EF; color: var(--rosa); border: 2px solid var(--rosa); cursor: pointer; font-weight: 900; }
+  .grid .d.elegido { background: var(--rosa); color: #fff; }
+  .cal-nota { font-size: 15px; color: var(--gris); font-weight: 700; margin-top: 10px; }
+  .elegido-txt { margin: 14px 0 4px; font-weight: 900; font-size: 19px; color: var(--verde); }
+  .campo { margin-top: 14px; }
+  .campo label { display: block; font-weight: 900; margin-bottom: 5px; }
+  .campo input, .campo select { width: 100%; font: inherit; font-weight: 700; padding: 13px 14px; border-radius: 12px; border: 2px solid #e5e7eb; background: #fff; }
+  .campo input:focus, .campo select:focus { outline: none; border-color: var(--cian); }
+  .campo.falta input, .campo.falta select { border-color: #dc2626; }
+  .campo .err { color: #dc2626; font-weight: 800; font-size: 15px; margin-top: 4px; display: none; }
+  .campo.falta .err { display: block; }
+  .dos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .total { background: #FFF3D6; border-radius: 14px; padding: 13px 16px; margin: 16px 0; font-weight: 800; }
+  .total b { font-family: 'Fraunces', serif; font-size: 22px; }
+  .aviso { background: #FEE2E2; color: #991b1b; border-radius: 14px; padding: 12px 14px; font-weight: 800; margin-top: 12px; }
+  .listo h3 { font-size: 30px; color: var(--verde); margin-bottom: 8px; }
+  .cuenta { white-space: pre-line; background: #F1F5F9; border-radius: 14px; padding: 14px 16px; font-weight: 800; margin: 14px 0; font-size: 17px; }
+  .abono-grande { font-family: 'Fraunces', serif; font-size: 40px; color: var(--rosa); line-height: 1; margin: 6px 0 4px; }
+
+  details { background: #fff; border-radius: 16px; padding: 14px 18px; margin-bottom: 10px; }
+  summary { font-weight: 900; cursor: pointer; }
+  details p { margin-top: 8px; color: var(--gris); font-weight: 700; }
+  footer { text-align: center; padding: 30px 0 110px; color: var(--gris); font-weight: 700; font-size: 16px; }
+  .barra { position: fixed; left: 0; right: 0; bottom: 0; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(255,248,238,.96);
+           box-shadow: 0 -4px 20px rgba(0,0,0,.08); z-index: 10; transition: transform .25s; }
+  .barra.oculta { transform: translateY(120%); }
+  .barra .btn { max-width: 580px; margin: 0 auto; }
+  @media (min-width: 640px) { h1 { font-size: 66px; } }
+</style>
+</head>
+<body>
+
+<!-- 1. PORTADA -->
+<section class="hero">
+  <div class="mancha m1"></div><div class="mancha m2"></div>
+  <div class="wrap">
+    <img class="logo" src="img/logo-arteluk.png" alt="Arteluk">
+    <h1><span class="r">Cumple</span><span class="c">años</span><br>de <span class="n">Arte</span></h1>
+    <p class="mano">en Arteluk, desde diciembre</p>
+    <p class="lead">Una fiesta de dos horas donde pintar es el juego, y cada niño se va a la casa con su obra.</p>
+    <div class="chips">
+      <div class="chip k1"><b>Sábados</b><span>de 17:30 a 19:30</span></div>
+      <div class="chip k2"><b>5 a 12</b><span>años</span></div>
+      <div class="chip k3"><b>10 a 15</b><span>niños por fiesta</span></div>
+      <div class="chip k4"><b>$12.000</b><span>por niño</span></div>
+    </div>
+    <div class="fotos">
+      <img src="img/web/clase-tecnica.jpg" alt="Alumna pintando en Arteluk" loading="lazy">
+      <img src="img/web/clase-boceto.jpg" alt="Alumna dibujando en Arteluk" loading="lazy">
+    </div>
+    <a class="btn rosa" href="#reservar" id="btnArriba">Ver los sábados libres</a>
+  </div>
+</section>
+
+<!-- 2. LA FIESTA -->
+<section>
+  <div class="wrap">
+    <p class="mano">la fiesta</p>
+    <h2>Pintores Locos</h2>
+    <p class="bajada">Para los que quieren mancharse, moverse y pintar en grande.</p>
+    <div class="paso"><div class="t">17:30</div><div><b>¡Bienvenidos, artistas!</b><span>Cada niño se pone su delantal y pinta un banderín con su nombre.</span></div></div>
+    <div class="paso"><div class="t">17:45</div><div><b>Pintura congelada</b><span>Pintan con música y, cuando la música para, todos quedan congelados.</span></div></div>
+    <div class="paso"><div class="t">18:00</div><div><b>El mural del festejado</b><span>Entre todos pintan un cuadro gigante de regalo para el cumpleañero.</span></div></div>
+    <div class="paso"><div class="t">18:30</div><div><b>¡Cumpleaños feliz!</b><span>La torta y la comida que trae la familia.</span></div></div>
+    <div class="paso"><div class="t">19:00</div><div><b>El museo</b><span>Cuelgan sus obras, cada uno cuenta la suya y se entregan premios divertidos.</span></div></div>
+    <div class="paso"><div class="t">19:20</div><div><b>Diplomas de artista</b><span>Cada niño se lleva su diploma y su obra.</span></div></div>
+  </div>
+</section>
+
+<!-- 3. MARY -->
+<section>
+  <div class="wrap">
+    <div class="mary">
+      <video src="video/landing-horizontal.mp4" poster="video/landing-horizontal.jpg" controls playsinline preload="none" aria-label="Mary cuenta cómo es Arteluk"></video>
+      <p class="mano">quién está detrás</p>
+      <h3>Mary Quinteros, fundadora de Arteluk</h3>
+      <p style="font-weight:700;color:var(--gris)">Cada fiesta sale del mismo taller donde Mary enseña arte a niños de Valdivia todas las semanas.</p>
+      <ul>
+        <li>Diplomada en Arteterapia</li>
+        <li>Magíster en Psicología</li>
+        <li>Ingeniera y artista</li>
+        <li>Con un equipo de profesoras de arte que hace clases todas las semanas</li>
+      </ul>
+      <div class="numeros">
+        <div><b>+50</b><span>alumnos hoy</span></div>
+        <div><b>8</b><span>exposiciones de los niños</span></div>
+        <div><b>2 h</b><span>de fiesta con profesora</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. FAMILIAS -->
+<section style="padding-top:10px">
+  <div class="wrap">
+    <h2>Lo que dicen las familias</h2>
+    <p class="bajada">Papás y mamás de alumnos de Arteluk. Toque un video para escucharlos.</p>
+    <div class="testis">
+      <figure class="testi"><video src="video/testimonio-maite.mp4" poster="video/testimonio-maite.jpg" controls playsinline preload="none"></video><p>«Aumentó muchísimo su concentración»</p><small>Mamá de Maite · 10 años</small></figure>
+      <figure class="testi"><video src="video/testimonio-valentina-mama.mp4" poster="video/testimonio-valentina-mama.jpg" controls playsinline preload="none"></video><p>«Ha tomado mucha confianza en sí misma»</p><small>Mamá de Valentina</small></figure>
+      <figure class="testi"><video src="video/testimonio-valentina-papa.mp4" poster="video/testimonio-valentina-papa.jpg" controls playsinline preload="none"></video><p>«No le gusta perderse las clases»</p><small>Papá de Valentina · 11 años</small></figure>
+    </div>
+    <div class="estrellas">★★★★★</div>
+  </div>
+</section>
+
+<!-- 5. INCLUYE Y PRECIO -->
+<section style="padding-top:10px">
+  <div class="wrap">
+    <h2>Nosotros ponemos</h2>
+    <ul class="lista">
+      <li>Una profesora de Arteluk a cargo de toda la fiesta</li>
+      <li>Todos los materiales y los delantales</li>
+      <li>La sala decorada para la fiesta</li>
+      <li>La obra y el diploma que se lleva cada niño</li>
+    </ul>
+    <h2>La familia trae</h2>
+    <ul class="lista fam">
+      <li>La torta, la comida y la bebida</li>
+      <li>Las ganas de pasarlo bien</li>
+    </ul>
+    <div class="precios">
+      <div><span>10 niños</span><b>$120.000</b></div>
+      <div><span>12 niños</span><b>$144.000</b></div>
+      <div><span>15 niños</span><b>$180.000</b></div>
+      <small>Se reserva con el 50 % por transferencia y el resto se paga el día de la fiesta.</small>
+    </div>
+  </div>
+</section>
+
+<!-- 6. RESERVA -->
+<section id="reservar" style="padding-top:10px">
+  <div class="wrap">
+    <h2>Reserve su sábado</h2>
+    <p class="bajada">Un solo cumpleaños por sábado. Los días marcados están libres.</p>
+    <div class="caja" id="caja">
+
+      <div id="pasoForm">
+        <p class="paso-n">Paso 1 · Elija el sábado</p>
+        <div id="calWrap">
+          <div class="cal-top"><button type="button" id="mesAnt" aria-label="Mes anterior">‹</button><b id="mesTxt">Cargando…</b><button type="button" id="mesSig" aria-label="Mes siguiente">›</button></div>
+          <div class="grid" id="grid"></div>
+          <p class="cal-nota" id="calNota">Cargando los sábados libres…</p>
+        </div>
+        <div class="aviso" id="calError" hidden>No pudimos cargar el calendario. Escríbanos por WhatsApp y le buscamos un sábado.</div>
+        <p class="elegido-txt" id="elegidoTxt" hidden></p>
+
+        <p class="paso-n" style="margin-top:22px">Paso 2 · Sus datos</p>
+        <div class="campo" id="cFest"><label for="festejado">Nombre del festejado</label><input id="festejado" autocomplete="off" maxlength="80"><div class="err">Escriba el nombre del festejado</div></div>
+        <div class="dos">
+          <div class="campo" id="cEdad"><label for="edad">Edad que cumple</label><select id="edad"></select><div class="err">Elija la edad</div></div>
+          <div class="campo" id="cNinos"><label for="ninos">Cuántos niños</label><select id="ninos"></select><div class="err">Elija cuántos</div></div>
+        </div>
+        <div class="campo" id="cApod"><label for="apoderado">Su nombre</label><input id="apoderado" autocomplete="name" maxlength="80"><div class="err">Escriba su nombre</div></div>
+        <div class="campo" id="cTel"><label for="telefono">Su celular (WhatsApp)</label><input id="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="9 1234 5678"><div class="err">Revise el celular (9 dígitos)</div></div>
+        <div class="total" id="total">Total <b id="totalTxt">$144.000</b> · para reservar <b id="abonoTxt">$72.000</b></div>
+        <div class="aviso" id="errEnvio" hidden></div>
+        <button class="btn rosa" type="button" id="btnReservar">Reservar el sábado</button>
+      </div>
+
+      <div class="listo" id="pasoListo" hidden>
+        <h3>¡Sábado reservado! 🎉</h3>
+        <p style="font-weight:800" id="listoResumen"></p>
+        <p style="margin-top:14px;font-weight:800">Para dejarlo confirmado, transfiera el abono de</p>
+        <p class="abono-grande" id="listoAbono"></p>
+        <div class="cuenta" id="listoCuenta"></div>
+        <a class="btn wa" id="listoWa" href="#" target="_blank" rel="noopener">Mandar el comprobante por WhatsApp</a>
+        <p style="margin-top:12px;color:var(--gris);font-weight:700;font-size:16px">La fiesta queda confirmada cuando recibimos el abono. El resto se paga el día de la fiesta.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 7. PREGUNTAS -->
+<section style="padding-top:10px">
+  <div class="wrap">
+    <h2>Preguntas</h2>
+    <details><summary>¿Dónde es?</summary><p>En Arteluk, Picarte 804, segundo piso, al lado del Registro Civil, Valdivia.</p></details>
+    <details><summary>¿Podemos llevar torta y comida?</summary><p>Sí, la familia trae la torta, la comida y la bebida. Nosotros ponemos la fiesta de arte, los materiales y la profesora.</p></details>
+    <details><summary>¿Y si son más de 15 niños?</summary><p>Escríbanos por WhatsApp y lo conversamos.</p></details>
+    <details><summary>¿El niño tiene que saber pintar?</summary><p>No. La fiesta es para jugar con la pintura: todos se llevan una obra de la que van a estar orgullosos.</p></details>
+  </div>
+</section>
+
+<footer>
+  <img src="img/logo-arteluk.png" alt="" style="width:54px;margin:0 auto 8px">
+  <b>Arteluk · Arte &amp; Arteterapia</b><br>Picarte 804, segundo piso, Valdivia<br>
+  <a href="https://wa.me/56963554778" style="color:inherit">+56 9 6355 4778</a> · <a href="https://www.arteluk.cl/" style="color:inherit">arteluk.cl</a>
+</footer>
+
+<div class="barra" id="barra"><a class="btn rosa" href="#reservar">Reservar un sábado</a></div>
+
+<script>
+// Los sábados libres y la reserva salen de la app de Arteluk (la misma que usa Mary).
+// Un sábado reservado desaparece del calendario al tiro, para todos.
+var API = 'https://waly-arteluk.bvil2a.easypanel.host/api/web/cumpleanos';
+var WA = '56963554778';
+var PRECIO = 12000, MIN = 10, MAX = 15, EDAD_MIN = 5, EDAD_MAX = 12;
+var NOMBRE_MES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+
+function $(id) { return document.getElementById(id); }
+function plata(n) { return '$' + Number(n).toLocaleString('es-CL'); }
+function fechaLocal(ymd) { var p = ymd.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
+function textoSabado(ymd) { var d = fechaLocal(ymd); return 'sábado ' + d.getDate() + ' de ' + NOMBRE_MES[d.getMonth()]; }
+function telefonoChile(v) {
+  var d = String(v || '').replace(/\D/g, '');
+  if (/^569\d{8}$/.test(d)) return d;
+  if (/^9\d{8}$/.test(d)) return '56' + d;
+  if (/^\d{8}$/.test(d)) return '569' + d;
+  return null;
+}
+
+// selects
+(function () {
+  var h = '<option value="">Edad</option>';
+  for (var e = EDAD_MIN; e <= EDAD_MAX; e++) h += '<option value="' + e + '">' + e + ' años</option>';
+  $('edad').innerHTML = h;
+  h = '';
+  for (var n = MIN; n <= MAX; n++) h += '<option value="' + n + '"' + (n === 12 ? ' selected' : '') + '>' + n + ' niños</option>';
+  $('ninos').innerHTML = h;
+})();
+function pintarTotal() {
+  var n = +$('ninos').value || MIN, t = n * PRECIO;
+  $('totalTxt').textContent = plata(t);
+  $('abonoTxt').textContent = plata(Math.round(t / 2));
+}
+$('ninos').addEventListener('change', pintarTotal);
+pintarTotal();
+
+// calendario
+var libres = [], mesVisto = null, elegido = null;
+function cargar() {
+  return fetch(API, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (j) {
+      if (!j || !j.ok || !Array.isArray(j.sabados)) throw new Error('rara');
+      libres = j.sabados.map(function (s) { return s.fecha; });
+      if (elegido && libres.indexOf(elegido) < 0) elegir(null);
+      if (!mesVisto) mesVisto = libres.length ? libres[0].slice(0, 7) : null;
+      $('calError').hidden = true; $('calWrap').hidden = false;
+      dibujar();
+    })
+    .catch(function () { $('calWrap').hidden = true; $('calError').hidden = false; });
+}
+function meses() {
+  var m = [];
+  libres.forEach(function (f) { var k = f.slice(0, 7); if (m.indexOf(k) < 0) m.push(k); });
+  return m;
+}
+function dibujar() {
+  var ms = meses();
+  if (!mesVisto || !ms.length) { $('mesTxt').textContent = 'Sin sábados libres'; $('grid').innerHTML = ''; $('calNota').textContent = 'Escríbanos por WhatsApp y le buscamos un día.'; $('mesAnt').disabled = $('mesSig').disabled = true; return; }
+  var i = ms.indexOf(mesVisto); if (i < 0) { i = 0; mesVisto = ms[0]; }
+  $('mesAnt').disabled = i <= 0; $('mesSig').disabled = i >= ms.length - 1;
+  var y = +mesVisto.slice(0, 4), mo = +mesVisto.slice(5, 7) - 1;
+  $('mesTxt').textContent = NOMBRE_MES[mo] + ' ' + y;
+  var h = ['L','M','M','J','V','S','D'].map(function (d) { return '<div class="dn">' + d + '</div>'; }).join('');
+  var primero = new Date(y, mo, 1), off = (primero.getDay() + 6) % 7, dias = new Date(y, mo + 1, 0).getDate();
+  for (var k = 0; k < off; k++) h += '<div></div>';
+  for (var d = 1; d <= dias; d++) {
+    var f = y + '-' + ('0' + (mo + 1)).slice(-2) + '-' + ('0' + d).slice(-2);
+    var libre = libres.indexOf(f) >= 0;
+    h += '<div class="d' + (libre ? ' libre' : '') + (f === elegido ? ' elegido' : '') + '"' + (libre ? ' role="button" tabindex="0" data-f="' + f + '" aria-label="' + textoSabado(f) + '"' : '') + '>' + d + '</div>';
+  }
+  $('grid').innerHTML = h;
+  $('calNota').textContent = 'Los sábados marcados están libres, de 17:30 a 19:30.';
+}
+$('grid').addEventListener('click', function (e) { var t = e.target.closest('[data-f]'); if (t) elegir(t.getAttribute('data-f')); });
+$('grid').addEventListener('keydown', function (e) { if (e.key === 'Enter') { var t = e.target.closest('[data-f]'); if (t) elegir(t.getAttribute('data-f')); } });
+$('mesAnt').addEventListener('click', function () { var ms = meses(); mesVisto = ms[Math.max(0, ms.indexOf(mesVisto) - 1)]; dibujar(); });
+$('mesSig').addEventListener('click', function () { var ms = meses(); mesVisto = ms[Math.min(ms.length - 1, ms.indexOf(mesVisto) + 1)]; dibujar(); });
+function elegir(f) {
+  elegido = f;
+  $('elegidoTxt').hidden = !f;
+  if (f) { $('elegidoTxt').textContent = '✓ ' + textoSabado(f).replace(/^s/, 'S') + ', de 17:30 a 19:30'; try { fbq('track', 'InitiateCheckout', { content_name: 'Cumpleaños de arte' }); } catch (e) {} }
+  dibujar();
+}
+
+function falta(id, si) { $(id).classList.toggle('falta', !!si); }
+function reservar() {
+  var fest = $('festejado').value.trim(), apod = $('apoderado').value.trim(), tel = telefonoChile($('telefono').value);
+  var edad = $('edad').value, ninos = $('ninos').value;
+  falta('cFest', fest.length < 2); falta('cApod', apod.length < 2); falta('cTel', !tel); falta('cEdad', !edad); falta('cNinos', !ninos);
+  $('errEnvio').hidden = true;
+  if (!elegido) { $('errEnvio').textContent = 'Elija un sábado en el calendario.'; $('errEnvio').hidden = false; $('calWrap').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+  if (fest.length < 2 || apod.length < 2 || !tel || !edad || !ninos) { var x = document.querySelector('.campo.falta'); if (x) x.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+  var b = $('btnReservar'); b.disabled = true; b.textContent = 'Reservando…';
+  fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ fecha: elegido, festejado: fest, edad: edad, ninos: ninos, apoderado: apod, telefono: tel }) })
+    .then(function (r) { return r.json().then(function (j) { return { st: r.status, j: j }; }); })
+    .then(function (res) {
+      if (res.st === 200 && res.j.ok) return listo(res.j, fest);
+      if (res.st === 409) { $('errEnvio').textContent = 'Ese sábado se acaba de reservar. Elija otro, por favor.'; $('errEnvio').hidden = false; cargar(); return; }
+      var e = res.j && res.j.errores ? Object.keys(res.j.errores).map(function (k) { return res.j.errores[k]; }).join('. ') : 'Algo falló.';
+      throw new Error(e);
+    })
+    .catch(function (err) {
+      $('errEnvio').innerHTML = 'No se pudo reservar (' + String(err.message || err).replace(/</g, '&lt;') + '). <a href="https://wa.me/' + WA + '" target="_blank" rel="noopener">Escríbanos por WhatsApp</a> y lo dejamos listo.';
+      $('errEnvio').hidden = false;
+    })
+    .then(function () { b.disabled = false; b.textContent = 'Reservar el sábado'; });
+}
+$('btnReservar').addEventListener('click', reservar);
+
+function listo(j, fest) {
+  try { fbq('track', 'Schedule', { content_name: 'Cumpleaños de arte', value: j.abono, currency: 'CLP' }); } catch (e) {}
+  $('pasoForm').hidden = true; $('pasoListo').hidden = false;
+  $('listoResumen').textContent = 'Cumpleaños de ' + fest + ', ' + j.texto + ', de ' + j.hora + ' a ' + j.horaFin + ', ' + j.ninos + ' niños. Total ' + plata(j.total) + '.';
+  $('listoAbono').textContent = plata(j.abono);
+  $('listoCuenta').textContent = j.cuenta || 'Le mandamos los datos para transferir por WhatsApp.';
+  var msg = 'Hola, reservé en la web el cumpleaños de ' + fest + ' el ' + j.texto + ' (' + j.ninos + ' niños). Le mando el comprobante del abono de ' + plata(j.abono) + '.';
+  $('listoWa').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
+  $('caja').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// barra de abajo: se esconde cuando la reserva está a la vista
+var io = new IntersectionObserver(function (es) { es.forEach(function (e) { $('barra').classList.toggle('oculta', e.isIntersecting); }); }, { threshold: 0.05 });
+io.observe($('reservar'));
+
+cargar();
+</script>
+</body>
+</html>
